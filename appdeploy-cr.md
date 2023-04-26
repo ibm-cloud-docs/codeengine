@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-08"
+lastupdated: "2023-04-24"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables, registry secret, registry access, registry access secret
 
@@ -23,6 +23,9 @@ Before you begin
 - You must have an image in {{site.data.keyword.registrylong}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started). Or, you can build an image from [repository source](/docs/codeengine?topic=codeengine-app-source-code) or from [local source](/docs/codeengine?topic=codeengine-app-local-source-code). 
 
 - Verify that you can access the registry. See [Setting up authorities for container registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
+
+
+
 
 ## Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console
 {: #deploy-app-crimage-console}
@@ -52,6 +55,9 @@ Now that you have deployed your application, you can view information about appl
 
 
 If you want to add registry access to a {{site.data.keyword.registryshort}} instance that is not in your account, see [Adding access to a {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-add-registry). 
+
+
+
 
 ## Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI
 {: #deploy-app-crimage-cli}

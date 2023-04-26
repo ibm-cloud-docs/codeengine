@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-04-25"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -367,7 +367,7 @@ When you unbind (or remove) a service binding, you are deleting the association 
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Service bindings** to view a listing of all defined service bindings. Or, if you want to manage service bindings from the context of your app or job, from the Overview page, click **Applications** or **Jobs** and click the name of your app or job.  From the specific app or job page, go to the **Service bindings** tab. 
-3. From the list of service bindings, delete the binding that you want to remove from your app or job. Click the **Overflow** icon ![**Overflow** icon](../icons/overflow-menu.svg "Overflow") > **Delete** to delete the service binding. 
+3. From the list of service bindings, delete the binding that you want to remove from your app or job. Click the **Actions** icon ![Actions](../icons/action-menu-icon.svg "Actions") > **Delete** to delete the service binding. 
 
 
 

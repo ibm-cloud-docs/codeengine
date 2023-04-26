@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-04-25"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, registry secret, service id,registry secret, registry access secret
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Accessing container registries
+# Accessing container registries 
 {: #add-registry}
 
 Images that are used by {{site.data.keyword.codeenginefull}} are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry).
@@ -92,6 +92,19 @@ Yes! [Here is how](#images-different-account).
 **Can I restrict pull access to a certain regional registry or even a single namespace?**
 
 Yes, you can edit the existing [IAM policy of the service ID](#authorize-cr-service-id) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user).
+
+Can I use a service ID?
+:    Yes, you can create a service ID and assign authorities to it. Note that service IDs are also automatically created by the {{site.data.keyword.codeengineshort}} UI when you automatically create access to your {{site.data.keyword.registryfull_notm}}. DO NOT delete this service ID as you will lose access to the images in the registry.
+
+Can I access images in a different registry?
+:    Yes! [Here is how](#images-different-account).
+
+Can I restrict pull access to a certain regional registry or even a single namespace?
+:    Yes, you can edit the existing [IAM policy of the service ID](#authorize-cr-service-id) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user).
+
+Can I configure a registry secret for all users in a project? 
+:    Yes! You can use the Integration page in the console to configure settings to set up and manage registry access to images in {{site.data.keyword.registrylong_notm}} so that all users of a specific {{site.data.keyword.codeengineshort}} project can store and access images in {{site.data.keyword.registryshort_notm}} without having to manually create registry secrets. With sufficient permissions, you can configure this default registry access on a per location (region) basis. If you don't have sufficient permissions to perform these actions, you can use this page to help you understand the required permissions. See [Configuring project-wide settings](/docs/codeengine?topic=codeengine-project-integrations). 
+
 
 ## Accessing images from a public account
 {: #images-public-account}

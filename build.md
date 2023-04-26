@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-08"
+lastupdated: "2023-04-25"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret
 
@@ -31,6 +31,9 @@ However, if you want more control over the build of your image, you must first c
 Use this topic to learn about the information you need to control the build of your container image. In this scenario, {{site.data.keyword.codeenginefull}} pulls source code from a Git repository or a local directory, builds it, and then pushes (uploads) the container image to a registry. You can choose public or private [repositories](/docs/codeengine?topic=codeengine-code-repositories) and [registries](/docs/codeengine?topic=codeengine-add-registry). You can also choose to specify registry details with a registry secret for your build output with *user-provided access*. Or, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with *automatic access*. 
 
 Before you start building images, review [planning information](/docs/codeengine?topic=codeengine-plan-build). You'll also need to verify that you can access the registry. See [Setting up authorities for container registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
+
+Interested in configuring your project such that all users of the project can store and access images in {{site.data.keyword.registryshort}} without having to manually create registry secrets? With sufficient permissions, you can configure this default registry access on a per location (region) basis. If you don't have sufficient permissions to perform these actions, you can use this page to help you understand the required permissions. See [Configuring project-wide settings](/docs/codeengine?topic=codeengine-project-integrations). 
+{: note}
 
 To learn about how to build your container image with a single {{site.data.keyword.codeengineshort}} CLI command and create the container image without creating a reusable build configuration, see  [Building a container image with stand-alone build commands (CLI)](/docs/codeengine?topic=codeengine-build-standalone).
 
