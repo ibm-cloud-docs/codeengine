@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-27"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.43.4 | 27 April 2023 | - Fixed various bugs. |
 | 1.43.3 | 14 April 2023 | - Fixed configuration error (Windows only). |
 | 1.43.1 | 12 April 2023 | - Fixed various bugs. |
 | 1.43.0 | 23 March 2023 | - This version adds support for the **`domainmapping`** command group. Use this command to manage domain mappings with the CLI. See [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings) and [{{site.data.keyword.codeengineshort}} CLI reference (`domainmapping` command)](/docs/codeengine?topic=codeengine-cli#cli-domainmapping).  \n - Fixed various bugs. |
