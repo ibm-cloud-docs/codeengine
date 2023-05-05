@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-05-04"
 
 keywords: project, projects in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine, binding in code engine, service binding in code engine, project settings, project integrations, configuring project-wide settings, service binding operations, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, operator secret, ibmcloud-operator-secret, service bind, access, bind, bound, registries, container registry, image registry, apikey, API key, images, registry access, registry secret, service id, registry secret, registry access 
 
@@ -43,6 +43,7 @@ In {{site.data.keyword.codeengineshort}}, service binding operations, which incl
 {: #projectintegration-sb-access}
 
 The user of this Integrations page must have the following {{site.data.keyword.iamshort}} (IAM) access policies that are assigned to your user account to successfully configure service binding operations. If you don't have sufficient permissions to perform these actions, you can use this page to help you understand the required permissions.
+
 
 * **Service:** All Identity and Access enabled services
     * **Resources:** Select from resource group, region, or access management tags.
