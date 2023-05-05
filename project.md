@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-28"
+lastupdated: "2023-05-05"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -276,8 +276,7 @@ Project names within a region must be unique. When you soft delete a project (or
 
 To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click the delete icon. If you open a specific project, you can also delete the project from the Actions menu. 
 
-When you delete a project from the console, the project is soft deleted and can be restored within 7 days before it is permanently deleted. Project reclamations represent deleted projects that can still be restored. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, the number of project reclamations is displayed. Click `Project reclamations` to open the **Project reclamations** page and display a list of projects that can be restored or permanently deleted.
-
+When you delete a project from the console, the project is soft deleted and can be restored within 7 days before it is permanently deleted. Project reclamations represent deleted projects that can still be restored. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, the number of project reclamations is displayed. Click `restorable projects` to open the **Project reclamations** page and display a list of projects that can be restored or permanently deleted.
 
 
 ### Deleting a project with the CLI
