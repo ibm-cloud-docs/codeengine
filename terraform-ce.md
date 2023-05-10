@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-19"
+lastupdated: "2023-05-10"
 
 
 subcollection: codeengine
@@ -18,9 +18,9 @@ Terraform on {{site.data.keyword.cloud}} enables predictable and consistent crea
 {: shortdesc}
 
 
-
-Terraform for {{site.data.keyword.codeengineshort}} is available as a Beta release.
-{: beta}
+Looking for a managed Terraform on {{site.data.keyword.cloud}} solution? Try out [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started). With {{site.data.keyword.bpshort}}, you can use the Terraform scripting language that you are familiar with, but you don't have to worry about setting up and maintaining the Terraform command line and the {{site.data.keyword.cloud}} Provider plug-in. {{site.data.keyword.bpshort}} also provides pre-defined Terraform templates that you can easily install from the {{site.data.keyword.cloud}} catalog.
+{: tip}
+  
 
 ## Installing Terraform and configuring resources for {{site.data.keyword.codeengineshort}}
 {: #install-terraform}
