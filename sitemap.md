@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-10"
+lastupdated: "2023-05-11"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3631,9 +3631,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why does my build run in my toolchain time out?](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain#ts-buildrun-timeout-toolchain)
 
 
-## Getting support
-{: #sitemap_getting_support}
+## Getting help and support for {{site.data.keyword.codeengineshort}}
+{: #sitemap_getting_help_and_support_for_}
 
 
-[Getting support](/docs/codeengine?topic=codeengine-get-support#get-support)
+[Getting help and support for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-get-support#get-support)
 
