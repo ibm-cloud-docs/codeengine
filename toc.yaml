@@ -242,7 +242,7 @@ toc:
               label: Troubleshooting jobs 
               topics:
               - troubleshoot-job.md
-              - ts-jobrun-submitfailscli.md
+              - ts-jobrun-submitfailscli.md              
               - ts-jobrun-notcompleting.md
               - ts-jobrun-deleted.md
               - ts-jobrun-findinginfo.md
