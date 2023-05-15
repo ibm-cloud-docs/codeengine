@@ -260,7 +260,7 @@ toc:
               topics:
               - troubleshoot-servicebindings.md
               - ts-sb-cosredacted.md
-              - ts-sb-DB2createfails.md
+              - ts-sb-DB2createfails.md            
 
           - topicgroup:
               label: Troubleshooting subscriptions 

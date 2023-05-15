@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-05-15"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -35,6 +35,25 @@ The following table shows the service behavior changes for each version date. Sw
 |`2022-Dec-09`| Version 2.0.0 |
 |`2021-Mar-31`| Version 1.0.0  |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
+
+## yy May 2023
+{: #yy-may-2023}
+
+Added support for service binding operations in the API. 
+:   - See [List bindings API](https://cloud.ibm.com/apidocs/codeengine/v2#list-bindings){: external}.
+:   - See [Create a binding API](https://cloud.ibm.com/apidocs/codeengine/v2#create-binding){: external}.
+:   - See [Get a binding API](https://cloud.ibm.com/apidocs/codeengine/v2#get-binding){: external}.
+:   - See [Delete a binding API](https://cloud.ibm.com/apidocs/codeengine/v2#delete-binding){: external}.
+
+Added support for service access secrets which are required for service binding operations. Specify to create service access secrets with the `format` field and specify the details of service access secrets with the `service_access` field.
+:   - See [Create a secret API](https://cloud.ibm.com/apidocs/codeengine/v2#get-project-status-details){: external}.
+
+
+## xx May 2023
+{: #xx-may-2023}
+
+Added support to get status details for a project.
+:   - See [Get the status details for a project API](https://cloud.ibm.com/apidocs/codeengine/v2#get-project-status-details){: external}.
 
 
 ## 27 Mar 2023
