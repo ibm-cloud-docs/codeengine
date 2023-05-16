@@ -176,7 +176,7 @@ toc:
           label: API reference
           topics:
           - api.md
-          - api-changelog.md
+          - api-changelog.md          
           - link: 
               label: Code Engine API 
               href: https://cloud.ibm.com/apidocs/codeengine
@@ -242,7 +242,7 @@ toc:
               label: Troubleshooting jobs 
               topics:
               - troubleshoot-job.md
-              - ts-jobrun-submitfailscli.md
+              - ts-jobrun-submitfailscli.md              
               - ts-jobrun-notcompleting.md
               - ts-jobrun-deleted.md
               - ts-jobrun-findinginfo.md
@@ -260,7 +260,7 @@ toc:
               topics:
               - troubleshoot-servicebindings.md
               - ts-sb-cosredacted.md
-              - ts-sb-DB2createfails.md
+              - ts-sb-DB2createfails.md            
 
           - topicgroup:
               label: Troubleshooting subscriptions 

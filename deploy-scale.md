@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-05-15"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -48,6 +48,8 @@ You can configure scaling boundaries for {{site.data.keyword.codeengineshort}}, 
 When you connect your applications to event producers, remember to account for the frequency and volume of the events from those producers when you set your scale boundaries. For example, if you expect to receive many events at the same time and the processing of each event can take several minutes, then you might need a higher maximum scale value than if each event can be quickly processed. If you set the value too low, you might experience delays in receiving events, or even dropped events due to timeouts while you wait for processing resources to be free.
 
 For example, if you keep the default maximum scale value to `10` and the concurrency to `100`, then by default, an application can process 1000 concurrent events before potential buffering issues might arise. If you expect more than 1000 requests (or events) concurrently, then you might consider increasing your maximum scale value.
+
+
 
 ## Optimize latency and throughput
 {: #app-optimize-latency}

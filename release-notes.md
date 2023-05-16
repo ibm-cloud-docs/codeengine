@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-10"
+lastupdated: "2023-05-16"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for May 2023.
 {: shortdesc}
+
+### 16 May 2023
+{: #codeengine-may1623}
+{: release-note}
+
+CLI version 1.43.5 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 10 May 2023
 {: #codeengine-may1023}
@@ -62,8 +72,8 @@ Updated versions for buildpacks
 {: #codeengine-apr2623}
 {: release-note}
 
-Added support for {{site.data.keyword.codeengineshort}} project-side settings
-:   Added support for configuring project-side settings for service binding operations and access to {{site.data.keyword.registrylong_notm}} in the console. See [Configuring project-wide settings](/docs/codeengine?topic=codeengine-project-integrations). 
+Added support for {{site.data.keyword.codeengineshort}} project-wide settings
+:   Added support for configuring project-wide settings for service binding operations and access to {{site.data.keyword.registrylong_notm}} in the console. See [Configuring project-wide settings](/docs/codeengine?topic=codeengine-project-integrations). 
 
 Updated support for TLS secrets 
 :   Updated support for creating TLS secrets in the console to also permit the upload of a certificate chain and its private key from a file. See [Creating a TLS secret from the console](/docs/codeengine?topic=codeengine-secret#secret-create-ui-tls).
