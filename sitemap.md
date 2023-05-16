@@ -64,6 +64,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Terraform support for {{site.data.keyword.codeengineshort}} is generally available.
 
+    * [16 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1623)
+
+        * CLI version 1.43.5 released
+
     * [05 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may0523)
 
         * Updated versions for buildpacks

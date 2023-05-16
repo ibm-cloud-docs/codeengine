@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-10"
+lastupdated: "2023-05-16"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -32,6 +32,15 @@ Review the release notes for May 2023.
 
 Terraform support for {{site.data.keyword.codeengineshort}} is generally available.
 :   See [Setting up Terraform for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-terraform-setup-ce).
+
+
+### 16 May 2023
+{: #codeengine-may1623}
+{: release-note}
+
+CLI version 1.43.5 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
 
 ### 05 May 2023
 {: #codeengine-may0523}
