@@ -86,7 +86,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [26 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr2623)
 
-        * Added support for {{site.data.keyword.codeengineshort}} project-side settings
+        * Added support for {{site.data.keyword.codeengineshort}} project-wide settings
 
         * Updated support for TLS secrets 
 
