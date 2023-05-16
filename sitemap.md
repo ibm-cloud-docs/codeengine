@@ -60,13 +60,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for May 2023.
 
-    * [10 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1023)
-
-        * Terraform support for {{site.data.keyword.codeengineshort}} is generally available.
-
     * [16 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1623)
 
         * CLI version 1.43.5 released
+
+        * Updated versions for buildpacks
+
+    * [10 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1023)
+
+        * Terraform support for {{site.data.keyword.codeengineshort}} is generally available.
 
     * [05 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may0523)
 

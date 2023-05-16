@@ -26,14 +26,6 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for May 2023.
 {: shortdesc}
 
-### 10 May 2023
-{: #codeengine-may1023}
-{: release-note}
-
-Terraform support for {{site.data.keyword.codeengineshort}} is generally available.
-:   See [Setting up Terraform for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-terraform-setup-ce).
-
-
 ### 16 May 2023
 {: #codeengine-may1623}
 {: release-note}
@@ -41,6 +33,15 @@ Terraform support for {{site.data.keyword.codeengineshort}} is generally availab
 CLI version 1.43.5 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
+### 10 May 2023
+{: #codeengine-may1023}
+{: release-note}
+
+Terraform support for {{site.data.keyword.codeengineshort}} is generally available.
+:   See [Setting up Terraform for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-terraform-setup-ce).
 
 ### 05 May 2023
 {: #codeengine-may0523}
