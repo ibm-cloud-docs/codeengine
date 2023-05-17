@@ -242,7 +242,8 @@ toc:
               label: Troubleshooting jobs 
               topics:
               - troubleshoot-job.md
-              - ts-jobrun-submitfailscli.md              
+              - ts-jobrun-submitfailscli.md
+              - ts-jobrun-notstarting.md             
               - ts-jobrun-notcompleting.md
               - ts-jobrun-deleted.md
               - ts-jobrun-findinginfo.md
@@ -260,7 +261,8 @@ toc:
               topics:
               - troubleshoot-servicebindings.md
               - ts-sb-cosredacted.md
-              - ts-sb-DB2createfails.md            
+              - ts-sb-DB2createfails.md
+              - ts-sb-projsettings-no-details.md            
 
           - topicgroup:
               label: Troubleshooting subscriptions 

@@ -64,6 +64,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added troubleshooting information for job runs not starting
 
+        * Added troubleshooting information for viewing details of service binding operations
+
     * [16 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1623)
 
         * CLI version 1.43.5 released
@@ -3574,6 +3576,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Why can't I submit a job run with the CLI?](/docs/codeengine?topic=codeengine-ts-jobrun-submit-fails-cli#ts-jobrun-submit-fails-cli)
 
+[Why is my job run not starting?](/docs/codeengine?topic=codeengine-ts-jobrun-notstart#ts-jobrun-notstart)
+
 [Why is my job run not completing?](/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete#ts-jobrun-doesnotcomplete)
 
 [Where is my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-deleted#ts-jobrun-deleted)
@@ -3609,6 +3613,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why do the service credentials in my service binding to {{site.data.keyword.cos_full_notm}} show as `REDACTED`?](/docs/codeengine?topic=codeengine-ts-sb-cosredacted#ts-sb-cosredacted)
 
 [Why does my service binding to a Db2 Enterprise instance fail?](/docs/codeengine?topic=codeengine-ts-sb-db2createfails#ts-sb-db2createfails)
+
+[Why can't I display details of my configured service binding operations?](/docs/codeengine?topic=codeengine-ts-sb-projsettings-nodetails#ts-sb-projsettings-nodetails)
 
 
 ### Troubleshooting subscriptions

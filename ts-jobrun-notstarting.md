@@ -27,13 +27,12 @@ If your job run did not start, check that the quota for your jobs and job runs i
 {: tsCauses}
 
 
-
 {{site.data.keyword.codeengineshort}} has quotas for jobs and job runs within a project.
 {: tsResolve}
 
-Check that you have not exceeded the quota limit for jobs and job runs for your project. You are limited to 100 jobs per project and 100 job runs per project before you need to clean up old ones. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+Check that the quota limit for jobs and job runs for your project is not exceeded. You are limited to 100 jobs per project and 100 job runs per project before you need to clean up old ones. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
-Use one of the following ways to check that you haven't exceeded the quota limit for jobs and job runs.
+Use one of the following ways to check that the quota limit for jobs and job runs is not exceeded.
 
 * In the CLI, run the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all your defined job runs. Run the [**`ibmcloud ce job list`**](/docs/codeengine?topic=codeengine-cli#cli-job-list) command to list all your defined jobs. 
 
