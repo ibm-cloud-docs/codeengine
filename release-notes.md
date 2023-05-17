@@ -31,10 +31,10 @@ Review the release notes for May 2023.
 {: release-note}
 
 Added troubleshooting information for job runs not starting
-:   - See [Why is my job run not starting?](/docs/codeengine?topic=codeengine-ts-jobrun-notstart).
+:   - See [Why is my job run not starting?](/docs/codeengine?topic=codeengine-ts-jobrun-notstart)
 
 Added troubleshooting information for viewing details of service binding operations
-:   - See [Why can't I display details of my configured service binding operations? ?](/docs/codeengine?topic=codeengine-ts-sb-projsettings-nodetails).
+:   - See [Why can't I display details of my configured service binding operations?](/docs/codeengine?topic=codeengine-ts-sb-projsettings-nodetails)
 
 ### 16 May 2023
 {: #codeengine-may1623}
