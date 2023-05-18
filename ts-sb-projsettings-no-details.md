@@ -51,7 +51,7 @@ Try one of these solutions.
     6. Select your custom service ID from the table. Use the custom service ID that you identified in the first step. 
     7. Click **Configure** to save this configuration. 
 
-  After service binding operations are configured with your custom service ID, you can view details of the configuration. 
+After service binding operations are configured with your custom service ID, you can view details of the configuration. 
 
 2. If you created service bindings for an app or job in a {{site.data.keyword.codeengineshort}} project that was created before the release of [project-wide settings in the console](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr2623), ignore the warning message. Service binding operations will continue to work because service bindings were previously created. Do not remove and reconfigure service binding operations configurations from the Integrations page in the console because this action does not delete the original service ID and can cause a security risk. 
 
