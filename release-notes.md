@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-05-18"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for May 2023.
 {: shortdesc}
+
+### 18 May 2023
+{: #codeengine-may1823}
+{: release-note}
+
+Added troubleshooting information for job runs not starting
+:   - See [Why is my job run not starting?](/docs/codeengine?topic=codeengine-ts-jobrun-notstart)
+
+Added troubleshooting information for unavailable details of service binding operations
+:   - See [Why can't I display details of my configured service binding operations?](/docs/codeengine?topic=codeengine-ts-sb-projsettings-nodetails)
 
 ### 16 May 2023
 {: #codeengine-may1623}
