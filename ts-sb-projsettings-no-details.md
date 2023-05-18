@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-05-18"
 
 keywords: troubleshooting for code engine service bindings, service bindings, binding, service credentials
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: #ts-sb-projsettings-nodetails}
 {: troubleshoot}
 
-When you configure project-wide settings with the Integrations page from the console, {{site.data.keyword.codeengineshort}} automatically sets up the necessary credentials so that {{site.data.keyword.codeengineshort}} can perform service binding operations for you. In some cases, the service binding operations are configured, but details cannot be displayed about the settings.
+When you configure project-wide settings with the Integrations page from the console, {{site.data.keyword.codeengineshort}} automatically sets up the necessary credentials so that {{site.data.keyword.codeengineshort}} can perform service binding operations for you. Sometimes, the service binding operations are configured, but details cannot be displayed about the settings.
 
 
 After successfully configuring service binding operations, the status shows configured; however, you receive a warning message that details of the current service binding operations cannot be displayed. A warning that is similar to the following text appears on the **Project settings** > **Integrations**  > **Service binding operations** page, `Cannot display details of the current configuration`. 
@@ -29,7 +29,7 @@ When you create the first service binding in a specific {{site.data.keyword.code
 
 However, the operator secret might not contain the necessary information about the service ID so that details about the service binding configuration cannot be displayed from the Integrations page for project-wide settings. 
 
-The operator secret that was created as a result of one of the following scenarios might not have the service ID information.
+The operator secret that was created because one of the following scenarios might not have the service ID information.
 
 1. If the [**`project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) CLI command was run with the `--binding-service-id` option.
 
