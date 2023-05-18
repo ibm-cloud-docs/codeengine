@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-05-18"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -60,11 +60,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for May 2023.
 
-    * [17 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1723)
+    * [18 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1823)
 
         * Added troubleshooting information for job runs not starting
 
-        * Added troubleshooting information for viewing details of service binding operations
+        * Added troubleshooting information for unavailable details of service binding operations
 
     * [16 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1623)
 
