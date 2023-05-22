@@ -35,7 +35,7 @@ Review the capabilities that {{site.data.keyword.codeengineshort}} provides to r
 | Autoscales - even to zero | {{site.data.keyword.codeengineshort}} automatically scales your workloads up and down, and even down to zero when no requests are active. You pay for only the resources that you consume. |
 | Control access | Assign platform and services access permissions to your projects in IBM Cloud Identity and Access Management to control who can provision and manage resources in your IBM Cloud account. |
 | Based on open source | {{site.data.keyword.codeengineshort}} is built on a set of open source technologies such as Kubernetes, Knative, Istio, and Tekton, keeping your apps and jobs portable. |
-| DDOS protection | {{site.data.keyword.codeengineshort}} provides out-of-the-box DDOS protection for your application. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you.  ] |
+| DDOS protection | {{site.data.keyword.codeengineshort}} provides out-of-the-box DDOS protection for your application. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you.   |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} benefits" caption-side="bottom"}
 
 
