@@ -38,7 +38,7 @@ Try the following solutions to resolve your problem.
 1. {{site.data.keyword.codeengineshort}} apps are designed to run without exiting. If your app code includes an exit, then consider [running your code as a job](/docs/codeengine?topic=codeengine-job-plan) instead.
 
 2. Check for messages that might help you determine the cause. If you set up logging for {{site.data.keyword.codeengineshort}}, your log files might contain messages. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
-    Your app must follow [12-factor app methodology](https://12factor.net/){: external}. For example,if the underlying structure of {{site.data.keyword.codeengineshort}} requires an update, an instance of your app is created on the updated infrastructure. When your new app instances is marked as `Ready`, {{site.data.keyword.codeengineshort}} begins to route traffic to it. Your old app then receives a `SIGTERM` message, allowing time for it to shutdown gracefully. If it does not shut down, then {{site.data.keyword.codeengineshort}} sends a `SIGKILL` message and your old app instance is destroyed, which can cause data to be lost.
+
   
 3. Re-create the image in {{site.data.keyword.registryshort_notm}} and then deploy another instance of your app. Then, check your [image retention policy](/docs/Registry?topic=Registry-registry_retention) in {{site.data.keyword.registryshort_notm}} so that images that are used by active revisions are not deleted. If you are using toolchain templates for {{site.data.keyword.codeengineshort}}, you can also add logic to your pipeline definition to delete unused versions of your image only after a working version is deployed.
 
