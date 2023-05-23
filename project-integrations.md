@@ -28,7 +28,7 @@ When you set project-wide settings with the Integrations page, {{site.data.keywo
 
 * If you want to configure settings for service binding operations, see [Configuring service binding operations](#projectintegration-sb).
 
-* If you want to configure settings to control {{site.data.keyword.codeengineshort}} managed registry access to {{site.data.keyword.registrylong_notm}}, see [Configuring project-side access to {{site.data.keyword.registryshort_notm}}](#projectintegration-cr).
+* If you want to configure settings to control {{site.data.keyword.codeengineshort}} managed registry access to {{site.data.keyword.registrylong_notm}}, see [Configuring project-wide access to {{site.data.keyword.registryshort_notm}}](#projectintegration-cr).
 
 
 ## Configuring project-wide service binding operations
