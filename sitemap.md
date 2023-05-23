@@ -2256,6 +2256,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb)
 
+* [Does my app need to follow any specifications?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#12factor)
+
 * [What types of workloads are available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#workloads)
 
     * [Determining the type of workloads that you want](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#determine-type)
