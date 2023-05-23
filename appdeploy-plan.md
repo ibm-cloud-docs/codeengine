@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-05-23"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -23,6 +23,7 @@ Before you begin
 * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
 * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 * Plan and choose your approach for making your code run as a {{site.data.keyword.codeengineshort}} application component.
+* Ensure that your app follows the [12-factor app methodology](https://12factor.net/){: external}.
 
 For security features provided with {{site.data.keyword.codeengineshort}}, see [{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure).
 
