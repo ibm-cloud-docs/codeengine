@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-23"
 
 keywords: project, projects in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine, binding in code engine, service binding in code engine, project settings, project integrations, configuring project-wide settings, service binding operations, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, operator secret, ibmcloud-operator-secret, service bind, access, bind, bound, registries, container registry, image registry, apikey, API key, images, registry access, registry secret, service id, registry secret, registry access 
 
@@ -77,6 +77,7 @@ The *operator secret* or `ibmcloud-operator-secret` is a {{site.data.keyword.cod
 
 When service binding operations are configured, the *service ID* and *operator secret* apply to your specific project. 
 
+
 You can configure service binding operations and let {{site.data.keyword.codeengineshort}} [automatically generate the service ID](#projectintegration-sb-auto) or you can [configure service bindings with your own custom service ID](#projectintegration-sb-customserviceid).
 
 
@@ -85,6 +86,7 @@ You can configure service binding operations and let {{site.data.keyword.codeeng
 
 You can configure service binding operations so that all users in the project can create and manage service bindings to {{site.data.keyword.cloud_notm}} services in the selected resource group from the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc} 
+
 
 1. Go to the Integrations page. 
     1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -96,6 +98,8 @@ You can configure service binding operations so that all users in the project ca
 6. (optional) Click **View details** to view details of the service binding operations configuration. From this page, you can view information about the service ID, API key, and operator secret that is used for service binding operations. 
 
 Now that you configured service binding operations for the specified resource group, every user with writer or manager access to this {{site.data.keyword.codeengineshort}} project can create and delete service bindings. See [Working with service bindings to integrate {{site.data.keyword.cloud_notm}} services with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-service-binding).  
+
+
 
 ### Configuring service binding operations with a custom service ID
 {: #projectintegration-sb-customserviceid}
@@ -197,6 +201,7 @@ You can configure registry access such that all users in the project can access 
 6. (optional) For more details, click the **Actions** icon ![Actions](../icons/action-menu-icon.svg "Actions") > **View details**. You can view information about the service ID and the access policies that are assigned to this service ID, the API key that {{site.data.keyword.codeengineshort}} automatically generates for the service ID, and the registry secret that is configured for accessing {{site.data.keyword.registryshort_notm}}.
 
 Now that you configured default registry access for a specific location to {{site.data.keyword.registryshort_notm}}, every user with writer or manager access to this {{site.data.keyword.codeengineshort}} project can use this registry access secret with their apps, jobs, and builds to access images in {{site.data.keyword.registryshort_notm}}. 
+
 
 
 ### Removing {{site.data.keyword.codeengineshort}} managed access to {{site.data.keyword.registryshort_notm}}
