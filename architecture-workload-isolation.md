@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2023
+lastupdated: "2023-05-23"
 
 keywords: code engine, architecture, workload isolation, isolation, workload
 
@@ -67,6 +67,6 @@ The shards are running the customer workload, such as builds, batch jobs, or app
     - Network policies to control the network flows within the environment.  
 - Shared multi-tenant components are secured, for example, by disabling reverse lookup in `KubeDNS`.
 - To limit the blast radius, each shard cluster is running in its own VPC, which is isolated from other shard VPCs.
-- DDOS protection is enabled automatically for all endpoints, including customer applications, through {{site.data.keyword.cis_short}} with no additional cost to you.
+- DDoS protection is enabled automatically for all endpoints, including customer applications, through {{site.data.keyword.cis_short}} with no additional cost to you.  
 
 
