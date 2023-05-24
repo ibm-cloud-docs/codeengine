@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why did my app stop running?  
+# Why did my app stop running? 
 {: #ts-app-end}
 {: troubleshoot}
 
