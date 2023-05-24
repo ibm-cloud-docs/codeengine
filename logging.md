@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-05-24"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -51,7 +51,7 @@ When you use logging with the CLI, you do not need to configure {{site.data.keyw
 Yes! While {{site.data.keyword.codeengineshort}} automatically sets log filters in {{site.data.keyword.la_short}}, you can modify and scope the preset filter to display log data at a specific level or a more granular level of a specific application, job run, or build run from the {{site.data.keyword.la_full_notm}} page.
 
 * If `_platform` is set to `'Code Engine'`, then only {{site.data.keyword.codeengineshort}} logs are displayed.
-* If `label.Project:'<project_name>` is set, then only logs from a specific project are displayed.
+* If `label.Project:'<project_name>'` is set, then only logs from a specific project are displayed.
 * If `app:'<your_component_name>'` is set, then only logs from the specified application, job run, or build run are displayed. For example, the filter `_platform:'{{site.data.keyword.codeengineshort}}' app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:'Code Engine' app:myjob` scopes the log data to the job level. If your {{site.data.keyword.codeengineshort}} components share the same name, the filter includes logs from these components.
 
 
