@@ -3418,6 +3418,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [I need more memory! Can I increase my limits?](/docs/codeengine?topic=codeengine-faqs#increase-ce-limits)
 
+* [Do I need a Docker Hub account to use {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerhub-options)
+
 * [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
 
 * [Why do images that are built by using a {{site.data.keyword.codeengineshort}} buildpacks build show up in my container registry as being more than 15,000 days old?](/docs/codeengine?topic=codeengine-faqs#buildpacksbld-image-size)
