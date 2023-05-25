@@ -64,6 +64,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated versions for buildpacks
 
+        * Updated information about DDoS protection in {{site.data.keyword.codeengineshort}}
+
         * Added troubleshooting information for app connectivity
 
     * [18 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1823)

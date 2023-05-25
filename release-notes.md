@@ -33,6 +33,9 @@ Review the release notes for May 2023.
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
+Updated information about DDoS protection in {{site.data.keyword.codeengineshort}}
+:   - See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos).
+
 Added troubleshooting information for app connectivity
 :   - See [Why does my app connection fail](/docs/codeengine?topic=codeengine-ts-app-connection-fail)?
 

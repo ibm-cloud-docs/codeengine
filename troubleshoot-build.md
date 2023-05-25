@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-05-25"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -53,6 +53,8 @@ You can display logs for specific build run instances from the console.
 4. Click the name of your build to open the build page for a defined build, or [create a build](/docs/codeengine?topic=codeengine-build-image#build-create-console).
 5. From the build page for your defined build, click the name of the instance of your build run in the **Build runs** section. You might need to click **Submit build** to create a build run.  
 6. From the build run instance page, you can view the build log information. Expand the specific build steps for detailed logging information.
+
+For more information, see [viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui).
 
 ### Getting logs for my builds with the CLI
 {: #ts-build-gettinglogs-cli}
