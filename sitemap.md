@@ -3499,6 +3499,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-app#ts-allowlist-app)
 
+[Why does my app connection fail?](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-connection-fail)
+
+* [Updating your app timeout value from the console](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-timeout-console)
+
+* [Updating your app timeout value with the CLI](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-timeout-cli)
+
 
 ### Troubleshooting builds
 {: #sitemap_troubleshooting_builds}
