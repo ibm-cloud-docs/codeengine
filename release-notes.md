@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-24"
+lastupdated: "2023-05-25"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -32,6 +32,9 @@ Review the release notes for May 2023.
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
+Added troubleshooting information for app connectivity
+:   - See [Why does my app connection fail](/docs/codeengine?topic=codeengine-ts-app-connection-fail)?
 
 
 ### 18 May 2023

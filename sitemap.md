@@ -64,6 +64,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated versions for buildpacks
 
+        * Added troubleshooting information for app connectivity
+
     * [18 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1823)
 
         * Added troubleshooting information for job runs not starting
