@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-05-25"
 
 keywords: code engine security, security, security features for code engine, code engine security features, code engine iam
 
@@ -15,8 +15,9 @@ subcollection: codeengine
 # {{site.data.keyword.codeengineshort}} and security
 {: #secure}
 
-The [{{site.data.keyword.codeenginefull}} architecture](/docs/codeengine?topic=codeengine-architecture) is built with a security-first mindset. {{site.data.keyword.codeengineshort}} components are [managed and owned by IBM](/docs/codeengine?topic=codeengine-responsibilities-ce). Customers and their workloads are isolated from each other by using projects, which are based on Kubernetes namespaces. Role-based access controls are performed on a resource level to allow only authorized users to perform certain operations on project resources. User access is controlled by {{site.data.keyword.iamshort}} (IAM). Deployed apps are exposed through `HTTPS` and {{site.data.keyword.codeengineshort}} creates and manages the underlying TLS certifications automatically for you. {{site.data.keyword.codeengineshort}} provides out-of-the-box DDOS protection for your application. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you.
+The [{{site.data.keyword.codeenginefull}} architecture](/docs/codeengine?topic=codeengine-architecture) is built with a security-first mindset. {{site.data.keyword.codeengineshort}} components are [managed and owned by IBM](/docs/codeengine?topic=codeengine-responsibilities-ce). Customers and their workloads are isolated from each other by using projects, which are based on Kubernetes namespaces. Role-based access controls are performed on a resource level to allow only authorized users to perform certain operations on project resources. User access is controlled by {{site.data.keyword.iamshort}} (IAM). Deployed apps are exposed through `HTTPS` and {{site.data.keyword.codeengineshort}} creates and manages the underlying TLS certifications automatically for you. {{site.data.keyword.codeengineshort}} provides out-of-the-box DDoS protection for your application. {{site.data.keyword.codeengineshort}}'s [DDoS protection](#secure-ddos) is provided by {{site.data.keyword.cis_short}} at no additional cost to you.
 {: shortdesc}
+
 
 {{site.data.keyword.codeengineshort}} jobs cannot be accessed externally by definition. Jobs can still make external requests, though, and they can call {{site.data.keyword.codeengineshort}} applications internally. For an example of a job that calls an application internally, see the [Samples for {{site.data.keyword.codeengineshort}} GitHub repository](https://github.com/IBM/CodeEngine){: external}.
 {: note}
@@ -46,5 +47,26 @@ The {{site.data.keyword.codeengineshort}} API and application endpoints support 
 - `ECDHE-RSA-AES256-GCM-SHA384`
 - `ECDHE-ECDSA-CHACHA20-POLY1305`
 - `ECDHE-RSA-CHACHA20-POLY1305`
+
+## DDoS protection 
+{: #secure-ddos}
+
+{{site.data.keyword.codeengineshort}} provides out-of-the-box DDoS protection for your application. {{site.data.keyword.codeengineshort}}'s DDoS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you.
+
+DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. 
+
+To address Layer 7 attacks, you can take the following steps so that your traffic runs through a secure route using your custom domain and is no longer available to the public internet through the {{site.data.keyword.codeengineshort}} provided domain.
+
+1. Obtain your custom domain.
+2. In {{site.data.keyword.codeengineshort}}, [create a custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings) for your app.
+3. Set up an instance of [{{site.data.keyword.cis_short}}](https://cloud.ibm.com/catalog/services/internet-services){: external} to manage your custom domain.
+4. [Add the custom domain to the {{site.data.keyword.cis_short_notm}} instance](/docs/cis?topic=cis-multi-domain-support).
+5. [Configure a global load balancer](/docs/cis?topic=cis-configure-glb) in {{site.data.keyword.cis_short_notm}}.
+6. [Enable the HTTP proxy mode for the load balancer](/docs/cis?topic=cis-proxy-modes) in {{site.data.keyword.cis_short_notm}}. This activates DDoS protection on Layer 7 and other {{site.data.keyword.cis_short_notm}} security features.
+7. In {{site.data.keyword.codeengineshort}}, turn off the public system provided domain mappings of your application. Go to your application, from the **Domain mapping** tab for your app, select **No external system domain mapping**.
+8. Click **Create** to save the application revision. 
+
+For more information about DDoS in {{site.data.keyword.cis_short_notm}}, see [Dealing with Distributed Denial of Service attacks in {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts). For more ways to address Layer 7 attacks, see [Mitigating Layer 7 attacks in {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis#cis-mitigate-layer7-attacks). 
+
 
 

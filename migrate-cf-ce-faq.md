@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-05-23"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -63,6 +63,11 @@ These steps use the console.
 4. In your {{site.data.keyword.cis_short}} instance, navigate to **Reliability. > Global load balancers > Origin pools** and edit the existing origin pools by changing the Origin address to the `CNAME` that you recorded earlier.
 
 Your global load balancer is now pointing to your {{site.data.keyword.codeengineshort}} app.
+
+## Does my app need to follow any specifications?
+{: #12factor}
+
+Your app must follow the [12-factor app methodology](https://12factor.net/){: external}. 
 
 ## What types of workloads are available with {{site.data.keyword.codeengineshort}}?
 {: #workloads}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-02"
+lastupdated: "2023-05-23"
 
 keywords: troubleshooting for code engine service bindings, service bindings, binding, service credentials, secrets
 
@@ -32,6 +32,10 @@ Be sure to also consider limits for the specific service instance that you are b
 {: important}
 
 For more information about service bindings, see [Working with service bindings to integrate {{site.data.keyword.cloud_notm}} services with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-service-binding).
+
+
+
+
 
 ## Listing service bindings  
 {: #ts-sb-listing}

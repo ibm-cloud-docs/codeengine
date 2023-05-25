@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-18"
+lastupdated: "2023-05-25"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -59,6 +59,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may23)
 
     * Review the release notes for May 2023.
+
+    * [25 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may2523)
+
+        * Updated versions for buildpacks
+
+        * Updated information about DDoS protection in {{site.data.keyword.codeengineshort}}
+
+        * Added troubleshooting information for app connectivity
+
+        * Updated information about applying filters on {{site.data.keyword.la_short}} data
 
     * [18 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1823)
 
@@ -2256,6 +2266,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb)
 
+* [Does my app need to follow any specifications?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#12factor)
+
 * [What types of workloads are available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#workloads)
 
     * [Determining the type of workloads that you want](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#determine-type)
@@ -2917,6 +2929,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [TLS cipher suites](/docs/codeengine?topic=codeengine-secure#secure-cipher-suites)
 
+* [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos)
+
 [Protecting {{site.data.keyword.codeengineshort}} resources with context-based restrictions](/docs/codeengine?topic=codeengine-cbr#cbr)
 
 [{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses#network-addresses)
@@ -3416,6 +3430,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [I need more memory! Can I increase my limits?](/docs/codeengine?topic=codeengine-faqs#increase-ce-limits)
 
+* [Do I need a Docker Hub account to use {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerhub-options)
+
 * [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
 
 * [Why do images that are built by using a {{site.data.keyword.codeengineshort}} buildpacks build show up in my container registry as being more than 15,000 days old?](/docs/codeengine?topic=codeengine-faqs#buildpacksbld-image-size)
@@ -3488,6 +3504,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why isn't my custom domain mapping ready?](/docs/codeengine?topic=codeengine-ts-app-domain-notready#ts-app-domain-notready)
 
 [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-app#ts-allowlist-app)
+
+[Why does my app connection fail?](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-connection-fail)
+
+* [Updating your app timeout value from the console](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-timeout-console)
+
+* [Updating your app timeout value with the CLI](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-timeout-cli)
 
 
 ### Troubleshooting builds

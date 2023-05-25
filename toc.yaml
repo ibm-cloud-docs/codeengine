@@ -219,6 +219,7 @@ toc:
               - ts-app-ended.md
               - ts-app-domain-notready.md
               - ts-allowlist-app.md
+              - ts-app-connection-fail.md
 
           - topicgroup:
               label: Troubleshooting builds 
