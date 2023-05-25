@@ -48,10 +48,10 @@ Updated information about applying filters on {{site.data.keyword.la_short}} dat
 {: release-note}
 
 Added troubleshooting information for job runs not starting
-:   - See [Why is my job run not starting?](/docs/codeengine?topic=codeengine-ts-jobrun-notstart)
+:   See [Why is my job run not starting?](/docs/codeengine?topic=codeengine-ts-jobrun-notstart)
 
 Added troubleshooting information for unavailable details of service binding operations
-:   - See [Why can't I display details of my configured service binding operations?](/docs/codeengine?topic=codeengine-ts-sb-projsettings-nodetails)
+:   See [Why can't I display details of my configured service binding operations?](/docs/codeengine?topic=codeengine-ts-sb-projsettings-nodetails)
 
 ### 16 May 2023
 {: #codeengine-may1623}
@@ -76,8 +76,6 @@ Terraform support for {{site.data.keyword.codeengineshort}} is generally availab
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
-
-
 
 ## April 2023
 {: #codeengine-apr23}
