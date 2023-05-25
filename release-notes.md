@@ -34,10 +34,13 @@ Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 Updated information about DDoS protection in {{site.data.keyword.codeengineshort}}
-:   - See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos).
+:   See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos).
 
 Added troubleshooting information for app connectivity
-:   - See [Why does my app connection fail](/docs/codeengine?topic=codeengine-ts-app-connection-fail)?
+:   See [Why does my app connection fail](/docs/codeengine?topic=codeengine-ts-app-connection-fail)?
+
+Updated information about applying filters on {{site.data.keyword.la_short}} data
+:   See [Can I apply filters on {{site.data.keyword.la_short}} data? ](/docs/codeengine?topic=codeengine-view-logs#view-logs-filters)
 
 
 ### 18 May 2023

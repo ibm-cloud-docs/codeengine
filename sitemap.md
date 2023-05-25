@@ -68,6 +68,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added troubleshooting information for app connectivity
 
+        * Updated information about applying filters on {{site.data.keyword.la_short}} data
+
     * [18 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1823)
 
         * Added troubleshooting information for job runs not starting
