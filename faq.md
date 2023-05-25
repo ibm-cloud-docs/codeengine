@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-24"
+lastupdated: "2023-05-25"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -65,8 +65,6 @@ Yes, you can increase your {{site.data.keyword.codeengineshort}} [limits](/docs/
 {: support}
 
 {{site.data.keyword.codeengineshort}} does not require a Docker Hub account. Although {{site.data.keyword.codeengineshort}} does run containers, you do not need to understand container technology to deploy workloads on {{site.data.keyword.codeengineshort}}. You can start with source code and {{site.data.keyword.codeengineshort}} builds the container image for you and stores it in an {{site.data.keyword.registrylong_notm}} namespace that is owned by your account. Although {{site.data.keyword.registrylong_notm}} is used as the default container registry, {{site.data.keyword.codeengineshort}} can push and pull images from any other public and private registry that is accessible from {{site.data.keyword.cloud_notm}}.
-
-To dive deeper into the concepts of Code Engine, start exploring our [documentation](/docs/codeengine?topic=codeengine-getting-started) and [tutorials library](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}, which contains examples to demonstrate {{site.data.keyword.codeengineshort}} capabilities. 
 
 ## What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}? 
 {: #dockerbld-cebuild}
