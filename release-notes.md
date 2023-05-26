@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-05-26"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -40,7 +40,7 @@ Added troubleshooting information for app connectivity
 :   See [Why does my app connection fail](/docs/codeengine?topic=codeengine-ts-app-connection-fail)?
 
 Updated information about applying filters on {{site.data.keyword.la_short}} data
-:   See [Can I apply filters on {{site.data.keyword.la_short}} data? ](/docs/codeengine?topic=codeengine-view-logs#view-logs-filters)
+:   See [Can I apply filters on {{site.data.keyword.la_short}} data?](/docs/codeengine?topic=codeengine-view-logs#view-logs-filters)
 
 
 ### 18 May 2023
