@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-05-26"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3629,6 +3629,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Debugging service bindings](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings#troubleshoot-servicebindings)
 
 * [Limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings#ts-sb-limits)
+
+* [Configuring service binding operations](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings#ts-sb-operations)
 
 * [Listing service bindings](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings#ts-sb-listing)
 
