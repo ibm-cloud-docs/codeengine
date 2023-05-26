@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-05-26"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables, registry secret, registry access secret
 
@@ -24,6 +24,9 @@ Before you begin
 
 - Verify that you can access the registry. See [Setting up authorities for container registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
 
+
+Interested in configuring your project such that all users of the project can store and access images in {{site.data.keyword.registryshort}} without having to manually create registry secrets? With sufficient permissions, you can configure this default registry access on a per location (region) basis. If you don't have sufficient permissions to perform these actions, you can use this page to help you understand the required permissions. See [Configuring project-wide settings](/docs/codeengine?topic=codeengine-project-integrations). 
+{: note}
 
 
 ## Creating a job that references an image in {{site.data.keyword.registryshort}} with the console
