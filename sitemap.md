@@ -60,7 +60,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for May 2023.
 
-    * [30 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may2523)
+    * [30 May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may3023)
 
         * Added support to get status details for a project in the {{site.data.keyword.codeengineshort}} V2 API
 

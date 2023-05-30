@@ -27,13 +27,11 @@ Review the release notes for May 2023.
 {: shortdesc}
 
 ### 30 May 2023
-{: #codeengine-may2523}
+{: #codeengine-may3023}
 {: release-note}
 
 Added support to get status details for a project in the {{site.data.keyword.codeengineshort}} V2 API
 :   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
-
-
 
 ### 25 May 2023
 {: #codeengine-may2523}
