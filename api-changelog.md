@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-05-30"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -36,6 +36,13 @@ The following table shows the service behavior changes for each version date. Sw
 |`2021-Mar-31`| Version 1.0.0  |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
 
+
+
+## 30 May 2023
+{: #30-may-2023}
+
+Added support to get status details for a project.
+:   - See [Get the status details for a project API](https://cloud.ibm.com/apidocs/codeengine/v2#get-project-status-details){: external}.
 
 
 ## 27 Mar 2023

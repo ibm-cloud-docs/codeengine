@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-05-30"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,6 +26,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for May 2023.
 {: shortdesc}
 
+### 30 May 2023
+{: #codeengine-may3023}
+{: release-note}
+
+Added support to get status details for a project in the {{site.data.keyword.codeengineshort}} V2 API
+:   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
+
 ### 25 May 2023
 {: #codeengine-may2523}
 {: release-note}
@@ -40,7 +47,7 @@ Added troubleshooting information for app connectivity
 :   See [Why does my app connection fail](/docs/codeengine?topic=codeengine-ts-app-connection-fail)?
 
 Updated information about applying filters on {{site.data.keyword.la_short}} data
-:   See [Can I apply filters on {{site.data.keyword.la_short}} data? ](/docs/codeengine?topic=codeengine-view-logs#view-logs-filters)
+:   See [Can I apply filters on {{site.data.keyword.la_short}} data?](/docs/codeengine?topic=codeengine-view-logs#view-logs-filters)
 
 
 ### 18 May 2023
