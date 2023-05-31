@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-05-31"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -46,7 +46,7 @@ After your app is deployed, you can also [update your deployed app](/docs/codeen
 When you deploy your application, the latest version of your referenced container image is downloaded and deployed, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the deployment.
 
 
-The image that is associated with your specific application revision has a unique container registry digest, and {{site.data.keyword.codeengineshort}} uses this digest for the life of your application revision. If you create a newer version of an image with the same tag as the original image, the original image is overwritten in the container registry and becomes untagged. The newer image is tagged, and this newer image has a different digest. Your {{site.data.keyword.codeengineshort}} application does not use this newer image, because the newer image has a different digest than the  image that is referenced by the application revision. {{site.data.keyword.codeengineshort}} can still create new instances of the application revision as long as the untagged image, which was referenced originally, still exists. For more information, see [Why can't {{site.data.keyword.codeengineshort}} pull an image?](/docs/codeengine?topic=codeengine-image-cannot-pull) 
+The image that is associated with your specific application revision has a unique container registry digest, and {{site.data.keyword.codeengineshort}} uses this digest for the life of your application revision. If you create a newer version of an image with the same tag as the original image, the original image is overwritten in the container registry and becomes untagged. The newer image is tagged, and this newer image has a different digest. Your {{site.data.keyword.codeengineshort}} application does not use this newer image, because the newer image has a different digest than the  image that is referenced by the application revision. {{site.data.keyword.codeengineshort}} can still create new instances of the application revision as long as the untagged image, which was referenced originally, still exists. For more information, see [Why can't {{site.data.keyword.codeengineshort}} pull an image?](/docs/codeengine?topic=codeengine-image-cannot-pull)
 {: important}
 
 
