@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-05-31"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -458,9 +458,15 @@ In this scenario, update the application that you created in [Deploying an appli
 
 4. Set up your VPE to [access your app with a private endpoint](/docs/codeengine?topic=codeengine-vpe#using-vpes-app).
 
+## Updating an app to reference a different image
+{: #update-app-diff-image}
 
+You can update your app to reference a different image.
 
-## Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console
+The image that is associated with your specific application revision has a unique container registry digest, and {{site.data.keyword.codeengineshort}} uses this digest for the life of your application revision. If you create a newer version of an image with the same tag as the original image, the original image is overwritten in the container registry and becomes untagged. The newer image is tagged, and this newer image has a different digest. Your {{site.data.keyword.codeengineshort}} application does not use this newer image, because the newer image has a different digest than the  image that is referenced by the application revision. {{site.data.keyword.codeengineshort}} can still create new instances of the application revision as long as the untagged image, which was referenced originally, still exists. For more information, see [Why can't {{site.data.keyword.codeengineshort}} pull an image?](/docs/codeengine?topic=codeengine-image-cannot-pull)
+{: important}
+
+### Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console
 {: #update-app-crimage-console}
 
 Update an application to reference a different image in a container registry by using the {{site.data.keyword.codeengineshort}} console.
@@ -487,7 +493,7 @@ For more information about adding an image to {{site.data.keyword.registryshort_
 6. Click **Save and create** to save your change and deploy the app revision.
 7. After the application status changes to **Ready**, you can test the app revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. For this app, `Hello World from {{site.data.keyword.codeengineshort}}` is displayed.
 
-## Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI
+### Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI
 {: #update-app-crimage-cli}
 
 Update an application to reference a different image in {{site.data.keyword.registryshort}} from the {{site.data.keyword.codeengineshort}} CLI.
@@ -511,7 +517,7 @@ For this example, update the `myhelloapp` that you created in [Deploying an appl
 
 4. After your app is updated, you can access the app. To obtain the URL of your app, run `ibmcloud ce app get --name myhelloapp --output url`. When you curl the `myhelloapp` app, the app returns `Hello World from {{site.data.keyword.codeengineshort}}`, which demonstrates the app is now using the `helloworld_repo` image. 
 
-## Updating an app to reference an image that is built from source code from the console
+### Updating an app to reference an image that is built from source code from the console
 {: #update-app-source-console}
 
 Update an application to reference an image that is built from source code by using the {{site.data.keyword.codeengineshort}} console.
@@ -535,7 +541,7 @@ For more information about creating a build configuration from the console, see 
 9. Click **Save and create** to save your changes, run the build with your changes, and deploy the app revision.
 10. After the application status changes to **Ready**, you can test the app revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.
 
-## Updating an app to reference an image that is built from source code with the CLI
+### Updating an app to reference an image that is built from source code with the CLI
 {: #update-app-source-cli}
 
 Update an application to reference an image that is built from source code by using the {{site.data.keyword.codeengineshort}} CLI.

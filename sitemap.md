@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-30"
+lastupdated: "2023-05-31"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1951,13 +1951,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Updating your app to use private endpoints with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-cli-privateendpt)
 
-* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-console)
+* [Updating an app to reference a different image](/docs/codeengine?topic=codeengine-update-app#update-app-diff-image)
 
-* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-cli)
+    * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-console)
 
-* [Updating an app to reference an image that is built from source code from the console](/docs/codeengine?topic=codeengine-update-app#update-app-source-console)
+    * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-cli)
 
-* [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
+    * [Updating an app to reference an image that is built from source code from the console](/docs/codeengine?topic=codeengine-update-app#update-app-source-console)
+
+    * [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
 
 [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings)
 
