@@ -2266,6 +2266,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [My app contains a specific route, Can I use the same route?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#sameroute)
 
+* [Can I stop my app?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_stop)
+
 * [Why are my apps slow to respond?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_response)
 
 * [Can I route requests to a specific application instance?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#specific-app-instance)
@@ -2313,7 +2315,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Determining concurrency of your application container](/docs/codeengine?topic=codeengine-app-scale#app-determine-concurrency)
 
-* [Scaling your application with the CLI](/docs/codeengine?topic=codeengine-app-scale#scale-app-cli)
+* [Observing how your app scales with the CLI](/docs/codeengine?topic=codeengine-app-scale#scale-app-cli)
+
+* [Setting the number of minimum and maximum instances for your app](/docs/codeengine?topic=codeengine-app-scale#scale-app-min-max)
+
+    * [Changing the number of running instances from the console](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-ui)
+
+    * [Changing the number of running instances with the CLI](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-cli)
 
 
 ## Binding Code Engine resources to IBM Cloud services
@@ -3518,6 +3526,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating your app timeout value from the console](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-timeout-console)
 
 * [Updating your app timeout value with the CLI](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-timeout-cli)
+
+[Can I stop my app?](/docs/codeengine?topic=codeengine-ts-app-stop-traffic#ts-app-stop-traffic)
 
 
 ### Troubleshooting builds

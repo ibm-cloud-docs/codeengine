@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-05-31"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -26,6 +26,11 @@ Yes! You can map your own custom URL to a {{site.data.keyword.codeengineshort}} 
 {: #sameroute}
 
 You can use the same custom route or domain as long as you control it. If the route is from another source, for example, an IBM-provided route such as  `mybluemix.net`, then you must use the domain that is provided by {{site.data.keyword.codeengineshort}} or else map a new custom domain to your app.
+
+## Can I stop my app?
+{: #app_stop}
+
+You cannot stop your app directly, but you can prevent your app from receiving traffic by setting its visibility to `project` and allowing it to scale to 0. For more information, see [How can I stop my app from receiving traffic](/docs/codeengine?topic=codeengine-ts-app-stop-traffic)?
 
 ## Why are my apps slow to respond?
 {: #app_response}

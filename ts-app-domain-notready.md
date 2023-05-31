@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-11"
+lastupdated: "2023-05-31"
 
 keywords: troubleshooting for code engine, troubleshooting domain mapping in code engine, tips for custom domain mapping in code engine, debugging custom domain mapping in code engine, custom domain mapping and code engine
 
@@ -31,7 +31,7 @@ This state can have multiple reasons.
 To resolve this issue, verify that your custom domain mapping is unique in the region. 
 {: tsResolve}
 
-If you use a wildcard certificate or your certificate lists multiple domain names, create a single TLS secret and then reuse this secret when you create your domain mappings. Note that the applications that use this TLS secret must be in the same project. To use your domain mappings across projects that are in the same region, create separate certificates.
+If you use a wildcard certificate or your certificate lists multiple domain names, create a single TLS secret and then reuse this secret when you create your domain mappings. Note that the applications that use this TLS secret must be in the same project. To use your domain mappings across projects that are in the same region, create separate certificates. To use the same wildcard certificate across staging environments (for example, `DEV`, `TEST`, `PROD`), consider distributing the project for each of these environments across different {{site.data.keyword.codeengineshort}} regions. For example, create the project for `DEV` in `eu-de`, the project for `TEST` in `eu-gb` and the project for `PROD` in `au-syd`. Each of these projects can use the same wildcard certificate by creating a separate secret in each project.
   
 
 

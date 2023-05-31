@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-15"
+lastupdated: "2023-05-31"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -95,13 +95,12 @@ To determine the container concurrency configuration for your application, exami
 6. Experiment with the application by increasing the container concurrency value and observing the success rate and latency.
 7. Update your application with the optimal container concurrency value and remove the `min-Scale` and `max-scale` boundaries to allow the application to scale automatically.
 
-## Scaling your application with the CLI
+## Observing how your app scales with the CLI
 {: #scale-app-cli}
 
-You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options by using the **`application create`** or **`application update`** command.
+You can observe the number of running instances of your app with the CLI.
 {: shortdesc} 
 
-To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI,
 
 1. Create an application with the **`app create`** command.
 
@@ -296,4 +295,34 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     ```
     {: screen}
 
+## Setting the number of minimum and maximum instances for your app
+{: #scale-app-min-max}
+
+You can change the number of running instances of your app by updating the minimum and maximum value for the number of app instances.
+{: shortdesc}
+
+The default value for the minimum number of instances for your application is `0`. If your app does not receive any traffic, it scales to `0` and no instances of your app are running. In this situation, your application can be slower to respond when it receives traffic again, while it scales back up. You can change this behavior by updating your application and setting the minimum scale to `1` either in the console or from the CLI.
+
+The default value for the maximum number of instances for your app is `0`, which allows your app to scale as needed. For more information, see [Scaling boundaries](#app-scale-boundaries).
+
+### Changing the number of running instances from the console
+{: #set-app-instances-ui}
+
+To change the minimum or maximum number of instances for an app from the console, follow these steps.
+
+1. Navigate to your app.
+2. Select **Configuration**
+3. Click **Edit and create new revision**.
+4. Select **Runtime**.
+5. Set the number for minimum and maximum instances for your app.
+6. Click **Save and Create**.
+
+Your app creates a new revision and routes traffic to that instance.
+
+### Changing the number of running instances with the CLI
+{: #set-app-instances-cli}
+
+To change the minimum or maximum number of instances for an app with the CLI, run the [**`application update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command with the `--min-scale` and `--max-scale` options set to the number of instances that you want for your app. For more information about setting these values, see [Scaling boundaries](#app-scale-boundaries).
+
+Your app creates a new revision and routes traffic to that instance.
 
