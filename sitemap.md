@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-30"
+lastupdated: "2023-06-01"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -55,6 +55,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun23)
+
+    * Review the release notes for June 2023.
+
+    * [01 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun0123)
+
+        * Added troubleshooting information about stopping an app from receiving traffic
+
+        * Updated information about working with multi-line log data
 
 * [May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may23)
 
@@ -866,7 +876,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Applications that use WebSockets
 
-        * Updated versions for buildpacks. 
+        * Updated versions for buildpacks.
 
     * [7 July 2021](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul0721)
 
@@ -1951,13 +1961,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Updating your app to use private endpoints with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-cli-privateendpt)
 
-* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-console)
+* [Updating an app to reference a different image](/docs/codeengine?topic=codeengine-update-app#update-app-diff-image)
 
-* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-cli)
+    * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-console)
 
-* [Updating an app to reference an image that is built from source code from the console](/docs/codeengine?topic=codeengine-update-app#update-app-source-console)
+    * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-cli)
 
-* [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
+    * [Updating an app to reference an image that is built from source code from the console](/docs/codeengine?topic=codeengine-update-app#update-app-source-console)
+
+    * [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
 
 [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings)
 
@@ -2264,6 +2276,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [My app contains a specific route, Can I use the same route?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#sameroute)
 
+* [Can I stop my app?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_stop)
+
 * [Why are my apps slow to respond?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_response)
 
 * [Can I route requests to a specific application instance?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#specific-app-instance)
@@ -2311,7 +2325,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Determining concurrency of your application container](/docs/codeengine?topic=codeengine-app-scale#app-determine-concurrency)
 
-* [Scaling your application with the CLI](/docs/codeengine?topic=codeengine-app-scale#scale-app-cli)
+* [Observing how your app scales with the CLI](/docs/codeengine?topic=codeengine-app-scale#scale-app-cli)
+
+* [Setting the number of minimum and maximum instances for your app](/docs/codeengine?topic=codeengine-app-scale#scale-app-min-max)
+
+    * [Changing the number of running instances from the console](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-ui)
+
+    * [Changing the number of running instances with the CLI](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-cli)
 
 
 ## Binding Code Engine resources to IBM Cloud services
@@ -3516,6 +3536,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating your app timeout value from the console](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-timeout-console)
 
 * [Updating your app timeout value with the CLI](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-timeout-cli)
+
+[Can I stop my app?](/docs/codeengine?topic=codeengine-ts-app-stop-traffic#ts-app-stop-traffic)
 
 
 ### Troubleshooting builds
