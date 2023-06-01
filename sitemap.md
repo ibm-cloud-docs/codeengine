@@ -56,6 +56,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun23)
+
+    * Review the release notes for June 2023.
+
+    * [01 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun0123)
+
+        * Added troubleshooting information about stopping an app from receiving traffic
+
+        * Updated information about working with multi-line log data
+
 * [May 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may23)
 
     * Review the release notes for May 2023.
@@ -866,7 +876,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Applications that use WebSockets
 
-        * Updated versions for buildpacks. 
+        * Updated versions for buildpacks.
 
     * [7 July 2021](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul0721)
 

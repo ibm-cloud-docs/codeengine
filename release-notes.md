@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-30"
+lastupdated: "2023-06-01"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,22 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## June 2023
+{: #codeengine-jun23}
+
+Review the release notes for June 2023.
+{: shortdesc}
+
+### 01 June 2023
+{: #codeengine-jun0123}
+{: release-note}
+
+Added troubleshooting information about stopping an app from receiving traffic
+:   See [Can I stop my app](/docs/codeengine?topic=codeengine-ts-app-stop-traffic)?
+
+Updated information about working with multi-line log data
+:   See [Considerations for viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-logs-considerations).
 
 ## May 2023
 {: #codeengine-may23}
@@ -47,7 +63,7 @@ Added troubleshooting information for app connectivity
 :   See [Why does my app connection fail](/docs/codeengine?topic=codeengine-ts-app-connection-fail)?
 
 Updated information about applying filters on {{site.data.keyword.la_short}} data
-:   See [Can I apply filters on {{site.data.keyword.la_short}} data?](/docs/codeengine?topic=codeengine-view-logs#view-logs-filters)
+:   See [Can I apply filters on {{site.data.keyword.la_short}} data](/docs/codeengine?topic=codeengine-view-logs#view-logs-filters)?
 
 
 ### 18 May 2023
@@ -55,10 +71,10 @@ Updated information about applying filters on {{site.data.keyword.la_short}} dat
 {: release-note}
 
 Added troubleshooting information for job runs not starting
-:   See [Why is my job run not starting?](/docs/codeengine?topic=codeengine-ts-jobrun-notstart)
+:   See [Why is my job run not starting](/docs/codeengine?topic=codeengine-ts-jobrun-notstart)?
 
 Added troubleshooting information for unavailable details of service binding operations
-:   See [Why can't I display details of my configured service binding operations?](/docs/codeengine?topic=codeengine-ts-sb-projsettings-nodetails)
+:   See [Why can't I display details of my configured service binding operations](/docs/codeengine?topic=codeengine-ts-sb-projsettings-nodetails)?
 
 ### 16 May 2023
 {: #codeengine-may1623}
@@ -111,11 +127,11 @@ Updated support for TLS secrets
 :   Updated support for creating TLS secrets in the console to also permit the upload of a certificate chain and its private key from a file. See [Creating a TLS secret from the console](/docs/codeengine?topic=codeengine-secret#secret-create-ui-tls).
 
 Added troubleshooting information for creating an allowlist for {{site.data.keyword.codeengineshort}} apps and jobs
-:   - See [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-app)
-:   - See [How can I add my {{site.data.keyword.codeengineshort}} job to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-job)
+:   - See [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist](/docs/codeengine?topic=codeengine-ts-allowlist-app)?
+:   - See [How can I add my {{site.data.keyword.codeengineshort}} job to an allowlist](/docs/codeengine?topic=codeengine-ts-allowlist-job)?
 
 Added troubleshooting information for deploying a Python app
-:   See [Why does my Python app fail to deploy?](/docs/codeengine?topic=codeengine-ts-build-python)
+:   See [Why does my Python app fail to deploy](/docs/codeengine?topic=codeengine-ts-build-python)?
 
 ### 19 April 2023
 {: #codeengine-apr1923}
@@ -139,7 +155,7 @@ CLI version 1.43.3 released
 {: release-note}
 
 Added information about troubleshooting custom domain mappings
-:   See [Why isn't my custom domain mapping ready?](/docs/codeengine?topic=codeengine-ts-app-domain-notready)
+:   See [Why isn't my custom domain mapping ready](/docs/codeengine?topic=codeengine-ts-app-domain-notready)?
 
 CLI version 1.43.1 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
@@ -168,11 +184,11 @@ Review the release notes for March 2023.
 
 Added information about troubleshooting images
 :   - See [Debugging images](/docs/codeengine?topic=codeengine-troubleshoot-images).
-:   - See [Why can't {{site.data.keyword.codeengineshort}} pull an image?](/docs/codeengine?topic=codeengine-image-cannot-pull)
+:   - See [Why can't {{site.data.keyword.codeengineshort}} pull an image](/docs/codeengine?topic=codeengine-image-cannot-pull)?
 
 Added information about troubleshooting toolchains
 :   - See [Debugging your {{site.data.keyword.codeengineshort}} toolchain](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce).
-:   - See [Why does my build run in my toolchain time out?](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain)
+:   - See [Why does my build run in my toolchain time out](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain)?
 
 Updated documentation for API V2.0
 :   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
@@ -221,7 +237,7 @@ Updated support for secrets in the CLI.
 {: release-note}
 
 Added troubleshooting information for why apps stop running 
-:   See [Why did my app stop running?](/docs/codeengine?topic=codeengine-ts-app-end)
+:   See [Why did my app stop running](/docs/codeengine?topic=codeengine-ts-app-end)?
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
@@ -265,10 +281,10 @@ Updated versions for buildpacks
 {: release-note}
 
 New FAQ for Migrating your Cloud Foundry app
-:   Added information about migrating a global load balancer. See [I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb)
+:   Added information about migrating a global load balancer. See [I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb)?
 
 Updated troubleshooting information for apps that don't achieve a ready status
-:   Added information about confirming the port value. See [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-ts-app-neverready)
+:   Added information about confirming the port value. See [Why doesn't my app ever become ready](/docs/codeengine?topic=codeengine-ts-app-neverready)?
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
@@ -281,7 +297,7 @@ CLI version 1.41.1 released
 {: release-note}
 
 Added information about troubleshooting job runs
-:   See [How can I find information about my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore)
+:   See [How can I find information about my job run](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore)?
 
 CLI version 1.41.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
@@ -295,8 +311,8 @@ CLI version 1.41.0 released
 
 Added information about troubleshooting service bindings
 :   - See [Debugging service bindings](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings).
-    - See [Why do the service credentials in my service binding to {{site.data.keyword.cos_full_notm}} show as `REDACTED`?](/docs/codeengine?topic=codeengine-ts-sb-cosredacted)
-    - See [Why does my service binding to a Db2 Enterprise instance fail?](/docs/codeengine?topic=codeengine-ts-sb-db2createfails)
+    - See [Why do the service credentials in my service binding to {{site.data.keyword.cos_full_notm}} show as `REDACTED`](/docs/codeengine?topic=codeengine-ts-sb-cosredacted)?
+    - See [Why does my service binding to a Db2 Enterprise instance fail](/docs/codeengine?topic=codeengine-ts-sb-db2createfails)?
 
 CLI version 1.40.8 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
@@ -732,8 +748,8 @@ CLI version 1.31.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Added new FAQ topics to Migrating Cloud Foundry information
-:   - [Can I use a custom URL with Code Engine?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#customurl)
-    - [Why are my apps slow to respond?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_response)
+:   - [Can I use a custom URL with Code Engine](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#customurl)?
+    - [Why are my apps slow to respond](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_response)?
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
@@ -955,7 +971,7 @@ CLI version 1.25.2 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Added more information for troubleshooting jobs when job runs do not complete 
-:   See [Why is my job not completing?](/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete) 
+:   See [Why is my job not completing(/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete)?
 
 Added information about considerations when you use SSH keys for accessing your source repository
 :   See [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key).
@@ -1311,7 +1327,7 @@ CLI version 1.15.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Troubleshooting subscriptions
-:   Added information about troubleshooting subscriptions when a subscription shows errors when it delivers events. See [Why does my subscription show errors when it delivers events?](/docs/codeengine?topic=codeengine-ts-subscription-deliveryerrors)
+:   Added information about troubleshooting subscriptions when a subscription shows errors when it delivers events. See [Why does my subscription show errors when it delivers events](/docs/codeengine?topic=codeengine-ts-subscription-deliveryerrors)?
 
 Subscriptions for {{site.data.keyword.cos_full_notm}} event producers are not available in the Canada Toronto (`ca-tor`) region.
 :   See [Working with the {{site.data.keyword.cos_short}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).
@@ -1411,9 +1427,9 @@ Subscription ping limits
 :   Added information about limits for subscription ping data. See [Subscription ping limits](/docs/codeengine?topic=codeengine-limits#subscription-cron-limit).
 
 Applications that use WebSockets
-:   Added information about apps that use WebSockets need to reconnect before the session expires. See [Do Code Engine apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
+:   Added information about apps that use WebSockets need to reconnect before the session expires. See [Do Code Engine apps support WebSockets](/docs/codeengine?topic=codeengine-faqs#app-websockets)?
 
-Updated versions for buildpacks. 
+Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 7 July 2021
@@ -1660,7 +1676,7 @@ Review the release notes for 21 April 2021.
 {: shortdesc}
 
 `CloudEvents` specification
-:   Added information about support for `CloudEvents` specification. See [Can I use other CloudEvents specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+:   Added information about support for `CloudEvents` specification. See [Can I use other CloudEvents specifications](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)?
 
 CLI version 1.3.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
