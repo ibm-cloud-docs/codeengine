@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-01"
+lastupdated: "2023-06-08"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -59,6 +59,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun23)
 
     * Review the release notes for June 2023.
+
+    * [08 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun0823)
+
+        * CLI version 1.43.7 released
 
     * [01 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun0123)
 
@@ -2277,6 +2281,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [My app contains a specific route, Can I use the same route?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#sameroute)
 
 * [Can I stop my app?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_stop)
+
+* [Why do I have so many app instances?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_more)
 
 * [Why are my apps slow to respond?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_response)
 

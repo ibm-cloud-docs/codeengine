@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-31"
+lastupdated: "2023-06-08"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -31,6 +31,11 @@ You can use the same custom route or domain as long as you control it. If the ro
 {: #app_stop}
 
 You cannot stop your app directly, but you can prevent your app from receiving traffic by setting its visibility to `project` and allowing it to scale to 0. For more information, see [How can I stop my app from receiving traffic](/docs/codeengine?topic=codeengine-ts-app-stop-traffic)?
+
+## Why do I have so many app instances?
+{: #app_more}
+
+When you update your app, {{site.data.keyword.codeengineshort}} automatically creates a new revision. When the revision is available, traffic is routed to the new instances. While the revision scales up and traffic is transferred to it, the original app instance continues to handle traffic. When the revision is scaled up and all traffic is routed to it, the original app is scaled down. Your app also automatically scales up and down as traffic requires. Check back later to be sure that your app is running the correct number of instances. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
 ## Why are my apps slow to respond?
 {: #app_response}
