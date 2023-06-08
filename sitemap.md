@@ -2282,6 +2282,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Can I stop my app?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_stop)
 
+* [Why do I have so many app instances?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_more)
+
 * [Why are my apps slow to respond?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_response)
 
 * [Can I route requests to a specific application instance?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#specific-app-instance)
