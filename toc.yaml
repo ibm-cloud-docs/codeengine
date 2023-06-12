@@ -11,7 +11,6 @@ toc:
     console-page: /codeengine
     product-page: https://www.ibm.com/cloud/code-engine 
   entries: 
-
   - navgroup: 
       id: learn
       topics:
@@ -21,7 +20,6 @@ toc:
           topics:
           - about.md          
       - release-notes.md   
-
   - navgroup: 
       id: tutorial
       topics:
@@ -54,7 +52,6 @@ toc:
           - subscription-kafka-tutorial.md
           - github-event-tutorial.md
       - migrate-cf-ce-tutorial.md
-      
   - navgroup: 
       id: howto
       topics:
@@ -65,7 +62,6 @@ toc:
           topics:
           - project.md
           - project-integrations.md
-
       - topicgroup:
           label: Deploying applications 
           topics:
@@ -108,21 +104,18 @@ toc:
           - migrate-cf-ce-cmd.md
           - migrate-cf-ce-faq.md
       - app-scale.md
-
       - topicgroup:
           label: Binding Code Engine resources to IBM Cloud services 
           topics:
           - servicebind.md
           - servicebind-access.md
           - servicebind-config.md
-
       - add-registry.md
       - plan-repo.md        
       - dockerfiletips.md
       - toolchain-ce.md
       - terraform-ce.md
       - satellite-ce.md
-
       - topicgroup:
           label: Subscribing to event producers
           topics:
@@ -130,7 +123,6 @@ toc:
           - subscription-cron.md
           - subscription-cos.md
           - subscription-kafka.md
-
       - topicgroup:
           label: Working with environment variables, secrets, and configmaps
           topics:
@@ -139,7 +131,6 @@ toc:
           - configmap.md
           - configmap-secret-referencing.md
           - configmap-secret-referencing-vol.md
-
       - topicgroup:
           label: Logging and monitoring
           topics:
@@ -147,13 +138,11 @@ toc:
           - at-events.md
           - monitor.md
           - monitor-custom.md
-
       - topicgroup:
           label: Connecting over private networks
           topics:
           - virtualprivateendpt.md               
           - serviceendpt.md
-
       - topicgroup:
           label: Enhancing security for Code Engine
           topics:
@@ -163,7 +152,6 @@ toc:
           - security.md
           - cbr.md
           - ce-ipaddresses.md
-
   - navgroup: 
       id: reference
       topics:
@@ -172,7 +160,6 @@ toc:
           topics:
           - cmd_defs.md
           - cli-changelog.md
-
       - topicgroup:
           label: API reference
           topics:
@@ -181,7 +168,6 @@ toc:
           - link: 
               label: Code Engine API 
               href: https://cloud.ibm.com/apidocs/codeengine
-
       - envvar-autoinject.md
       - cmd-args.md
       - limits.md
@@ -189,7 +175,6 @@ toc:
       - regions.md
       - responsibilities.md
       - ha-dr.md
-
       - topicgroup:
           label: Supported IBM Cloud and third-party integrations
           topics:
@@ -201,7 +186,6 @@ toc:
       - notices.md
       - kubernetes.md
       - knative.md     
-
   - navgroup: 
       id: help
       topics:
@@ -222,7 +206,6 @@ toc:
               - ts-allowlist-app.md
               - ts-app-connection-fail.md
               - ts-app-stop-traffic.md
-
           - topicgroup:
               label: Troubleshooting builds 
               topics:
@@ -233,14 +216,11 @@ toc:
               - ts-build-fail-memorylimit.md
               - ts-build-fail-buildpushstepfails.md
               - ts-build-python.md
-
           - topicgroup:
               label: Troubleshooting images 
               topics:
               - troubleshoot-image.md
               - ts-image-imagepullfails.md
-
-
           - topicgroup:
               label: Troubleshooting jobs 
               topics:
@@ -251,14 +231,12 @@ toc:
               - ts-jobrun-deleted.md
               - ts-jobrun-findinginfo.md
               - ts-allowlist-job.md
-
           - topicgroup:
               label: Troubleshooting projects 
               topics:
               - troubleshoot-project.md
               - ts-project-cannotaccess.md
               - ts-project-cannotcreate.md
-
           - topicgroup:
               label: Troubleshooting service bindings 
               topics:
@@ -266,7 +244,6 @@ toc:
               - ts-sb-cosredacted.md
               - ts-sb-DB2createfails.md
               - ts-sb-projsettings-no-details.md            
-
           - topicgroup:
               label: Troubleshooting subscriptions 
               topics:
@@ -276,7 +253,6 @@ toc:
               - ts-subscription-cos-neverready.md
               - ts-subscription-cron-createfails.md
               - ts-subscription-cron-neverready.md
-              
           - topicgroup:
               label: Troubleshooting toolchain 
               topics:
