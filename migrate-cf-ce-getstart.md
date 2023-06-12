@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-11-21"
+  years: 2022, 2023
+lastupdated: "2023-06-12"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -29,6 +29,10 @@ Welcome Cloud Foundry users to {{site.data.keyword.codeenginefull}}.
 - **Pay for only the resources** that you actually use.
 
 If you are coming from a Cloud Foundry background, many of these features sound familiar. However, {{site.data.keyword.codeengineshort}} also includes some new capabilities that allow you to go beyond even what Cloud Foundry offers, including applications that can scale to zero and incur no charges. So, after you're past the syntactical difference of the user experience, you and your applications will feel right at home in {{site.data.keyword.codeengineshort}}.
+
+{{site.data.keyword.ibmcf_full}} is deprecated and no longer supported as of 1 June 2023. For more information, see the [deprecation details](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation#dep_details).
+{: important}
+ 
 
 ## Migration considerations
 {: #migrate-cf-ce-considerations}
