@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-13"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for June 2023.
 {: shortdesc}
+
+### 13 June 2023
+{: #codeengine-jun1323}
+{: release-note}
+
+Added troubleshooting information about deleting jobs and job runs when the limit is exceeded
+:   See [I'm over my limit for jobs or job runs. How can I delete them](/docs/codeengine?topic=codeengine-ts-jobrun-deleteforquota)?
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 08 June 2023
 {: #codeengine-jun0823}

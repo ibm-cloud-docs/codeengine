@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-13"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -59,6 +59,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun23)
 
     * Review the release notes for June 2023.
+
+    * [13 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun1323)
+
+        * Added troubleshooting information about deleting jobs and job runs when the limit is exceeded
+
+        * Updated versions for buildpacks
 
     * [08 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun0823)
 
@@ -3635,6 +3641,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why is my job run not starting?](/docs/codeengine?topic=codeengine-ts-jobrun-notstart#ts-jobrun-notstart)
 
 [Why is my job run not completing?](/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete#ts-jobrun-doesnotcomplete)
+
+[I'm over my limit for jobs or job runs. How can I delete them?](/docs/codeengine?topic=codeengine-ts-jobrun-deleteforquota#ts-jobrun-deleteforquota)
 
 [Where is my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-deleted#ts-jobrun-deleted)
 

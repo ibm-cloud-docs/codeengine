@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-06-13"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -147,28 +147,28 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 :   Set arguments for the application. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value overrides the default values that are specified within the container image. This value is *optional*. 
 
 `--build-commit`, `--commit`, `--bcm`, `--cm`, `--revision`
-:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository. This value is *optional*. 
+:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed only if the `--build-source` option is set. This value is *optional*. 
 
 `--build-context-dir`, `--context-dir`, `--bcdr`, `--cdr`
-:   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. 
+:   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed only if the `--build-source` option is set. This value is *optional*. 
 
 `--build-dockerfile`, `--dockerfile`, `--bdf`, `--df`
-:   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `Dockerfile`.
+:   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `Dockerfile`.
 
 `--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
-:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository source. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed only if the `--build-source` option is set to the URL of a Git repository. This value is *optional*. 
 
 `--build-size`, `--size`, `--bsz`, `--sz`
-:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `medium`.
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `medium`.
 
 `--build-source`, `--source`, `--bsrc`, `--src`
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
 
 `--build-strategy`, `--strategy`, `--bstr`, `--str`
-:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
+:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed only if the `--build-source` option is set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
 
 `--build-timeout`, `--bto`
-:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `600`.
+:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `600`.
 
 `--cluster-local`, `--cl`
 :   Deploy the application with a project-only endpoint. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. The default value is `false`.
@@ -781,10 +781,10 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   Clear application arguments. This value is *optional*. The default value is `false`.
 
 `--build-clear`, `--bc`
-:   Remove the association of a build from this application. The build clear option is only allowed if your app currently has an associated build. This value is *optional*. The default value is `false`.
+:   Remove the association of a build from this application. The build clear option is allowed only if your app currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--build-commit`, `--commit`, `--bcm`, `--cm`, `--revision`
-:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed if the `--build-source` option is set to the URL of a Git repository on this `app update` command, or your application currently has an associated build from a Git repository source. This value is *optional*. 
+:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed only if the `--build-source` option is set to the URL of a Git repository on this `app update` command, or your application currently has an associated build from a Git repository source. This value is *optional*. 
 
 `--build-commit-clear`, `--commit-clear`, `--bcmc`, `--cmc`
 :   Clear the commit, tag, or branch in the source repository to pull. The commit clear option is allowed if your application currently has an associated build. This value is *optional*. The default value is `false`.
@@ -793,25 +793,25 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. 
 
 `--build-dockerfile`, `--dockerfile`, `--bdf`, `--df`
-:   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `Dockerfile`.
+:   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed only if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `Dockerfile`.
 
 `--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
-:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed if the `--build-source` option is set to the URL of a Git repository on this `application update` command, or your application currently has an associated build from a Git repository source. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed only if the `--build-source` option is set to the URL of a Git repository on this `application update` command, or your application currently has an associated build from a Git repository source. This value is *optional*. 
 
 `--build-git-repo-secret-clear`, `--git-repo-secret-clear`, `--bgrsc`, `--grsc`
 :   Clear the SSH secret. This option is allowed if your application currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--build-size`, `--size`, `--bsz`, `--sz`
-:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `medium`.
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `medium`.
 
 `--build-source`, `--source`, `--bsrc`, `--src`
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
 
 `--build-strategy`, `--strategy`, `--bstr`, `--str`
-:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
+:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed only if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
 
 `--build-timeout`, `--bto`
-:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `600`.
+:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed only if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `600`.
 
 `--cluster-local`, `--cl`
 :   Deploy the application with a project-only endpoint. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. The default value is `false`.
@@ -1703,7 +1703,7 @@ ibmcloud ce buildrun submit (--build BUILD_NAME [--name NAME]) | (--name NAME [-
 :   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. This value is *optional*. The default value is `Dockerfile`.
 
 `--git-repo-secret`, `--grs`, `--repo`, `-r`
-:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository source. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed only if the `--build-source` option is set to the URL of a Git repository. This value is *optional*. 
 
 `--image`, `-i`
 :   The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
@@ -2448,28 +2448,28 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 :   Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `0,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--instances` option is not specified. This value is *optional*. The default value is `0`.
 
 `--build-commit`, `--commit`, `--bcm`, `--cm`, `--revision`
-:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository. This value is *optional*. 
+:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed only if the `--build-source` option is set to the URL of a Git repository. This value is *optional*. 
 
 `--build-context-dir`, `--context-dir`, `--bcdr`, `--cdr`
-:   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. 
+:   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed only if the `--build-source` option is set. This value is *optional*. 
 
 `--build-dockerfile`, `--dockerfile`, `--bdf`, `--df`
-:   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `Dockerfile`.
+:   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `Dockerfile`.
 
 `--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
-:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository source. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed only if the `--build-source` option is set to the URL of a Git repository. This value is *optional*. 
 
 `--build-size`, `--size`, `--bsz`, `--sz`
-:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `medium`.
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `medium`.
 
 `--build-source`, `--source`, `--bsrc`, `--src`
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
 
 `--build-strategy`, `--strategy`, `--bstr`, `--str`
-:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
+:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed only if the `--build-source` option is set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
 
 `--build-timeout`, `--bto`
-:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `600`.
+:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `600`.
 
 `--command`, `--cmd`, `-c`
 :   Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
@@ -2524,7 +2524,7 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 :   Add the contents of a secret to the file system of runs of the job by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
 
 `--no-wait`, `--nw`
-:   Do not wait for the build run to complete. If you specify the `--no-wait` option, the build run begins and does not wait. Use the `buildrun get` command to check the build run status. The no-wait option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `true`.
+:   Do not wait for the build run to complete. If you specify the `--no-wait` option, the build run begins and does not wait. Use the `buildrun get` command to check the build run status. The no-wait option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `true`.
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -2542,10 +2542,10 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 :   The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
 
 `--wait`, `-w`
-:   Wait for the build run to complete. If you specify the `--wait` option, the build run waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run fails. The wait option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `false`.
+:   Wait for the build run to complete. If you specify the `--wait` option, the build run waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run fails. The wait option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `false`.
 
 `--wait-timeout`, `--wto`
-:   The length of time in seconds to wait for the build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The wait-timeout option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. The default value is `600`.
+:   The length of time in seconds to wait for the build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The wait-timeout option is allowed only if the `--build-source` option is set. The default value is `600`.
 
  
   
@@ -2799,37 +2799,37 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 :   Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `0,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--instances` option is not specified. This value is *optional*. 
 
 `--build-clear`, `--bc`
-:   Remove the association of a build from this job. The build clear option is only allowed if your job currently has an associated build. This value is *optional*. The default value is `false`.
+:   Remove the association of a build from this job. The build clear option is allowed only if your job currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--build-commit`, `--commit`, `--bcm`, `--cm`, `--revision`
-:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed if the `--build-source` option is set to the URL of a Git repository on this `job update` command, or your job currently has an associated build from a Git repository source. This value is *optional*. 
+:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed only if the `--build-source` option is set to the URL of a Git repository on this `job update` command, or your job currently has an associated build from a Git repository source. This value is *optional*. 
 
 `--build-commit-clear`, `--commit-clear`, `--bcmc`, `--cmc`
-:   Clear the commit, tag, or branch in the source repository to pull. The commit clear option is allowed if your job currently has an associated build. This value is *optional*. The default value is `false`.
+:   Clear the commit, tag, or branch in the source repository to pull. The commit clear option is allowed only if your job currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--build-context-dir`, `--context-dir`, `--bcdr`, `--cdr`
-:   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. 
+:   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed only if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. 
 
 `--build-dockerfile`, `--dockerfile`, `--bdf`, `--df`
 :   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `Dockerfile`.
 
 `--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
-:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed if the `--build-source` option is set to the URL of a Git repository on this `job update` command, or your job currently has an associated build from a Git repository source. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed only if the `--build-source` option is set to the URL of a Git repository on this `job update` command, or your job currently has an associated build from a Git repository source. This value is *optional*. 
 
 `--build-git-repo-secret-clear`, `--git-repo-secret-clear`, `--bgrsc`, `--grsc`
 :   Clear the SSH secret. This option is allowed if your job currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--build-size`, `--size`, `--bsz`, `--sz`
-:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `medium`.
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `medium`.
 
 `--build-source`, `--source`, `--bsrc`, `--src`
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
 
 `--build-strategy`, `--strategy`, `--bstr`, `--str`
-:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
+:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed only if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
 
 `--build-timeout`, `--bto`
-:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `600`.
+:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed only if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `600`.
 
 `--command`, `--cmd`, `-c`
 :   Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
@@ -2899,7 +2899,7 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 :   Add the contents of a secret to the file system of runs of the job by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
 
 `--no-wait`, `--nw`
-:   Do not wait for the build run to complete. If you specify the `--no-wait` option, the build run begins and does not wait. Use the `buildrun get` command to check the build run status. The no-wait option is allowed if the `--build-source` option is set on this `job update` command or your job currently has an associated build. This value is *optional*. The default value is `true`.
+:   Do not wait for the build run to complete. If you specify the `--no-wait` option, the build run begins and does not wait. Use the `buildrun get` command to check the build run status. The no-wait option is allowed only if the `--build-source` option is set on this `job update` command or your job currently has an associated build. This value is *optional*. The default value is `true`.
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -2926,7 +2926,7 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 :   Clear the service account. This value is *optional*. The default value is `false`.
 
 `--wait`, `-w`
-:   Wait for the build run to complete. If you specify the `--wait` option, the build run waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run fails. The wait option is allowed if the `--build-source` option is set on this `job update` command or your job currently has an associated build. This value is *optional*. The default value is `false`.
+:   Wait for the build run to complete. If you specify the `--wait` option, the build run waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run fails. The wait option is allowed only if the `--build-source` option is set on this `job update` command or your job currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--wait-timeout`, `--wto`
 :   The length of time in seconds to wait for the build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The wait-timeout option is allowed if the `--build-source` option is set on this `job update` command or your job currently has an associated build. The default value is `600`.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-06-12"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -43,7 +43,7 @@ Before you begin
 1. To open the dialog to define your environment variable on the Add environment variable page, complete one of the following choices.
     * If you are [creating an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console), from the Create application page, expand the **Environment variables (optional)** section. You can add one or more environment variables to the app that you are creating. Click **Add** to open the Add environment variable page. 
     * If you are [creating a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui), from the Create job page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page. 
-    * If you are updating an existing app or job to add environment variables, go to the existing app or job and click the **Environment variables** tab. Click **Add** to open the Add environment variable page. 
+    * If you are updating an existing app or job to add environment variables, go to the existing app or job. From the **Configuration** tab, click **Environment variables**. For apps, you'll need to click **Edit and create a new revision**, and then click **Add environment variable**. For jobs, click **Add environment variable** to open the Add environment variable page.
 
 2. From the Add environment variable page, create an environment variable in one of the following ways, 
     * To create a _literal_ environment variable, choose `Literal value`, specify the name for the literal environment variable, and provide a value. Notice that the `Resulting definition` section displays the name of the environment variable and its value.  
