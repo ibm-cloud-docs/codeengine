@@ -78,8 +78,8 @@ The default URL for applications is of the format `https://<appname>.<uuid>.<reg
 | Americas: US East | `app.uuid.us-east.codeengine.appdomain.cloud` | `app.uuid.private.us-east.codeengine.appdomain.cloud` |
 | Americas: US South| `app.uuid.us-south.codeengine.appdomain.cloud` | `app.uuid.private.us-south.codeengine.appdomain.cloud` |
 | Asia Pacific: Sydney, Australia  | `app.uuid.au-syd.codeengine.appdomain.cloud` | `app.uuid.private.au-syd.codeengine.appdomain.cloud` |
-| Asia Pacific: Japan Osaka | `app.uuid.jp-osa.codeengine.appdomain.cloud` | `app.uuid.private.jp-osa.codeengine.appdomain.cloud` |
-| Asia Pacific: Japan Tokyo | `app.uuid.jp-tok.codeengine.appdomain.cloud` | `app.uuid.private.jp-tok.codeengine.appdomain.cloud` |
+| Asia Pacific: Osaka, Japan | `app.uuid.jp-osa.codeengine.appdomain.cloud` | `app.uuid.private.jp-osa.codeengine.appdomain.cloud` |
+| Asia Pacific: Tokyo, Japan | `app.uuid.jp-tok.codeengine.appdomain.cloud` | `app.uuid.private.jp-tok.codeengine.appdomain.cloud` |
 | Europe: Germany | `app.uuid.eu-de.codeengine.appdomain.cloud` | `app.uuid.private.eu-de.codeengine.appdomain.cloud` |
 | Europe: Great Britain | `app.uuid.eu-gb.codeengine.appdomain.cloud` | `app.uuid.private.eu-gb.codeengine.appdomain.cloud` |
 {: caption="{{site.data.keyword.codeengineshort}} endpoints for apps" caption-side="bottom"}
