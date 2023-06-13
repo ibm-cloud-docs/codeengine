@@ -35,12 +35,9 @@ Use one of the following ways to check that the quota limit for jobs and job run
     * Run the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all your defined job runs. 
     * Run the [**`ibmcloud ce job list`**](/docs/codeengine?topic=codeengine-cli#cli-job-list) command to list all your defined jobs. 
 
- 
-{: tsResolve}
 
 If the number of jobs or job runs is near the quota limit, delete job runs and then jobs as needed. 
-
-Use one of the following ways to delete job runs or jobs when the limit. 
+{: tsResolve}
 
 When you  delete a job, all the submitted job runs that reference this job are also deleted.  
 {: note}
@@ -54,7 +51,6 @@ When you  delete a job, all the submitted job runs that reference this job are a
 * In the CLI, 
     * Run the [**`ibmcloud ce jobrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-delete) command to delete the specified job run. 
     * Run the [**`ibmcloud ce job delete`**](/docs/codeengine?topic=codeengine-cli#cli-job-delete) command to delete your defined job and all the submitted job runs that reference this job. 
-
 
 
 For more information, see [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan) and [Debugging jobs](/docs/codeengine?topic=codeengine-troubleshoot-job).
