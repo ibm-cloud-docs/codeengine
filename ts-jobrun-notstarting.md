@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-06-13"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -38,7 +38,7 @@ Use one of the following ways to check that the quota limit for jobs and job run
 
 * From the console, select your project and then go to the {{site.data.keyword.codeengineshort}} Overview page. You can view the number of jobs and job runs for the project in the Summary section. For more details, select Jobs or Job runs from the Summary section or select Jobs from the navigation menu.
 
-If the number of jobs or job runs is near the quota limit, delete job runs and then jobs as needed. 
+If the number of jobs or job runs is near the quota limit, delete job runs and then jobs as needed. See [I'm over my limit for jobs or job runs. How can I delete them?](/docs/codeengine?topic=codeengine-ts-jobrun-deleteforquota).
 
 For more information, see [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan) and [Debugging jobs](/docs/codeengine?topic=codeengine-troubleshoot-job).
 

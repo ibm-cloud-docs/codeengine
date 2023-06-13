@@ -228,6 +228,7 @@ toc:
               - ts-jobrun-submitfailscli.md
               - ts-jobrun-notstarting.md             
               - ts-jobrun-notcompleting.md
+              - ts-jobrun-deleteforquota.md
               - ts-jobrun-deleted.md
               - ts-jobrun-findinginfo.md
               - ts-allowlist-job.md
