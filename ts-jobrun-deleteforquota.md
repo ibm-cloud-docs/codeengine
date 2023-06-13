@@ -22,16 +22,16 @@ content-type: troubleshoot
 You receive a message that the limit for jobs or job runs is exceeded. 
 {: tsSymptoms}
 
-Check that the quota for your jobs and job runs is not exceeded. 
+{{site.data.keyword.codeengineshort}} has quotas for jobs and job runs within a project.
 {: tsCauses}
 
-{{site.data.keyword.codeengineshort}} has quotas for jobs and job runs within a project. You are limited to 100 jobs per project and 100 job runs per project before you need to clean up old ones. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+ You are limited to 100 jobs per project and 100 job runs per project before you need to clean up old ones. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 Use one of the following ways to check that the quota limit for jobs and job runs is not exceeded.
 
 * From the console, select your project and then go to the {{site.data.keyword.codeengineshort}} Overview page. You can view the number of jobs and job runs for the project in the Summary section. For more details, select Jobs or Job runs from the Summary section or select Jobs from the navigation menu.
 
-* In the CLI, 
+* With the CLI, 
     * Run the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all your defined job runs. 
     * Run the [**`ibmcloud ce job list`**](/docs/codeengine?topic=codeengine-cli#cli-job-list) command to list all your defined jobs. 
 
@@ -48,7 +48,7 @@ When you  delete a job, all the submitted job runs that reference this job are a
     * To delete a specific job and all of its job runs from the **Jobs** page, click the **Delete** icon ![Delete](../icons/delete.svg "Delete").
 
 
-* In the CLI, 
+* With the CLI, 
     * Run the [**`ibmcloud ce jobrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-delete) command to delete the specified job run. 
     * Run the [**`ibmcloud ce job delete`**](/docs/codeengine?topic=codeengine-cli#cli-job-delete) command to delete your defined job and all the submitted job runs that reference this job. 
 
