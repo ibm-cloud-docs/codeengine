@@ -60,6 +60,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for June 2023.
 
+    * [13 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun1323)
+
+        * Added troubleshooting information about deleting jobs and job runs when the limit is exceeded
+
+        * Updated versions for buildpacks
+
     * [08 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun0823)
 
         * CLI version 1.43.7 released
