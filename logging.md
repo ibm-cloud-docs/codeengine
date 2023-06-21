@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-02"
+lastupdated: "2023-06-21"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -66,8 +66,7 @@ Yes! When you **Launch logging** in the {{site.data.keyword.codeengineshort}} co
 {: #view-logs-multiline}
 
 Every log line must contain log level and timestamp information to appear correctly in {{site.data.keyword.la_full_notm}}. If your log lines span multiple lines, change how you format and output your logs so that they are in a single line. Use JSONL format for your logs with {{site.data.keyword.la_full_notm}}. Your logs must also 
-conform to [limits for {{site.data.keyword.la_full_notm}} logs](/docs/log-analysis?topic=log-analysis-ingest#ingest_limits). After you make log formatting changes, you can take advantage of {{site.data.keyword.la_full_notm}} search and formatting features.
-
+conform to [limits for {{site.data.keyword.la_full_notm}} logs](/docs/log-analysis?topic=log-analysis-ingest_limits). After you make log formatting changes, you can take advantage of {{site.data.keyword.la_full_notm}} search and formatting features.
 
 ### Viewing app logs from the console
 {: #view-applogs-ui}
