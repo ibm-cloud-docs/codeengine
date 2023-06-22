@@ -118,7 +118,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.44.0 released
 
-        * Added support service bindings in the {{site.data.keyword.codeengineshort}} V2 API
+        * Added support for service bindings in the {{site.data.keyword.codeengineshort}} V2 API
 
         * Updated versions for buildpacks
 
