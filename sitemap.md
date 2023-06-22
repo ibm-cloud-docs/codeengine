@@ -49,6 +49,56 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology)
 
+[Application workloads](/docs/codeengine?topic=codeengine-ceapplications#ceapplications)
+
+* [What are application workloads?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads)
+
+* [What are the key features of working with  {{site.data.keyword.codeengineshort}} applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-features)
+
+    * [Isolation](/docs/codeengine?topic=codeengine-ceapplications#ceapp-isolation)
+
+    * [Logging](/docs/codeengine?topic=codeengine-ceapplications#ceapp-logging)
+
+    * [Running applications](/docs/codeengine?topic=codeengine-ceapplications#ceapp-runapp)
+
+    * [Scaling](/docs/codeengine?topic=codeengine-ceapplications#ceapp-scaling)
+
+    * [Security](/docs/codeengine?topic=codeengine-ceapplications#ceapp-security)
+
+    * [Triggering applications with events](/docs/codeengine?topic=codeengine-ceapplications#ceapp-eventing)
+
+    * [Visibility](/docs/codeengine?topic=codeengine-ceapplications#ceapp-visibility)
+
+* [How can I get started with applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-getstart)
+
+[Batch job workloads](/docs/codeengine?topic=codeengine-cebatchjobs#cebatchjobs)
+
+* [What are batch job workloads?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-workloads)
+
+    * [What is the lifecycle of a batch job?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-lifecycle)
+
+* [What are the key features of working with {{site.data.keyword.codeengineshort}} batch jobs?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-features)
+
+    * [Isolation](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-isolation)
+
+    * [Logging](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-logs)
+
+    * [Queuing](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-queue)
+
+    * [Retries](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-retries)
+
+    * [Running batch jobs](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-run)
+
+    * [Scaling](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-scaling)
+
+    * [Status](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-status)
+
+    * [Submitting similar batch jobs](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-reuse)
+
+    * [Triggering batch jobs with events](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-eventing)
+
+* [How can I get started with batch jobs?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-getstart)
+
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -59,6 +109,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun23)
 
     * Review the release notes for June 2023.
+
+    * [22 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-junww23)
+
+        * CLI version 1.44.0 released
+
+        * Added overview information about {{site.data.keyword.codeengineshort}} apps and batch jobs
+
+        * Updated versions for buildpacks
 
     * [13 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun1323)
 

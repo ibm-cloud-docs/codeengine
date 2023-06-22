@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-06-22"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,22 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for June 2023.
 {: shortdesc}
+
+### 22 June 2023
+{: #codeengine-junww23}
+{: release-note}
+
+CLI version 1.44.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Added overview information about {{site.data.keyword.codeengineshort}} apps and batch jobs
+:   - See [Application workloads](/docs/codeengine?topic=codeengine-ceapplications).
+:   - See [Batch job workloads](/docs/codeengine?topic=codeengine-cebatchjobs).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
+
 
 ### 13 June 2023
 {: #codeengine-jun1323}
