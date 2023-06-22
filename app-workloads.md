@@ -38,12 +38,10 @@ Review the following topics to learn more about working with applications in {{s
 * [Visibility](#ceapp-visibility)
 
 
-
-
 ### Isolation
 {: #ceapp-isolation}
 
-{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. However, tenants and their workloads are isolated from each other by using {{site.data.keyword.codeengineshort}} projects.  {{site.data.keyword.codeengineshort}} prevents communication between projects, providing isolation to your applications inside a multi-tenant environment, **which can include applications, batch jobs, and functions.(confirm)** in In addition, there are access controls that are performed on a resource level to only allow authorized users to perform certain operations on project resources, such as applications or other {{site.data.keyword.codeengineshort}} workloads.
+{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. However, tenants and their workloads are isolated from each other by using {{site.data.keyword.codeengineshort}} projects.  {{site.data.keyword.codeengineshort}} prevents communication between projects, providing isolation to your applications inside a multi-tenant environment. In addition, there are access controls that are performed on a resource level to only allow authorized users to perform certain operations on project resources, such as applications or other {{site.data.keyword.codeengineshort}} workloads.
 
 For more information about workload isolation, see [{{site.data.keyword.codeengineshort}} workload isolation](/docs/codeengine?topic=codeengine-architecture#workload-isolation).
 
@@ -82,7 +80,7 @@ For more information about scaling your app, see [Configuring application scalin
 ### Security 
 {: #ceapp-security}
 
-{{site.data.keyword.codeengineshort}} provides out-of-the-box DDOS protection for your application. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-DDoS). 
+{{site.data.keyword.codeengineshort}} provides out-of-the-box DDOS protection for your application. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). 
 
 {{site.data.keyword.codeengineshort}} also provides a service mesh to use its networking layer, which enables mutual Transport Layer Security (TLS) traffic on applications, thus securing *service-to-service* and *user-to-service* communication.
 

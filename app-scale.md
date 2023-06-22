@@ -339,7 +339,7 @@ You can change the number of running instances of your app by updating the minim
 
 The default value for the minimum number of instances for your application is `0`. If your app does not receive any traffic, it scales to `0` and no instances of your app are running. In this situation, your application can be slower to respond when it receives traffic again, while it scales back up. You can change this behavior by updating your application and setting the minimum scale to `1` either in the console or from the CLI.
 
-The default value for the maximum number of instances for your app is `0`, which allows your app to scale as needed. For more information, see [Scaling boundaries](#app-scale-boundaries34).
+The default value for the maximum number of instances for your app is `0`, which allows your app to scale as needed. For more information, see [Scaling boundaries](#app-scale-boundaries).
 
 ### Changing the autoscaling range from the console
 {: #set-app-instances-ui}
@@ -359,7 +359,7 @@ When you update your application, your app creates a new revision and routes tra
 ### Changing the autoscaling range with the CLI
 {: #set-app-instances-cli}
 
-To change the range within which {{site.data.keyword.codeengineshort}} autoscales the number of running instances for an app with the CLI, run the [**`application update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command with the `--min-scale` and `--max-scale` options set to the number of instances that you want for your app. You can optionally set request concurrency and timing settings for your app. These options include `--concurrency`, `--concurrency-target`, `--request-timeout`, and `--scale-down-delay`. For more information about setting these autoscaling values, see [Scaling boundaries](#app-scale-boundaries34), and [Autoscaling settings for concurrency and timing](#app-scale-timeconcurrency).
+To change the range within which {{site.data.keyword.codeengineshort}} autoscales the number of running instances for an app with the CLI, run the [**`application update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command with the `--min-scale` and `--max-scale` options set to the number of instances that you want for your app. You can optionally set request concurrency and timing settings for your app. These options include `--concurrency`, `--concurrency-target`, `--request-timeout`, and `--scale-down-delay`. For more information about setting these autoscaling values, see [Scaling boundaries](#app-scale-boundaries), and [Autoscaling settings for concurrency and timing](#app-scale-timeconcurrency).
 
 When you update your application, your app creates a new revision and routes traffic to that instance.
 
