@@ -114,7 +114,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added summary information for getting started with {{site.data.keyword.codeengineshort}} apps and batch jobs
 
-        * Added support for the scale-down delay autoscaling option in the CLI and console
+        * Added support for the scale-down delay autoscaling option in the console and CLI
 
         * CLI version 1.44.0 released
 

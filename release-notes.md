@@ -34,9 +34,9 @@ Added summary information for getting started with {{site.data.keyword.codeengin
 :   - See [Application workloads](/docs/codeengine?topic=codeengine-ceapplications).
 :   - See [Batch job workloads](/docs/codeengine?topic=codeengine-cebatchjobs).
 
-Added support for the scale-down delay autoscaling option in the CLI and console
+Added support for the scale-down delay autoscaling option in the console and CLI
 :   - See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
-:   - See [**`app create`** command](/docs/codeengine?topic=codeengine-cli#cli-application-create) and [**`app update`** command](/docs/codeengine?topic=codeengine-cli#cli-application-update) in the {{site.data.keyword.codeengineshort}} CLI reference.
+:   - See the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) and [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands in the {{site.data.keyword.codeengineshort}} CLI reference.
 
 CLI version 1.44.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
