@@ -27,15 +27,18 @@ Review the release notes for June 2023.
 {: shortdesc}
 
 ### 22 June 2023
-{: #codeengine-junww23}
+{: #codeengine-jun2223}
 {: release-note}
+
+Added summary information for getting started with {{site.data.keyword.codeengineshort}} apps and batch jobs
+:   - See [Application workloads](/docs/codeengine?topic=codeengine-ceapplications).
+:   - See [Batch job workloads](/docs/codeengine?topic=codeengine-cebatchjobs).
+
+Added support for the scale-down delay autoscaling option in the CLI and console
+:   See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
 CLI version 1.44.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
-
-Added overview information about {{site.data.keyword.codeengineshort}} apps and batch jobs
-:   - See [Application workloads](/docs/codeengine?topic=codeengine-ceapplications).
-:   - See [Batch job workloads](/docs/codeengine?topic=codeengine-cebatchjobs).
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).

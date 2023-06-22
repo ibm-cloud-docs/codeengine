@@ -110,11 +110,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for June 2023.
 
-    * [22 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-junww23)
+    * [22 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun2223)
+
+        * Added summary information for getting started with {{site.data.keyword.codeengineshort}} apps and batch jobs
+
+        * Added support for the scale-down delay autoscaling option in the CLI and console
 
         * CLI version 1.44.0 released
-
-        * Added overview information about {{site.data.keyword.codeengineshort}} apps and batch jobs
 
         * Updated versions for buildpacks
 
@@ -2389,7 +2391,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
 
-* [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
+    * [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
+
+    * [Autoscaling settings for concurrency and timing](/docs/codeengine?topic=codeengine-app-scale#app-scale-timeconcurrency)
+
+    * [Example scenario for autoscaling](/docs/codeengine?topic=codeengine-app-scale#app-scale-example)
 
 * [Optimize latency and throughput](/docs/codeengine?topic=codeengine-app-scale#app-optimize-latency)
 
@@ -2399,9 +2405,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Setting the number of minimum and maximum instances for your app](/docs/codeengine?topic=codeengine-app-scale#scale-app-min-max)
 
-    * [Changing the number of running instances from the console](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-ui)
+    * [Changing the autoscaling range from the console](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-ui)
 
-    * [Changing the number of running instances with the CLI](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-cli)
+    * [Changing the autoscaling range with the CLI](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-cli)
 
 
 ## Binding Code Engine resources to IBM Cloud services
