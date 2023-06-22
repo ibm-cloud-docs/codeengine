@@ -293,41 +293,48 @@ You can observe the number of running instances of your app with the CLI.
     Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
     Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
-    Status Summary:  Application deployed successfully
+Status Summary:     Application deployed successfully  
 
-    Image:                icr.io/codeengine/helloworld
-    Resource Allocation:
-    CPU:                1
-    Ephemeral Storage:  400M
-    Memory:             4G
+Environment Variables:    
+  Type     Name          Value  
+  Literal  CE_APP        myapp  
+  Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud  
+  Literal  CE_SUBDOMAIN  glxo4k7nj7d  
+Image:                  icr.io/codeengine/helloworld  
+Resource Allocation:      
+  CPU:                1  
+  Ephemeral Storage:  400M  
+  Memory:             4G  
 
-    Revisions:
-    myapp-ds8fn-1:
-        Age:                13m
-        Traffic:            100%
-        Image:              icr.io/codeengine/helloworld (pinned to fe0446)
-        Running Instances:  1
+Revisions:     
+  myapp-00001:    
+    Age:                42s  
+    Latest:             true  
+    Traffic:            100%  
+    Image:              icr.io/codeengine/helloworld (pinned to 1cee99)  
+    Running Instances:  1  
 
-    Runtime:
-    Concurrency:    100
-    Maximum Scale:  10
-    Minimum Scale:  0
-    Timeout:        300
+Runtime:       
+  Concurrency:       100  
+  Maximum Scale:     10  
+  Minimum Scale:     0  
+  Scale Down Delay:  0  
+  Timeout:           300  
 
-    Conditions:
-    Type                 OK    Age  Reason
-    ConfigurationsReady  true  16m
-    Ready                true  16m
-    RoutesReady          true  16m
+Conditions:    
+  Type                 OK    Age  Reason  
+  ConfigurationsReady  true  25s    
+  Ready                true  12s    
+  RoutesReady          true  12s    
 
-    Events:
-    Type    Reason   Age  Source              Messages
-    Normal  Created  17m  service-controller  Created Configuration "myapp"
-    Normal  Created  17m  service-controller  Created Route "myapp"
+Events:        
+  Type    Reason   Age  Source              Messages  
+  Normal  Created  44s  service-controller  Created Configuration "myapp"  
+  Normal  Created  43s  service-controller  Created Route "myapp"  
 
-    Instances:
-    Name                                       Revision       Running  Status   Restarts  Age
-    myapp-ds8fn-1-deployment-79bdd76749-76l4w  myapp-ds8fn-1  1/2      Running  0         16s
+Instances:     
+  Name                                    Revision     Running  Status   Restarts  Age  
+  myapp-00001-deployment-d59b87654-xkqh7  myapp-00001  3/3      Running  0         43s 
     ```
     {: screen}
 

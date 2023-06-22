@@ -495,42 +495,48 @@ Created:            2021-09-09T14:01:02-04:00
 URL:                https://myapp.abcdabcdabc.us-south.codeengine.appdomain.cloud
 Cluster Local URL:  http://myapp.abcdabcdabc.svc.cluster.local
 Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
-Status Summary:     Application deployed successfully
+Status Summary:     Application deployed successfully  
 
-Image:                  icr.io/codeengine/hello
+Environment Variables:    
+  Type     Name          Value  
+  Literal  CE_APP        myapp  
+  Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud  
+  Literal  CE_SUBDOMAIN  glxo4k7nj7d  
+Image:                  icr.io/codeengine/helloworld  
+Resource Allocation:      
+  CPU:                1  
+  Ephemeral Storage:  400M  
+  Memory:             4G  
 
-Resource Allocation:
-    CPU:                1
-    Ephemeral Storage:  400M
-    Memory:             4G
+Revisions:     
+  myapp-00001:    
+    Age:                42s  
+    Latest:             true  
+    Traffic:            100%  
+    Image:              icr.io/codeengine/helloworld (pinned to 1cee99)  
+    Running Instances:  1  
 
-Revisions:
-    myapp-atfte-1:
-        Age:                3d6h
-    Traffic:            100%
-    Image:              icr.io/codeengine/hello (pinned to f0dc03)
-    Running Instances:  1
+Runtime:       
+  Concurrency:       100  
+  Maximum Scale:     10  
+  Minimum Scale:     0  
+  Scale Down Delay:  0  
+  Timeout:           300  
 
-Runtime:
-    Concurrency:    100
-    Maximum Scale:  10
-    Minimum Scale:  0
-    Timeout:        300
+Conditions:    
+  Type                 OK    Age  Reason  
+  ConfigurationsReady  true  25s    
+  Ready                true  12s    
+  RoutesReady          true  12s    
 
-Conditions:
-    Type                 OK    Age   Reason
-    ConfigurationsReady  true  3d6h
-    Ready                true  3d6h
-    RoutesReady          true  3d6h
+Events:        
+  Type    Reason   Age  Source              Messages  
+  Normal  Created  44s  service-controller  Created Configuration "myapp"  
+  Normal  Created  43s  service-controller  Created Route "myapp"  
 
-Events:
-    Type    Reason   Age    Source              Messages
-    Normal  Created  3m55s  service-controller  Created Configuration "myapp"
-    Normal  Created  3m54s  service-controller  Created Route "myapp"
-
-Instances:
-    Name                                       Revision       Running  Status   Restarts  Age
-    myapp-00002-deployment-8495f8ccb9-kmc57    myapp-00002    3/3      Running  0         27m
+Instances:     
+  Name                                    Revision     Running  Status   Restarts  Age  
+  myapp-00001-deployment-d59b87654-xkqh7  myapp-00001  3/3      Running  0         43s 
 ```
 {: screen}  
   
