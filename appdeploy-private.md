@@ -109,8 +109,9 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 ## Next steps
 {: #nextsteps-appdeploypriv}
 
-* After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL. 
-    * You can create a [custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings) and assign it to your app. For more information about deploying apps across multiple regions with a custom domain name, see [Configuring a highly available application](/docs/codeengine?topic=codeengine-deploy-multiple-regions). 
+* After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.
+
+* You can create a [custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings) and assign it to your app. For more information about deploying apps across multiple regions with a custom domain name, see [Configuring a highly available application](/docs/codeengine?topic=codeengine-deploy-multiple-regions). 
 
 * Now that your app is deployed, consider making your apps event-driven. By using event subscriptions, you can trigger your apps by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or set your app to react to events such as [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app) or [Kafka messages](/docs/codeengine?topic=codeengine-working-kafkaevent-producer).
 
