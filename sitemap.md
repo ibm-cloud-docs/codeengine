@@ -112,7 +112,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [22 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun2223)
 
-        * Added summary information for getting started with {{site.data.keyword.codeengineshort}} apps and batch jobs
+        * Added summary information for getting started with apps and batch jobs in {{site.data.keyword.codeengineshort}}
 
         * Added support for the scale-down delay autoscaling option in the console and CLI
 

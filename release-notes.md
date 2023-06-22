@@ -30,7 +30,7 @@ Review the release notes for June 2023.
 {: #codeengine-jun2223}
 {: release-note}
 
-Added summary information for getting started with {{site.data.keyword.codeengineshort}} apps and batch jobs
+Added summary information for getting started with apps and batch jobs in {{site.data.keyword.codeengineshort}}
 :   - See [Application workloads](/docs/codeengine?topic=codeengine-ceapplications).
 :   - See [Batch job workloads](/docs/codeengine?topic=codeengine-cebatchjobs).
 
