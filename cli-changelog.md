@@ -20,7 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.44.0 | 22 June 2023 | - Added support for the `--scale-down-delay` option on the **`app create`** and **`app update`** commands. \n - Fixed various bugs.  |
+| 1.44.0 | 22 June 2023 | - Added support for the `--scale-down-delay` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) and [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. \n - Fixed various bugs.  |
 | 1.43.7 | 08 June 2023 | - Fixed various bugs. |
 | 1.43.5 | 16 May 2023 | - Fixed various bugs. \n - Updated translations for the CLI. |
 | 1.43.4 | 27 April 2023 | - Fixed various bugs. |

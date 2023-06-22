@@ -118,6 +118,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.44.0 released
 
+        * Added support service bindings in the {{site.data.keyword.codeengineshort}} V2 API
+
         * Updated versions for buildpacks
 
     * [13 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun1323)
@@ -3254,7 +3256,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce subscription cron update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update)
 
-* [Subscription kafka commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
+* [Subscription `kafka` commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
 
     * [`ibmcloud ce subscription kafka create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create)
 
@@ -3304,6 +3306,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [22 June 2023](/docs/codeengine?topic=codeengine-api-changelog#22-june-2023)
 
 * [30 May 2023](/docs/codeengine?topic=codeengine-api-changelog#30-may-2023)
 
