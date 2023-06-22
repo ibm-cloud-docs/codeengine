@@ -65,6 +65,7 @@ For example, if the maximum number of instances value is set to `10` and the con
 For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimizing Application Scaling, Latency, and Throughput](https://www.ibm.com/cloud/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
 
 If you set the minimum number of instances equal to the maximum number of instances, then scaling does not occur and the target currency and scale-down delay values do not apply. However, the concurrency value is still in effect. 
+{: tip}
 
 ### Example scenario for autoscaling 
 {: #app-scale-example}
