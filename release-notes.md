@@ -41,7 +41,7 @@ Added support for the scale-down delay autoscaling option in the console and CLI
 CLI version 1.44.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-Added support for service bindings in the {{site.data.keyword.codeengineshort}} V2 API
+Added support for service binding operations in the {{site.data.keyword.codeengineshort}} V2 API
 :   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
 
 Updated versions for buildpacks
