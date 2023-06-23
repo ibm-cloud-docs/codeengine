@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-06-23"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,8 +26,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for June 2023.
 {: shortdesc}
 
-### 22 June 2023
-{: #codeengine-jun2223}
+### 23 June 2023
+{: #codeengine-jun2323}
 {: release-note}
 
 Added summary information for getting started with apps and batch jobs in {{site.data.keyword.codeengineshort}}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-06-23"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -43,7 +43,7 @@ You can configure scaling boundaries by setting a range of values for the minimu
 
 - Minimum number of instances -  The minimum number of instances of the app that are always running, even if no requests are processed. When set to `0` (default) {{site.data.keyword.codeengineshort}} removes all instances when no traffic is reaching the application. To always keep a running instance of your application, set this value greater than `0`. When you create or update an application with {{site.data.keyword.codeengineshort}} from the console, set the minimum number of instances value in the Autoscaling section of the **Runtime** tab. With the CLI, specify the `--min-scale` option on the **`app create`** and **`app update`** commands. 
 
-- Maximum number of instances -  The maximum number of instances that can be running for the app. Auto-scaling occurs up to this limit. If you set this value to `0`, the application scales as needed, and the app scaling is limited only by the instances per the resource quota for the project of your app. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits). When you create or update an application with {{site.data.keyword.codeengineshort}} from the console, set the maximum number of instances value in the Autoscaling section of the **Runtime** tab. With the CLI, specify the `--max-scale` option on the **`app create`** and **`app update`** commands. The default value for this option is `10`.
+- Maximum number of instances -  The maximum number of instances that can be running for the app. Autoscaling occurs up to this limit. If you set this value to `0`, the application scales as needed, and the app scaling is limited only by the instances per the resource quota for the project of your app. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits). When you create or update an application with {{site.data.keyword.codeengineshort}} from the console, set the maximum number of instances value in the Autoscaling section of the **Runtime** tab. With the CLI, specify the `--max-scale` option on the **`app create`** and **`app update`** commands. The default value for this option is `10`.
 
 When you connect your applications to event producers, remember to account for the frequency and volume of the events from those producers when you set your scale boundaries. For example, if you expect to receive many events at the same time and the processing of each event can take several minutes, then you might need a higher maximum scale value than if each event can be quickly processed. If you set the value too low, you might experience delays in receiving events, or even dropped events due to timeouts while you wait for processing resources to be free.
 
@@ -293,48 +293,48 @@ You can observe the number of running instances of your app with the CLI.
     Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
     Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
-Status Summary:     Application deployed successfully  
+    Status Summary:     Application deployed successfully  
 
-Environment Variables:    
-  Type     Name          Value  
-  Literal  CE_APP        myapp  
-  Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud  
-  Literal  CE_SUBDOMAIN  glxo4k7nj7d  
-Image:                  icr.io/codeengine/helloworld  
-Resource Allocation:      
-  CPU:                1  
-  Ephemeral Storage:  400M  
-  Memory:             4G  
+    Environment Variables:    
+    Type     Name          Value  
+    Literal  CE_APP        myapp  
+    Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud  
+    Literal  CE_SUBDOMAIN  glxo4k7nj7d  
+    Image:                  icr.io/codeengine/helloworld  
+    Resource Allocation:      
+    CPU:                1  
+    Ephemeral Storage:  400M  
+    Memory:             4G  
 
-Revisions:     
-  myapp-00001:    
-    Age:                42s  
-    Latest:             true  
-    Traffic:            100%  
-    Image:              icr.io/codeengine/helloworld (pinned to 1cee99)  
-    Running Instances:  1  
+    Revisions:     
+    myapp-00001:    
+        Age:                42s  
+        Latest:             true  
+        Traffic:            100%  
+        Image:              icr.io/codeengine/helloworld (pinned to 1cee99)  
+        Running Instances:  1  
 
-Runtime:       
-  Concurrency:       100  
-  Maximum Scale:     10  
-  Minimum Scale:     0  
-  Scale Down Delay:  0  
-  Timeout:           300  
+    Runtime:       
+    Concurrency:       100  
+    Maximum Scale:     10  
+    Minimum Scale:     0  
+    Scale Down Delay:  0  
+    Timeout:           300  
 
-Conditions:    
-  Type                 OK    Age  Reason  
-  ConfigurationsReady  true  25s    
-  Ready                true  12s    
-  RoutesReady          true  12s    
+    Conditions:    
+    Type                 OK    Age  Reason  
+    ConfigurationsReady  true  25s    
+    Ready                true  12s    
+    RoutesReady          true  12s    
 
-Events:        
-  Type    Reason   Age  Source              Messages  
-  Normal  Created  44s  service-controller  Created Configuration "myapp"  
-  Normal  Created  43s  service-controller  Created Route "myapp"  
+    Events:        
+    Type    Reason   Age  Source              Messages  
+    Normal  Created  44s  service-controller  Created Configuration "myapp"  
+    Normal  Created  43s  service-controller  Created Route "myapp"  
 
-Instances:     
-  Name                                    Revision     Running  Status   Restarts  Age  
-  myapp-00001-deployment-d59b87654-xkqh7  myapp-00001  3/3      Running  0         43s 
+    Instances:     
+    Name                                    Revision     Running  Status   Restarts  Age  
+    myapp-00001-deployment-d59b87654-xkqh7  myapp-00001  3/3      Running  0         43s 
     ```
     {: screen}
 
