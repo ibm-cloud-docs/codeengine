@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-06-23"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,29 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for June 2023.
 {: shortdesc}
+
+### 23 June 2023
+{: #codeengine-jun2323}
+{: release-note}
+
+Added summary information for getting started with apps and batch jobs in {{site.data.keyword.codeengineshort}}
+:   - See [Application workloads](/docs/codeengine?topic=codeengine-ceapplications).
+:   - See [Batch job workloads](/docs/codeengine?topic=codeengine-cebatchjobs).
+
+Added support for the scale-down delay autoscaling option 
+:   - See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
+:   - See the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) and [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands in the {{site.data.keyword.codeengineshort}} CLI reference.
+
+CLI version 1.44.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Added support for service binding operations in the {{site.data.keyword.codeengineshort}} V2 API
+:   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
+
 
 ### 13 June 2023
 {: #codeengine-jun1323}

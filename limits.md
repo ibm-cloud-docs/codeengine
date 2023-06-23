@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-06-15"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -37,7 +37,7 @@ See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-me
 
 The following table lists the limits for applications.
 
-| Category                    |         Default           |   Default Maximum      |     Need to extend the maximum?            |
+| Category                    |         Default           |   Maximum value       |     Need to extend the maximum?            |
 | --------------------------- | ------------------------- | ---------------------- |------------------------------------------- |
 | CPU                         |                       1.0 |                  12.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Ephemeral storage            |                     400 M |  48 G \n  (limited by memory) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
@@ -61,7 +61,7 @@ For more information about supported CPU and memory combinations, see [Supported
 
 The following table lists the limits for jobs. 
 
-| Category                     |         Default           |    Default Maximum       |     Need to extend the maximum?            |
+| Category                     |         Default           |    Maximum value         |     Need to extend the maximum?            |
 | ---------------------------- |  ------------------------ | ------------------------ |------------------------------------------- |
 | Array - Array indices        |                         0 |                  9999999 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Array - Number of instances  |                         1 |                     1000 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |

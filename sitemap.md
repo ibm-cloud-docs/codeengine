@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-06-23"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -49,6 +49,56 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology)
 
+[Application workloads](/docs/codeengine?topic=codeengine-ceapplications#ceapplications)
+
+* [What are application workloads?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads)
+
+* [What are the key features of working with  {{site.data.keyword.codeengineshort}} applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-features)
+
+    * [Isolation](/docs/codeengine?topic=codeengine-ceapplications#ceapp-isolation)
+
+    * [Logging](/docs/codeengine?topic=codeengine-ceapplications#ceapp-logging)
+
+    * [Running applications](/docs/codeengine?topic=codeengine-ceapplications#ceapp-runapp)
+
+    * [Scaling](/docs/codeengine?topic=codeengine-ceapplications#ceapp-scaling)
+
+    * [Security](/docs/codeengine?topic=codeengine-ceapplications#ceapp-security)
+
+    * [Triggering applications with events](/docs/codeengine?topic=codeengine-ceapplications#ceapp-eventing)
+
+    * [Visibility](/docs/codeengine?topic=codeengine-ceapplications#ceapp-visibility)
+
+* [How can I get started with applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-getstart)
+
+[Batch job workloads](/docs/codeengine?topic=codeengine-cebatchjobs#cebatchjobs)
+
+* [What are batch job workloads?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-workloads)
+
+    * [What is the lifecycle of a batch job?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-lifecycle)
+
+* [What are the key features of working with {{site.data.keyword.codeengineshort}} batch jobs?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-features)
+
+    * [Isolation](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-isolation)
+
+    * [Logging](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-logs)
+
+    * [Queuing](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-queue)
+
+    * [Retries](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-retries)
+
+    * [Running batch jobs](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-run)
+
+    * [Scaling](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-scaling)
+
+    * [Status](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-status)
+
+    * [Submitting similar batch jobs](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-reuse)
+
+    * [Triggering batch jobs with events](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-eventing)
+
+* [How can I get started with batch jobs?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-getstart)
+
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -59,6 +109,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun23)
 
     * Review the release notes for June 2023.
+
+    * [23 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun2323)
+
+        * Added summary information for getting started with apps and batch jobs in {{site.data.keyword.codeengineshort}}
+
+        * Added support for the scale-down delay autoscaling option 
+
+        * CLI version 1.44.0 released
+
+        * Added support for service binding operations in the {{site.data.keyword.codeengineshort}} V2 API
+
+        * Updated versions for buildpacks
 
     * [13 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun1323)
 
@@ -2331,7 +2393,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
 
-* [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
+    * [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
+
+    * [Autoscaling settings for concurrency and timing](/docs/codeengine?topic=codeengine-app-scale#app-scale-timeconcurrency)
+
+    * [Example scenario for autoscaling](/docs/codeengine?topic=codeengine-app-scale#app-scale-example)
 
 * [Optimize latency and throughput](/docs/codeengine?topic=codeengine-app-scale#app-optimize-latency)
 
@@ -2341,9 +2407,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Setting the number of minimum and maximum instances for your app](/docs/codeengine?topic=codeengine-app-scale#scale-app-min-max)
 
-    * [Changing the number of running instances from the console](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-ui)
+    * [Changing the autoscaling range from the console](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-ui)
 
-    * [Changing the number of running instances with the CLI](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-cli)
+    * [Changing the autoscaling range with the CLI](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-cli)
 
 
 ## Binding Code Engine resources to IBM Cloud services
@@ -3240,6 +3306,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [22 June 2023](/docs/codeengine?topic=codeengine-api-changelog#22-june-2023)
 
 * [30 May 2023](/docs/codeengine?topic=codeengine-api-changelog#30-may-2023)
 

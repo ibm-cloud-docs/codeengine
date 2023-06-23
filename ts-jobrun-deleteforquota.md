@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-06-23"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -45,7 +45,7 @@ When you  delete a job, all the submitted job runs that reference this job are a
 
 * From the console, select your project and then go to the {{site.data.keyword.codeengineshort}} Overview page. You can view the number of jobs and job runs for the project in the Summary section. For more details, select Jobs or Job runs from the Summary section or select Jobs from the navigation menu. 
     * To delete a specific job run of a job, select the job from the **Jobs** page. From the specific job page, click the name of the job run from the **Latest job runs** section, and then select **Delete job run** in the drop-down menu. 
-    * To delete a specific job and all of its job runs from the **Jobs** page, click the **Delete** icon ![Delete](../icons/delete.svg "Delete").
+    * To delete a specific job and all its job runs from the **Jobs** page, click the **Delete** icon ![Delete](../icons/delete.svg "Delete").
 
 
 * With the CLI, 

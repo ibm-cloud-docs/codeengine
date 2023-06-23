@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-06-22"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -127,7 +127,7 @@ OK
 Create an application.  
   
 ```txt
-ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -258,6 +258,9 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
    - The fully qualified revision name must be 63 characters or fewer.
 
    This value is *optional*. 
+
+`--scale-down-delay`, `--sdd`
+:   The amount of time in seconds that must pass at reduced concurrency before the application is scaled down. An increase of the number of concurrent requests causes an application to scale up. If the number of requests drops (reduced concurrency), the specified amount of time for this option determines how long the reduced concurrency needs to persist, before the application is scaled down. By default, the application will be scaled down immediately, if reduced concurrency is detected. This value is *optional*. The default value is `0`.
 
 `--service-account`, `--sa`
 :   The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
@@ -492,42 +495,48 @@ Created:            2021-09-09T14:01:02-04:00
 URL:                https://myapp.abcdabcdabc.us-south.codeengine.appdomain.cloud
 Cluster Local URL:  http://myapp.abcdabcdabc.svc.cluster.local
 Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
-Status Summary:     Application deployed successfully
+Status Summary:     Application deployed successfully  
 
-Image:                  icr.io/codeengine/hello
+Environment Variables:    
+  Type     Name          Value  
+  Literal  CE_APP        myapp  
+  Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud  
+  Literal  CE_SUBDOMAIN  glxo4k7nj7d  
+Image:                  icr.io/codeengine/helloworld  
+Resource Allocation:      
+  CPU:                1  
+  Ephemeral Storage:  400M  
+  Memory:             4G  
 
-Resource Allocation:
-    CPU:                1
-    Ephemeral Storage:  400M
-    Memory:             4G
+Revisions:     
+  myapp-00001:    
+    Age:                42s  
+    Latest:             true  
+    Traffic:            100%  
+    Image:              icr.io/codeengine/helloworld (pinned to 1cee99)  
+    Running Instances:  1  
 
-Revisions:
-    myapp-atfte-1:
-        Age:                3d6h
-    Traffic:            100%
-    Image:              icr.io/codeengine/hello (pinned to f0dc03)
-    Running Instances:  1
+Runtime:       
+  Concurrency:       100  
+  Maximum Scale:     10  
+  Minimum Scale:     0  
+  Scale Down Delay:  0  
+  Timeout:           300  
 
-Runtime:
-    Concurrency:    100
-    Maximum Scale:  10
-    Minimum Scale:  0
-    Timeout:        300
+Conditions:    
+  Type                 OK    Age  Reason  
+  ConfigurationsReady  true  25s    
+  Ready                true  12s    
+  RoutesReady          true  12s    
 
-Conditions:
-    Type                 OK    Age   Reason
-    ConfigurationsReady  true  3d6h
-    Ready                true  3d6h
-    RoutesReady          true  3d6h
+Events:        
+  Type    Reason   Age  Source              Messages  
+  Normal  Created  44s  service-controller  Created Configuration "myapp"  
+  Normal  Created  43s  service-controller  Created Route "myapp"  
 
-Events:
-    Type    Reason   Age    Source              Messages
-    Normal  Created  3m55s  service-controller  Created Configuration "myapp"
-    Normal  Created  3m54s  service-controller  Created Route "myapp"
-
-Instances:
-    Name                                       Revision       Running  Status   Restarts  Age
-    myapp-00002-deployment-8495f8ccb9-kmc57    myapp-00002    3/3      Running  0         27m
+Instances:     
+  Name                                    Revision     Running  Status   Restarts  Age  
+  myapp-00001-deployment-d59b87654-xkqh7  myapp-00001  3/3      Running  0         43s 
 ```
 {: screen}  
   
@@ -764,7 +773,7 @@ OK
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```txt
-ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -922,6 +931,9 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
    - The fully qualified revision name must be 63 characters or fewer.
 
    This value is *optional*. 
+
+`--scale-down-delay`, `--sdd`
+:   The amount of time in seconds that must pass at reduced concurrency before the application is scaled down. An increase of the number of concurrent requests causes an application to scale up. If the number of requests drops (reduced concurrency), the specified amount of time for this option determines how long the reduced concurrency needs to persist, before the application is scaled down. By default, the application will be scaled down immediately, if reduced concurrency is detected. This value is *optional*. The default value is `0`.
 
 `--service-account`, `--sa`
 :   The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
