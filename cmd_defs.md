@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-06-26"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -95,10 +95,10 @@ ibmcloud ce application bind --name APP_NAME (--service-instance SI_NAME | --ser
 #### Example
 {: #application-bind-example}
 
-In this example, bind your {{site.data.keyword.languagetranslationshort}} service instance called `langtranslator` to your application called `myapp`.
+In this example, bind your {{site.data.keyword.cos_full_notm}} service instance called `my-object-storage` to your application called `myapp`.
 
 ```txt
-ibmcloud ce application bind --name myapp --service-instance langtranslator
+ibmcloud ce application bind --name myapp --service-instance my-object-storage
 ```
 {: pre}
 
