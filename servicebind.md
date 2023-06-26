@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-25"
+lastupdated: "2023-06-26"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -62,6 +62,11 @@ What access is required to create service bindings?
 
 Is there a way to configure service binding operations for all users in a project? 
 :    Yes! With sufficient permissions, you can use the Integration page in the console to configure service binding operations from a single page. If you don't have sufficient permissions to perform these actions, you can use this page to help you understand the required permissions. See [Configuring project-wide settings](/docs/codeengine?topic=codeengine-project-integrations). 
+
+
+After binding my application to a service instance, what's the life of this service binding?  
+:    When you create a binding between your application and a service instance, the service binding is active as long as the application and the service instance is active, or you haven't completed an unbind operation to remove the service binding. If the service instance is deleted, you'll need to manually delete the service binding. When you unbind (or remove) a service binding, you are deleting the association of the app or job with the service access secret such that the app or job no longer has access to previously bound {{site.data.keyword.cloud_notm}} service. 
+
 
 
 ## Accessing a bound service instance from an app or job

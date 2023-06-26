@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-25"
+lastupdated: "2023-06-26"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -358,6 +358,10 @@ If you already created a credential for your service instance and want to use it
 {: #unbind}
 
 Unbinding service instances from an app or job removes existing service bindings.
+
+When you unbind (or remove) a service binding, you are deleting the association of the app or job with the service access secret such that the app or job no longer has access to previously bound {{site.data.keyword.cloud_notm}} service. 
+
+After a service binding is defined between your application and a service instance, the service binding is active as long as the application and the service instance is active, or you haven't completed an unbind operation to remove the service binding. If the service instance is deleted, you'll need to manually delete the service binding. 
 
 When you unbind (or remove) a service binding, you are deleting the association of the app or job with the service access secret such that the app or job no longer has access to previously bound {{site.data.keyword.cloud_notm}} service. 
 
