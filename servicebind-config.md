@@ -157,8 +157,6 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
     ```txt
     Name                               Location   State    Type               Resource Group ID
     my-object-storage                  global     active   service_instance   325d80be5d7945608f6d121712c96ee9
-    tone_analyzer1                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
-    tone_analyzer2                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
     ```
     {: screen}
 
@@ -226,8 +224,6 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} app and
     ```txt
     Name                               Location   State    Type               Resource Group ID
     my-object-storage                  global     active   service_instance   325d80be5d7945608f6d121712c96ee9
-    tone_analyzer1                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
-    tone_analyzer2                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
     ```
     {: screen}
 
