@@ -297,8 +297,6 @@ If you already created a credential for your service instance and want to use it
     ```txt
     Name                               Location   State    Type               Resource Group ID
     my-object-storage                  global     active   service_instance   325d80be5d7945608f6d121712c96ee9
-    tone_analyzer1                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
-    tone_analyzer2                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
     ```
     {: screen}
 
