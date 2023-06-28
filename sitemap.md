@@ -2267,6 +2267,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-local#nextsteps-funruncr)
 
+[Runtimes](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtime)
+
+* [Supported managed runtimes for Functions on {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-managed)
+
+* [Optimized CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-cpu-mem)
+
 
 ## Running your source code
 {: #sitemap_running_your_source_code}
