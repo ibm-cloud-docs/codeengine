@@ -64,7 +64,7 @@ In addition, {{site.data.keyword.codeengineshort}} includes [Function limits](/d
 Functions can perform lightweight, short running, data transformations as results of external events. They can also serve the content for dynamic, data elements on Web pages. In general, functions can perform scalable, short running parallel tasks that must be finished in a defined or short time.
 
 {{site.data.keyword.codeengineshort}} Functions offers a straight-forward programming model that uses source code snippets of supported programming languages. These code snippets are used “inline” in a Function definition with no need to compile your code first.
-  
+ 
 | Characteristic | App | Job | Function |
 | --------- | --------- | --------- | --------- |
 | Execution time (duration) | Long-running 10min per request | Long-running up to 24hrs | Short-running (<=2mins) |
@@ -76,7 +76,7 @@ Functions can perform lightweight, short running, data transformations as result
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
 | Optimized for | Long running highly complex workload and on-demand scale-out | Scheduled/planned workloads with high resource demands | Startup time and rapid scale-out |
 {: caption="Table 1. Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
- 
+
 ## Migrating IBM Cloud Functions Actions to Code Engine Functions FAQ
 {: #fun-migrate-faqs}
 
