@@ -64,7 +64,7 @@ module.exports.main = main;
 2. Create a function called `myfun-local` that uses a the `main.js` file as source. This command automatically builds and pushes the code bundle to a {{site.data.keyword.registryshort}} namespace in your account. If you do not have an existing {{site.data.keyword.registryshort}} namespace, {{site.data.keyword.codeengineshort}} automatically creates one for you.
 
     ```txt
-    ibmcloud ce fn create --name myfun-local --build-source main.js
+    ibmcloud ce fn create --name myfun-local --runtime nodejs-18 --build-source main.js
     ```
     {: pre}
 
