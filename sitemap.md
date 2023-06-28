@@ -99,6 +99,28 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How can I get started with batch jobs?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-getstart)
 
+[Function workloads](/docs/codeengine?topic=codeengine-cefunctions#cefunctions)
+
+* [Lifecycle of a Function instance](/docs/codeengine?topic=codeengine-cefunctions#functions-lifecycle)
+
+* [What are key features of working with Functions?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-ce)
+
+    * [Isolation](/docs/codeengine?topic=codeengine-cefunctions#cefun-isolation)
+
+    * [Logging](/docs/codeengine?topic=codeengine-cefunctions#functions-logging)
+
+    * [Runtimes](/docs/codeengine?topic=codeengine-cefunctions#functions-runtime)
+
+    * [Running Functions](/docs/codeengine?topic=codeengine-cefunctions#cefun-runfun)
+
+    * [Security](/docs/codeengine?topic=codeengine-cefunctions#cefun-security)
+
+    * [Invocation concurrency and scaling of Function instances](/docs/codeengine?topic=codeengine-cefunctions#functions-concur-ce)
+
+    * [Packaging your source code for a Function](/docs/codeengine?topic=codeengine-cefunctions#functions-packaging)
+
+* [How can I get started with Functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
+
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -2189,6 +2211,39 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Stopping a job that runs indefinitely from the console](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop-ui)
 
     * [Stopping a job that runs indefinitely with the CLI](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop-cli)
+
+
+## Creating a Function
+{: #sitemap_creating_a_function}
+
+
+[Working with Functions](/docs/codeengine?topic=codeengine-fun-work#fun-work)
+
+* [Function limitations](/docs/codeengine?topic=codeengine-fun-work#fun-limitations)
+
+* [How do I make my code run as a {{site.data.keyword.codeengineshort}} Function component?](/docs/codeengine?topic=codeengine-fun-work#fun-containerimage)
+
+* [Requests and responses](/docs/codeengine?topic=codeengine-fun-work#functions-request)
+
+    * [Example 1: Generating an HTML response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-request1)
+
+    * [Example 2: Setting a response code and response header](/docs/codeengine?topic=codeengine-fun-work#functions-request2)
+
+    * [Example 3: Generating a plain text response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-request3)
+
+* [Error handling and debugging](/docs/codeengine?topic=codeengine-fun-work#functions-error)
+
+* [Function data input/output characteristics](/docs/codeengine?topic=codeengine-fun-work#functions-data)
+
+* [Options for creating Functions](/docs/codeengine?topic=codeengine-fun-work#functions-options)
+
+    * [Memory and CPU](/docs/codeengine?topic=codeengine-fun-work#functions-combo)
+
+    * [Creating and running your app with environment variables](/docs/codeengine?topic=codeengine-fun-work#functions-envvar)
+
+    * [Creating and running your Function when using secrets and configmaps](/docs/codeengine?topic=codeengine-fun-work#functions-secconfigmap)
+
+* [Considerations for Functions quotas](/docs/codeengine?topic=codeengine-fun-work#functions-quotas)
 
 
 ## Running your source code
