@@ -2259,7 +2259,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-nodejs-ce)
 
-* [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-python)
+    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-python)
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-repo#nextsteps-funsource)
 

@@ -171,7 +171,7 @@ Create a function that includes a dependency for a specific Python module by cre
 
 For more information about the `fn create` command and its options, see [Create a Function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
 
-## Including modules for a Python Function
+### Including modules for a Python Function
 {: #function-python}
 
 Create a function that includes a dependency for a specific Python module by creating a `requirements.txt` file. In this case, both the source code and requirements file are located in the same folder.
