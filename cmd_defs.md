@@ -2357,7 +2357,7 @@ A Function is a stateless code snippet that performs tasks in response to an HTT
 
 You must be within the context of a [project](#cli-project) before you use `function` commands.
 
-For more information about working with Functions, see .  
+For more information about working with Functions, see [Working with Functions](/docs/codeengine?topic=codeengine-fun-work).  
   
 ### `ibmcloud ce function bind`  
 {: #cli-function-bind}  
