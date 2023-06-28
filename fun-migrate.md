@@ -20,12 +20,12 @@ subcollection: codeengine
 
 However, the increased demands and additional requirements our valued customers have been articulating, lead us to constantly innovate, improve, and evolve the IBM Functions-as-a-Service technologies and offerings. As a result and to address these demands, IBM is adding Functions-as-a-Service technology to IBM Cloud Code Engine.
 
-## Comparing IBM Cloud Code Engine to Cloud Functions
+## Comparing Code Engine to Cloud Functions
 {: #fun-migrate-compare}
 
 The SOC2, ISO32k, BSI C5, and Financial Services Cloud-certified IBM Cloud Code Engine service is available in nine (9) regions. As a fully managed, serverless platform, it runs a broad variety of customer workloads as containers, batch jobs, applications, and functions. You can access [Code Engine in the IBM Public Cloud](https://cloud.ibm.com/codeengine){: external}. 
 
-The new Functions-as-a-Service capabilities enable Code Engine customers to perform short running, run-to-completion type of workloads. Whether you are a Cloud Functions customer or you are new to Functions-as-a-Service, you can learn more about [running functions in IBM Cloud Code Engine](/docs/codeengine?topic=codeengine-fun-work).
+The new Functions-as-a-Service capabilities enable Code Engine customers to perform short running, run-to-completion type of workloads. Whether you are a Cloud Functions customer or you are new to Functions-as-a-Service, you can learn more about [running functions in IBM Cloud Code Engine](/docs/codeengine?topic=codeengine-fun-work). You can even [take a tutorial](/docs/codeengine?topic=codeengine-fun-tutorial).
   
 Functions-as-a-Service in Code Engine offers an improved server-less value proposition in terms of user experience, usage patterns, security, and total cost of ownership. 
   

@@ -2287,7 +2287,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate)
 
-* [Comparing IBM Cloud Code Engine to Cloud Functions](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare)
+* [Comparing Code Engine to Cloud Functions](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare)
 
 * [Key capabilities](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-key)
 
