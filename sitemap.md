@@ -2245,6 +2245,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Considerations for Functions quotas](/docs/codeengine?topic=codeengine-fun-work#functions-quotas)
 
+[Creating Function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo)
+
+* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package)
+
+    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-nodejs-ce)
+
+* [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-python)
+
+* [Next steps](/docs/codeengine?topic=codeengine-fun-create-repo#nextsteps-funsource)
+
 [Creating Function from local source code](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local)
 
 * [Creating a function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local-cli)
