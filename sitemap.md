@@ -2271,7 +2271,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-local#function-nodejs-ce)
 
-* [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-local#function-python)
+    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-local#function-python)
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-local#nextsteps-funruncr)
 
