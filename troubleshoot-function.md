@@ -42,4 +42,13 @@ When you view logs from the console, you must create an {{site.data.keyword.la_f
 ## Keep your runtime and CLI versions up to date
 {: #ts-function-uptodate}
 
-Verify that your runtime continues to be supported. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).  In addition, keep your CLI up to date. See [Updating the CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli).
+Verify that your runtime is supported. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
+
+## Additional topics
+{: #ts-function-topics}
+
+You can find more help in the following topics.
+
+- [Troubleshooting overview](/docs/codeengine?topic=codeengine-troubleshooting_over).
+- [Debugging builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
+

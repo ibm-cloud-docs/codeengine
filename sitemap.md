@@ -3829,6 +3829,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Keep your runtime and CLI versions up to date](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-uptodate)
 
+* [Additional topics](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-topics)
+
 
 ### Troubleshooting images
 {: #sitemap_troubleshooting_images}
