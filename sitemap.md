@@ -2281,6 +2281,36 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Optimized CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-cpu-mem)
 
+[Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate)
+
+* [Comparing IBM Cloud Code Engine to Cloud Functions](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare)
+
+* [Key capabilities](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-key)
+
+* [How Functions compare to apps and jobs](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare-app-job)
+
+* [Migrating IBM Cloud Functions Actions to Code Engine Functions FAQ](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faqs)
+
+    * [How can I process a bulk-load of computations?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq1)
+
+    * [I used Cloud Function to include dynamic elements for my web application. Can I move to {{site.data.keyword.codeengineshort}} Functions?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq2)
+
+    * [Can I trigger my function code?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq3)
+
+    * [Can my function be accessed publically?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq4)
+
+    * [How can I secure my functions?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq5)
+
+    * [Can I include dynamic elements?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq6)
+
+    * [Can I use sequences to chain my functions together?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq7)
+
+    * [Can I use `whisk.system` actions?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq8)
+
+    * [Can I bind my function to service credentials?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq9)
+
+    * [Where can I find information about my in progress and finished Code Engine Function runs?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq10)
+
 
 ## Running your source code
 {: #sitemap_running_your_source_code}
