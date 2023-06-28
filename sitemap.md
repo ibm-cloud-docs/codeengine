@@ -132,6 +132,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for June 2023.
 
+    * [29 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun2923)
+
+        * New! Function support in Code Engine
+
     * [23 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun2323)
 
         * Added summary information for getting started with apps and batch jobs in {{site.data.keyword.codeengineshort}}
