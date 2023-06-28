@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-21"
+lastupdated: "2023-06-28"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -21,10 +21,10 @@ Logging can help you troubleshoot issues in {{site.data.keyword.codeenginefull}}
 ## Viewing logs from the console 
 {: #view-logs-ui}
 
-When you work with {{site.data.keyword.codeengineshort}} apps, jobs, or builds in the console with logging enabled, logs are forwarded to an {{site.data.keyword.la_full_notm}} service where they are indexed, enabling full-text search through all generated messages and convenient querying based on specific fields.
+When you work with {{site.data.keyword.codeengineshort}} apps, jobs, functions, or builds in the console with logging enabled, logs are forwarded to an {{site.data.keyword.la_full_notm}} service where they are indexed, enabling full-text search through all generated messages and convenient querying based on specific fields.
 {: shortdesc}
 
-To view logs for your app, job or build in the {{site.data.keyword.codeengineshort}} console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} component. From your {{site.data.keyword.codeengineshort}} app, job, or build page in the console, you can add logging capabilities.
+To view logs for your app, job or build in the {{site.data.keyword.codeengineshort}} console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} component. From your {{site.data.keyword.codeengineshort}} app, job, function, or build page in the console, you can add logging capabilities.
 
 You need to enable logging for {{site.data.keyword.codeengineshort}} only one time per region, per account.
 {: note}
@@ -99,6 +99,22 @@ Alternatively, you can configure a {{site.data.keyword.la_short}} instance by us
 You have completed the steps to configure your {{site.data.keyword.la_short}} instance such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} job.
 
 Alternatively, you can configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. 
+
+### Viewing function logs from the console
+{: #view-funlogs-ui}
+
+1. Go to an function that you created and deployed. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, select your project and then select **Functions**. Select the function that you want to work with. 
+2. From your {{site.data.keyword.codeengineshort}} function page, you can add logging capabilities. If you do not have an existing {{site.data.keyword.la_short}} instance, click **Add logging**. If you have previously created a {{site.data.keyword.la_short}} instance, **Launch logging** displays and you do not need to complete this step. 
+    1. Click **Add logging** to create the {{site.data.keyword.la_full_notm}} instance. This action opens the {{site.data.keyword.la_short}} service.  
+    2. From the {{site.data.keyword.la_short}} service, create your logging instance. To confirm that your logging instance is created, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
+    3. From your {{site.data.keyword.codeengineshort}} app page, click **Configure logging**. This time, select a {{site.data.keyword.la_short}} instance to receive platform logs. {{site.data.keyword.codeengineshort}} requires platform logs be configured to receive {{site.data.keyword.codeengineshort}} logging data. Choose the logging instance that was created in the prior step. Click **Select**. 
+3. Now that platform logging is configured, from your {{site.data.keyword.codeengineshort}} app page, click **Launch logging** to open your platform logs window. Be sure to keep this platform logs window open to receive your logging data if you are using the {{site.data.keyword.la_short}} free tier. You don't need to keep this window open if you are using a {{site.data.keyword.la_short}} paid tier as log data is preserved for a configurable amount of time, depending on your plan. To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
+4. (optional) Refine the [filter for your search](#view-logs-filters), if needed. 
+5. Test your Function. Click **Test function** and then click **Send request** in the Test function pane. To open the Function in a web page, click **Function URL**. You can view platform logs from the test of your Function in the platform logs window. 
+
+Your {{site.data.keyword.la_short}} instance is now configured such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} Function.
+
+Alternatively, you can configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. You can also apply [filters for your search](#view-logs-filters) in {{site.data.keyword.la_short}} for your {{site.data.keyword.codeengineshort}} log data. 
 
 ### Viewing build logs from the console
 {: #view-build-ui}

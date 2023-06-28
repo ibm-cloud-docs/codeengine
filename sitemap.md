@@ -2958,6 +2958,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui)
 
+    * [Viewing function logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-funlogs-ui)
+
     * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui)
 
 * [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-cli)
