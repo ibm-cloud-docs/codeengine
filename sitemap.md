@@ -3821,6 +3821,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Why does my Python app fail to deploy?](/docs/codeengine?topic=codeengine-ts-build-python#ts-build-python)
 
+
+### Troubleshooting Functions
+{: #sitemap_troubleshooting_functions}
+
+
 [Debugging functions](/docs/codeengine?topic=codeengine-troubleshoot-function#troubleshoot-function)
 
 * [Function limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-limits)

@@ -229,7 +229,10 @@ toc:
               - ts-build-fail-memorylimit.md
               - ts-build-fail-buildpushstepfails.md
               - ts-build-python.md
-          - troubleshoot-function.md
+          - topicgroup:
+              label: Troubleshooting Functions 
+              topics:
+              - troubleshoot-function.md
           - topicgroup:
               label: Troubleshooting images 
               topics:
