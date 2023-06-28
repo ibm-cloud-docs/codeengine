@@ -2245,6 +2245,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Considerations for Functions quotas](/docs/codeengine?topic=codeengine-fun-work#functions-quotas)
 
+[Creating Function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inlinecode)
+
+* [Creating a function with inline with the console](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inline-console)
+
+* [Creating a function with inline code with the CLI](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inline-cli)
+
+* [Next steps](/docs/codeengine?topic=codeengine-fun-create-inlinecode#nextsteps-funinline)
+
 [Creating Function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo)
 
 * [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package)
