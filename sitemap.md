@@ -3120,6 +3120,24 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce domainmapping update`](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-update)
 
+* [Function commands](/docs/codeengine?topic=codeengine-cli#cli-function)
+
+    * [`ibmcloud ce function bind`](/docs/codeengine?topic=codeengine-cli#cli-function-bind)
+
+    * [`ibmcloud ce function create`](/docs/codeengine?topic=codeengine-cli#cli-function-create)
+
+    * [`ibmcloud ce function delete`](/docs/codeengine?topic=codeengine-cli#cli-function-delete)
+
+    * [`ibmcloud ce function get`](/docs/codeengine?topic=codeengine-cli#cli-function-get)
+
+    * [`ibmcloud ce function list`](/docs/codeengine?topic=codeengine-cli#cli-function-list)
+
+    * [`ibmcloud ce function runtimes`](/docs/codeengine?topic=codeengine-cli#cli-function-runtimes)
+
+    * [`ibmcloud ce function unbind`](/docs/codeengine?topic=codeengine-cli#cli-function-unbind)
+
+    * [`ibmcloud ce function update`](/docs/codeengine?topic=codeengine-cli#cli-function-update)
+
 * [Job commands](/docs/codeengine?topic=codeengine-cli#cli-job)
 
     * [`ibmcloud ce job bind`](/docs/codeengine?topic=codeengine-cli#cli-job-bind)
@@ -3256,7 +3274,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce subscription cron update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update)
 
-* [Subscription `kafka` commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
+* [Subscription kafka commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
 
     * [`ibmcloud ce subscription kafka create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create)
 
