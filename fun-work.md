@@ -31,6 +31,7 @@ Before you begin
 - No support for subscribing to event producers.
 - No support for custom domains.
 - No support for limiting the visibility of your function.
+- No support for Terraform.
 
 ## How do I make my code run as a {{site.data.keyword.codeengineshort}} Function component?
 {: #fun-containerimage}
