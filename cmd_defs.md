@@ -2438,8 +2438,8 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 `-n`, `--name`
 :   The name of the function. Use a name that is unique within the project.
 
-   - The name must begin with a lowercase letter. 
-   - The name must end with a lowercase alphanumeric character. 
+   - The name must begin with a lowercase letter.
+   - The name must end with a lowercase alphanumeric character.
    - The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).
 
    This value is *required*. 
@@ -2480,7 +2480,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 `--env-cm`, `--env-from-configmap`
 :   Set environment variables from the key-value pairs that are stored in this configmap by using one of the following ways.
 
-   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`. 
+   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
    - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
 
    This value is *optional*. 
@@ -2488,7 +2488,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 `--env-sec`, `--env-from-secret`
 :   Set environment variables from the key-value pairs that are stored in a secret by using one of the following ways.
 
-   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`. 
+   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
    - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
 
    This value is *optional*. 
