@@ -59,7 +59,7 @@ The following example illustrates how to generate an HTML response from a Functi
 ```javascript
   function main(params) {
       var msg = 'You did not tell me who you are.';
-      if (params.name !== "") {
+      if (params.name) {
           msg = `Hello, ${params.name}!`
        } else {
           msg = `Hello, FaaS on CodeEngine!`
@@ -148,14 +148,10 @@ As a developer of a Function, you can generate any arbitrary HTTP status code, e
 | Code | Description |
 | ---- | ------ | 
 | `x-faas-actionstatus` | The HTTP status code set by the Function program logic. |
-| `x-faas-actionbody` | The type and length of the response body that is returned by the Function. |
-| `x-faas-actionheaders` | The list of response header flags set by the Function. |
 | `x-faas-activation-id` | The unique ID to identify the Function invocation. |
 | `x-faas-result` | A `success` message or short error message that is returned by the Runtime container. |
 | `x-faas-errormessage` | A long error message with additional details. |
-| `x-faas-timing` | The metrics about loading and execution durations. |
 | `x-faas-prewarmed` | A message that indicates whether the invocation was cold or if the Function ran in an existing (pre-warmed container. Possible values are `false` or `true`. |
-| `content-type` | The response data content type as set by the Function program logic. |
 {: caption="Table 2. Status codes" caption-side="bottom"}
 
 
