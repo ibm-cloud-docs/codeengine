@@ -2324,7 +2324,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Can I trigger my function code?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq3)
 
-    * [Can my function be accessed publically?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq4)
+    * [Can my function be accessed through a public URL?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq4)
 
     * [How can I secure my functions?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq5)
 

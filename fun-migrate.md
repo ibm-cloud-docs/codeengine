@@ -95,7 +95,7 @@ You can convert your action to a {{site.data.keyword.codeengineshort}} Function 
 
 While {{site.data.keyword.codeengineshort}} does not include an object called a “trigger”, it does support subscribing to event producers, including cron jobs (alarms), Object storage, and Event Streams (Kafka) data. For more information, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
 
-### Can my function be accessed publically?
+### Can my function be accessed through a public URL?
 {: #fun-migrate-faq4}
 
 A {{site.data.keyword.codeengineshort}} Function includes a public URL, that is provided for you when you create it.
