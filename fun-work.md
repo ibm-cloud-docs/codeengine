@@ -163,14 +163,14 @@ To run your Function in {{site.data.keyword.codeengineshort}}, your code must im
 	
 - Must be callable from a public web app endpoint, so that it can be embedded with web pages and then invoked from any Code Engine Eventing source, a Web Browser, or any other HTTPS capable client.
 - Must implement a `main` procedure as entry point. The `main` procedure can receive input parameters in form of a JSON formatted data structure and can return output parameters, also in form of a JSON formatted data structure.
-- Can receive an optional subpath, so that the Function can implement different flavors, based on the specified path. The Function's `main` procedure receives the path as a `__ce_path` input parameter.
+- Can receive an optional sub path, so that the Function can implement different flavors, based on the specified path. The Function's `main` procedure receives the path as a `__ce_path` input parameter.
 - Can receive optional query parameters, which can be used to configure the Function at runtime. The Function's `main` procedure receives the parameters as key-value pairs within the JSON formatted input data structure.
 - Can receive request headers, so that client code can specify  accepted encodings. 
 - Can receive an optional content-type request header.
-- Can receive an optional request payload (body), which the Function processes at runtime. Depending on the selected request content-type, the data payload is passed to the Function's main entry point, either in base 64 encoded form or "unfolded" as part of the JSON input data structure. Special characters in keys values pairs of `application/x-www-form-urlencoded` input are percent-encoded.
+- Can receive an optional request payload (body), which the Function processes at runtime. Depending on the selected request content-type, the data payload is passed to the Function's main entry point, either in base 64 encoded form or "unfolded" as part of the JSON input data structure. Special characters in keys values pairs of `application/x-www-form-urlencoded` input are `percent-encoded` values.
 - Can define an arbitrary HTTP status code (optional) that is then returned to the invoking client.
 - Can set arbitrary response headers, such as a redirect location, a response encoding, or cookie values.
-- Can return an arbitrary response body with a selected binary or nonbinary encoding; for example, `application/octet-stream`, `application/json`, `text/*`, `image/*`, or `audio/*`. If no content-type response header is set, it defaults to `text/plain`.
+- Can return an arbitrary response body with a selected binary or non-binary encoding; for example, `application/octet-stream`, `application/json`, `text/*`, `image/*`, or `audio/*`. If no `content-type` response header is set, it defaults to `text/plain`.
 - Supports the following request content-types: `application/x-www-form-urlencoded` (default), `text/plain`, `application/json`, `application/octet-stream`, `image/*`, `audio/*`
 - Does not support the `multipart/form-data` request header.
 
