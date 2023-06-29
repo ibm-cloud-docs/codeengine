@@ -1862,6 +1862,27 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-migrate-next)
 
 
+## Running a function from local source
+{: #sitemap_running_a_function_from_local_source}
+
+
+[Running a function from local source](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial)
+
+* [Set up your environment](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-envirn)
+
+* [Create the source code](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-sourcecode)
+
+* [Create your function](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-create)
+
+* [Invoke your function](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-invoke)
+
+* [Provide parameters for your function](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-parameters)
+
+* [Clean up](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-clean-up)
+
+* [Next steps](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-nextsteps)
+
+
 ## Setting up the CLI
 {: #sitemap_setting_up_the_cli}
 

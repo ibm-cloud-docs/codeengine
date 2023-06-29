@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-06-29"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -80,7 +80,7 @@ For more information about creating and invoking Functions, see [Working with Fu
 ### Security 
 {: #cefun-security}
 
-{{site.data.keyword.codeengineshort}} provides out-of-the-box DDOS protection for your Function. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-DDoS). 
+{{site.data.keyword.codeengineshort}} provides out-of-the-box DDOS protection for your Function. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). 
 
 {{site.data.keyword.codeengineshort}} also provides a service mesh to use its networking layer, which enables mutual Transport Layer Security (TLS) traffic for Functions, thus securing *service-to-service* and *user-to-service* communication.
 
@@ -105,7 +105,7 @@ Functions can be packaged in three different ways.
 ## How can I get started with Functions?
 {: #cefun-getstart}
   
-To deploy a simple {{site.data.keyword.codeengineshort}} application with a `hello-world` sample image, see [Running IBM Code Engine Functions](/docs/codeengine?topic=codeengine-run-fun-tutorial) tutorial.
+To deploy a simple {{site.data.keyword.codeengineshort}} application with a `hello-world` sample image, see [Running IBM Code Engine Functions](/docs/codeengine?topic=codeengine-fun-tutorial) tutorial.
 
 To dive deeper into working with Functions, see [Working with Functions in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-work).
 
