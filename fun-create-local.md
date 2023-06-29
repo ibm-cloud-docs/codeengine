@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-06-29"
 
-keywords: functions in code engine, function workloads, function inline
+keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
 subcollection: codeengine
 
