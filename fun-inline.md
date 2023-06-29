@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-06-29"
 
 keywords: functions in code engine, function workloads, function inline
 
@@ -55,7 +55,7 @@ Before you begin
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-This exmaple uses a code file named `main.js`. You can use the following example code to create your `main.js` file or you can substitute your own code.
+This example uses a code file named `main.js`. You can use the following example code to create your `main.js` file or you can substitute your own code.
   
 ```javascript
 async function main(params) {
