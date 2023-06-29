@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-06-29"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -554,7 +554,7 @@ ibmcloud ce application list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
  {: #cmd-options-application-list} 
 
 `--output`, `-o`
-:   Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -2438,7 +2438,9 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 `-n`, `--name`
 :   The name of the function. Use a name that is unique within the project.
 
-   - The name must begin with a lowercase letter. - The name must end with a lowercase alphanumeric character. - The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).
+   - The name must begin with a lowercase letter. 
+   - The name must end with a lowercase alphanumeric character. 
+   - The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).
 
    This value is *required*. 
 
@@ -2478,14 +2480,16 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 `--env-cm`, `--env-from-configmap`
 :   Set environment variables from the key-value pairs that are stored in this configmap by using one of the following ways.
 
-   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`. - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
+   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`. 
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
 
    This value is *optional*. 
 
 `--env-sec`, `--env-from-secret`
 :   Set environment variables from the key-value pairs that are stored in a secret by using one of the following ways.
 
-   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`. - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
+   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`. 
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
 
    This value is *optional*. 
 
@@ -2731,7 +2735,7 @@ myfunction3    Ready      https://myfunction41.4svg40kna19.us-south.codeengine.a
 List available function runtimes.  
   
 ```txt
-ibmcloud ce function runtimes [--all] [--optimized] [--output OUTPUT] [--quiet]
+ibmcloud ce function runtimes [--all] [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -2741,11 +2745,8 @@ ibmcloud ce function runtimes [--all] [--optimized] [--output OUTPUT] [--quiet]
 `--all`, `-A`
 :   Display all runtimes, including deprecated runtimes. This value is *optional*. The default value is `false`.
 
-`--optimized`, `--opt`
-:   Display only runtimes that have optimized cold start behavior. This value is *optional*. The default value is `false`.
-
 `--output`, `-o`
-:   Output format. Valid values are 'json', 'yaml', 'jsonpath=JSONPATH_EXPRESSION', and 'jsonpath-as-json=JSONPATH_EXPRESSION'. This value is *optional*. 
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -7091,7 +7092,7 @@ ibmcloud ce subscription kafka create --name KAFKA_SOURCE_NAME --destination DES
 :   Create the Kafka event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait. Use the `subscription kafka get` command to check the subscription status. This value is *optional*. The default value is `false`.
 
 `--output`, `-o`
-:   Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--password`, `-p`
 :   The password that is used to authenticate to the Kafka instance. If you specify the `--password` option, you must not specify the `--secret` option. This value is *optional*. 
@@ -7336,7 +7337,7 @@ ibmcloud ce subscription kafka update --name KAFKA_SOURCE_NAME [--broker BROKER]
 :   Remove CloudEvents extensions to send to the destination by specifying the name of the key. Specify one extension per `--ext-rm` option; for example, `--ext-rm extA --ext-rm extB`. This value is *optional*. 
 
 `--output`, `-o`
-:   Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--password`, `-p`
 :   The password that is used to authenticate to the Kafka instance. If you specify the `--password` option, you must not specify the `--secret` option. This value is *optional*. 
