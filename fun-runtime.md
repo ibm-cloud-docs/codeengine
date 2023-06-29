@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-06-29"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -19,7 +19,7 @@ subcollection: codeengine
 
 Managed runtimes include Node.js and Python versions and specific CPU and memory combinations. These runtimes are optimized for fast startup. These runtimes are pre-warmed, which avoids the overhead of pulling container images and starting containers and processes. Your code is injected into an already running container. Use these managed runtimes when possible.
 
-Custom runtimes are available for experienced users. You can build your own custom runtime that allows you to pre-package common libraries that are used across different Function implementations. This approach gives you more flexibility in the development process, but still allows for faster startup times, when compared to containerized applications. For more information about custom runtimes, see [Packaging dependencies for your Function](/docs/codeengine?topic=codeengine-fun-package).
+Custom runtimes are available for experienced users. You can build your own custom runtime that allows you to pre-package common libraries that are used across different Function implementations. This approach gives you more flexibility in the development process, but still allows for faster startup times, when compared to containerized applications.
 
 ## Supported managed runtimes for Functions on {{site.data.keyword.codeengineshort}}
 {: #fun-supported-managed}
