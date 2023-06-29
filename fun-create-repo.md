@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-06-29"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -31,10 +31,10 @@ In this scenario, {{site.data.keyword.codeengineshort}} builds a code bundle fro
 
 For information about required permissions for accessing image registries, see [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
 
-The following example **`function create`** command creates the `myfun` function, which references code that is located in `https://github.com/IBM/CodeEngine`. This command automatically builds the code bundle and uploads it to an {{site.data.keyword.registrylong}} namespace in your account. The function references this built code bundle. By specifying the `--build-context-dir` option, the build uses the source in the `helloworld` directory.  
+The following example **`function create`** command creates the `myfun` function, which references code that is located in `https://github.com/IBM/CodeEngine`. This command automatically builds the code bundle and uploads it to an {{site.data.keyword.registrylong}} namespace in your account. The function references this built code bundle. By specifying the `--build-context-dir` option, the build uses the source in the `helloworld-samples/function-nodejs` directory.  
 
 ```txt
-ibmcloud ce function create --name myfun --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld
+ibmcloud ce function create --name myfun --runtime nodejs-18 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs
 ```
 {: pre}
 
@@ -43,18 +43,18 @@ Example output
 ```txt
 Preparing function 'myfun' for build push...
 Creating function 'myfun'...
-Submitting build run 'myfun-run-110627-111124665'...
-Creating image 'icr.io/ce--abcde-4svg40kna19/function-myfun:110627-2222-hjxl6'...
+Submitting build run 'myfun-run-230111-111212718'...
+Creating image 'icr.io/ce--abcde-glxo4kabcde/function-myfun:230111-1532-vwo4o'...
 Waiting for build run to complete...
 Build run status: 'Running'
 Build run completed successfully.
-Run 'ibmcloud ce buildrun get -n myfun-run-110627-111124665' to check the build run status.
+Run 'ibmcloud ce buildrun get -n myfun-run-230111-111212718' to check the build run status.
 Waiting for function 'myfun' to become ready...
 Function 'myfun' is ready.
 OK                                                
 Run 'ibmcloud ce function get -n myfun' to see more details.
 
-https://myfun.13c66hbi3rhz.us-south.codeengine.appdomain.cloud
+https://myfun.11a66hbi3rhz.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
 
@@ -95,21 +95,22 @@ Resources:
   Max Execution Time:  60 seconds  
 
 Build Information:    
-  Build Run Name:     myfun-run-110627-111124665  
+  Build Run Name:     myfun-run-230111-111212718  
   Build Type:         git  
   Build Strategy:     codebundle-nodejs-18  
   Timeout:            600  
-  Source:             https://github.com/myrepo/test  
+  Source:             https://github.com/IBM/CodeEngine  
+  Context Directory:  /helloworld-samples/function-nodejs    
                       
   Build Run Summary:  Succeeded  
   Build Run Status:   Succeeded  
   Build Run Reason:   All Steps have completed executing  
-  Run 'ibmcloud ce buildrun get -n myfun-run-110627-111124665' for details.  
+  Run 'ibmcloud ce buildrun get -n myfun-run-230111-111212718' for details.  
 
 Function Code:    
   Runtime:        nodejs-18 (managed)  
   Bundle Secret:  ce-auto-icr-us-south  
-  Code Bundle:    cr://icr.io/ce--8a6a0-13c66hbi3rhz/function-kerstenrepofunction:230627-2107-wjxl6  
+  Code Bundle:    cr://icr.io/ce--abcde-glxo4kabcde/function-myfun:230111-1532-vwo4o 
   Main:           main() 
 ```
 {: screen}
