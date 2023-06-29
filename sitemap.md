@@ -136,6 +136,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * New! Function support in Code Engine
 
+        * CLI version 1.45.0 released
+
     * [23 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun2323)
 
         * Added summary information for getting started with apps and batch jobs in {{site.data.keyword.codeengineshort}}

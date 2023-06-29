@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-06-29"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -35,7 +35,8 @@ New! Function support in Code Engine
 :   - [Take a tutorial](/docs/codeengine?topic=codeengine-fun-tutorial).
 :   - [Dive deeper into Functions](/docs/codeengine?topic=codeengine-fun-work).
 
-
+CLI version 1.45.0 released
+:   This CLI version adds support for the **`function`** command group to manage {{site.data.keyword.codeengineshort}} Functions with the CLI. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 23 June 2023
 {: #codeengine-jun2323}
