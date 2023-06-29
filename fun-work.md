@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-06-29"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -37,15 +37,14 @@ Before you begin
 
 Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides a streamlined way for you to run your code as a Function.
 
-- If you are starting with source code that is located in a Git repository, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the code bundle from your source and creating the Function with a single operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code to {{site.data.keyword.registrylong}}. To learn more, see [Creating a Function from repository source code](/docs/codeengine?topic=codeengine-fun-source-code). 
+- If you are starting with source code that is located in a Git repository, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the code bundle from your source and creating the Function with a single operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code to {{site.data.keyword.registrylong}}. To learn more, see [Creating a Function from repository source code](/docs/codeengine?topic=codeengine-fun-create-repo). 
 
-- If you are starting with source code on a local workstation, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the Function with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code to {{site.data.keyword.registrylong}}. To learn more, see [Creating your Function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-local-source-code). 
+- If you are starting with source code on a local workstation, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the Function with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code to {{site.data.keyword.registrylong}}. To learn more, see [Creating your Function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local). 
   
-- If you are starting with source code, you can also run your source code inline. In this scenario, you paste in your source code when you create your Function. For more information, see [Creating your Function with inline code](/docs/codeengine?topic=codeengine-fun-inline-source-code).
-	
-- If you are starting with 
+- If you are starting with source code, you can also run your source code inline. In this scenario, you paste in your source code when you create your Function. For more information, see [Creating your Function with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode).
 
-After you create and run your Function, you can also [update your Function](/docs/codeengine?topic=codeengine-update-fun) by using *any* of the preceding ways, independent of how you created or previously updated your Function.
+
+After you create and run your Function, you can also update your Function by using *any* of the preceding ways, independent of how you created or previously updated your Function.
 
 ## Requests and responses
 {: #functions-request}
