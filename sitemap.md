@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-06-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -99,6 +99,28 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How can I get started with batch jobs?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-getstart)
 
+[Function workloads](/docs/codeengine?topic=codeengine-cefunctions#cefunctions)
+
+* [Lifecycle of a Function instance](/docs/codeengine?topic=codeengine-cefunctions#functions-lifecycle)
+
+* [What are key features of working with Functions?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-ce)
+
+    * [Isolation](/docs/codeengine?topic=codeengine-cefunctions#cefun-isolation)
+
+    * [Logging](/docs/codeengine?topic=codeengine-cefunctions#functions-logging)
+
+    * [Runtimes](/docs/codeengine?topic=codeengine-cefunctions#functions-runtime)
+
+    * [Running Functions](/docs/codeengine?topic=codeengine-cefunctions#cefun-runfun)
+
+    * [Security](/docs/codeengine?topic=codeengine-cefunctions#cefun-security)
+
+    * [Invocation concurrency and scaling of Function instances](/docs/codeengine?topic=codeengine-cefunctions#functions-concur-ce)
+
+    * [Packaging your source code for a Function](/docs/codeengine?topic=codeengine-cefunctions#functions-packaging)
+
+* [How can I get started with Functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
+
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -109,6 +131,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun23)
 
     * Review the release notes for June 2023.
+
+    * [29 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun2923)
+
+        * New! Function support in Code Engine
+
+        * CLI version 1.45.0 released
 
     * [23 June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun2323)
 
@@ -1836,6 +1864,27 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-migrate-next)
 
 
+## Running a function from local source
+{: #sitemap_running_a_function_from_local_source}
+
+
+[Running a function from local source](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial)
+
+* [Set up your environment](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-envirn)
+
+* [Create the source code](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-sourcecode)
+
+* [Create your function](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-create)
+
+* [Invoke your function](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-invoke)
+
+* [Provide parameters for your function](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-parameters)
+
+* [Clean up](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-clean-up)
+
+* [Next steps](/docs/codeengine?topic=codeengine-fun-tutorial#fun-tutorial-nextsteps)
+
+
 ## Setting up the CLI
 {: #sitemap_setting_up_the_cli}
 
@@ -2189,6 +2238,105 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Stopping a job that runs indefinitely from the console](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop-ui)
 
     * [Stopping a job that runs indefinitely with the CLI](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop-cli)
+
+
+## Creating a Function
+{: #sitemap_creating_a_function}
+
+
+[Working with Functions](/docs/codeengine?topic=codeengine-fun-work#fun-work)
+
+* [Function limitations](/docs/codeengine?topic=codeengine-fun-work#fun-limitations)
+
+* [How do I make my code run as a {{site.data.keyword.codeengineshort}} Function component?](/docs/codeengine?topic=codeengine-fun-work#fun-containerimage)
+
+* [Requests and responses](/docs/codeengine?topic=codeengine-fun-work#functions-request)
+
+    * [Example 1: Generating an HTML response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-request1)
+
+    * [Example 2: Setting a response code and response header](/docs/codeengine?topic=codeengine-fun-work#functions-request2)
+
+    * [Example 3: Generating a plain text response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-request3)
+
+* [Error handling and debugging](/docs/codeengine?topic=codeengine-fun-work#functions-error)
+
+* [Function data input/output characteristics](/docs/codeengine?topic=codeengine-fun-work#functions-data)
+
+* [Options for creating Functions](/docs/codeengine?topic=codeengine-fun-work#functions-options)
+
+    * [Memory and CPU](/docs/codeengine?topic=codeengine-fun-work#functions-combo)
+
+    * [Creating and running your app with environment variables](/docs/codeengine?topic=codeengine-fun-work#functions-envvar)
+
+    * [Creating and running your Function when using secrets and configmaps](/docs/codeengine?topic=codeengine-fun-work#functions-secconfigmap)
+
+* [Considerations for Functions quotas](/docs/codeengine?topic=codeengine-fun-work#functions-quotas)
+
+[Creating Function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inlinecode)
+
+* [Creating a function with inline with the console](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inline-console)
+
+* [Creating a function with inline code with the CLI](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inline-cli)
+
+* [Next steps](/docs/codeengine?topic=codeengine-fun-create-inlinecode#nextsteps-funinline)
+
+[Creating Function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo)
+
+* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package)
+
+    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-nodejs-ce)
+
+    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-python)
+
+* [Next steps](/docs/codeengine?topic=codeengine-fun-create-repo#nextsteps-funsource)
+
+[Creating Function from local source code](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local)
+
+* [Creating a function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local-cli)
+
+* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-local#fun-package)
+
+    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-local#function-nodejs-ce)
+
+    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-local#function-python)
+
+* [Next steps](/docs/codeengine?topic=codeengine-fun-create-local#nextsteps-funruncr)
+
+[Runtimes](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtime)
+
+* [Supported managed runtimes for Functions on {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-managed)
+
+* [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-cpu-mem)
+
+[Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate)
+
+* [Comparing Code Engine to Cloud Functions](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare)
+
+* [Key capabilities](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-key)
+
+* [How Functions compare to apps and jobs](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare-app-job)
+
+* [Migrating IBM Cloud Functions Actions to Code Engine Functions FAQ](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faqs)
+
+    * [How can I process a bulk-load of computations?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq1)
+
+    * [I used Cloud Function to include dynamic elements for my web application. Can I move to {{site.data.keyword.codeengineshort}} Functions?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq2)
+
+    * [Can I trigger my function code?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq3)
+
+    * [Can my function be accessed through a public URL?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq4)
+
+    * [How can I secure my functions?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq5)
+
+    * [Can I include dynamic elements?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq6)
+
+    * [Can I use sequences to chain my functions together?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq7)
+
+    * [Can I use `whisk.system` actions?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq8)
+
+    * [Can I bind my function to service credentials?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq9)
+
+    * [Where can I find information about my in progress and finished Code Engine Function runs?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq10)
 
 
 ## Running your source code
@@ -2867,6 +3015,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui)
 
+    * [Viewing function logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-funlogs-ui)
+
     * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui)
 
 * [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-cli)
@@ -3120,6 +3270,24 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce domainmapping update`](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-update)
 
+* [Function commands](/docs/codeengine?topic=codeengine-cli#cli-function)
+
+    * [`ibmcloud ce function bind`](/docs/codeengine?topic=codeengine-cli#cli-function-bind)
+
+    * [`ibmcloud ce function create`](/docs/codeengine?topic=codeengine-cli#cli-function-create)
+
+    * [`ibmcloud ce function delete`](/docs/codeengine?topic=codeengine-cli#cli-function-delete)
+
+    * [`ibmcloud ce function get`](/docs/codeengine?topic=codeengine-cli#cli-function-get)
+
+    * [`ibmcloud ce function list`](/docs/codeengine?topic=codeengine-cli#cli-function-list)
+
+    * [`ibmcloud ce function runtimes`](/docs/codeengine?topic=codeengine-cli#cli-function-runtimes)
+
+    * [`ibmcloud ce function unbind`](/docs/codeengine?topic=codeengine-cli#cli-function-unbind)
+
+    * [`ibmcloud ce function update`](/docs/codeengine?topic=codeengine-cli#cli-function-update)
+
 * [Job commands](/docs/codeengine?topic=codeengine-cli#cli-job)
 
     * [`ibmcloud ce job bind`](/docs/codeengine?topic=codeengine-cli#cli-job-bind)
@@ -3256,7 +3424,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce subscription cron update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update)
 
-* [Subscription `kafka` commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
+* [Subscription kafka commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
 
     * [`ibmcloud ce subscription kafka create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create)
 
@@ -3347,6 +3515,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Job defaults and limits](/docs/codeengine?topic=codeengine-limits#limits_job)
 
     * [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit)
+
+* [Function limits](/docs/codeengine?topic=codeengine-limits#limits_functions)
 
 * [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
 
@@ -3673,6 +3843,21 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Resolution for a problem with the Docker build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-dockerbuild)
 
 [Why does my Python app fail to deploy?](/docs/codeengine?topic=codeengine-ts-build-python#ts-build-python)
+
+
+### Troubleshooting Functions
+{: #sitemap_troubleshooting_functions}
+
+
+[Debugging functions](/docs/codeengine?topic=codeengine-troubleshoot-function#troubleshoot-function)
+
+* [Function limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-limits)
+
+* [Getting logs for my function](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-funcrtion-gettinglogs)
+
+* [Keep your runtime and CLI versions up to date](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-uptodate)
+
+* [Additional topics](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-topics)
 
 
 ### Troubleshooting images

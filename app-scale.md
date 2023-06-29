@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-06-27"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -60,7 +60,7 @@ Use the following configuration settings to control application scaling.
 
 - Scale-down delay -  The amount of time, in seconds, that must pass at reduced concurrency before the application scales down. If you know the pattern of incoming requests to your application, you might choose to specify a value greater than the default of `0` to delay the scaling down of your application. If you use a high value for this option the average number of concurrently running application instances might increase, which incurs additional cost. Even with a scale-down delay setting of `0`, the system waits for a short amount of time before the application scales down the number of instances to ensure that a drop in request concurrency is stable enough to warrant a scale down.  With the CLI, specify the `--scale-down-delay` option on the **`app create`** and **`app update`** commands. 
 
-For example, if the maximum number of instances value is set to `10` and the concurrency is set to `100`, then an application can process 1000 concurrent requests before potential queueing of requests might occur. If you expect more than 1000 requests concurrently, then you might consider increasing the maximum number of instances value for your app. 
+For example, if the maximum number of instances value is set to `10` and the concurrency is set to `100`, then an application can process 1000 concurrent requests before potential queuing of requests might occur. If you expect more than 1000 requests concurrently, then you might consider increasing the maximum number of instances value for your app. 
 
 For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimizing Application Scaling, Latency, and Throughput](https://www.ibm.com/cloud/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
 

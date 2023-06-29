@@ -20,7 +20,8 @@ toc:
           topics:
           - about.md
           - app-workloads.md
-          - batchjob-workloads.md          
+          - batchjob-workloads.md
+          - function-workloads.md          
       - release-notes.md   
   - navgroup: 
       id: tutorial
@@ -54,6 +55,7 @@ toc:
           - subscription-kafka-tutorial.md
           - github-event-tutorial.md
       - migrate-cf-ce-tutorial.md
+      - fun-tutorial.md
   - navgroup: 
       id: howto
       topics:
@@ -89,6 +91,15 @@ toc:
           - job-access.md
           - job-update.md
           - job-daemon.md
+      - topicgroup:
+          label: Creating a Function
+          topics:
+          - fun-work.md
+          - fun-inline.md
+          - fun-create-repo.md
+          - fun-create-local.md
+          - fun-runtime.md
+          - fun-migrate.md
       - topicgroup:
           label: Running your source code
           topics:
@@ -218,6 +229,10 @@ toc:
               - ts-build-fail-memorylimit.md
               - ts-build-fail-buildpushstepfails.md
               - ts-build-python.md
+          - topicgroup:
+              label: Troubleshooting Functions 
+              topics:
+              - troubleshoot-function.md
           - topicgroup:
               label: Troubleshooting images 
               topics:

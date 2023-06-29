@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-06-28"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -90,7 +90,23 @@ For more information about supported CPU and memory combinations, see [Supported
 
 * If you use environment variables, try to use fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the `--env-from-secret` or `--env-from-configmap` options with the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
-For more information about troubleshooting jobs, see [Troubleshooting - Why can't I submit a job run?](/docs/codeengine?topic=codeengine-ts-jobrun-submit-fails-cli)
+For more information about troubleshooting jobs, see [Troubleshooting - Why can't I submit a job run?](/docs/codeengine?topic=codeengine-ts-jobrun-submit-fails-cli).
+
+## Function limits
+{: #limits_functions}
+
+The following table lists the limits for Functions. 
+
+| Category               |   Maximum |      Need to extend the maximum?            |
+| ---------------------- |  --------- | ------------------------------------------- |
+| Length of runtime        | 120 seconds |                   |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Code size      | 1 MB compressed, including base64 overhead |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Invocation URI size |   1.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Request body size | 2048 bytes  |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Request header size |  5 MB |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Response body size |   4 KB |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Timeout                | 600 seconds |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+{: caption="Function limits"}
 
 
 ## Project quotas

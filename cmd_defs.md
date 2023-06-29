@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-06-29"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -33,7 +33,7 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
     ```
     {: pre}  
   
-## Application commands
+## Application commands  
 {: #cli-application}  
 
 An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming requests and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
@@ -95,10 +95,10 @@ ibmcloud ce application bind --name APP_NAME (--service-instance SI_NAME | --ser
 #### Example
 {: #application-bind-example}
 
-In this example, bind your {{site.data.keyword.languagetranslationshort}} service instance called `langtranslator` to your application called `myapp`.
+In this example, bind your {{site.data.keyword.cos_full_notm}} service instance called `my-object-storage` to your application called `myapp`.
 
 ```txt
-ibmcloud ce application bind --name myapp --service-instance langtranslator
+ibmcloud ce application bind --name myapp --service-instance my-object-storage
 ```
 {: pre}
 
@@ -554,7 +554,7 @@ ibmcloud ce application list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
  {: #cmd-options-application-list} 
 
 `--output`, `-o`
-:   Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -2348,6 +2348,630 @@ Updating domainmapping 'www.example.com'...
 {: screen}
 
   
+  
+## Function commands  
+{: #cli-function}  
+
+A Function is a stateless code snippet that performs tasks in response to an HTTP request. With IBM Code Engine Functions, you can run your business logic in a scalable and serverless way. IBM Code Engine Functions provide an optimized runtime environment to support low latency and rapid scale-out scenarios. Your Function code can be written in in Node.js or Python, which are optimized to run in IBM Code Engine Functions. In addition, your Function code can be written for any OpenWhisk compatible runtime environment or a custom runtime image.
+{: shortdesc}
+
+You must be within the context of a [project](#cli-project) before you use `function` commands.
+
+For more information about working with Functions, see [Working with Functions](/docs/codeengine?topic=codeengine-fun-work).  
+  
+### `ibmcloud ce function bind`  
+{: #cli-function-bind}  
+
+Bind an {{site.data.keyword.cloud_notm}} service instance to a function.  
+  
+```txt
+ibmcloud ce function bind --name FUNCTION_NAME (--service-instance SI_NAME | --service-instance-id SI_ID) [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-function-bind} 
+
+`--name`, `-n`
+:   The name of the function to bind. This value is *required*. 
+
+`--no-wait`, `--nw`
+:   Bind the service instance and do not wait for the service binding to be ready. If you specify the `no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `function get` command to check the function bind status. This value is *optional*. The default value is `false`.
+
+`--prefix`, `-p`
+:   A prefix for environment variables that are created for this service binding. Must contain only uppercase letters, numbers, and underscores (\_), and cannot start with a number. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--role`, `-r`
+:   The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. The option defaults to `Manager` or the first role provided by the service if `Manager` is not supported. This option is ignored if `--service-credential` is specified. This value is *optional*. 
+
+`--service-credential`, `--sc`
+:   The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is *optional*. 
+
+`--service-instance`, `--si`
+:   The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the function. This value is *optional*. 
+
+`--service-instance-id`, `--siid`
+:   The GUID of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the function. This value is *optional*. 
+
+`--wait`, `-w`
+:   Bind the service instance and wait for the service binding to be ready. If you specify the `--wait` option, the function bind waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the function bind to complete successfully. If the function bind is not completed successfully or fails within the specified `--wait-timeout` period, the command fails. This value is *optional*. The default value is `true`.
+
+`--wait-timeout`, `--wto`
+:   The length of time in seconds to wait for the service binding to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `300`.
+
+ 
+  
+#### Example
+{: #function-bind-example}
+
+```txt
+ibmcloud ce fn bind --name myfunction --service-instance my-object-storage
+```
+{: pre}
+
+#### Example output
+{: #function-bind-example-output}
+
+```txt
+Binding service instance...
+Status: Done
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce function create`  
+{: #cli-function-create}  
+
+Create a function.  
+  
+```txt
+ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--code-bundle CODE_BUNDLE] [--code-bundle-secret CODE_BUNDLE_SECRET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--force] [--inline-code INLINE_CODE] [--main MAIN] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--output OUTPUT] [--quiet] [--runtime RUNTIME] [--runtime-secret RUNTIME_SECRET] [--runtime-type RUNTIME_TYPE] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-function-create} 
+
+`-n`, `--name`
+:   The name of the function. Use a name that is unique within the project.
+
+   - The name must begin with a lowercase letter.
+   - The name must end with a lowercase alphanumeric character.
+   - The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).
+
+   This value is *required*. 
+
+`--runtime`, `-r`
+:   The runtime to use for the function. This value is either a managed runtime identifier or an image reference URL. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime). This value is *required*. 
+
+`--build-commit`, `--commit`, `--bcm`, `--cm`, `--revision`
+:   The commit, tag, or branch in the source repository to pull. This value is *optional*. 
+
+`--build-context-dir`, `--context-dir`, `--bcdr`, `--cdr`
+:   The directory in the repository that contains the source code for your function. This value is *optional*. 
+
+`--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed only if the `--build-source` option is set to the URL of a Git repository. This value is *optional*. 
+
+`--build-source`, `--source`, `--bsrc`, `--src`
+:   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
+
+`--build-strategy`, `--strategy`, `--bstr`, `--str`
+:   The strategy to use for building the image. This option is required only if a build strategy must be chosen for a custom runtime. See [Runtime](/docs/codeengine?topic=codeengine-fun-runtime). This value is *optional*. 
+
+`--build-timeout`, `--bto`
+:   The amount of time, in seconds, that can pass before the build must succeed or fail. This value is *optional*. The default value is `600`.
+
+`--code-bundle`, `--cb`
+:   The name of the `code-bundle` image that is used for build push of the function. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
+
+`--code-bundle-secret`, `--cs`, `--cbs`
+:   The name of the registry secret that is used to authenticate with a private registry. You can add the registry secret by running the `registry create` command. This value is *optional*. 
+
+`--cpu`
+:   The amount of CPU set for the instance of the function. For valid values see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `0.25`.
+
+`--env`, `-e`
+:   Set environment variables in the function. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
+
+`--env-cm`, `--env-from-configmap`
+:   Set environment variables from the key-value pairs that are stored in this configmap by using one of the following ways.
+
+   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
+
+   This value is *optional*. 
+
+`--env-sec`, `--env-from-secret`
+:   Set environment variables from the key-value pairs that are stored in a secret by using one of the following ways.
+
+   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
+
+   This value is *optional*. 
+
+`--force`, `-f`
+:   Do not verify the existence of specified configmap and secret references. This value is *optional*. The default value is `false`.
+
+`--inline-code`
+:   Specify the path to a file containing the source code for your function. The code is stored inline with the function. This value is *optional*. 
+
+`--main`, `--fn-main`
+:   Specify the name of your main function in the provided source code. This option is required when the name is not `main`. This value is *optional*. The default value is `main`.
+
+`--maxexecutiontime`, `--met`
+:   The maximum execution time in seconds for this function to complete its run. This value is *optional*. The default value is `60`.
+
+`--memory`, `-m`
+:   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `1G`.
+
+`--no-wait`, `--nw`
+:   Do not wait for the build run to complete. This value is *optional*. The default value is `true`.
+
+`--output`, `-o`
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--runtime-secret`, `--rs`
+:   The name of the registry secret that is used to authenticate with a private registry to pull a custom runtime. This value is *optional*. 
+
+`--runtime-type`, `--rt`
+:   The type of runtime to use for the function. Valid values are `managed` and `custom`. See [Runtime](/docs/codeengine?topic=codeengine-fun-runtime). This value is *optional*. The default value is `managed`.
+
+`--wait`, `-w`
+:   Wait for the build run to complete. This value is *optional*. The default value is `true`.
+
+`--wait-timeout`, `--wto`
+:   The length of time in seconds to wait for the function to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `600`.
+
+ 
+  
+#### Example
+{: #function-create-example}
+
+```txt
+ibmcloud ce fn create --name myfunction --build-source main.js --runtime nodejs-18
+```
+{: pre}
+
+#### Example output
+{: #function-create-example-output}
+
+```txt
+Preparing function 'myfunction' for build push...
+Creating function 'myfunction'...
+Packaging files to upload from source path 'main.js'...
+Submitting build run 'myfunction-run-111111-12345678'...
+Creating image 'private.stg.icr.io/ce--1a1a1-11c22def3rhz/function-myfunction:12345678-1111-dexla'...
+Waiting for build run to complete...
+Build run status: 'Running'
+Build run completed successfully.
+Run 'ibmcloud ce buildrun get -n myfunction-run-111111-12345678' to check the build run status.
+Waiting for function 'myfunction' to become ready...
+Function 'myfunction' is ready.
+OK                                                
+Run 'ibmcloud ce function get -n myfunction' to see more details.
+
+https://myfunction.11c22def3rhz.us-south.codeengine.appdomain.cloud
+```
+{: screen}
+
+When you run `ibmcloud ce fn get -n 'myfunction'` to check the function status, the URL for your function is displayed.  
+{: tip}  
+  
+### `ibmcloud ce function delete`  
+{: #cli-function-delete}  
+
+Delete a function.  
+  
+```txt
+ibmcloud ce function delete --name FUNCTION_NAME [--force] [--ignore-not-found] [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-function-delete} 
+
+`--name`, `-n`
+:   The name of the function. This value is *required*. 
+
+`--force`, `-f`
+:   Force deletion without confirmation. This value is *optional*. The default value is `false`.
+
+`--ignore-not-found`, `--inf`
+:   If not found, do not fail. This value is *optional*. The default value is `false`.
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #function-delete-example}
+
+```txt
+ibmcloud ce fn delete --name myfunction
+```
+{: pre}
+
+#### Example output
+{: #function-delete-example-output}
+
+```txt
+Are you sure you want to delete function 'myfunction'? [y/N]> y
+Deleting function 'myfunction'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce function get`  
+{: #cli-function-get}  
+
+Display the details of a function.  
+  
+```txt
+ibmcloud ce function get --name FUNCTION_NAME [--output OUTPUT] [--quiet] [--save SAVE]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-function-get} 
+
+`--name`, `-n`
+:   The name of the function. This value is *required*. 
+
+`--output`, `-o`
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--save`, `-s`
+:   Save the source source code of the function to the local file system. This option is supported for only functions that were created with inline code. This value is *optional*. 
+
+ 
+  
+#### Example
+{: #function-get-example}
+
+```txt
+ibmcloud ce fn get --name myfunction
+```
+{: pre}
+
+#### Example output
+{: #function-get-example-output}
+
+```txt
+Getting function 'myfunction'...
+OK
+
+Name:          myfunction  
+Project Name:  myproject 
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
+Age:           6m8s  
+Created:       2023-06-22T19:59:51Z
+URL:           https://myfunction.11c22def3rhz.us-south.codeengine.appdomain.cloud  
+Status:        Ready  
+
+Resources:    
+  CPU:                 0.25  
+  Memory:              500M  
+  Max Execution Time:  60 seconds  
+
+Build Information:    
+  Build Run Name:     myfunction-run-111111-12345678 
+  Build Type:         local  
+  Build Strategy:     codebundle-nodejs-18  
+  Timeout:            600  
+  Source:             main.js  
+                      
+  Build Run Summary:  Succeeded  
+  Build Run Status:   Succeeded  
+  Build Run Reason:   All Steps have completed executing  
+  Run 'ibmcloud ce buildrun get -n myfunction-run-111111-12345678' for details.  
+
+Function Code:    
+  Runtime:        nodejs-18 (managed)  
+  Bundle Secret:  ce-auto-icr-private-us-south  
+  Code Bundle:    cr://icr.io/ce--1a1a1-11c22def3rhz/function-myfunction:12345678-1111-dexla 
+  Main:           main()
+```
+{: screen}  
+  
+### `ibmcloud ce function list`  
+{: #cli-function-list}  
+
+List all functions in a project.  
+  
+```txt
+ibmcloud ce function list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-function-list} 
+
+`--output`, `-o`
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--sort-by`, `-s`
+:   Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is `name`.
+
+ 
+  
+#### Example
+{: #function-list-example}
+
+```txt
+ibmcloud ce fn delete --name myfunction
+```
+{: pre}
+
+#### Example output
+{: #function-list-example-output}
+
+```txt
+Name           Status     URL                                                                    CPU   Memory  Age  
+hellofunction  Ready      https://hellofunction.4svg40kna19.us-south.codeengine.appdomain.cloud  0.25  500M    25h  
+myfunction     Ready      https://myfun1.4svg40kna19.us-south.codeengine.appdomain.cloud         0.25  1G      8d   
+helloworld     Ready      https://myfunction1.4svg40kna19.us-south.codeengine.appdomain.cloud    0.25  1G      16d  
+myfunction1    Ready      https://myfunction111.4svg40kna19.us-south.codeengine.appdomain.cloud  0.25  500M    25h  
+myfunction3    Ready      https://myfunction41.4svg40kna19.us-south.codeengine.appdomain.cloud   0.25  500M    25h  
+```
+{: screen}  
+  
+### `ibmcloud ce function runtimes`  
+{: #cli-function-runtimes}  
+
+List available function runtimes.  
+  
+```txt
+ibmcloud ce function runtimes [--all] [--output OUTPUT] [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-function-runtimes} 
+
+`--all`, `-A`
+:   Display all runtimes, including deprecated runtimes. This value is *optional*. The default value is `false`.
+
+`--output`, `-o`
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #function-runtimes-example}
+
+```txt
+ibmcloud ce fn runtimes
+```
+{: pre}
+
+#### Example output
+{: #function-runtimes-example-output}
+
+```txt
+Name         ID           Family  Default  Optimized  
+Node.js 18   nodejs-18    nodejs  true     true  
+Python 3.11  python-3.11  python  true     true 
+```
+{: screen}
+  
+  
+### `ibmcloud ce function unbind`  
+{: #cli-function-unbind}  
+
+Unbind {{site.data.keyword.cloud_notm}} service instances from a function.  
+  
+```txt
+ibmcloud ce function unbind --name FUNCTION_NAME (--binding BINDING_NAME | --all) [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-function-unbind} 
+
+`--name`, `-n`
+:   The name of the function to unbind. This value is *required*. 
+
+`--all`, `-A`
+:   Unbinds all service instances for this function. This value is required if `--binding` is not specified. The default value is `false`.
+
+`--binding`, `-b`
+:   The name of the binding to unbind. Run `ibmcloud ce function get -n FUNCTION_NAME` to view binding names. This value is required if `--all` is not specified. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #function-unbind-example}
+
+```txt
+ibmcloud ce fn unbind --name myfunction --all
+```
+{: pre}
+
+#### Example output
+{: #function-unbind-example-output}
+
+```txt
+Removing bindings from 'myfunction'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce function update`  
+{: #cli-function-update}  
+
+Update a function.  
+  
+```txt
+ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--code-bundle CODE_BUNDLE] [--code-bundle-secret CODE_BUNDLE_SECRET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--force] [--inline-code INLINE_CODE] [--main MAIN] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--runtime RUNTIME] [--runtime-secret RUNTIME_SECRET] [--runtime-type RUNTIME_TYPE] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-function-update} 
+
+`--name`, `-n`
+:   Required. The name of the function. This value is *required*. 
+
+`--build-clear`, `--bc`
+:   Remove the association of a build from this function. The build clear option is allowed only if your function currently has an associated build. This value is *optional*. The default value is `false`.
+
+`--build-commit`, `--commit`, `--bcm`, `--cm`, `--revision`
+:   The commit, tag, or branch in the source repository to pull. This value is *optional*. 
+
+`--build-commit-clear`, `--commit-clear`, `--bcmc`, `--cmc`
+:   Clear the commit, tag, or branch in the source repository to pull. The commit clear option is allowed only if your function currently has an associated build. This value is *optional*. The default value is `false`.
+
+`--build-context-dir`, `--context-dir`, `--bcdr`, `--cdr`
+:   The directory in the repository that contains the source code for your function. This option is allowed only if the `--build-source` option is set. This value is *optional*. 
+
+`--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your image. This value is *optional*. 
+
+`--build-git-repo-secret-clear`, `--git-repo-secret-clear`, `--bgrsc`, `--grsc`
+:   Clear the SSH secret. This option is allowed only if your function currently has an associated build. This value is *optional*. The default value is `false`.
+
+`--build-source`, `--source`, `--bsrc`, `--src`
+:   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
+
+`--build-strategy`, `--strategy`, `--bstr`, `--str`
+:   The strategy to use for building the image. This option is required only if a build strategy must be chosen for a custom runtime. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime). This value is *optional*. 
+
+`--build-timeout`, `--bto`
+:   The amount of time, in seconds, that can pass before the build must succeed or fail. This value is *optional*. The default value is `600`.
+
+`--code-bundle`, `--cb`
+:   The name of the code-bundle image that is used for build push of the function. The format is 'REGISTRY/NAMESPACE/REPOSITORY:TAG' where 'REGISTRY' and 'TAG' are optional. If 'REGISTRY' is not specified, the default is 'docker.io'. If 'TAG' is not specified, the default is 'latest'. The code-bundle option is required if the 'build-source' option is not specified. This value is *optional*. 
+
+`--code-bundle-secret`, `--cs`, `--cbs`
+:   The name of the registry secret that is used to authenticate with a private registry. You can add the registry secret by running the `registry create` command. This value is *optional*. 
+
+`--cpu`
+:   The amount of CPU set for the instance of the function. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `0.25`.
+
+`--env`, `-e`
+:   Set environment variables in the function. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
+
+`--env-cm`, `--env-from-configmap`
+:   Set environment variables from the key-value pairs that are stored in this configmap by using one of the following ways:
+
+   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
+
+   This value is *optional*. 
+
+`--env-from-configmap-rm`, `--env-cm-rm`
+:   Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
+
+`--env-sec`, `--env-from-secret`
+:   Set environment variables from the key-value pairs that are stored in a secret by using one of the following ways:
+
+   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
+
+   This value is *optional*. 
+
+`--env-from-secret-rm`, `--env-sec-rm`
+:   Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
+
+`--env-rm`
+:   Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This option can be specified multiple times. This value is *optional*. 
+
+`--force`, `-f`
+:   Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` or `--mount-configmap` options. Secret references are specified with the `--env-from-secret`, `--mount-secret` or `--registry-secret` options. This value is *optional*. The default value is `false`.
+
+`--inline-code`
+:   Specify the path to a file containing the source code for your function. The code is stored inline with the function. This value is *optional*. 
+
+`--main`, `--fn-main`
+:   Specify the name of your main function in the provided source code. This option is required when the name is not `main`. This value is *optional*. The default value is `main`.
+
+`--maxexecutiontime`, `--met`
+:   The maximum execution time in seconds for this function to complete its run. This value is *optional*. The default value is `60`.
+
+`--memory`, `-m`
+:   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `1G`.
+
+`--no-wait`, `--nw`
+:   Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is *optional*. The default value is `true`.
+
+`--output`, `-o`
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--rebuild`
+:   Rebuild the image from source. The rebuild option is allowed only if your function currently has an associated build. This value is *optional*. The default value is `false`.
+
+`--runtime`, `-r`
+:   The runtime to use for the function. This value is either a managed runtime identifier or an image reference URL. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime). This value is *optional*. 
+
+`--runtime-secret`, `--rs`
+:   The name of the registry secret that is used to authenticate with a private registry to pull a custom runtime. Run 'ibmcloud ce registry create' to create a registry secret. This value is *optional*. 
+
+`--runtime-type`, `--rt`
+:   The type of runtime to use. Valid values are `managed` and `custom`. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime). This value is *optional*. The default value is `managed`.
+
+`--wait`, `-w`
+:   Wait for the build run to complete. This value is *optional*. The default value is `true`.
+
+`--wait-timeout`, `--wto`
+:   The length of time in seconds to wait for the function to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `600`.
+
+ 
+  
+#### Example
+{: #function-update-example}
+
+```txt
+ibmcloud ce fn update --name myfunction --runtime nodejs-18 --build-source main.js
+```
+{: pre}
+
+#### Example output
+{: #function-update-example-output}
+
+```txt
+Preparing function 'myfunction' for build push...
+Updating function 'myfunction'...
+Packaging files to upload from source path 'main.js'...
+Submitting build run 'myfunction-run-111111-12345678'...
+Creating image 'icr.io/ce--1a1a1-11c22def3rhz/function-myfunction:12345678-1111-dexla'...
+Waiting for build run to complete...
+Build run status: 'Running'
+Build run completed successfully.
+Run 'ibmcloud ce buildrun get -n myfunction-run-111111-12345678' to check the build run status.
+Waiting for function 'myfunction' to become ready...
+Function 'myfunction' is ready.
+OK                                                
+Run 'ibmcloud ce function get -n myfunction' to see more details.
+
+https://myfunction.11c22def3rhz.us-south.codeengine.appdomain.cloud
+```
+{: screen}
+
+When you run `ibmcloud ce fn get -n 'myfunction'` to check the function status, the URL for your function is displayed.  
+{: tip}  
   
 ## Job commands  
 {: #cli-job}  
@@ -6407,7 +7031,7 @@ OK
 ```
 {: screen}  
   
-## Subscription `kafka` commands  
+## Subscription kafka commands  
 {: #cli-subscription-kafka}  
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
@@ -6468,7 +7092,7 @@ ibmcloud ce subscription kafka create --name KAFKA_SOURCE_NAME --destination DES
 :   Create the Kafka event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait. Use the `subscription kafka get` command to check the subscription status. This value is *optional*. The default value is `false`.
 
 `--output`, `-o`
-:   Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--password`, `-p`
 :   The password that is used to authenticate to the Kafka instance. If you specify the `--password` option, you must not specify the `--secret` option. This value is *optional*. 
@@ -6713,7 +7337,7 @@ ibmcloud ce subscription kafka update --name KAFKA_SOURCE_NAME [--broker BROKER]
 :   Remove CloudEvents extensions to send to the destination by specifying the name of the key. Specify one extension per `--ext-rm` option; for example, `--ext-rm extA --ext-rm extB`. This value is *optional*. 
 
 `--output`, `-o`
-:   Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--password`, `-p`
 :   The password that is used to authenticate to the Kafka instance. If you specify the `--password` option, you must not specify the `--secret` option. This value is *optional*. 
