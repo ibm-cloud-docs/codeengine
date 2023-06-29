@@ -204,7 +204,7 @@ Create a function that includes a dependency for a specific Python module by cre
     ```
     {: pre}
     
- 4. Invoke your Function by pasting the provided URL into a web browser. Your browser displays a random joke!
+4. Invoke your Function by pasting the provided URL into a web browser. Your browser displays a random joke!
  
 
 For more information about the `fn create` command and its options, see [Create a Function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
