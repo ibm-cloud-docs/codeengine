@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-06-30"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2244,6 +2244,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_creating_a_function}
 
 
+[Getting started with Functions](/docs/codeengine?topic=codeengine-functions#functions)
+
+* [Function limitations](/docs/codeengine?topic=codeengine-functions#fun-limitations1)
+
 [Working with Functions](/docs/codeengine?topic=codeengine-fun-work#fun-work)
 
 * [Function limitations](/docs/codeengine?topic=codeengine-fun-work#fun-limitations)
@@ -3424,7 +3428,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce subscription cron update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update)
 
-* [Subscription kafka commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
+* [Subscription `kafka` commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
 
     * [`ibmcloud ce subscription kafka create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create)
 

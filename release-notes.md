@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-06-30"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -31,7 +31,7 @@ Review the release notes for June 2023.
 {: #codeengine-jun2923}
 
 New! Function support in Code Engine
-:   - [Get an overview of Functions](/docs/codeengine?topic=codeengine-fun-work).
+:   - [Get an overview of Functions](/docs/codeengine?topic=codeengine-cefunctions).
 :   - [Take a tutorial](/docs/codeengine?topic=codeengine-fun-tutorial).
 :   - [Dive deeper into Functions](/docs/codeengine?topic=codeengine-fun-work).
 

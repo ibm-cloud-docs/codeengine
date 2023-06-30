@@ -94,6 +94,7 @@ toc:
       - topicgroup:
           label: Creating a Function
           topics:
+          - functions.md
           - fun-work.md
           - fun-inline.md
           - fun-create-repo.md
