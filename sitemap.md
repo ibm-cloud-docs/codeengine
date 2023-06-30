@@ -2244,6 +2244,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_creating_a_function}
 
 
+[Getting started with Functions](/docs/codeengine?topic=codeengine-functions#functions)
+
+* [Function limitations](/docs/codeengine?topic=codeengine-functions#fun-limitations)
+
 [Working with Functions](/docs/codeengine?topic=codeengine-fun-work#fun-work)
 
 * [Function limitations](/docs/codeengine?topic=codeengine-fun-work#fun-limitations)
