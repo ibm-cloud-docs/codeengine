@@ -2246,7 +2246,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Getting started with Functions](/docs/codeengine?topic=codeengine-functions#functions)
 
-* [Function limitations](/docs/codeengine?topic=codeengine-functions#fun-limitations)
+* [Function limitations](/docs/codeengine?topic=codeengine-functions#fun-limitations1)
 
 [Working with Functions](/docs/codeengine?topic=codeengine-fun-work#fun-work)
 

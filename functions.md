@@ -25,7 +25,7 @@ Before you begin
 - Plan and choose your approach for making your code run as a {{site.data.keyword.codeengineshort}} Function component.
 
 ## Function limitations
-{: #fun-limitations}
+{: #fun-limitations1}
 
 - Supported in Washington, D.C. (`us-east`), Frankfurt (`eu-de`), and Sydney (`au-syd`) regions only.
 - No support for subscribing to event producers.
