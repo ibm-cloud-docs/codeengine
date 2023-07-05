@@ -3980,3 +3980,5 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Getting help and support for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-get-support#get-support)
 
+* [Providing support case details](/docs/codeengine?topic=codeengine-get-support#support-case-details)
+
