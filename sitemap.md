@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-30"
+lastupdated: "2023-07-05"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -127,6 +127,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul23)
+
+    * Review the release notes for July 2023.
+
+    * [05 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul0523)
+
+        * Added support for the scale-down delay autoscaling option in the console
 
 * [June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun23)
 
