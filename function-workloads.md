@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-07-05"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -25,7 +25,21 @@ When a Function is invoked, the corresponding Function instance is initialized w
 
 To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimizes the invocation by pre-warming certain runtimes with specific CPU and memory configurations. In addition, the system is designed to improve the reuse of Function instances that are already initialized. Therefore, a Function instance is kept alive after the invocation is finished to allow subsequent invocations by reusing the same instance and reusing the state of the instance when the last invocation completed. How long it is kept alive can be configured by the `scale-down-delay` option. **INTERNAL Note: the scale-down-delay feature is under construction).** The reuse of a Function instance is not guaranteed.
 
-  
+## How do Functions compare to apps and jobs?
+{: #functions-work-compare}
+
+| Characteristic | App | Job | Function |
+| --------- | --------- | --------- | --------- |
+| Execution time (duration) | Long-running 10min per request | Long-running up to 24hrs | Short-running (<=2mins) |
+| Startup latency | Medium | Scheduled start | Low  | 
+| Termination | Run-continuously | Run-to-completion | Run-to-completion |
+| Invocation | On request or permanently running | Scheduled | On request, instant |
+| Programming Model | Container based build and execution | Container based build and execution | Language specific source code files and dependency meta data |
+| Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution |
+| Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
+| Optimized for | Long running highly complex workload and on-demand scale-out | Scheduled/planned workloads with high resource demands | Startup time and rapid scale-out |
+{: caption="Table 1. Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
+
 ## What are key features of working with Functions?
 {: #functions-work-ce}
 

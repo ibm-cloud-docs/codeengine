@@ -107,6 +107,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Lifecycle of a Function instance](/docs/codeengine?topic=codeengine-cefunctions#functions-lifecycle)
 
+* [How do Functions compare to apps and jobs?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-compare)
+
 * [What are key features of working with Functions?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-ce)
 
     * [Isolation](/docs/codeengine?topic=codeengine-cefunctions#cefun-isolation)
