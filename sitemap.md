@@ -2292,11 +2292,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Creating Function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo)
 
-* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package)
+* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package-repo)
 
-    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-nodejs-ce)
+    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-nodejs-dep-repo)
 
-    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-python)
+    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-python-dep-repo)
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-repo#nextsteps-funsource)
 
