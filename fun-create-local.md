@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-07-05"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -150,12 +150,12 @@ module.exports.main = main;
     {: screen}
 
 ## Including dependencies for your Function
-{: #fun-package}
+{: #fun-package-local}
 
 You can create Functions in many different programming languages. When your Function code grows complex, you can add code modules as dependencies for your Function. Each language has its own modules to use with your Function code. For example, Node.js dependencies are usually existing `npm` modules, whereas Python uses Python packages. These dependencies must be declared and created in a file with your source code
 
 ### Including modules for a Node.js Function
-{: #function-nodejs-ce}
+{: #function-nodejs-dep-local}
 
 Create a function that includes a dependency for a specific Python module by creating a `package.json` file. In this case, both the source code and package file are located in the same folder.
 
@@ -201,7 +201,7 @@ Create a function that includes a dependency for a specific Python module by cre
 For more information about the `fn create` command and its options, see [Create a Function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
 
 ### Including modules for a Python Function
-{: #function-python}
+{: #function-python-dep-local}
 
 Create a function that includes a dependency for a specific Python module by creating a `requirements.txt` file. In this case, both the source code and requirements file are located in the same folder.
 
