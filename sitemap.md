@@ -79,6 +79,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [What is the lifecycle of a batch job?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-lifecycle)
 
+* [How do jobs compare to apps and functions?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-compare)
+
 * [What are the key features of working with {{site.data.keyword.codeengineshort}} batch jobs?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-features)
 
     * [Isolation](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-isolation)
