@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-07-05"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -23,9 +23,23 @@ A Function is a stateless code snippet that performs tasks in response to an HTT
 
 When a Function is invoked, the corresponding Function instance is initialized with the configured Runtime container and Resource parameters. The process of the first initialization is referred to as *cold start*.
 
-To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimizes the invocation by pre-warming certain runtimes with specific CPU and memory configurations. In addition, the system is designed to improve the reuse of Function instances that are already initialized. Therefore, a Function instance is kept alive after the invocation is finished to allow subsequent invocations by reusing the same instance and reusing the state of the instance when the last invocation completed. How long it is kept alive can be configured by the `scale-down-delay` option. **INTERNAL Note: the scale-down-delay feature is under construction).** The reuse of a Function instance is not guaranteed.
+To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimizes the invocation by pre-warming certain runtimes with specific CPU and memory configurations. In addition, the system is designed to improve the reuse of Function instances that are already initialized. Therefore, a Function instance is kept alive after the invocation is finished to allow subsequent invocations by reusing the same instance and reusing the state of the instance when the last invocation completed. How long it is kept alive can be configured by the `scale-down-delay` option. The reuse of a Function instance is not guaranteed.
 
-  
+## How do Functions compare to apps and jobs?
+{: #functions-work-compare}
+
+| Characteristic | App | Job | Function |
+| --------- | --------- | --------- | --------- |
+| Execution time (duration) | Long-running 10min per request | Long-running up to 24hrs | Short-running (<=2mins) |
+| Startup latency | Medium | Scheduled start | Low  | 
+| Termination | Run-continuously | Run-to-completion | Run-to-completion |
+| Invocation | On request or permanently running | Scheduled | On request, instant |
+| Programming Model | Container based build and execution | Container based build and execution | Language specific source code files and dependency meta data |
+| Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution |
+| Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
+| Optimized for | Long running highly complex workload and on-demand scale-out | Scheduled/planned workloads with high resource demands | Startup time and rapid scale-out |
+{: caption="Table 1. Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
+
 ## What are key features of working with Functions?
 {: #functions-work-ce}
 
@@ -43,7 +57,7 @@ Review the following topics to learn more about working with IBM Code Engine Fun
 ### Isolation
 {: #cefun-isolation}
 
-{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. However, tenants and their workloads are isolated from each other by using {{site.data.keyword.codeengineshort}} projects.  {{site.data.keyword.codeengineshort}} prevents communication between projects, providing isolation to your applications inside a multi-tenant environment, **which can include applications, batch jobs, and functions.(confirm)** in In addition, there are access controls that are performed on a resource level to only allow authorized users to perform certain operations on project resources, such as Functions or other {{site.data.keyword.codeengineshort}} workloads.
+{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. However, tenants and their workloads are isolated from each other by using {{site.data.keyword.codeengineshort}} projects.  {{site.data.keyword.codeengineshort}} prevents communication between projects, providing isolation to your applications inside a multi-tenant environment, which can include applications, batch jobs, and functions. in In addition, there are access controls that are performed on a resource level to only allow authorized users to perform certain operations on project resources, such as Functions or other {{site.data.keyword.codeengineshort}} workloads.
 
 For more information about workload isolation, see [{{site.data.keyword.codeengineshort}} workload isolation](/docs/codeengine?topic=codeengine-architecture#workload-isolation).
 

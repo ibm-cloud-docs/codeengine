@@ -53,6 +53,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [What are application workloads?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads)
 
+* [How do apps compare to jobs and functions?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads-compare)
+
 * [What are the key features of working with  {{site.data.keyword.codeengineshort}} applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-features)
 
     * [Isolation](/docs/codeengine?topic=codeengine-ceapplications#ceapp-isolation)
@@ -76,6 +78,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [What are batch job workloads?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-workloads)
 
     * [What is the lifecycle of a batch job?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-lifecycle)
+
+* [How do jobs compare to apps and functions?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-compare)
 
 * [What are the key features of working with {{site.data.keyword.codeengineshort}} batch jobs?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-features)
 
@@ -102,6 +106,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Function workloads](/docs/codeengine?topic=codeengine-cefunctions#cefunctions)
 
 * [Lifecycle of a Function instance](/docs/codeengine?topic=codeengine-cefunctions#functions-lifecycle)
+
+* [How do Functions compare to apps and jobs?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-compare)
 
 * [What are key features of working with Functions?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-ce)
 
@@ -2292,11 +2298,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Creating Function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo)
 
-* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package)
+* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package-repo)
 
-    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-nodejs-ce)
+    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-nodejs-dep-repo)
 
-    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-python)
+    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-python-dep-repo)
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-repo#nextsteps-funsource)
 
@@ -2304,11 +2310,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local-cli)
 
-* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-local#fun-package)
+* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-local#fun-package-local)
 
-    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-local#function-nodejs-ce)
+    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-local#function-nodejs-dep-local)
 
-    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-local#function-python)
+    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-local#function-python-dep-local)
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-local#nextsteps-funruncr)
 

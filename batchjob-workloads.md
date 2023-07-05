@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-07-05"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -42,6 +42,21 @@ When you create a job, you can specify workload configuration information that i
 {: #batchjob-lifecycle}
 
 When you submit a batch job, it runs to completion. Typically, batch jobs retrieve input data, do computational work, and store the results in persistent data stores. When the batch job is completed, resources that are used to run the job are removed and no cost is incurred for any stand-by resources.
+
+## How do jobs compare to apps and functions?
+{: #batchjob-compare}
+
+| Characteristic | App | Job | Function |
+| --------- | --------- | --------- | --------- |
+| Execution time (duration) | Long-running 10min per request | Long-running up to 24hrs | Short-running (<=2mins) |
+| Startup latency | Medium | Scheduled start | Low  | 
+| Termination | Run-continuously | Run-to-completion | Run-to-completion |
+| Invocation | On request or permanently running | Scheduled | On request, instant |
+| Programming Model | Container based build and execution | Container based build and execution | Language specific source code files and dependency meta data |
+| Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution |
+| Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
+| Optimized for | Long running highly complex workload and on-demand scale-out | Scheduled/planned workloads with high resource demands | Startup time and rapid scale-out |
+{: caption="Table 1. Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
 
 ## What are the key features of working with {{site.data.keyword.codeengineshort}} batch jobs?
 {: #batchjob-features}
