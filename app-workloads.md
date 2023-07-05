@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-07-05"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -23,6 +23,21 @@ subcollection: codeengine
 {: #ceapp-workloads}
 
 An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming requests and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
+
+## How do apps compare to jobs and functions?
+{: #ceapp-workloads-compare}
+
+| Characteristic | App | Job | Function |
+| --------- | --------- | --------- | --------- |
+| Execution time (duration) | Long-running 10min per request | Long-running up to 24hrs | Short-running (<=2mins) |
+| Startup latency | Medium | Scheduled start | Low  | 
+| Termination | Run-continuously | Run-to-completion | Run-to-completion |
+| Invocation | On request or permanently running | Scheduled | On request, instant |
+| Programming Model | Container based build and execution | Container based build and execution | Language specific source code files and dependency meta data |
+| Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution |
+| Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
+| Optimized for | Long running highly complex workload and on-demand scale-out | Scheduled/planned workloads with high resource demands | Startup time and rapid scale-out |
+{: caption="Table 1. Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
 
 ## What are the key features of working with  {{site.data.keyword.codeengineshort}} applications?
 {: #ceapp-features}

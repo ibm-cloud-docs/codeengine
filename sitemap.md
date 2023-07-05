@@ -53,6 +53,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [What are application workloads?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads)
 
+* [How do apps compare to jobs and functions?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads-compare)
+
 * [What are the key features of working with  {{site.data.keyword.codeengineshort}} applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-features)
 
     * [Isolation](/docs/codeengine?topic=codeengine-ceapplications#ceapp-isolation)
