@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-30"
+lastupdated: "2023-07-05"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,21 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## July 2023
+{: #codeengine-jul23}
+
+Review the release notes for July 2023.
+{: shortdesc}
+
+### 05 July 2023
+{: #codeengine-jul0523}
+
+Added support for the scale-down delay autoscaling option in the console
+:   See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
+
+Added information about details to provide when you report a support case
+:   See [Providing support case details](/docs/codeengine?topic=codeengine-get-support#support-case-details).
 
 ## June 2023
 {: #codeengine-jun23}
