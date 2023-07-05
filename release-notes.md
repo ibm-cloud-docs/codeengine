@@ -32,6 +32,8 @@ Review the release notes for July 2023.
 Added support for the scale-down delay autoscaling option in the console
 :   See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
+Added information about details to provide when you report a support case
+:   See [Providing support case details](/docs/codeengine?topic=codeengine-get-support#support-case-details).
 
 ## June 2023
 {: #codeengine-jun23}

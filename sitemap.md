@@ -136,6 +136,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added support for the scale-down delay autoscaling option in the console
 
+        * Added information about details to provide when you report a support case
+
 * [June 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun23)
 
     * Review the release notes for June 2023.
