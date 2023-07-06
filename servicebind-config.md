@@ -235,7 +235,7 @@ Before you begin
     ```
     {: screen}
 
-2. Bind your service instance to your {{site.data.keyword.codeengineshort}} app, job, or function and generate a new service credential with a specific service role. For more information about IAM service roles, see [Service access roles](/docs/account?topic=account-userroles#service_access_roles). In the following example, the  **`function bind`** command binds the `my-object-storage` service instance to the app called `my-application` by using the Writer service role. A new service credential with the Writer role is generated for this binding action. By specifying the `--prefix` option, a prefix is added to the environment variables that are created by the service bindings.
+2. Bind your service instance to your {{site.data.keyword.codeengineshort}} app, job, or function and generate a new service credential with a specific service role. For more information about IAM service roles, see [Service access roles](/docs/account?topic=account-userroles#service_access_roles). In the following example, the  **`function bind`** command binds the `my-object-storage` service instance to the function called `my-function` by using the Writer service role. A new service credential with the Writer role is generated for this binding action. By specifying the `--prefix` option, a prefix is added to the environment variables that are created by the service bindings.
 
     ```txt
     ibmcloud ce function bind --name my-function --service-instance my-object-storage --role Writer --prefix MYPREFIX
@@ -356,7 +356,7 @@ If you already created a credential for your service instance and want to use it
 
 Unbinding service instances from an app, job, or function workloads removes existing service bindings.
 
-When you unbind (or remove) a service binding, you are deleting the association of the app, job, or function with the service access secret such that the app, job, or function no longer has access to previously bound {{site.data.keyword.cloud_notm}} service. 
+When you unbind (or remove) a service binding, you are deleting the association of the app, job, or function workload with the service access secret such that the workload no longer has access to previously bound {{site.data.keyword.cloud_notm}} service. 
 
 After a service binding is defined between your application and a service instance, the service binding is active as long as the application and the service instance is active, or you haven't completed an unbind operation to remove the service binding. If the service instance is deleted, you'll need to manually delete the service binding. 
 
