@@ -58,7 +58,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the `icr.io
 2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 4. Select **Application**.
-5. Enter a name for the application. Use a name for your application that is unique within the project. 
+5. Enter a name for the application, for example, `myapp`. Use a name for your application that is unique within the project. 
 6. Select to run a **Container image** and specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/helloworld){: external}.
 7. Click **Create**. 
 8. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
@@ -78,12 +78,12 @@ Hello World from:
 
 Some Env Vars:
 --------------
-CE_APP=gettingstarted
+CE_APP=myapp
 CE_DOMAIN=us-east.codeengine.appdomain.cloud
 CE_SUBDOMAIN=14juxb5nb96g
 HOME=/root
-HOSTNAME=gettingstarted-00001-deployment-5b5895fdf7-44fnv
-K_REVISION=gettingstarted-00001
+HOSTNAME=myapp-00001-deployment-5b5895fdf7-44fnv
+K_REVISION=myapp-00001
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 PORT=8080
 PWD=/
@@ -104,8 +104,8 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 4. Select **Job**.
-5. Enter a name for the job. Use a name for your job that is unique within the project.
-6. Specify `icr.io/codeengine/firstjob` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}. 
+5. Enter a name for the job, for example, `myjob`. Use a name for your job that is unique within the project.
+6. Specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}. 
 7. Click **Create**.
 8. From your job page, click **Submit job** to submit a job based on the current configuration.  
 9. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.
@@ -129,11 +129,11 @@ Hello World from:
 Some Env Vars:
 --------------
 CE_DOMAIN=us-east.codeengine.appdomain.cloud 
-CE_JOB=getstartedjob
-CE_JOBRUN=getstartedjob-jobrun-xgpmz
+CE_JOB=myjob
+CE_JOBRUN=myjob-jobrun-xgpmz
 CE_SUBDOMAIN=14juxb5nb96g
 HOME=/root
-HOSTNAME=getstartedjob-jobrun-xgpmz-0-0 
+HOSTNAME=myjob-jobrun-xgpmz-0-0 
 JOB_INDEX=0
 ...
 z=Set env var 'SHOW' to see all variables
