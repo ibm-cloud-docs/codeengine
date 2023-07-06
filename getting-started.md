@@ -166,6 +166,9 @@ Example output
 
 You deployed your first function to {{site.data.keyword.codeengineshort}} and tested it out. Go to the [Running a function from local source](/docs/codeengine?topic=codeengine-fun-tutorial) or [Working with functions](/docs/codeengine?topic=codeengine-fun-work) to try out more options for functions.
 
+You can [migrate your IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate).
+{: tip}
+
 ## Building your first container image from source code
 {: #build-image-gs}
 
