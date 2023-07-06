@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-07-06"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.45.1 | 06 July 2023 | - Fixed various bugs. |
 | 1.45.0 | 29 June 2023 | - Added support for the Functions command group. Use these commands to create and work with functions on {{site.data.keyword.codeengineshort}}. See [Working with Functions](/docs/codeengine?topic=codeengine-fun-work) and [{{site.data.keyword.codeengineshort}} CLI reference (`domainmapping` command)](/docs/codeengine?topic=codeengine-cli#cli-function). \n - Fixed various bugs. |
 | 1.44.0 | 22 June 2023 | - Added support for the `--scale-down-delay` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) and [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. \n - Fixed various bugs.  |
 | 1.43.7 | 08 June 2023 | - Fixed various bugs. |

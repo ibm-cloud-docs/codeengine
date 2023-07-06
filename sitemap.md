@@ -140,6 +140,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for July 2023.
 
+    * [06 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul0623)
+
+        * Updated {{site.data.keyword.codeengineshort}} getting started information to include functions
+
+        * Added information comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions
+
+        * Updated versions for buildpacks
+
+        * CLI version 1.45.1 released
+
     * [05 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul0523)
 
         * Added support for the scale-down delay autoscaling option in the console
