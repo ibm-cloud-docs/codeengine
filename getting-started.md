@@ -145,7 +145,7 @@ You created and ran your job from the console. Go to the [Tutorial: Running jobs
 ## Running your first function
 {: #first-function}
 
-Create and run your first {{site.data.keyword.codeengineshort}} function with `hello
+Create and run your first {{site.data.keyword.codeengineshort}} function with sample function code.
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
