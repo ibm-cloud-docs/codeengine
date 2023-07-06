@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-07-06"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -28,11 +28,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Getting started with {{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started#getting-started)
 
-* [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
+* [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and functions?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
 
-* [Creating your first {{site.data.keyword.codeengineshort}} app](/docs/codeengine?topic=codeengine-getting-started#app-hello)
+* [Deploying your first {{site.data.keyword.codeengineshort}} app](/docs/codeengine?topic=codeengine-getting-started#app-hello)
 
 * [Running your first {{site.data.keyword.codeengineshort}} job](/docs/codeengine?topic=codeengine-getting-started#first-job)
+
+* [Running your first function](/docs/codeengine?topic=codeengine-getting-started#first-function)
 
 * [Building your first container image from source code](/docs/codeengine?topic=codeengine-getting-started#build-image-gs)
 
@@ -137,6 +139,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul23)
 
     * Review the release notes for July 2023.
+
+    * [06 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul0623)
+
+        * Updated {{site.data.keyword.codeengineshort}} getting started information to include functions
+
+        * Added information comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions
+
+        * Updated versions for buildpacks
+
+        * CLI version 1.45.1 released
 
     * [05 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul0523)
 
@@ -2306,7 +2318,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-repo#nextsteps-funsource)
 
-[Creating Function from local source code](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local)
+[Creating Function workloads from local source code](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local)
 
 * [Creating a function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local-cli)
 
@@ -2584,7 +2596,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [What is {{site.data.keyword.codeenginefull_notm}} service binding?](/docs/codeengine?topic=codeengine-service-binding#about-service-binding)
 
-* [Accessing a bound service instance from an app or job](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
+* [Accessing a bound service instance from a {{site.data.keyword.codeengineshort}} workload](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
 
     * [`CE_SERVICES` environment variable](/docs/codeengine?topic=codeengine-service-binding#ce-services)
 
@@ -2612,7 +2624,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-configure-bindaccess#service-bindings-access-nextsteps)
 
-[Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services#bind-services)
+[Binding a service instance to an app, job, or function workload](/docs/codeengine?topic=codeengine-bind-services#bind-services)
 
 * [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job from the console](/docs/codeengine?topic=codeengine-bind-services#bind-ui)
 
@@ -2622,7 +2634,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Binding a service instance with an existing service access secret](/docs/codeengine?topic=codeengine-bind-services#bind-credential-ui-existingsecret)
 
-* [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job with the CLI](/docs/codeengine?topic=codeengine-bind-services#bind-cli)
+* [Binding a service instance to a {{site.data.keyword.codeengineshort}} app, job, or function with the CLI](/docs/codeengine?topic=codeengine-bind-services#bind-cli)
 
     * [Binding a service instance with a new credential](/docs/codeengine?topic=codeengine-bind-services#bind-credentials)
 
@@ -3749,11 +3761,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
 
-* [Develop your application or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
+* [Develop your application, job, or function](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
 
 * [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
 
 * [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
+
+* [Run your Function](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun)
 
 * [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
 

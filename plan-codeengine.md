@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-07-06"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
@@ -20,6 +20,20 @@ subcollection: codeengine
 An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming requests and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
 
 A job runs one or more instances of your executable code. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
+
+A Function is a stateless code snippet that performs tasks in response to an HTTP request. With IBM Code Engine Functions, you can run your business logic in a scalable and serverless way. IBM Code Engine Functions provide an optimized runtime environment to support low latency and rapid scale-out scenarios. Your Function code can be written in in Node.js or Python, which are optimized to run in IBM Code Engine Functions. In addition, your Function code can be written for any OpenWhisk compatible runtime environment or a custom runtime image.
+
+| Characteristic | App | Job | Function |
+| --------- | --------- | --------- | --------- |
+| Execution time (duration) | Long-running 10min per request | Long-running up to 24hrs | Short-running (<=2mins) |
+| Startup latency | Medium | Scheduled start | Low  | 
+| Termination | Run-continuously | Run-to-completion | Run-to-completion |
+| Invocation | On request or permanently running | Scheduled | On request, instant |
+| Programming Model | Container based build and execution | Container based build and execution | Language specific source code files and dependency meta data |
+| Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution |
+| Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
+| Optimized for | Long running highly complex workload and on-demand scale-out | Scheduled/planned workloads with high resource demands | Startup time and rapid scale-out |
+{: caption="Table 1. Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
 
 ## {{site.data.keyword.codeengineshort}} use cases
 {: #ce-use-cases}

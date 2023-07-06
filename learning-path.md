@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-19"
+lastupdated: "2023-07-06"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -24,9 +24,9 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 
 Before you start, [learn about {{site.data.keyword.codeengineshort}} and some common terms](/docs/codeengine?topic=codeengine-about).
 
-Then, decide whether you want to deploy an application or create a job by reading [planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
+Then, decide whether you want to deploy an application, create a job, or run a function by reading [planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 
-You can even try out our [application tutorial](/docs/codeengine?topic=codeengine-deploy-app-tutorial) or our [job tutorial](/docs/codeengine?topic=codeengine-run-job-tutorial).
+You can even try out our [application tutorial](/docs/codeengine?topic=codeengine-deploy-app-tutorial), our [job tutorial](/docs/codeengine?topic=codeengine-run-job-tutorial), or our [function tutorial](/docs/codeengine?topic=codeengine-fun-tutorial).
 
 ## Install the tools
 {: #lp-install-tools}
@@ -42,10 +42,12 @@ To get started with {{site.data.keyword.codeengineshort}}, [create a project](/d
 
 Need help? Check out [troubleshooting tips for projects](/docs/codeengine?topic=codeengine-troubleshoot-project). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
 
-## Develop your application or job
+## Develop your application, job, or function
 {: #lp-develop-app-job}
 
-{{site.data.keyword.codeengineshort}} deploys applications and runs jobs that are bundled into container images. If you do not have a container image, you can build and deploy your code from within {{site.data.keyword.codeengineshort}}.
+{{site.data.keyword.codeengineshort}} deploys applications and runs jobs that are bundled into container images. If you do not have a container image, you can build and deploy your code from within {{site.data.keyword.codeengineshort}}. 
+
+{{site.data.keyword.codeengineshort}} runs functions as code bundles. If you do not have a code bundle, you can build and run your function from within {{site.data.keyword.codeengineshort}}.
 
 **Do you have source code or a container image for your application or job?** 
 
@@ -54,7 +56,7 @@ I have a container image. **Where is your image stored?**
 - If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-add-registry) that you have access to, then you are ready to deploy. 
 - If your image is in a private registry, either in a different {{site.data.keyword.registryshort}} account or in private registry such as Docker Hub, you must [set up access](/docs/codeengine?topic=codeengine-add-registry).
 
-Then, you are ready to [deploy your application](#lp-deploy-app) or [run your job](#lp-run-job).
+Then, you are ready to [deploy your application](#lp-deploy-app), [run your job](#lp-run-job), or [run your function](#lp-run-fun).
 
 I have source code. **How do I get started?**
 
@@ -63,6 +65,7 @@ I have source code. **How do I get started?**
 - You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
 - If your source code is in a private repository, [set up access](/docs/codeengine?topic=codeengine-code-repositories).
 - Optionally, set up an {{site.data.keyword.registrylong_notm}} namespace to hold your built image. If the {{site.data.keyword.registryshort}} namespace is in a different account, [set up access](/docs/codeengine?topic=codeengine-add-registry). If you do not set up access to your {{site.data.keyword.registrylong_notm}} namespace, access is created automatically for you.
+
 - [Build your source code](/docs/codeengine?topic=codeengine-build-image).
 
 Need help? Check out [troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
@@ -70,7 +73,7 @@ Need help? Check out [troubleshooting tips for builds](/docs/codeengine?topic=co
 ## Deploy your application
 {: #lp-deploy-app}
 
-To get started, read [plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage).
+To get started, read [plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage) and [Application workloads](/docs/codeengine?topic=codeengine-ceapplications).
 
 **How does your application scale?** See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
@@ -113,7 +116,7 @@ Need help? Check out [troubleshooting tips for applications](/docs/codeengine?to
 ## Run your job
 {: #lp-run-job}
 
-To get started, read [plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-plan#job-containerimage).
+To get started, read [plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-plan#job-containerimage) and [Batch job workloads](/docs/codeengine?topic=codeengine-cebatchjobs).
 
 **Do you want to create a job definition?**
 
@@ -154,10 +157,33 @@ You can run your job directly or create a job definition and run your job based 
 
 Need help? Check out [troubleshooting tips for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
 
+## Run your Function
+{: #lp-run-fun}
+
+To get started, read [Working with Functions](/docs/codeengine?topic=codeengine-fun-work) and [Function workloads](/docs/codeengine?topic=codeengine-cefunctions).
+
+Functions can use a *managed runtime* or a *custom runtime*. Find out more at [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
+
+**Want to customize your function?**
+
+- How much CPU and memory does your function need? See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+- Want to define environment variables for your function? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
+- Does your function take advantage of configmaps or secrets? Take a look at [Working with secrets](/docs/codeengine?topic=codeengine-secret) or [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
+
+**Ready to deploy?**
+
+- [Creating Function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode).
+- [Creating Function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo).
+- [Creating Function workloads from local source code](/docs/codeengine?topic=codeengine-fun-create-local).
+
+**Want to add more customizations?**
+
+- Want to integrate with other {{site.data.keyword.cloud_notm}} services? See [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding).
+
 ## Log and monitor your workloads
 {: #lp-log-mon}
 
-Logging can help you troubleshoot your applications and jobs. See [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
+Logging can help you troubleshoot your applications, jobs and functions. See [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
 
 You can also [view, manage, and audit](/docs/codeengine?topic=codeengine-at_events) user-initiated activities that occur in your {{site.data.keyword.codeengineshort}} project.
 
@@ -169,6 +195,7 @@ Finally, analyze performance metrics by collecting information with [{{site.data
 
 If you are moving from a different service to Code Engine, there are several topics that can help you.
 
+- [Migrating IBM Cloud Functions to Code Engine](/docs/codeengine?topic=codeengine-fun-migrate).
 - [Getting started with your migration from Heroku to Code Engine](/docs/codeengine?topic=codeengine-heroku-migrate).
 - [Getting started with your migration from Cloud Foundry to Code Engine](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
 

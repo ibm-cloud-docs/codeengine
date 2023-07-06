@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-26"
+lastupdated: "2023-07-06"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -29,7 +29,7 @@ If you are using the CLI to work with service bindings, and you have service bin
 ## What is {{site.data.keyword.codeenginefull_notm}} service binding?
 {: #about-service-binding}
 
-Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job automatically adds credentials for a service instance to the environment variables of the container for your application or the job. To see the contents of a service credential, go to the dashboard for the service instance and locate the **Service credentials** page. Service credentials are shown as a JSON object, which, when bound, are added to the application or job environment.
+Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job automatically adds credentials for a service instance to the environment variables of the container for your application or the job, or the code bundle of your Function. To see the contents of a service credential, go to the dashboard for the service instance and locate the **Service credentials** page. Service credentials are shown as a JSON object, which, when bound, are added to the application or job environment.
 
 ```txt
 {
@@ -44,17 +44,17 @@ Binding a service instance to a {{site.data.keyword.codeengineshort}} applicatio
 ```
 {: screen}
 
-To bind a service instance to your application or job, you must provision an instance of the service first. Then, use the {{site.data.keyword.codeengineshort}} console or the CLI to bind your app or job to your {{site.data.keyword.cloud_notm}} service instance. 
+To bind a service instance to your {{site.data.keyword.codeengineshort}} workload, you must provision an instance of the service first. Then, use the {{site.data.keyword.codeengineshort}} console or the CLI to bind your app or job to your {{site.data.keyword.cloud_notm}} service instance. 
 
 
-When you bind a service instance to an app or job, {{site.data.keyword.codeengineshort}} uses a *service access secret* to store the credential of the specified {{site.data.keyword.cloud_notm}} service instance. This type of secret is the key mechanism in a service binding that connects the {{site.data.keyword.cloud_notm}} service instance to a particular {{site.data.keyword.codeengineshort}} app or job. {{site.data.keyword.codeengineshort}} creates and manages this secret for you.
+When you bind a service instance to a {{site.data.keyword.codeengineshort}} workload, {{site.data.keyword.codeengineshort}} uses a *service access secret* to store the credential of the specified {{site.data.keyword.cloud_notm}} service instance. This type of secret is the key mechanism in a service binding that connects the {{site.data.keyword.cloud_notm}} service instance to a particular {{site.data.keyword.codeengineshort}} app or job. {{site.data.keyword.codeengineshort}} creates and manages this secret for you.
 
 
 What types of services can I bind?
 :    You can add any type of {{site.data.keyword.cloud_notm}} service that is enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) and that uses service credentials to your application or job. To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog).
 
 I already have service credentials for an {{site.data.keyword.cloud_notm}} service instance. Can I use these credentials with {{site.data.keyword.codeengineshort}} service bindings?
-:    Yes, you can bind a service instance to {{site.data.keyword.codeengineshort}} apps and jobs by using existing service credentials. From the console, you can use existing credentials that are already used in a service binding. To use existing service credentials from the CLI, specify the `--service-credential` option in the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) or [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command and provide the name of your service credentials. 
+:    Yes, you can bind a service instance to {{site.data.keyword.codeengineshort}} workloads by using existing service credentials. From the console, you can use existing credentials that are already used in a service binding. To use existing service credentials from the CLI, specify the `--service-credential` option in the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind), [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command, or the [**`ibmcloud ce function bind`**](/docs/codeengine?topic=codeengine-cli#cli-function-bind) and provide the name of your service credentials. 
 
 What access is required to create service bindings?
 :    Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service bindings to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a service ID. For more information, see [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
@@ -64,21 +64,21 @@ Is there a way to configure service binding operations for all users in a projec
 :    Yes! With sufficient permissions, you can use the Integration page in the console to configure service binding operations from a single page. If you don't have sufficient permissions to perform these actions, you can use this page to help you understand the required permissions. See [Configuring project-wide settings](/docs/codeengine?topic=codeengine-project-integrations). 
 
 
-After binding my application to a service instance, what's the life of this service binding?  
-:    When you create a binding between your application and a service instance, the service binding is active as long as the application and the service instance is active, or you haven't completed an unbind operation to remove the service binding. If the service instance is deleted, you'll need to manually delete the service binding. When you unbind (or remove) a service binding, you are deleting the association of the app or job with the service access secret such that the app or job no longer has access to previously bound {{site.data.keyword.cloud_notm}} service. 
+After binding my {{site.data.keyword.codeengineshort}} workload to a service instance, what's the life of this service binding?  
+:    When you create a binding between your {{site.data.keyword.codeengineshort}} workload and a service instance, the service binding is active as long as the {{site.data.keyword.codeengineshort}} workload and the service instance is active, or you haven't completed an unbind operation to remove the service binding. If the service instance is deleted, you'll need to manually delete the service binding. When you unbind (or remove) a service binding, you are deleting the association of the app or job with the service access secret such that the app or job no longer has access to previously bound {{site.data.keyword.cloud_notm}} service. 
 
 
 
-## Accessing a bound service instance from an app or job
+## Accessing a bound service instance from a {{site.data.keyword.codeengineshort}} workload
 {: #access-bound-service}
 
-{{site.data.keyword.codeengineshort}} provides environment variables for accessing service instances that are bound to your apps or jobs with both the [`CE_SERVICES`](#ce-services) and [`PREFIX`](#prefix-method) methods.
+{{site.data.keyword.codeengineshort}} provides environment variables for accessing service instances that are bound to your {{site.data.keyword.codeengineshort}} workload with both the [`CE_SERVICES`](#ce-services) and [`PREFIX`](#prefix-method) methods.
 
 * The `CE_SERVICES` environment variable is a single environment variable that contains all service binding information as a JSON object. 
 
 * {{site.data.keyword.codeengineshort}} also creates multiple environment variables for your service binding, which are based on the variables in the service credential for your service instance. To distinguish these multiple environment variables for your service binding, you can use a `PREFIX` such that these environment variables use the same prefix. If you do not specify a custom prefix, {{site.data.keyword.codeengineshort}} automatically generates a prefix. 
 
-If your application or job wants to talk to a bound service by using private networking and the service has both `private` and `direct` endpoints (such as {{site.data.keyword.cos_full_notm}}), then the `direct` endpoints must be used.
+If your application, job, or function wants to talk to a bound service by using private networking and the service has both `private` and `direct` endpoints (such as {{site.data.keyword.cos_full_notm}}), then the `direct` endpoints must be used.
 {: important}
 
 ### `CE_SERVICES` environment variable
@@ -156,7 +156,7 @@ CLOUD_OBJECT_STORAGE_SERVICENAME=my-object-storage
 
 By default, if more than one instance of the same type is bound to a single application, {{site.data.keyword.codeengineshort}} appends an index to the service name, such as `CLOUD_OBJECT_STORAGE_2_APIKEY`.
 
-Each service binding can be configured to use a custom environment variable prefix. If you are using the console, you can optionally provide a prefix when you create the service binding. If you are using the CLI, use the `--prefix` option with the **`app bind`** or **`job bind`** command.
+Each service binding can be configured to use a custom environment variable prefix. If you are using the console, you can optionally provide a prefix when you create the service binding. If you are using the CLI, use the `--prefix` option with the **`app bind`**, the **`job bind`**, or the **`function bind`** command.
 
 
 ## What should I consider if I have service bindings that use the previous implementation? 
@@ -166,6 +166,7 @@ CLI 1.27.0 introduced an improved service binding implementation, which is used 
 
 * You cannot have a mixture of previous implementation and improved implementation service bindings for the same app or job. Before you can add new service bindings to an app or job that has service bindings that use the previous implementation, you must unbind all these service bindings. You can then re-create them with the improved implementation and add new service bindings.  
 * You cannot individually unbind these service bindings. You must remove them all by using the **`app unbind --all`** or **`job unbind --all`** command.
+* If you are working with Function workloads, your function automatically uses the latest implementation of service bindings.
 
 To take advantage of the latest enhancements and continue to manage service bindings for your apps and jobs easily, update to the [latest IBM Cloud Code Engine CLI version](/docs/codeengine?topic=codeengine-cli_versions) and [replace service bindings that use the previous implementation](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding).
 {: tip}
@@ -277,4 +278,4 @@ Your application might not be fully functional during the process of unbinding a
 ## Next steps
 {: #service-binding-nextsteps}
 
-Before you can bind a service instance to a {{site.data.keyword.codeengineshort}} application or job, you must configure access for bindings. See [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
+Before you can bind a service instance to a {{site.data.keyword.codeengineshort}} workload, you must configure access for bindings. See [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-30"
+lastupdated: "2023-07-06"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2927,7 +2927,7 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 :   The runtime to use for the function. This value is either a managed runtime identifier or an image reference URL. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime). This value is *optional*. 
 
 `--runtime-secret`, `--rs`
-:   The name of the registry secret that is used to authenticate with a private registry to pull a custom runtime. Run 'ibmcloud ce registry create' to create a registry secret. This value is *optional*. 
+:   The name of the registry secret that is used to authenticate with a private registry to pull a custom runtime. Run `ibmcloud ce registry create` to create a registry secret. This value is *optional*. 
 
 `--runtime-type`, `--rt`
 :   The type of runtime to use. Valid values are `managed` and `custom`. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime). This value is *optional*. The default value is `managed`.
