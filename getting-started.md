@@ -80,9 +80,9 @@ Some Env Vars:
 --------------
 CE_APP=myapp
 CE_DOMAIN=us-east.codeengine.appdomain.cloud
-CE_SUBDOMAIN=14juxb5nb96g
+CE_SUBDOMAIN=abcdabcdab
 HOME=/root
-HOSTNAME=myapp-00001-deployment-5b5895fdf7-44fnv
+HOSTNAME=myapp-00001-deployment-5b5895fdf7-abcd
 K_REVISION=myapp-00001
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 PORT=8080
@@ -131,9 +131,9 @@ Some Env Vars:
 CE_DOMAIN=us-east.codeengine.appdomain.cloud 
 CE_JOB=myjob
 CE_JOBRUN=myjob-jobrun-xgpmz
-CE_SUBDOMAIN=14juxb5nb96g
+CE_SUBDOMAIN=abcdabcdab
 HOME=/root
-HOSTNAME=myjob-jobrun-xgpmz-0-0 
+HOSTNAME=myjob-jobrun-abcde-0-0 
 JOB_INDEX=0
 ...
 z=Set env var 'SHOW' to see all variables
@@ -160,7 +160,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} function with sa
 Example output
 
 ```txt
-{"args":{"__ce_headers":{"Accept-Encoding":"gzip, deflate, br","User-Agent":"got (https://github.com/sindresorhus/got)","X-Request-Id":"72940b7c-82d0-4fb3-b16b-a6cce27f4146"},"__ce_method":"GET","__ce_path":"/"},"env":{"HOME":"/root","PATH":"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/lib/nodejs/bin","PWD":"/nodejsAction","SHLVL":"1","_":"/usr/local/lib/nodejs/bin/node","__OW_ALLOW_CONCURRENT":"true","container":"oci"}}
+{"args":{"__ce_headers":{"Accept-Encoding":"gzip, deflate, br","User-Agent":"got (https://github.com/sindresorhus/got)","X-Request-Id":"12340a7b-11c0-4de3-f16b-a6abc27f4146"},"__ce_method":"GET","__ce_path":"/"},"env":{"HOME":"/root","PATH":"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/lib/nodejs/bin","PWD":"/nodejsAction","SHLVL":"1","_":"/usr/local/lib/nodejs/bin/node","__OW_ALLOW_CONCURRENT":"true","container":"oci"}}
 ```
 {: screen}
 
