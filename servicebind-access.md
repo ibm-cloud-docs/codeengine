@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-07-06"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Configuring access for service bindings
 {: #configure-bindaccess}
 
-Service bindings in {{site.data.keyword.codeengineshort}} use a service ID to access {{site.data.keyword.cloud_notm}} services. A service ID contains the credentials to communicate with a service instance on behalf of your {{site.data.keyword.codeengineshort}} project. Before you can bind a service instance to a {{site.data.keyword.codeengineshort}} application or job, you must configure access for bindings that is based on whether you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you or whether you want to use a service ID that you manage.
+Service bindings in {{site.data.keyword.codeengineshort}} use a service ID to access {{site.data.keyword.cloud_notm}} services. A service ID contains the credentials to communicate with a service instance on behalf of your {{site.data.keyword.codeengineshort}} project. Before you can bind a service instance to a {{site.data.keyword.codeengineshort}} workload, you must configure access for bindings that is based on whether you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you or whether you want to use a service ID that you manage.
 {: shortdesc}
 
 
@@ -23,7 +23,7 @@ Interested in configuring your project such that all users of the project can cr
 {: note}
 
 
-Before you can bind your app or job to a specific {{site.data.keyword.cloud_notm}} service instance, determine whether you want to [create and manage your own service ID](/docs/account?topic=account-serviceids), or if you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you. Based on your choice, assign the proper access policies. {{site.data.keyword.codeengineshort}} uses one service ID per project to work with service bindings.
+Before you can bind your app, job, or function to a specific {{site.data.keyword.cloud_notm}} service instance, determine whether you want to [create and manage your own service ID](/docs/account?topic=account-serviceids), or if you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you. Based on your choice, assign the proper access policies. {{site.data.keyword.codeengineshort}} uses one service ID per project to work with service bindings.
 
 * If you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you, then configure [default service binding access policies](#bind-auto-servid). Ensure that proper access policies are assigned to the {{site.data.keyword.cloud_notm}} account that is used with your {{site.data.keyword.codeengineshort}} project. 
     * If your {{site.data.keyword.codeengineshort}} project is in the *same* resource group as the service instance that you want to bind to, then you need to configure [default service binding access policies](#bind-auto-servid). 
@@ -81,14 +81,14 @@ The following steps describe one way to setup the required access permissions so
 4. Add the `my-user` user to this access group.
 
 
-Now you are ready to create service bindings in {{site.data.keyword.codeengineshort}} where {{site.data.keyword.codeengineshort}} automatically creates a service ID with sufficient permissions to create service credentials to your specified service instances. See [bind a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services). 
+Now you are ready to create service bindings in {{site.data.keyword.codeengineshort}} where {{site.data.keyword.codeengineshort}} automatically creates a service ID with sufficient permissions to create service credentials to your specified service instances. See [bind a service instance to an app, job, or function workload](/docs/codeengine?topic=codeengine-bind-services). 
 
 ### Configuring a project to bind services in a different resource group
 {: #bind-config-proj}
 
 By default, {{site.data.keyword.codeengineshort}} automatically creates a service ID for accessing all services in the resource group of the {{site.data.keyword.codeengineshort}} project when your account that is used with your project has sufficient permissions. The service ID is created during the first service binding operation.
 
-However, if the {{site.data.keyword.cloud_notm}} service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job is in a *different* resource group than the resource group of the {{site.data.keyword.codeengineshort}} project for your app or job, and you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service binding for you, then you must complete the following actions before you create the service binding.
+However, if the {{site.data.keyword.cloud_notm}} service instance that you want to bind to your {{site.data.keyword.codeengineshort}} workload is in a *different* resource group than the resource group of the {{site.data.keyword.codeengineshort}} project for your workload, and you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service binding for you, then you must complete the following actions before you create the service binding.
 
 * [Configure access for {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings](#bind-auto-servid-access).
 * [Update the project to access service instances in other resource groups](#bind-auto-servid-update-project).
@@ -148,7 +148,7 @@ To use a custom service ID for service bindings,
 
 When you are using a custom service ID, you must give the custom service ID `Operator` platform access so that this service ID can create the service credentials for service bindings.
 
-For example, suppose you want to create a service binding to bind a {{site.data.keyword.codeengineshort}} app or job to an {{site.data.keyword.cloudant}} service instance. Yet, you do not want to give the user `Administrator` access for all **All Identity and Access enabled services** within a resource group. However, you want to give the user access to a specific instance of {{site.data.keyword.cloudant}}.
+For example, suppose you want to create a service binding to bind a {{site.data.keyword.codeengineshort}} workload to an {{site.data.keyword.cloudant}} service instance. Yet, you do not want to give the user `Administrator` access for all **All Identity and Access enabled services** within a resource group. However, you want to give the user access to a specific instance of {{site.data.keyword.cloudant}}.
 
 The following steps describe one way to setup a custom service ID with the required access permissions so that {{site.data.keyword.codeengineshort}} can create service bindings for `my-user`. The account owner for the service instance completes the following steps to create a custom service ID. 
 
@@ -214,7 +214,7 @@ Whenever you run the **`project update --binding-service-id`** command, {{site.d
 ## Next steps
 {: #service-bindings-access-nextsteps}
 
-Now that access for service bindings is configured, you are ready to [bind a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services).
+Now that access for service bindings is configured, you are ready to [bind a service instance to an app, job, or function workload](/docs/codeengine?topic=codeengine-bind-services).
 
 
 
