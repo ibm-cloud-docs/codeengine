@@ -2614,7 +2614,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-configure-bindaccess#service-bindings-access-nextsteps)
 
-[Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services#bind-services)
+[Binding a service instance to an app, job, or function workload](/docs/codeengine?topic=codeengine-bind-services#bind-services)
 
 * [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job from the console](/docs/codeengine?topic=codeengine-bind-services#bind-ui)
 
@@ -2624,7 +2624,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Binding a service instance with an existing service access secret](/docs/codeengine?topic=codeengine-bind-services#bind-credential-ui-existingsecret)
 
-* [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job with the CLI](/docs/codeengine?topic=codeengine-bind-services#bind-cli)
+* [Binding a service instance to a {{site.data.keyword.codeengineshort}} app, job, or function with the CLI](/docs/codeengine?topic=codeengine-bind-services#bind-cli)
 
     * [Binding a service instance with a new credential](/docs/codeengine?topic=codeengine-bind-services#bind-credentials)
 
