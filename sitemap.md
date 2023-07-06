@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-07-06"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -28,11 +28,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Getting started with {{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started#getting-started)
 
-* [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
+* [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and functions?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
 
-* [Creating your first {{site.data.keyword.codeengineshort}} app](/docs/codeengine?topic=codeengine-getting-started#app-hello)
+* [Deploying your first {{site.data.keyword.codeengineshort}} app](/docs/codeengine?topic=codeengine-getting-started#app-hello)
 
 * [Running your first {{site.data.keyword.codeengineshort}} job](/docs/codeengine?topic=codeengine-getting-started#first-job)
+
+* [Running your first function](/docs/codeengine?topic=codeengine-getting-started#first-function)
 
 * [Building your first container image from source code](/docs/codeengine?topic=codeengine-getting-started#build-image-gs)
 
