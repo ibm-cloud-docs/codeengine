@@ -27,6 +27,11 @@
         "title": "Working with jobs and job runs",
         "description": "A job runs one or more instances of your executable code. Jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.",
         "href": "/docs/codeengine?topic=codeengine-job-plan"
+      },
+      {
+        "title": "Working with functions",
+        "description": "A Function is a stateless code snippet that performs tasks in response to an HTTP request.",
+        "href": "/docs/codeengine?topic=codeengine-fun-work"
       }
     ],
     "section_learn": {
