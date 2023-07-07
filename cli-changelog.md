@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-07"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,25 +20,25 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.45.1 | 06 July 2023 | - Fixed various bugs. |
-| 1.45.0 | 29 June 2023 | - Added support for the Functions command group. Use these commands to create and work with functions on {{site.data.keyword.codeengineshort}}. See [Working with Functions](/docs/codeengine?topic=codeengine-fun-work) and [{{site.data.keyword.codeengineshort}} CLI reference (`domainmapping` command)](/docs/codeengine?topic=codeengine-cli#cli-function). \n - Fixed various bugs. |
-| 1.44.0 | 22 June 2023 | - Added support for the `--scale-down-delay` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) and [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. \n - Fixed various bugs.  |
-| 1.43.7 | 08 June 2023 | - Fixed various bugs. |
-| 1.43.5 | 16 May 2023 | - Fixed various bugs. \n - Updated translations for the CLI. |
-| 1.43.4 | 27 April 2023 | - Fixed various bugs. |
-| 1.43.3 | 14 April 2023 | - Fixed configuration error (Windows only). |
-| 1.43.1 | 12 April 2023 | - Fixed various bugs. |
-| 1.43.0 | 23 March 2023 | - This version adds support for the **`domainmapping`** command group. Use this command to manage domain mappings with the CLI. See [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings) and [{{site.data.keyword.codeengineshort}} CLI reference (`domainmapping` command)](/docs/codeengine?topic=codeengine-cli#cli-domainmapping).  \n - Fixed various bugs. |
-| 1.42.0 | 16 March 2023 | - **Important:** This version updates support for secrets in the CLI such that you can define and work with various formats of secrets with the **`secret`** command group. Formats of secrets include basic authentication, generic, registry, SSH, and TLS. While you can continue to use the **`registry`** and **`repo`** command groups, take advantage of the unified **`secret`** command group. See [Working with secrets](/docs/codeengine?topic=codeengine-secret) and [{{site.data.keyword.codeengineshort}} CLI reference (`secret` command)](/docs/codeengine?topic=codeengine-cli#cli-secret).  \n - Fixed various bugs. \n - Updated translations for the CLI. |
-| 1.41.3 | 02 March 2023 | - Fixed various bugs. |
-| 1.41.2 | 23 February 2023 | - Fixed various bugs. |
-| 1.41.1 | 17 February 2023 | - Fixed various bugs. \n - Updated translations for the CLI. |
-| 1.41.0 | 09 February 2023 |  - Upgraded to Go 1.20.0. \n - Updated translations for the CLI.  |
-| 1.40.8 | 03 February 2023 | - Fixed various bugs. |
-| 1.40.7 | 26 January 2023 | - Fixed various bugs. |
-| 1.40.6 | 20 January 2023 | - Fixed various bugs. |
-| 1.40.5 | 12 January 2023 | - Fixed various bugs. |
-| 1.40.4 | 14 December 2022 | - Fixed various bugs. |
+| 1.45.1 | 2023-07-06 | - Fixed various bugs. |
+| 1.45.0 | 2023-06-29 | - Added support for the Functions command group. Use these commands to create and work with functions on {{site.data.keyword.codeengineshort}}. See [Working with Functions](/docs/codeengine?topic=codeengine-fun-work) and [{{site.data.keyword.codeengineshort}} CLI reference (`domainmapping` command)](/docs/codeengine?topic=codeengine-cli#cli-function). \n - Fixed various bugs. |
+| 1.44.0 | 2023-06-22 | - Added support for the `--scale-down-delay` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) and [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. \n - Fixed various bugs.  |
+| 1.43.7 | 2023-06-08 | - Fixed various bugs. |
+| 1.43.5 | 2023-05-16 | - Fixed various bugs. \n - Updated translations for the CLI. |
+| 1.43.4 | 2023-04-27 | - Fixed various bugs. |
+| 1.43.3 | 2023-04-14 | - Fixed configuration error (Windows only). |
+| 1.43.1 | 2023-04-12 | - Fixed various bugs. |
+| 1.43.0 | 2023-03-23 | - This version adds support for the **`domainmapping`** command group. Use this command to manage domain mappings with the CLI. See [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings) and [{{site.data.keyword.codeengineshort}} CLI reference (`domainmapping` command)](/docs/codeengine?topic=codeengine-cli#cli-domainmapping).  \n - Fixed various bugs. |
+| 1.42.0 | 2023-03-16 | - **Important:** This version updates support for secrets in the CLI such that you can define and work with various formats of secrets with the **`secret`** command group. Formats of secrets include basic authentication, generic, registry, SSH, and TLS. While you can continue to use the **`registry`** and **`repo`** command groups, take advantage of the unified **`secret`** command group. See [Working with secrets](/docs/codeengine?topic=codeengine-secret) and [{{site.data.keyword.codeengineshort}} CLI reference (`secret` command)](/docs/codeengine?topic=codeengine-cli#cli-secret).  \n - Fixed various bugs. \n - Updated translations for the CLI. |
+| 1.41.3 | 2023-03-02 | - Fixed various bugs. |
+| 1.41.2 | 2023-02-23 | - Fixed various bugs. |
+| 1.41.1 | 2023-02-17 | - Fixed various bugs. \n - Updated translations for the CLI. |
+| 1.41.0 | 2023-02-09 |  - Upgraded to Go 1.20.0. \n - Updated translations for the CLI.  |
+| 1.40.8 | 2023-02-03 | - Fixed various bugs. |
+| 1.40.7 | 2023-01-26 | - Fixed various bugs. |
+| 1.40.6 | 2023-01-20 | - Fixed various bugs. |
+| 1.40.5 | 2023-01-12 | - Fixed various bugs. |
+| 1.40.4 | 2023-01-14 | - Fixed various bugs. |
 | 1.40.3 | 07 December 2022 | - Fixed various bugs. |
 | 1.40.2 | 01 December 2022 | - Updated the output of the **`project get`** command to display the resource quota for custom domain mappings for a project. \n - Fixed various bugs. \n - Updated translations for the CLI. |
 | 1.40.1 | 10 November 2022 | - Fixed various bugs. \n - Updated translations for the CLI. |
