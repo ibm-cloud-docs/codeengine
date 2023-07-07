@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-07-07"
 
 keywords: configmaps with code engine, key references with code engine, key-value pair with code engine, setting up configmaps with code engine, configmaps, environment variables
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Working with configmaps 
 {: #configmap} 
 
-Learn how to work with configmaps in {{site.data.keyword.codeengineshort}}. In {{site.data.keyword.codeengineshort}}, you can store your information as key-value pairs in configmaps that can be consumed by your job or application by using environment variables. 
+Learn how to work with configmaps in {{site.data.keyword.codeengineshort}}. In {{site.data.keyword.codeengineshort}}, you can store your information as key-value pairs in configmaps that can be consumed by your app, job, or function workload by using environment variables. 
 {: shortdesc}
 
 ## What are configmaps and why would I use them? 
@@ -23,7 +23,7 @@ Learn how to work with configmaps in {{site.data.keyword.codeengineshort}}. In {
 
 In {{site.data.keyword.codeengineshort}}, both secrets and configmaps are key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the environment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
 
-A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environment variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs.
+A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environment variables, you can decouple specific information from your deployment and keep your app, job, or function portable. A configmap contains information in key-value pairs.
 
 
 Because secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar. To learn more about secrets, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
@@ -34,7 +34,7 @@ Because secrets and configmaps are similar entities (except secrets are stored m
 ## I see configmaps that I didn't create. Can I delete them?
 {: #inside-configmaps}
 
-No. {{site.data.keyword.codeengineshort}} automatically creates the following configmaps in your namespace: `istio-ca-root` and `kube-root-ca`. {{site.data.keyword.codeengineshort}} uses these configmaps internally. If you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically re-creates them.
+No. {{site.data.keyword.codeengineshort}} automatically creates the `istio-ca-root` and `kube-root-ca` configmaps in your namespace. {{site.data.keyword.codeengineshort}} uses these configmaps internally. If you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically re-creates them.
 
 ## Creating configmaps
 {: #configmap-create}
@@ -73,7 +73,7 @@ Before you begin
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-When you create (or update) a configmap from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when you use a file to specify configmap values, *all* the contents within the file become the value for the key-value pair. When you use the option format of `--from-file KEY=FILE`, the `KEY` is name of the environment variable that is known to your job or app. When you use the option format of `--from-file FILE`, `FILE` is the name of the environment variable that is known to your job or app. If your file contains one or more key-value pairs, use the `--from-env-file` option to add an environment variable for each key-value pair in the specified file. Any lines in the specified file that are empty or begin with `#` are ignored. 
+When you create (or update) a configmap from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when you use a file to specify configmap values, *all* the contents within the file become the value for the key-value pair. When you use the option format of `--from-file KEY=FILE`, the `KEY` is name of the environment variable that is known to your app, job, or function workload. When you use the option format of `--from-file FILE`, `FILE` is the name of the environment variable that is known to your job, app, or function. If your file contains one or more key-value pairs, use the `--from-env-file` option to add an environment variable for each key-value pair in the specified file. Any lines in the specified file that are empty or begin with `#` are ignored. 
 {: important}
 
 #### Creating a configmap with the CLI
@@ -155,13 +155,16 @@ You can update an existing configmap and its key-value pairs from the console.
 1. You can update key-value pairs for your defined configmaps from the console in one of the following ways. 
 
     * Go to the Secrets and configmaps page for your project and locate the configmap that you want to update. Click the name of the configmap that you want to update to open it. 
-    * If your configmap is referenced by an app or job, then use the links in the environment variables table on the **Environmental variables** tab of your app or job. These links take you directly to your configmap. 
+    * If your configmap is referenced by an app, job, or function workload, then use the links in the environment variables table on the **Environmental variables** tab of your workload. These links take you directly to your configmap. 
 2. Click **Edit** and make the updates for your configmap. 
 3. Click **Save** to save the changes to your configmap.
 
-If your updated configmap is referenced by a job or app, then your job or app must be restarted for the new data to take effect.
+If your updated configmap is referenced by an app, job, or function workload, then your workload must be restarted for the new data to take effect.
+
 * Apps - From the page for your app, click **New revision** and then **Save and deploy**. Alternatively, you can wait for your app to scale to zero and when the app scales up, the app uses the updated configmap.
 * Jobs - From the page for your job, click **Submit job** to run your job, or you can rerun a job. This new job run uses the updated configmap.
+* Function - Your function is restarted when it is called again. You can test your function by clicking **Test function** from the function page.
+
 
 ### Updating configmaps with the CLI 
 {: #configmap-update-cli}
@@ -205,13 +208,13 @@ You can update an existing configmap and its key-value pairs with the CLI.
 ## Referencing configmaps  
 {: #configmap-ref}
 
-Your apps or jobs can consume and use the information that is stored in a configmap by using environment variables.  
+Your app, job, or function workload can consume and use the information that is stored in a configmap by using environment variables.  
 {: shortdesc}
 
 ### Referencing configmaps from the console 
 {: #configmap-ref-ui}
 
-You can use the console to create environment variables for your apps and jobs that fully reference a configmap or reference individual keys in a configmap. 
+You can use the console to create environment variables for your app, job, or function workload that fully reference a configmap or reference individual keys in a configmap. 
 {: shortdesc}
 
 Before you can reference a configmap, it must exist. See [create a configmap](/docs/codeengine?topic=codeengine-configmap-create-ui).
@@ -219,9 +222,9 @@ Before you can reference a configmap, it must exist. See [create a configmap](/d
 From the console, you can reference only one individual key of a defined configmap per environment variable. If you need to reference more than one key of a configmap, then repeat the steps to define another environment variable that references a different key.
 {: note}
 
-1. To reference a defined configmap from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference an individual key in an existing configmap. For example, let's fully reference the `myconfigmap` configmap from the `myapp` application. When you fully reference a configmap (or secret), you can optionally specify a `prefix`. By using a prefix such as `myconfigmap_`, each key is prefixed with `myconfigmap_`. 
+1. To reference a defined configmap from your app, job, or function workload, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference an individual key in an existing configmap. For example, let's fully reference the `myconfigmap` configmap from the `myapp` application. When you fully reference a configmap (or secret), you can optionally specify a `prefix`. By using a prefix such as `myconfigmap_`, each key is prefixed with `myconfigmap_`. 
 
-2. After you create environment variables, you must restart your app or job for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 
+2. After you create environment variables, you must restart your app, job, or function workload for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs and functions, your workload is updated the next time it is called with the environment variables that you defined. 
 
 3. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. In this `myapp` example, because we specified a prefix for the fully referenced `myconfigmap` configmap, all the keys of this configmap are referenced as environment variables and are prefixed with `myconfigmap_`. For example, these environment variables display as `myconfigmap_key1=value1` and `myconfigmap_key2=value2`.
 
@@ -232,13 +235,22 @@ To remove an environment variable that references a configmap, see [deleting env
 ### Referencing configmaps with the CLI 
 {: #configmap-ref-cli}
 
-To use configmaps with apps and jobs, you can set environment variables that fully reference a configmap or reference individual keys in a configmap with the CLI.
+To use configmaps with app, job, or function workloads, you can set environment variables that fully reference a configmap or reference individual keys in a configmap with the CLI.
 {: shortdesc}
 
 #### Referencing existing configmaps with the CLI 
 {: #configmap-ref-existing-cli}
 
-To use a configmap with an app with the CLI, specify the  `--env-from-configmap` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to reference a configmap from a job with the CLI, specify the `--env-from-configmap` option on the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+To use a configmap with an app, job, or fucnction workload with the CLI, specify the  `--env-from-configmap` option on the following commands.
+
+- [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create)
+- [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)
+- [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create)
+- [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update)
+- [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit)
+- [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit)
+- [**`fn create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create)
+- [**`fn update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) 
 
 The following example describes how to reference an existing configmap with an app by using the CLI. 
 
@@ -277,7 +289,7 @@ The following example describes how to reference an existing configmap with an a
 
 4. Update the app again to use the `myliteralconfigmap2` configmap. 
 
-    When you update an application or job with an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
+    When you update an app, job, or function with an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
     {: note}
 
     ```txt
@@ -355,11 +367,20 @@ The following example describes how to reference an existing configmap with an a
 #### Referencing configmaps that are not yet defined with the CLI 
 {: #configmap-ref-not-existing-cli}
 
-If a configmap does not exist before it is referenced, an app does not deploy successfully and a job does not run successfully until the referenced configmap is created.  
+If a configmap does not exist before it is referenced, the app, job, or function workload does not deploy successfully and a job or function do not run successfully until the referenced configmap is created.  
 
-If you are working with an app or a job and the referenced configmap is not yet defined, you can use the `--force` option to avoid verification of the existence of the referenced configmap. The `--force` option can be used with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+If you are working with an app, job, or function workload and the referenced configmap is not yet defined, you can use the `--force` option to avoid verification of the existence of the referenced configmap. The `--force` option can be used with the following commands.
 
-When you use the `--force` option with these commands, the action to create, update, or run the app or job completes; however, the app or job will not run successfully until the referenced configmap exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the app or job to successfully run. 
+- [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create)
+- [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)
+- [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create)
+- [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update)
+- [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit)
+- [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit)
+- [**`fn create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create)
+- [**`fn update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) 
+
+When you use the `--force` option with these commands, the action to create, update, or run the workload completes; however, the app, job, or workload will not run successfully until the referenced configmap exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the workload to successfully run. 
 
 The following example describes how to reference a configmap that is not yet defined with an app by using the CLI. 
 
@@ -490,7 +511,7 @@ When you no longer need a configmap, you can delete it.
     2. Click the configmap that you want to change to open its page. 
     3. From the page for the specific configmap, delete the key-value pair that you want to remove. 
 
-You can also delete defined environment variables that reference secrets and configmaps. To delete a defined environment variable, from the **Environment variables** tab of your job or app and delete the environment variable that you want to delete. After you delete a defined environment variable, be sure to click **Save** to save the changes to your app or job. For more information, see [Delete an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui).
+You can also delete defined environment variables that reference secrets and configmaps. To delete a defined environment variable, from the **Environment variables** tab of your app, job, or function and delete the environment variable that you want to delete. After you delete a defined environment variable, be sure to click **Save** to save the changes to your app, job, or function. For more information, see [Delete an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui).
 
 ### Deleting configmaps with the CLI
 {: #configmap-delete-cli}

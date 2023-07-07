@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-07"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2938,7 +2938,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and updating environment variables with the CLI](/docs/codeengine?topic=codeengine-envvar#envvar-create-cli)
 
-* [Considerations for updating apps or jobs with environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider)
+* [Considerations for updating workloads with environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider)
 
 * [Deleting environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete)
 

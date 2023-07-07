@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-07"
 
-keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
+keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project, integrating service with function in code engine
 
 subcollection: codeengine
 

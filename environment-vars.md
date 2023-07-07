@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023
-lastupdated: "2023-06-12"
+  years: 2022, 2023
+lastupdated: "2023-07-07"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Working with environment variables  
 {: #envvar} 
 
-Learn how to work with environment variables (`env variables`) in {{site.data.keyword.codeengineshort}}. You can set environment variables as key-value pairs that can be used by your application or job. 
+Learn how to work with environment variables (`env variables`) in {{site.data.keyword.codeengineshort}}. You can set environment variables as key-value pairs that can be used by your application, job, or function. 
 {: shortdesc}
 
 ## Creating and updating environment variables
@@ -24,7 +24,7 @@ Learn how to work with environment variables (`env variables`) in {{site.data.ke
 Create and manage environment variables with {{site.data.keyword.codeengineshort}}.
 {: shortdesc}
 
-You can define environment variables as literal values or you can reference an existing secret or configmap. {{site.data.keyword.codeengineshort}} uses environment variables to enable [secrets](/docs/codeengine?topic=codeengine-secret) or [configmaps](/docs/codeengine?topic=codeengine-configmap) to be used by your job or application. 
+You can define environment variables as literal values or you can reference an existing secret or configmap. {{site.data.keyword.codeengineshort}} uses environment variables to enable [secrets](/docs/codeengine?topic=codeengine-secret) or [configmaps](/docs/codeengine?topic=codeengine-configmap) to be used by your job, application, or function. 
 
 ### Creating environment variables from the console
 {: #envvar-create-ui}
@@ -32,7 +32,7 @@ You can define environment variables as literal values or you can reference an e
 Create and update environment variables with the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-You can define environment variables when you create your app or job, or when you update an existing app or job from the console.
+You can define environment variables when you create or update your app, job, or function from the console.
 
 Before you begin
 
@@ -42,8 +42,9 @@ Before you begin
 
 1. To open the dialog to define your environment variable on the Add environment variable page, complete one of the following choices.
     * If you are [creating an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console), from the Create application page, expand the **Environment variables (optional)** section. You can add one or more environment variables to the app that you are creating. Click **Add** to open the Add environment variable page. 
-    * If you are [creating a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui), from the Create job page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page. 
-    * If you are updating an existing app or job to add environment variables, go to the existing app or job. From the **Configuration** tab, click **Environment variables**. For apps, you'll need to click **Edit and create a new revision**, and then click **Add environment variable**. For jobs, click **Add environment variable** to open the Add environment variable page.
+    * If you are [creating a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui), from the Create job page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page.
+    * If you are [creating a function](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inline-console), from the Create function page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page.
+    * If you are updating an existing workload to add environment variables, go to the existing app, job, or function. From the **Configuration** tab, click **Environment variables**. For apps, click **Edit and create a new revision**, and then click **Add environment variable**. For jobs and functions, click **Add environment variable** to open the Add environment variable page.
 
 2. From the Add environment variable page, create an environment variable in one of the following ways, 
     * To create a _literal_ environment variable, choose `Literal value`, specify the name for the literal environment variable, and provide a value. Notice that the `Resulting definition` section displays the name of the environment variable and its value.  
@@ -56,10 +57,10 @@ Before you begin
     {: note}
 
 3. Click **Done** to save your changes. This action adds your environment variable to the table on the **Environment variables** tab. To continue adding environment variables, click **Add**. 
-4. Complete the create or update for your app or job with the defined environment variable. 
-    - If you are creating an app or job, when you click **Create**, the app or job is deployed with your environment variables.
-    - If you are updating an existing app or job to add an environment variable, click **Save and deploy** to update the app or click **Save** to update your job with the new environment variables. 
-5. When your app or job is in `Ready` state, your app or job is updated with your environment variables.
+4. Complete the create or update for your app, job, or function with the defined environment variable. 
+    - If you are creating a workload, when you click **Create**, the app, job, or function is deployed with your environment variables.
+    - If you are updating an existing app, job, or function to add an environment variable, click **Save and deploy** to update the app or click **Save** to update your job or function with the new environment variables. 
+5. When your app, job, or function is in `Ready` state, it is updated with your environment variables.
 
 The following table describes information about your environment variables.  
 
@@ -85,14 +86,14 @@ For example, let's create an app and set environment variables for the app.
 7. When the app is in `Ready` state, your app is updated with your environment variables. 
 8. To test your app, click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  With this app revision, this app outputs `Hello World from {{site.data.keyword.codeengineshort}}` and the output includes the names of the environment variables, which were added in the previous steps.  
 
-When you set environment variables in your app or job, this action adds a new environment variable or overrides an existing environment variable. If you have an environment variable with the same *Name*, and specify a different *value* than the previously defined environment variable, then the updated environment variable overrides the existing value. For example, if you have a defined environment variable that is named `envvar1` and its value is `myenvar1`, and you define another environment variable that is also named `envvar1` and specify its value as `mynewenvvar1`, then after you save and deploy your updated app or you save your updated job, your running app, or job uses the `envvar1` environment variable with value `mynewenvvar1`.
+When you set environment variables in your workload, this action adds a new environment variable or overrides an existing environment variable. If you have an environment variable with the same *Name*, and specify a different *value* than the previously defined environment variable, then the updated environment variable overrides the existing value. For example, if you have a defined environment variable that is named `envvar1` and its value is `myenvar1`, and you define another environment variable that is also named `envvar1` and specify its value as `mynewenvvar1`, then after you save and deploy your updated app or you save your updated job, your running app, or job uses the `envvar1` environment variable with value `mynewenvvar1`.
 {: note}
 
 
 ### Updating environment variables from the console 
 {: #envvar-update-ui}
 
-1. To update an existing environment variable, go to your app or job that includes the environment variable that you want to change and click the **Environment variables** tab to display your table of environment variables. 
+1. To update an existing environment variable, go to your app, job, or function that includes the environment variable that you want to change and click the **Environment variables** tab to display your table of environment variables. 
 2. From the table of environment variables, click the environment variable that you want to update.
 3. From the Edit environment variable page, make your update and click **Done** to save your changes. When you edit your environment variable, you can change the **Defined by** value and its corresponding required fields.
 4. Click **Save and deploy** to deploy your application with your changes or click **Save** to run your job with your changes. When your app or job is in `Ready` state, your app or job is updated with your environment variables.  
@@ -103,7 +104,7 @@ When you set environment variables in your app or job, this action adds a new en
 Create and manage environment variables with the {{site.data.keyword.codeengineshort}} CLI.
 {: shortdesc}
 
-You can define environment variables when you create your app or job, or when you update an existing app or job with the CLI. 
+You can define environment variables when you create or update your app, job, or function with the CLI. 
 
 When you create an environment variable with the CLI, you can reference configmaps or secrets, or you can create a literal environment variable. These instructions describe creating and updating *literal* environment variables with the CLI. 
 
@@ -218,13 +219,52 @@ myjobrun1-0-0  0/1      Succeeded  0         17s
 ```
 {: screen}
 
-## Considerations for updating apps or jobs with environment variables 
+#### Create and update environment variables for your function
+{: #envvar-create-cli-function}
+
+Set and update environment variables for your function as follows.
+
+* To create and set an environment variable for your function, use the `--env` option with the [**`function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) or the [**`function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) command. The following example creates the `myfunction` function that uses the `https://github.com/IBM/CodeEngine` source code, and defines the `envA` environment variable.
+
+
+    ```txt
+    ibmcloud ce function create --name myfunction --runtime nodejs-18 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs  --env envA=A
+    ```
+    {: pre}
+    
+    Example output from the **`fn get`** command.
+    
+    ```txt
+    Environment Variables:    
+    Type     Name  Value  
+    Literal  envA  A
+    ```
+    {: screen}
+
+* To update environment variables for an existing function, use the `--env` option with the [**`function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) command. The following example updates the `myfunction` function to overwrite the value of `envA` and adds the `envC` environment variable. 
+
+    ```txt
+    ibmcloud ce fn update --name myfunction  --env envA=AA --env envC=C
+    ```
+    {: pre}
+    
+    Example output from the **`fn get`** command.
+    
+    ```txt
+    Environment Variables:    
+    Type     Name  Value  
+    Literal  envA  AA
+    Literal  envC  C
+    ```
+    {: screen}
+
+## Considerations for updating workloads with environment variables 
 {: #envvar-upd-consider}
 
-Consider the following information when you update an app or job that has an environment variable that references configmaps or secrets. 
-* When you update an app or job that has an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
-* When you update an app or job that has an environment variable that references a key in one configmap (or secret) to reference the same key in a different configmap (or secret), then the last referenced key is used.  
-* When you update an app or job that has an environment variable that fully references a configmap (or secret) to add a reference to a specific key, then the specific key reference overrides the full configmap (or secret) reference. 
+Consider the following information when you update an app, job, or function that has an environment variable that references configmaps or secrets. 
+* When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
+* When you update an app, job, or function that has an environment variable that references a key in one configmap (or secret) to reference the same key in a different configmap (or secret), then the last referenced key is used.  
+* When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to add a reference to a specific key, then the specific key reference overrides the full configmap (or secret) reference. 
 {: note}
 
 ## Deleting environment variables 
@@ -236,9 +276,9 @@ When you no longer need an environment variable, you can delete it.
 ### Deleting environment variables from the console
 {: #envvar-delete-ui}
 
-1. From the console, go to the app or job that has the environment variable that you want to delete. Click the **Environment variables** tab. 
-2. From the table of environment variables, delete the environment variable that you want to remove from the app or job.
-3. Click **Save and deploy** to update the app or click **Save** to update your job with the new environment variables. When your app or job is in `Ready` state, your app or job is updated with your current environment variables.  
+1. From the console, go to the app, job, or function that has the environment variable that you want to delete. Click the **Environment variables** tab. 
+2. From the table of environment variables, delete the environment variable that you want to remove from the app, job, or function.
+3. Click **Save and deploy** to update the app or click **Save** to update your job or function with the new environment variables. When your app, job, or function is in `Ready` state, it is updated with your current environment variables.  
 
 
 ### Deleting environment variables with the CLI
@@ -312,5 +352,15 @@ Use the `--env-rm` option with the **`job update`** command to remove environmen
     jobrun2resuba-0-0  0/1      Succeeded  0         21s
     ```
     {: screen}
+
+#### Delete environment variables for your function 
+{: #envvar-delete-cli-fun}
+
+To remove an environment variable for your function, use the `--env-rm` option with the [**`function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) command. The following example updates the `myfunction` function to delete the `envA` environment variable.
+
+```txt
+ibmcloud ce function update --name myfunction --env-rm envA
+```
+{: pre}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-25"
+lastupdated: "2023-07-07"
 
 keywords: secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, secrets, configmaps, environment variables
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Working with secrets 
 {: #secret} 
 
-Learn how to work with secrets in {{site.data.keyword.codeengineshort}}. In {{site.data.keyword.codeengineshort}}, you can store your information as key-value pairs in secrets that can be consumed by your job or application by using environment variables. 
+Learn how to work with secrets in {{site.data.keyword.codeengineshort}}. In {{site.data.keyword.codeengineshort}}, you can store your information as key-value pairs in secrets that can be consumed by your function, job, or application by using environment variables. 
 {: shortdesc}
 
 ## What are secrets and why would I use them? 
@@ -23,7 +23,7 @@ Learn how to work with secrets in {{site.data.keyword.codeengineshort}}. In {{si
 
 In {{site.data.keyword.codeengineshort}}, secrets (and configmaps) are a collection of key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the environment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
 
-A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs.
+A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app, function, or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs.
 
 Because secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar. To learn more about configmaps, see [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
 {: note} 
@@ -49,7 +49,7 @@ The following table summarizes the supported secrets in {{site.data.keyword.code
 ## Creating secrets
 {: #secret-create}
 
-Use secrets to provide sensitive information to your apps or jobs. Secrets are defined in key-value pairs and the data that is stored in secrets is encoded.
+Use secrets to provide sensitive information to your apps, jobs, or functions. Secrets are defined in key-value pairs and the data that is stored in secrets is encoded.
 {: shortdesc}
 
 ### Creating a secret from the console
@@ -62,7 +62,7 @@ Learn how to create secrets from the {{site.data.keyword.codeengineshort}} conso
 #### Creating a generic secret from the console
 {: #secret-create-ui-generic}
 
-Learn how to create generic secrets from the {{site.data.keyword.codeengineshort}} console that can be consumed by jobs or apps as environment variables.
+Learn how to create generic secrets from the {{site.data.keyword.codeengineshort}} console that can be consumed by functions, jobs, or apps as environment variables.
 {: shortdesc}
 
 Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-project).
@@ -100,7 +100,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 ### Creating secrets with the CLI
 {: #secret-create-cli}
 
-Learn how to create secrets with the {{site.data.keyword.codeengineshort}} CLI that can be consumed by apps or jobs as environment variables.
+Learn how to create secrets with the {{site.data.keyword.codeengineshort}} CLI that can be consumed by apps, jobs, or functions as environment variables.
 {: shortdesc}
 
 Before you begin
@@ -200,7 +200,7 @@ You can create a generic secret with the **`secret create`** command in one of t
     {: pre}
 
 
-If you want to create (or update) a generic secret from a file, use the `--from-file` option with one of the following formats: `--from-file FILE` or `--from-file KEY=FILE` In {{site.data.keyword.codeengineshort}}, when you use the `--from-file` option to specify secret values, *all* the contents within the file is the value for the key-value pair. When you use the option format of `--from-file KEY=FILE`, the `KEY` is name of the environment variable that is known to your job or app. When you use the option format of `--from-file FILE`, `FILE` is the name of the environment variable that is known to your job or app. If your file contains one or more key-value pairs, use the `--from-env-file` option to add an environment variable for each key-value pair in the specified file. Any lines in the specified file that are empty or begin with `#` are ignored. 
+If you want to create (or update) a generic secret from a file, use the `--from-file` option with one of the following formats: `--from-file FILE` or `--from-file KEY=FILE` In {{site.data.keyword.codeengineshort}}, when you use the `--from-file` option to specify secret values, *all* the contents within the file is the value for the key-value pair. When you use the option format of `--from-file KEY=FILE`, the `KEY` is name of the environment variable that is known to your job, function, or app. When you use the option format of `--from-file FILE`, `FILE` is the name of the environment variable that is known to your job, function, or app. If your file contains one or more key-value pairs, use the `--from-env-file` option to add an environment variable for each key-value pair in the specified file. Any lines in the specified file that are empty or begin with `#` are ignored. 
 {: tip}
 
 To display the details of the generic secret, `myliteralsecret`, 
@@ -409,16 +409,17 @@ You can update key-value pairs for your defined secrets from the console.
 1. You can update key-value pairs for your defined secrets from the console in one of the following ways. 
 
     * Go to the Secrets and configmaps page for your project and locate the secret that you want to update. Click the name of the secret that you want to update to open it.
-    * If your secret is referenced by an app or job, then use the links in the environment variables table on the **Environmental variables** tab of your app or job. These links take you directly to your secret. Alternatively, you can also go to the Secrets and configmaps page for your project and locate the secret that you want to update. Click the name of the secret that you want to update to open it.
+    * If your secret is referenced by an app, job, or function, then use the links in the environment variables table on the **Environmental variables** tab of your app, job, or function. These links take you directly to your secret. Alternatively, you can also go to the Secrets and configmaps page for your project and locate the secret that you want to update. Click the name of the secret that you want to update to open it.
 
 2. Click **Edit** and make the updates for your secret. 
 
 3. Click **Save** to save the changes to your secret.
 
-If your updated secret is referenced by a job or app, then your job or app must be restarted for the new data to take effect. 
+If your updated secret is referenced by a job, function, or app, then your job, function, or app must be restarted for the new data to take effect. 
 
 * Apps - From the page for your app, click **New revision** and then **Save and deploy**. Alternatively, you can wait for your app to scale to zero and when the app scales up, the app uses the updated secret.
 * Jobs - From the page for your job, click **Submit job** to run your job, or you can rerun a job. This new job run uses the updated secret.
+* Functions - From the page for your function, click **Test Function**. If you have a browser open to the function URL, refresh the browser.
 
 ### Updating secrets with the CLI 
 {: #secret-update-cli}
@@ -466,22 +467,22 @@ You can update an existing secret and its key-value pairs with the CLI.
 ## Referencing secrets 
 {: #secret-ref}
 
-Your apps or jobs can consume and use the information that is stored in a secret by using environment variables. 
+Your job, function, or app can consume and use the information that is stored in a secret by using environment variables. 
 {: shortdesc}
 
 ### Referencing secrets from the console 
 {: #secret-ref-ui}
 
-You can use the console to create environment variables for your apps and jobs that fully reference a secret or reference individual keys in a secret. 
+You can use the console to create environment variables for your apps, jobs, and functions that fully reference a secret or reference individual keys in a secret. 
 {: shortdesc}
 
 Before you can reference a secret, it must exist. See [create a secret](/docs/codeengine?topic=codeengine-secret-create-ui). For this example, create a secret that is named `target-secret` with the key-value pair of `TARGET=Sunshine`.
 
-1. To reference a defined secret from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing secret or reference an individual key in an existing secret. When you fully reference a secret (or configmap), you can optionally specify a `prefix`. For example, if you fully reference the `mysecret` secret from the `myapp` application and use the `mysecret_` prefix, each key in the secret is prefixed with `mysecret_`. 
+1. To reference a defined secret from your apps, jobs, and functions, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing secret or reference an individual key in an existing secret. When you fully reference a secret (or configmap), you can optionally specify a `prefix`. For example, if you fully reference the `mysecret` secret from the `myapp` application and use the `mysecret_` prefix, each key in the secret is prefixed with `mysecret_`. 
 
-2. After you create environment variables, you must restart your app or job for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 
+2. After you create environment variables, you must restart your apps, jobs, and functions for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 
 
-3. After the app or job status changes to **Ready**, you can test the application or run the job. For an app, click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. In the `myapp` example, because a prefix was specified for the fully referenced `mysecret` secret, all the keys of this secret are referenced as environment variables and are prefixed with `mysecret_`. For example, these environment variables display as `mysecret_secret1=mysecret1` and `mysecret_secret2=mysecret2`. 
+3. After the apps, jobs, and functions status changes to **Ready**, you can test the application or function, or run the job. For an app, click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. In the `myapp` example, because a prefix was specified for the fully referenced `mysecret` secret, all the keys of this secret are referenced as environment variables and are prefixed with `mysecret_`. For example, these environment variables display as `mysecret_secret1=mysecret1` and `mysecret_secret2=mysecret2`. 
 
 To update an environment variable that references a secret, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui) and [considerations for updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider).
 
@@ -496,7 +497,7 @@ For example, let's use the previously defined `mysecret` secret that you defined
     2. Specify `icr.io/codeengine/codeengine` as the image reference.
     3. Click **Create** to create the job. 
 
-    If your app or job that you want to use with the secret is already defined in {{site.data.keyword.codeengineshort}}, go to the Applications or Jobs page and then click the name of your app or job to open the component. 
+    If the workload that you want to use with the secret is already defined in {{site.data.keyword.codeengineshort}}, go to the Applications, Jobs, or Functions page and then click the name of your app, job, or function to open the component. 
 
 2. When the job is created, from the Jobs page, click the name of your job to open it. 
 
@@ -513,7 +514,7 @@ For example, let's use the previously defined `mysecret` secret that you defined
 ### Referencing secrets with the CLI 
 {: #secret-ref-cli}
 
-To use secrets with apps and jobs, you can set environment variables that fully reference a secret or reference individual keys in a secret with the CLI.
+To use secrets with apps, jobs, and functions, you can set environment variables that fully reference a secret or reference individual keys in a secret with the CLI.
 {: shortdesc}
 
 #### Referencing existing secrets with the CLI 
@@ -522,7 +523,15 @@ To use secrets with apps and jobs, you can set environment variables that fully 
 The following examples reference a generic secret, which is the default secret when the `--format` option is not specified. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. 
 {: note}
 
-To use a secret with an app with the CLI, specify the `--env-from-secret` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to reference a secret from a job with the CLI, specify the `--env-from-secret` option on the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+To use a secret with a workload with the CLI, specify the `--env-from-secret` option on the following commands.
+- [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create)
+- [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)
+- [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create)
+- [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update)
+- [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit)
+- [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit)
+- [**`fn create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create)
+- [**`fn update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update)
 
 The following example describes how to reference an existing generic secret with a job by using the CLI. 
 
@@ -694,7 +703,7 @@ The following example describes how to reference an existing generic secret with
     ```
     {: pre}
 
-    When you update a job or app with an environment variable that fully references a secret to fully reference a different secret, full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
+    When you update a job, app, or function with an environment variable that fully references a secret to fully reference a different secret, full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
     {: note}
 
 7. Use the **`jobrun get`** command to display details of the job run, including the instances of the job run. Notice that the job run references both `myliteralsecret` and `myliteralsecret2` secrets.
@@ -868,11 +877,20 @@ To summarize, you completed basic scenarios to demonstrate how to use secrets wi
 #### Referencing secrets that are not yet defined with the CLI 
 {: #secret-ref-notyetdefined-cli}
 
-If a secret does not exist before it is referenced, an app will not deploy successfully, and a job will not run successfully until the referenced secret is created.  
+If a secret does not exist before it is referenced, an app will not deploy successfully, and a job or function will not run successfully until the referenced secret is created.  
 
-If you are working with an app or a job and the referenced secret is not yet defined, use the `--force` option to avoid verification of the existence of the referenced secret. The `--force` option can be used with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+If you are working with an app, job, or function and the referenced secret is not yet defined, use the `--force` option to avoid verification of the existence of the referenced secret. 
+The `--force` option can be used with the following commands.
+- [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create)
+- [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)
+- [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create)
+- [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update)
+- [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit)
+- [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit)
+- [**`fn create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create)
+- [**`fn update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) 
 
-When you use the `--force` option with these commands, the action to create, update, or run the app or job completes. However, the app or job will not run successfully until the referenced secret exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action, and does not wait for the app or job to run successfully. 
+When you use the `--force` option with these commands, the action to create, update, or run the app, job, or function completes. However, the app, job, or function will not run successfully until the referenced secret exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action, and does not wait for the app, job, or function to run successfully. 
 
 The following example describes how to reference a secret that is not yet defined with a job by using the CLI. 
 
@@ -1025,7 +1043,7 @@ When you no longer need a secret, you can delete it.
     2. Click the secret that you want to change to open its page. 
     3. From the page for the specific secret, delete the key-value pair that you want to remove. 
 
-You can also delete defined environment variables that reference secrets and configmaps. To delete a defined environment variable, from the **Environment variables** tab of your job or app and delete the environment variable that you want to delete. After you delete a defined environment variable, be sure to click **Save** to save the changes to your app or job. For more information, see [Delete an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui).
+You can also delete defined environment variables that reference secrets and configmaps. To delete a defined environment variable, from the **Environment variables** tab of your app, job, or function and delete the environment variable that you want to delete. After you delete a defined environment variable, be sure to click **Save** to save the changes to your app, job, or function. For more information, see [Delete an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui).
 
 ### Deleting secrets with the CLI
 {: #secret-delete-cli}
