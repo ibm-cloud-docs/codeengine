@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-07-11"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -34,7 +34,7 @@ Reason:  OOMKilled
 ```
 {: screen}
 
-Try using the following information to resolve your problem.
+Try one of these solutions.
 {: tsResolve}
 
 Whether you are running your build in the console or in the CLI, use the CLI for troubleshooting problems with your build.

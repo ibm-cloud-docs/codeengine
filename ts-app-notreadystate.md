@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-17"
+lastupdated: "2023-07-11"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -37,7 +37,7 @@ If your app is waiting and does not achieve a ready status, determine whether on
 3. Your app is deployed from local source code and the app displays a `waiting` status.
 
 
-Try using the following information to resolve your problem.
+Try one of these solutions.
 {: tsResolve}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-07-11"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, public repositories, private repositories
 
@@ -63,7 +63,7 @@ The error text is different based on what went wrong. The following table descri
 | `Couldn't find remote ref` | - The revision (branch name, tag name, commit ID) specified in the build does not exist. |
 {: caption="Error text and root cases for Git source failed step."}
 
-Try using the following information to resolve your problem.
+Try one of these solutions.
 {: tsResolve}
 
 Whether you are running your build in the console or in the CLI, use the CLI for troubleshooting problems with your build.
