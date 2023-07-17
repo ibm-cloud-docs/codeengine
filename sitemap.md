@@ -2366,6 +2366,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Where can I find information about my in progress and finished Code Engine Function runs?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq10)
 
+    * [Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?](/docs/codeengine?topic=codeengine-fun-migrate#openapi-spec-fun-migrate)
+
 
 ## Running your source code
 {: #sitemap_running_your_source_code}

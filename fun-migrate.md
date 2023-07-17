@@ -132,5 +132,8 @@ If you created your Function from source code, you can [view build logs](/docs/c
 
 Otherwise, you can use [set up {{site.data.keyword.la_full_notm}}](/docs/codeengine?topic=codeengine-view-logs#view-funlogs-ui) to view Platform logs, which contain information about your Function invocation (meta information) as well as log messages emitted by the Function code.
 
-  
-  
+### Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function? 
+{: #openapi-spec-fun-migrate}
+
+No, {{site.data.keyword.codeengineshort}} does generate or provide an OpenAPI specification for the functions you deploy. There are packages and tools available for many programming languages to generate an OpenAPI specification from code. 
+
