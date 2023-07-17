@@ -67,14 +67,14 @@ Functions can perform lightweight, short running, data transformations as result
  
 | Characteristic | App | Job | Function |
 | --------- | --------- | --------- | --------- |
-| Execution time (duration) | Long-running 10min per request | Long-running up to 24hrs | Short-running (<=2mins) |
+| Execution time (duration) | Long-running 10 min per request | Long-running up to 24 hrs | Short-running (<=2 mins) |
 | Startup latency | Medium | Scheduled start | Low  | 
 | Termination | Run-continuously | Run-to-completion | Run-to-completion |
 | Invocation | On request or permanently running | Scheduled | On request, instant |
-| Programming Model | Container based build and execution | Container based build and execution | Language specific source code files and dependency meta data |
+| Programming Model | Container based build and execution | Container based build and execution | Language specific source code files and dependency metadata |
 | Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution |
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
-| Optimized for | Long running highly complex workload and on-demand scale-out | Scheduled/planned workloads with high resource demands | Startup time and rapid scale-out |
+| Optimized for | Long running highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out |
 {: caption="Table 1. Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
 
 ## Migrating IBM Cloud Functions Actions to Code Engine Functions FAQ
