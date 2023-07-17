@@ -94,7 +94,7 @@ For more information about creating and invoking Functions, see [Working with Fu
 ### Security 
 {: #cefun-security}
 
-{{site.data.keyword.codeengineshort}} provides out-of-the-box DDOS protection for your Function. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). 
+{{site.data.keyword.codeengineshort}} provides immediate DDOS protection for your Function. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). 
 
 {{site.data.keyword.codeengineshort}} also provides a service mesh to use its networking layer, which enables mutual Transport Layer Security (TLS) traffic for Functions, thus securing *service-to-service* and *user-to-service* communication.
 
