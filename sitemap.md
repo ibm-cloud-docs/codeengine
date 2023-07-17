@@ -3744,6 +3744,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
 
+* [Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?](/docs/codeengine?topic=codeengine-faqs#openapi-spec-fun)
+
 * [How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
 
 * [How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
