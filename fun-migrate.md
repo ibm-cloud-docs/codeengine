@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-07-17"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -23,7 +23,7 @@ However, the increased demands and additional requirements our valued customers 
 ## Comparing Code Engine to Cloud Functions
 {: #fun-migrate-compare}
 
-The SOC2, ISO32k, BSI C5, and Financial Services Cloud-certified IBM Cloud Code Engine service is available in nine (9) regions. As a fully managed, serverless platform, it runs a broad variety of customer workloads as containers, batch jobs, applications, and functions. You can access [Code Engine in the IBM Public Cloud](https://cloud.ibm.com/codeengine){: external}. 
+The SOC2, ISO32k, BSI C5, and Financial Services Cloud-certified IBM Cloud Code Engine service is available in nine (9) regions. As a fully managed, serverless platform, it runs a broad variety of customer workloads as containers, batch jobs, applications, and functions. You can access [Code Engine in the IBM public cloud](https://cloud.ibm.com/codeengine){: external}. 
 
 The new Functions-as-a-Service capabilities enable Code Engine customers to perform short running, run-to-completion type of workloads. Whether you are a Cloud Functions customer or you are new to Functions-as-a-Service, you can learn more about [running functions in IBM Cloud Code Engine](/docs/codeengine?topic=codeengine-fun-work). You can even [take a tutorial](/docs/codeengine?topic=codeengine-fun-tutorial).
   
@@ -34,7 +34,7 @@ Function sin Code Engine simplifies your user experience, with the following opt
 - Integrates fully with the Code Engine development flow and features.
 - Includes common programming languages and provides optimized managed runtimes.
 - Supports custom runtime images as optimized fit-to-purpose execution environments.
-- Offers on-demand code execution with low cold-start latency and rapid scale-out.
+- Offers on-demand code execution with low cold start latency and rapid scale-out.
 - Offers a Web-URL based Function invocation mechanism with feature-rich support for web applications.
 - Supported security capabilities such as access to private repositories and registries.
 
@@ -50,7 +50,7 @@ When you migrate your IBM Cloud Functions based workloads, consider the followin
     - Node.js Release Version 18
     - Python Release Version 3.11
   
-- Adds support for custom runtime images. You can use any custom container image as long as it fulfills an Openwhisk compliant runtime contract.
+- Adds support for custom runtime images. You can use any custom container image if it fulfills an Openwhisk compliant runtime contract.
 - Provides [optimized CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-cpu-mem). 
 
 In addition, {{site.data.keyword.codeengineshort}} includes [Function limits](/docs/codeengine?topic=codeengine-limits#limits_functions), as well as [project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). 
