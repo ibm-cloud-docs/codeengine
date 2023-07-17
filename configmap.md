@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-07-17"
 
 keywords: configmaps with code engine, key references with code engine, key-value pair with code engine, setting up configmaps with code engine, configmaps, environment variables
 
@@ -241,7 +241,7 @@ To use configmaps with app, job, or function workloads, you can set environment 
 #### Referencing existing configmaps with the CLI 
 {: #configmap-ref-existing-cli}
 
-To use a configmap with an app, job, or fucnction workload with the CLI, specify the  `--env-from-configmap` option on the following commands.
+To use a configmap with an app, job, or function workload with the CLI, specify the  `--env-from-configmap` option on the following commands.
 
 - [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create)
 - [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)
