@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-18"
+lastupdated: "2023-07-19"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -157,6 +157,8 @@ When you work with the CLI, you can display logs for all the instances of an app
         {: screen}
 
 For more information, see [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli).
+
+
 
 ## Getting system event information for my apps 
 {: #ts-app-gettingevent}
