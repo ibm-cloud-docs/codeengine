@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-07-17"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -187,14 +187,14 @@ Create a function that includes a dependency for a specific Python module by cre
 	    	      "body": pyjokes.get_joke()
     	}
     ```
-    {: pre}
+    {: codeblock}
 
 2. Create a `requirements.txt` containing your required dependencies for your Function
 
     ```sh
     pyjokes==0.6.0
     ```
-    {: pre}
+    {: codeblock}
   
 
 3. Create your files as a Function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option.

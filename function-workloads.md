@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-07-17"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Function workloads
 {: #cefunctions}
 
-A Function is a stateless code snippet that performs tasks in response to an HTTP request. With IBM Code Engine Functions, you can run your business logic in a scalable and serverless way. IBM Code Engine Functions provide an optimized runtime environment to support low latency and rapid scale-out scenarios. Your Function code can be written in in Node.js or Python, which are optimized to run in IBM Code Engine Functions. In addition, your Function code can be written for any OpenWhisk compatible runtime environment or a custom runtime image.
+A Function is a stateless code snippet that performs tasks in response to an HTTP request. With IBM Code Engine Functions, you can run your business logic in a scalable and serverless way. IBM Code Engine Functions provide an optimized runtime environment to support low latency and rapid scale-out scenarios. Your Function code can be written in Node.js or Python, which are optimized to run in IBM Code Engine Functions. In addition, your Function code can be written for any OpenWhisk compatible runtime environment or a custom runtime image.
 {: shortdesc}
 
 ## Lifecycle of a Function instance
@@ -30,14 +30,14 @@ To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimize
 
 | Characteristic | App | Job | Function |
 | --------- | --------- | --------- | --------- |
-| Execution time (duration) | Long-running 10min per request | Long-running up to 24hrs | Short-running (<=2mins) |
+| Execution time (duration) | Long-running 10 min per request | Long-running up to 24 hrs | Short-running (<=2 mins) |
 | Startup latency | Medium | Scheduled start | Low  | 
 | Termination | Run-continuously | Run-to-completion | Run-to-completion |
 | Invocation | On request or permanently running | Scheduled | On request, instant |
-| Programming Model | Container based build and execution | Container based build and execution | Language specific source code files and dependency meta data |
+| Programming Model | Container-based build and execution | Container-based build and execution | Language-specific source code files and dependency metadata |
 | Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution |
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
-| Optimized for | Long running highly complex workload and on-demand scale-out | Scheduled/planned workloads with high resource demands | Startup time and rapid scale-out |
+| Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out |
 {: caption="Table 1. Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
 
 ## What are key features of working with Functions?
@@ -57,7 +57,7 @@ Review the following topics to learn more about working with IBM Code Engine Fun
 ### Isolation
 {: #cefun-isolation}
 
-{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. However, tenants and their workloads are isolated from each other by using {{site.data.keyword.codeengineshort}} projects.  {{site.data.keyword.codeengineshort}} prevents communication between projects, providing isolation to your applications inside a multi-tenant environment, which can include applications, batch jobs, and functions. in In addition, there are access controls that are performed on a resource level to only allow authorized users to perform certain operations on project resources, such as Functions or other {{site.data.keyword.codeengineshort}} workloads.
+{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. However, tenants and their workloads are isolated from each other by using {{site.data.keyword.codeengineshort}} projects.  {{site.data.keyword.codeengineshort}} prevents communication between projects, providing isolation to your applications inside a multi-tenant environment, which can include applications, batch jobs, and functions. in In addition, there are access controls that are performed on a resource level to allow only authorized users to perform certain operations on project resources, such as Functions or other {{site.data.keyword.codeengineshort}} workloads.
 
 For more information about workload isolation, see [{{site.data.keyword.codeengineshort}} workload isolation](/docs/codeengine?topic=codeengine-architecture#workload-isolation).
 
@@ -94,7 +94,7 @@ For more information about creating and invoking Functions, see [Working with Fu
 ### Security 
 {: #cefun-security}
 
-{{site.data.keyword.codeengineshort}} provides out-of-the-box DDOS protection for your Function. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). 
+{{site.data.keyword.codeengineshort}} provides immediate DDOS protection for your Function. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). 
 
 {{site.data.keyword.codeengineshort}} also provides a service mesh to use its networking layer, which enables mutual Transport Layer Security (TLS) traffic for Functions, thus securing *service-to-service* and *user-to-service* communication.
 

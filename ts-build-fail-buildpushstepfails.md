@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-07-11"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -57,7 +57,7 @@ The following table describes error text and potential root causes for this scen
 {: caption="Table 1. Error text and root cases for build and push steps" caption-side="bottom"}
 
 
-Try using the following information to resolve your problem.
+Try one of these solutions.
 {: tsResolve}
 
 Whether you are running your build in the console or in the CLI, use the CLI for troubleshooting problems with your build.

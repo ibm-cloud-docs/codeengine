@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-02-22"
+  years: 2022, 2023
+lastupdated: "2023-07-17"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -23,7 +23,7 @@ You can use the {{site.data.keyword.mon_full}} service to monitor your {{site.da
 ## Set up your {{site.data.keyword.mon_full_notm}} service instance
 {: #setup-monitor}
 
-To set up your {{site.data.keyword.codeengineshort}} customer metrics dashboards in {{site.data.keyword.mon_short}}, you must create a service instance and then enable Platform Metrics in the same region as the {{site.data.keyword.codeengineshort}} projects that you want to monitor. If you have deployments in more than one region, you must provision {{site.data.keyword.mon_short}} and enable platform metrics for each region. For more information, see [{{site.data.keyword.mon_short}} Getting started tutorial](/docs/monitoring?topic=monitoring-getting-started).
+To set up your {{site.data.keyword.codeengineshort}} customer metrics dashboards in {{site.data.keyword.mon_short}}, you must create a {{site.data.keyword.mon_short}} instance and then enable Platform Metrics in the same region as the {{site.data.keyword.codeengineshort}} projects that you want to monitor. If you have deployments in more than one region, you must provision {{site.data.keyword.mon_short}} and enable platform metrics for each region. For more information, see [{{site.data.keyword.mon_short}} Getting started tutorial](/docs/monitoring?topic=monitoring-getting-started).
 {: shortdesc}
 
 To set up {{site.data.keyword.mon_short}},
@@ -51,7 +51,7 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 You can also start the {{site.data.keyword.mon_short}} dashboard at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
 
 
-When you use the {{site.data.keyword.mon_full_notm}} service to monitor {{site.data.keyword.codeengineshort}} workloads, there can be delays before the data is processed and available in {{site.data.keyword.mon_short}}. For example, right after you create your monitoring instance, it will take a few minutes before there is a meaningful monitoring data to display. Be aware that it might take around 5 minutes for your monitoring data to show in {{site.data.keyword.mon_short}}.
+When you use the {{site.data.keyword.mon_full_notm}} service to monitor {{site.data.keyword.codeengineshort}} workloads, there can be delays before the data is processed and available in {{site.data.keyword.mon_short}}. For example, right after you create your monitoring instance, it takes a few minutes before there is a meaningful monitoring data to display. Be aware that it might take around 5 minutes for your monitoring data to show in {{site.data.keyword.mon_short}}.
 {: important}
 
 

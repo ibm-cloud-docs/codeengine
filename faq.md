@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-07-17"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -90,7 +90,7 @@ Buildpacks create [reproducible builds](https://buildpacks.io/docs/reference/rep
 {: faq}
 {: support}
 
-If you have an image that exists in a container registry and the image was built with a non-Intel based processor, {{site.data.keyword.codeengineshort}} cannot run your container image. {{site.data.keyword.codeengineshort}} uses Intel-based processing. You can build your own image if you use Intel processing (x86 processor).  You can also choose to let {{site.data.keyword.codeengineshort}} handle the build process for you. For more information, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build).
+If you have an image that exists in a container registry and the image was built with a non-Intel based processor, {{site.data.keyword.codeengineshort}} cannot run your container image. {{site.data.keyword.codeengineshort}} uses Intel-based processing. You can build your own image if you use Intel processing (x86 processor). You can also choose to let {{site.data.keyword.codeengineshort}} handle the build process for you. For more information, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build).
 
 ## Do {{site.data.keyword.codeengineshort}} apps support WebSockets? 
 {: #app-websockets}
@@ -102,6 +102,12 @@ Yes! You can find a [sample app that uses WebSockets](https://github.com/IBM/Cod
 The maximum time for any connection to an application is 10 minutes, even if the connection is not idle. With {{site.data.keyword.codeengineshort}}, you can configure this connection time with the `timeout` value. With the CLI, use the `--timeout` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command or the [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. From the console, you can set the `Timeout` value for your app from the **Runtime** tab. For an app that use WebSockets, the client must reconnect to the app after the connection is closed. So, if your app needs a persistent connection, create a new connection before the `timeout` value is reached.
 {: note}
 
+## Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function? 
+{: #openapi-spec-fun}
+{: faq}
+{: support}
+
+No, {{site.data.keyword.codeengineshort}} does generate or provide an OpenAPI specification for the functions you deploy. There are packages and tools available for many programming languages to generate an OpenAPI specification from code.
 
 ## How can I review the {{site.data.keyword.codeengineshort}} service terms?  
 {: #review-service-terms}
@@ -117,7 +123,7 @@ For the latest service level agreement terms, see the [terms of service](/docs/o
 
 Your feedback on {{site.data.keyword.codeengineshort}} is important to us and helps us improve. You can provide feedback in multiple ways:
 
-* Click **Feedback** from any page on the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external} or in the product documentation to provide your comments.  
+* Click **Feedback** from any page in the product documentation to provide your comments.  
 * Share feedback through Slack. You can [register](https://cloud.ibm.com/kubernetes/slack){: external} and join the discussion in the [#code-engine channel](https://ibm-cloud-success.slack.com){: external}. 
 
 

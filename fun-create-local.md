@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-17"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -215,14 +215,14 @@ Create a function that includes a dependency for a specific Python module by cre
 	    	      "body": pyjokes.get_joke()
     	}
     ```
-    {: pre}
+    {: codeblock}
 
 2. Create a `requirements.txt` containing your required dependencies for your Function
 
     ```sh
     pyjokes==0.6.0
     ```
-    {: pre}
+    {: codeblock}
   
 
 3. Create your files as a Function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.

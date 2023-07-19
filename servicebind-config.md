@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-07"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project, integrating service with function in code engine
 
@@ -27,18 +27,18 @@ Before you begin
     * [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
     * [Create a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui)
     * [Create a function](/docs/codeengine?topic=codeengine-fun-create-inlinecode)
-* Create the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
+* Create the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} workload.
 * [Configure access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
 
-Access for service bindings must be configured before you can bind a service instance to a {{site.data.keyword.codeengineshort}} app, job or function workload. [Configure access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess) based on whether you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you or whether you want to use a service ID that you manage. 
+Access for service bindings must be configured before you can bind a service instance to a {{site.data.keyword.codeengineshort}} app, job, or function workload. [Configure access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess) based on whether you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you or whether you want to use a service ID that you manage. 
 {: important}
 
 When you work with service bindings, what is the relationship between the service ID, service access secrets, and service credentials?
-:    In {{site.data.keyword.codeengineshort}}, a *service binding* is the relationship between an app, job, or function workload and another {{site.data.keyword.cloud_notm}} service. {{site.data.keyword.codeengineshort}} uses a *service ID* to create credentials for a specific {{site.data.keyword.cloud_notm}} service instance. These credentials are *service credentials* and are used by your {{site.data.keyword.codeengineshort}} project to interact with the service instance. Service credentials are stored in a *service access secret*. A service access secret can be accessed by an app or job with the service credentials and is used to interact with the service instance.
+:    In {{site.data.keyword.codeengineshort}}, a *service binding* is the relationship between an app, job, or function workload and another {{site.data.keyword.cloud_notm}} service. {{site.data.keyword.codeengineshort}} uses a *service ID* to create credentials for a specific {{site.data.keyword.cloud_notm}} service instance. These credentials are *service credentials* and are used by your {{site.data.keyword.codeengineshort}} project to interact with the service instance. Service credentials are stored in a *service access secret*. A service access secret can be accessed by an app, job, or function with the service credentials and is used to interact with the service instance.
 
 :   When you create your {{site.data.keyword.cloud_notm}} service instance, you can choose to create the service credential for that service instance. Or, when you create a service binding, you can choose for {{site.data.keyword.codeengineshort}} to automatically create the service instance credential for you if you configured [access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
 
-:   Whether you choose for {{site.data.keyword.codeengineshort}} to automatically create the service credential for you or you manually create the service credential for a specific service instance, you must specify the Identity and Access Management (IAM) role for the service credential. The role that you specify defines the interaction that is allowed with the specific service instance and the bound {{site.data.keyword.codeengineshort}} app or job. For example, if you create a service binding from {{site.data.keyword.codeengineshort}} to an {{site.data.keyword.cloudant}} service instance and you only want the app or job to read from the {{site.data.keyword.cloudant}} database, select the `Reader` role. 
+:   Whether you choose for {{site.data.keyword.codeengineshort}} to automatically create the service credential for you or you manually create the service credential for a specific service instance, you must specify the Identity and Access Management (IAM) role for the service credential. The role that you specify defines the interaction that is allowed with the specific service instance and the bound {{site.data.keyword.codeengineshort}} app, job, or function. For example, if you create a service binding from {{site.data.keyword.codeengineshort}} to an {{site.data.keyword.cloudant}} service instance and you  want the app, job, or function only to read from the {{site.data.keyword.cloudant}} database, select the `Reader` role. 
 
 
 ## Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job from the console 
@@ -124,7 +124,7 @@ Before you begin
 
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
-* Create the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
+* Create the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} workload.
 
     For example, to create an {{site.data.keyword.cos_full_notm}} service instance (Lite plan):
 
@@ -133,14 +133,7 @@ Before you begin
     ```
     {: pre}
 
-* Create a {{site.data.keyword.codeengineshort}} app.
-
-    For example, to create an application that is called `my-application` that uses the `icr.io/codeengine/hello` image:
-
-    ```txt
-    ibmcloud ce application create --name my-application --image icr.io/codeengine/hello
-    ```
-    {: pre}
+* Create a {{site.data.keyword.codeengineshort}} workload. 
 
 ### Binding a service instance with a new credential
 {: #bind-credentials}
@@ -149,6 +142,13 @@ Before you begin
 - To bind your new service instance to your {{site.data.keyword.codeengineshort}} app and generate a new service credential, use the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command. 
 - To bind your service instance to a {{site.data.keyword.codeengineshort}} job, use the [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command. 
 - To bind your service instance to a {{site.data.keyword.codeengineshort}} function, use the [**`ibmcloud ce function bind`**](/docs/codeengine?topic=codeengine-cli#cli-function-bind) command. 
+
+To create an app to use for these steps, run the following command.
+
+```txt
+ibmcloud ce application create --name my-application --image icr.io/codeengine/hello
+```
+{: pre}
 
 1. Identify the name of the service instance that you want to bind to your app, job, or function. You can find all the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example,
 
@@ -220,6 +220,13 @@ Before you begin
 - To bind your service instance to a {{site.data.keyword.codeengineshort}} job, use the [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command. 
 - To bind your service instance to a {{site.data.keyword.codeengineshort}} function, use the [**`ibmcloud ce function bind`**](/docs/codeengine?topic=codeengine-cli#cli-function-bind) command. 
 
+To create a function to use for these steps, run the following command.
+
+```txt
+ibmcloud ce function create --name myfun --runtime nodejs-18 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs
+```
+{: pre}
+
 1. Identify the name of the service instance that you want to bind to your app, job, or function. You can find all the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example, 
 
     ```txt
@@ -284,7 +291,14 @@ Before you begin
 
 If you already created a credential for your service instance and want to use it for your service binding, add the `--service-credentials` option.
 
-1. Identify the name of the service instance that you want to bind to your app or job. You can find all the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example, 
+To create a job to use for these steps, run the following command.
+
+```txt
+ibmcloud ce job create --name my-job --image icr.io/codeengine/hello
+```
+{: pre}
+
+1. Identify the name of the service instance that you want to bind to your app, job, or function. You can find all the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example, 
 
     ```txt
     ibmcloud resource service-instances
@@ -362,6 +376,7 @@ After a service binding is defined between your application and a service instan
 
 ### Unbinding a service instance from the console
 {: #unbind-ui}
+
 
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.

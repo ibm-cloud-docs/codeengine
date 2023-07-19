@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-07-19"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -47,7 +47,7 @@ Logs can be helpful to troubleshoot problems when you run apps. You can view app
 
 When you view logs from the console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} app. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your apps. You can view app logs after you add logging capabilities. For more information, see [viewing app logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui).
 
-When working with the CLI, you can display logs for all the instances of an app or display logs of a specific instance of an app. 
+When you work with the CLI, you can display logs for all the instances of an app or display logs of a specific instance of an app. 
 
 1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all your defined apps in your project; for example,
 
@@ -157,6 +157,8 @@ When working with the CLI, you can display logs for all the instances of an app 
         {: screen}
 
 For more information, see [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli).
+
+
 
 ## Getting system event information for my apps 
 {: #ts-app-gettingevent}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-07-07"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -15,29 +15,15 @@ subcollection: codeengine
 # Referencing secrets and configmaps with environment variables (CLI)
 {: #secretcm-reference}
 
-In {{site.data.keyword.codeengineshort}}, after you create secrets and configmaps, the information that is stored as key-value pairs can be consumed by your job or application as an environment variable by referencing the full secret or configmap or by referencing individual keys. 
+In {{site.data.keyword.codeengineshort}}, after you create secrets and configmaps, the information that is stored as key-value pairs can be consumed by your app, job, or function workload as an environment variable by referencing the full secret or configmap or by referencing individual keys. 
 {: shortdesc}
-
-The following table lists command information for setting environment variables on jobs and apps to reference secrets and configmaps.
-
-| Action| Option format| Commands for jobs | Commands for apps |
-|-----------------|-----------------|--------------|-----|
-| Referencing a full secret | `--env-from-secret NAME` where `NAME` is the name of the secret or `--env-from-secret PREFIX=NAME` to reference the full secret where each key is prefixed with `PREFIX`. | [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
-| Referencing a full configmap | `--env-from-configmap NAME` where `NAME` is the name of the configmap or `--env-from-configmap PREFIX=NAME` to reference the full configmap where each key is prefixed with `PREFIX`. | [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
-| Referencing specific keys in a secret | `--env-from-secret NAME:KEY_A,KEY_B` where `KEY_A`,`KEY_B` are the keys of a key-value pair. If you want to use a different name for a referenced key, use the format `NAME:MY_KEY_A=KEY_A,MY_KEY_B=KEY_B`. | [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
-| Referencing specific keys in a configmap | `--env-from-configmap NAME:KEY_A,KEY_B` where `KEY_A`,`KEY_B` are the keys of a key-value pair. If you want to use a different name for a referenced key, use the format `NAME:MY_KEY_A=KEY_A,MY_KEY_B=KEY_B`.| [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
-| Removing a fully referenced secret | `--env-from-secret-rm NAME` where `NAME` is the name of the secret. | [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
-| Removing a fully referenced configmap | `--env-from-configmap-rm NAME` where `NAME` is the name of the configmap. | [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
-| Removing referenced keys in a secret | `--env-rm KEY_A --env-rm KEY_B` where `KEY_A`,`KEY_B` are the keys of a key-value pair. | [**`jobf update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
-| Removing referenced keys in a configmap | `--env-rm KEY_A --env-rm KEY_B` where `KEY_A`,`KEY_B` are the keys of a key-value pair. | [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
-{: caption="Setting environment variables from secrets and configmaps"}
 
 Working with secrets as environment variables is similar to working with configmaps as environment variables. When you work with secrets, the data is encoded. 
 
-Consider the following information when you update an app or job that has an environment variable that references configmaps or secrets. 
-* When you update an app or job that has an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
-* When you update an app or job that has an environment variable that references a key in one configmap (or secret) to reference the same key in a different configmap (or secret), then the last referenced key is used.  
-* When you update an app or job that has an environment variable that fully references a configmap (or secret) to add a reference to a specific key, then the specific key reference overrides the full configmap (or secret) reference. 
+Consider the following information when you update an app, job, or function that has an environment variable that references configmaps or secrets. 
+* When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
+* When you update an app, job, or function that has an environment variable that references a key in one configmap (or secret) to reference the same key in a different configmap (or secret), then the last referenced key is used.  
+* When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to add a reference to a specific key, then the specific key reference overrides the full configmap (or secret) reference. 
 {: note} 
 
 For basic information about referencing configmaps or secrets with the CLI, see [Referencing configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap#configmap-ref-cli) and [Referencing secrets with the CLI](/docs/codeengine?topic=codeengine-secret#secret-ref-cli).

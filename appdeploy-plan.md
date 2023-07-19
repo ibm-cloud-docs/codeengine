@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-07-19"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -32,7 +32,7 @@ For security features provided with {{site.data.keyword.codeengineshort}}, see [
 ## How do I make my code run as a {{site.data.keyword.codeengineshort}} application component?
 {: #deploy-app-containerimage}
 
-Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides you a streamlined way to run your code as an app. 
+Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides you with a streamlined way to run your code as an app. 
 
 
 - If you have a container image, per the [Open Container Initiative (OCI) standard](https://opencontainers.org/){: external}, then you need to provide only a reference to the image, which points to the location of your container registry when you create and deploy your app. You can deploy your app with an image in a [public registry](/docs/codeengine?topic=codeengine-deploy-app) or [private registry](/docs/codeengine?topic=codeengine-deploy-app-private).
@@ -64,7 +64,7 @@ By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for i
 
 When you are working with applications (or jobs), it is helpful to be aware of basic HTTP handling in {{site.data.keyword.codeengineshort}}.
 
-- For incoming application connections that use HTTP, the transport layer security (TLS) aspects are managed automatically by {{site.data.keyword.codeengineshort}} outside of the application code. The HTTP server for the application needs to be concerned about only HTTP connectivity and not HTTPS connectivity. 
+- For incoming application connections that use HTTP, the transport layer security (TLS) aspects are managed automatically by {{site.data.keyword.codeengineshort}} outside of the application code. The HTTP Server for the application needs to be concerned about only HTTP connectivity and not HTTPS connectivity. 
 
 - Internet connections that are bound for {{site.data.keyword.codeengineshort}} applications are automatically redirected to use HTTPS.
 
@@ -77,7 +77,7 @@ When you are working with applications (or jobs), it is helpful to be aware of b
 ## Options for visibility for a {{site.data.keyword.codeengineshort}} application
 {: #optionsvisibility}
 
-With {{site.data.keyword.codeengineshort}}, you can determine the right level of visibility for your application by defining the endpoints, or system domain mappings, that are available for receiving requests.  
+With {{site.data.keyword.codeengineshort}}, you can determine the right level of visibility for your application by defining the endpoints, or system domain mappings that are available for receiving requests.  
 {: shortdesc}
 
 Every application has an *internal* system domain mapping that is visible to all components within the same {{site.data.keyword.codeengineshort}} project, but not outside of the project. In addition to the internal system domain mapping, you choose to make the application visible to either the *public* internet or the {{site.data.keyword.cloud_notm}} *private* network.
@@ -107,7 +107,7 @@ For example, if your solution consists of a component that is running on an {{si
 
 You can [deploy your application with a private endpoint](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) so that the app is only exposed through the {{site.data.keyword.cloud_notm}} private network and not exposed to the external internet. The application is still reachable through shared components from within the internal network and the application endpoint needs to be secured.
 
-With the CLI, set the endpoint visibility for your app so that it is deployed with a private endpoint by using the `--visibility=private` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. You can obtain the available URLs for your app that reflect your endpoint definition by using the  [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command.
+With the CLI, set the endpoint visibility for your app so that it is deployed with a private endpoint by using the `--visibility=private` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. You can obtain the available URLs for your app that reflect your endpoint definition by using the [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command.
 
 From the console, set the visibility of endpoints for your app by using the **Endpoints** setting when you create your app. After your app is deployed, you can view and modify these system domain mapping settings on the **Domain mappings** tab on your application page.
 
@@ -120,7 +120,7 @@ You can set the endpoint visibility for your app such that it is deployed with a
 
 For example, if your solution consists of several applications within a project, you might set up your solution such that only one of those applications is visible from the internet so that it handles incoming traffic. This public-facing application can delegate work to other applications in your solution so that they do not need to be visible from the internet.
 
-With the CLI, set the endpoint visibility for your app so that it is deployed with a project endpoint by using the `--visibility=project` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. You can obtain the available URLs for your app that reflect your endpoint definition by using the  [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command.
+With the CLI, set the endpoint visibility for your app so that it is deployed with a project endpoint by using the `--visibility=project` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. You can obtain the available URLs for your app that reflect your endpoint definition by using the [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command.
 
 From the console, set the visibility of endpoints for your app by using the **Endpoints** setting when you create your app. After your app is deployed, you can view and modify these system domain mapping settings on the **Domain mappings** tab on your application page.
 
@@ -185,4 +185,7 @@ For more information, see [referencing secrets by using environment variables](/
 When you work with applications, functions, and batch jobs, these resources run within the context of a {{site.data.keyword.codeengineshort}} project. Resource quotas are defined on a per project basis, and limits apply for applications, functions, and batch jobs. 
 
 For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+
+
+
 

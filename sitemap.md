@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul23)
 
     * Review the release notes for July 2023.
+
+    * [19 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul1923)
+
+        * Updated environment variable information to include functions.
+
+        * Terraform support for {{site.data.keyword.codeengineshort}} service bind is generally available.
+
+        * CLI version 1.45.2 released
 
     * [06 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul0623)
 
@@ -2366,6 +2374,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Where can I find information about my in progress and finished Code Engine Function runs?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq10)
 
+    * [Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?](/docs/codeengine?topic=codeengine-fun-migrate#openapi-spec-fun-migrate)
+
 
 ## Running your source code
 {: #sitemap_running_your_source_code}
@@ -2938,7 +2948,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and updating environment variables with the CLI](/docs/codeengine?topic=codeengine-envvar#envvar-create-cli)
 
-* [Considerations for updating apps or jobs with environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider)
+* [Considerations for updating workloads with environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider)
 
 * [Deleting environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete)
 
@@ -3743,6 +3753,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Why do images that are built with non-Intel processors not work with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#buildimage-nonintel)
 
 * [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
+
+* [Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?](/docs/codeengine?topic=codeengine-faqs#openapi-spec-fun)
 
 * [How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-07-19"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 

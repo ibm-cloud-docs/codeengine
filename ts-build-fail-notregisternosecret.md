@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-07-11"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -34,7 +34,7 @@ The Build is not registered correctly, build: <BUILD_NAME>, registered status: F
 The `BUILD_NAME` build references a secret that does not exist. If the reason is `SpecOutputSecretRefNotFound`, then a registry secret does not exist. If it is `SpecSourceSecretNotFound`, then a secret to access the Git repository is missing. The reason is `MultipleSecretRefNotFound` if both secrets do not exist. Correct the build to reference existing secrets.
 
 
-Try using the following information to resolve your problem.
+Try one of these solutions.
 {: tsResolve}
 
 Whether you are running your build in the console or in the CLI, use the CLI for troubleshooting problems with your build.
