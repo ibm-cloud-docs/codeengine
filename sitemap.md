@@ -140,6 +140,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for July 2023.
 
+    * [20 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul2023)
+
+        * Added troubleshooting information about debugging apps by reviewing details of app instances 
+
+        * Added troubleshooting information about app instances that do not scale down as expected
+
     * [19 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul1923)
 
         * Updated environment variable information to include functions.
@@ -3811,6 +3817,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Getting logs for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs)
 
+* [Getting details about app instances](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-instancedetails)
+
 * [Getting system event information for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent)
 
 [Why is my app create failing?](/docs/codeengine?topic=codeengine-ts-app-create-fails#ts-app-create-fails)
@@ -3830,6 +3838,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating your app timeout value with the CLI](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-timeout-cli)
 
 [Can I stop my app?](/docs/codeengine?topic=codeengine-ts-app-stop-traffic#ts-app-stop-traffic)
+
+[Why aren't my app instances scaling down as expected?](/docs/codeengine?topic=codeengine-ts-app-domain-notscaledown#ts-app-domain-notscaledown)
 
 
 ### Troubleshooting builds

@@ -27,6 +27,16 @@ Review the release notes for July 2023.
 {: shortdesc}
 
 
+### 20 July 2023
+{: #codeengine-jul2023}
+
+Added troubleshooting information about debugging apps by reviewing details of app instances 
+:   See [Getting details about app instances](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-instancedetails).
+
+Added troubleshooting information about app instances that do not scale down as expected
+:   See [Why aren't my app instances scaling down as expected](/docs/codeengine?topic=codeengine-ts-app-domain-notscaledown)?
+
+
 ### 19 July 2023
 {: #codeengine-jul1923}
 
