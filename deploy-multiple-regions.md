@@ -23,7 +23,7 @@ completion-time: 30m
 {: toc-services="codeengine, cis"}
 {: toc-completion-time="30m"}
 
-You can deploy your {{site.data.keyword.codeenginefull}} application across multiple regions to make it resilient to regional failures. Note that this example uses a global content delivery network (CDN) called [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started), but you can use alternate providers. This example also uses a custom domain.
+You can deploy your {{site.data.keyword.codeenginefull}} application across multiple regions to make it resilient to regional failures. Note that this example uses [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started), but you can use alternate providers. This example also uses a custom domain.
 {: shortdesc}
 
 ## Prerequisites
