@@ -26,16 +26,12 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for July 2023.
 {: shortdesc}
 
-### 20 July 2023
-{: #codeengine-jul2023}
 
-Updated environment variable information to include functions.
-:   See [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
+### 19 July 2023
+{: #codeengine-jul1923}
 
-Terraform support for {{site.data.keyword.codeengineshort}} service bind is generally available.
-:   See [Setting up Terraform for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-terraform-setup-ce).
-
-
+CLI version 1.45.2 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 06 July 2023
 {: #codeengine-jul0623}
