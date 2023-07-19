@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-20"
+lastupdated: "2023-07-19"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -23,7 +23,7 @@ completion-time: 30m
 {: toc-services="codeengine, cis"}
 {: toc-completion-time="30m"}
 
-You can deploy your {{site.data.keyword.codeenginefull}} application across multiple regions to make it resilient to regional failures. Note that this example uses [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started), but you can use alternate providers. This example also uses a custom domain.
+You can deploy your {{site.data.keyword.codeenginefull}} application across multiple regions to make it resilient to regional failures. Note that this example uses a global content delivery network (CDN) called [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started), but you can use alternate providers. This example also uses a custom domain.
 {: shortdesc}
 
 ## Prerequisites
