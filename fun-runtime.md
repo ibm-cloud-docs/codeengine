@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-07-19"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -29,17 +29,5 @@ The following runtimes are supported as managed runtimes.
 - Node.js 18
 - Python 3.11
   
-## CPU and memory combinations
-{: #fun-cpu-mem}
-  
-The following table contains example CPU and memory combinations for Functions.
-  
-| Function footprint | Memory | CPU |
-| --------- | ------ | ----- |
-| Small  | `1G` | `0.25` |
-| Medium | `2G` | `0.5` |
-| Large  | `4G` | `1.0` |
-{: caption="Table 1. CPU and memory combinations" caption-side="bottom"}
 
-For other supported CPU and memory combinations, see [Supported CPU and memory combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
  
