@@ -142,6 +142,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [19 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul1923)
 
+        * Updated environment variable information to include functions.
+
+        * Terraform support for {{site.data.keyword.codeengineshort}} service bind is generally available.
+
         * CLI version 1.45.2 released
 
     * [06 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul0623)
