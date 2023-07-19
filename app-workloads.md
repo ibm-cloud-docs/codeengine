@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-19"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -29,7 +29,7 @@ An application, or app, runs your code to serve HTTP requests. In addition to tr
 
 | Characteristic | App | Job | Function |
 | --------- | --------- | --------- | --------- |
-| Execution time (duration) | Long-running 10 min per request | Long-running up to 24 hrs | Short-running (<=2 mins) |
+| Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) |
 | Startup latency | Medium | Scheduled start | Low  | 
 | Termination | Run-continuously | Run-to-completion | Run-to-completion |
 | Invocation | On request or permanently running | Scheduled | On request, instant |
