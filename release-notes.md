@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-19"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,17 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for July 2023.
 {: shortdesc}
+
+### 20 July 2023
+{: #codeengine-jul2023}
+
+Updated environment variable information to include functions.
+:   See [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
+
+Terraform support for {{site.data.keyword.codeengineshort}} service bind is generally available.
+:   See [Setting up Terraform for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-terraform-setup-ce).
+
+
 
 ### 06 July 2023
 {: #codeengine-jul0623}
