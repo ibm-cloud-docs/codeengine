@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-19"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
@@ -25,7 +25,7 @@ A Function is a stateless code snippet that performs tasks in response to an HTT
 
 | Characteristic | App | Job | Function |
 | --------- | --------- | --------- | --------- |
-| Execution time (duration) | Long-running 10 min per request | Long-running up to 24 hrs | Short-running (<=2 mins) |
+| Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) |
 | Startup latency | Medium | Scheduled start | Low  | 
 | Termination | Run-continuously | Run-to-completion | Run-to-completion |
 | Invocation | On request or permanently running | Scheduled | On request, instant |

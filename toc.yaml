@@ -219,6 +219,7 @@ toc:
               - ts-allowlist-app.md
               - ts-app-connection-fail.md
               - ts-app-stop-traffic.md
+              - ts-app-notscaledown.md
           - topicgroup:
               label: Troubleshooting builds 
               topics:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-07-20"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -27,10 +27,20 @@ Review the release notes for July 2023.
 {: shortdesc}
 
 
+### 20 July 2023
+{: #codeengine-jul2023}
+
+Added support for displaying details of app instances 
+:   With the {{site.data.keyword.codeengineshort}} console, you can view details about app instances to aid in troubleshooting apps. See [Getting details about app instances](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-instancedetails).
+
+Added troubleshooting information about app instances that do not scale down as expected
+:   See [Why aren't my app instances scaling down as expected](/docs/codeengine?topic=codeengine-ts-app-domain-notscaledown)?
+
+
 ### 19 July 2023
 {: #codeengine-jul1923}
 
-Updated environment variable information to include functions.
+Updated environment variable information to include functions
 :   See [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
 
 Terraform support for {{site.data.keyword.codeengineshort}} service bind is generally available.

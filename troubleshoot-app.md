@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2023
 lastupdated: "2023-07-19"
 
-keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
+keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps, app instances
 
 subcollection: codeengine
 
@@ -158,6 +158,30 @@ When you work with the CLI, you can display logs for all the instances of an app
 
 For more information, see [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli).
 
+
+## Getting details about app instances 
+{: #ts-app-instancedetails}
+
+With the {{site.data.keyword.codeengineshort}} console, you can view details of all your app instances. Details of your app instances are useful if you receive a warning message about instances of your app. Or, perhaps your app is in a ready status but the app is not working correctly as it is not serving requests.
+
+For details of app instances, go to the application page. From the application page, you can go to the **Instances** tab and review current instances of the application. The set of instances changes as your application is scaled up and down, based on the [scaling configuration](/docs/codeengine?topic=codeengine-app-scale). Use the information about the app instances to help with troubleshooting your app.
+
+The restart count is the number of times that the user container was restarted since the specific instance was created. The restart rate value is considered high if the average number of user container restarts since the instance was created is 3 or more times per day. 
+
+As needed, use filters to help you narrow the results for your app instances. You can choose to filter on the name of the app revision or the status of the app instance.
+
+You can review details of a specific app instance for a deeper look. To open the instance details page for a specific instance, take one of the following actions.
+
+* Click in the row of the instance that you want.
+* Click the **Actions** icon ![Actions](../icons/action-menu-icon.svg "Actions") > **Instance details** to view details of the specified instance.
+
+Use the additional information on the instance details page to help you troubleshoot your app. You can use the information about start and restart times, exit code and reason code information, container status, and the last log messages to help you in debugging your app. A user container includes your running code (the image you specified when you created the app). Whereas a system container handles system tasks such as forwarding requests to the user container or collecting metrics. 
+
+The following scenarios are examples for when you might use details of the specific app instance to help you troubleshoot your app.
+
+* If the app is in ready status but the app is not serving HTTP requests, then view details of specific app instances to learn about reasons why the app instance is not serving HTTP requests.
+* If you have an instance that is in `failed` status, perhaps the image for the application is not valid or not available. 
+* If the restart count for an instance is high, perhaps an out of memory condition exists, such that the instance is continually stopped and restarted. The last restart time information might help you determine whether the app instance has an ongoing problem with restarts or if the problem is infrequent.
 
 
 ## Getting system event information for my apps 

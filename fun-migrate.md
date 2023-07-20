@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-19"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -67,7 +67,7 @@ Functions can perform lightweight, short running, data transformations as result
  
 | Characteristic | App | Job | Function |
 | --------- | --------- | --------- | --------- |
-| Execution time (duration) | Long-running 10 min per request | Long-running up to 24 hrs | Short-running (<=2 mins) |
+| Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) |
 | Startup latency | Medium | Scheduled start | Low  | 
 | Termination | Run-continuously | Run-to-completion | Run-to-completion |
 | Invocation | On request or permanently running | Scheduled | On request, instant |
