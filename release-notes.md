@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-07-20"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -30,7 +30,7 @@ Review the release notes for July 2023.
 ### 20 July 2023
 {: #codeengine-jul2023}
 
-Added troubleshooting information about debugging apps by reviewing details of app instances 
+{{site.data.keyword.codeengineshort}} adds support for displaying details of app instances in the console. 
 :   See [Getting details about app instances](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-instancedetails).
 
 Added troubleshooting information about app instances that do not scale down as expected
