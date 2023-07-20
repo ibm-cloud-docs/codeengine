@@ -30,8 +30,8 @@ Review the release notes for July 2023.
 ### 20 July 2023
 {: #codeengine-jul2023}
 
-{{site.data.keyword.codeengineshort}} adds support for displaying details of app instances in the console. 
-:   See [Getting details about app instances](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-instancedetails).
+Added support for displaying details of app instances 
+:   With the {{site.data.keyword.codeengineshort}} console, you can view details about app instances to aid in troubleshooting apps. See [Getting details about app instances](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-instancedetails).
 
 Added troubleshooting information about app instances that do not scale down as expected
 :   See [Why aren't my app instances scaling down as expected](/docs/codeengine?topic=codeengine-ts-app-domain-notscaledown)?
@@ -40,7 +40,7 @@ Added troubleshooting information about app instances that do not scale down as 
 ### 19 July 2023
 {: #codeengine-jul1923}
 
-Updated environment variable information to include functions.
+Updated environment variable information to include functions
 :   See [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
 
 Terraform support for {{site.data.keyword.codeengineshort}} service bind is generally available.
