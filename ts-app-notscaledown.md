@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-07-20"
 
 keywords: troubleshooting for code engine, troubleshooting domain mapping in code engine, tips for custom domain mapping in code engine, debugging custom domain mapping in code engine, custom domain mapping and code engine, application scaling in code engine, scaling http requests in code engine, scaling, latency, concurrency, app, app instances
 
@@ -21,7 +21,7 @@ content-type: troubleshoot
 When traffic to your application slows down such that your app begins to scale down, you observe that instances do not go away. 
 {: tsSymptoms}
 
-When the incoming workload is slows to your application, {{site.data.keyword.codeengineshort}} starts to automatically scale down an application based on its configured scaling values. {{site.data.keyword.codeengineshort}} sends a SIGTERM message to your application. Your code must react to this signal and gracefully shut down. If your code does not do handle the SIGTERM message, your application instances remain in `Terminating` status for the duration of the configured request time out value (default: 300 seconds). 
+When the incoming workload is slows to your application, {{site.data.keyword.codeengineshort}} starts to automatically scale down an application based on its configured scaling values. {{site.data.keyword.codeengineshort}} sends a SIGTERM message to your application. Your code must react to this signal and shut down. If your code does not do handle the SIGTERM message, your application instances remain in `Terminating` status during the configured request time out value (default: 300 seconds). 
 {: tsCauses}
 
 
