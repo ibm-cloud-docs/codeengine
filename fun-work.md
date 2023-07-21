@@ -188,7 +188,7 @@ Learn about the options that you can specify when you create your Function. Note
 When you deploy your Function, you can specify the amount of memory and CPU that your Function can consume. These amounts can vary, depending on if your app is compute-intensive, memory-intensive, or balanced.
 {: shortdesc}
 
-By default, your Function is assigned 4 G of memory and .5 vCPU. For more information about selecting managed memory and CPU combinations, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime). For more information about other supported memory and CPU combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+By default, your Function is assigned 4 G of memory and .5 vCPU. For more information about other supported memory and CPU combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 
 ### Creating and running your app with environment variables 
