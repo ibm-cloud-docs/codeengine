@@ -70,11 +70,11 @@ Function code can write `stdout` and `stderr` logs that are captured and forward
 ### Runtimes
 {: #functions-runtime}
 
-{{site.data.keyword.codeengineshort}} includes *Managed runtimes* that you can use for your Functions, but also supports *Custom runtimes* if the Function program logic has specific demands on its runtime environment.
+{{site.data.keyword.codeengineshort}} includes *Managed runtimes* that you can use for your Functions.
 
 Managed runtimes include Node.js and Python versions and specific CPU and memory combinations. These runtimes are optimized for fast startup. These runtimes are pre-warmed, which avoids the overhead of pulling container images and starting containers and processes. Your code is injected into an already running container. Use these managed runtimes when possible.
 
-Custom runtimes are available for experienced users. You can build your own custom runtime that allows you to pre-package common libraries that are used across different Function implementations. This approach gives you more flexibility in the development process, but still allows for faster startup times, when compared to containerized applications.
+
 
 For more information, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
 
