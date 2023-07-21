@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-21"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -162,7 +162,7 @@ Need help? Check out [troubleshooting tips for jobs](/docs/codeengine?topic=code
 
 To get started, read [Working with Functions](/docs/codeengine?topic=codeengine-fun-work) and [Function workloads](/docs/codeengine?topic=codeengine-cefunctions).
 
-Functions can use a *managed runtime* or a *custom runtime*. Find out more at [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
+Functions use a *managed runtime* . Find out more at [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
 
 **Want to customize your function?**
 
