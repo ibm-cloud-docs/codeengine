@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-07-21"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Function workloads
 {: #cefunctions}
 
-A Function is a stateless code snippet that performs tasks in response to an HTTP request. With IBM Code Engine Functions, you can run your business logic in a scalable and serverless way. IBM Code Engine Functions provide an optimized runtime environment to support low latency and rapid scale-out scenarios. Your Function code can be written in Node.js or Python, which are optimized to run in IBM Code Engine Functions. In addition, your Function code can be written for any OpenWhisk compatible runtime environment or a custom runtime image.
+A Function is a stateless code snippet that performs tasks in response to an HTTP request. With IBM Code Engine Functions, you can run your business logic in a scalable and serverless way. IBM Code Engine Functions provide an optimized runtime environment to support low latency and rapid scale-out scenarios. Your Function code can be written in a managed runtime that includes specific [Node.js or Python](/docs/codeengine?topic=codeengine-fun-runtime) versions.
 {: shortdesc}
 
 ## Lifecycle of a Function instance
@@ -23,7 +23,7 @@ A Function is a stateless code snippet that performs tasks in response to an HTT
 
 When a Function is invoked, the corresponding Function instance is initialized with the configured Runtime container and Resource parameters. The process of the first initialization is referred to as *cold start*.
 
-To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimizes the invocation by pre-warming certain runtimes with specific CPU and memory configurations. In addition, the system is designed to improve the reuse of Function instances that are already initialized. Therefore, a Function instance is kept alive after the invocation is finished to allow subsequent invocations by reusing the same instance and reusing the state of the instance when the last invocation completed. How long it is kept alive can be configured by the `scale-down-delay` option. The reuse of a Function instance is not guaranteed.
+To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimizes the invocation by pre-warming certain runtimes with specific CPU and memory configurations. Pre-warmed combinations for functions include Node.js 18 and Python 3.11 versions as well as the default CPU and memory combination for Functions, which is 0.25 vCPU x 1 GB of memory. In addition, the system is designed to improve the reuse of Function instances that are already initialized. Therefore, a Function instance is kept alive after the invocation is finished to allow subsequent invocations by reusing the same instance and reusing the state of the instance when the last invocation completed. How long it is kept alive can be configured by the `scale-down-delay` option. The reuse of a Function instance is not guaranteed.
 
 ## How do Functions compare to apps and jobs?
 {: #functions-work-compare}
@@ -70,11 +70,11 @@ Function code can write `stdout` and `stderr` logs that are captured and forward
 ### Runtimes
 {: #functions-runtime}
 
-{{site.data.keyword.codeengineshort}} includes *Managed runtimes* that you can use for your Functions, but also supports *Custom runtimes* if the Function program logic has specific demands on its runtime environment.
+{{site.data.keyword.codeengineshort}} includes *Managed runtimes* that you can use for your Functions.
 
 Managed runtimes include Node.js and Python versions and specific CPU and memory combinations. These runtimes are optimized for fast startup. These runtimes are pre-warmed, which avoids the overhead of pulling container images and starting containers and processes. Your code is injected into an already running container. Use these managed runtimes when possible.
 
-Custom runtimes are available for experienced users. You can build your own custom runtime that allows you to pre-package common libraries that are used across different Function implementations. This approach gives you more flexibility in the development process, but still allows for faster startup times, when compared to containerized applications.
+
 
 For more information, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
 

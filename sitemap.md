@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2347,8 +2347,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtime)
 
 * [Supported managed runtimes for Functions on {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-managed)
-
-* [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-cpu-mem)
 
 [Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate)
 

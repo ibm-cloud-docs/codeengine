@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-07-21"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -99,13 +99,11 @@ The following table lists the limits for Functions.
 
 | Category               |   Maximum |      Need to extend the maximum?            |
 | ---------------------- |  --------- | ------------------------------------------- |
-| Length of runtime        | 120 seconds |                   |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Code size      | 1 MB compressed, including base64 overhead |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Invocation URI size |   1.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Request body size | 2048 bytes  |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Request header size |  5 MB |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Response body size |   4 KB |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Timeout                | 600 seconds |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Length of runtime | 120 seconds | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Memory | 48000 MB | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Request size | 5 MB |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Response size | 5 MB |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Code size | 50 MB compressed, including base64 overhead |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 {: caption="Function limits"}
 
 

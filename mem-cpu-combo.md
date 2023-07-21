@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-21"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine, memory and CPU
 
@@ -41,12 +41,15 @@ For more information about memory or CPU limitations, see [Limits and quotas for
 
 See the following table for valid combinations of vCPU and memory.
 
+The default combination for apps and jobs is 1 vCPU and 4 GB memory. The default combination for functions is 0.25 vCPU and 1 GB memory.
+{: note}
+
 | CPU-intensive  | Balanced | Memory-intensive |
 |--------|--------|--------|
 | 0.125 vCPU \n 0.25 GB | 0.125 vCPU \n 0.5 GB | 0.125 vCPU \n 1 GB |
-| 0.25 vCPU \n 0.5 GB | 0.25 vCPU \n 1 GB | 0.25 vCPU \n 2 GB |
+| 0.25 vCPU \n 0.5 GB | _**(default for functions)**_  \n  0.25 vCPU \n 1 GB | 0.25 vCPU \n 2 GB |
 | 0.5 vCPU \n 1 GB | 0.5 vCPU \n 2 GB | 0.5 vCPU \n 4 GB |
-|  \n 1 vCPU \n 2 GB | _**(default)**_  \n  1 vCPU \n 4 GB |  \n 1 vCPU \n 8 GB |
+|  \n 1 vCPU \n 2 GB | _**(default for apps and jobs)**_  \n  1 vCPU \n 4 GB |  \n 1 vCPU \n 8 GB |
 | 2 vCPU \n 4 GB | 2 vCPU \n 8 GB | 2 vCPU \n 16 GB |
 | 4 vCPU \n 8 GB | 4 vCPU \n 16 GB | 4 vCPU \n 32 GB |
 | 6 vCPU \n 12 GB | 6 vCPU \n 24 GB | 6 vCPU \n 48 GB  |
