@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-07-21"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -18,7 +18,7 @@ subcollection: codeengine
 [IBM Cloud Functions](https://cloud.ibm.com/docs/openwhisk){: external} has been IBM’s recommended Functions-as-a-Service solution, based on IBM’s public cloud. Available in six data centers around the world, IBM Cloud Functions has been serving the needs of customers since its inception. 
 {: shortdesc}
 
-However, the increased demands and additional requirements our valued customers have been articulating, lead us to constantly innovate, improve, and evolve the IBM Functions-as-a-Service technologies and offerings. As a result and to address these demands, IBM is adding Functions-as-a-Service technology to IBM Cloud Code Engine.
+However, the increased demands and additional requirements that our customers have been articulating, lead us to constantly innovate, improve, and evolve the IBM Functions-as-a-Service technologies and offerings. As a result and to address these demands, IBM is adding Functions-as-a-Service technology to IBM Cloud Code Engine.
 
 ## Comparing Code Engine to Cloud Functions
 {: #fun-migrate-compare}
@@ -33,7 +33,6 @@ Function sin Code Engine simplifies your user experience, with the following opt
 
 - Integrates fully with the Code Engine development flow and features.
 - Includes common programming languages and provides optimized managed runtimes.
-- Supports custom runtime images as optimized fit-to-purpose execution environments.
 - Offers on-demand code execution with low cold start latency and rapid scale-out.
 - Offers a Web-URL based Function invocation mechanism with feature-rich support for web applications.
 - Supported security capabilities such as access to private repositories and registries.
@@ -50,8 +49,7 @@ When you migrate your IBM Cloud Functions based workloads, consider the followin
     - Node.js Release Version 18
     - Python Release Version 3.11
   
-- Adds support for custom runtime images. You can use any custom container image if it fulfills an Openwhisk compliant runtime contract.
-- Provides [optimized CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-cpu-mem). 
+- Provides [optimized CPU and memory combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 In addition, {{site.data.keyword.codeengineshort}} includes [Function limits](/docs/codeengine?topic=codeengine-limits#limits_functions), as well as [project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). 
 
