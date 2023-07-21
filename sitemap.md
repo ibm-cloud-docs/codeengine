@@ -2348,8 +2348,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Supported managed runtimes for Functions on {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-managed)
 
-* [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-cpu-mem)
-
 [Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate)
 
 * [Comparing Code Engine to Cloud Functions](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare)
