@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-26"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,9 +26,20 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for July 2023.
 {: shortdesc}
 
+### 26 July 2023
+{: #codeengine-jul2623}
+{: release-note}
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
+CLI version 1.45.3 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
 
 ### 20 July 2023
 {: #codeengine-jul2023}
+{: release-note}
 
 Added support for displaying details of app instances 
 :   With the {{site.data.keyword.codeengineshort}} console, you can view details about app instances to aid in troubleshooting apps. See [Getting details about app instances](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-instancedetails).
@@ -39,6 +50,7 @@ Added troubleshooting information about app instances that do not scale down as 
 
 ### 19 July 2023
 {: #codeengine-jul1923}
+{: release-note}
 
 Updated environment variable information to include functions
 :   See [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
@@ -51,6 +63,7 @@ CLI version 1.45.2 released
 
 ### 06 July 2023
 {: #codeengine-jul0623}
+{: release-note}
 
 Updated {{site.data.keyword.codeengineshort}} getting started information to include functions
 :   - See [Getting started with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-getting-started).
@@ -69,6 +82,7 @@ CLI version 1.45.1 released
 
 ### 05 July 2023
 {: #codeengine-jul0523}
+{: release-note}
 
 Added support for the scale-down delay autoscaling option in the console
 :   See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
@@ -85,6 +99,7 @@ Review the release notes for June 2023.
 
 ### 29 June 2023
 {: #codeengine-jun2923}
+{: release-note}
 
 New! Function support in Code Engine
 :   - [Get an overview of Functions](/docs/codeengine?topic=codeengine-cefunctions).
