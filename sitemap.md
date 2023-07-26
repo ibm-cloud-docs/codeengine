@@ -140,6 +140,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for July 2023.
 
+    * [26 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul2623)
+
+        * Updated versions for buildpacks
+
+        * CLI version 1.45.3 released
+
     * [20 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul2023)
 
         * Added support for displaying details of app instances 
