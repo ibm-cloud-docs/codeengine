@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-07-27"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -73,6 +73,8 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 {: caption="Runtime sample files" caption-side="bottom"}
 
 
+The version of a specific runtime for a Paketo buildpack might differ between regions for a brief time whenever an updated version of a buildpack is rolled out to the various {{site.data.keyword.cloud_notm}} regions.
+{: note}
 
 
 
