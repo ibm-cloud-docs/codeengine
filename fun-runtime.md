@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-27"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -16,8 +16,12 @@ subcollection: codeengine
 {: #fun-runtime}
 
 {{site.data.keyword.codeengineshort}} includes *Managed runtimes* that you can use for your Functions.
+{: shortdesc}
 
 Managed runtimes include Node.js and Python versions and specific CPU and memory combinations. These runtimes are optimized for fast startup. These runtimes are pre-warmed, which avoids the overhead of pulling container images and starting containers and processes. Your code is injected into an already running container. Use these managed runtimes when possible.
+
+Need to deploy a container image? See [Working with apps](/docs/codeengine?topic=codeengine-application-workloads) or [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan). Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? See [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
+{: tip}
 
 
 
