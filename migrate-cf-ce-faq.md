@@ -60,7 +60,7 @@ No, this functionality is not currently supported. You can approximate this func
 ## I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?
 {: #app_glb}
 
-Yes, you can update your global load balancer to point to your {{site.data.keyword.codeengineshort}} app, if you can access the certificate chain and the corresponding private key. The following steps assume that you are using {{site.data.keyword.cis_short}} (CIS); however, you can adapt these steps for your own global load balancer.
+Yes, you can update your global load balancer to point to your {{site.data.keyword.codeengineshort}} app, if you can access the certificate chain and the corresponding private key. The following steps assume that you are using {{site.data.keyword.cis_short}}; however, you can adapt these steps for your own global load balancer.
 
 These steps use the console.
 
