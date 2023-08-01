@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-01"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -56,7 +56,7 @@ After you create and run your Function, you can also update your Function by usi
 Functions are invoked with the HTTP protocol. When you invoke your Function, you can specify the custom request parameters, custom request body and headers, as well as the HTTP method. The request parameters are made available to the Function code as input parameters. The Function code can set the response body, response headers, and response code, which are returned to the caller from the Functions endpoint. 
 
 ### Example 1: Generating an HTML response from a Function
-{: #functions-request1}
+{: #functions-response1}
 
 The following example illustrates how to generate an HTML response from a Function.
 
@@ -79,7 +79,7 @@ The following example illustrates how to generate an HTML response from a Functi
 {: screen}
 
 ### Example 2: Setting a response code and response header
-{: #functions-request2}
+{: #functions-response2}
 
 Your Function can set a specific response code and header flags. The following example illustrates how you can set a response code and response header to add a redirect to a different URL.
 
@@ -95,7 +95,7 @@ function main(params) {
 {: screen}
 
 ### Example 3: Generating a plain text response from a Function
-{: #functions-request3}
+{: #functions-response3}
 
 The following example illustrates how to generate a plain text response from a Function.
 

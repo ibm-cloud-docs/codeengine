@@ -2322,11 +2322,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Requests and responses](/docs/codeengine?topic=codeengine-fun-work#functions-request)
 
-    * [Example 1: Generating an HTML response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-request1)
+    * [Example 1: Generating an HTML response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-response1)
 
-    * [Example 2: Setting a response code and response header](/docs/codeengine?topic=codeengine-fun-work#functions-request2)
+    * [Example 2: Setting a response code and response header](/docs/codeengine?topic=codeengine-fun-work#functions-response2)
 
-    * [Example 3: Generating a plain text response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-request3)
+    * [Example 3: Generating a plain text response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-response3)
 
 * [Error handling and debugging](/docs/codeengine?topic=codeengine-fun-work#functions-error)
 
