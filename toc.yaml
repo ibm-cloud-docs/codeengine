@@ -77,6 +77,7 @@ toc:
           - appdeploy-localsource.md
           - appdeploy-access.md
           - appdeploy-update.md
+          - app-scale.md
           - app-domainmapping.md
       - topicgroup:
           label: Running jobs
@@ -116,7 +117,6 @@ toc:
           - migrate-cf-ce-scale.md
           - migrate-cf-ce-cmd.md
           - migrate-cf-ce-faq.md
-      - app-scale.md
       - topicgroup:
           label: Binding Code Engine resources to IBM Cloud services 
           topics:
@@ -263,6 +263,7 @@ toc:
               - ts-sb-cosredacted.md
               - ts-sb-DB2createfails.md
               - ts-sb-projsettings-no-details.md            
+
           - topicgroup:
               label: Troubleshooting subscriptions 
               topics:
