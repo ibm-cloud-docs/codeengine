@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-01"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -74,7 +74,7 @@ Function code can write `stdout` and `stderr` logs that are captured and forward
 
 {{site.data.keyword.codeengineshort}} includes *Managed runtimes* that you can use for your Functions.
 
-Managed runtimes include Node.js and Python versions and specific CPU and memory combinations. These runtimes are optimized for fast startup. These runtimes are pre-warmed, which avoids the overhead of pulling container images and starting containers and processes. Your code is injected into an already running container. Use these managed runtimes when possible.
+Managed runtimes include Node.js and Python versions and specific CPU and memory combinations. These runtimes are optimized for fast startup. These runtimes are pre-warmed, which avoids the overhead of pulling container images and starting containers and processes. Your code is injected into an already running container.
 
 
 
