@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-07-31"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -20,7 +20,7 @@ Answers to common questions about migrating your Cloud Foundry applications to {
 ## Can I use a custom URL with {{site.data.keyword.codeengineshort}}?
 {: #customurl}
 
-Yes! You can map your own custom URL to a {{site.data.keyword.codeengineshort}} application by creating a [custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings) from the {{site.data.keyword.codeengineshort}} console. You can also assign a custom URL through an internet service provider, such as [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started) or Cloudflare. For more information about deploying an app with a custom domain through {{site.data.keyword.cis_full_notm}}, see [Configuring a custom domain with an app across multiple regions by using CIS](/docs/codeengine?topic=codeengine-deploy-multiple-regions). For more information about deploying an app with a custom domain through Cloudflare, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application){: external} blog.
+Yes! You can map your own custom URL to a {{site.data.keyword.codeengineshort}} application by creating a [custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings) from the {{site.data.keyword.codeengineshort}} console. You can also assign a custom URL through an internet service provider, such as [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started). For more information about deploying an app with a custom domain through {{site.data.keyword.cis_full_notm}}, see [Configuring a highly available application](/docs/codeengine?topic=codeengine-deploy-multiple-regions). For more information about deploying an app with a custom domain through Cloudflare, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application){: external} blog.
 
 ## My app contains a specific route, Can I use the same route?
 {: #sameroute}
@@ -60,7 +60,7 @@ No, this functionality is not currently supported. You can approximate this func
 ## I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?
 {: #app_glb}
 
-Yes, you can update your global load balancer to point to your {{site.data.keyword.codeengineshort}} app, if you can access the certificate chain and the corresponding private key. The following steps assume that you are using {{site.data.keyword.cis_short}} (CIS); however, you can adapt these steps for your own global load balancer.
+Yes, you can update your global load balancer to point to your {{site.data.keyword.codeengineshort}} app, if you can access the certificate chain and the corresponding private key. The following steps assume that you are using {{site.data.keyword.cis_short}}; however, you can adapt these steps for your own global load balancer.
 
 These steps use the console.
 

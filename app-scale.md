@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-07-31"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -62,7 +62,7 @@ Use the following configuration settings to control application scaling.
 
 For example, if the maximum number of instances value is set to `10` and the concurrency is set to `100`, then an application can process 1000 concurrent requests before potential queuing of requests might occur. If you expect more than 1000 requests concurrently, then you might consider increasing the maximum number of instances value for your app. 
 
-For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimizing Application Scaling, Latency, and Throughput](https://www.ibm.com/cloud/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
+For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimizing Application Scaling, Latency, and Throughput](https://www.ibm.com/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
 
 If you set the minimum number of instances equal to the maximum number of instances, then scaling does not occur and the target currency and scale-down delay values do not apply. However, the concurrency value is still in effect. 
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-07-31"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -29,6 +29,9 @@ For security features provided with {{site.data.keyword.codeengineshort}}, see [
 
 {{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Serving CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-serving).
 
+Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? See [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
+{: tip}
+
 ## How do I make my code run as a {{site.data.keyword.codeengineshort}} application component?
 {: #deploy-app-containerimage}
 
@@ -54,6 +57,8 @@ The default URL for applications is of the format `https://<appname>.<uuid>.<reg
 
 
 For more information about endpoints to access applications by region, see [{{site.data.keyword.codeengineshort}} endpoints for accessing applications](/docs/codeengine?topic=codeengine-regions#endpoints-app).
+
+
 
 
 By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for incoming connections on port `8080`. In addition, Code Engine sets the `PORT` environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, either deploy your app from the console and specify the correct port or use the `--port` option on the **`app create`** command. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars). The following ports are reserved by {{site.data.keyword.codeengineshort}}:  `8022`, `8008`, `8012`, `9090`, `9091`, and `15090`. Only one port can be exposed as the listening port.

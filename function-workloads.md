@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-27"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -39,6 +39,8 @@ To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimize
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
 | Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out |
 {: caption="Table 1. Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
+
+For more information, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 
 ## What are key features of working with Functions?
 {: #functions-work-ce}

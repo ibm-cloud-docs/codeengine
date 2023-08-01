@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-27"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -23,6 +23,9 @@ Before you begin
 - If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
 - If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - Plan and choose your approach for making your code run as a {{site.data.keyword.codeengineshort}} Function component.
+
+Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? See [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
+{: tip}
 
 ## Function limitations
 {: #fun-limitations}
