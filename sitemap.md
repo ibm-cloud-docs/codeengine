@@ -2320,6 +2320,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How do I make my code run as a {{site.data.keyword.codeengineshort}} Function component?](/docs/codeengine?topic=codeengine-fun-work#fun-containerimage)
 
+* [What happens when I invoke my Function?](/docs/codeengine?topic=codeengine-fun-work#functions-invoke)
+
 * [Requests and responses](/docs/codeengine?topic=codeengine-fun-work#functions-request)
 
     * [Example 1: Generating an HTML response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-response1)
