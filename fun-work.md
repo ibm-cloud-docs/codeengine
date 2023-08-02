@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-02"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -50,13 +50,20 @@ Whether your code exists as source in a local file or in a Git repository, or yo
 
 After you create and run your Function, you can also update your Function by using *any* of the preceding ways, independent of how you created or previously updated your Function.
 
+## What happens when I invoke my Function?
+{: #functions-invoke}
+
+When a Function is invoked, the corresponding Function instance is initialized with the configured Runtime container and Resource parameters. The process of the first initialization is referred to as *cold start*.
+
+To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimizes the invocation by pre-warming certain runtimes with specific CPU and memory configurations. Pre-warmed combinations for functions include Node.js 18 and Python 3.11 versions as well as the default CPU and memory combination for Functions, which is 0.25 vCPU x 1 GB of memory. In addition, the system is designed to improve the reuse of Function instances that are already initialized. Therefore, a Function instance is kept alive after the invocation is finished to allow subsequent invocations by reusing the same instance and reusing the state of the instance when the last invocation completed. The reuse of a Function instance is not guaranteed.
+
 ## Requests and responses
 {: #functions-request}
 
 Functions are invoked with the HTTP protocol. When you invoke your Function, you can specify the custom request parameters, custom request body and headers, as well as the HTTP method. The request parameters are made available to the Function code as input parameters. The Function code can set the response body, response headers, and response code, which are returned to the caller from the Functions endpoint. 
 
 ### Example 1: Generating an HTML response from a Function
-{: #functions-request1}
+{: #functions-response1}
 
 The following example illustrates how to generate an HTML response from a Function.
 
@@ -79,7 +86,7 @@ The following example illustrates how to generate an HTML response from a Functi
 {: screen}
 
 ### Example 2: Setting a response code and response header
-{: #functions-request2}
+{: #functions-response2}
 
 Your Function can set a specific response code and header flags. The following example illustrates how you can set a response code and response header to add a redirect to a different URL.
 
@@ -95,7 +102,7 @@ function main(params) {
 {: screen}
 
 ### Example 3: Generating a plain text response from a Function
-{: #functions-request3}
+{: #functions-response3}
 
 The following example illustrates how to generate a plain text response from a Function.
 

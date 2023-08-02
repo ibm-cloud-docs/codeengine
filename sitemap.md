@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-31"
+lastupdated: "2023-08-02"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2140,6 +2140,28 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
 
+[Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale#app-scale)
+
+* [How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
+
+    * [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
+
+    * [Autoscaling settings for concurrency and timing](/docs/codeengine?topic=codeengine-app-scale#app-scale-timeconcurrency)
+
+    * [Example scenario for autoscaling](/docs/codeengine?topic=codeengine-app-scale#app-scale-example)
+
+* [Optimize latency and throughput](/docs/codeengine?topic=codeengine-app-scale#app-optimize-latency)
+
+    * [Determining concurrency of your application container](/docs/codeengine?topic=codeengine-app-scale#app-determine-concurrency)
+
+* [Observing how your app scales with the CLI](/docs/codeengine?topic=codeengine-app-scale#scale-app-cli)
+
+* [Setting the number of minimum and maximum instances for your app](/docs/codeengine?topic=codeengine-app-scale#scale-app-min-max)
+
+    * [Changing the autoscaling range from the console](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-ui)
+
+    * [Changing the autoscaling range with the CLI](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-cli)
+
 [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings)
 
 * [Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-domain-mappings#considerations-custom-domain)
@@ -2298,13 +2320,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How do I make my code run as a {{site.data.keyword.codeengineshort}} Function component?](/docs/codeengine?topic=codeengine-fun-work#fun-containerimage)
 
+* [What happens when I invoke my Function?](/docs/codeengine?topic=codeengine-fun-work#functions-invoke)
+
 * [Requests and responses](/docs/codeengine?topic=codeengine-fun-work#functions-request)
 
-    * [Example 1: Generating an HTML response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-request1)
+    * [Example 1: Generating an HTML response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-response1)
 
-    * [Example 2: Setting a response code and response header](/docs/codeengine?topic=codeengine-fun-work#functions-request2)
+    * [Example 2: Setting a response code and response header](/docs/codeengine?topic=codeengine-fun-work#functions-response2)
 
-    * [Example 3: Generating a plain text response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-request3)
+    * [Example 3: Generating a plain text response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-response3)
 
 * [Error handling and debugging](/docs/codeengine?topic=codeengine-fun-work#functions-error)
 
@@ -2579,33 +2603,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Runtime support](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#runtime)
 
 * [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#migrate-cf-ce-next-faq)
-
-
-## Configuring application scaling
-{: #sitemap_configuring_application_scaling}
-
-
-[Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale#app-scale)
-
-* [How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
-
-    * [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
-
-    * [Autoscaling settings for concurrency and timing](/docs/codeengine?topic=codeengine-app-scale#app-scale-timeconcurrency)
-
-    * [Example scenario for autoscaling](/docs/codeengine?topic=codeengine-app-scale#app-scale-example)
-
-* [Optimize latency and throughput](/docs/codeengine?topic=codeengine-app-scale#app-optimize-latency)
-
-    * [Determining concurrency of your application container](/docs/codeengine?topic=codeengine-app-scale#app-determine-concurrency)
-
-* [Observing how your app scales with the CLI](/docs/codeengine?topic=codeengine-app-scale#scale-app-cli)
-
-* [Setting the number of minimum and maximum instances for your app](/docs/codeengine?topic=codeengine-app-scale#scale-app-min-max)
-
-    * [Changing the autoscaling range from the console](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-ui)
-
-    * [Changing the autoscaling range with the CLI](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-cli)
 
 
 ## Binding Code Engine resources to IBM Cloud services
