@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-08-03"
 
-keywords: troubleshooting for code engine, troubleshooting connections in code engine, tips for app connections in code engine, debugging connections in code engine, app connectivity and code engine
+keywords: troubleshooting for code engine, troubleshooting connections in code engine, tips for app connections in code engine, debugging connections in code engine, app connectivity and code engine, app connection fails
 
 subcollection: codeengine
 
