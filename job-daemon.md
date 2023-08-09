@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-08-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -26,6 +26,8 @@ With {{site.data.keyword.codeengineshort}}, you can choose the mode of your job.
 
 If you want to create a job that can run indefinitely and does not time out, use `daemon` mode for your jobs. With this mode, runs of the job do not time out and any failed instances are automatically restarted indefinitely. 
 
+
+
 With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use. When your job runs in `daemon` mode, be aware that the job is always running until you delete the job. 
 {: important}
 
@@ -43,7 +45,7 @@ This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https:
     4. Enter a name for the job; for example, `myjob`.
     5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
     6. Choose the code to run. You can create your job from an image in a [public registry](/docs/codeengine?topic=codeengine-create-job), [private registry](/docs/codeengine?topic=codeengine-create-job-private), or in [{{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-create-job-crimage). You can also create your job from [repository](/docs/codeengine?topic=codeengine-run-job-source-code) or [local](/docs/codeengine?topic=codeengine-job-local-source-code) source code. For this example, use the {{site.data.keyword.codeengineshort}} sample image, `icr.io/codeengine/helloworld`. 
-    7. In **Runtime settings**, specify `daemon` for the mode. When you specify `daemon` mode, job runs for this job can run indefinitely and they do not time out. There is no retry limit for these job runs. Any job runs for these jobs are automatically restarted without limit. 
+    7. In **Runtime settings**, specify `daemon` for the mode. When you specify `daemon` mode, job runs for this job can run indefinitely, and they do not time out. There is no retry limit for these job runs. Any job runs for these jobs are automatically restarted without limit. 
     8. Click **Create** to create the job. 
 
 2. View the list of defined jobs from the **Jobs** page and click the name of your job to open the configuration.
