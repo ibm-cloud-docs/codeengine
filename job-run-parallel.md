@@ -28,7 +28,7 @@ Can running a batch job be a better approach? Yes it can! Let's see why batch jo
 
 1. Determine an approach to divide the set of files into parallel streams. Let's divide the files based on the first character of the file name. With this approach, you can have 26 streams, with each stream responsible for files that begins with one specific character. You can identify a specific stream by reading the automatically injected `JOB_INDEX` environment variable of a running job instance. See [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs). For this example, you can configure your job instances by either specifying the number of instances as `26` or the array indices as `0-25`. 
 
-Each running job instance is assigned an index from 0 to 25. In your code, use the following pattern to distribute the input data to the job instances. 
+    Each running job instance is assigned an index from 0 to 25. In your code, use the following pattern to distribute the input data to the job instances. 
     * job instance with JOB_INDEX=0 works on files that start with `A` or `a`  
     * job instance with JOB_INDEX=1 works on files that start with `B` or `b`
     * job instance with JOB_INDEX=2 works on files that start with `C` or `c`   
