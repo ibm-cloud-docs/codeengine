@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: #ts-jobrun-daemon}
 {: troubleshoot}
 
-I have a daemon job that does not automatically restart after an error. 
+I have a job that runs in `daemon` mode, which does not automatically restart after an error. 
 {: tsSymptoms}
 
 In {{site.data.keyword.codeengineshort}}, if you want your job to run indefinitely and not time out, you can specify to run the job in `daemon` mode. 
