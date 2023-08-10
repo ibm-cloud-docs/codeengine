@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-08-10"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,29 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## August 2023
+{: #codeengine-aug23}
+
+Review the release notes for August 2023.
+{: shortdesc}
+
+### 10 August 2023
+{: #codeengine-aug1023}
+{: release-note}
+
+Added troubleshooting information about application restarts
+:   See [Why did my app restart](/docs/codeengine?topic=codeengine-ts-app-restart)?
+
+Added troubleshooting information about open ports on an endpoint for a {{site.data.keyword.codeengineshort}} component
+:   See [Why does my port scan show more open ports than expected](/docs/codeengine?topic=codeengine-ts-app-toomanyports)?
+
+Added troubleshooting information about jobs that run indefinitely, but don't automatically restart
+:   See [Why does my daemon job not automatically restart](/docs/codeengine?topic=codeengine-ts-jobrun-daemon)?
+
+Added information about an approach for processing many files by running jobs.
+:   See [Running jobs in parallel](/docs/codeengine?topic=codeengine-job-run-parallel).
+
 
 ## July 2023
 {: #codeengine-jul23}
@@ -987,7 +1010,7 @@ CLI version 1.28.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions). 
 
 Added information about registry access secret types
-:   Types include {{site.data.keyword.codeengineshort}} managed secrets and user managed secrets. If no credentials are needed to access the registry, then the access is `None`.  See [Types of registry access secrets](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets).
+:   Types include {{site.data.keyword.codeengineshort}} managed secrets and user-managed secrets. If no credentials are needed to access the registry, then the access is `None`.  See [Types of registry access secrets](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets).
 
 Added information about setting max-scale = 0
 :   Max scale is the maximum number of instances that can be used for an app. If you set this value to 0, the application scales as needed and is limited only by the resource quota for the project of your app. See [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries).

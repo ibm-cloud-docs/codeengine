@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-02"
+lastupdated: "2023-08-10"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -135,6 +135,20 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [August 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug23)
+
+    * Review the release notes for August 2023.
+
+    * [10 August 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug1023)
+
+        * Added troubleshooting information about application restarts
+
+        * Added troubleshooting information about open ports on an endpoint for a {{site.data.keyword.codeengineshort}} component
+
+        * Added troubleshooting information about jobs that run indefinitely, but don't automatically restart
+
+        * Added information about an approach for processing many files by running jobs.
 
 * [July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul23)
 
@@ -2048,6 +2062,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How do I make my code run as a {{site.data.keyword.codeengineshort}} application component?](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
 
+* [What do I need to know about ports for apps in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-ports)
+
 * [Considerations for HTTP handling](/docs/codeengine?topic=codeengine-application-workloads#considerationshttphandlingapp)
 
 * [Options for visibility for a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility)
@@ -2308,6 +2324,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Stopping a job that runs indefinitely from the console](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop-ui)
 
     * [Stopping a job that runs indefinitely with the CLI](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop-cli)
+
+[Running jobs in parallel](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel)
+
+* [How can I efficiently process a large number of files by using job processing?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-how)
+
+* [Benefits of running parallel batch jobs](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-benefit)
+
+* [Considerations when planning parallel batch jobs](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-consider)
 
 
 ## Creating a Function
@@ -3828,6 +3852,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Why did my app stop running?](/docs/codeengine?topic=codeengine-ts-app-end#ts-app-end)
 
+[Why did my app restart?](/docs/codeengine?topic=codeengine-ts-app-restart#ts-app-restart)
+
 [Why isn't my custom domain mapping ready?](/docs/codeengine?topic=codeengine-ts-app-domain-notready#ts-app-domain-notready)
 
 [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-app#ts-allowlist-app)
@@ -3841,6 +3867,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Can I stop my app?](/docs/codeengine?topic=codeengine-ts-app-stop-traffic#ts-app-stop-traffic)
 
 [Why aren't my app instances scaling down as expected?](/docs/codeengine?topic=codeengine-ts-app-domain-notscaledown#ts-app-domain-notscaledown)
+
+[Why does my port scan show more open ports than expected?](/docs/codeengine?topic=codeengine-ts-app-toomanyports#ts-app-toomanyports)
 
 
 ### Troubleshooting builds
@@ -3955,6 +3983,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [How can I find information about my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore#ts-jobrun-learnmore)
 
 [How can I add my {{site.data.keyword.codeengineshort}} job to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-job#ts-allowlist-job)
+
+[Why does my daemon job not automatically restart?](/docs/codeengine?topic=codeengine-ts-jobrun-daemon#ts-jobrun-daemon)
 
 
 ### Troubleshooting projects

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-08-08"
 
 keywords: code engine security, security, security features for code engine, code engine security features, code engine iam
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # {{site.data.keyword.codeengineshort}} and security
 {: #secure}
 
-The [{{site.data.keyword.codeenginefull}} architecture](/docs/codeengine?topic=codeengine-architecture) is built with a security-first mindset. {{site.data.keyword.codeengineshort}} components are [managed and owned by IBM](/docs/codeengine?topic=codeengine-responsibilities-ce). Customers and their workloads are isolated from each other by using projects, which are based on Kubernetes namespaces. Role-based access controls are performed on a resource level to allow only authorized users to perform certain operations on project resources. User access is controlled by {{site.data.keyword.iamshort}} (IAM). Deployed apps are exposed through `HTTPS` and {{site.data.keyword.codeengineshort}} creates and manages the underlying TLS certifications automatically for you. {{site.data.keyword.codeengineshort}} provides out-of-the-box DDoS protection for your application. {{site.data.keyword.codeengineshort}}'s [DDoS protection](#secure-ddos) is provided by {{site.data.keyword.cis_short}} at no additional cost to you.
+The [{{site.data.keyword.codeenginefull}} architecture](/docs/codeengine?topic=codeengine-architecture) is built with a security-first mindset. {{site.data.keyword.codeengineshort}} components are [managed and owned by IBM](/docs/codeengine?topic=codeengine-responsibilities-ce). Customers and their workloads are isolated from each other by using projects, which are based on Kubernetes namespaces. Role-based access controls are performed on a resource level to allow only authorized users to perform certain operations on project resources. User access is controlled by {{site.data.keyword.iamshort}} (IAM). Deployed apps are exposed through `HTTPS` and {{site.data.keyword.codeengineshort}} creates and manages the underlying TLS certifications automatically for you. {{site.data.keyword.codeengineshort}} provides immediate DDoS protection for your application. {{site.data.keyword.codeengineshort}}'s [DDoS protection](#secure-ddos) is provided by {{site.data.keyword.cis_short}} at no additional cost to you.
 {: shortdesc}
 
 
@@ -51,7 +51,7 @@ The {{site.data.keyword.codeengineshort}} API and application endpoints support 
 ## DDoS protection 
 {: #secure-ddos}
 
-{{site.data.keyword.codeengineshort}} provides out-of-the-box DDoS protection for your application. {{site.data.keyword.codeengineshort}}'s DDoS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you.
+{{site.data.keyword.codeengineshort}} provides immediate DDoS protection for your application. {{site.data.keyword.codeengineshort}}'s DDoS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you.
 
 DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. 
 
