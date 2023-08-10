@@ -31,7 +31,7 @@ Review the release notes for August 2023.
 {: release-note}
 
 Added troubleshooting information about application restarts
-:   See [Why did my app restart](/docs/codeengine?topic=codeengine-ts-jobrun-daemon)?
+:   See [Why did my app restart](/docs/codeengine?topic=codeengine-ts-app-restart)?
 
 Added troubleshooting information about open ports on an endpoint for a {{site.data.keyword.codeengineshort}} component
 :   See [Why does my port scan show more open ports than expected](/docs/codeengine?topic=codeengine-ts-app-toomanyports)?
