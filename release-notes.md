@@ -20,6 +20,27 @@ content-type: release-note
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
 
+## August 2023
+{: #codeengine-aug23}
+
+Review the release notes for August 2023.
+{: shortdesc}
+
+### 10 August 2023
+{: #codeengine-aug1023}
+{: release-note}
+
+Added troubleshooting information about application restarts
+:   See [Why did my app restart](/docs/codeengine?topic=codeengine-ts-jobrun-daemon)?
+
+Added troubleshooting information about open ports on an endpoint for a {{site.data.keyword.codeengineshort}} component
+:   See [Why does my port scan show more open ports than expected](/docs/codeengine?topic=codeengine-ts-app-toomanyports)?
+
+Added troubleshooting information about jobs that run indefinitely, but don't automatically restart
+:   See [Why does my daemon job not automatically restart](/docs/codeengine?topic=codeengine-ts-jobrun-daemon)?
+
+Added information about an approach for processing many files by running jobs.
+:   See [Running jobs in parallel](/docs/codeengine?topic=codeengine-job-run-parallel).
 
 
 ## July 2023
