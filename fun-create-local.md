@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-04"
+lastupdated: "2023-08-10"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -16,7 +16,7 @@ subcollection: codeengine
 {: #fun-create-local}
 
 
-You can create your {{site.data.keyword.codeengineshort}} function directly from source code on your local workstation with the {{site.data.keyword.codeenginefull}} CLI. Use the **`functionn create`** (or **`fn create`**) command to both build a code bundle from your local source, and deploy your function to reference this built code bundle.
+You can create your {{site.data.keyword.codeengineshort}} function directly from source code on your local workstation with the {{site.data.keyword.codeenginefull}} CLI. Use the **`function create`** (or **`fn create`**) command to both build a code bundle from your local source, and deploy your function to reference this built code bundle.
 {: shortdesc}
 
 
