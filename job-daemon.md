@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-09"
+lastupdated: "2023-08-10"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -26,7 +26,7 @@ With {{site.data.keyword.codeengineshort}}, you can choose the mode of your job.
 
 If you want to create a job that can run indefinitely and does not time out, use `daemon` mode for your jobs. With this mode, runs of the job do not time out and any failed instances are automatically restarted indefinitely. 
 
-
+When you use `daemon` mode to run jobs, if you want {{site.data.keyword.codeengineshort}} to automatically restart the job if there's a failure, make sure that your code stops with a nonzero exit code. If the container image that is associated with your daemon job ends with a `0` exit code, then {{site.data.keyword.codeengineshort}} assumes that the job was stopped intentionally, and the job is not restarted. However, if the job fails for an unexpected reason, and the container image that is associated with your daemon job exits with a nonzero exit code, then {{site.data.keyword.codeengineshort}} automatically restarts the daemon job. See [Why does my daemon job not automatically restart](/docs/codeengine?topic=codeengine-ts-jobrun-daemon)?
 
 With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use. When your job runs in `daemon` mode, be aware that the job is always running until you delete the job. 
 {: important}
