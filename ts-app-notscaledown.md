@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-08-14"
 
 keywords: troubleshooting for code engine, troubleshooting applications in code engine, tips for application scaling in code engine, debugging application scaling in code engine, app instances scaling and code engine, application scaling in code engine, scaling http requests in code engine, scaling, latency, concurrency, app, app instances, app not scaling down
 
@@ -36,7 +36,7 @@ Try one of these solutions.
 
 * Ensure that your code handles SIGTERM messages. For applications to scale down cleanly, your application code must handle a SIGTERM signal. When {{site.data.keyword.codeengineshort}} automatically scales down, a SIGTERM signal is sent to your application. 
 
-  The following code example handles a SIGTERM message because it closes the connection to the HTTP server that was started by the app after the app receives a signal that the instance ends.
+The following code example handles a SIGTERM message because it closes the connection to the HTTP server that was started by the app after the app receives a signal that the instance ends.
 
     ```javascript
     const server = // start the HTTP server
