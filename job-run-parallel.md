@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-10"
+lastupdated: "2023-08-14"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, parallel jobs, parallel batch jobs
 subcollection: codeengine
@@ -20,7 +20,7 @@ Learn how to run jobs in {{site.data.keyword.codeenginefull}} with operational e
 ## How can I efficiently process a large number of files by using job processing?
 {: #job-run-parallel-how}
 
-Suppose that you have many files that are stored in an {{site.data.keyword.cos_full_notm}} bucket and you want to use batch processing in {{site.data.keyword.codeengineshort}}. The objective is to read files from one bucket, manipulate the files and store the files in a different {{site.data.keyword.cos_short}} bucket in the most efficient way. Let's assume you have 2000 files in the input bucket each day.  All of the files have different file name and the file names begin with an alphabetic character (A-Z, a-z). 
+Suppose that you have many files that are stored in an {{site.data.keyword.cos_full_notm}} bucket and you want to use batch processing in {{site.data.keyword.codeengineshort}}. The objective is to read files from one bucket, manipulate the files and store the files in a different {{site.data.keyword.cos_short}} bucket in the most efficient way. Let's assume you have 2000 files in the input bucket each day.  All the files have different file name and the file names begin with an alphabetic character (A-Z, a-z). 
 
 As you plan a solution for this scenario, you first think about an event-based solution. In this case, for every file that is written to the input {{site.data.keyword.cos_short}} bucket, an event is created and a {{site.data.keyword.codeengineshort}} application is called. Using events, a single file might trigger individual processing, which can be inefficient for many files. 
 
@@ -32,7 +32,7 @@ Can running a batch job be a better approach? Yes it can! Let's see why batch jo
     * job instance with JOB_INDEX=0 works on files that start with `A` or `a`  
     * job instance with JOB_INDEX=1 works on files that start with `B` or `b`
     * job instance with JOB_INDEX=2 works on files that start with `C` or `c`   
-    * [D...y]
+    * [D ... y]
     * job instance with JOB_INDEX=25 works on files that start with `Z` or `z`
 
     Because each stream is processing multiple files, define the queue length of a stream as the number of files that are processed by the single stream.
@@ -59,7 +59,7 @@ This approach of implementing parallel batch jobs offers benefits.
 
 Consider the following points when you plan parallel batch job solutions. 
 
-* Balancing parallel job indexes and queue length -  It's essential to find a good balance between the number of streams (parallel job indexes) and the queue length. Too few job indexes can underutilize available resources, while too many indexes can increase the initialization processing and increase the load on cloud services, such as {{site.data.keyword.cos_short}}. This effect can result in rate limits when calling other cloud services.
+* Balancing parallel job indexes and queue length -  It's essential to find a good balance between the number of streams (parallel job indexes) and the queue length. Too few job indexes cannot fully use available resources, while too many indexes can increase the initialization processing and increase the load on cloud services, such as {{site.data.keyword.cos_short}}. This effect can result in rate limits when calling other cloud services.
 
 * Similar job processing time -  When you plan your solution, consider that each job index takes about the same time to complete its task. Avoid scenarios where one job index takes significantly longer than others, as the processing time might cause inefficiencies in resource usage and increase the job processing time.
 
