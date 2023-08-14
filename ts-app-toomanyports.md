@@ -30,7 +30,7 @@ For incoming connections that use HTTP, the transport layer security (TLS) aspec
 To resolve this issue, consider blocking your network traffic on ports other than `80` and `443`. For more information, see [Cloudflare documentation](https://developers.cloudflare.com/fundamentals/get-started/reference/network-ports/#how-to-block-traffic-on-additional-ports){: external} 
 {: tsResolve}
 
-Cloudflare has a large infrastructure and resolves IP addresses depending on the client location to serve traffic worldwide. To learn about IP ranges for Cloudflare, see [Cloudfare documentation - IP ranges](https://www.cloudflare.com/ips/){: external}. 
+Cloudflare has a large infrastructure and resolves IP addresses depending on the client location to serve traffic worldwide. To learn about IP ranges for Cloudflare, see [Cloudflare documentation - IP ranges](https://www.cloudflare.com/ips/){: external}. 
 
 To learn about immediate DDOS protection for {{site.data.keyword.codeengineshort}} applications, see [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). 
 
