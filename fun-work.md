@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-02"
+lastupdated: "2023-08-16"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -231,6 +231,5 @@ For more information, see [referencing secrets by using environment variables](/
 When you work with applications, functions, and batch jobs, these resources run within the context of a {{site.data.keyword.codeengineshort}} project. Resource quotas are defined on a per project basis, and limits apply for applications, functions, and batch jobs. 
 
 For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
-
 
 
