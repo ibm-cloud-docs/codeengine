@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [August 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug23)
 
     * Review the release notes for August 2023.
+
+    * [17 August 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug1723)
+
+        * Added troubleshooting information about how to verify a container image reference
 
     * [10 August 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug1023)
 
@@ -2086,6 +2090,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Considerations for application quotas](/docs/codeengine?topic=codeengine-application-workloads#app-quotas)
 
+* [Next steps](/docs/codeengine?topic=codeengine-application-workloads#app-nextsteps)
+
 [Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
 
 * [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
@@ -2245,6 +2251,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Considerations for job quotas](/docs/codeengine?topic=codeengine-job-plan#job-quotas)
 
+* [Next steps](/docs/codeengine?topic=codeengine-job-plan#job-nextsteps)
+
 [Creating a job from images in a public registry](/docs/codeengine?topic=codeengine-create-job#create-job)
 
 * [Creating a job with the console](/docs/codeengine?topic=codeengine-create-job#create-job-ui)
@@ -2292,6 +2300,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Running a job with the CLI without first creating a job configuration](/docs/codeengine?topic=codeengine-run-job#run-job-cli-withoutjobconfig)
 
 * [Resubmitting your job with the CLI](/docs/codeengine?topic=codeengine-run-job#resubmit-job-cli)
+
+* [Next steps](/docs/codeengine?topic=codeengine-run-job#nextsteps-run-job)
 
 [Accessing the job details](/docs/codeengine?topic=codeengine-access-job-details#access-job-details)
 
@@ -2367,6 +2377,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Creating and running your Function when using secrets and configmaps](/docs/codeengine?topic=codeengine-fun-work#functions-secconfigmap)
 
 * [Considerations for Functions quotas](/docs/codeengine?topic=codeengine-fun-work#functions-quotas)
+
+* [Next steps](/docs/codeengine?topic=codeengine-fun-work#function-nextsteps)
 
 [Creating Function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inlinecode)
 
@@ -3846,6 +3858,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Getting system event information for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent)
 
+* [Verifying the container image reference for my app](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-verifyimage)
+
 [Why is my app create failing?](/docs/codeengine?topic=codeengine-ts-app-create-fails#ts-app-create-fails)
 
 [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-ts-app-neverready#ts-app-neverready)
@@ -3886,6 +3900,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Getting logs for my builds with the CLI](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs-cli)
 
 * [Getting system event information for my builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettingevent)
+
+[How can I verify my image reference?](/docs/codeengine?topic=codeengine-ts-build-verify-image#ts-build-verify-image)
 
 [Build fails when the build did not register correctly and a secret does not exist](/docs/codeengine?topic=codeengine-ts-build-notreg-nosecret#ts-build-notreg-nosecret)
 
@@ -3969,6 +3985,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Getting logs for my jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs)
 
 * [Getting system event information for my jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-gettingevent)
+
+* [Verifying the container image reference for my job](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-verifyimage)
 
 [Why can't I submit a job run with the CLI?](/docs/codeengine?topic=codeengine-ts-jobrun-submit-fails-cli#ts-jobrun-submit-fails-cli)
 

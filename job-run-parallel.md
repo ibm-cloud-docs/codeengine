@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-16"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, parallel jobs, parallel batch jobs
 subcollection: codeengine
@@ -32,7 +32,7 @@ Can running a batch job be a better approach? Yes it can! Let's see why batch jo
     * job instance with JOB_INDEX=0 works on files that start with `A` or `a`  
     * job instance with JOB_INDEX=1 works on files that start with `B` or `b`
     * job instance with JOB_INDEX=2 works on files that start with `C` or `c`   
-    * [D ... y]
+    * [`D ... y`]
     * job instance with JOB_INDEX=25 works on files that start with `Z` or `z`
 
     Because each stream is processing multiple files, define the queue length of a stream as the number of files that are processed by the single stream.

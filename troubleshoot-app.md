@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-08-17"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps, app instances
 
@@ -320,6 +320,13 @@ You can display system events for all the instances of an app or display system 
         [...] 
         ```
         {: screen}
+
+## Verifying the container image reference for my app 
+{: #ts-app-verifyimage}
+
+When you work with {{site.data.keyword.codeengineshort}} apps, you must specify a container image reference and a registry secret to access the image. For the app to work correctly, the image reference and its access properties must remain valid for the life of the app. 
+
+See [How can I verify my image reference](/docs/codeengine?topic=codeengine-ts-build-verify-image)?
 
 
 

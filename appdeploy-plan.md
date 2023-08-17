@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-17"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -196,6 +196,26 @@ When you work with applications, functions, and batch jobs, these resources run 
 
 For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
+## Next steps
+{: #app-nextsteps}
+
+Now that you are familiar with key concepts of working with {{site.data.keyword.codeengineshort}} applications, are you ready to deploy and work with apps? See
+
+* [Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app).
+* [Deploying app workloads from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-deploy-app-crimage).
+* [Deploying app workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private).
+* [Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code).
+* [Deploying your app from local source code](/docs/codeengine?topic=codeengine-app-local-source-code). 
+
+For more information about working with apps, see
+
+* [Application workloads](/docs/codeengine?topic=codeengine-ceapplications).
+* [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
+* [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings).
+* [Integrating {{site.data.keyword.cloud_notm}} services with service bindings](/docs/codeengine?topic=codeengine-service-binding).
+* Working with [environment variables](/docs/codeengine?topic=codeengine-envvar), [configmaps](/docs/codeengine?topic=codeengine-configmap), and [secrets](/docs/codeengine?topic=codeengine-secret).
+* [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).
+* [Troubleshooting apps](/docs/codeengine?topic=codeengine-troubleshoot-apps).
 
 
 

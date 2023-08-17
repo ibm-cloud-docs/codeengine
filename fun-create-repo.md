@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-08-15"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -129,7 +129,7 @@ You can create Functions in many different programming languages. When your Func
 ### Including modules for a Node.js Function
 {: #function-nodejs-dep-repo}
 
-Create a function that includes a dependency for a specific Python module by creating a `package.json` file. In this case, both the source code and package file are located in the same folder.
+Create a function that includes a dependency for a specific Node.js module by creating a `package.json` file. In this case, both the source code and package file are located in the same folder.
 
 1. Create your source code by writing your code into a `main.js` file. For example, copy the following code example into a file called `main.js`.
 
@@ -212,6 +212,10 @@ For more information about the `fn create` command and its options, see [Create 
 ## Next steps
 {: #nextsteps-funsource}
 
+Now that your function is created and deployed from local source code, you can update the function to meet your needs by using the [**`ibmcloud ce function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) command. If you want to update your source to use with your function, you must provide the `--build-source` option on the **`function update`** command.
+
+When your function is deployed from local source or from [repository source code](/docs/codeengine?topic=codeengine-app-source-code) from the CLI, the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console.  
+{: note}
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}

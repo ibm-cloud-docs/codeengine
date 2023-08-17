@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-08-17"
 
 keywords: troubleshooting for code engine, troubleshooting applications in code engine, tips for application scaling in code engine, debugging application scaling in code engine, app instances scaling and code engine, application scaling in code engine, scaling http requests in code engine, scaling, latency, concurrency, app, app instances, app not scaling down
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-10"
+lastupdated: "2023-08-17"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for August 2023.
 {: shortdesc}
+
+### 17 August 2023
+{: #codeengine-aug1723}
+{: release-note}
+
+Added troubleshooting information about how to verify a container image reference
+:   See [How can I verify my image reference](/docs/codeengine?topic=codeengine-ts-build-verify-image)?
 
 ### 10 August 2023
 {: #codeengine-aug1023}

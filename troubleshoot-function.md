@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-08-17"
 
 keywords: troubleshooting for code engine, troubleshooting functions in code engine, function in code engine, function
 
@@ -43,6 +43,11 @@ When you view logs from the console, you must create an {{site.data.keyword.la_f
 {: #ts-function-uptodate}
 
 Verify that your runtime is supported. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
+
+
+
+
+
 
 ## Additional topics
 {: #ts-function-topics}
