@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 
 
-When you work with {{site.data.keyword.codeengineshort}} apps and jobs, you must specify a container image reference and a registry secret to access the image. For these workloads to work correctly, the image reference and its access properties must remain valid for the life of the app or job. 
+When you work with {{site.data.keyword.codeengineshort}} apps or jobs, you must specify a container image reference and a registry secret to access the image. For these workloads to work correctly, the image reference and its access properties must remain valid for the life of the app or job. 
 {: tsSymptoms}
 
 If you receive a message to verify the image reference, check to make sure that the image reference, and its access properties are valid. 
