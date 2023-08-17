@@ -305,7 +305,7 @@ You can display system events of all the instances of a job run or display syste
 ## Verifying the container image reference for my job 
 {: #ts-jobrun-verifyimage}
 
-When you work with {{site.data.keyword.codeengineshort}} jobs, you must specify a container image reference and a registry secret to access the image. For the job run to work correctly, the image reference and its access properties must remain valid for the life of the job run. 
+When you work with {{site.data.keyword.codeengineshort}} jobs, you must specify a container image reference and a registry secret to access the image. For the job to work correctly, the image reference and its access properties must remain valid for the life of the job. 
 
 See [How can I verify my image reference](/docs/codeengine?topic=codeengine-ts-build-verify-image)?
 
