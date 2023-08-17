@@ -226,7 +226,8 @@ toc:
           - topicgroup:
               label: Troubleshooting builds 
               topics:
-              - troubleshoot-build.md             
+              - troubleshoot-build.md
+              - ts-build-verify-image.md            
               - ts-build-fail-notregisternosecret.md
               - ts-build-fail-getsourcestepfails.md
               - ts-build-fail-ephemstoragelimit.md

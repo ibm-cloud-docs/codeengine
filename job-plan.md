@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-17"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -131,6 +131,25 @@ When you work with applications, functions, and batch jobs, these resources run 
 For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 
+## Next steps
+{: #job-nextsteps}
+
+Now that you are familiar with key concepts of working with {{site.data.keyword.codeengineshort}} jobs, are you ready to create and run jobs? See
+
+* [Creating a job from images in a public registry](/docs/codeengine?topic=codeengine-create-job).
+* [Creating a job from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-create-job-crimage).
+* [Creating a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private).
+* [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code).
+* [Running a job](/docs/codeengine?topic=codeengine-job-local-source-code). 
+
+
+For more information about working with jobs, see
+
+* [Batch job workloads](/docs/codeengine?topic=codeengine-cebatchjobs).
+* [Integrating {{site.data.keyword.cloud_notm}} services with service bindings](/docs/codeengine?topic=codeengine-service-binding).
+* Working with [environment variables](/docs/codeengine?topic=codeengine-envvar), [configmaps](/docs/codeengine?topic=codeengine-configmap), and [secrets](/docs/codeengine?topic=codeengine-secret).
+* [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).
+* [Troubleshooting jobs](/docs/codeengine?topic=codeengine-troubleshoot-job).
 
 
 

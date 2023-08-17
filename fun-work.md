@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-16"
+lastupdated: "2023-08-17"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -231,5 +231,22 @@ For more information, see [referencing secrets by using environment variables](/
 When you work with applications, functions, and batch jobs, these resources run within the context of a {{site.data.keyword.codeengineshort}} project. Resource quotas are defined on a per project basis, and limits apply for applications, functions, and batch jobs. 
 
 For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+
+
+## Next steps
+{: #function-nextsteps}
+
+Now that you are familiar with key concepts of working with {{site.data.keyword.codeengineshort}} functions, are you ready to create and work with functions? See
+
+* [Creating Function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode).
+* [Creating Function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo).
+* [Creating Function workloads from local source code](/docs/codeengine?topic=codeengine-fun-create-local).
+
+For more information about working with functions, see
+
+* [Function workloads](/docs/codeengine?topic=codeengine-cefunctions).
+* [Integrating {{site.data.keyword.cloud_notm}} services with service bindings](/docs/codeengine?topic=codeengine-service-binding).
+* Working with [environment variables](/docs/codeengine?topic=codeengine-envvar), [configmaps](/docs/codeengine?topic=codeengine-configmap), and [secrets](/docs/codeengine?topic=codeengine-secret).
+* [Troubleshooting Functions](/docs/codeengine?topic=codeengine-troubleshoot-function).
 
 

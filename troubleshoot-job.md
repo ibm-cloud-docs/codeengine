@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-08-17"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -301,6 +301,13 @@ You can display system events of all the instances of a job run or display syste
         Normal  Started    63s  kubelet, 10.240.64.10  Started container myjobrun
         ```
         {: screen}
+
+## Verifying the container image reference for my job 
+{: #ts-jobrun-verifyimage}
+
+When you work with {{site.data.keyword.codeengineshort}} jobs, you must specify a container image reference and a registry secret to access the image. For the job run to work correctly, the image reference and its access properties must remain valid for the life of the job run. 
+
+See [How can I verify my image reference](/docs/codeengine?topic=codeengine-ts-build-verify-image)?
 
 
 
