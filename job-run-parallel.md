@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-16"
+lastupdated: "2023-08-28"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, parallel jobs, parallel batch jobs
 subcollection: codeengine
@@ -62,8 +62,6 @@ Consider the following points when you plan parallel batch job solutions.
 * Balancing parallel job indexes and queue length -  It's essential to find a good balance between the number of streams (parallel job indexes) and the queue length. Too few job indexes cannot fully use available resources, while too many indexes can increase the initialization processing and increase the load on cloud services, such as {{site.data.keyword.cos_short}}. This effect can result in rate limits when calling other cloud services.
 
 * Similar job processing time -  When you plan your solution, consider that each job index takes about the same time to complete its task. Avoid scenarios where one job index takes significantly longer than others, as the processing time might cause inefficiencies in resource usage and increase the job processing time.
-
-* Use of multiple jobs - For the previous scenario, another variation of the solution uses multiple jobs. Consider creating 2 batch jobs, one for files that start with `A - Z` and another for files that start with `a - z`. Without any changes to code, you can trigger these jobs either in parallel or sequentially, based on your processing requirements and resource availability. 
 
 * Use of multiple jobs - For the previous scenario, a different approach is to use multiple jobs. These multiple jobs do not rely on the configured array indices. Instead, consider creating 2 batch jobs, one for files that start with `A - Z` and another for files that start with `a - z`. Without any changes to your code, you can trigger these 2 jobs either in parallel or sequentially, based on your processing requirements and resource availability.
 

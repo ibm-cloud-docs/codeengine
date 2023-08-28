@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-28"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -119,6 +119,7 @@ For more information, see [Working with jobs](/docs/codeengine?topic=codeengine-
 {: #batchjob-scaling}
 
 A job in {{site.data.keyword.codeengineshort}} (batch job) consists of one or more job instances. While job instances run independent of each other, they run the same code. Suppose you have a database with 100 records to analyze. You can run your job such that each job instance analyzes 10 records each. For example, the first job instance analyzes records 0 - 9, the second job instance can analyze records 10 - 19, and so on. In this example, each job instance receives the system provided job input parameter `JOB_INDEX` as an environment variable that you can use to calculate the range of database records to analyze by each job instance. The number of job instances is specified when the batch job is submitted.
+
 
 
 ### Status
