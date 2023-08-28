@@ -64,7 +64,7 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
 | Go        | 1.19.12  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
-| Java      | 17.0.7  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
+| Java      | 17.0.8  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
 | Node.js   | 18.16.1 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 8.1.20  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Python    | 3.10.12  | [Python samples](https://github.com/paketo-buildpacks/samples/tree/main/python){: external}. |
