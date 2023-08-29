@@ -3570,13 +3570,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [9 Dec 2022](/docs/codeengine?topic=codeengine-api-changelog#9-dec-2022)
 
-[Getting started with the {{site.data.keyword.codeengineshort}} REST API](/docs/codeengine?topic=codeengine-api-getstarted#api-getstarted)
+[Getting started with the {{site.data.keyword.codeengineshort}} REST API](/docs/codeengine?topic=codeengine-ceapi-getstart#ceapi-getstart)
 
-* [Setting up your API environment](/docs/codeengine?topic=codeengine-api-getstarted#api-getstart-setup)
+* [Setting up your API environment](/docs/codeengine?topic=codeengine-ceapi-getstart#ceapi-getstart-setup)
 
-* [Working with a {{site.data.keyword.codeengineshort}} application in the API](/docs/codeengine?topic=codeengine-api-getstarted#api-getstart-workapps)
+* [Working with a {{site.data.keyword.codeengineshort}} application in the API](/docs/codeengine?topic=codeengine-ceapi-getstart#ceapi-getstart-workapps)
 
-* [Next steps](/docs/codeengine?topic=codeengine-api-getstarted#api-getstart-next)
+* [Next steps](/docs/codeengine?topic=codeengine-ceapi-getstart#ceapi-getstart-next)
 
 [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: external}
 

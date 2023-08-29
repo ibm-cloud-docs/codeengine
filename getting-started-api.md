@@ -13,19 +13,19 @@ subcollection: codeengine
 {{site.data.keyword.attribute-definition-list}}
 
 # Getting started with the {{site.data.keyword.codeengineshort}} REST API 
-{: #api-getstarted}
+{: #ceapi-getstart}
 
 You can use the {{site.data.keyword.codeenginefull}} API to create and manage your {{site.data.keyword.codeengineshort}} entities. 
 {: shortdesc}
 
 ## Setting up your API environment 
-{: #api-getstart-setup}
+{: #ceapi-getstart-setup}
 
 To work with the API to create and manage {{site.data.keyword.codeengineshort}} entities, set up your API environment.
 
 Before you begin, [download and install the `jq` tool](https://https://jqlang.github.io/jq/){: external}, which is a lightweight and flexible command-line JSON processor. This tool makes it easier to work with JSON responses that you receive from {{site.data.keyword.codeengineshort}} API.
 
-1. Set values for `region`, `api_key` and `project_name` before you run the example Curl commands in the API. For example, 
+1. Set values for `region`, `api_key`, and `project_name` before you run the example Curl commands in the API. For example, 
 
     ```txt
     region=us-south
@@ -35,11 +35,11 @@ Before you begin, [download and install the `jq` tool](https://https://jqlang.gi
     {: pre}
 
     * To discover the {{site.data.keyword.cloud_notm}} region that you're logged in to, run the `ibmcloud region` command.
-    * For information about {{site.data.keyword.cloud_notm}} API keys, see [Managing user API keys](/docs/account?topic=account-userapikey).
-    * For information about {{site.data.keyword.codeengineshort}} projects, see [Managing projects](/docs/codeengine?topic=codeengine-manage-project).
+    * For more information about {{site.data.keyword.cloud_notm}} API keys, see [Managing user API keys](/docs/account?topic=account-userapikey).
+    * For more information about {{site.data.keyword.codeengineshort}} projects, see [Managing projects](/docs/codeengine?topic=codeengine-manage-project).
 
 
-2. Check that you have a valid {{site.data.keyword.iamlong}} (IAM) access token. For more information about IAM API, see [Create an IAM access token for a user or service ID using an API key](https://cloud.ibm.com/apidocs/iam-identity-token-api#gettoken-apikey){: external}.
+2. Check that you have a valid {{site.data.keyword.iamlong}} (IAM) access token. For more information about IAM API, see [Create an IAM access token for a user or service ID by using an API key](https://cloud.ibm.com/apidocs/iam-identity-token-api#gettoken-apikey){: external}.
 
     ```sh
     token=`curl -X POST "https://iam.cloud.ibm.com/identity/token" \
@@ -61,9 +61,9 @@ Before you begin, [download and install the `jq` tool](https://https://jqlang.gi
     {: pre}
 
 ## Working with a {{site.data.keyword.codeengineshort}} application in the API 
-{: #api-getstart-workapps}
+{: #ceapi-getstart-workapps}
 
-Now that your {{site.data.keyword.codeengineshort}} API environment is set up, you are ready to work with {{site.data.keyword.codeengineshort}} entities, such as applications or jobs.  In the following scenario, let's create an application, access it, and then delete the application. 
+Now that your {{site.data.keyword.codeengineshort}} API environment is set up, you are ready to work with {{site.data.keyword.codeengineshort}} entities, such as applications or jobs. In the following scenario, let's create an application, access it, and then delete the application. 
 
 1. Create an app. Use the previously set variables and the project ID to construct a URL and send a request to create the `my-app` application. For example, 
   
@@ -78,7 +78,7 @@ Now that your {{site.data.keyword.codeengineshort}} API environment is set up, y
     ```
     {: pre}
 
-2. To view information about the  `my-app` application, send a `GET` request. Be sure to reference the name of your app. Note that the last line of `jq` is optional, though it makes the output more readable.   
+2. To display details about the `my-app` application, send a `GET` request. Be sure to reference the name of your app. Note that the last line of `jq` is optional, though it makes the output more readable.   
 
     ```sh
     curl -X GET "https://api.${region}.codeengine.cloud.ibm.com/v2/projects/${project_id}/apps/my-app" \
@@ -97,7 +97,7 @@ Now that your {{site.data.keyword.codeengineshort}} API environment is set up, y
     ```
     {: pre}
 
-4. (optional) If you send another `GET` request to retrieve information about `my-app`, then you will receive a `404 error` because the resource no longer exists. 
+4. (Optional) If you send another `GET` request to retrieve information about `my-app`, then you receive a `404 error` because the resource no longer exists. 
 
 Example output
 
@@ -117,13 +117,13 @@ Example output
 
 
 ## Next steps
-{: #api-getstart-next}
+{: #ceapi-getstart-next}
 
-Now that you have your environment set and you've taken first steps with a {{site.data.keyword.codeengineshort}} application with the API, are you ready to further explore the {{site.data.keyword.codeengineshort}} API?
+Now that you have setup your environment and taken the first steps with a {{site.data.keyword.codeengineshort}} application with the API, are you ready to further explore the {{site.data.keyword.codeengineshort}} API?
 
 For more information and examples for {{site.data.keyword.codeengineshort}} SDKs in several languages, see the [{{site.data.keyword.codeengineshort}} API documentation](https://cloud.ibm.com/apidocs/codeengine/v2){: external}.
 
-To get started working with {{site.data.keyword.codeengineshort}} components, see
+To start working with {{site.data.keyword.codeengineshort}} components with the API, see
 
 * [Create a project](https://cloud.ibm.com/apidocs/codeengine/v2#create-project){: external} 
 * [Create an application](https://cloud.ibm.com/apidocs/codeengine/v2#create-app){: external} 

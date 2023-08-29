@@ -34,7 +34,7 @@ Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 Added getting started information about working with the {{site.data.keyword.codeengineshort}} API
-:   See [Getting started with the {{site.data.keyword.codeengineshort}} REST API](/docs/codeengine?topic=codeengine-api-getstarted).
+:   See [Getting started with the {{site.data.keyword.codeengineshort}} REST API](/docs/codeengine?topic=codeengine-ceapi-getstart).
 
 ### 17 August 2023
 {: #codeengine-aug1723}
