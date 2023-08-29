@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-29"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -27,7 +27,7 @@ A job in {{site.data.keyword.codeengineshort}} runs one or more instances of you
 
 You can scale batch jobs by defining multiple instances. Workloads can be split into parallel tasks to reduce compute time. You can set the job to run with automatic retry to address failing workloads within a job instance. You can trigger batch jobs manually, programmatically, and by events, such as {{site.data.keyword.cos_short}} events.
 
-When you create a job, you can specify workload configuration information that is used each time that the job is run.
+When you create a job, you can specify the workload configuration information that is used each time that the job is run.
 
 Typical batch job workloads include,
 
@@ -79,7 +79,7 @@ Review the following topics to learn more about working with batch jobs in {{sit
 ### Isolation
 {: #batchjob-isolation}
 
-{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. However, tenants and their workloads are isolated from each other by using {{site.data.keyword.codeengineshort}} projects.  {{site.data.keyword.codeengineshort}} prevents communication between projects, providing isolation to your applications inside a multi-tenant environment. In addition, there are access controls that are performed on a resource level to only allow authorized users to perform certain operations on project resources, such as applications or other {{site.data.keyword.codeengineshort}} workloads.
+{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. However, tenants and their workloads are isolated from each other by using {{site.data.keyword.codeengineshort}} projects.  {{site.data.keyword.codeengineshort}} prevents communication between projects, providing isolation to your applications inside a multi-tenant environment. In addition, there are access controls that are performed on a resource level to allow only authorized users to perform certain operations on project resources, such as applications or other {{site.data.keyword.codeengineshort}} workloads.
 
 For more information about workload isolation, see [{{site.data.keyword.codeengineshort}} workload isolation](/docs/codeengine?topic=codeengine-architecture#workload-isolation).
 
@@ -119,6 +119,11 @@ For more information, see [Working with jobs](/docs/codeengine?topic=codeengine-
 {: #batchjob-scaling}
 
 A job in {{site.data.keyword.codeengineshort}} (batch job) consists of one or more job instances. While job instances run independent of each other, they run the same code. Suppose you have a database with 100 records to analyze. You can run your job such that each job instance analyzes 10 records each. For example, the first job instance analyzes records 0 - 9, the second job instance can analyze records 10 - 19, and so on. In this example, each job instance receives the system provided job input parameter `JOB_INDEX` as an environment variable that you can use to calculate the range of database records to analyze by each job instance. The number of job instances is specified when the batch job is submitted.
+
+
+When you run a batch job, during the startup time, job instances might linger in a pending state as the instances are being started. Pending times for job instances can vary due to the system and network infrastructure, as the system adjusts to fulfill the resource demands related to this run of the job. If the system infrastructure is responding to a high usage demand, the result might be a multi-minute delay of the startup for jobs because job instances are provisioned just-in-time. 
+{: note}
+
 
 
 ### Status
