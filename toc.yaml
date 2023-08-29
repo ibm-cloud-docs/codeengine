@@ -178,7 +178,8 @@ toc:
           label: API reference
           topics:
           - api.md
-          - api-changelog.md          
+          - api-changelog.md
+          - getting-started-api.md
           - link: 
               label: Code Engine API 
               href: https://cloud.ibm.com/apidocs/codeengine

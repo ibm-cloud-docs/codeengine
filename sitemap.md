@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-28"
+lastupdated: "2023-08-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [August 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug23)
 
     * Review the release notes for August 2023.
+
+    * [29 August 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug2923)
+
+        * Updated versions for buildpacks
+
+        * Added getting started information about working with the {{site.data.keyword.codeengineshort}} API
 
     * [17 August 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug1723)
 
@@ -3563,6 +3569,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [27 Mar 2023](/docs/codeengine?topic=codeengine-api-changelog#27-mar-2023)
 
 * [9 Dec 2022](/docs/codeengine?topic=codeengine-api-changelog#9-dec-2022)
+
+[Getting started with the {{site.data.keyword.codeengineshort}} REST API](/docs/codeengine?topic=codeengine-api-getstarted#api-getstarted)
+
+* [Setting up your API environment](/docs/codeengine?topic=codeengine-api-getstarted#api-getstart-setup)
+
+* [Working with a {{site.data.keyword.codeengineshort}} application in the API](/docs/codeengine?topic=codeengine-api-getstarted#api-getstart-workapps)
+
+* [Next steps](/docs/codeengine?topic=codeengine-api-getstarted#api-getstart-workapps)
 
 [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: external}
 

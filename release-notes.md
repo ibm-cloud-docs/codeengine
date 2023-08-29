@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-08-29"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for August 2023.
 {: shortdesc}
+
+### 29 August 2023
+{: #codeengine-aug2923}
+{: release-note}
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
+Added getting started information about working with the {{site.data.keyword.codeengineshort}} API
+:   See [Getting started with the {{site.data.keyword.codeengineshort}} REST API](/docs/codeengine?topic=codeengine-api-getstarted).
 
 ### 17 August 2023
 {: #codeengine-aug1723}
