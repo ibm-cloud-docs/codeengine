@@ -3576,7 +3576,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Working with a {{site.data.keyword.codeengineshort}} application in the API](/docs/codeengine?topic=codeengine-api-getstarted#api-getstart-workapps)
 
-* [Next steps](/docs/codeengine?topic=codeengine-api-getstarted#api-getstart-workapps)
+* [Next steps](/docs/codeengine?topic=codeengine-api-getstarted#api-getstart-next)
 
 [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: external}
 

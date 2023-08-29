@@ -117,7 +117,7 @@ Example output
 
 
 ## Next steps
-{: #api-getstart-workapps}
+{: #api-getstart-next}
 
 Now that you have your environment set and you've taken first steps with a {{site.data.keyword.codeengineshort}} application with the API, are you ready to further explore the {{site.data.keyword.codeengineshort}} API?
 
