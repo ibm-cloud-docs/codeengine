@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-10"
+lastupdated: "2023-08-30"
 
 keywords: troubleshooting for code engine, troubleshooting applications in code engine, tips for applications in code engine, debugging applications in code engine, custom domain mapping and code engine
 
@@ -29,9 +29,10 @@ If your app is restarted, determine whether one of the following cases is true.
 
 1. An exception occurred and it is not handled in your application source code.
 
-2. Your {{site.data.keyword.codeengineshort}} system memory configuration is constrained for resources. For example, the memory setting per instance is set too low, so the instance experiences restarts due to out of memory errors.
+2. Your {{site.data.keyword.codeengineshort}} system memory configuration is constrained for resources. For example, the memory setting per instance is set too low, so the instance experiences restarts due to out of memory errors. 
 
-3. Because {{site.data.keyword.codeengineshort}} is a fully managed {{site.data.keyword.cloud_notm}} environment, applications, and other {{site.data.keyword.codeengineshort}} workloads might get relocated to another physical location; for example, to apply security fixes. Given the managed nature of the environment, these types of changes can occur at any time. When you are working with deployed applications, actions of this type can cause your application to restart.
+3. Because {{site.data.keyword.codeengineshort}} is a fully managed {{site.data.keyword.cloud_notm}} environment, applications, and other {{site.data.keyword.codeengineshort}} workloads might get relocated to another physical location; for example, to apply security fixes. Given the managed nature of the environment, these types of changes can occur at any time. When you are working with deployed applications, actions of this type can cause your application to restart. 
+
 
 
 Try one of these solutions.
