@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-08-31"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps, app instances
 
@@ -28,7 +28,7 @@ When your app isn't behaving as expected, looking at logs and system events can 
 
 The maximum number of apps that you can create per project is 40. You are limited to a total of 120 revisions for all apps per project. {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted. See [Updating apps](/docs/codeengine?topic=codeengine-update-app).
 
-For more information about limits for apps including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+For more information about limits for apps, including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 ## Confirm port value 
 {: #ts-app-port}
@@ -181,7 +181,7 @@ The following scenarios are examples for when you might use details of the speci
 
 * If the app is in ready status but the app is not serving HTTP requests, then view details of specific app instances to learn about reasons why the app instance is not serving HTTP requests.
 * If you have an instance that is in `failed` status, perhaps the image for the application is not valid or not available. 
-* If the restart count for an instance is high, perhaps an out of memory condition exists, such that the instance is continually stopped and restarted. The last restart time information might help you determine whether the app instance has an ongoing problem with restarts or if the problem is infrequent.
+* If the restart count for an instance is high, perhaps your application failed because of a programming error, the ephemeral storage limit was reached, or an out of memory condition occurs. When this scenario happens, the instance is continually stopped and restarted. The last restart time information might help you determine whether the app instance has an ongoing problem that causes restarts, or if the problem is infrequent.
 
 
 ## Getting system event information for my apps 
