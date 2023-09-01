@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-22"
+lastupdated: "2023-09-01"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret, SSH secret, Git repository access secret
 
@@ -35,9 +35,7 @@ Consider the following points before you build your container image:
 
 * If you build multiple versions of the same container image, the latest version of the container image is downloaded and used when you run your job or deploy your application, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the app or job. 
 
-* Build runs that are submitted with the CLI that do not reference a defined build configuration are not viewable from the console.
-
-
+* Build runs that are submitted with the CLI that do not reference a defined build configuration are also viewable from the console. From the project page, click **Image builds** to view the list of image builds and build runs. With the CLI, use the [**`ibmcloud ce buildrun list`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-list) command to view a list of all build runs in a project.
 
 * {{site.data.keyword.codeengineshort}} has quotas for build runs within a project. For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits). 
 
