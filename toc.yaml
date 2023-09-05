@@ -103,10 +103,14 @@ toc:
           - fun-runtime.md
           - fun-migrate.md
       - topicgroup:
-          label: Running your source code
+          label: Building source code
           topics:
           - plan-build.md
           - build.md
+          - build-public.md
+          - build-private.md
+          - build-local.md
+          - build-run.md
           - build-standalone.md
       - topicgroup:
           label: Migrating Cloud Foundry apps to Code Engine

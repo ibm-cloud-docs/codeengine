@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-09-05"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret, SSH secret, Git repository access secret
 
@@ -28,6 +28,8 @@ However, if you want more control over the build of your container image, {{site
 After your build is complete and your image exists, you can deploy the container image as an application or create a job that references your image. 
 
 Let's learn about how to build your container image with a single command and not reference a build configuration. In this scenario, {{site.data.keyword.codeenginefull}} pulls source code from a Git repository or a local directory, builds it, and then pushes (uploads) the container image to a registry. You can choose public or private [repositories](/docs/codeengine?topic=codeengine-code-repositories) and [registries](/docs/codeengine?topic=codeengine-add-registry). You can choose to specify registry details with a registry secret for your build output with *user-provided access*. Or, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with *automatic access*. 
+
+You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. For example, entries for a `.ceignore` file for a node.js application might include `node_modules` and `.npm`. For more sample file patterns to ignore, see the [GitHub .gitignore repository](https://github.com/github/gitignore){: external}.
 
 Consider the following points before you build your container image:
 
