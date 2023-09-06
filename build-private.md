@@ -66,7 +66,7 @@ Before you begin
     ```
     {: pre}
 
-2. After you create the build, you must [run the build]((/docs/codeengine?topic=codeengine-build-run)). 
+2. After you create the build, you must [run the build](/docs/codeengine?topic=codeengine-build-run). 
 
 
 ### Creating a build configuration with the CLI (with private repo source and user-provided access to registry) 
@@ -93,5 +93,5 @@ Before you begin
     ```
     {: pre}
 
-2. After you create the build, you must [run the build]((/docs/codeengine?topic=codeengine-build-run)). 
+2. After you create the build, you must [run the build](/docs/codeengine?topic=codeengine-build-run). 
 
