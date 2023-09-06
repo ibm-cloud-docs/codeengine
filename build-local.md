@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-06"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret
 
@@ -49,7 +49,7 @@ Before you begin
     ```
     {: pre}
 
-2. After you create the build, you must [run the build](#build-run-cli-local) with the CLI for source from a local directory (local).
+2. After you create the build, you must [run the build](/docs/codeengine?topic=codeengine-build-run#build-run-cli-local) with the CLI for source from a local directory (local).
 
 
 ## Creating a build configuration with the CLI (with local source and user-provided access to registry)
@@ -71,6 +71,6 @@ Before you begin
     ```
     {: pre}
 
-2. After you create the build, you must [run the build](#build-run-cli-local) with the CLI for source from a local directory (local).
+2. After you create the build, you must [run the build](/docs/codeengine?topic=codeengine-build-run#build-run-cli-local) with the CLI for source from a local directory (local).
 
 
