@@ -2469,11 +2469,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size)
 
-* [Building with a single CLI build command or a reusable build configuration](/docs/codeengine?topic=codeengine-plan-build#build-config-or-single)
-
 * [Choose your container image registry](/docs/codeengine?topic=codeengine-plan-build#build-registry)
 
-* [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
+* [Choose your build method](/docs/codeengine?topic=codeengine-plan-build#build-method)
+
+    * [Create build configurations](/docs/codeengine?topic=codeengine-plan-build#build-create-config)
+
+    * [Create container image with stand-alone build commands](/docs/codeengine?topic=codeengine-plan-build#build-create-image-standalone)
+
+    * [Build your code and create your workload](/docs/codeengine?topic=codeengine-plan-build#build-code-create-workload)
+
+* [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-buildimage)
 
 [Building a container image](/docs/codeengine?topic=codeengine-build-image1#build-image1)
 
