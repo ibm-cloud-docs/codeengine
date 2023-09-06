@@ -2481,16 +2481,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-buildimage)
 
-[Building a container image](/docs/codeengine?topic=codeengine-build-image1#build-image1)
-
-* [Create build configurations](/docs/codeengine?topic=codeengine-build-image1#build-create-config)
-
-* [Create container image with stand-alone build commands](/docs/codeengine?topic=codeengine-build-image1#build-create-image-standalone)
-
-* [Build your code and create your workload](/docs/codeengine?topic=codeengine-build-image1#build-code-create-workload)
-
-* [Next steps for builds](/docs/codeengine?topic=codeengine-build-image1#nextsteps-buildimage)
-
 [Create a build configuration that pulls source from public repository](/docs/codeengine?topic=codeengine-build-create-config1#build-create-config1)
 
 * [Creating a build configuration from the console (public repo)](/docs/codeengine?topic=codeengine-build-create-config1#build-create-console)
