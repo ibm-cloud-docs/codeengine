@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-06"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret
 
@@ -35,7 +35,7 @@ You can choose to ignore certain file patterns from within your source code by u
 7. In the **Output** section, enter the details of your container image. Select an existing registry access secret, or click **Create registry access secret** to add a new one. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `{{site.data.keyword.codeengineshort}} managed secret` and let {{site.data.keyword.codeengineshort}} create and manage the secret for you. Then, select the namespace, repository, and tag of the image you want to build. You can choose to let {{site.data.keyword.codeengineshort}} create and manage the namespace in {{site.data.keyword.registryshort}} for you. If your image exists in {{site.data.keyword.registryshort}}, you can select from the existing images, or enter a new repository or tag.
 8. Click **Done** to finish the creation of the build. 
 
-After you create the build, you must [run the build](#build-run). 
+After you create the build, you must [run the build](/docs/codeengine?topic=codeengine-build-run). 
 
 ## Creating a build configuration with the CLI (private repo)
 {: #build-config-gitrepo-cli}
@@ -66,7 +66,7 @@ Before you begin
     ```
     {: pre}
 
-2. After you create the build, you must [run the build](#build-run). 
+2. After you create the build, you must [run the build]((/docs/codeengine?topic=codeengine-build-run)). 
 
 
 ### Creating a build configuration with the CLI (with private repo source and user-provided access to registry) 
@@ -93,5 +93,5 @@ Before you begin
     ```
     {: pre}
 
-2. After you create the build, you must [run the build](#build-run). 
+2. After you create the build, you must [run the build]((/docs/codeengine?topic=codeengine-build-run)). 
 
