@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-09-06"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -125,7 +125,7 @@ You can display logs for specific build run instances from the console.
 1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
 2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
 3. From the project page, click **Image builds**.
-4. Click the name of your build to open the build page for a defined build, or [create a build](/docs/codeengine?topic=codeengine-build-image#build-create-console).
+4. Click the name of your build to open the build page for a defined build, or [create a build](/docs/codeengine?topic=codeengine-build-create-config1#build-create-console).
 5. From the build page for your defined build, click the name of the instance of your build run in the **Build runs** section. You might need to click **Submit build** to create a build run. You can view platform logs from the build run in the platform logs window. Alternatively, you can also view build log information for the build step details from the build run instance page. Expand the build steps for specific build step log data. You can optionally refine the [filter for your search](#view-logs-filters), if needed. 
 
 ## Viewing logs with the CLI 
