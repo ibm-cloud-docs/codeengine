@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-06"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret
 
@@ -54,7 +54,7 @@ To build your code and create your workload with a single operation, see the fol
 Git repository
 :    - [Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code)
      - [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code)
-     - [Creating function workloads from respository source code](/docs/codeengine?topic=codeengine-fun-create-repo)
+     - [Creating function workloads from repository source code](/docs/codeengine?topic=codeengine-fun-create-repo)
 
 Local file
 :    - [Deploying your app from local source code with the CLI](/docs/codeengine?topic=codeengine-app-local-source-code)
