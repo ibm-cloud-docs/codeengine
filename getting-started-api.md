@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-09-06"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -23,7 +23,7 @@ You can use the {{site.data.keyword.codeenginefull}} API to create and manage yo
 
 To work with the API to create and manage {{site.data.keyword.codeengineshort}} entities, set up your API environment.
 
-Before you begin, [download and install the `jq` tool](https://https://jqlang.github.io/jq/){: external}, which is a lightweight and flexible command-line JSON processor. This tool makes it easier to work with JSON responses that you receive from {{site.data.keyword.codeengineshort}} API.
+Before you begin, [download and install the `jq` tool](https://jqlang.github.io/jq/){: external}, which is a lightweight and flexible command-line JSON processor. This tool makes it easier to work with JSON responses that you receive from {{site.data.keyword.codeengineshort}} API.
 
 1. Set values for `region`, `api_key`, and `project_name` before you run the example Curl commands in the API. For example, 
 
