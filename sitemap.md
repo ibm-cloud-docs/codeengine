@@ -142,8 +142,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [07 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep0723)
 
-        * CLI version 1.45.4 released
-
         * Updated {{site.data.keyword.codeengineshort}} architecture diagram 
 
 * [August 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug23)

@@ -30,8 +30,7 @@ Review the release notes for September 2023.
 {: #codeengine-sep0723}
 {: release-note}
 
-CLI version 1.45.4 released
-:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
 
 Updated {{site.data.keyword.codeengineshort}} architecture diagram 
 :   See [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture). 
