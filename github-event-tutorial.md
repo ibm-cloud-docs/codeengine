@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-09-06"
 
 keywords: github events, github webhooks, webhooks, application webhook, event webhook, code engine
 
@@ -23,7 +23,7 @@ completion-time: 10m
 You can set up a webhook to send a GitHub event, such as a new issue or a commit to your {{site.data.keyword.codeenginefull}} application. Your application must use a public endpoint to receive the webhook POST requests.
 {: shortdesc}
 
-For more information about GitHub webhooks, see [About webhooks](https://docs.github.com/en/webhooks-and-events/webhooks/about-webhooks){: external}. For more information about GitHub, see [GitHub Docs](https://docs.github.com/){: external}.
+For more information about GitHub webhooks, see [About webhooks](https://docs.github.com/en/webhooks/about-webhooks){: external}. For more information about GitHub, see [GitHub Docs](https://docs.github.com/){: external}.
 
 ## Prerequisites
 {: #gew-prerequisites}
@@ -79,7 +79,7 @@ Status Summary:     Application deployed successfully
 {: #gew-create-webhook}
 {: step}
 
-Create a GitHub webhook to subscribe your application to GitHub events. You can subscribe to one or more webhook events. When an event that you subscribe to occurs, GitHub sends a payload to your application. For more information, see [Webhook events and payloads](https://docs.github.com/en/webhooks-and-events/webhooks/webhook-events-and-payloads){: external}.
+Create a GitHub webhook to subscribe your application to GitHub events. You can subscribe to one or more webhook events. When an event that you subscribe to occurs, GitHub sends a payload to your application. For more information, see [Webhook events and payloads](https://docs.github.com/en/webhooks/webhook-events-and-payloads){: external}.
 
 To create a GitHub webhook, follow these steps.
 
@@ -87,7 +87,7 @@ To create a GitHub webhook, follow these steps.
 2. Select **Webhooks** -> **Add webhook**. Note that your GitHub repository might use **Hooks** instead of **Webhooks**.
 3. Enter your application URL as your **Payload URL**.
 4. Select the **Content type** that your application requires. If you are using the sample `github` app, then select `application/json` as your content type.  
-5. Optional. Add a secret to your webhook. For more information, see [Securing your webhooks](https://docs.github.com/en/webhooks-and-events/webhooks/securing-your-webhooks){: external}.
+5. Optional. Add a secret to your webhook. For more information, see [Securing your webhooks](https://docs.github.com/en/webhooks/using-webhooks/securing-your-webhooks){: external}.
 6. Select to **Enable SSL Verification**.
 7. Select **Just the push event** to trigger your webhook.
 8. Ensure **Active** is selected. You can disable your webhook without deleting it by removing the checkmark.

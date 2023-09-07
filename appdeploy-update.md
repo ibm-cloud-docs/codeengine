@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-31"
+lastupdated: "2023-09-06"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -525,7 +525,7 @@ Update an application to reference an image that is built from source code by us
 
 For this example, let's update the `helloapp` that you created in [Deploying an application that references an image in a container registry from the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console) to reference an image that is built from your source code. 
 
-For more information about creating a build configuration from the console, see [create a build](/docs/codeengine?topic=codeengine-build-image#build-create-console).
+For more information about creating a build configuration from the console, see [create a build](/docs/codeengine?topic=codeengine-build-create-config1).
 
 1. Navigate to your application page. One way to navigate to your application page is to 
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -590,7 +590,7 @@ From the previous example, the `myhelloapp` app references the `us.icr.io/myname
     ```
     {: screen}
 
-    For more information about creating a build configuration with the CLI, see [create a build](/docs/codeengine?topic=codeengine-build-image#build-create-cli).
+    For more information about creating a build configuration with the CLI, see [create a build](/docs/codeengine?topic=codeengine-build-create-config1#build-create-cli).
 
 3. Update the `myhelloapp` to reference the image that you built and uses the `myregistry` registry secret.
 

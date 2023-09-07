@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-09-07"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,21 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## September 2023
+{: #codeengine-sep23}
+
+Review the release notes for September 2023.
+{: shortdesc}
+
+### 07 September 2023
+{: #codeengine-sep0723}
+{: release-note}
+
+
+
+Updated {{site.data.keyword.codeengineshort}} architecture diagram 
+:   See [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture). 
 
 ## August 2023
 {: #codeengine-aug23}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-31"
+lastupdated: "2023-09-07"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -135,6 +135,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep23)
+
+    * Review the release notes for September 2023.
+
+    * [07 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep0723)
+
+        * Updated {{site.data.keyword.codeengineshort}} architecture diagram 
 
 * [August 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug23)
 
@@ -2453,8 +2461,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?](/docs/codeengine?topic=codeengine-fun-migrate#openapi-spec-fun-migrate)
 
 
-## Running your source code
-{: #sitemap_running_your_source_code}
+## Building source code
+{: #sitemap_building_source_code}
 
 
 [Planning your build](/docs/codeengine?topic=codeengine-plan-build#plan-build)
@@ -2469,41 +2477,51 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size)
 
-* [Building with a single CLI build command or a reusable build configuration](/docs/codeengine?topic=codeengine-plan-build#build-config-or-single)
-
 * [Choose your container image registry](/docs/codeengine?topic=codeengine-plan-build#build-registry)
 
-* [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
+* [Choose your build method](/docs/codeengine?topic=codeengine-plan-build#build-method)
 
-[Building a container image](/docs/codeengine?topic=codeengine-build-image#build-image)
+    * [Create build configurations](/docs/codeengine?topic=codeengine-plan-build#build-create-config)
 
-* [Create a build configuration that pulls source from public repository](/docs/codeengine?topic=codeengine-build-image#build-create-config)
+    * [Create container image with stand-alone build commands](/docs/codeengine?topic=codeengine-plan-build#build-create-image-standalone)
 
-    * [Creating a build configuration from the console (public repo)](/docs/codeengine?topic=codeengine-build-image#build-create-console)
+    * [Build your code and create your workload](/docs/codeengine?topic=codeengine-plan-build#build-code-create-workload)
 
-    * [Creating a build configuration with the CLI (public repo)](/docs/codeengine?topic=codeengine-build-image#build-create-cli)
+* [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-buildimage)
 
-* [Create a build configuration that pulls source from private repository](/docs/codeengine?topic=codeengine-build-image#build-config-gitrepo)
+[Create a build configuration that pulls source from public repository](/docs/codeengine?topic=codeengine-build-create-config1#build-create-config1)
 
-    * [Creating a build configuration from the console (private repo)](/docs/codeengine?topic=codeengine-build-image#build-config-gitrepo-ui)
+* [Creating a build configuration from the console (public repo)](/docs/codeengine?topic=codeengine-build-create-config1#build-create-console)
 
-    * [Creating a build configuration with the CLI (private repo)](/docs/codeengine?topic=codeengine-build-image#build-config-gitrepo-cli)
+* [Creating a build configuration with the CLI (public repo)](/docs/codeengine?topic=codeengine-build-create-config1#build-create-cli)
 
-* [Create a build configuration that pulls source from a local directory](/docs/codeengine?topic=codeengine-build-image#build-config-local)
+    * [Creating a build configuration with the CLI (with public repo source and automatic access to registry)](/docs/codeengine?topic=codeengine-build-create-config1#build-create-cli-a)
 
-    * [Creating a build configuration with the CLI (local source)](/docs/codeengine?topic=codeengine-build-image#build-config-local-cli)
+    * [Creating a build configuration with the CLI (with public repo source and user-provided access to registry)](/docs/codeengine?topic=codeengine-build-create-config1#build-create-cli-b)
 
-    * [Creating a build configuration with the CLI (with local source and user-provided access to registry)](/docs/codeengine?topic=codeengine-build-image#build-config-local-cli-b)
+[Create a build configuration that pulls source from private repository](/docs/codeengine?topic=codeengine-build-config-gitrepo#build-config-gitrepo)
 
-* [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
+* [Creating a build configuration from the console (private repo)](/docs/codeengine?topic=codeengine-build-config-gitrepo#build-config-gitrepo-ui)
 
-    * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
+* [Creating a build configuration with the CLI (private repo)](/docs/codeengine?topic=codeengine-build-config-gitrepo#build-config-gitrepo-cli)
 
-    * [Running a build with the CLI for source from a repository (non-local)](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
+    * [Creating a build configuration with the CLI (with private repo source and automatic access to registry)](/docs/codeengine?topic=codeengine-build-config-gitrepo#build-config-gitrepo-cli-a)
 
-    * [Running a build with the CLI for source from a local directory (local)](/docs/codeengine?topic=codeengine-build-image#build-run-cli-local)
+    * [Creating a build configuration with the CLI (with private repo source and user-provided access to registry)](/docs/codeengine?topic=codeengine-build-config-gitrepo#build-config-gitrepo-cli-b)
 
-* [Next steps for builds](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
+[Create a build configuration that pulls source from a local directory](/docs/codeengine?topic=codeengine-build-config-local#build-config-local)
+
+* [Creating a build configuration with the CLI (with local source and automatic access to registry)](/docs/codeengine?topic=codeengine-build-config-local#build-config-local-cli-a)
+
+* [Creating a build configuration with the CLI (with local source and user-provided access to registry)](/docs/codeengine?topic=codeengine-build-config-local#build-config-local-cli-b)
+
+[Running a build configuration](/docs/codeengine?topic=codeengine-build-run#build-run)
+
+* [Running a build from the console](/docs/codeengine?topic=codeengine-build-run#build-run-console)
+
+* [Running a build with the CLI for source from a repository (non-local)](/docs/codeengine?topic=codeengine-build-run#build-run-cli)
+
+* [Running a build with the CLI for source from a local directory (local)](/docs/codeengine?topic=codeengine-build-run#build-run-cli-local)
 
 [Building a container image with stand-alone build commands (CLI)](/docs/codeengine?topic=codeengine-build-standalone#build-standalone)
 

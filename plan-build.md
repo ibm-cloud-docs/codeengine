@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-28"
+lastupdated: "2023-09-06"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -96,15 +96,6 @@ If you are uncertain about which size to choose, consider starting with `small` 
 {: tip}
 
 
-## Building with a single CLI build command or a reusable build configuration
-{: #build-config-or-single}
-
-When your code exists as source in a local file or in a Git repository, {{site.data.keyword.codeengineshort}} provides options for you to build your code as a container images. {{site.data.keyword.codeengineshort}} gives you the flexibility to build your container image by using one of the following options:
-
-* Use a single CLI command, **`buildrun submit`**, to run one build run. The benefit of this option is that you can obtain your build with a single CLI command; however, the configuration for the build is not preserved. See [Building a container image with stand-alone build commands (CLI)](/docs/codeengine?topic=codeengine-build-standalone). 
-* Define a build configuration from which you can run multiple build runs. See [Building a container image by using a build configuration](/docs/codeengine?topic=codeengine-build-image). 
-
-Both of these options apply for cases where you have [repositories for your source](/docs/codeengine?topic=codeengine-code-repositories) and [registries for your container image](/docs/codeengine?topic=codeengine-add-registry) that are public or private. Also, these options apply for cases where you choose to specify registry details with a registry secret for your build output, or you choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access. 
 
 
 ## Choose your container image registry
@@ -114,9 +105,44 @@ Both of these options apply for cases where you have [repositories for your sour
 
 You can use [repositories for your source](/docs/codeengine?topic=codeengine-code-repositories) and [registries for your container image](/docs/codeengine?topic=codeengine-add-registry) that are public or private. You can also choose to specify registry details with a registry secret for your build output, or you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access.
 
-## Next steps for builds
-{: #nextsteps-planbuild}
+## Choose your build method
+{: #build-method}
 
-When your planning is complete, [build your container image](/docs/codeengine?topic=codeengine-build-image).
+In the following build options, {{site.data.keyword.codeengineshort}} pulls source code from a Git repository or a local directory, builds the container image, and then pushes (uploads) the container image to a registry. You can choose from public or private [repositories](/docs/codeengine?topic=codeengine-code-repositories) and [registries](/docs/codeengine?topic=codeengine-add-registry). If your registry is private, specify registry details with a registry secret for your build output with *user-provided access*. Or, you can choose for {{site.data.keyword.codeengineshort}} to create access to store the image in {{site.data.keyword.registrylong_notm}} for you with *automatic access*. 
+
+### Create build configurations
+{: #build-create-config}
+
+In this scenario, {{site.data.keyword.codeengineshort}} create a configuration for your build. 
+
+Creating a build configuration does not create an image, but instead, creates the configuration to build an image. You can create an image from the configuration by running the build. The build configuration is not validated or used to create an image until the build is run. The build configuration enables multiple subsequent builds of an image, such as when changes are applied to the source repository.
+
+### Create container image with stand-alone build commands
+{: #build-create-image-standalone}
+
+To learn about how to build your container image with a single {{site.data.keyword.codeengineshort}} CLI command and create the container image without creating a reusable build configuration, see [Building a container image with stand-alone build commands (CLI)](/docs/codeengine?topic=codeengine-build-standalone).
+
+### Build your code and create your workload
+{: #build-code-create-workload}
+
+When you build your code and create your workload with a single operation, {{site.data.keyword.codeengineshort}} stores your 
+
+To build your code and create your workload with a single operation, see the following topics.
+
+Git repository
+:    - [Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code)
+     - [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code)
+     - [Creating function workloads from repository source code](/docs/codeengine?topic=codeengine-fun-create-repo)
+
+Local file
+:    - [Deploying your app from local source code with the CLI](/docs/codeengine?topic=codeengine-app-local-source-code)
+     - [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code)
+     - [Creating function workloads from local source code](/docs/codeengine?topic=codeengine-fun-create-local)
+
+## Next steps for builds
+{: #nextsteps-buildimage}
+
+Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+{: tip}
 
 
