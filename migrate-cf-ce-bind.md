@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-09-07"
 
 keywords: code engine, getting started, migrating, cloud foundry
 
@@ -20,7 +20,7 @@ Let's take a common cloud-native app that follows the 12-factor app principles, 
 
 The sample app is a typical web app that is written in Node.js (JavaScript) and uses the Express web framework. An IBM Cloudant NoSQL database serves as the backing service to store data displayed by the app. As typical for cloud-native, 12-factor apps, the sample app is based on discrete, reusable components that act as microservices to make up the overall app. Both the deployed Node.js program and the database can be scaled, improved, or even replaced independently. The components work together because of how they are configured and by using well-defined APIs.
 
-![Simple cloud-native app with backend database service.](images/getting-started-CF2CE.png){: caption="Figure 1. Simple cloud-native app with backend database service." caption-side="bottom"}
+![Simple cloud-native app with backend database service.](images/cf2ce-get-started.svg){: caption="Figure 1. Simple cloud-native app with backend database service." caption-side="bottom"}
 
 The IBM Cloudant database can be configured to work as an attached resource with the app versions that are deployed to Cloud Foundry and {{site.data.keyword.codeengineshort}}. For simplicity, the solution is kept to these two components.
 
