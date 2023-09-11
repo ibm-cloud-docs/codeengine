@@ -106,6 +106,7 @@ toc:
           label: Building source code
           topics:
           - plan-build.md
+          - build.md
           - build-public.md
           - build-private.md
           - build-local.md
