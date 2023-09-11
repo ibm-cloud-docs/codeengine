@@ -40,8 +40,6 @@ Updated versions for buildpacks
 {: #codeengine-sep0723}
 {: release-note}
 
-
-
 Updated {{site.data.keyword.codeengineshort}} architecture diagram 
 :   See [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture). 
 
