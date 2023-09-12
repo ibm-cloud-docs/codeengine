@@ -117,6 +117,8 @@ In this scenario, {{site.data.keyword.codeengineshort}} create a configuration f
 
 Creating a build configuration does not create an image, but instead, creates the configuration to build an image. You can create an image from the configuration by running the build. The build configuration is not validated or used to create an image until the build is run. The build configuration enables multiple subsequent builds of an image, such as when changes are applied to the source repository.
 
+For more information, see [Building a container image](/docs/codeengine?topic=codeengine-build-image). 
+
 ### Create container image with stand-alone build commands
 {: #build-create-image-standalone}
 

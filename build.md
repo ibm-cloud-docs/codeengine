@@ -37,13 +37,13 @@ In the following build options, {{site.data.keyword.codeengineshort}} pulls sour
 
 Choose the build method to use from the following options. 
 
-* Create and run a build configuration for your build. Creating a build configuration does not create an image, but instead, creates the configuration to build an image. You can create an image from the configuration by running the build. The build configuration is not validated or used to create an image until the build is run. The build configuration enables multiple subsequent builds of an image, such as when changes are applied to the source repository. See the following topics.
+* Create and run a build configuration for your build. Creating a build configuration does not create an image, but instead, creates the configuration to build an image. You can create an image from the configuration by running the build. The build configuration is not validated or used to create an image until the build is run. The build configuration enables multiple subsequent builds of an image, such as when changes are applied to the source repository. To create a build configuration and run a build that uses the configuration, see the following topics.
      * [Create a build configuration that pulls source from public repository](/docs/codeengine?topic=codeengine-build-create-config1).
      * [Create a build configuration that pulls source from private repository](/docs/codeengine?topic=codeengine-build-config-gitrepo).
      * [Create a build configuration that pulls source from a local directory](/docs/codeengine?topic=codeengine-build-config-local).
      * [Running a build configuration](/docs/codeengine?topic=codeengine-build-run).
 
-* Create container image with stand-alone build commands.  with the CLI. To create the container image without creating a reusable build configuration with the CLI, see [Building a container image with stand-alone build commands (CLI)](/docs/codeengine?topic=codeengine-build-standalone).
+* Create container image with stand-alone build commands with the CLI. To create the container image without creating a reusable build configuration, see [Building a container image with stand-alone build commands (CLI)](/docs/codeengine?topic=codeengine-build-standalone).
 
 * Build your code and create your workload. To build your code and create your workload with a single operation, see the following topics.
 
