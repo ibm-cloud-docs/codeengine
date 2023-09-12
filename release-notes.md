@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-09-12"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,8 +26,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for September 2023.
 {: shortdesc}
 
-### 11 September 2023
-{: #codeengine-sep1123}
+### 12 September 2023
+{: #codeengine-sep1223}
 {: release-note}
 
 CLI version 1.45.4 released

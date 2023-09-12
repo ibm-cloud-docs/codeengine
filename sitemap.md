@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-09-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -140,7 +140,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for September 2023.
 
-    * [11 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep1123)
+    * [12 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep1223)
 
         * CLI version 1.45.4 released
 
@@ -2497,13 +2497,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Building a container image](/docs/codeengine?topic=codeengine-build-image#build-image)
 
-* [Create build configurations](/docs/codeengine?topic=codeengine-build-image#build-create-config)
+* [Determine your build method](/docs/codeengine?topic=codeengine-build-image#build-image-method)
 
-* [Create container image with stand-alone build commands](/docs/codeengine?topic=codeengine-build-image#build-create-image-standalone)
-
-* [Build your code and create your workload](/docs/codeengine?topic=codeengine-build-image#build-code-create-workload)
-
-* [Next steps for builds](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
+* [Next steps for builds](/docs/codeengine?topic=codeengine-build-image#nextsteps-build)
 
 [Create a build configuration that pulls source from public repository](/docs/codeengine?topic=codeengine-build-create-config1#build-create-config1)
 
