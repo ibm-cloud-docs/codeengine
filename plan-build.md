@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-09-12"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -125,7 +125,7 @@ To learn about how to build your container image with a single {{site.data.keywo
 ### Build your code and create your workload
 {: #build-code-create-workload}
 
-When you build your code and create your workload with a single operation, {{site.data.keyword.codeengineshort}} stores your 
+
 
 To build your code and create your workload with a single operation, see the following topics.
 
