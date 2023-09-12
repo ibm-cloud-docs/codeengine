@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-07"
+lastupdated: "2023-09-12"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,11 +26,19 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for September 2023.
 {: shortdesc}
 
+### 12 September 2023
+{: #codeengine-sep1223}
+{: release-note}
+
+CLI version 1.45.4 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ### 07 September 2023
 {: #codeengine-sep0723}
 {: release-note}
-
-
 
 Updated {{site.data.keyword.codeengineshort}} architecture diagram 
 :   See [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture). 

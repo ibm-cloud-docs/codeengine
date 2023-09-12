@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-09-12"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -63,13 +63,13 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
-| Go        | 1.19.12  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
+| Go        | 1.20.7  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 17.0.8  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
 | Node.js   | 18.17.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
-| PHP       | 8.1.22  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
+| PHP       | 8.1.23  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Python    | 3.10.12  | [Python samples](https://github.com/paketo-buildpacks/samples/tree/main/python){: external}. |
 | Ruby      | 3.1.4   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
-| .NET Core | 7.0.306 (.NET Core SDK), \n 7.0.9 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
+| .NET Core | 7.0.400 (.NET Core SDK), \n 7.0.9 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="bottom"}
 
 
@@ -117,6 +117,8 @@ In this scenario, {{site.data.keyword.codeengineshort}} create a configuration f
 
 Creating a build configuration does not create an image, but instead, creates the configuration to build an image. You can create an image from the configuration by running the build. The build configuration is not validated or used to create an image until the build is run. The build configuration enables multiple subsequent builds of an image, such as when changes are applied to the source repository.
 
+For more information, see [Building a container image](/docs/codeengine?topic=codeengine-build-image). 
+
 ### Create container image with stand-alone build commands
 {: #build-create-image-standalone}
 
@@ -125,7 +127,7 @@ To learn about how to build your container image with a single {{site.data.keywo
 ### Build your code and create your workload
 {: #build-code-create-workload}
 
-When you build your code and create your workload with a single operation, {{site.data.keyword.codeengineshort}} stores your 
+
 
 To build your code and create your workload with a single operation, see the following topics.
 
