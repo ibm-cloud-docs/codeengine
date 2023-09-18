@@ -2495,10 +2495,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-buildimage)
 
-[Building a container image](/docs/codeengine?topic=codeengine-build-image#build-image)
-
-* [Determine your build method](/docs/codeengine?topic=codeengine-build-image#build-image-method)
-
 [Create a build configuration that pulls source from public repository](/docs/codeengine?topic=codeengine-build-create-config1#build-create-config1)
 
 * [Creating a build configuration from the console (public repo)](/docs/codeengine?topic=codeengine-build-create-config1#build-create-console)
