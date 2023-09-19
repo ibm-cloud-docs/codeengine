@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-09-19"
 
 keywords: benefits, terminology, developers, capabilities, code engine
 
@@ -51,7 +51,7 @@ Build runs that complete are ultimately automatically deleted. When you run a bu
 
 For more details, see the following information.  
 
-* [Planning to build container images](/docs/codeengine?topic=codeengine-plan-build), and [building a container image](/docs/codeengine?topic=codeengine-build-image).
+* [Planning to build container images](/docs/codeengine?topic=codeengine-plan-build).
 * [Working with apps](/docs/codeengine?topic=codeengine-application-workloads)
 * [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan)
 
