@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-09-19"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, verify image reference, image reference, container image
 
@@ -48,7 +48,7 @@ Take the following steps to help you resolve the problem with your image.
 
 For more information about image references, see the following topics. 
 * [Planning your build](/docs/codeengine?topic=codeengine-plan-build). 
-* [Building a container image](/docs/codeengine?topic=codeengine-build-image).
+* [Building a container image](/docs/codeengine?topic=codeengine-plan-build#build-method).
 * [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads). 
 * [Working with jobs](/docs/codeengine?topic=codeengine-job-plan).
 * [Working with functions](/docs/codeengine?topic=codeengine-fun-work)
