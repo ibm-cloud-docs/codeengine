@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-19"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -66,7 +66,7 @@ I have source code. **How do I get started?**
 - If your source code is in a private repository, [set up access](/docs/codeengine?topic=codeengine-code-repositories).
 - Optionally, set up an {{site.data.keyword.registrylong_notm}} namespace to hold your built image. If the {{site.data.keyword.registryshort}} namespace is in a different account, [set up access](/docs/codeengine?topic=codeengine-add-registry). If you do not set up access to your {{site.data.keyword.registrylong_notm}} namespace, access is created automatically for you.
 
-- [Build your source code](/docs/codeengine?topic=codeengine-build-image).
+- [Build your source code](/docs/codeengine?topic=codeengine-plan-build#build-method).
 
 Need help? Check out [troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
 
