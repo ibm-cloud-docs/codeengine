@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-07"
+lastupdated: "2023-09-19"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -187,6 +187,8 @@ To run your Function in {{site.data.keyword.codeengineshort}}, your code must im
 - Does not support the `multipart/form-data` request header.
 
 
+
+
 ## Options for creating Functions
 {: #functions-options} 
 
@@ -197,13 +199,13 @@ Learn about the options that you can specify when you create your Function. Note
 ### Memory and CPU
 {: #functions-combo}
 
-When you deploy your Function, you can specify the amount of memory and CPU that your Function can consume. These amounts can vary, depending on if your app is compute-intensive, memory-intensive, or balanced.
+When you deploy your Function, you can specify the amount of memory and CPU that your Function can consume. These amounts can vary, depending on if your function is compute-intensive, memory-intensive, or balanced.
 {: shortdesc}
 
 By default, your Function is assigned 4 G of memory and .5 vCPU. For more information about other supported memory and CPU combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 
-### Creating and running your app with environment variables 
+### Creating and running your function with environment variables 
 {: #functions-envvar}
 
 You can define and set environment variables as key-value pairs that can be used by your Function at run time. 
@@ -238,13 +240,13 @@ For more information about {{site.data.keyword.codeengineshort}} limits, see [Li
 ## Next steps
 {: #function-nextsteps}
 
-Now that you are familiar with key concepts of working with {{site.data.keyword.codeengineshort}} functions, are you ready to create and work with functions? See
+Now that you are familiar with key concepts of working with {{site.data.keyword.codeengineshort}} functions, are you ready to create and work with functions? See the following topics.
 
 * [Creating Function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode).
 * [Creating Function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo).
 * [Creating Function workloads from local source code](/docs/codeengine?topic=codeengine-fun-create-local).
 
-For more information about working with functions, see
+For more information about working with functions, see the following topics.
 
 * [Function workloads](/docs/codeengine?topic=codeengine-cefunctions).
 * [Integrating {{site.data.keyword.cloud_notm}} services with service bindings](/docs/codeengine?topic=codeengine-service-binding).

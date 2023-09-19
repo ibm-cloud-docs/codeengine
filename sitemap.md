@@ -2392,7 +2392,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Memory and CPU](/docs/codeengine?topic=codeengine-fun-work#functions-combo)
 
-    * [Creating and running your app with environment variables](/docs/codeengine?topic=codeengine-fun-work#functions-envvar)
+    * [Creating and running your function with environment variables](/docs/codeengine?topic=codeengine-fun-work#functions-envvar)
 
     * [Creating and running your Function when using secrets and configmaps](/docs/codeengine?topic=codeengine-fun-work#functions-secconfigmap)
 
