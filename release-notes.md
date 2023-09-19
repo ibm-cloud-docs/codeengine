@@ -26,6 +26,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for September 2023.
 {: shortdesc}
 
+### 19 September 2023
+{: #codeengine-sep1923}
+{: release-note}
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ### 12 September 2023
 {: #codeengine-sep1223}
 {: release-note}
