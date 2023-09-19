@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-09-19"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -36,9 +36,9 @@ Whether your code exists as source in a local file or in a Git repository, or yo
 
 - If you have a container image, per the [Open Container Initiative (OCI) standard](https://opencontainers.org/){: external}, then you need to provide only a reference to the image, which points to the location of your container registry when you create your job. You can create your job from images in a [public registry](/docs/codeengine?topic=codeengine-create-job) or [private registry](/docs/codeengine?topic=codeengine-create-job-private) and then access the referenced image from your job run.
 
-- If you are starting with source code that is located in a Git repository, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the job with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-build-image) with {{site.data.keyword.codeengineshort}} before you create your job and run the job.  
+- If you are starting with source code that is located in a Git repository, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the job with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create your job and run the job.  
 
-- If you are starting with source code on a local workstation, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the job with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-build-image) with {{site.data.keyword.codeengineshort}} before you create your job and run the job.
+- If you are starting with source code on a local workstation, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the job with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create your job and run the job.
 
 After you create and run your job, you can also [update your job](/docs/codeengine?topic=codeengine-update-job) by using *any* of the preceding ways, independent of how you created or previously updated your job.
 

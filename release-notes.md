@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-12"
+lastupdated: "2023-09-19"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for September 2023.
 {: shortdesc}
+
+### 19 September 2023
+{: #codeengine-sep1923}
+{: release-note}
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 12 September 2023
 {: #codeengine-sep1223}
@@ -903,7 +910,7 @@ Review the release notes for May 2022.
 CLI version 1.33.0 released
 :   This version of the CLI updates the **`build create`** command so that the `--image` and `--registry-secret` options are no longer required. This update means that you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access, or you can choose to specify registry details with a registry access secret for your build output. 
     * See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
-    * See [Building a container image](/docs/codeengine?topic=codeengine-build-image).
+    * See [Building a container image](/docs/codeengine?topic=codeengine-plan-build).
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
@@ -1376,7 +1383,7 @@ Review the release notes for 07 October 2021.
 {: shortdesc}
 
 Creating builds no longer requires a value for the source branch.  
-:   If the value is not provided and you leave the field empty, {{site.data.keyword.codeengineshort}} automatically determines the branch name. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).
+:   If the value is not provided and you leave the field empty, {{site.data.keyword.codeengineshort}} automatically determines the branch name. See [Building a container image](/docs/codeengine?topic=codeengine-plan-build).
 
 CLI version 1.20.1 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
@@ -1533,7 +1540,7 @@ CLI version 1.14.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Private repositories
-:   Updated information about running {{site.data.keyword.codeengineshort}} builds that use source in private repos. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).
+:   Updated information about running {{site.data.keyword.codeengineshort}} builds that use source in private repos. See [Building a container image](/docs/codeengine?topic=codeengine-plan-build).
 
 ### 5 August 2021
 {: #codeengine-aug0521}
@@ -2264,7 +2271,7 @@ New Activity tracker information.
 :   See [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events).
 
 Updated build information.
-:   See [Building a container image](/docs/codeengine?topic=codeengine-build-image).
+:   See [Building a container image](/docs/codeengine?topic=codeengine-plan-build).
 
 Added API CRD information for subscriptions.
 :   See [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
@@ -2550,7 +2557,7 @@ Review the release notes for 16 September 2020.
 
 New! [{{site.data.keyword.codeenginefull_notm}} beta release](https://cloud.ibm.com/codeengine/overview)
 :   With {{site.data.keyword.codeengineshort}}, you can,
-    - [Build container images](/docs/codeengine?topic=codeengine-build-image) and deploy them in apps and jobs.
+    - [Build container images](/docs/codeengine?topic=codeengine-plan-build) and deploy them in apps and jobs.
     - [Pull from private repositories](/docs/codeengine?topic=codeengine-code-repositories).
     - [Connect to private registries](/docs/codeengine?topic=codeengine-add-registry).
     - [Work with configmaps and secrets](/docs/codeengine?topic=codeengine-configmap-secret).

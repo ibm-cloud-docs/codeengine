@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-12"
+lastupdated: "2023-09-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep23)
 
     * Review the release notes for September 2023.
+
+    * [19 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep1923)
+
+        * Updated versions for buildpacks
 
     * [12 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep1223)
 
@@ -2392,7 +2396,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Memory and CPU](/docs/codeengine?topic=codeengine-fun-work#functions-combo)
 
-    * [Creating and running your app with environment variables](/docs/codeengine?topic=codeengine-fun-work#functions-envvar)
+    * [Creating and running your function with environment variables](/docs/codeengine?topic=codeengine-fun-work#functions-envvar)
 
     * [Creating and running your Function when using secrets and configmaps](/docs/codeengine?topic=codeengine-fun-work#functions-secconfigmap)
 
@@ -2494,10 +2498,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Build your code and create your workload](/docs/codeengine?topic=codeengine-plan-build#build-code-create-workload)
 
 * [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-buildimage)
-
-[Building a container image](/docs/codeengine?topic=codeengine-build-image#build-image)
-
-* [Determine your build method](/docs/codeengine?topic=codeengine-build-image#build-image-method)
 
 [Create a build configuration that pulls source from public repository](/docs/codeengine?topic=codeengine-build-create-config1#build-create-config1)
 

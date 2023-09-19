@@ -21,7 +21,7 @@ toc:
           - about.md
           - app-workloads.md
           - batchjob-workloads.md
-          - function-workloads.md          
+          - function-workloads.md        
       - release-notes.md   
   - navgroup: 
       id: tutorial
@@ -106,7 +106,6 @@ toc:
           label: Building source code
           topics:
           - plan-build.md
-          - build.md
           - build-public.md
           - build-private.md
           - build-local.md

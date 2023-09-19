@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-09-19"
 
 keywords: benefits, terminology, developers, capabilities, {{site.data.keyword.codeengineshort}} 
 
@@ -27,7 +27,7 @@ To troubleshoot this problem, confirm that the image exists and that you have ac
 
 * To confirm that the image for your app or job exists, review the error message for information about the failure.
 
-* To deploy applications or run jobs in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all the runtime artifacts your application needs to run, such as runtime libraries. You can use many different methods to [create the container image](/docs/codeengine?topic=codeengine-build-image), including building your app from source code by using the build container images feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry). 
+* To deploy applications or run jobs in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all the runtime artifacts your application needs to run, such as runtime libraries. You can use many different methods to [create the container image](/docs/codeengine?topic=codeengine-plan-build), including building your app from source code by using the build container images feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry). 
 
 * If you use the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), or [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command in the {{site.data.keyword.codeengineshort}} CLI, specify the name of the image that is used for your application or job by using the format `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io.` If `TAG` is not specified, the default is `latest`. Review these commands for more information about the format to use to specify the image registry.
 

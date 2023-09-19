@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-09-19"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -228,8 +228,8 @@ Learn more about performing these {{site.data.keyword.codeengineshort}} tasks fr
 - [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
 - [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
 - [Running jobs](/docs/codeengine?topic=codeengine-job-plan)
-- [Running Functions](/docs/codeengine?topic=codeengine-fun-work)
-- [Building container images](/docs/codeengine?topic=codeengine-build-image)
+- [Running functions](/docs/codeengine?topic=codeengine-fun-work)
+- [Building container images](/docs/codeengine?topic=codeengine-plan-build)
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}

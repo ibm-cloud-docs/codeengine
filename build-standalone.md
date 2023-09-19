@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-19"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret, SSH secret, Git repository access secret
 
@@ -23,7 +23,7 @@ When your code exists as source in a local file or in a Git repository, {{site.d
 However, if you want more control over the build of your container image, {{site.data.keyword.codeengineshort}} gives you the flexibility to build your container image by using one of the following options:
 
 * Use a single CLI command, **`buildrun submit`**, to run one build run. The benefit of this option is that you can obtain your build with a single CLI command; however, the configuration for the build is not preserved.
-* Define a build configuration from which you can run multiple build runs. See [Building a container image by using a build configuration](/docs/codeengine?topic=codeengine-build-image). 
+* Define a build configuration from which you can run multiple build runs. See [Building a container image by using a build configuration](/docs/codeengine?topic=codeengine-plan-build). 
 
 After your build is complete and your image exists, you can deploy the container image as an application or create a job that references your image. 
 
