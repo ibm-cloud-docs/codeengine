@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-09-20"
 
 keywords: workloads, location, compute environment, code engine
 
@@ -51,7 +51,7 @@ Before you begin, set up your Satellite location, label your hosts, and meet you
 
 - Verify that your infrastructure meets the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}.
 - Create a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-- Label the hosts to use for {{site.data.keyword.codeengineshort}} with the `env:codeengine` label. For more information, see [Assigning hosts with host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
+- Label the hosts to use for {{site.data.keyword.codeengineshort}} with the `env:codeengine` label. For more information, see [Assigning hosts with host auto assignment](/docs/satellite?topic=satellite-host-autoassign-ov).
 - Plan to assign at least 6 hosts to use for {{site.data.keyword.codeengineshort}}. Each host must be at least 8 CPUs and 32 GB memory.
 - To be highly available, your hosts must be in 3 different zones, depending on what is available in your location.
 - To allow your app to be accessed from the public internet, be sure that your {{site.data.keyword.satelliteshort}} hosts are accessible from the public internet. For more information, see [Why can't I access my app?](#ts-sat-ce-app-access).
@@ -124,7 +124,7 @@ After your project is created, you can start deploying apps and running jobs in 
     1. Go to [{{site.data.keyword.satelliteshort}} location](https://cloud.ibm.com/satellite/locations){: external}.
     2. Select the Satellite location that you want to use for your compute environment. 
     3. Click **Hosts**. 
-    4. Look at the `labels` field for the hosts that you want to use for {{site.data.keyword.codeengineshort}}. If they do not have the `env:codeengine` label, then [follow the instructions](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) to add host labels.
+    4. Look at the `labels` field for the hosts that you want to use for {{site.data.keyword.codeengineshort}}. If they do not have the `env:codeengine` label, then [follow the instructions](/docs/satellite?topic=satellite-host-autoassign-ov) to add host labels.
 
 ## Why can't I access my app?
 {: #ts-sat-ce-app-access}
