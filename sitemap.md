@@ -142,7 +142,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [21 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2123)
 
-        * New toolchain troubleshooting topic
+        * New! Support for liveness and readiness probes for applications in {{site.data.keyword.codeengineshort}} 
+
+        * CLI version 1.46.0 released
+
+        * Added troubleshooting information for toolchain 
+
+        * Added getting started information about working with the {{site.data.keyword.codeengineshort}} CLI
 
     * [19 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep1923)
 
@@ -2254,6 +2260,40 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Deleting domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-cli)
 
+[Working with liveness and readiness probes for your app](/docs/codeengine?topic=codeengine-app-probes#app-probes)
+
+* [What are liveness and readiness probes?](/docs/codeengine?topic=codeengine-app-probes#app-probes-terms)
+
+* [Why use liveness and readiness probes with my apps?](/docs/codeengine?topic=codeengine-app-probes#app-probes-why)
+
+* [Implementing a readiness or liveness probe in your code](/docs/codeengine?topic=codeengine-app-probes#app-probes-implement)
+
+* [Configuring liveness and readiness probes in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-app-probes#app-probes-config)
+
+    * [Properties for liveness and readiness probes](/docs/codeengine?topic=codeengine-app-probes#app-probes-properties)
+
+    * [Configuring probes from the console](/docs/codeengine?topic=codeengine-app-probes#app-probes-config-ui)
+
+    * [Configuring probes with the CLI](/docs/codeengine?topic=codeengine-app-probes#app-probes-config-cli)
+
+* [Viewing probe settings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-app-probes#app-probes-view)
+
+    * [Viewing probe settings from the console](/docs/codeengine?topic=codeengine-app-probes#app-probes-view-ui)
+
+    * [Viewing probe settings with the CLI](/docs/codeengine?topic=codeengine-app-probes#app-probes-view-cli)
+
+* [Updating probes](/docs/codeengine?topic=codeengine-app-probes#app-probes-update)
+
+    * [Updating probes from the console](/docs/codeengine?topic=codeengine-app-probes#app-probes-update-ui)
+
+    * [Updating probes with the CLI](/docs/codeengine?topic=codeengine-app-probes#app-probes-update-cli)
+
+* [Deleting probes](/docs/codeengine?topic=codeengine-app-probes#delete-custom-domain)
+
+    * [Deleting probes from the console](/docs/codeengine?topic=codeengine-app-probes#app-probes-delete-ui)
+
+    * [Deleting probes with the CLI](/docs/codeengine?topic=codeengine-app-probes#app-probes-delete-cli)
+
 
 ## Running jobs
 {: #sitemap_running_jobs}
@@ -3560,6 +3600,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce version`](/docs/codeengine?topic=codeengine-cli#cli-versioncmd)
 
 [CLI version history](/docs/codeengine?topic=codeengine-cli_versions#cli_versions)
+
+[Getting started with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-cecli-getstart#cecli-getstart)
+
+* [Setting up your CLI environment](/docs/codeengine?topic=codeengine-cecli-getstart#cecli-getstart-setup)
+
+* [Working with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-cecli-getstart#cecli-getstart-workcecli)
+
+* [Next steps](/docs/codeengine?topic=codeengine-cecli-getstart#cecli-getstart-next)
 
 
 ## API reference

@@ -79,6 +79,7 @@ toc:
           - appdeploy-update.md
           - app-scale.md
           - app-domainmapping.md
+          - app-probes.md
       - topicgroup:
           label: Running jobs
           topics:
@@ -177,6 +178,7 @@ toc:
           topics:
           - cmd_defs.md
           - cli-changelog.md
+          - getting-started-cli.md
       - topicgroup:
           label: API reference
           topics:
