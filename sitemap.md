@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-20"
+lastupdated: "2023-09-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -4106,7 +4106,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Debugging your {{site.data.keyword.codeengineshort}} toolchain](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce#troubleshoot-toolchain-ce)
 
+* [Creating a debug log file for your pipeline](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce#troubleshoot-toolchain-ce-log)
+
+* [More information](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce#troubleshoot-toolchain-ce-info)
+
 [Why does my build run in my toolchain time out?](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain#ts-buildrun-timeout-toolchain)
+
+[Why is my toolchain package too large?](/docs/codeengine?topic=codeengine-ts-toolchain-size#ts-toolchain-size)
 
 
 ## Getting help and support for {{site.data.keyword.codeengineshort}}

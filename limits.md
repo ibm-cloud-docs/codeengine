@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-21"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -131,7 +131,8 @@ Be aware that the limits apply independently from each other within a project. I
 | CPU | The total combination for all the app instances, running job instances, and running build instances cannot exceed 128 vCPU. |
 | Domain mappings (custom) | You are limited to 80 custom domain mappings per project.|
 | Ephemeral storage | The total combination for all the app instances, running job instances, and running build instances cannot exceed 512 G of ephemeral storage. |
-| Instances (active) | The number of app instances, running job instances, and running build instances cannot exceed 250. |
+| Functions | You are limited to 20 Functions per project. |
+| Instances (active) | The number of app instances, function instances, running job instances, and running build instances cannot exceed 250. |
 | Instances (total)  | The number of active instances and the number of completed job and build instances cannot exceed 2500. |
 | Jobs | You are limited to 100 jobs per project. |
 | Job runs | You are limited to 100 job runs per project before you need to remove or clean up old ones. |
