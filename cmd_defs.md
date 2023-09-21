@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-09-21"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -127,7 +127,7 @@ OK
 Create an application.  
   
 ```txt
-ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--probe-live PROBE_LIVE] [--probe-ready PROBE_READY] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -240,6 +240,12 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 `--port`, `-p`
 :   The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use `--port` to specify the port. This value is *optional*. 
 
+`--probe-live`, `--pl`
+:   Configure the liveness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-live type=tcp --probe-live port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
+
+`--probe-ready`, `--pr`
+:   Configure the readiness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-live type=tcp --probe-live port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
+
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
@@ -269,7 +275,7 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 :   The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is *optional*. The default value is `0`.
 
 `--visibility`, `-v`
-:   The visibility for the application. Valid values are `public`, `private` and `project`. Setting a visibility of `public` means that your app can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. Setting a visibility of `private` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project. Visibility can only be `private` if the project supports application private visibility. Setting a visibility of `project` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. 
+:   The visibility for the application. Valid values are `public`, `private`, and `project`. Setting a visibility of `public` means that your app can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. Setting a visibility of `private` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project. Visibility can only be `private` if the project supports application private visibility. Setting a visibility of `project` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. 
 
 `--wait`, `-w`
 :   Create the application and wait for the application to be ready. If you specify the `--wait` option, the application create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become ready. If the application is not ready within the specified `wait-timeout` period, the application create fails. This value is *optional*. The default value is `true`.
@@ -773,7 +779,7 @@ OK
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```txt
-ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--probe-live PROBE_LIVE] [--probe-live-clear] [--probe-ready PROBE_READY] [--probe-ready-reset] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -907,6 +913,18 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 `--port`, `-p`
 :   The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use `--port` to specify the port. This value is *optional*. 
 
+`--probe-live`, `--pl`
+:   Configure the liveness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-live type=tcp --probe-live port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
+
+`--probe-live-clear`, `--plr`
+:   Remove the liveness probe. This option is allowed only if your app currently has a liveness probe. This value is *optional*. The default value is `false`.
+
+`--probe-ready`, `--pr`
+:   Configure the readiness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-live type=tcp --probe-live port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
+
+`--probe-ready-reset`, `--prr`
+:   Resets the readiness probe to the default configuration. This value is *optional*. The default value is `false`.
+
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
@@ -945,7 +963,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is *optional*. The default value is `0`.
 
 `--visibility`, `-v`
-:   The visibility for the application. Valid values are `public`, `private` and `project`. Setting a visibility of `public` means that your app can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. Setting a visibility of `private` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project. Visibility can only be `private` if the project supports application private visibility. Setting a visibility of `project` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. 
+:   The visibility for the application. Valid values are `public`, `private`, and `project`. Setting a visibility of `public` means that your app can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. Setting a visibility of `private` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project. Visibility can only be `private` if the project supports application private visibility. Setting a visibility of `project` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. 
 
 `--wait`, `-w`
 :   Update the application and wait for the application to be ready. If you specify the `--wait` option, the application update waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become ready. If the application is not ready within the specified `--wait-timeout` period, the application create fails. This value is *optional*. The default value is `true`.
@@ -984,7 +1002,7 @@ A build, or image build, is a mechanism that you can use to create a container i
 
 You must be within the context of a [project](#cli-project) before you use `build` commands.
 
-For more information about working with builds, see [Building a container image](/docs/codeengine?topic=codeengine-build-image).
+For more information about working with builds, see [Building a container image](/docs/codeengine?topic=codeengine-plan-build).
 
 You can use either `build` or `bd` in your `build` commands. To see CLI help for the `build` commands, run `ibmcloud ce build -h`.
   
@@ -1321,7 +1339,7 @@ A build, or image build, is a mechanism that you can use to create a container i
 
 You must be within the context of a [project](#cli-project) before you use `buildrun` commands.
 
-For more information about working with builds and build runs, see [Building a container image](/docs/codeengine?topic=codeengine-build-image).
+For more information about working with builds and build runs, see [Building a container image](/docs/codeengine?topic=codeengine-plan-build).
 
 You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
   
@@ -2113,7 +2131,7 @@ You can use either `domainmapping` or `dm` in your `configmap` commands. To see 
 Create a custom domain mapping.  
   
 ```txt
-ibmcloud ce domainmapping create --domain-name DOMAIN_NAME [--target-type app] --tls-secret <tls-secret-name> [--quiet]
+ibmcloud ce domainmapping create --domain-name DOMAIN_NAME [--target-type TARGET_TYPE] --tls-secret SECRET_NAME [--quiet]
 ```
 {: pre}
 
@@ -2125,6 +2143,9 @@ ibmcloud ce domainmapping create --domain-name DOMAIN_NAME [--target-type app] -
 
 `--target`, `-t`
 :   The name of the target application. This value is *required*. 
+
+`--target-type`, `--type`
+:   The type of the target. Valid values are `app` or `application`. This value is *required*. 
 
 `--tls-secret`, `--secret`, `--tls`
 :   Specify a TLS secret that contains the certificate including all its intermediate certificates and the corresponding private key for the domain mapping. The certificate must be signed by a trusted, public certificate authority (CA). Self-signed certificates are not supported. This value is *required*. 
@@ -2306,7 +2327,7 @@ To view a listing of all domain mappings for your applications, including both t
 Update a custom domain mapping.  
   
 ```txt
-ibmcloud ce domainmapping update --domain-name DOMAIN_NAME --target TARGET_NAME --tls-secret <tls-secret-name> [--quiet]
+ibmcloud ce domainmapping update --domain-name DOMAIN_NAME --target TARGET_NAME --tls-secret SECRET_NAME [--quiet] [--target-type TARGET_TYPE]
 ```
 {: pre}
 
@@ -2321,6 +2342,9 @@ ibmcloud ce domainmapping update --domain-name DOMAIN_NAME --target TARGET_NAME 
 
 `--target`, `-t`
 :   The name of the target application. This value is *optional*. 
+
+`--target-type`, `--type`
+:   The type of the target. Valid values are `app` or `application`. This value is *optional*. 
 
 `--tls-secret`, `--secret`, `--tls`
 :   Specify a TLS secret that contains the certificate including all its intermediate certificates and the corresponding private key for the domain mapping. The certificate must be signed by a trusted, public certificate authority (CA). Self-signed certificates are not supported. This value is *optional*. 
@@ -7013,7 +7037,7 @@ OK
 ```
 {: screen}  
   
-## Subscription `kafka` commands  
+## Subscription kafka commands  
 {: #cli-subscription-kafka}  
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
@@ -7402,4 +7426,5 @@ commit:   3ab130b746f4784c9ff8d3da7bb05b6e7acda6d5
 {: screen}  
   
   
+
 
