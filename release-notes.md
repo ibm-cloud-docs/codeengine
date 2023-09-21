@@ -40,7 +40,7 @@ Added troubleshooting information for toolchain
 :   See [Why is my toolchain package too large](/docs/codeengine?topic=codeengine-ts-toolchain-size)?
 
 Added getting started information about working with the {{site.data.keyword.codeengineshort}} CLI
-:   See [Getting started with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-ceapi-getstart).
+:   See [Getting started with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-cecli-getstart).
 
 ### 19 September 2023
 {: #codeengine-sep1923}
