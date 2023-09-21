@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-09-21"
 
 keywords: migrate, migration, heroku, terms, code engine
 
@@ -32,7 +32,7 @@ Welcome Heroku users to {{site.data.keyword.codeenginefull}}.
 - **Support all your Cloud-native based applications**, whether they are 12-factor apps, event-driven functions, or run-to-completion batch-jobs. If it can be containerized, {{site.data.keyword.codeengineshort}} can run it.
 - **Pay for only the resources** that you actually use.
 
-If you are coming from a Heroku background, many of these features sound familiar. However, {{site.data.keyword.codeengineshort}} also includes some new capabilities that allow you to go beyond even what Heroku offers, including applications that can scale to zero and incur no charges. In addition, {{site.data.keyword.codeengineshort}} requires a Pay-as-you-Go account that includes a [free tier](https://www.ibm.com/cloud/code-engine/pricing){: external}. So, after you're past the syntactical difference of the user experience, you and your applications will feel right at home in {{site.data.keyword.codeengineshort}}.
+If you are coming from a Heroku background, many of these features sound familiar. However, {{site.data.keyword.codeengineshort}} also includes some new capabilities that allow you to go beyond even what Heroku offers, including applications that can scale to zero and incur no charges. In addition, {{site.data.keyword.codeengineshort}} requires a Pay-as-you-Go account that includes a [free tier](https://cloud.ibm.com/codeengine/overview){: external}. So, after you're past the syntactical difference of the user experience, you and your applications will feel right at home in {{site.data.keyword.codeengineshort}}. 
 
 ## Objectives
 {: #heroku-objectives}
