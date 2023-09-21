@@ -140,6 +140,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for September 2023.
 
+    * [21 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2123)
+
+        * New toolchain troubleshooting topic
+
     * [19 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep1923)
 
         * Updated versions for buildpacks
