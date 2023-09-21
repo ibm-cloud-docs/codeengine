@@ -37,7 +37,7 @@ CLI version 1.46.0 released
 :   This CLI version adds support for liveness and readiness probes for applications. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Added troubleshooting information for toolchain 
-:   See [Why is my toolchain package too large?](/docs/codeengine?topic=codeengine-ts-toolchain-size).
+:   See [Why is my toolchain package too large](/docs/codeengine?topic=codeengine-ts-toolchain-size)?
 
 Added getting started information about working with the {{site.data.keyword.codeengineshort}} CLI
 :   See [Getting started with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-ceapi-getstart).
