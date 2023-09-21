@@ -106,6 +106,20 @@ The following table lists the limits for functions.
 | Code size | 50 MB compressed, including base64 overhead |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 {: caption="Function limits"}
 
+## Periodic timer (cron) subscription limits
+{: #subscription-cron-limit}
+
+The following table lists the limits for the periodic timer subscription.
+
+| Category  |   Maximum   |      Need to extend the maximum?            |
+| ---------------------- |  --------- | ------------------------------------------- |
+| Size of data | 4096 bytes | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+{: caption="Periodic timer limits"}
+
+{{site.data.keyword.codeengineshort}} limits the size of data for Periodic timer (cron) events with a maximum of 4096 bytes. When you create or update periodic timer (cron) events, {{site.data.keyword.codeengineshort}} checks the size of the cron event data. If the Periodic timer (cron) event data exceeds the limit, a size limit exceeded error is given. If you receive this error, try reducing the cron event data size to less than 4096 bytes. 
+
+For more information about troubleshooting subscriptions, see [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).
+
 ## Project limits
 {: #limits_projects}
 
@@ -152,20 +166,6 @@ Be aware that the limits apply independently from each other within a project. I
 
 For example, you are limited to 128 vCPU or 250 active instances of an app or job. Since each limit applies independent of other limits, suppose you want to scale an app to 250 instances with 0.125 VCPU. These values result in about 32 vCPU, which works as this result is less than the maximum of 128 vCPU. However, you cannot use 512 instances with 0.125 vCPU, which would still meet the maximum of 128 vCPU, but would violate the limit for a maximum of 250 instances. 
 
-
-## Periodic timer (cron) subscription limits
-{: #subscription-cron-limit}
-
-The following table lists the limits for the periodic timer subscription.
-
-| Category  |   Maximum   |      Need to extend the maximum?            |
-| ---------------------- |  --------- | ------------------------------------------- |
-| Size of data | 4096 bytes | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-{: caption="Periodic timer limits"}
-
-{{site.data.keyword.codeengineshort}} limits the size of data for Periodic timer (cron) events with a maximum of 4096 bytes. When you create or update periodic timer (cron) events, {{site.data.keyword.codeengineshort}} checks the size of the cron event data. If the Periodic timer (cron) event data exceeds the limit, a size limit exceeded error is given. If you receive this error, try reducing the cron event data size to less than 4096 bytes. 
-
-For more information about troubleshooting subscriptions, see [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).
 
 ## Increasing limits
 {: #increase-limits}
