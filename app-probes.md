@@ -396,9 +396,9 @@ From the console, you can remove a liveness probe from the **Configuration** > *
     * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
 2. From the application page, click the  **Configuration** > **Image start options** tab on your application page. 
 3. To remove a liveness probe, you must create a new application revision. 
-        1. Click **Edit and create new revision**. 
-        2. Click **Delete** to remove the liveness probe. 
-        3. Click **Save and create** to save your change and deploy the app revision.
+    1. Click **Edit and create new revision**. 
+    2. Click **Delete** to remove the liveness probe. 
+    3. Click **Save and create** to save your change and deploy the app revision.
 
 While you cannot delete a readiness probe, you can [update](#app-probes-update-ui) it. 
 
