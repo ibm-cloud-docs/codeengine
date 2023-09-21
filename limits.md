@@ -111,8 +111,8 @@ The following table lists the limits for functions.
 
 The following table lists the limits for projects.
 
-| Category  |   Maximum      | 
-| --------- | -----------        | 
+| Category  |   Maximum      |       Need to extend the maximum?            |
+| ---------------------- |  --------- | ------------------------------------------- |
 | Project per region | 20 | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 {: caption="Project limits"}
 
@@ -158,8 +158,8 @@ For example, you are limited to 128 vCPU or 250 active instances of an app or jo
 
 The following table lists the limits for the periodic timer subscription.
 
-| Category  |   Maximum      | 
-| --------- | -----------        | 
+| Category  |   Maximum   |      Need to extend the maximum?            |
+| ---------------------- |  --------- | ------------------------------------------- |
 | Size of data | 4096 bytes | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 {: caption="Periodic timer limits"}
 
