@@ -3693,6 +3693,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Function limits](/docs/codeengine?topic=codeengine-limits#limits_functions)
 
+* [Project limits](/docs/codeengine?topic=codeengine-limits#limits_projects)
+
 * [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
 
 * [Periodic timer (cron) subscription limits](/docs/codeengine?topic=codeengine-limits#subscription-cron-limit)
