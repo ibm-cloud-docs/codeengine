@@ -30,7 +30,7 @@ Review the release notes for September 2023.
 {: #codeengine-sep2123}
 {: release-note}
 
-New! Support for liveness and readiness probes for applications in {{site.data.keyword.codeengineshort}} 
+New! Added support for liveness and readiness probes for applications in {{site.data.keyword.codeengineshort}} 
 :   See [Working with liveness and readiness probes for your app](/docs/codeengine?topic=codeengine-app-probes).
 
 CLI version 1.46.0 released

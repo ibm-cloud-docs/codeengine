@@ -142,7 +142,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [21 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2123)
 
-        * New! Support for liveness and readiness probes for applications in {{site.data.keyword.codeengineshort}} 
+        * New! Added support for liveness and readiness probes for applications in {{site.data.keyword.codeengineshort}} 
 
         * CLI version 1.46.0 released
 

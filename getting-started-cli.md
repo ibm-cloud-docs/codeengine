@@ -229,7 +229,7 @@ To start working with {{site.data.keyword.codeengineshort}} components with the 
 * [Working with jobs](/docs/codeengine?topic=codeengine-job-plan)
 
 
-For more information about the {{site.data.keyword.codeengineshort}} CLI, see the [Setting up the CLI environment](/docs/codeengine?topic=codeengine-cli). **FMO think about renaming to "Working with the CLI"**
+For more information about the {{site.data.keyword.codeengineshort}} CLI, see the [Setting up the CLI environment](/docs/codeengine?topic=codeengine-cli). 
 
 For more information about working in the {{site.data.keyword.codeengineshort}} CLI environment, see [{{site.data.keyword.codeengineshort}} CLI Command Reference documentation](/docs/codeengine?topic=codeengine-cli). 
 
