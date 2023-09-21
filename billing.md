@@ -28,7 +28,7 @@ You are billed for the following entities,
 
 Entities such as [projects](/docs/codeengine?topic=codeengine-manage-project) do not incur charges, but instead serve as a folder for your entities. Entities such as secrets, bindings, or subscriptions do not incur charges, but do contribute to the overall limits of your project. For more information, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
-The costs that are provided in this topic are guidelines and do not represent actual costs. They represent a starting point for estimates of costs that are incurred in environments with a similar configuration. Actual costs can vary by geography. For the most up-to-date prices, see [{{site.data.keyword.codeengineshort}} pricing](https://www.ibm.com/cloud/code-engine/){: external}. 
+The costs that are provided in this topic are guidelines and do not represent actual costs. They represent a starting point for estimates of costs that are incurred in environments with a similar configuration. Actual costs can vary by geography. For the most up-to-date prices, see [{{site.data.keyword.codeengineshort}} pricing](https://cloud.ibm.com/codeengine/overview){: external}. 
 {: important}
 
 ## Application pricing
