@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-09-21"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,22 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for September 2023.
 {: shortdesc}
+
+### 21 September 2023
+{: #codeengine-sep2123}
+{: release-note}
+
+New! Added support for liveness and readiness probes for applications in {{site.data.keyword.codeengineshort}} 
+:   See [Working with liveness and readiness probes for your app](/docs/codeengine?topic=codeengine-app-probes).
+
+CLI version 1.46.0 released
+:   This CLI version adds support for liveness and readiness probes for applications. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Added troubleshooting information for toolchain 
+:   See [Why is my toolchain package too large](/docs/codeengine?topic=codeengine-ts-toolchain-size)?
+
+Added getting started information about working with the {{site.data.keyword.codeengineshort}} CLI
+:   See [Getting started with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-ceapi-getstart).
 
 ### 19 September 2023
 {: #codeengine-sep1923}

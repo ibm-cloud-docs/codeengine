@@ -79,6 +79,7 @@ toc:
           - appdeploy-update.md
           - app-scale.md
           - app-domainmapping.md
+          - app-probes.md
       - topicgroup:
           label: Running jobs
           topics:
@@ -177,6 +178,7 @@ toc:
           topics:
           - cmd_defs.md
           - cli-changelog.md
+          - getting-started-cli.md
       - topicgroup:
           label: API reference
           topics:
@@ -287,6 +289,7 @@ toc:
               label: Troubleshooting toolchain 
               topics:
               - troubleshoot-toolchain.md
-              - ts-toolchain-buildrun.md       
+              - ts-toolchain-buildrun.md
+              - ts-toolchain-size.md
       - get-support.md
       - sitemap.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-21"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -95,7 +95,7 @@ For more information about troubleshooting jobs, see [Troubleshooting - Why can'
 ## Function limits
 {: #limits_functions}
 
-The following table lists the limits for Functions. 
+The following table lists the limits for functions. 
 
 | Category               |   Maximum |      Need to extend the maximum?            |
 | ---------------------- |  --------- | ------------------------------------------- |
@@ -106,17 +106,37 @@ The following table lists the limits for Functions.
 | Code size | 50 MB compressed, including base64 overhead |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 {: caption="Function limits"}
 
+## Periodic timer (cron) subscription limits
+{: #subscription-cron-limit}
 
-## Project quotas
-{: #project_quotas}
+The following table lists the limits for the periodic timer subscription.
 
-The maximum number of projects that you can create per region is 20. 
+| Category  |   Maximum   |      Need to extend the maximum?            |
+| ---------------------- |  --------- | ------------------------------------------- |
+| Size of data | 4096 bytes | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+{: caption="Periodic timer limits"}
+
+{{site.data.keyword.codeengineshort}} limits the size of data for Periodic timer (cron) events with a maximum of 4096 bytes. When you create or update periodic timer (cron) events, {{site.data.keyword.codeengineshort}} checks the size of the cron event data. If the Periodic timer (cron) event data exceeds the limit, a size limit exceeded error is given. If you receive this error, try reducing the cron event data size to less than 4096 bytes. 
+
+For more information about troubleshooting subscriptions, see [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).
+
+## Project limits
+{: #limits_projects}
+
+The following table lists the limits for projects.
+
+| Category  |   Maximum      |       Need to extend the maximum?            |
+| ---------------------- |  --------- | ------------------------------------------- |
+| Project per region | 20 | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+{: caption="Project limits"}
 
 The maximum number of projects includes projects that are active and any projects that are not permanently deleted. When you delete a project, the project is soft deleted, and can be restored within 7 days before it is permanently deleted. Use the console or the CLI to display soft-deleted projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
 {: important}
 
-The following table lists the quotas for projects.
+## Project quotas
+{: #project_quotas}
 
+The following table lists the quotas for projects.
 
 Be aware that the limits apply independently from each other within a project. If a limit is reached, such as the limit of 512 GB of memory, this quota limit might impact the ability to run a workload, even if another limit is not yet reached, such as 250 instances of apps or jobs. 
 
@@ -131,7 +151,8 @@ Be aware that the limits apply independently from each other within a project. I
 | CPU | The total combination for all the app instances, running job instances, and running build instances cannot exceed 128 vCPU. |
 | Domain mappings (custom) | You are limited to 80 custom domain mappings per project.|
 | Ephemeral storage | The total combination for all the app instances, running job instances, and running build instances cannot exceed 512 G of ephemeral storage. |
-| Instances (active) | The number of app instances, running job instances, and running build instances cannot exceed 250. |
+| Functions | You are limited to 20 Functions per project. |
+| Instances (active) | The number of app instances, function instances, running job instances, and running build instances cannot exceed 250. |
 | Instances (total)  | The number of active instances and the number of completed job and build instances cannot exceed 2500. |
 | Jobs | You are limited to 100 jobs per project. |
 | Job runs | You are limited to 100 job runs per project before you need to remove or clean up old ones. |
@@ -143,21 +164,12 @@ Be aware that the limits apply independently from each other within a project. I
 {: caption="Project quotas"}
 
 
-
 For example, you are limited to 128 vCPU or 250 active instances of an app or job. Since each limit applies independent of other limits, suppose you want to scale an app to 250 instances with 0.125 VCPU. These values result in about 32 vCPU, which works as this result is less than the maximum of 128 vCPU. However, you cannot use 512 instances with 0.125 vCPU, which would still meet the maximum of 128 vCPU, but would violate the limit for a maximum of 250 instances. 
 
-
-## Periodic timer (cron) subscription limits
-{: #subscription-cron-limit}
-
-{{site.data.keyword.codeengineshort}} limits the size of data for Periodic timer (cron) events with a maximum of 4096 bytes. When you create or update periodic timer (cron) events, {{site.data.keyword.codeengineshort}} checks the size of the cron event data. If the Periodic timer (cron) event data exceeds the limit, a size limit exceeded error is given. If you receive this error, try reducing the cron event data size to less than 4096 bytes. 
-
-For more information about troubleshooting subscriptions, see [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).
 
 ## Increasing limits
 {: #increase-limits}
 
 Limit values are fixed, but can be increased by [contacting IBM support and creating a support case](/docs/codeengine?topic=codeengine-get-support).
-
 
 

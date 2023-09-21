@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-09-21"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -30,7 +30,6 @@ Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? 
 ## Function limitations
 {: #fun-limitations}
 
-- Supported in Washington, D.C. (`us-east`), Frankfurt (`eu-de`), and Sydney (`au-syd`) regions only.
 - No support for subscribing to event producers.
 - No support for custom domains.
 - No support for limiting the visibility of your function.

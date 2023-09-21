@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-09-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep23)
 
     * Review the release notes for September 2023.
+
+    * [21 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2123)
+
+        * New! Added support for liveness and readiness probes for applications in {{site.data.keyword.codeengineshort}} 
+
+        * CLI version 1.46.0 released
+
+        * Added troubleshooting information for toolchain 
+
+        * Added getting started information about working with the {{site.data.keyword.codeengineshort}} CLI
 
     * [19 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep1923)
 
@@ -2250,6 +2260,40 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Deleting domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-cli)
 
+[Working with liveness and readiness probes for your app](/docs/codeengine?topic=codeengine-app-probes#app-probes)
+
+* [What are liveness and readiness probes?](/docs/codeengine?topic=codeengine-app-probes#app-probes-terms)
+
+* [Why use liveness and readiness probes with my apps?](/docs/codeengine?topic=codeengine-app-probes#app-probes-why)
+
+* [Implementing a readiness or liveness probe in your code](/docs/codeengine?topic=codeengine-app-probes#app-probes-implement)
+
+* [Configuring liveness and readiness probes in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-app-probes#app-probes-config)
+
+    * [Properties for liveness and readiness probes](/docs/codeengine?topic=codeengine-app-probes#app-probes-properties)
+
+    * [Configuring probes from the console](/docs/codeengine?topic=codeengine-app-probes#app-probes-config-ui)
+
+    * [Configuring probes with the CLI](/docs/codeengine?topic=codeengine-app-probes#app-probes-config-cli)
+
+* [Viewing probe settings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-app-probes#app-probes-view)
+
+    * [Viewing probe settings from the console](/docs/codeengine?topic=codeengine-app-probes#app-probes-view-ui)
+
+    * [Viewing probe settings with the CLI](/docs/codeengine?topic=codeengine-app-probes#app-probes-view-cli)
+
+* [Updating probes](/docs/codeengine?topic=codeengine-app-probes#app-probes-update)
+
+    * [Updating probes from the console](/docs/codeengine?topic=codeengine-app-probes#app-probes-update-ui)
+
+    * [Updating probes with the CLI](/docs/codeengine?topic=codeengine-app-probes#app-probes-update-cli)
+
+* [Deleting probes](/docs/codeengine?topic=codeengine-app-probes#delete-custom-domain)
+
+    * [Deleting probes from the console](/docs/codeengine?topic=codeengine-app-probes#app-probes-delete-ui)
+
+    * [Deleting probes with the CLI](/docs/codeengine?topic=codeengine-app-probes#app-probes-delete-cli)
+
 
 ## Running jobs
 {: #sitemap_running_jobs}
@@ -3539,7 +3583,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce subscription cron update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update)
 
-* [Subscription `kafka` commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
+* [Subscription kafka commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
 
     * [`ibmcloud ce subscription kafka create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create)
 
@@ -3556,6 +3600,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce version`](/docs/codeengine?topic=codeengine-cli#cli-versioncmd)
 
 [CLI version history](/docs/codeengine?topic=codeengine-cli_versions#cli_versions)
+
+[Getting started with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-cecli-getstart#cecli-getstart)
+
+* [Setting up your CLI environment](/docs/codeengine?topic=codeengine-cecli-getstart#cecli-getstart-setup)
+
+* [Working with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-cecli-getstart#cecli-getstart-workcecli)
+
+* [Next steps](/docs/codeengine?topic=codeengine-cecli-getstart#cecli-getstart-next)
 
 
 ## API reference
@@ -3641,9 +3693,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Function limits](/docs/codeengine?topic=codeengine-limits#limits_functions)
 
-* [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
-
 * [Periodic timer (cron) subscription limits](/docs/codeengine?topic=codeengine-limits#subscription-cron-limit)
+
+* [Project limits](/docs/codeengine?topic=codeengine-limits#limits_projects)
+
+* [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
 
 * [Increasing limits](/docs/codeengine?topic=codeengine-limits#increase-limits)
 
@@ -4106,7 +4160,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Debugging your {{site.data.keyword.codeengineshort}} toolchain](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce#troubleshoot-toolchain-ce)
 
+* [Creating a debug log file for your pipeline](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce#troubleshoot-toolchain-ce-log)
+
+* [More information](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce#troubleshoot-toolchain-ce-info)
+
 [Why does my build run in my toolchain time out?](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain#ts-buildrun-timeout-toolchain)
+
+[Why is my toolchain package too large?](/docs/codeengine?topic=codeengine-ts-toolchain-size#ts-toolchain-size)
 
 
 ## Getting help and support for {{site.data.keyword.codeengineshort}}
