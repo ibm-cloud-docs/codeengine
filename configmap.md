@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-09-27"
 
 keywords: configmaps with code engine, key references with code engine, key-value pair with code engine, setting up configmaps with code engine, configmaps, environment variables
 
@@ -217,7 +217,7 @@ Your app, job, or function workload can consume and use the information that is 
 You can use the console to create environment variables for your app, job, or function workload that fully reference a configmap or reference individual keys in a configmap. 
 {: shortdesc}
 
-Before you can reference a configmap, it must exist. See [create a configmap](/docs/codeengine?topic=codeengine-configmap-create-ui).
+Before you can reference a configmap, it must exist. See [create a configmap](#configmap-create-ui).
 
 From the console, you can reference only one individual key of a defined configmap per environment variable. If you need to reference more than one key of a configmap, then repeat the steps to define another environment variable that references a different key.
 {: note}
