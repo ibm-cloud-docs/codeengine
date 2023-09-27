@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-09-27"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine, user access, access, platform roles, service roles
 
@@ -57,7 +57,7 @@ Choose any of the following actions to manage access groups in the {{site.data.k
 * [Creating an access group](/docs/account?topic=account-groups#create_ag).
 * [Assigning access to a group](/docs/account?topic=account-groups#access_ag).
 
-For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=cli-ibmcloud_commands_iam).
+For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=account-ibmcloud_commands_iam).
 
 ## Managing access by assigning policies directly to users
 {: #users}
@@ -70,7 +70,7 @@ Choose any of the following actions to manage IAM policies in the {{site.data.ke
 * To revoke permissions, see [Removing access](/docs/account?topic=account-assign-access-resources#removing-access-console).
 * To review a user's permissions, see [Reviewing your assigned access](/docs/account?topic=account-assign-access-resources#review-your-access-console).
 
-For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=cli-ibmcloud_commands_iam).
+For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=account-ibmcloud_commands_iam).
 
 ## {{site.data.keyword.cloud_notm}} platform roles
 {: #platform}
