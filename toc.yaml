@@ -133,7 +133,6 @@ toc:
       - dockerfiletips.md
       - toolchain-ce.md
       - terraform-ce.md
-      - satellite-ce.md
       - topicgroup:
           label: Subscribing to event producers
           topics:

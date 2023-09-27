@@ -2901,27 +2901,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Data Sources](/docs/codeengine?topic=codeengine-terraform-setup-ce#terraform-supported-data-sources)
 
 
-## Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}
-{: #sitemap_getting_started_with_workloads_in_}
-
-
-[Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce)
-
-* [Limitations for Beta](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-beta-limits)
-
-* [Prerequisites for running {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-prereqs)
-
-* [Setting up service-to-service access](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-authority)
-
-* [Setting up {{site.data.keyword.codeengineshort}} on {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-setup)
-
-* [Creating a project in a compute environment](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-project)
-
-* [Why doesn't my compute environment create?](/docs/codeengine?topic=codeengine-satellite-ce#ts-sat-ce-envir-create)
-
-* [Why can't I access my app?](/docs/codeengine?topic=codeengine-satellite-ce#ts-sat-ce-app-access)
-
-
 ## Subscribing to event producers
 {: #sitemap_subscribing_to_event_producers}
 
