@@ -133,7 +133,6 @@ toc:
       - dockerfiletips.md
       - toolchain-ce.md
       - terraform-ce.md
-      - satellite-ce.md
       - topicgroup:
           label: Subscribing to event producers
           topics:
@@ -159,7 +158,7 @@ toc:
       - topicgroup:
           label: Connecting over private networks
           topics:
-          - virtualprivateendpt.md               
+          - virtualprivateendpt.md
           - serviceendpt.md
       - topicgroup:
           label: Enhancing security for Code Engine
@@ -261,6 +260,7 @@ toc:
               - ts-jobrun-findinginfo.md
               - ts-allowlist-job.md
               - ts-jobrun-daemon.md
+
           - topicgroup:
               label: Troubleshooting projects 
               topics:

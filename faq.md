@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-09-27"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -114,7 +114,7 @@ No, {{site.data.keyword.codeengineshort}} does generate or provide an OpenAPI sp
 {: faq}
 {: support}
 
-For the latest service level agreement terms, see the [terms of service](/docs/overview/terms-of-use?topic=overview-terms).
+For the latest service level agreement terms, see the [terms of service](/docs/overview?topic=overview-terms).
 
 ## How can I give feedback? 
 {: #give-feedback}

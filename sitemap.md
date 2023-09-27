@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-21"
+lastupdated: "2023-09-27"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep23)
 
     * Review the release notes for September 2023.
+
+    * [27 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2723)
+
+        * Added support for liveness and readiness probes for applications in the {{site.data.keyword.codeengineshort}} V2 API
 
     * [21 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2123)
 
@@ -2792,6 +2796,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry)
 
+    * [What authorities do I need?](/docs/codeengine?topic=codeengine-add-registry#authorities-registry-what-auth)
+
+    * [Can I use a service ID?](/docs/codeengine?topic=codeengine-add-registry#authorities-registry-service-id)
+
+    * [Can I access images in a different registry?](/docs/codeengine?topic=codeengine-add-registry#authorities-registry-access-images)
+
+    * [Can I restrict pull access to a certain regional registry or even a single namespace?](/docs/codeengine?topic=codeengine-add-registry#authorities-registry-pull-access)
+
 * [Accessing images from a public account](/docs/codeengine?topic=codeengine-add-registry#images-public-account)
 
 * [Accessing images in your own account from console](/docs/codeengine?topic=codeengine-add-registry#images-your-account)
@@ -2899,27 +2911,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Resources](/docs/codeengine?topic=codeengine-terraform-setup-ce#terraform-supported-resources)
 
     * [Data Sources](/docs/codeengine?topic=codeengine-terraform-setup-ce#terraform-supported-data-sources)
-
-
-## Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}
-{: #sitemap_getting_started_with_workloads_in_}
-
-
-[Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce)
-
-* [Limitations for Beta](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-beta-limits)
-
-* [Prerequisites for running {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-prereqs)
-
-* [Setting up service-to-service access](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-authority)
-
-* [Setting up {{site.data.keyword.codeengineshort}} on {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-setup)
-
-* [Creating a project in a compute environment](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-project)
-
-* [Why doesn't my compute environment create?](/docs/codeengine?topic=codeengine-satellite-ce#ts-sat-ce-envir-create)
-
-* [Why can't I access my app?](/docs/codeengine?topic=codeengine-satellite-ce#ts-sat-ce-app-access)
 
 
 ## Subscribing to event producers
@@ -3641,6 +3632,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [27 September 2023](/docs/codeengine?topic=codeengine-api-changelog#27-sep-2023)
 
 * [22 June 2023](/docs/codeengine?topic=codeengine-api-changelog#22-june-2023)
 

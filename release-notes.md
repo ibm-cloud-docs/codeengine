@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-21"
+lastupdated: "2023-09-27"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,14 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for September 2023.
 {: shortdesc}
+
+### 27 September 2023
+{: #codeengine-sep2723}
+{: release-note}
+
+Added support for liveness and readiness probes for applications in the {{site.data.keyword.codeengineshort}} V2 API
+:   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
+
 
 ### 21 September 2023
 {: #codeengine-sep2123}
@@ -1181,7 +1189,7 @@ CLI version 1.25.2 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Added more information for troubleshooting jobs when job runs do not complete 
-:   See [Why is my job not completing(/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete)?
+:   See [Why is my job not completing](/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete)?
 
 Added information about considerations when you use SSH keys for accessing your source repository
 :   See [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key).

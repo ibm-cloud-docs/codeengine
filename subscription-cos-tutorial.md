@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-09-27"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -153,7 +153,7 @@ Only account administrators can assign the Notifications Manager role.
     {: pre}
 
 
-2. Assign the Notification Manager role by using the [**`ibmcloud iam authorization-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
+2. Assign the Notification Manager role by using the [**`ibmcloud iam authorization-policy-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 
     For example, to assign the Notifications Manager role to a project named `myproject` for an {{site.data.keyword.cos_short}} instance named `mycosinstance`,
 
@@ -274,7 +274,7 @@ Note that subscriptions can affect how an application scales. For more informati
 {: #test-subscription-cos}
 {: step}
 
-1. Upload a `.txt` file to your bucket. For example, you can use the [**`ibmcloud cos object-put`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-upload-object) command to upload the `sample.txt` object to a bucket with `sample` as the value for `--key`.
+1. Upload a `.txt` file to your bucket. For example, you can use the [**`ibmcloud cos object-put`**](/docs/cloud-object-storage?topic=cloud-object-storage-ic-cos-cli#ic-upload-object) command to upload the `sample.txt` object to a bucket with `sample` as the value for `--key`.
 
    
     ```txt
@@ -354,7 +354,7 @@ Now you know that your {{site.data.keyword.cos_short}} subscription was created 
     ```
     {: screen}
 
-3. Delete an object from your bucket that has the `test` prefix. For example, delete a file with `test2.txt` for the name (or key). You can use the [**`ibmcloud cos object-delete`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-delete-object) command to delete an object from your bucket or use the {{site.data.keyword.cos_short}} console.
+3. Delete an object from your bucket that has the `test` prefix. For example, delete a file with `test2.txt` for the name (or key). You can use the [**`ibmcloud cos object-delete`**](/docs/cloud-object-storage?topic=cloud-object-storage-ic-cos-cli#ic-delete-object) command to delete an object from your bucket or use the {{site.data.keyword.cos_short}} console.
 
 4. View the processed event by using the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command.
 
@@ -393,7 +393,7 @@ ibmcloud ce app delete --name cos-app
 {: pre}
 
 
-Ready to delete your {{site.data.keyword.cos_short}} bucket and service instance? You can use the [**`ibmcloud cos bucket-delete`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-delete-bucket) command to remove your bucket. To remove your {{site.data.keyword.cos_short}} service instance, use the [**`ibmcloud resource service-instance-delete`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command.
+Ready to delete your {{site.data.keyword.cos_short}} bucket and service instance? You can use the [**`ibmcloud cos bucket-delete`**](/docs/cloud-object-storage?topic=cloud-object-storage-ic-cos-cli#ic-delete-bucket) command to remove your bucket. To remove your {{site.data.keyword.cos_short}} service instance, use the [**`ibmcloud resource service-instance-delete`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command.
 
 
 

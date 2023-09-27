@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-09-27"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -36,6 +36,12 @@ The following table shows the service behavior changes for each version date. Sw
 |`2021-Mar-31`| Version 1.0.0  |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
 
+## 27 September 2023
+{: #27-sep-2023}
+
+Added support for liveness and readiness probes for applications in the API. Set the probes and their properties when you create or update an application with the API.
+:   - See [Create an application API](https://cloud.ibm.com/apidocs/codeengine/v2#create-app){: external}.
+:   - See [Update an application API](https://cloud.ibm.com/apidocs/codeengine/v2#update-app){: external}.
 
 
 ## 22 June 2023

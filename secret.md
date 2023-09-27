@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-09-27"
 
 keywords: secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, secrets, configmaps, environment variables
 
@@ -476,7 +476,7 @@ Your job, function, or app can consume and use the information that is stored in
 You can use the console to create environment variables for your apps, jobs, and functions that fully reference a secret or reference individual keys in a secret. 
 {: shortdesc}
 
-Before you can reference a secret, it must exist. See [create a secret](/docs/codeengine?topic=codeengine-secret-create-ui). For this example, create a secret that is named `target-secret` with the key-value pair of `TARGET=Sunshine`.
+Before you can reference a secret, it must exist. See [create a secret](#secret-create). For this example, create a secret that is named `target-secret` with the key-value pair of `TARGET=Sunshine`.
 
 1. To reference a defined secret from your apps, jobs, and functions, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing secret or reference an individual key in an existing secret. When you fully reference a secret (or configmap), you can optionally specify a `prefix`. For example, if you fully reference the `mysecret` secret from the `myapp` application and use the `mysecret_` prefix, each key in the secret is prefixed with `mysecret_`. 
 
