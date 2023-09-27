@@ -114,7 +114,7 @@ No, {{site.data.keyword.codeengineshort}} does generate or provide an OpenAPI sp
 {: faq}
 {: support}
 
-For the latest service level agreement terms, see the [terms of service](/docs/overview/terms-of-use?topic=overview-terms).
+For the latest service level agreement terms, see the [terms of service](/docs/overview?topic=overview-terms).
 
 ## How can I give feedback? 
 {: #give-feedback}
