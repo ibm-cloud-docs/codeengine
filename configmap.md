@@ -217,7 +217,7 @@ Your app, job, or function workload can consume and use the information that is 
 You can use the console to create environment variables for your app, job, or function workload that fully reference a configmap or reference individual keys in a configmap. 
 {: shortdesc}
 
-Before you can reference a configmap, it must exist. See [create a configmap](#configmap-create-ui).
+Before you can reference a configmap, it must exist. See [create a configmap](#configmap-create).
 
 From the console, you can reference only one individual key of a defined configmap per environment variable. If you need to reference more than one key of a configmap, then repeat the steps to define another environment variable that references a different key.
 {: note}
