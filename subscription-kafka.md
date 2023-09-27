@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-09-27"
 
 keywords: kafka, kafka event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -46,7 +46,7 @@ To get started, [create an {{site.data.keyword.messagehub}} service instance](/d
     ```
     {: pre}
 
-3. To use the {{site.data.keyword.messagehub}} service for creating your Kafka instance, download and install the [{{site.data.keyword.messagehub}} CLI](/docs/cli?topic=EventStreams-cli). 
+3. To use the {{site.data.keyword.messagehub}} service for creating your Kafka instance, download and install the [{{site.data.keyword.messagehub}} CLI](/docs/EventStreams?topic=EventStreams-cli_reference). 
 
     ```txt
     ibmcloud plugin install event-streams -f

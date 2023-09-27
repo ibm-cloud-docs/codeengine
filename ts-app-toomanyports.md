@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-09-27"
 
 keywords: troubleshooting for code engine, troubleshooting domain mapping in code engine, tips for custom domain mapping in code engine, debugging custom domain mapping in code engine, custom domain mapping and code engine, application scaling in code engine, scaling http requests in code engine, open ports, Cloudflare, ports, scan, scanning tool
 
@@ -27,7 +27,7 @@ For incoming connections that use HTTP, the transport layer security (TLS) aspec
 
 {{site.data.keyword.codeengineshort}} exposes only ports `443` (HTTPS) and `80` (HTTP) for application endpoints on Layer 3, Layer 4, and Layer 7. As a result, any other ports, which are opened by Cloudflare, are not being used or routed to the application. If your scanning tool reports open ports, other than `443` and `80`, then the scanning tool is scanning the Cloudflare IP and not the {{site.data.keyword.codeengineshort}} application endpoint. 
 
-To resolve this issue, consider blocking your network traffic on ports other than `80` and `443`. For more information, see [Cloudflare documentation](https://developers.cloudflare.com/fundamentals/get-started/reference/network-ports/#how-to-block-traffic-on-additional-ports){: external} 
+To resolve this issue, consider blocking your network traffic on ports other than `80` and `443`. For more information, see [Cloudflare documentation](https://developers.cloudflare.com/fundamentals/reference/network-ports/#how-to-block-traffic-on-additional-ports){: external} 
 {: tsResolve}
 
 Cloudflare has a large infrastructure and resolves IP addresses depending on the client location to serve traffic worldwide. To learn about IP ranges for Cloudflare, see [Cloudflare documentation - IP ranges](https://www.cloudflare.com/ips/){: external}. 
