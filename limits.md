@@ -101,9 +101,8 @@ The following table lists the limits for functions.
 | ---------------------- |  --------- | ------------------------------------------- |
 | Length of runtime | 120 seconds | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Memory | 48000 MB | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Code size  (inline)  | 100 KB, including base64 overhead |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Code size  (local source) | 200 MB compressed|  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Code size  (API) | 100 KB, including base64 overhead |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Code size  (inline)  | 100 kB compressed, including base64 overhead |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Code size  (local source) | 200 MB compressed, including base64 overhead |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 {: caption="Function limits"}
 
 ## Periodic timer (cron) subscription limits

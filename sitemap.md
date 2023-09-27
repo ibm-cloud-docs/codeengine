@@ -3629,8 +3629,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
 
-* [27 September 2023](/docs/codeengine?topic=codeengine-api-changelog#27-sep-2023)
-
 * [22 June 2023](/docs/codeengine?topic=codeengine-api-changelog#22-june-2023)
 
 * [30 May 2023](/docs/codeengine?topic=codeengine-api-changelog#30-may-2023)
