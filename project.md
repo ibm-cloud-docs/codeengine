@@ -2,12 +2,11 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-09-27"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
 subcollection: codeengine
-
 ---
 
 {{site.data.keyword.attribute-definition-list}}
@@ -122,7 +121,7 @@ The maximum number of projects that you can create per region is 20. For more in
 ## Create a project
 {: #create-a-project}
 
-You can create a project through the console or with the CLI. 
+You can create a project through the console or with the CLI.
 {: shortdesc} 
 
 ### Creating a project from the console
