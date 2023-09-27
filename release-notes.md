@@ -26,6 +26,14 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for September 2023.
 {: shortdesc}
 
+### 27 September 2023
+{: #codeengine-sep2723}
+{: release-note}
+
+Added support for liveness and readiness probes for applications in the {{site.data.keyword.codeengineshort}} V2 API
+:   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
+
+
 ### 21 September 2023
 {: #codeengine-sep2123}
 {: release-note}

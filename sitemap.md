@@ -140,6 +140,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for September 2023.
 
+    * [27 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2723)
+
+        * Added support for liveness and readiness probes for applications in the {{site.data.keyword.codeengineshort}} V2 API
+
     * [21 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2123)
 
         * New! Added support for liveness and readiness probes for applications in {{site.data.keyword.codeengineshort}} 
