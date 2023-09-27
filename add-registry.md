@@ -60,8 +60,7 @@ If your registry is public and does not require credentials; for example, {{site
 
 If your registry is public, you do not have to set up authorities to pull images. Note that pulling images from a public registry while you are getting started with {{site.data.keyword.codeengineshort}} is acceptable. Use a private registry when it comes to your enterprise workloads.
 
-### What authorities do I need?
-{: #authorities-registry-what-auth}
+**What authorities do I need?**
 
 To determine the authorities that you need, consider the following cases:
 
@@ -82,20 +81,29 @@ To determine the authorities that you need, consider the following cases:
 | {{site.data.keyword.codeengineshort}} automatically created registry secret  | `Administrator` platform access \n `Reader`, `Writer`, and `Manager` service access| This action is only supported for {{site.data.keyword.registrylong_notm}}. |
 {: caption="Table 2. Access authorities for image registry" caption-side="bottom"}
 
-### Can I use a service ID?
-{: #authorities-registry-service-id}
+**Can I use a service ID?**
 
 Yes, you can create a service ID and assign authorities to it. Note that service IDs are also automatically created by the {{site.data.keyword.codeengineshort}} UI when you automatically create access to your {{site.data.keyword.registryfull_notm}}. DO NOT delete this service ID as you will lose access to the images in the registry.
 
-### Can I access images in a different registry?
-{: #authorities-registry-access-images}
+**Can I access images in a different registry?**
 
 Yes! [Here is how](#images-different-account).
 
-### Can I restrict pull access to a certain regional registry or even a single namespace?
-{: #authorities-registry-pull-access}
+**Can I restrict pull access to a certain regional registry or even a single namespace?**
 
 Yes, you can edit the existing [IAM policy of the service ID](#authorize-cr-service-id) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user).
+
+Can I use a service ID?
+:    Yes, you can create a service ID and assign authorities to it. Note that service IDs are also automatically created by the {{site.data.keyword.codeengineshort}} UI when you automatically create access to your {{site.data.keyword.registryfull_notm}}. DO NOT delete this service ID as you will lose access to the images in the registry.
+
+Can I access images in a different registry?
+:    Yes! [Here is how](#images-different-account).
+
+Can I restrict pull access to a certain regional registry or even a single namespace?
+:    Yes, you can edit the existing [IAM policy of the service ID](#authorize-cr-service-id) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user).
+
+Can I configure a registry secret for all users in a project? 
+:    Yes! You can use the Integration page in the console to configure settings to set up and manage registry access to images in {{site.data.keyword.registrylong_notm}} so that all users of a specific {{site.data.keyword.codeengineshort}} project can store and access images in {{site.data.keyword.registryshort_notm}} without having to manually create registry secrets. With sufficient permissions, you can configure this default registry access on a per location (region) basis. If you don't have sufficient permissions to perform these actions, you can use this page to help you understand the required permissions. See [Configuring project-wide settings](/docs/codeengine?topic=codeengine-project-integrations). 
 
 
 ## Accessing images from a public account
@@ -297,7 +305,7 @@ Now that you have your access policies in place for your service ID and your API
 To pull images from {{site.data.keyword.registryfull_notm}} in a different account, you must create a service ID, create access policies for the service ID, and then create an API key to store your credentials.
 {: shortdesc}
 
-1. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your project that is used for the IAM policies and API key credentials in the image pull secret with the **`iam service-id-create`** command. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the project name. For a complete listing of the **`iam service-id-create`** command and its options, see the [**`ibmcloud iam service-id-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_service_id_create) command.
+1. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your project that is used for the IAM policies and API key credentials in the image pull secret with the **`iam service-id-create`** command. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the project name. For a complete listing of the **`iam service-id-create`** command and its options, see the [**`ibmcloud iam service-id-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_id_create) command.
 
     For example, the following command creates a service ID called `codeengine-myproject-id` with the description `Service ID for IBM Cloud Container Registry in {{site.data.keyword.codeengineshort}} project myproject`:
 
@@ -306,7 +314,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     ```
     {: pre}
 
-2. Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your service ID that grants access to {{site.data.keyword.registrylong_notm}} with the **`iam service-policy-create`** command. For a complete listing of the **`iam service-policy-create`** command and its options, see the [**`ibmcloud iam service-policy-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
+2. Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your service ID that grants access to {{site.data.keyword.registrylong_notm}} with the **`iam service-policy-create`** command. For a complete listing of the **`iam service-policy-create`** command and its options, see the [**`ibmcloud iam service-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
 
     For example, the following command creates a policy for `codeengine-myproject-id` service ID with the role of `Reader`:
 
@@ -315,7 +323,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     ```
     {: pre}
 
-    The following table summarizes the options that are used with the **`iam service-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam service-policy-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
+    The following table summarizes the options that are used with the **`iam service-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam service-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
 
     | Option | Description |
     | -------------- | -------------- |
@@ -334,7 +342,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     ```
     {: pre}
 
-    The following table summarizes the options that are used with the **`iam service-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam service-policy-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
+    The following table summarizes the options that are used with the **`iam service-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam service-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
 
     | Option | Description |
     | -------------- | -------------- |
@@ -344,7 +352,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     {: caption="Table 5. iam service-policy-create command components" caption-side="bottom"}
 
 
-4. Create an API key for the service ID with the **`iam service-api-key-create`** command. For a complete listing of the **`iam service-api-key-create`** command and its options, see the [**`ibmcloud iam service-api-key-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create) command. Name the API key similar to your service ID, and include the service ID that you previously created, `codeengine-<project_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.
+4. Create an API key for the service ID with the **`iam service-api-key-create`** command. For a complete listing of the **`iam service-api-key-create`** command and its options, see the [**`ibmcloud iam service-api-key-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. Name the API key similar to your service ID, and include the service ID that you previously created, `codeengine-<project_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.
 
     For example, the following command creates a key that is called `codeengine-myproject-key` for the `codeengine-myproject-id` service ID with a description of `API key for service ID codeengine-myproject-id for {{site.data.keyword.codeengineshort}} myproject`:
 

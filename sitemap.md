@@ -2792,14 +2792,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry)
 
-    * [What authorities do I need?](/docs/codeengine?topic=codeengine-add-registry#authorities-registry-what-auth)
-
-    * [Can I use a service ID?](/docs/codeengine?topic=codeengine-add-registry#authorities-registry-service-id)
-
-    * [Can I access images in a different registry?](/docs/codeengine?topic=codeengine-add-registry#authorities-registry-access-images)
-
-    * [Can I restrict pull access to a certain regional registry or even a single namespace?](/docs/codeengine?topic=codeengine-add-registry#authorities-registry-pull-access)
-
 * [Accessing images from a public account](/docs/codeengine?topic=codeengine-add-registry#images-public-account)
 
 * [Accessing images in your own account from console](/docs/codeengine?topic=codeengine-add-registry#images-your-account)
