@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-10-02"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -255,7 +255,7 @@ The following table describes the headers for Periodic timer (cron) events.
 | `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `ce-time` | The time that the event was generated. |
 | `ce-type` | The type of the event. For cron events, this is `dev.knative.sources.ping`. |
-{: caption="Table 1. Header files for events" caption-side="bottom"}
+{: caption="Table 2. Header files for events" caption-side="bottom"}
 
 Example output 
 
@@ -350,7 +350,7 @@ The following table summarizes the options that are used with the **`sub cron cr
 | `--destination-type` | The type of the `destination`, in this case, `job`. |
 | `--destination` | The name of a {{site.data.keyword.codeengineshort}} job in the current project to receive the events from the event producer. |
 | `--schedule` | Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional. |
-{: caption="Table 1. Command options" caption-side="bottom"}
+{: caption="Table 3. Command options" caption-side="bottom"}
 
 Tips for using the **`sub cron`** commands
 :    - The size of data for Periodic timer (cron) events is limited to a maximum of 4096 bytes. Thus, if you use the `--data` option or the `--data-base64` option, you can send a maximum of 4096 bytes. For more information, see [Limits and quotas for Code Engine](/docs/codeengine?topic=codeengine-limits).
@@ -534,7 +534,7 @@ The following table describes the environment variables that are specific to cro
 | `CE_SPECVERSION` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `CE_TIME` | The time that the event was generated. |
 | `CE_TYPE` | The type of the event. For cron events, this is `dev.knative.sources.ping`.  |
-{: caption="Table 3. Environment variables for events" caption-side="bottom"}
+{: caption="Table 4. Environment variables for events" caption-side="bottom"}
 
 #### `CE_DATA` environment variable 
 {: #subcron-envvar-cedata}
