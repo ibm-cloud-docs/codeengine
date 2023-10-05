@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-10-02"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -34,7 +34,7 @@ The following table shows the service behavior changes for each version date. Sw
 |---|---|
 |`2022-Dec-09`| Version 2.0.0 |
 |`2021-Mar-31`| Version 1.0.0  |
-{: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
+{: caption="Table 1. Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
 
 ## 27 September 2023
 {: #27-sep-2023}
