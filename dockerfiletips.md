@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2023
+lastupdated: "2023-10-09"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image, container as non-root
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Writing a Dockerfile for {{site.data.keyword.codeengineshort}}
 {: #dockerfile}
 
-Before you build your code into a container image, learn some basics of how a Docker build works within {{site.data.keyword.codeenginefull}}. Then, look at some best practices for your Dockerfile to reach these goals.
+Before you build your code into a container image, learn some basics of how a Docker build works within {{site.data.keyword.codeenginefull}}. Then, look at some best practices for your Dockerfile to reach these goals. These examples focus on reducing the image size, improving the interoperability with {{site.data.keyword.codeengineshort}} applications, and to run containers as a non-root user.
 {: shortdesc}
 
 When you create your build configuration, you decide which of the two available strategies to use.
@@ -60,7 +60,7 @@ If your Dockerfile is not in the context directory, then you can point to it by 
 
 To try out a Docker build on your local system before you build it in {{site.data.keyword.codeengineshort}}, you can use [Docker Desktop](https://www.docker.com/products/docker-desktop){: external}.
 
-Let's now look at specific aspects of a Dockerfile that can help you to improve your Dockerfile. These examples focus on reducing the image size, improving the interoperability with {{site.data.keyword.codeengineshort}} applications, and to run containers as a non-root user.
+
 
 ## Reducing the size of a container image
 {: #reduce-container}
@@ -71,7 +71,7 @@ Reducing the size of a container image brings a value in multiple aspects.
 - Sometimes, the build run needs less time to complete because a smaller image can be transferred faster to the container registry than a much larger one. You again save money.
 - The application or job that uses the image starts faster because the time that is needed to pull the image is shorter. As the resources that are needed to run your application or job are reserved while the image is pulled, you again save money. A fast startup time is especially relevant for applications in {{site.data.keyword.codeengineshort}} because it guarantees an acceptable response time for the requests of your users, even if the application is scaled down to zero.
 
-Let's look at some best practices to reduce the size of your build.
+Look at some the following best practices to reduce the size of your build.
 
 ### Combine several commands in a single `RUN` statement to reduce image size
 {: #combine-commands}
