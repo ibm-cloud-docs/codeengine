@@ -61,11 +61,7 @@ The default combination for apps and jobs is 1 vCPU and 4 GB memory. The default
 Your existing apps and jobs might be using other memory and CPU combinations, and those will remain unaffected. However, these other combinations are not valid and only the valid combinations are supported. Therefore, any new apps or jobs as well as any changes to existing apps or jobs must comply with the list of valid choices. 
 {: important}
 
-See the following list for valid combinations of vCPU and memory for functions.
 
-- 0.25 vCPU and 1 GB memory (**Default**)
-- 0.5 vCPU and 2 GB memory
-- 1 vCPU and 4 GB memory
 
 ## Units of measurement
 {: #unit-measurements}
