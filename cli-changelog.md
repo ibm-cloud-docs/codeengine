@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-21"
+lastupdated: "2023-10-09"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.46.1 | 2023-10-09 | - Fixed various bugs. |
 | 1.46.0 | 2023-09-21 | - Added support for liveness and readiness probes with applications. Added support for the `--probe-live`, `--probe-ready`, `--probe-live-clear`, and `probe-ready-reset` options on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) and [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. See [Working with liveness and readiness probes for your app](/docs/codeengine?topic=codeengine-app-probes). |
 | 1.45.4 | 2023-09-12 | - Upgraded to Go 1.21.0. \n - Fixed various bugs. |
 | 1.45.3 | 2023-07-26 | - Fixed various bugs. |
