@@ -57,7 +57,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How do apps compare to jobs and functions?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads-compare)
 
-* [What are the key features of working with  {{site.data.keyword.codeengineshort}} applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-features)
+* [What are the key features of working with {{site.data.keyword.codeengineshort}} applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-features)
 
     * [Isolation](/docs/codeengine?topic=codeengine-ceapplications#ceapp-isolation)
 
@@ -470,7 +470,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated versions for buildpacks
 
-        * Added information about supported Knative versions
+        * Added information about supported versions of Knative
 
 * [December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec22)
 
@@ -1524,7 +1524,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated sizes for builds.
 
-        * CLI version 0.5.8 and 0.5.9 released.
+        * CLI versions 0.5.8 and 0.5.9 released.
 
     * [14 December 2020](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec1420)
 
@@ -2304,7 +2304,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Updating probes with the CLI](/docs/codeengine?topic=codeengine-app-probes#app-probes-update-cli)
 
-* [Deleting probes](/docs/codeengine?topic=codeengine-app-probes#delete-custom-domain)
+* [Deleting probes](/docs/codeengine?topic=codeengine-app-probes#delete-probes)
 
     * [Deleting probes from the console](/docs/codeengine?topic=codeengine-app-probes#app-probes-delete-ui)
 

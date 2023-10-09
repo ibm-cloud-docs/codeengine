@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-10-09"
 
 keywords: code engine, build, buildrun, running a build, building from source code
 
@@ -31,7 +31,7 @@ Build runs that complete are ultimately automatically deleted. When your build r
 2. Select the project where you created your build.
 3. From the project page, click **Image builds**.
 4. Select your build configuration.
-5. In the **Configuration** section, you can review the build configuration and changes values, if needed.
+5. In the **Configuration** section, you can review the build configuration and change values, if needed.
 6. To submit your build, click **Submit build**.
 7. Verify any additional information, such as the **Image tag** to create a specific tag for this build run or overwrite the **Timeout** value.
 8. Submit the build run by clicking **Submit build**.
@@ -66,7 +66,7 @@ The following table summarizes the options that are used with the **`buildrun su
 | Option | Description |
 | --- | --- |
 | `--build` | The name of the build configuration to use. This value is required. |
-| `--name` | The name of the build run. Use a name that is unique within the project.  \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-). |
+| `--name` | The name of the build run. Use a name that is unique within the project. \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-). |
 {: caption="Table 3. Command description" caption-side="bottom"}
 
 Your build runs begins. Monitor the progress by using the [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. 
@@ -116,7 +116,7 @@ The following scenario clones the [Samples for {{site.data.keyword.codeengineful
     ```
     {: pre}
 
-2. Go to the directory where your source code is on your workstation. For example, go to the `CodeEngine` subdirectory as this is the directory where the {{site.data.keyword.codeengineshort}} Samples reside.
+2. Go to the directory where your source code is on your workstation. For example, go to the `CodeEngine` subdirectory where the {{site.data.keyword.codeengineshort}} Samples reside.
 
 3. From the directory where your source code resides, submit the build run. The following example runs a build that is called `buildrun-local-dockerfile`and uses the `build-local-dockerfile` build configuration. The `--source` option specifies the path to the source on the local workstation to the `helloworld` sample.
 
@@ -172,7 +172,7 @@ The following scenario clones the [Samples for {{site.data.keyword.codeengineful
     ```
     {: screen}
 
-When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. After the build run is completed, you can see your built image, such as `codeengine-build`, in the {{site.data.keyword.registrylong_notm}} instance. You also see a source image with `-source` appended to the name of your build, such as `codeengine-build-source`. You can delete this source image without impact. 
+When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. After the build run is completed, you can see your built image, such as `codeengine-build`, in the {{site.data.keyword.registrylong_notm}} instance. You can also see a source image with `-source` appended to the name of your build, such as `codeengine-build-source`. You can delete this source image without impact. 
 {: note}
 
 For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).

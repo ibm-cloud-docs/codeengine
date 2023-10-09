@@ -499,7 +499,7 @@ Review the release notes for February 2023.
 {: release-note}
 
 Important: Project limits for resources in a {{site.data.keyword.codeengineshort}} project is increased
-:   See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits#project_quotas). The following limits have changed. 
+:   See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits#project_quotas). The following limits are changed. 
     * Applications:   40 apps per project
     * Application revisions:  120 revisions per project
     * CPU: The total combination for all the app instances, running job instances, and running build instances cannot exceed 128 vCPU.
@@ -616,7 +616,7 @@ CLI version 1.40.5 released
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
-Added information about supported Knative versions
+Added information about supported versions of Knative
 :   See [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
 
 
@@ -845,7 +845,7 @@ Updated CPU and memory limits and maximums for jobs and apps
     * See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 Added support for jobs that can run indefinitely
-:   See [Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-daemon)
+:   See [Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-daemon).
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
@@ -1008,7 +1008,7 @@ Updated versions for buildpacks
 {: release-note}
 
 New! Deploying apps and running jobs with {{site.data.keyword.codeengineshort}} is even easier!
-:   With {{site.data.keyword.codeengineshort}}, you can now go from source code to a running app or a configured job with a **single** command. The **`app create`** command automatically runs the container build and deploys your app in a single step. You don't even need to know about building container images or working with registries. Just let {{site.data.keyword.codeengineshort}} handle all these processes for you.
+:   With {{site.data.keyword.codeengineshort}}, you can now go from source code to a running app or a configured job with a **single** command. The **`app create`** command automatically runs the container build and deploys your app in a single step. You don't even need to know about building container images or working with registries. Let {{site.data.keyword.codeengineshort}} handle all these processes for you.
     * If you are familiar with "push source code" platforms, such as Cloud Foundry, start by exploring the tutorial [Deploying Cloud Foundry applications in Code Engine: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial). 
     * If you are familiar with {{site.data.keyword.codeengineshort}}, see [Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code), [Deploying your app from local source code with the CLI](/docs/codeengine?topic=codeengine-app-local-source-code), [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code), and [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code).
 
@@ -1099,7 +1099,7 @@ CLI version 1.28.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions). 
 
 Added information about registry access secret types
-:   Types include {{site.data.keyword.codeengineshort}} managed secrets and user-managed secrets. If no credentials are needed to access the registry, then the access is `None`.  See [Types of registry access secrets](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets).
+:   Types include {{site.data.keyword.codeengineshort}} managed secrets and user-managed secrets. If no credentials are needed to access the registry, then the access is `None`. See [Types of registry access secrets](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets).
 
 Added information about setting max-scale = 0
 :   Max scale is the maximum number of instances that can be used for an app. If you set this value to 0, the application scales as needed and is limited only by the resource quota for the project of your app. See [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries).
@@ -1129,7 +1129,7 @@ CLI version 1.27.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).  
 
 Improved service binding implementation 
-:   CLI 1.27.0 introduces an improved service binding implementation, which is used for all new service bindings. Existing applications and jobs continue to function normally. However, if you want to bind an additional service instance to an app or job, you must first delete any existing service bindings from that app or job. You can then re-create those service bindings with the improved service binding implementation. See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
+:   CLI 1.27.0 introduces an improved service binding implementation, which is used for all new service bindings. Existing applications and jobs continue to function normally. However, if you want to bind another service instance to an app or job, you must first delete any existing service bindings from that app or job. You can then re-create those service bindings with the improved service binding implementation. See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
 
 ## February 2022
 {: #codeengine-feb22}
@@ -1412,7 +1412,7 @@ Review the release notes for 15 October 2021.
 {: shortdesc}
 
 Added support for deploying apps with project-only endpoints.  
-:   App create and update workflows from the console support `Project-only` visibility for app endpoints. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local). See [Deploying your app with a project-only endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly).
+:   Workflows for application create and update from the console support `Project-only` visibility for app endpoints. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local). See [Deploying your app with a project-only endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly).
 
 Added information about creating custom dashboards to monitor {{site.data.keyword.codeengineshort}} workloads.
 :   See [Creating custom dashboards to monitor {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-custom).
@@ -2356,7 +2356,7 @@ Updated versions for buildpacks.
 Updated sizes for builds.
 :   See [build sizes](/docs/codeengine?topic=codeengine-plan-build#build-size).
 
-CLI version 0.5.8 and 0.5.9 released.
+CLI versions 0.5.8 and 0.5.9 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 14 December 2020
@@ -2797,6 +2797,6 @@ Review the release notes for 18 May 2020.
 {: shortdesc}
 
 New! [{{site.data.keyword.codeenginefull_notm}} experimental release](https://cloud.ibm.com/codeengine/overview){: external}
-:   With {{site.data.keyword.codeengineshort}}, you can build [applications](/docs/codeengine?topic=codeengine-application-workloads) in any language and then deploy them in seconds. Offload long running and resource hungry tasks to [asynchronous jobs](/docs/codeengine?topic=codeengine-create-job) that allow for optimized scale and cost efficiency. Learn how to get started with our [Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) and [Running jobs](/docs/codeengine?topic=codeengine-run-job-tutorial) tutorials.
+:   With {{site.data.keyword.codeengineshort}}, you can build [applications](/docs/codeengine?topic=codeengine-application-workloads) in any language and then deploy them in seconds. Offload long-running and resource-hungry tasks to [asynchronous jobs](/docs/codeengine?topic=codeengine-create-job) that allow for optimized scale and cost efficiency. Learn how to get started with our [Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) and [Running jobs](/docs/codeengine?topic=codeengine-run-job-tutorial) tutorials.
 
 
