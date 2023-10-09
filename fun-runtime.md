@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-01"
+lastupdated: "2023-10-09"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -32,8 +32,8 @@ The following runtimes are supported as managed runtimes.
   
 - Node.js 18
 - Python 3.11
-  
 
 For memory and CPU information, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+
 
  

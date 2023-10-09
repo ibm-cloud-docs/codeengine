@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-10-09"
 
 keywords: commands, arguments, cmd, workloads, application, job
 
@@ -33,7 +33,10 @@ When you create a {{site.data.keyword.codeengineshort}} application or job, you 
 - If `--command` is used, then any image `Entrypoint` value is overwritten and any image `cmd` values are ignored.
 - If `--argument` is used, then any image `Command` value in overwritten.
 
-To better understand this process, let's look at a few examples,
+
+
+
+To better understand this process, look at the following examples,
 
 | Image `Entrypoint` | Image `Cmd` |    {{site.data.keyword.codeengineshort}} `command` |    {{site.data.keyword.codeengineshort}} `args` |    Command that is run |
 | ------ |  ------ | ------ | ------ | ------ |
