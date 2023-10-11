@@ -3713,7 +3713,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo#mem-cpu-combo)
 
-* [Supported combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo#supported-combo)
+* [Supported combinations for apps and jobs](/docs/codeengine?topic=codeengine-mem-cpu-combo#supported-combo)
 
 * [Units of measurement](/docs/codeengine?topic=codeengine-mem-cpu-combo#unit-measurements)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-10-11"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine, memory and CPU
 
@@ -36,7 +36,7 @@ Consider the following examples of setting valid values for ephemeral storage:
 For more information about memory or CPU limitations, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 
-## Supported combinations
+## Supported combinations for apps and jobs
 {: #supported-combo}
 
 See the following table for valid combinations of vCPU and memory.
