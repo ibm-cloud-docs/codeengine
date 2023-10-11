@@ -2428,7 +2428,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Considerations when planning parallel batch jobs](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-consider)
 
 
-## Creating a Function
+## Creating a function
 {: #sitemap_creating_a_function}
 
 
