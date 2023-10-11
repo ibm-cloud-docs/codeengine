@@ -290,6 +290,6 @@ toc:
               topics:
               - troubleshoot-toolchain.md
               - ts-toolchain-buildrun.md
-              - ts-toolchain-size.md
+              - ts-toolchain-size.md              
       - get-support.md
       - sitemap.md
