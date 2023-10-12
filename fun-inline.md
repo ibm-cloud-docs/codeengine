@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-15"
+lastupdated: "2023-10-12"
 
 keywords: functions in code engine, function workloads, function inline
 
@@ -26,22 +26,23 @@ You can create your function with inline code. Your code is stored with your fun
 
 Create a function with inline code with the console.
 {: shortdesc} 
-  
-
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Start creating**.
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to create a function. 
+2. Select **Let's go**.
 3. Select **Functions**.
-4. Enter a name for the function; for example, `hellofun`. Use a name for your function that is unique within the project. 
-6. From the **Main settings**, choose a runtime. You can also set resources and optional settings. 
-7. Click **Create**.
-8. In the **Configuration** section, paste in your function code.
-9. Click **Save**.
+4. Enter a name for the function; for example, `myfunction`. Use a name for your function that is unique within the project. 
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must select a project to create a function. 
+6. Select a **Runtime image** for your function code. For more information, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
+7. Select to **Specify your code as an inline code bundle**. When you select this option, your function is created with a sample code bundle for the selected runtime. You can edit the sample code after the function is created. The code bundle is stored inline with the function.
+8. Specify your resource information, including [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo) and {Scale down delay](/docs/codeengine?topic=codeengine-fun-work#functions-scale). 
+9. Optionally, specify a [custom domain](/docs/codeengine?topic=codeengine-fun-domainmapping) or [environment variables](/docs/codeengine?topic=codeengine-envvar). You can add these options later.
+10. Click **Create**.
+11. After the Function status changes to **Ready**, you can test the function. Click **Test function** and then click **Send request**. To open the function in a web page, click **Function URL**. 
+12. You can also change your function code in the Editor window. When you redeploy your function, the code is stored inline.
 
 You can invoke your function by clicking **Test function** and then **Send request**.
 
-You can save the code that was used to create any inline function by running the **`function get`** command with the `--save` options. For example, `ibmcloud ce function get --name hellofun --save hellofun2.js`.
+You can retrieve the code that was used to create any inline function by running the **`function get`** command with the `--save` options. For example, `ibmcloud ce function get --name hellofun --save hellofun2.js`.
 {: tip}
 
 ## Creating a function with inline code with the CLI
