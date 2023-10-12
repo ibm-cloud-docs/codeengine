@@ -24,7 +24,7 @@ You can create your function with inline code. Your code is stored with your fun
 ## Creating a function with inline with the console
 {: #fun-create-inline-console}
 
-Create a function with inline code with the console.
+Create a function with inline code from the console.
 {: shortdesc} 
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
