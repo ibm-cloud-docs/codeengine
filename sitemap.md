@@ -2472,7 +2472,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-inlinecode#nextsteps-funinline)
 
-[Creating Function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo)
+[Creating function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo)
+
+* [Creating function workloads with repository source code from the console](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo-console)
+
+* [Creating function workloads with repository source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo-cli)
 
 * [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package-repo)
 
