@@ -259,7 +259,6 @@ toc:
               - ts-jobrun-findinginfo.md
               - ts-allowlist-job.md
               - ts-jobrun-daemon.md
-
           - topicgroup:
               label: Troubleshooting projects 
               topics:
