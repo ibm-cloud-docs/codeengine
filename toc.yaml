@@ -78,7 +78,6 @@ toc:
           - appdeploy-access.md
           - appdeploy-update.md
           - app-scale.md
-          - app-domainmapping.md
           - app-probes.md
       - topicgroup:
           label: Running jobs
@@ -129,7 +128,7 @@ toc:
           - servicebind-access.md
           - servicebind-config.md
       - add-registry.md
-      - plan-repo.md        
+      - plan-repo.md
       - dockerfiletips.md
       - toolchain-ce.md
       - terraform-ce.md
