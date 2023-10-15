@@ -97,7 +97,7 @@ toc:
           label: Creating a function
           topics:
           - fun-work.md
-          - fun-inline.md
+          - fun-create-inlinecode.md
           - fun-create-repo.md
           - fun-create-local.md
           - fun-runtime.md

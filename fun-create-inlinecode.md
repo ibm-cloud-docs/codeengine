@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-12"
+lastupdated: "2023-10-15"
 
 keywords: functions in code engine, function workloads, function inline
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating Function workloads with inline code
+# Creating function workloads with inline code
 {: #fun-create-inlinecode}
 
 You can create your function with inline code. Your code is stored with your function. You can create this type of function from the console or with the CLI. 
@@ -29,7 +29,7 @@ Create a function with inline code from the console.
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Let's go**.
-3. Select **Functions**.
+3. Select **Function**.
 4. Enter a name for the function; for example, `myfunction`. Use a name for your function that is unique within the project. 
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must select a project to create a function. 
 6. Select a **Runtime image** for your function code. For more information, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
@@ -42,7 +42,8 @@ Create a function with inline code from the console.
 
 You can invoke your function by clicking **Test function** and then **Send request**.
 
-You can retrieve the code that was used to create any inline function by running the **`function get`** command with the `--save` options. For example, `ibmcloud ce function get --name hellofun --save hellofun2.js`.
+You can retrieve the code that was used to create any inline function by running the **`function get`** command with the `--save` options. For example, `ibmcloud ce function get --name myfunction
+ --save hellofun2.js`.
 {: tip}
 
 ## Creating a function with inline code with the CLI
