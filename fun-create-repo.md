@@ -102,7 +102,7 @@ The following table summarizes the options that are used with the **`function cr
 | -------------- | -------------- |
 | `--name` | The name of the function. Use a name that is unique within the project. This value is required. \n - The name must begin with a lowercase letter. \n - The name must end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain letters, numbers, and hyphens (-). | 
 | `--build-source` | The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`. |
-| `--build-context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. |
+| `--build-context-dir` | The directory in the repository that contains the code. This value is optional. |
 | `--runtime` | The runtime for the function. |
 {: caption="Table 1. Command description" caption-side="bottom"}
 
