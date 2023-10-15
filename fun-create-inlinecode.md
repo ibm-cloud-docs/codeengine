@@ -34,7 +34,7 @@ Create a function with inline code from the console.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must select a project to create a function. 
 6. Select a **Runtime image** for your function code. For more information, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
 7. Select to **Specify your code as an inline code bundle**. When you select this option, your function is created with a sample code bundle for the selected runtime. You can edit the sample code after the function is created. The code bundle is stored inline with the function.
-8. Specify your resource information, including [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo) and {Scale down delay](/docs/codeengine?topic=codeengine-fun-work#functions-scale). 
+8. Specify your resource information, including [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo) and [Scale down delay](/docs/codeengine?topic=codeengine-fun-work#functions-scale). 
 9. Optionally, specify a [custom domain](/docs/codeengine?topic=codeengine-fun-domainmapping) or [environment variables](/docs/codeengine?topic=codeengine-envvar). You can add these options later.
 10. Click **Create**.
 11. After the Function status changes to **Ready**, you can test the function. Click **Test function** and then click **Send request**. To open the function in a web page, click **Function URL**. 
