@@ -111,7 +111,8 @@ The following output shows the result of the **`function get`** command for this
 Example output
 
 ```txt
-Getting function 'kerstenrepofunction'...
+Getting function 'myfun'
+'...
 OK
 
 Name:          myfun  
