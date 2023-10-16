@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-15"
+lastupdated: "2023-10-16"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -246,10 +246,26 @@ For more information about the `fn create` command and its options, see [Create 
 ## Next steps
 {: #nextsteps-funsource}
 
-Now that your function is created and deployed from local source code, you can update the function to meet your needs from the console or by using the [**`ibmcloud ce function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) command. If you want to update your source to use with your function, you must provide the `--build-source` option on the **`function update`** command.
+- After your function is created, you can access your function by clicking **Test function** in the console or finding the URL for your function with the [**`function get`**](/docs/codeengine?topic=codeengine-cli#cli-function-get) command.
 
-When your function is deployed from local source or from [repository source code](/docs/codeengine?topic=codeengine-app-source-code) from the CLI, the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console.  
-{: note}
+- You can create a [custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings) and assign it to your function.  
+
+- After your function is created and deployed, you can update the function to meet your needs from the console or by using the [**`ibmcloud ce function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) command. If you want to update your source to use with your function, you must provide the `--build-source` option on the **`function update`** command.
+
+After your function is created, you can update your function and its referenced code by using *any* of the following ways, independent of how you created or previously updated your function:
+
+- If you have an existing code bundle, then you need to provide only a reference to the image, which points to the location of your container registry when you deploy your app. For more information, see [Creating function workloads from existing code bundles](/docs/codeengine?topic=codeengine-fun-create-existing).
+
+    If you created your function by using the **`function create`** command and you specified the `--build-source` option to build the code bundle from local or repository source, and you want to change your function to point to a different code bundle, you must first remove the association of the build from your function. For example, run `ibmcloud ce function update -n FUN_NAME --build-clear`. After you remove the association of the build from your function, you can update the function to reference a different image. 
+    {: note}
+
+- If you are starting with source code that resides in a Git repository, you can choose to let {{site.data.keyword.codeengineshort}} to build the code bundle from your source and create your function with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code bundle to {{site.data.keyword.registrylong}}. To learn more, see [Creating your function from repository source code](/docs/codeengine?topic=codeengine-fun-create-repo).
+
+- If you are starting with source code that resides on a local workstation, you can choose for {{site.data.keyword.codeengineshort}} to build the code bundle from your source and create your function with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your source code and code bundle to {{site.data.keyword.registrylong}}. 
+
+    For example, you might choose for {{site.data.keyword.codeengineshort}} to build your local source while you evolve the development of your source for the function. Then, after the code bundle is matured, you can update your function to reference the specific code bundle that you want. You can repeat this process as needed.
+
+
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
