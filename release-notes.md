@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-10-16"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,11 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for October 2023.
 {: shortdesc}
+
+
+
+
+
 
 ### 09 October 2023
 {: #codeengine-oct0923}
