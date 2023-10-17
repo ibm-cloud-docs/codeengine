@@ -2234,6 +2234,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Changing the autoscaling range with the CLI](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-cli)
 
+[Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-app-domainmapping#app-domainmapping)
+
+* [Configuring custom domain mappings from the console](/docs/codeengine?topic=codeengine-app-domainmapping#custom-domain-ui)
+
+* [Configuring custom domain mappings with the CLI](/docs/codeengine?topic=codeengine-app-domainmapping#custom-domain-cli)
+
+* [Completing the custom domain configuration with your domain registrar](/docs/codeengine?topic=codeengine-app-domainmapping#app-completing-custom-domain)
+
+* [Testing your custom domain](/docs/codeengine?topic=codeengine-app-domainmapping#testapp-custom-domain)
+
 [Working with liveness and readiness probes for your app](/docs/codeengine?topic=codeengine-app-probes#app-probes)
 
 * [What are liveness and readiness probes?](/docs/codeengine?topic=codeengine-app-probes#app-probes-terms)
@@ -2895,6 +2905,47 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Resources](/docs/codeengine?topic=codeengine-terraform-setup-ce#terraform-supported-resources)
 
     * [Data Sources](/docs/codeengine?topic=codeengine-terraform-setup-ce#terraform-supported-data-sources)
+
+
+## Working with custom domain mappings
+{: #sitemap_working_with_custom_domain_mappings}
+
+
+[Working with custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings)
+
+* [Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-domain-mappings#considerations-custom-domain)
+
+* [Obtaining a custom domain and its TLS certificate and private key](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain)
+
+    * [How can I obtain a certificate for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert)
+
+    * [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis)
+
+    * [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cis)
+
+    * [How do I obtain the CNAME record for a custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cname)
+
+* [Configuring custom domain mappings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-domain-mappings#configure-domainmapping)
+
+* [Viewing domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping)
+
+    * [Viewing domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-ui)
+
+    * [Viewing domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-cli)
+
+* [Updating domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain)
+
+    * [Updating a domain mapping from the console](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-ui)
+
+    * [Updating a domain mapping with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-cli)
+
+* [Deleting domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain)
+
+    * [Deleting domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-ui)
+
+    * [Deleting domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-cli)
+
+* [Next steps](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings-next)
 
 
 ## Subscribing to event producers

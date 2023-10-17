@@ -78,6 +78,7 @@ toc:
           - appdeploy-access.md
           - appdeploy-update.md
           - app-scale.md
+          - app-domainmapping.md
           - app-probes.md
       - topicgroup:
           label: Running jobs
@@ -132,6 +133,7 @@ toc:
       - dockerfiletips.md
       - toolchain-ce.md
       - terraform-ce.md
+      - domainmappings.md
       - topicgroup:
           label: Subscribing to event producers
           topics:
