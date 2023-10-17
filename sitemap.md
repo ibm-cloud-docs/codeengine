@@ -3351,6 +3351,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Accessing your app securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-app)
 
+* [Accessing your function securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-fun)
+
 
 ## Enhancing security for Code Engine
 {: #sitemap_enhancing_security_for_code_engine}
