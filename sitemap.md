@@ -2476,6 +2476,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-local#nextsteps-funruncr)
 
+[Creating function workloads from existing code bundles](/docs/codeengine?topic=codeengine-fun-create-existing#fun-create-existing)
+
+* [Creating a function that references a code bundle in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-fun-create-existing#create-fun-cr-console)
+
+* [Deploying a function with an existing code bundle with the CLI](/docs/codeengine?topic=codeengine-fun-create-existing#fun-cr-cli)
+
+    * [Deploying a function from a public registry with the CLI](/docs/codeengine?topic=codeengine-fun-create-existing#fun-cr-cli-public)
+
+    * [Deploying a function from a private registry with the CLI](/docs/codeengine?topic=codeengine-fun-create-existing#fun-cr-cli-private)
+
+* [Next steps](/docs/codeengine?topic=codeengine-fun-create-existing#nextsteps-funrunexisting)
+
 [Function runtimes](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtime)
 
 * [Supported managed runtimes for functions on {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-managed)

@@ -101,6 +101,8 @@ toc:
           - fun-create-inlinecode.md
           - fun-create-repo.md
           - fun-create-local.md
+          - fun-create-existing.md
+          - fun-domainmapping.md
           - fun-runtime.md
           - fun-migrate.md
       - topicgroup:
