@@ -53,8 +53,6 @@ Create a function that uses an existing code bundle by using the {{site.data.key
 12. Click **Create**.
 13. After the Function status changes to **Ready**, you can test the Function. Click **Test function** and then click **Send request**. To open the Function in a web page, click **Function URL**.  
 
-Now that you have deployed your application, you can view information about application revisions and any running instances, and configuration details.  
-
 
 
 
