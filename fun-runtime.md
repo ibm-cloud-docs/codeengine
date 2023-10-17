@@ -33,7 +33,15 @@ The following runtimes are supported as managed runtimes.
 - Node.js 18
 - Python 3.11
 
+  
+## Supported CPU and memory combinations for functions
+{: #fun-supported-combo}
+  
+See the following list for valid combinations of CPU and memory for functions.
 
+- 0.25 vCPU and 1 GB memory 
+- 0.5 vCPU and 2 GB memory (**Default**)
+- 1 vCPU and 4 GB memory
  
 
 For memory and CPU information, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
