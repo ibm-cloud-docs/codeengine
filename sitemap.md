@@ -107,11 +107,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Function workloads](/docs/codeengine?topic=codeengine-cefunctions#cefunctions)
 
-* [Lifecycle of a Function instance](/docs/codeengine?topic=codeengine-cefunctions#functions-lifecycle)
+* [Lifecycle of a function instance](/docs/codeengine?topic=codeengine-cefunctions#functions-lifecycle)
 
-* [How do Functions compare to apps and jobs?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-compare)
+* [How do functions compare to apps and jobs?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-compare)
 
-* [What are key features of working with Functions?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-ce)
+* [What are key features of working with functions?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-ce)
 
     * [Isolation](/docs/codeengine?topic=codeengine-cefunctions#cefun-isolation)
 
@@ -119,15 +119,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Runtimes](/docs/codeengine?topic=codeengine-cefunctions#functions-runtime)
 
-    * [Running Functions](/docs/codeengine?topic=codeengine-cefunctions#cefun-runfun)
+    * [Running functions](/docs/codeengine?topic=codeengine-cefunctions#cefun-runfun)
 
     * [Security](/docs/codeengine?topic=codeengine-cefunctions#cefun-security)
 
-    * [Invocation concurrency and scaling of Function instances](/docs/codeengine?topic=codeengine-cefunctions#functions-concur-ce)
+    * [Invocation concurrency and scaling of function instances](/docs/codeengine?topic=codeengine-cefunctions#functions-concur-ce)
 
-    * [Packaging your source code for a Function](/docs/codeengine?topic=codeengine-cefunctions#functions-packaging)
+    * [Packaging your source code for a function](/docs/codeengine?topic=codeengine-cefunctions#functions-packaging)
 
-* [How can I get started with Functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
+* [How can I get started with functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
 
 
 ## Release notes
