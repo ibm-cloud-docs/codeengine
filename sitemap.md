@@ -2456,9 +2456,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-local#nextsteps-funruncr)
 
-[Runtimes](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtime)
+[Function runtimes](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtime)
 
-* [Supported managed runtimes for Functions on {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-managed)
+* [Supported managed runtimes for functions on {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-managed)
 
 [Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate)
 
