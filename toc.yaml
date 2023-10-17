@@ -269,7 +269,6 @@ toc:
               - troubleshoot-project.md
               - ts-project-cannotaccess.md
               - ts-project-cannotcreate.md
-
           - topicgroup:
               label: Troubleshooting service bindings 
               topics:
@@ -292,6 +291,11 @@ toc:
               topics:
               - troubleshoot-toolchain.md
               - ts-toolchain-buildrun.md
-              - ts-toolchain-size.md              
+              - ts-toolchain-size.md
+
+          - topicgroup:
+              label: Troubleshooting - other
+              topics:
+              - ts-network-econnreseterror.md
       - get-support.md
       - sitemap.md
