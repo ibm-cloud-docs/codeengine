@@ -3742,6 +3742,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Supported combinations for apps and jobs](/docs/codeengine?topic=codeengine-mem-cpu-combo#supported-combo)
 
+* [Supported combinations for functions](/docs/codeengine?topic=codeengine-mem-cpu-combo#supported-combo-fun)
+
 * [Units of measurement](/docs/codeengine?topic=codeengine-mem-cpu-combo#unit-measurements)
 
 

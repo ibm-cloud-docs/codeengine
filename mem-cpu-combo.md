@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-11"
+lastupdated: "2023-10-17"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine, memory and CPU
 
@@ -61,7 +61,16 @@ The default combination for apps and jobs is 1 vCPU and 4 GB memory. The default
 Your existing apps and jobs might be using other memory and CPU combinations, and those will remain unaffected. However, these other combinations are not valid and only the valid combinations are supported. Therefore, any new apps or jobs as well as any changes to existing apps or jobs must comply with the list of valid choices. 
 {: important}
 
+  
+## Supported combinations for functions
+{: #supported-combo-fun}
+  
+See the following list for valid combinations of CPU and memory for functions.
 
+- 0.25 vCPU and 1 GB memory 
+- 0.5 vCPU and 2 GB memory (**Default**)
+- 1 vCPU and 4 GB memory
+  
 
 ## Units of measurement
 {: #unit-measurements}
