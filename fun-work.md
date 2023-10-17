@@ -58,7 +58,7 @@ To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimize
 ## Can I keep my function instance alive longer?
 {: #functions-scale}	
 	
-With {{site.data.keyword.codeengineshort}}, your function scales up and down automatically, based on workload. When you create your function with the default CPU and memory combination, your function is injected into a "pre-warmed" container, which is optimized for use. When you create a function with a CPU and memory combination other than the default combination, then your function is injected into a new container. By default, this container is kept alive for only a short amount of time after the function completes. 
+With {{site.data.keyword.codeengineshort}}, your function scales up and down automatically, based on workload. When you create your function with the default CPU and memory combination, your function is injected into a "pre-warmed" container, which is optimized for use. When you create a function with a CPU and memory combination other than the default combination, then your function is injected into a new container. By default, this container is kept alive for only a short amount of time after the function completes. For more information, see [Supported CPU and memory combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo).
 	
 You can change the amount of time that your container is kept alive with the `--scale-down-delay` option in the CLI or the **Scale-down delay** option in the console. Note that while keeping your container alive reduces the cold start times for any subsequent run of your function, you are also billed for the amount of time that the custom function container exists.
 
