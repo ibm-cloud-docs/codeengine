@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-16"
+lastupdated: "2023-10-17"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating Function workloads from local source code
+# Creating function workloads from local source code
 {: #fun-create-local}
 
 
