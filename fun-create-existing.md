@@ -88,7 +88,7 @@ Example output from the existing code bundle.
 ```txt
 <html><body><h3>Hello, Functions on CodeEngine!</h3></body></html>
 ```
-{: pre}
+{: screen}
 
 ### Deploying a function from a private registry with the CLI
 {: #fun-cr-cli-private}
