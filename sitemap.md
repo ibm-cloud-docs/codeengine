@@ -3313,6 +3313,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Using your VPE to access an app securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-app)
 
+* [Using your VPE to access a function securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-fun)
+
 [Using service endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt)
 
 * [Public endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-public-endpoints)
