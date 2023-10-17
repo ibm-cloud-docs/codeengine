@@ -81,7 +81,7 @@ ibmcloud ce fn create --name myhellofun --code-bundle icr.io/codeengine/samples/
 ```
 {: pre}
   
-Run the provided `**fn get`** command to find the URL. You can then use the `curl` command to call that URL.
+Run the provided **`fn get`** command to find the URL. You can then use the `curl` command to call that URL.
 
 Example output from the existing code bundle.
 
