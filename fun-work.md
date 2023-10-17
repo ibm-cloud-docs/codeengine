@@ -55,9 +55,9 @@ When a Function is invoked, the corresponding Function instance is initialized w
 To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimizes the invocation by pre-warming certain runtimes with specific CPU and memory configurations. Pre-warmed combinations for functions include Node.js 18 and Python 3.11 versions as well as the default CPU and memory combination for Functions, which is 0.25 vCPU x 1 GB of memory. In addition, the system is designed to improve the reuse of Function instances that are already initialized. Therefore, a Function instance is kept alive after the invocation is finished to allow subsequent invocations by reusing the same instance and reusing the state of the instance when the last invocation completed. The reuse of a Function instance is not guaranteed.
 
 
-## Can I keep my function instance alive longer?
-{: #functions-scale}	
-	
+## Can I keep my function instance alive longer?	
+{: #functions-scale}
+
 With {{site.data.keyword.codeengineshort}}, your function scales up and down automatically, based on workload. When you create your function with the default CPU and memory combination, your function is injected into a "pre-warmed" container, which is optimized for use. When you create a function with a CPU and memory combination other than the default combination, then your function is injected into a new container. By default, this container is kept alive for only a short amount of time after the function completes. For more information, see [Supported CPU and memory combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo).
 	
 You can change the amount of time that your container is kept alive with the `--scale-down-delay` option in the CLI or the **Scale-down delay** option in the console. Note that while keeping your container alive reduces the cold start times for any subsequent run of your function, you are also billed for the amount of time that the custom function container exists.
