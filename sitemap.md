@@ -4231,6 +4231,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_troubleshooting_other}
 
 
+[Why am I getting ECONNRESET errors when connecting to an endpoint?](/docs/codeengine?topic=codeengine-ts-other-econnreset#ts-other-econnreset)
+
 
 ## Getting help and support for {{site.data.keyword.codeengineshort}}
 {: #sitemap_getting_help_and_support_for_}
