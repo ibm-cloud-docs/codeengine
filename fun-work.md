@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-21"
+lastupdated: "2023-10-17"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Working with Functions
+# Working with functions
 {: #fun-work}
 
 A Function is a stateless code snippet that performs tasks in response to an HTTP request. With IBM Code Engine Functions, you can run your business logic in a scalable and serverless way. IBM Code Engine Functions provide an optimized runtime environment to support low latency and rapid scale-out scenarios. Your Function code can be written in a managed runtime that includes specific [Node.js or Python](/docs/codeengine?topic=codeengine-fun-runtime) versions. 
@@ -31,11 +31,9 @@ Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? 
 {: #fun-limitations}
 
 - No support for subscribing to event producers.
-- No support for custom domains.
-- No support for limiting the visibility of your function.
 - No support for Terraform.
 
-## How do I make my code run as a {{site.data.keyword.codeengineshort}} Function component?
+## How do I make my code run as a {{site.data.keyword.codeengineshort}} function component?
 {: #fun-containerimage}
 
 Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides a streamlined way for you to run your code as a Function.
@@ -49,7 +47,7 @@ Whether your code exists as source in a local file or in a Git repository, or yo
 
 After you create and run your Function, you can also update your Function by using *any* of the preceding ways, independent of how you created or previously updated your Function.
 
-## What happens when I invoke my Function?
+## What happens when I invoke my function?
 {: #functions-invoke}
 
 When a Function is invoked, the corresponding Function instance is initialized with the configured Runtime container and Resource parameters. The process of the first initialization is referred to as *cold start*.
@@ -63,7 +61,7 @@ To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimize
 
 Functions are invoked with the HTTP protocol. When you invoke your Function, you can specify the custom request parameters, custom request body and headers, as well as the HTTP method. The request parameters are made available to the Function code as input parameters. The Function code can set the response body, response headers, and response code, which are returned to the caller from the Functions endpoint. 
 
-### Example 1: Generating an HTML response from a Function
+### Example 1: Generating an HTML response from a function
 {: #functions-response1}
 
 The following example illustrates how to generate an HTML response from a Function.
@@ -102,7 +100,7 @@ function main(params) {
 ```
 {: screen}
 
-### Example 3: Generating a plain text response from a Function
+### Example 3: Generating a plain text response from a function
 {: #functions-response3}
 
 The following example illustrates how to generate a plain text response from a Function.
@@ -188,7 +186,7 @@ To run your Function in {{site.data.keyword.codeengineshort}}, your code must im
 
 
 
-## Options for creating Functions
+## Options for creating functions
 {: #functions-options} 
 
 Learn about the options that you can specify when you create your Function. Note that options can vary between the console and the CLI.
@@ -198,28 +196,28 @@ Learn about the options that you can specify when you create your Function. Note
 ### Memory and CPU
 {: #functions-combo}
 
-When you deploy your Function, you can specify the amount of memory and CPU that your Function can consume. These amounts can vary, depending on if your function is compute-intensive, memory-intensive, or balanced.
+When you deploy your function, you can specify the amount of memory and CPU that your Function can consume. These amounts can vary, depending on if your function is compute-intensive, memory-intensive, or balanced.
 {: shortdesc}
 
-By default, your Function is assigned 4 G of memory and .5 vCPU. For more information about other supported memory and CPU combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+By default, your function is assigned 1 G of memory and 0.25 vCPU. For more information about other supported memory and CPU combinations, see [Supported memory and CPU combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo).
 
 
 ### Creating and running your function with environment variables 
 {: #functions-envvar}
 
-You can define and set environment variables as key-value pairs that can be used by your Function at run time. 
+You can define and set environment variables as key-value pairs that can be used by your function at run time. 
 {: shortdesc}
 
 You can define environment variables when you create your Function, or when you update an existing Function with the CLI. 
 
 For more information about defining environment variables, see [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
 
-{{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the Function. For more information about automatically injected environment variables, see [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars).
+{{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the function. For more information about automatically injected environment variables, see [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars).
 
-### Creating and running your Function when using secrets and configmaps 
+### Creating and running your function when using secrets and configmaps 
 {: #functions-secconfigmap}
 
-In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be consumed by your Function by using environment variables. 
+In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be consumed by your function by using environment variables. 
 {: shortdesc}
 
 Both secrets and configmaps are key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the environment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
@@ -228,7 +226,7 @@ Your Function can use environment variables to fully reference a configmap (or s
 
 For more information, see [referencing secrets by using environment variables](/docs/codeengine?topic=codeengine-secret#secret-ref) and [referencing configmaps by using environment variables](/docs/codeengine?topic=codeengine-configmap#configmap-ref).
 
-## Considerations for Functions quotas
+## Considerations for functions quotas
 {: #functions-quotas}
 
 When you work with applications, functions, and batch jobs, these resources run within the context of a {{site.data.keyword.codeengineshort}} project. Resource quotas are defined on a per project basis, and limits apply for applications, functions, and batch jobs. 
