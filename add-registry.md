@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-10-17"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, registry secret, service id,registry secret, registry access secret
 
@@ -372,6 +372,8 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     {: important}
 
     Now that you have your access policies in place for your service ID and your API key that is created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) to pull images from your container registry.
+
+
 
 
 ## Considerations for images in your registry

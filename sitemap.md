@@ -2488,6 +2488,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-existing#nextsteps-funrunexisting)
 
+[Configuring custom domain mappings for your function](/docs/codeengine?topic=codeengine-fun-domainmapping#fun-domainmapping)
+
+* [Configuring custom domain mappings from the console](/docs/codeengine?topic=codeengine-fun-domainmapping#fun-custom-domain-ui)
+
+* [Configuring custom domain mappings with the CLI](/docs/codeengine?topic=codeengine-fun-domainmapping#fun-custom-domain-cli)
+
+* [Completing the custom domain configuration with your domain registrar](/docs/codeengine?topic=codeengine-fun-domainmapping#fun-completing-custom-domain)
+
+* [Testing your custom domain](/docs/codeengine?topic=codeengine-fun-domainmapping#testfun-custom-domain)
+
 [Function runtimes](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtime)
 
 * [Supported managed runtimes for functions on {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-managed)
