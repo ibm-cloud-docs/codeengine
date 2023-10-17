@@ -13,7 +13,7 @@ subcollection: codeengine
 {{site.data.keyword.attribute-definition-list}}
 
 # Create a build configuration that pulls source from public repository
-{: #build-create-config}
+{: #build-create-config1}
 
 If your source is located in a public repository, create a build configuration with settings that include information about where to pull source from a public repository. For the build output, you can choose to specify registry details along with a registry secret to access your built image in the registry. Or, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}}. For this case, you do not need to specify a registry secret or the location of the image registry.
 {: shortdesc}

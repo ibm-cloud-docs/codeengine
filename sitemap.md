@@ -2565,15 +2565,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-buildimage)
 
-[Create a build configuration that pulls source from public repository](/docs/codeengine?topic=codeengine-build-create-config#build-create-config)
+[Create a build configuration that pulls source from public repository](/docs/codeengine?topic=codeengine-build-create-config1#build-create-config1)
 
-* [Creating a build configuration from the console (public repo)](/docs/codeengine?topic=codeengine-build-create-config#build-create-console)
+* [Creating a build configuration from the console (public repo)](/docs/codeengine?topic=codeengine-build-create-config1#build-create-console)
 
-* [Creating a build configuration with the CLI (public repo)](/docs/codeengine?topic=codeengine-build-create-config#build-create-cli)
+* [Creating a build configuration with the CLI (public repo)](/docs/codeengine?topic=codeengine-build-create-config1#build-create-cli)
 
-    * [Creating a build configuration with the CLI (with public repo source and automatic access to registry)](/docs/codeengine?topic=codeengine-build-create-config#build-create-cli-a)
+    * [Creating a build configuration with the CLI (with public repo source and automatic access to registry)](/docs/codeengine?topic=codeengine-build-create-config1#build-create-cli-a)
 
-    * [Creating a build configuration with the CLI (with public repo source and user-provided access to registry)](/docs/codeengine?topic=codeengine-build-create-config#build-create-cli-b)
+    * [Creating a build configuration with the CLI (with public repo source and user-provided access to registry)](/docs/codeengine?topic=codeengine-build-create-config1#build-create-cli-b)
 
 [Create a build configuration that pulls source from private repository](/docs/codeengine?topic=codeengine-build-config-gitrepo#build-config-gitrepo)
 
