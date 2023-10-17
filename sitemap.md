@@ -2398,6 +2398,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [What happens when I invoke my function?](/docs/codeengine?topic=codeengine-fun-work#functions-invoke)
 
+* [Can I keep my function instance alive longer?](/docs/codeengine?topic=codeengine-fun-work#functions-scale)
+
 * [Requests and responses](/docs/codeengine?topic=codeengine-fun-work#functions-request)
 
     * [Example 1: Generating an HTML response from a function](/docs/codeengine?topic=codeengine-fun-work#functions-response1)
@@ -2409,6 +2411,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Error handling and debugging](/docs/codeengine?topic=codeengine-fun-work#functions-error)
 
 * [Function data input/output characteristics](/docs/codeengine?topic=codeengine-fun-work#functions-data)
+
+* [Options for visibility for a {{site.data.keyword.codeengineshort}} functions](/docs/codeengine?topic=codeengine-fun-work#optionsvisibilityfun)
+
+    * [Deploying your function with a public endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-public)
+
+    * [Deploying your function with a private endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-private)
+
+    * [Deploying your function with a project endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-projectonly)
 
 * [Options for creating functions](/docs/codeengine?topic=codeengine-fun-work#functions-options)
 

@@ -22,7 +22,7 @@ Before you begin
 
 - If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
 - If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-- Plan and choose your approach for making your code run as a {{site.data.keyword.codeengineshort}} Function component.
+- Plan and choose your approach for making your code run as a {{site.data.keyword.codeengineshort}} function component.
 
 Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? See [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 {: tip}
@@ -36,16 +36,16 @@ Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? 
 ## How do I make my code run as a {{site.data.keyword.codeengineshort}} function component?
 {: #fun-containerimage}
 
-Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides a streamlined way for you to run your code as a Function.
+Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides a streamlined way for you to run your code as a function.
 
-- If you are starting with source code that is located in a Git repository, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the code bundle from your source and creating the Function with a single operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code to {{site.data.keyword.registrylong}}. To learn more, see [Creating a Function from repository source code](/docs/codeengine?topic=codeengine-fun-create-repo). 
+- If you are starting with source code that is located in a Git repository, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the code bundle from your source and creating the function with a single operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code to {{site.data.keyword.registrylong}}. To learn more, see [Creating a function from repository source code](/docs/codeengine?topic=codeengine-fun-create-repo). 
 
-- If you are starting with source code on a local workstation, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the Function with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code to {{site.data.keyword.registrylong}}. To learn more, see [Creating your Function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local). 
+- If you are starting with source code on a local workstation, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the Function with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code to {{site.data.keyword.registrylong}}. To learn more, see [Creating your function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local). 
   
-- If you are starting with source code, you can also run your source code inline. In this scenario, you paste in your source code when you create your Function. For more information, see [Creating your Function with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode).
+- If you are starting with source code, you can also run your source code inline. In this scenario, you paste in your source code when you create your Function. For more information, see [Creating your function with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode).
 
 
-After you create and run your Function, you can also update your Function by using *any* of the preceding ways, independent of how you created or previously updated your Function.
+After you create and run your function, you can also update your function by using *any* of the preceding ways, independent of how you created or previously updated your function.
 
 ## What happens when I invoke my function?
 {: #functions-invoke}
@@ -54,6 +54,13 @@ When a Function is invoked, the corresponding Function instance is initialized w
 
 To reduce the cold start latency, {{site.data.keyword.codeengineshort}} optimizes the invocation by pre-warming certain runtimes with specific CPU and memory configurations. Pre-warmed combinations for functions include Node.js 18 and Python 3.11 versions as well as the default CPU and memory combination for Functions, which is 0.25 vCPU x 1 GB of memory. In addition, the system is designed to improve the reuse of Function instances that are already initialized. Therefore, a Function instance is kept alive after the invocation is finished to allow subsequent invocations by reusing the same instance and reusing the state of the instance when the last invocation completed. The reuse of a Function instance is not guaranteed.
 
+
+## Can I keep my function instance alive longer?
+{: #functions-scale}	
+	
+With {{site.data.keyword.codeengineshort}}, your function scales up and down automatically, based on workload. When you create your function with the default CPU and memory combination, your function is injected into a "pre-warmed" container, which is optimized for use. When you create a function with a CPU and memory combination other than the default combination, then your function is injected into a new container. By default, this container is kept alive for only a short amount of time after the function completes. 
+	
+You can change the amount of time that your container is kept alive with the `--scale-down-delay` option in the CLI or the **Scale-down delay** option in the console. Note that while keeping your container alive reduces the cold start times for any subsequent run of your function, you are also billed for the amount of time that the custom function container exists.
 
 
 ## Requests and responses
@@ -184,6 +191,55 @@ To run your Function in {{site.data.keyword.codeengineshort}}, your code must im
 - Does not support the `multipart/form-data` request header.
 
 
+## Options for visibility for a {{site.data.keyword.codeengineshort}} functions
+{: #optionsvisibilityfun}
+
+With {{site.data.keyword.codeengineshort}}, you can determine the right level of visibility for your function by defining the endpoints, or system domain mappings that are available for receiving requests.  
+{: shortdesc}
+
+Every function has an *internal* system domain mapping that is visible to all components within the same {{site.data.keyword.codeengineshort}} project, but not outside of the project. In addition to the internal system domain mapping, you choose to make the function visible to either the *public* internet or the {{site.data.keyword.cloud_notm}} *private* network.
+
+You can deploy your function with the following visibility levels:
+
+| Setting | Description |
+| --------- | ------------------- |
+| [internal (project)](#fun-endpoint-projectonly) | A function with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. Setting an internal (project) endpoint means that your function is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. |
+| [public](#fun-endpoint-public) | A function with this setting is exposed to the internet and your {{site.data.keyword.codeengineshort}} project. Setting a public endpoint means that your function can receive requests from the public internet or from components within your {{site.data.keyword.codeengineshort}} project. This setting is the default. |
+| [private](#fun-endpoint-private) | A function with this setting is exposed to the {{site.data.keyword.cloud_notm}} private network and your {{site.data.keyword.codeengineshort}} project. Setting a private endpoint means that your function is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services by using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project.|
+{: caption="Table 1. Visibility for functions" caption-side="bottom"}
+
+You can set the endpoint settings for visibility of a function from the console or with the CLI when you create and deploy, or update your function. 
+
+### Deploying your function with a public endpoint
+{: #fun-endpoint-public}
+
+When you deploy a function, by default, the function can receive requests from the public internet or from components within the same {{site.data.keyword.codeengineshort}} project. In this case, the function is deployed with a public endpoint.
+
+### Deploying your function with a private endpoint
+{: #fun-endpoint-private}
+
+You can set the endpoint visibility for your function to deploy with a private endpoint. When you set a private endpoint for your function, it is not accessible from the public internet and network access is possible only from other {{site.data.keyword.cloud_notm}} services from virtual private endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local).
+
+For example, if your solution consists of a component that is running on an {{site.data.keyword.containerfull_notm}} Kubernetes cluster within your own virtual private endpoint and you want to access the {{site.data.keyword.codeengineshort}} function from the {{site.data.keyword.cloud_notm}} private network, you can set the visibility of the function to private. When the visibility of the function is set to private, the function is not accessible through the public internet. The function is still accessible from other functions within the project.
+
+You can [create your function with a private endpoint](/docs/codeengine?topic=codeengine-vpe#using-vpes-fun) so that the function is exposed only through the {{site.data.keyword.cloud_notm}} private network and not exposed to the external internet. The function is still reachable through shared components from within the internal network and the function endpoint needs to be secured.
+
+With the CLI, set the endpoint visibility for your function so that it is deployed with a private endpoint by using the `--visibility=private` option on the [**`function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) or [**`function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) command. You can obtain the available URLs for your function that reflect your endpoint definition by using the [**`function get`**](/docs/codeengine?topic=codeengine-cli#cli-function-get) command.
+
+From the console, set the visibility of endpoints for your function by using the **Endpoints** setting when you create your function. After your function is deployed, you can view and modify these system domain mapping settings on the **Domain mappings** tab on your Functions page.
+
+For more information about connecting over private networks, see [Using Virtual Private Endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-vpe).
+
+### Deploying your function with a project endpoint
+{: #fun-endpoint-projectonly}
+
+You can set the endpoint visibility for your function to deploy with an internal (project) endpoint. When you set a project-only endpoint, your function is not accessible from the public internet and network access is possible only from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. Functions are still accessible through shared components and therefore need to be secured.
+
+For example, if your solution consists of several functions within a project, you might set up your solution so that only one of those functions is visible from the internet so that it handles incoming traffic. This public-facing function can delegate work to other functions in your solution so that they do not need to be visible from the internet.
+
+With the CLI, set the endpoint visibility for your function so that it is deployed with a project endpoint by using the `--visibility=project` option on the [**`function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) or [**`function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) command. You can obtain the available URLs for your function that reflect your endpoint definition by using the [**`function get`**](/docs/codeengine?topic=codeengine-cli#cli-function-get) command.
+
+From the console, set the visibility of endpoints for your function by using the **Endpoints** setting when you create your function. After your function is deployed, you can view and modify these system domain mapping settings on the **Domain mappings** tab on your Functions page.
 
 
 ## Options for creating functions
@@ -199,7 +255,7 @@ Learn about the options that you can specify when you create your Function. Note
 When you deploy your function, you can specify the amount of memory and CPU that your Function can consume. These amounts can vary, depending on if your function is compute-intensive, memory-intensive, or balanced.
 {: shortdesc}
 
-By default, your function is assigned 1 G of memory and 0.25 vCPU. For more information about other supported memory and CPU combinations, see [Supported memory and CPU combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo).
+By default, your function is assigned 2 G of memory and 0.50 vCPU. For more information about other supported memory and CPU combinations, see [Supported memory and CPU combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo).
 
 
 ### Creating and running your function with environment variables 
@@ -239,15 +295,15 @@ For more information about {{site.data.keyword.codeengineshort}} limits, see [Li
 
 Now that you are familiar with key concepts of working with {{site.data.keyword.codeengineshort}} functions, are you ready to create and work with functions? See the following topics.
 
-* [Creating Function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode).
-* [Creating Function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo).
-* [Creating Function workloads from local source code](/docs/codeengine?topic=codeengine-fun-create-local).
+* [Creating function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode).
+* [Creating function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo).
+* [Creating function workloads from local source code](/docs/codeengine?topic=codeengine-fun-create-local).
 
 For more information about working with functions, see the following topics.
 
 * [Function workloads](/docs/codeengine?topic=codeengine-cefunctions).
 * [Integrating {{site.data.keyword.cloud_notm}} services with service bindings](/docs/codeengine?topic=codeengine-service-binding).
 * Working with [environment variables](/docs/codeengine?topic=codeengine-envvar), [configmaps](/docs/codeengine?topic=codeengine-configmap), and [secrets](/docs/codeengine?topic=codeengine-secret).
-* [Troubleshooting Functions](/docs/codeengine?topic=codeengine-troubleshoot-function).
+* [Troubleshooting functions](/docs/codeengine?topic=codeengine-troubleshoot-function).
 
 
