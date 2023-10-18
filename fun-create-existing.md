@@ -72,7 +72,7 @@ Before you begin
 {: #fun-cr-cli-public}
 
   
-If your exisiting code bundle is in your account or a public registry, you can use the **`ibmcloud ce fn create`** command.  
+If your existing code bundle is in your account or a public registry, you can use the **`ibmcloud ce fn create`** command.  
 
 For example, run the following command to pull an existing code bundle from the public registry and create a function.
  
