@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-10-18"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -138,7 +138,7 @@ You can only use your VPE to access your app with a private endpoint if your sel
 
 1. Create an {{site.data.keyword.vpc_full}}. Follow the [Getting started](/docs/vpc?topic=vpc-getting-started) instructions. 
 
-2. Make sure that your VPC has at least one VSI (virtual server instance) and can connect to the VSI. You can use the consoel, CLI, and API to quickly provision Virtual server instances from the {{site.data.keyword.vpc_full}} page in the {{site.data.keyword.cloud_notm}} console. 
+2. Make sure that your VPC has at least one VSI (virtual server instance) and can connect to the VSI. You can use the console, CLI, and API to quickly provision Virtual server instances from the {{site.data.keyword.vpc_full}} page in the {{site.data.keyword.cloud_notm}} console. 
 
     1. Create an [SSH key](/docs/vpc?topic=vpc-ssh-keys) to access the VSI. 
     2. [Create a virtual server instance by using the UI](/docs/vpc?topic=vpc-creating-virtual-servers).
