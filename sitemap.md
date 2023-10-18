@@ -144,11 +144,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added information about additional support for functions in {{site.data.keyword.codeengineshort}}
 
-        * CLI version 1.47.0 released
+        * CLI version 1.47.1 released
 
         * Added troubleshooting information about receiving `ECONNRESET` errors
 
-        * Added information about controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} entities
+        * Added information about controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} workloads
 
         * Updated information about supported versions of Knative
 
@@ -2864,7 +2864,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
 
-* [Controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} entities](/docs/codeengine?topic=codeengine-add-registry#control-cr-access)
+* [Controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-add-registry#control-cr-access)
 
 * [Considerations for images in your registry](/docs/codeengine?topic=codeengine-add-registry#considerations-registry)
 

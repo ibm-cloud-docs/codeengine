@@ -375,7 +375,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
 
 
 
-## Controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} entities
+## Controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} workloads
 {: #control-cr-access}
 
 Suppose that you want to control access to {{site.data.keyword.registrylong_notm}} when {{site.data.keyword.codeengineshort}} pulls images. For example, you want to control access to {{site.data.keyword.registryshort}} to specific IP addresses. Consider the following approaches. 

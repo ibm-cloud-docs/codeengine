@@ -35,14 +35,14 @@ Added information about additional support for functions in {{site.data.keyword.
 :   - See [Can I keep my function instance alive longer](/docs/codeengine?topic=codeengine-fun-work#functions-scale)?
 :   - See [Creating function workloads from existing code bundles](/docs/codeengine?topic=codeengine-fun-create-existing).
 
-CLI version 1.47.0 released
+CLI version 1.47.1 released
 :   This CLI version adds support for custom domain mappings, scale-down delay autoscaling, and endpoint visibility settings for functions with the CLI. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Added troubleshooting information about receiving `ECONNRESET` errors
 :   See [Why am I getting ECONNRESET errors when connecting to an endpoint](/docs/codeengine?topic=codeengine-ts-other-econnreset)?
 
-Added information about controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} entities
-:   See [Controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} entities](/docs/codeengine?topic=codeengine-add-registry#control-cr-access).
+Added information about controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} workloads
+:   See [Controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-add-registry#control-cr-access).
 
 Updated information about supported versions of Knative
 :   See [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
