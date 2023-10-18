@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-10-18"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [October 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct23)
 
     * Review the release notes for October 2023.
+
+    * [18 October 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1823)
+
+        * Added information about additional support for functions in {{site.data.keyword.codeengineshort}}
+
+        * CLI version 1.47.0 released
+
+        * Added troubleshooting information about receiving `ECONNRESET` errors
+
+        * Updated information about supported versions of Knative
+
+        * Updated information about custom domain mappings with {{site.data.keyword.codeengineshort}} apps and functions
 
     * [09 October 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct0923)
 
