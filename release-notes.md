@@ -26,8 +26,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for October 2023.
 {: shortdesc}
 
-### 18 October 2023
-{: #codeengine-oct1823}
+### 19 October 2023
+{: #codeengine-oct1923}
 {: release-note}
 
 Added information about additional support for functions in {{site.data.keyword.codeengineshort}}

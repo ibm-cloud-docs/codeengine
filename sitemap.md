@@ -140,7 +140,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for October 2023.
 
-    * [18 October 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1823)
+    * [19 October 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1923)
 
         * Added information about additional support for functions in {{site.data.keyword.codeengineshort}}
 
