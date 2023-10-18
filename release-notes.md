@@ -41,6 +41,9 @@ CLI version 1.47.0 released
 Added troubleshooting information about receiving `ECONNRESET` errors
 :   See [Why am I getting ECONNRESET errors when connecting to an endpoint](/docs/codeengine?topic=codeengine-ts-other-econnreset)?
 
+Added information about controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} entities
+:   See [Controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} entities](/docs/codeengine?topic=codeengine-add-registry#control-cr-access).
+
 Updated information about supported versions of Knative
 :   See [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
 

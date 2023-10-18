@@ -148,6 +148,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added troubleshooting information about receiving `ECONNRESET` errors
 
+        * Added information about controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} entities
+
         * Updated information about supported versions of Knative
 
         * Updated information about custom domain mappings with {{site.data.keyword.codeengineshort}} apps and functions
@@ -2861,6 +2863,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Authorizing access to {{site.data.keyword.registryshort}} with service ID from the console](/docs/codeengine?topic=codeengine-add-registry#authorize-console-service-id)
 
     * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
+
+* [Controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} entities](/docs/codeengine?topic=codeengine-add-registry#control-cr-access)
 
 * [Considerations for images in your registry](/docs/codeengine?topic=codeengine-add-registry#considerations-registry)
 
