@@ -95,12 +95,14 @@ toc:
           - job-daemon.md
           - job-run-parallel.md
       - topicgroup:
-          label: Creating a Function
+          label: Creating a function
           topics:
           - fun-work.md
-          - fun-inline.md
+          - fun-create-inlinecode.md
           - fun-create-repo.md
           - fun-create-local.md
+          - fun-create-existing.md
+          - fun-domainmapping.md
           - fun-runtime.md
           - fun-migrate.md
       - topicgroup:
@@ -129,10 +131,11 @@ toc:
           - servicebind-access.md
           - servicebind-config.md
       - add-registry.md
-      - plan-repo.md        
+      - plan-repo.md
       - dockerfiletips.md
       - toolchain-ce.md
       - terraform-ce.md
+      - domainmappings.md
       - topicgroup:
           label: Subscribing to event producers
           topics:
@@ -260,14 +263,12 @@ toc:
               - ts-jobrun-findinginfo.md
               - ts-allowlist-job.md
               - ts-jobrun-daemon.md
-
           - topicgroup:
               label: Troubleshooting projects 
               topics:
               - troubleshoot-project.md
               - ts-project-cannotaccess.md
               - ts-project-cannotcreate.md
-
           - topicgroup:
               label: Troubleshooting service bindings 
               topics:
@@ -291,5 +292,10 @@ toc:
               - troubleshoot-toolchain.md
               - ts-toolchain-buildrun.md
               - ts-toolchain-size.md
+
+          - topicgroup:
+              label: Troubleshooting - other
+              topics:
+              - ts-other-econnreseterror.md
       - get-support.md
       - sitemap.md

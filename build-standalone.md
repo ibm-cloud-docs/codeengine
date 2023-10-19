@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-10-17"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret, SSH secret, Git repository access secret
 
@@ -82,7 +82,7 @@ Before you begin
 
     ```txt 
     Submitting build run 'helloworld-buildrun'...
-    Creating image 'private.us.icr.io/ce--27fe9-glxo4k7nj7d/buildrun-helloworld-buildrun'...
+    Creating image 'private.us.icr.io/ce--12ce3-defg4h5ij6d/buildrun-helloworld-buildrun'...
     Run 'ibmcloud ce buildrun get -n helloworld-buildrun' to check the build run status.
     OK
     ```
@@ -101,7 +101,7 @@ Before you begin
 2. Use the **`buildrun get`** command to check the status of your build run. 
 
     ```txt
-    ibmcloud ce buildrun get --name helloworld-buildrun
+    ibmcloud ce buildrun get -n helloworld-buildrun
     ```
     {: pre}
 
@@ -133,7 +133,7 @@ Before you begin
         Commit Author:  COMMIT_AUTHOR
     Image Digest:  sha256:ba3c445a27238040e102c083f76ad8922effcc3a7c4dc97b8472e626d87c11a2
 
-    Image:              private.us.icr.io/ce--6ef04-8aaon2dfwa0/buildrun-helloworld-buildrun
+    Image:              private.us.icr.io/ce--12ce3-defg4h5ij6d/buildrun-helloworld-buildrun
     Registry Secret:    ce-auto-icr-private-us-south
     Build Strategy:     dockerfile-medium
     Timeout:            10m0s

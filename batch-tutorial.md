@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-10-09"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -90,7 +90,7 @@ You can view job logs after you add logging capabilities. For more information, 
 You can manage your job by fine tuning your job configuration, which includes updating the code container image, code arguments or commands, runtime instance resources, or environment variables.
 {: shortdesc}
 
-When the job is in ready state, you can update the job. Let's update the job that you created previously to change the container image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob` and then subsequently update an environment variable. When a request is sent to this `icr.io/codeengine/testjob` sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. For more information about the code that is used for this example, see [`testjob`](https://github.com/IBM/CodeEngine/tree/main/testjob){: external}.
+When the job is in a ready state, you can update the job. Let's update the job that you created previously to change the container image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob` and then update an environment variable. When a request is sent to this `icr.io/codeengine/testjob` sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. For more information about the code that is used for this example, see [`testjob`](https://github.com/IBM/CodeEngine/tree/main/testjob){: external}.
 
 1. Navigate to your job page. 
     * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   

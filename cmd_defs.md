@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-17"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2142,10 +2142,10 @@ ibmcloud ce domainmapping create --domain-name DOMAIN_NAME [--target-type TARGET
 :   Specify the name of the domain mapping. This name must be a valid fully qualified domain name (FQDN). For example, `www.example.com`. This value is *required*. 
 
 `--target`, `-t`
-:   The name of the target application. This value is *required*. 
+:   The name of the target application or function. This value is *required*. 
 
 `--target-type`, `--type`
-:   The type of the target. Valid values are `app` or `application`. This value is *required*. 
+:   The type of the target. Valid values are `application` or `function`. This value is *required*. 
 
 `--tls-secret`, `--secret`, `--tls`
 :   Specify a TLS secret that contains the certificate including all its intermediate certificates and the corresponding private key for the domain mapping. The certificate must be signed by a trusted, public certificate authority (CA). Self-signed certificates are not supported. This value is *required*. 
@@ -2341,10 +2341,10 @@ ibmcloud ce domainmapping update --domain-name DOMAIN_NAME --target TARGET_NAME 
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--target`, `-t`
-:   The name of the target application. This value is *optional*. 
+:   The name of the target application or function. This value is *optional*. 
 
 `--target-type`, `--type`
-:   The type of the target. Valid values are `app` or `application`. This value is *optional*. 
+:   The type of the target. Valid values are `application` or `function`. This value is *optional*. 
 
 `--tls-secret`, `--secret`, `--tls`
 :   Specify a TLS secret that contains the certificate including all its intermediate certificates and the corresponding private key for the domain mapping. The certificate must be signed by a trusted, public certificate authority (CA). Self-signed certificates are not supported. This value is *optional*. 
@@ -2452,7 +2452,7 @@ OK
 Create a function.  
   
 ```txt
-ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-source BUILD_SOURCE] [--build-timeout BUILD_TIMEOUT] [--code-bundle CODE_BUNDLE] [--code-bundle-secret CODE_BUNDLE_SECRET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--force] [--inline-code INLINE_CODE] [--main MAIN] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--output OUTPUT] [--quiet] [--runtime RUNTIME] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-source BUILD_SOURCE] [--build-timeout BUILD_TIMEOUT] [--code-bundle CODE_BUNDLE] [--code-bundle-secret CODE_BUNDLE_SECRET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--force] [--inline-code INLINE_CODE] [--main MAIN] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--output OUTPUT] [--quiet] [--runtime RUNTIME] [--scale-down-delay SCALE_DOWN_DELAY] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2493,7 +2493,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 :   The name of the registry secret that is used to authenticate with a private registry. You can add the registry secret by running the `registry create` command. This value is *optional*. 
 
 `--cpu`
-:   The amount of CPU set for the instance of the function. For valid values see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `0.25`.
+:   The amount of CPU set for the instance of the function. For valid values see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `0.5`.
 
 `--env`, `-e`
 :   Set environment variables in the function. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
@@ -2527,7 +2527,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 :   The maximum amount of time in seconds for this function to complete its run. This value is *optional*. The default value is `60`.
 
 `--memory`, `-m`
-:   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `1G`.
+:   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `2G`.
 
 `--no-wait`, `--nw`
 :   Do not wait for the build run to complete. This value is *optional*. The default value is `true`.
@@ -2537,6 +2537,12 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--scale-down-delay`, `--sdd`
+:   The amount of time in seconds an instance is active after an invocation completes. This option can reduce cold start times. For more information, see [Can I keep my function instance alive longer?](/docs/codeengine?topic=codeengine-fun-work#functions-scale). This value is *optional*. The default value is `0`.
+
+`--visibility`, `-v`
+:   The visibility for the function. Valid values are `public`, `private`, and `project`. Visibility can only be `private` if the project supports function private visibility. This value is *optional*. The default value is `public`.
 
 `--wait`, `-w`
 :   Wait for the build run to complete. This value is *optional*. The default value is `true`.
@@ -2837,7 +2843,7 @@ OK
 Update a function.  
   
 ```txt
-ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-source BUILD_SOURCE] [--build-timeout BUILD_TIMEOUT] [--code-bundle CODE_BUNDLE] [--code-bundle-secret CODE_BUNDLE_SECRET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--force] [--inline-code INLINE_CODE] [--main MAIN] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--runtime RUNTIME] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-source BUILD_SOURCE] [--build-timeout BUILD_TIMEOUT] [--code-bundle CODE_BUNDLE] [--code-bundle-secret CODE_BUNDLE_SECRET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--force] [--inline-code INLINE_CODE] [--main MAIN] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--runtime RUNTIME] [--scale-down-delay SCALE_DOWN_DELAY] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2878,7 +2884,7 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 :   The name of the registry secret that is used to authenticate with a private registry. You can add the registry secret by running the `registry create` command. This value is *optional*. 
 
 `--cpu`
-:   The amount of CPU set for the instance of the function. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `0.25`.
+:   The amount of CPU set for the instance of the function. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `0.5`.
 
 `--env`, `-e`
 :   Set environment variables in the function. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
@@ -2921,7 +2927,7 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 :   The maximum execution time in seconds for this function to complete its run. This value is *optional*. The default value is `60`.
 
 `--memory`, `-m`
-:   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `1G`.
+:   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `2G`.
 
 `--no-wait`, `--nw`
 :   Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is *optional*. The default value is `true`.
@@ -2937,6 +2943,12 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 
 `--runtime`, `-r`
 :   The runtime to use for the function. To find supported runtimes for this region, run `ibmcloud ce function runtimes`. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime). This value is *optional*. 
+
+`--scale-down-delay`, `--sdd`
+:   The amount of time in seconds an instance is active after an invocation completes. This option can reduce cold start times. For more information, see [Can I keep my function instance alive longer?](/docs/codeengine?topic=codeengine-fun-work#functions-scale). This value is *optional*. The default value is `0`.
+
+`--visibility`, `-v`
+:   The visibility for the function. Valid values are `public`, `private`, and `project`. Visibility can only be `private` if the project supports function private visibility. This value is *optional*. 
 
 `--wait`, `-w`
 :   Wait for the build run to complete. This value is *optional*. The default value is `true`.
@@ -7426,5 +7438,4 @@ commit:   3ab130b746f4784c9ff8d3da7bb05b6e7acda6d5
 {: screen}  
   
   
-
 

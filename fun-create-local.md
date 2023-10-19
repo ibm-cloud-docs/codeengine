@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-10"
+lastupdated: "2023-10-17"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating Function workloads from local source code
+# Creating function workloads from local source code
 {: #fun-create-local}
 
 
@@ -99,8 +99,8 @@ module.exports.main = main;
     | Option | Description |
     | -------------- | -------------- |
     | `--name` | The name of the function. Use a name that is unique within the project. This value is required. \n - The name must begin with a lowercase letter. \n - The name must end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain letters, numbers, and hyphens (-). | 
-    | `--build-source` | The path to the local source. |
-    | `--runtime` | The runtime to use for this function. |
+    | `--build-source` | The path to the local source. This value is required. |
+    | `--runtime` | The runtime to use for this function. This value is required. |
     {: caption="Table 1. Command description" caption-side="bottom"}
 
 4. Use the **`function get`** command to display information about your app, including information about the build.

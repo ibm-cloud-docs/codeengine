@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-11-21"
+  years: 2022, 2023
+lastupdated: "2023-10-09"
 
 keywords: code engine, tutorial, build, local, application, access, build run, image
 
@@ -80,7 +80,7 @@ Before you create your code as an application in {{site.data.keyword.codeengines
     ```
     {: pre}
     
-4. Open a browser and go to [http://localhost:8080](http://localhost:8080){: external}.
+4. Open a browser and go to [`http://localhost:8080`](http://localhost:8080){: external}.
 5. Pick your favorite fruit and submit your choice. The app accepts your choice and displays a running total of picks.
  
 You can verify that your fruit choice was registered in the Cloudant by going to your {{site.data.keyword.cloudant}} database dashboard.

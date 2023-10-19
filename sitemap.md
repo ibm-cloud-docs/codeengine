@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-10-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -57,7 +57,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How do apps compare to jobs and functions?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads-compare)
 
-* [What are the key features of working with  {{site.data.keyword.codeengineshort}} applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-features)
+* [What are the key features of working with {{site.data.keyword.codeengineshort}} applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-features)
 
     * [Isolation](/docs/codeengine?topic=codeengine-ceapplications#ceapp-isolation)
 
@@ -107,11 +107,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Function workloads](/docs/codeengine?topic=codeengine-cefunctions#cefunctions)
 
-* [Lifecycle of a Function instance](/docs/codeengine?topic=codeengine-cefunctions#functions-lifecycle)
+* [Lifecycle of a function instance](/docs/codeengine?topic=codeengine-cefunctions#functions-lifecycle)
 
-* [How do Functions compare to apps and jobs?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-compare)
+* [How do functions compare to apps and jobs?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-compare)
 
-* [What are key features of working with Functions?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-ce)
+* [What are key features of working with functions?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-ce)
 
     * [Isolation](/docs/codeengine?topic=codeengine-cefunctions#cefun-isolation)
 
@@ -119,15 +119,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Runtimes](/docs/codeengine?topic=codeengine-cefunctions#functions-runtime)
 
-    * [Running Functions](/docs/codeengine?topic=codeengine-cefunctions#cefun-runfun)
+    * [Running functions](/docs/codeengine?topic=codeengine-cefunctions#cefun-runfun)
 
     * [Security](/docs/codeengine?topic=codeengine-cefunctions#cefun-security)
 
-    * [Invocation concurrency and scaling of Function instances](/docs/codeengine?topic=codeengine-cefunctions#functions-concur-ce)
+    * [Invocation concurrency and scaling of function instances](/docs/codeengine?topic=codeengine-cefunctions#functions-concur-ce)
 
-    * [Packaging your source code for a Function](/docs/codeengine?topic=codeengine-cefunctions#functions-packaging)
+    * [Packaging your source code for a function](/docs/codeengine?topic=codeengine-cefunctions#functions-packaging)
 
-* [How can I get started with Functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
+* [How can I get started with functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
 
 
 ## Release notes
@@ -139,6 +139,20 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [October 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct23)
 
     * Review the release notes for October 2023.
+
+    * [19 October 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1923)
+
+        * Added information about additional support for functions in {{site.data.keyword.codeengineshort}}
+
+        * CLI version 1.47.1 released
+
+        * Added troubleshooting information about receiving `ECONNRESET` errors
+
+        * Added information about controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} workloads
+
+        * Updated information about supported versions of Knative
+
+        * Updated information about custom domain mappings with {{site.data.keyword.codeengineshort}} apps
 
     * [09 October 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct0923)
 
@@ -470,7 +484,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated versions for buildpacks
 
-        * Added information about supported Knative versions
+        * Added information about supported versions of Knative
 
 * [December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec22)
 
@@ -1524,7 +1538,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated sizes for builds.
 
-        * CLI version 0.5.8 and 0.5.9 released.
+        * CLI versions 0.5.8 and 0.5.9 released.
 
     * [14 December 2020](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec1420)
 
@@ -2234,47 +2248,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Changing the autoscaling range with the CLI](/docs/codeengine?topic=codeengine-app-scale#set-app-instances-cli)
 
-[Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings)
+[Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-app-domainmapping#app-domainmapping)
 
-* [Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-domain-mappings#considerations-custom-domain)
+* [Configuring custom domain mappings from the console](/docs/codeengine?topic=codeengine-app-domainmapping#custom-domain-ui)
 
-* [Preparing to add a custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain)
+* [Configuring custom domain mappings with the CLI](/docs/codeengine?topic=codeengine-app-domainmapping#custom-domain-cli)
 
-    * [How can I obtain a certificate for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert)
+* [Completing the custom domain configuration with your domain registrar](/docs/codeengine?topic=codeengine-app-domainmapping#app-completing-custom-domain)
 
-    * [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis)
-
-* [Configuring custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain)
-
-    * [Configuring custom domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-ui)
-
-    * [Configuring custom domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-cli)
-
-* [Completing the custom domain configuration with your domain registrar](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-registrar)
-
-    * [How do I obtain the CNAME record for the custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cname)
-
-    * [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cis)
-
-* [Testing your custom domain](/docs/codeengine?topic=codeengine-domain-mappings#test-custom-domain)
-
-* [Viewing domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping)
-
-    * [Viewing domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-ui)
-
-    * [Viewing domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-cli)
-
-* [Updating custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain)
-
-    * [Updating a custom domain mapping from the console](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-ui)
-
-    * [Updating a custom domain mapping with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-cli)
-
-* [Deleting domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain)
-
-    * [Deleting domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-ui)
-
-    * [Deleting domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-cli)
+* [Testing your custom domain](/docs/codeengine?topic=codeengine-app-domainmapping#testapp-custom-domain)
 
 [Working with liveness and readiness probes for your app](/docs/codeengine?topic=codeengine-app-probes#app-probes)
 
@@ -2304,7 +2286,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Updating probes with the CLI](/docs/codeengine?topic=codeengine-app-probes#app-probes-update-cli)
 
-* [Deleting probes](/docs/codeengine?topic=codeengine-app-probes#delete-custom-domain)
+* [Deleting probes](/docs/codeengine?topic=codeengine-app-probes#delete-probes)
 
     * [Deleting probes from the console](/docs/codeengine?topic=codeengine-app-probes#app-probes-delete-ui)
 
@@ -2428,43 +2410,53 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Considerations when planning parallel batch jobs](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-consider)
 
 
-## Creating a Function
+## Creating a function
 {: #sitemap_creating_a_function}
 
 
-[Working with Functions](/docs/codeengine?topic=codeengine-fun-work#fun-work)
+[Working with functions](/docs/codeengine?topic=codeengine-fun-work#fun-work)
 
 * [Function limitations](/docs/codeengine?topic=codeengine-fun-work#fun-limitations)
 
-* [How do I make my code run as a {{site.data.keyword.codeengineshort}} Function component?](/docs/codeengine?topic=codeengine-fun-work#fun-containerimage)
+* [How do I make my code run as a {{site.data.keyword.codeengineshort}} function component?](/docs/codeengine?topic=codeengine-fun-work#fun-containerimage)
 
-* [What happens when I invoke my Function?](/docs/codeengine?topic=codeengine-fun-work#functions-invoke)
+* [What happens when I invoke my function?](/docs/codeengine?topic=codeengine-fun-work#functions-invoke)
+
+* [Can I keep my function instance alive longer?](/docs/codeengine?topic=codeengine-fun-work#functions-scale)
 
 * [Requests and responses](/docs/codeengine?topic=codeengine-fun-work#functions-request)
 
-    * [Example 1: Generating an HTML response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-response1)
+    * [Example 1: Generating an HTML response from a function](/docs/codeengine?topic=codeengine-fun-work#functions-response1)
 
     * [Example 2: Setting a response code and response header](/docs/codeengine?topic=codeengine-fun-work#functions-response2)
 
-    * [Example 3: Generating a plain text response from a Function](/docs/codeengine?topic=codeengine-fun-work#functions-response3)
+    * [Example 3: Generating a plain text response from a function](/docs/codeengine?topic=codeengine-fun-work#functions-response3)
 
 * [Error handling and debugging](/docs/codeengine?topic=codeengine-fun-work#functions-error)
 
 * [Function data input/output characteristics](/docs/codeengine?topic=codeengine-fun-work#functions-data)
 
-* [Options for creating Functions](/docs/codeengine?topic=codeengine-fun-work#functions-options)
+* [Options for visibility for a {{site.data.keyword.codeengineshort}} functions](/docs/codeengine?topic=codeengine-fun-work#optionsvisibilityfun)
+
+    * [Deploying your function with a public endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-public)
+
+    * [Deploying your function with a private endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-private)
+
+    * [Deploying your function with a project endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-projectonly)
+
+* [Options for creating functions](/docs/codeengine?topic=codeengine-fun-work#functions-options)
 
     * [Memory and CPU](/docs/codeengine?topic=codeengine-fun-work#functions-combo)
 
     * [Creating and running your function with environment variables](/docs/codeengine?topic=codeengine-fun-work#functions-envvar)
 
-    * [Creating and running your Function when using secrets and configmaps](/docs/codeengine?topic=codeengine-fun-work#functions-secconfigmap)
+    * [Creating and running your function when using secrets and configmaps](/docs/codeengine?topic=codeengine-fun-work#functions-secconfigmap)
 
-* [Considerations for Functions quotas](/docs/codeengine?topic=codeengine-fun-work#functions-quotas)
+* [Considerations for functions quotas](/docs/codeengine?topic=codeengine-fun-work#functions-quotas)
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-work#function-nextsteps)
 
-[Creating Function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inlinecode)
+[Creating function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inlinecode)
 
 * [Creating a function with inline with the console](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inline-console)
 
@@ -2472,7 +2464,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-inlinecode#nextsteps-funinline)
 
-[Creating Function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo)
+[Creating function workloads with repository source code](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo)
+
+* [Creating function workloads with repository source code from the console](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo-console)
+
+* [Creating function workloads with repository source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo-cli)
 
 * [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package-repo)
 
@@ -2482,7 +2478,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-repo#nextsteps-funsource)
 
-[Creating Function workloads from local source code](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local)
+[Creating function workloads from local source code](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local)
 
 * [Creating a function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local-cli)
 
@@ -2494,9 +2490,33 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-local#nextsteps-funruncr)
 
-[Runtimes](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtime)
+[Creating function workloads from existing code bundles](/docs/codeengine?topic=codeengine-fun-create-existing#fun-create-existing)
 
-* [Supported managed runtimes for Functions on {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-managed)
+* [Creating a function that references a code bundle in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-fun-create-existing#create-fun-cr-console)
+
+* [Deploying a function with an existing code bundle with the CLI](/docs/codeengine?topic=codeengine-fun-create-existing#fun-cr-cli)
+
+    * [Deploying a function from a public registry with the CLI](/docs/codeengine?topic=codeengine-fun-create-existing#fun-cr-cli-public)
+
+    * [Deploying a function from a private registry with the CLI](/docs/codeengine?topic=codeengine-fun-create-existing#fun-cr-cli-private)
+
+* [Next steps](/docs/codeengine?topic=codeengine-fun-create-existing#nextsteps-funrunexisting)
+
+[Configuring custom domain mappings for your function](/docs/codeengine?topic=codeengine-fun-domainmapping#fun-domainmapping)
+
+* [Configuring custom domain mappings from the console](/docs/codeengine?topic=codeengine-fun-domainmapping#fun-custom-domain-ui)
+
+* [Configuring custom domain mappings with the CLI](/docs/codeengine?topic=codeengine-fun-domainmapping#fun-custom-domain-cli)
+
+* [Completing the custom domain configuration with your domain registrar](/docs/codeengine?topic=codeengine-fun-domainmapping#fun-completing-custom-domain)
+
+* [Testing your custom domain](/docs/codeengine?topic=codeengine-fun-domainmapping#testfun-custom-domain)
+
+[Function runtimes](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtime)
+
+* [Supported managed runtimes for functions on {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-managed)
+
+* [Supported CPU and memory combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo)
 
 [Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate)
 
@@ -2844,6 +2864,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
 
+* [Controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-add-registry#control-cr-access)
+
 * [Considerations for images in your registry](/docs/codeengine?topic=codeengine-add-registry#considerations-registry)
 
 
@@ -2923,6 +2945,47 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Resources](/docs/codeengine?topic=codeengine-terraform-setup-ce#terraform-supported-resources)
 
     * [Data Sources](/docs/codeengine?topic=codeengine-terraform-setup-ce#terraform-supported-data-sources)
+
+
+## Working with custom domain mappings
+{: #sitemap_working_with_custom_domain_mappings}
+
+
+[Working with custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings)
+
+* [Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-domain-mappings#considerations-custom-domain)
+
+* [Obtaining a custom domain and its TLS certificate and private key](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain)
+
+    * [How can I obtain a certificate for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert)
+
+    * [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis)
+
+    * [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cis)
+
+    * [How do I obtain the CNAME record for a custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cname)
+
+* [Configuring custom domain mappings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-domain-mappings#configure-domainmapping)
+
+* [Viewing domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping)
+
+    * [Viewing domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-ui)
+
+    * [Viewing domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-cli)
+
+* [Updating domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain)
+
+    * [Updating a domain mapping from the console](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-ui)
+
+    * [Updating a domain mapping with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-cli)
+
+* [Deleting domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain)
+
+    * [Deleting domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-ui)
+
+    * [Deleting domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-cli)
+
+* [Next steps](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings-next)
 
 
 ## Subscribing to event producers
@@ -3290,6 +3353,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Using your VPE to access an app securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-app)
 
+* [Using your VPE to access a function securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-fun)
+
 [Using service endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt)
 
 * [Public endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-public-endpoints)
@@ -3301,6 +3366,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Managing {{site.data.keyword.codeengineshort}} resources securely by using service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-manageresources)
 
 * [Accessing your app securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-app)
+
+* [Accessing your function securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-fun)
 
 
 ## Enhancing security for Code Engine
@@ -3713,7 +3780,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo#mem-cpu-combo)
 
-* [Supported combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo#supported-combo)
+* [Supported combinations for apps and jobs](/docs/codeengine?topic=codeengine-mem-cpu-combo#supported-combo)
+
+* [Supported combinations for functions](/docs/codeengine?topic=codeengine-mem-cpu-combo#supported-combo-fun)
 
 * [Units of measurement](/docs/codeengine?topic=codeengine-mem-cpu-combo#unit-measurements)
 
@@ -4172,6 +4241,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why does my build run in my toolchain time out?](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain#ts-buildrun-timeout-toolchain)
 
 [Why is my toolchain package too large?](/docs/codeengine?topic=codeengine-ts-toolchain-size#ts-toolchain-size)
+
+
+### Troubleshooting - other
+{: #sitemap_troubleshooting_other}
+
+
+[Why am I getting ECONNRESET errors when connecting to an endpoint?](/docs/codeengine?topic=codeengine-ts-other-econnreset#ts-other-econnreset)
 
 
 ## Getting help and support for {{site.data.keyword.codeengineshort}}

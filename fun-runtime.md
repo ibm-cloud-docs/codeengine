@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-10-17"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -12,10 +12,10 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Runtimes
+# Function runtimes
 {: #fun-runtime}
 
-{{site.data.keyword.codeengineshort}} includes *Managed runtimes* that you can use for your Functions.
+{{site.data.keyword.codeengineshort}} includes *Managed runtimes* that you can use for your functions.
 {: shortdesc}
 
 Managed runtimes include Node.js and Python versions and specific CPU and memory combinations. These runtimes are optimized for fast startup. These runtimes are pre-warmed, which avoids the overhead of pulling container images and starting containers and processes. Your code is injected into an already running container.
@@ -25,7 +25,7 @@ Need to deploy a container image? See [Working with apps](/docs/codeengine?topic
 
 
 
-## Supported managed runtimes for Functions on {{site.data.keyword.codeengineshort}}
+## Supported managed runtimes for functions on {{site.data.keyword.codeengineshort}}
 {: #fun-supported-managed}
   
 The following runtimes are supported as managed runtimes.
@@ -33,7 +33,15 @@ The following runtimes are supported as managed runtimes.
 - Node.js 18
 - Python 3.11
 
-For memory and CPU information, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+  
+## Supported CPU and memory combinations for functions
+{: #fun-supported-combo}
+  
+See the following list for valid combinations of CPU and memory for functions.
 
-
+- 0.25 vCPU and 1 GB memory 
+- 0.5 vCPU and 2 GB memory (**Default**)
+- 1 vCPU and 4 GB memory
  
+
+For memory and CPU information, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).

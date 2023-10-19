@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-10-17"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret
 
@@ -30,12 +30,28 @@ You can choose to ignore certain file patterns from within your source code by u
 2. Select the project where you added your container registry.
 3. From the project page, click **Image builds**.
 4. Click **Create**. The **Specify build details** side panel opens where you enter the details of your build.
-5. In the **Source** section, enter a name for your build, the URL of your source repository, and your code repo access. If your code is in a public repo, use an HTTPS URL and select **None** for the code repo access. An example of an HTTPS URL is `https://github.com/IBM/CodeEngine`. If your code is in a private repo, use an SSH URL for the code repo URL and either select the name of an existing code repo access or [create a code repo access](/docs/codeengine?topic=codeengine-code-repositories). An example of an SSH URL is `git@github.com:IBM/CodeEngine.git`. Optionally, select a source branch name. If you do not provide a branch name and you leave the field empty, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository. You can enter any other branch name, tag, or commit ID. Click **Next** to continue.
-6. In the **Strategy** section, select the [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) that you want to use. If you select **Dockerfile**, you can also specify an alternative path for your Dockerfile. Select the size of your build under **Build resources**. Click **Next** to advance to the section to specify build output details.
-7. In the **Output** section, enter the details of your container image. Select an existing registry access secret, or click **Create registry access secret** to add a new one. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `{{site.data.keyword.codeengineshort}} managed secret` and let {{site.data.keyword.codeengineshort}} create and manage the secret for you. Then, select the namespace, repository, and tag of the image you want to build. You can choose to let {{site.data.keyword.codeengineshort}} create and manage the namespace in {{site.data.keyword.registryshort}} for you. If your image exists in {{site.data.keyword.registryshort}}, you can select from the existing images, or enter a new repository or tag.
+5. In the **Source** section, enter a name for your build, the URL of your source repository, and your code repo access. 
+    - If your code is in a public repo, use an HTTPS URL and select **None** for the code repo access. An example of an HTTPS URL is `https://github.com/IBM/CodeEngine`. 
+    - If your code is in a private repo, use an SSH URL for the code repo URL and either select the name of an existing code repo access or [create a code repo access](/docs/codeengine?topic=codeengine-code-repositories). An example of an SSH URL is `git@github.com:IBM/CodeEngine.git`. 
+    - Optionally, select a source branch name. If you do not provide a branch name and you leave the field empty, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository. You can enter any other branch name, tag, or commit ID. 
+    
+    Click **Next** to continue.
+    
+6. In the **Strategy** section, select the [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) that you want to use. 
+    - If you select **Dockerfile**, you can also specify an alternative path for your Dockerfile. 
+    - Select the size of your build under **Build resources**. 
+    
+    Click **Next** to continue.
+    
+7. In the **Output** section, enter the details of your container image. 
+    - Select an existing registry access secret, or click **Create registry access secret** to add a new one. 
+    - If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `{{site.data.keyword.codeengineshort}} managed secret` and {{site.data.keyword.codeengineshort}} creates and manages the secret for you. 
+    - Then, select the namespace, repository, and tag of the image you want to build. You can choose for {{site.data.keyword.codeengineshort}} tp create and manage the namespace in {{site.data.keyword.registryshort}} for you. 
+    - If your image exists in {{site.data.keyword.registryshort}}, you can select from the existing images, or enter a new repository or tag.
+
 8. Click **Done** to finish the creation of the build.
 
-After you create the build, you must [run the build](/docs/codeengine?topic=codeengine-build-run). 
+After you create the build configuration, you must [run the build](/docs/codeengine?topic=codeengine-build-run) to create the image file. After your image file is created, you can [deploy an app](/docs/codeengine?topic=codeengine-deploy-app-crimage) or [run a job](/docs/codeengine?topic=codeengine-create-job-crimage) with your newly built image file.
 
 ## Creating a build configuration with the CLI (public repo)
 {: #build-create-cli}
@@ -117,7 +133,7 @@ Before you begin
     ```
     {: screen}
 
-3. After you create the build, you must [run the build](/docs/codeengine?topic=codeengine-build-run). 
+After you create the build configuration, you must [run the build](/docs/codeengine?topic=codeengine-build-run) to create the image file. After your image file is created, you can [deploy an app](/docs/codeengine?topic=codeengine-deploy-app-crimage) or [run a job](/docs/codeengine?topic=codeengine-create-job-crimage) with your newly built image file.
 
 ### Creating a build configuration with the CLI (with public repo source and user-provided access to registry) 
 {: #build-create-cli-b}
@@ -131,7 +147,9 @@ Before you begin
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - [Create a registry secret so you can save your image](/docs/codeengine?topic=codeengine-add-registry).
 
-1. Create a build configuration to build an image from a public Git repo and specify the location of the image registry for the build output with a registry secret. With the **`build create`** command, specify the `--image` option to provide the location of the image registry, and specify the `--registry-secret` option to access the registry. For example, the following command creates a build configuration that is called `helloworld-build2` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the `myregistry` registry secret. In this example, the command uses the default `dockerfile` strategy, and the default `medium` build size. Because the branch name of the repository is not specified with the `--commit` option, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository, which is `main` for this Git repo. 
+1. Create a build configuration to build an image from a public Git repo and specify the location of the image registry for the build output with a registry secret. With the **`build create`** command, specify the `--image` option to provide the location of the image registry, and specify the `--registry-secret` option to access the registry. 
+    For example, the following command creates a build configuration that is called `helloworld-build2` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the `myregistry` registry secret. 
+    In this example, the command uses the default `dockerfile` strategy, and the default `medium` build size. Because the branch name of the repository is not specified with the `--commit` option, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository, which is `main` for this Git repo. 
 
     If you are using the `--strategy` option with the value of `dockerfile`, then ensure the `--dockerfile` option is correctly set to the name of the `dockerfile`. The default value for the `--strategy` option is `Dockerfile`. 
     {: important}
@@ -194,7 +212,7 @@ Before you begin
     ```
     {: screen}
 
-3. After you create the build, you must [run the build](/docs/codeengine?topic=codeengine-build-run). 
+After you create the build configuration, you must [run the build](/docs/codeengine?topic=codeengine-build-run) to create the image file. After your image file is created, you can [deploy an app](/docs/codeengine?topic=codeengine-deploy-app-crimage) or [run a job](/docs/codeengine?topic=codeengine-create-job-crimage) with your newly built image file.
 
 If you receive a command validation failure, check that your secret exists. If you refer to an registry secret (`--registry-secret`) for your image and the secret does not exist, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
 {: tip}

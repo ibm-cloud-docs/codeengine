@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-08"
+lastupdated: "2023-10-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -16,7 +16,7 @@ subcollection: codeengine
 {: #ceapplications}
  
 
-{{site.data.keyword.codeenginefull}} is designed to address the needs of developers who just want their code to run. {{site.data.keyword.codeengineshort}} abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code. Developers can deploy and scale their applications, which are written in any framework or language, by delegating the complexity of building and managing their workloads to {{site.data.keyword.codeengineshort}}. Learn about working with applications in {{site.data.keyword.codeenginefull}}.
+{{site.data.keyword.codeenginefull}} is designed to address the needs of developers who want their code to run. {{site.data.keyword.codeengineshort}} abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code. Developers can deploy and scale their applications, which are written in any framework or language, by delegating the complexity of building and managing their workloads to {{site.data.keyword.codeengineshort}}. Learn about working with applications in {{site.data.keyword.codeenginefull}}.
 {: shortdesc}
 
 ## What are application workloads?
@@ -41,7 +41,7 @@ An application, or app, runs your code to serve HTTP requests. In addition to tr
 
 For more information, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 
-## What are the key features of working with  {{site.data.keyword.codeengineshort}} applications?
+## What are the key features of working with {{site.data.keyword.codeengineshort}} applications?
 {: #ceapp-features}
 
 Review the following topics to learn more about working with applications in {{site.data.keyword.codeengineshort}}.
@@ -58,7 +58,7 @@ Review the following topics to learn more about working with applications in {{s
 ### Isolation
 {: #ceapp-isolation}
 
-{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. However, tenants and their workloads are isolated from each other by using {{site.data.keyword.codeengineshort}} projects.  {{site.data.keyword.codeengineshort}} prevents communication between projects, providing isolation to your applications inside a multi-tenant environment. In addition, there are access controls that are performed on a resource level to only allow authorized users to perform certain operations on project resources, such as applications or other {{site.data.keyword.codeengineshort}} workloads.
+{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. However, tenants and their workloads are isolated from each other by using {{site.data.keyword.codeengineshort}} projects. {{site.data.keyword.codeengineshort}} prevents communication between projects, providing isolation to your applications inside a multi-tenant environment. In addition, there are access controls that are performed on a resource level to only allow authorized users to perform certain operations on project resources, such as applications or other {{site.data.keyword.codeengineshort}} workloads.
 
 For more information about workload isolation, see [{{site.data.keyword.codeengineshort}} workload isolation](/docs/codeengine?topic=codeengine-architecture#workload-isolation).
 
@@ -74,7 +74,7 @@ For more information about logging, see [Viewing logs](/docs/codeengine?topic=co
 ### Running applications
 {: #ceapp-runapp}
 
-Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides you a streamlined way to run your code as an app.
+Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides you with a streamlined way to run your code as an app.
 
 You can deploy and run applications in {{site.data.keyword.codeengineshort}} in the following ways:
 
@@ -87,9 +87,9 @@ For more information about deploying and running applications, see [Working with
 ### Scaling 
 {: #ceapp-scaling}
 
-{{site.data.keyword.codeengineshort}} applications scale up or down depending on the incoming requests.  Applications follow the *scale-to-zero* model, where no instances are created in the absence of traffic, leading to cost optimization. When there is an incoming request, an app automatically scales up from zero to accommodate the workload. 
+{{site.data.keyword.codeengineshort}} applications scale up or down depending on the incoming requests. Applications follow the *scale-to-zero* model, where no instances are created in the absence of traffic, leading to cost optimization. When there is an incoming request, an app automatically scales up from zero to accommodate the workload. 
 
-With {{site.data.keyword.codeengineshort}}, you can control autoscaling by setting the minimum and maximum number of instances. You can also specify the concurrency of the application by specifying the number of requests to run in parallel for a specific application instance, to help determine when a new instance is provisioned. 
+With {{site.data.keyword.codeengineshort}}, you can control autoscaling by setting the minimum and maximum number of instances. You can also specify the concurrency of the application by specifying the number of requests to run in parallel for a specific application instance to help determine when a new instance is provisioned. 
 
 For more information about scaling your app, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
@@ -106,14 +106,14 @@ For more information about security, see [{{site.data.keyword.codeengineshort}} 
 ### Triggering applications with events
 {: #ceapp-eventing}
 
-You can subscribe {{site.data.keyword.codeengineshort}} applications to receive cron events, {{site.data.keyword.cos_full_notm}} events or Kafka topics. When you subscribe to an event producer, you must specify the name of your destination application to receive the events. 
+You can configure your {{site.data.keyword.codeengineshort}} applications to receive cron events, {{site.data.keyword.cos_full_notm}} events, or Kafka topics. When you subscribe to an event producer, you must specify the name of your destination application to receive the events. 
 
 For more information about working with event producers, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
 
 ### Visibility 
 {: #ceapp-visibility}
 
-With {{site.data.keyword.codeengineshort}}, you can determine the right level of visibility for your application by defining the endpoints, or system domain mappings, that are available for receiving requests. An application can be exposed to the internet, to the {{site.data.keyword.cloud_notm}} private network or scoped only to other resources in the same {{site.data.keyword.codeengineshort}} project.
+With {{site.data.keyword.codeengineshort}}, you can determine the right level of visibility for your application by defining the endpoints, or system domain mappings that are available for receiving requests. An application can be exposed to the internet, to the {{site.data.keyword.cloud_notm}} private network or scoped only to other resources in the same {{site.data.keyword.codeengineshort}} project.
 
 By default, every running application gets its own TLS secured endpoint, which you can map to your own domain.
 

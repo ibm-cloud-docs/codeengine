@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-12"
+lastupdated: "2023-10-16"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -21,7 +21,7 @@ subcollection: codeengine
 ## What is the supported version of Knative? 
 {: #knative-version}
 
-{{site.data.keyword.codeengineshort}} supports the version 1.6 Knative APIs and its CLI commands. 
+
 
 ## Installing the Knative command-line interface
 {: #knative-kubectl}

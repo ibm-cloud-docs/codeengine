@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-10-19"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, registry secret, service id,registry secret, registry access secret
 
@@ -372,6 +372,20 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     {: important}
 
     Now that you have your access policies in place for your service ID and your API key that is created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) to pull images from your container registry.
+
+
+
+## Controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} workloads
+{: #control-cr-access}
+
+Suppose that you want to control access to {{site.data.keyword.registrylong_notm}} when {{site.data.keyword.codeengineshort}} pulls images. For example, you want to control access to {{site.data.keyword.registryshort}} to specific IP addresses. Consider the following approaches. 
+
+* Use a [context-based restriction](/docs/Registry?topic=Registry-registry-cbr). By using a context-based restriction, if the IP addresses for your {{site.data.keyword.codeengineshort}} project ever change, you do not need to change your access. You can restrict access to {{site.data.keyword.registryshort}} to a network zone, where your network zone includes {{site.data.keyword.codeengineshort}} and anything that requires access to the registry. 
+
+* Disable the public access to {{site.data.keyword.registrylong_notm}} and make sure {{site.data.keyword.codeengineshort}} uses the private endpoints instead of the public endpoints. See [Securing your connection to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry-cbr). 
+
+* To control access by a specific IP range, use an API endpoint to fetch the IP addresses for your particular {{site.data.keyword.codeengineshort}} project. It is important to note that these IP addresses are subject to change, and you must take appropriate steps when this happens. See [{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses) and [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist](/docs/codeengine?topic=codeengine-ts-allowlist-app)?
+
 
 
 ## Considerations for images in your registry

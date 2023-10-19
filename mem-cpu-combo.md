@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-10-17"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine, memory and CPU
 
@@ -36,18 +36,18 @@ Consider the following examples of setting valid values for ephemeral storage:
 For more information about memory or CPU limitations, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 
-## Supported combinations
+## Supported combinations for apps and jobs
 {: #supported-combo}
 
-See the following table for valid combinations of vCPU and memory.
+See the following table for valid combinations of vCPU and memory for apps and jobs.
 
-The default combination for apps and jobs is 1 vCPU and 4 GB memory. The default combination for functions is 0.25 vCPU and 1 GB memory.
+The default combination for apps and jobs is 1 vCPU and 4 GB memory.
 {: note}
 
 | CPU-intensive  | Balanced | Memory-intensive |
 |--------|--------|--------|
 | 0.125 vCPU \n 0.25 GB | 0.125 vCPU \n 0.5 GB | 0.125 vCPU \n 1 GB |
-| 0.25 vCPU \n 0.5 GB | _**(default for functions)**_  \n 0.25 vCPU \n 1 GB | 0.25 vCPU \n 2 GB |
+| 0.25 vCPU \n 0.5 GB | 0.25 vCPU \n 1 GB | 0.25 vCPU \n 2 GB |
 | 0.5 vCPU \n 1 GB | 0.5 vCPU \n 2 GB | 0.5 vCPU \n 4 GB |
 |  \n 1 vCPU \n 2 GB | _**(default for apps and jobs)**_  \n  1 vCPU \n 4 GB |  \n 1 vCPU \n 8 GB |
 | 2 vCPU \n 4 GB | 2 vCPU \n 8 GB | 2 vCPU \n 16 GB |
@@ -61,7 +61,16 @@ The default combination for apps and jobs is 1 vCPU and 4 GB memory. The default
 Your existing apps and jobs might be using other memory and CPU combinations, and those will remain unaffected. However, these other combinations are not valid and only the valid combinations are supported. Therefore, any new apps or jobs as well as any changes to existing apps or jobs must comply with the list of valid choices. 
 {: important}
 
+  
+## Supported combinations for functions
+{: #supported-combo-fun}
+  
+See the following list for valid combinations of CPU and memory for functions.
 
+- 0.25 vCPU and 1 GB memory 
+- 0.5 vCPU and 2 GB memory (**Default**)
+- 1 vCPU and 4 GB memory
+  
 
 ## Units of measurement
 {: #unit-measurements}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-10-17"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret
 
@@ -42,14 +42,14 @@ Before you begin
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-1. Create a build configuration to build an image from source on your local workstation and let {{site.data.keyword.codeengineshort}} automatically store and access the image. When you specify `local` as the value for `-build-type`, you can only target {{site.data.keyword.registrylong_notm}} for the output of your local build. In this example, the command uses the default `dockerfile` strategy, and the default `medium` build size. By not specifying the location of the image registry or a registry secret, {{site.data.keyword.codeengineshort}} pushes the build output to {{site.data.keyword.registrylong_notm}} with automatic access. 
+Create a build configuration to build an image from source on your local workstation and let {{site.data.keyword.codeengineshort}} automatically store and access the image. When you specify `local` as the value for `-build-type`, you can only target {{site.data.keyword.registrylong_notm}} for the output of your local build. In this example, the command uses the default `dockerfile` strategy, and the default `medium` build size. By not specifying the location of the image registry or a registry secret, {{site.data.keyword.codeengineshort}} pushes the build output to {{site.data.keyword.registrylong_notm}} with automatic access. 
 
-    ```txt
-    ibmcloud ce build create --name build-local-dockerfile --build-type local 
-    ```
-    {: pre}
+```txt
+ibmcloud ce build create --name build-local-dockerfile --build-type local 
+```
+{: pre}
 
-2. After you create the build, you must [run the build](/docs/codeengine?topic=codeengine-build-run#build-run-cli-local) with the CLI for source from a local directory (local).
+After you create the build configuration, you must [run the build](/docs/codeengine?topic=codeengine-build-run) to create the image file. After your image file is created, you can [deploy an app](/docs/codeengine?topic=codeengine-deploy-app-crimage) or [run a job](/docs/codeengine?topic=codeengine-create-job-crimage) with your newly built image file.
 
 
 ## Creating a build configuration with the CLI (with local source and user-provided access to registry)
@@ -63,14 +63,14 @@ Before you begin
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - [Create a registry secret so you can save your image](/docs/codeengine?topic=codeengine-add-registry).
 
-1. Create a build configuration to build an image from source on your local workstation and specify the location of the image registry for the build output with a registry secret. With the **`build create`** command, when you specify `local` as the value for `--build-type`, you can only target {{site.data.keyword.registrylong_notm}} for the output of your local build. Specify the `--image` option to provide the location of the image registry, and specify the `--registry-secret` option to access the registry. In this example, the command uses the default `dockerfile` strategy, and the default `medium` build size. 
+Create a build configuration to build an image from source on your local workstation and specify the location of the image registry for the build output with a registry secret. With the **`build create`** command, when you specify `local` as the value for `--build-type`, you can only target {{site.data.keyword.registrylong_notm}} for the output of your local build. Specify the `--image` option to provide the location of the image registry, and specify the `--registry-secret` option to access the registry. In this example, the command uses the default `dockerfile` strategy, and the default `medium` build size. 
 
 
-    ```txt
-    ibmcloud ce build create --name build-local-dockerfile --build-type local --image us.icr.io/mynamespace/codeengine-build --registry-secret myregistry 
-    ```
-    {: pre}
+```txt
+ibmcloud ce build create --name build-local-dockerfile --build-type local --image us.icr.io/mynamespace/codeengine-build --registry-secret myregistry 
+```
+{: pre}
 
-2. After you create the build, you must [run the build](/docs/codeengine?topic=codeengine-build-run#build-run-cli-local) with the CLI for source from a local directory (local).
+After you create the build configuration, you must [run the build](/docs/codeengine?topic=codeengine-build-run) to create the image file. After your image file is created, you can [deploy an app](/docs/codeengine?topic=codeengine-deploy-app-crimage) or [run a job](/docs/codeengine?topic=codeengine-create-job-crimage) with your newly built image file.
 
 

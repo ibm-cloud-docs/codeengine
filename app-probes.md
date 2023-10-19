@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-10-09"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -380,7 +380,7 @@ Suppose that you want to update the liveness probe for `myapp` such that the con
 
 
 ## Deleting probes
-{: #delete-custom-domain}
+{: #delete-probes}
 
 You can remove (delete) a liveness probe. However, because a readiness probe is always set by default, you can only edit to update the properties of a readiness probe. 
 
