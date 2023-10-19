@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-18"
+lastupdated: "2023-10-19"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -34,9 +34,10 @@ Added information about additional support for functions in {{site.data.keyword.
 :   - See [Options for visibility for a Code Engine functions](/docs/codeengine?topic=codeengine-fun-work#optionsvisibilityfun).
 :   - See [Can I keep my function instance alive longer](/docs/codeengine?topic=codeengine-fun-work#functions-scale)?
 :   - See [Creating function workloads from existing code bundles](/docs/codeengine?topic=codeengine-fun-create-existing).
+:   - See [Configuring custom domain mappings for your function](/docs/codeengine?topic=codeengine-fun-domainmapping).
 
 CLI version 1.47.1 released
-:   This CLI version adds support for custom domain mappings, scale-down delay autoscaling, and endpoint visibility settings for functions with the CLI. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+:   This CLI version adds support for custom domain mappings, configuring scale-down delay, and endpoint visibility settings for functions with the CLI. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Added troubleshooting information about receiving `ECONNRESET` errors
 :   See [Why am I getting ECONNRESET errors when connecting to an endpoint](/docs/codeengine?topic=codeengine-ts-other-econnreset)?
@@ -47,10 +48,10 @@ Added information about controlling access to {{site.data.keyword.registryshort}
 Updated information about supported versions of Knative
 :   See [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
 
-Updated information about custom domain mappings with {{site.data.keyword.codeengineshort}} apps and functions
+Updated information about custom domain mappings with {{site.data.keyword.codeengineshort}} apps
 :   - See [Working with custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings).
 :   - See [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-app-domainmapping).
-:   - See [Configuring custom domain mappings for your function](/docs/codeengine?topic=codeengine-fun-domainmapping).
+
 
 
 
