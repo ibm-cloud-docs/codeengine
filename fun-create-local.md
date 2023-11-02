@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-11-01"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -192,7 +192,7 @@ Create a function that includes a dependency for a specific Python module by cre
 3. Create your files as a Function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.
   
     ```sh
-    ibmcloud ce fn create -n nodejokes -runtime nodejs-18 --build-source .
+    ibmcloud ce fn create --name nodejokes --runtime nodejs-18 --build-source .
     ```
     {: pre}
   
@@ -228,7 +228,7 @@ Create a function that includes a dependency for a specific Python module by cre
 3. Create your files as a Function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.
   
     ```sh
-    ibmcloud ce fn create -n pyjokes -runtime python-3.11 --build-source .
+    ibmcloud ce fn create --name pyjokes --runtime python-3.11 --build-source .
     ```
     {: pre}
     
