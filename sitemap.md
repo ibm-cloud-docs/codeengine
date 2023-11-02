@@ -136,6 +136,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov23)
+
+    * Review the release notes for November 2023.
+
+    * [02 November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov0223)
+
+        * Added support for domain mappings in the {{site.data.keyword.codeengineshort}} V2 API
+
 * [October 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct23)
 
     * Review the release notes for October 2023.
@@ -3715,6 +3723,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [02 November 2023](/docs/codeengine?topic=codeengine-api-changelog#02-nov-2023)
 
 * [27 September 2023](/docs/codeengine?topic=codeengine-api-changelog#27-sep-2023)
 

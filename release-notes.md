@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-30"
+lastupdated: "2023-11-02"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,19 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## November 2023
+{: #codeengine-nov23}
+
+Review the release notes for November 2023.
+{: shortdesc}
+
+### 02 November 2023
+{: #codeengine-nov0223}
+{: release-note}
+
+Added support for domain mappings in the {{site.data.keyword.codeengineshort}} V2 API
+:   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
 
 ## October 2023
 {: #codeengine-oct23}
