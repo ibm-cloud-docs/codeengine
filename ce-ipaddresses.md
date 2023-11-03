@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-21"
+lastupdated: "2023-11-03"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # {{site.data.keyword.codeengineshort}} public and private IP addresses
 {: #network-addresses}
 
-When you deploy your {{site.data.keyword.codeengineshort}} app or job, the workload is deployed to a known list of possible network addresses, depending on the deployment region. You can add these IP addresses to an allowlist in your firewall; however, you must accept the drawbacks and risks that are involved in this action.
+When you deploy your {{site.data.keyword.codeengineshort}} app, job, or function, the workload is deployed to a known list of possible network addresses, depending on the deployment region. You can add these IP addresses to an allowlist in your firewall; however, you must accept the drawbacks and risks that are involved in this action.
 {: shortdesc}
 
 - When {{site.data.keyword.codeengineshort}} runs an application or job, it selects an arbitrary system from a large pool of systems for running the workload. Load conditions and system health influence the system selection. Systems are also dynamically added and removed from this pool without warning, making the list of potential network addresses large and dynamic. Your allowlist might not be stable and work reliably. 
