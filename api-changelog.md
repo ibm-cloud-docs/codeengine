@@ -44,7 +44,7 @@ Added support for domain mappings in the API.
 :   - See [Create a domain mapping API](https://cloud.ibm.com/apidocs/codeengine/v2#create-domain-mapping){: external}.
 :   - See [Get a domain mapping API](https://cloud.ibm.com/apidocs/codeengine/v2#get-domain-mapping){: external}.
 :   - See [Delete a domain mapping API](https://cloud.ibm.com/apidocs/codeengine/v2#delete-domain-mapping){: external}.
-:   - See [Update a domain mapping API](https://cloud.ibm.com/apidocs/codeengine/v2#delete-domain-mapping){: external}.
+:   - See [Update a domain mapping API](https://cloud.ibm.com/apidocs/codeengine/v2#update-domain-mapping){: external}.
 
 
 ## 27 September 2023
