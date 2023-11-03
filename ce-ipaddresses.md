@@ -18,7 +18,7 @@ subcollection: codeengine
 When you deploy your {{site.data.keyword.codeengineshort}} app, job, or function, the workload is deployed to a known list of possible network addresses, depending on the deployment region. You can add these IP addresses to an allowlist in your firewall; however, you must accept the drawbacks and risks that are involved in this action.
 {: shortdesc}
 
-- When {{site.data.keyword.codeengineshort}} runs an application or job, it selects an arbitrary system from a large pool of systems for running the workload. Load conditions and system health influence the system selection. Systems are also dynamically added and removed from this pool without warning, making the list of potential network addresses large and dynamic. Your allowlist might not be stable and work reliably. 
+- When {{site.data.keyword.codeengineshort}} runs an application, job, or function, it selects an arbitrary system from a large pool of systems for running the workload. Load conditions and system health influence the system selection. Systems are also dynamically added and removed from this pool without warning, making the list of potential network addresses large and dynamic. Your allowlist might not be stable and work reliably. 
 - These network addresses are not exclusive to a single tenant and by granting access to these network addresses, you are also granting access for all other workloads, which might be owned by other tenants that are running on {{site.data.keyword.codeengineshort}}. 
 
 Because of these reasons, this approach is not recommended. However, if you accept these risks, then follow these steps to find the network addresses that are used by your {{site.data.keyword.codeengineshort}} workload.
