@@ -31,10 +31,10 @@ Review the release notes for November 2023.
 {: release-note}
 
 New FAQ about access for roles that are applied to {{site.data.keyword.codeengineshort}} entities are scoped within a {{site.data.keyword.codeengineshort}} project
-:    See [Does {{site.data.keyword.codeengineshort}} provide a way to limit access to a particular entity within a {{site.data.keyword.codeengineshort}} project?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb)?
+:    See [Does {{site.data.keyword.codeengineshort}} provide a way to limit access to a particular entity within a {{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-faqs#limit-access-fun)?
 
 Added troubleshooting information for creating an allowlist for {{site.data.keyword.codeengineshort}} functions
-:   See [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist](/docs/codeengine?topic=codeengine-ts-allowlist-function)?s
+:   See [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist](/docs/codeengine?topic=codeengine-ts-allowlist-function)?
 
 Added support for domain mappings in the {{site.data.keyword.codeengineshort}} V2 API
 :   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
