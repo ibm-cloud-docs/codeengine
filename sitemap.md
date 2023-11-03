@@ -4126,7 +4126,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why does my Python app fail to deploy?](/docs/codeengine?topic=codeengine-ts-build-python#ts-build-python)
 
 
-### Troubleshooting Functions
+### Troubleshooting functions
 {: #sitemap_troubleshooting_functions}
 
 
@@ -4139,6 +4139,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Keep your runtime and CLI versions up to date](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-uptodate)
 
 * [Additional topics](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-topics)
+
+[How can I add my {{site.data.keyword.codeengineshort}} function to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-function#ts-allowlist-function)
 
 
 ### Troubleshooting images
