@@ -246,6 +246,7 @@ toc:
               label: Troubleshooting Functions 
               topics:
               - troubleshoot-function.md
+              - ts-allowlist-function.md
           - topicgroup:
               label: Troubleshooting images 
               topics:
