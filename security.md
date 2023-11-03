@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-08"
+lastupdated: "2023-11-03"
 
 keywords: code engine security, security, security features for code engine, code engine security features, code engine iam
 
@@ -30,7 +30,7 @@ You can use the following security features to enhance your security.
 | Disable external endpoints | Deploy your application with a disabled external endpoint that is not exposed to external traffic by using the `--visibility=private` or `visibility=project` option. See [Options for visibility for a Code Engine application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility). |
 | Store images in private image registries | Set up a private image registry, such as the one provided by {{site.data.keyword.registrylong_notm}}, to control access to the registry and the images that can be deployed in {{site.data.keyword.codeengineshort}}. Scan your images automatically with the [{{site.data.keyword.registrylong_notm}} Vulnerability Advisor](/docs/Registry?topic=Registry-va_index). You can also add access to your own custom private registry. See [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). |
 | Build code from a private repository | Store your source code in a private repository and then build to {{site.data.keyword.registrylong_notm}}. See [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). |
-| Use secrets to store sensitive information | You can store information, such as passwords and SSH keys in a secret. For more information, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).  |
+| Use secrets to store sensitive information | You can store information, such as passwords and SSH keys in a secret. For more information, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).  | 
 {: caption="Table 1. Security features" caption-side="bottom"}
 
 ## Supported TLS versions and cipher suites

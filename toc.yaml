@@ -243,9 +243,10 @@ toc:
               - ts-build-fail-buildpushstepfails.md
               - ts-build-python.md
           - topicgroup:
-              label: Troubleshooting Functions 
+              label: Troubleshooting functions 
               topics:
               - troubleshoot-function.md
+              - ts-allowlist-function.md
           - topicgroup:
               label: Troubleshooting images 
               topics:

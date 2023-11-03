@@ -4,7 +4,7 @@ copyright:
   years: 2023, 2023
 lastupdated: "2023-11-03"
 
-keywords: troubleshooting for code engine apps, allowlist, tips for apps and allowlists, proxy service, allowlist applications
+keywords: troubleshooting for code engine functions, allowlist, tips for functions and allowlists, proxy service, allowlist functions
 
 subcollection: codeengine
 
@@ -14,8 +14,8 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist?
-{: #ts-allowlist-app}
+# How can I add my {{site.data.keyword.codeengineshort}} function to an allowlist?
+{: #ts-allowlist-function}
 {: troubleshoot}
 
 Your {{site.data.keyword.codeengineshort}} workload needs to access a protected resource. You need to create an allowlist for your {{site.data.keyword.codeengineshort}} workload. How can you find the IP addresses that your {{site.data.keyword.codeengineshort}} workload uses?
@@ -30,6 +30,4 @@ Consider instead to send requests to a third-party proxy service. Proxy services
 {: tsResolve}
 
 If this scenario does not work for you and you want to accept the risks previously stated, you can list all egress IP addresses, both public and private that are used by {{site.data.keyword.codeengineshort}} workloads in a specific project with the {{site.data.keyword.codeengineshort}} API. For more information, see [List egress IP addresses](https://cloud.ibm.com/apidocs/codeengine/v2#get-project-egress-ips){: external}.
-
-
 

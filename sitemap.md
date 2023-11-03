@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-02"
+lastupdated: "2023-11-03"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -135,6 +135,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov23)
+
+    * Review the release notes for November 2023.
+
+    * [03 November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov0323)
+
+        * New FAQ about access for roles that are applied to {{site.data.keyword.codeengineshort}} entities are scoped within a {{site.data.keyword.codeengineshort}} project
+
+        * Added troubleshooting information for creating an allowlist for {{site.data.keyword.codeengineshort}} functions
+
+        * Added support for domain mappings in the {{site.data.keyword.codeengineshort}} V2 API
 
 * [October 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct23)
 
@@ -3716,6 +3728,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
 
+* [03 November 2023](/docs/codeengine?topic=codeengine-api-changelog#03-nov-2023)
+
 * [27 September 2023](/docs/codeengine?topic=codeengine-api-changelog#27-sep-2023)
 
 * [22 June 2023](/docs/codeengine?topic=codeengine-api-changelog#22-june-2023)
@@ -3971,6 +3985,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
 
+* [Does {{site.data.keyword.codeengineshort}} provide a way to limit access to a particular entity within a {{site.data.keyword.codeengineshort}} project?](/docs/codeengine?topic=codeengine-faqs#limit-access-fun)
+
 * [Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?](/docs/codeengine?topic=codeengine-faqs#openapi-spec-fun)
 
 * [How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
@@ -4116,7 +4132,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why does my Python app fail to deploy?](/docs/codeengine?topic=codeengine-ts-build-python#ts-build-python)
 
 
-### Troubleshooting Functions
+### Troubleshooting functions
 {: #sitemap_troubleshooting_functions}
 
 
@@ -4129,6 +4145,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Keep your runtime and CLI versions up to date](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-uptodate)
 
 * [Additional topics](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-topics)
+
+[How can I add my {{site.data.keyword.codeengineshort}} function to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-function#ts-allowlist-function)
 
 
 ### Troubleshooting images

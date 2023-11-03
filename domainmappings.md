@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-11-03"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, functions in code engine, function workloads in code engine, Function, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -45,7 +45,7 @@ Before you implement custom domain mappings in {{site.data.keyword.codeenginesho
 * If your domain name can be resolved only by a nonpublic domain name system (DNS), you must provide a certificate that lists the domain name and is signed by a public, trusted CA.
 * You must provide the *entire* certificate chain, starting with the certificate that corresponds to the custom domain, followed by all intermediate certificates up to the root certificate.
 * You cannot use self-signed certificates.
-* You cannot use certificates that are signed by an untrusted or a nonpublic enterprise CA.
+* You cannot use certificates that are signed by an untrusted or a nonpublic enterprise CA. 
 
 ## Obtaining a custom domain and its TLS certificate and private key
 {: #prepare-custom-domain}
