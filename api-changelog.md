@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-11-02"
+lastupdated: "2023-11-03"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -36,15 +36,15 @@ The following table shows the service behavior changes for each version date. Sw
 |`2021-Mar-31`| Version 1.0.0  |
 {: caption="Table 1. Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
 
-## 02 November 2023
-{: #02-nov-2023}
+## 03 November 2023
+{: #03-nov-2023}
 
 Added support for domain mappings in the API. 
-:   - See [List domain mapppings API](https://cloud.ibm.com/apidocs/codeengine/v2#list-domain-mappings){: external}.
-:   - See [Create a domain mappping API](https://cloud.ibm.com/apidocs/codeengine/v2#create-domain-mapping){: external}.
-:   - See [Get a domain mappping API](https://cloud.ibm.com/apidocs/codeengine/v2#get-domain-mapping){: external}.
-:   - See [Delete a domain mappping API](https://cloud.ibm.com/apidocs/codeengine/v2#delete-domain-mapping){: external}.
-:   - See [Update a domain mappping API](https://cloud.ibm.com/apidocs/codeengine/v2#delete-domain-mapping){: external}.
+:   - See [List domain mappings API](https://cloud.ibm.com/apidocs/codeengine/v2#list-domain-mappings){: external}.
+:   - See [Create a domain mapping API](https://cloud.ibm.com/apidocs/codeengine/v2#create-domain-mapping){: external}.
+:   - See [Get a domain mapping API](https://cloud.ibm.com/apidocs/codeengine/v2#get-domain-mapping){: external}.
+:   - See [Delete a domain mapping API](https://cloud.ibm.com/apidocs/codeengine/v2#delete-domain-mapping){: external}.
+:   - See [Update a domain mapping API](https://cloud.ibm.com/apidocs/codeengine/v2#delete-domain-mapping){: external}.
 
 
 ## 27 September 2023

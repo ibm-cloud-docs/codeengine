@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-02"
+lastupdated: "2023-11-03"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,9 +26,15 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for November 2023.
 {: shortdesc}
 
-### 02 November 2023
-{: #codeengine-nov0223}
+### 03 November 2023
+{: #codeengine-nov0323}
 {: release-note}
+
+New FAQ about access for roles that are applied to {{site.data.keyword.codeengineshort}} entities are scoped within a {{site.data.keyword.codeengineshort}} project
+:    See [Does {{site.data.keyword.codeengineshort}} provide a way to limit access to a particular entity within a {{site.data.keyword.codeengineshort}} project?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb)?
+
+Added troubleshooting information for creating an allowlist for {{site.data.keyword.codeengineshort}} functions
+:   See [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist](/docs/codeengine?topic=codeengine-ts-allowlist-function)?s
 
 Added support for domain mappings in the {{site.data.keyword.codeengineshort}} V2 API
 :   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
