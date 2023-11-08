@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-11"
+lastupdated: "2023-11-08"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -24,7 +24,7 @@ After you create and run a build, your build does not complete successfully and 
 If you receive a message that the memory limit is exceeded, then your build size is too small.
 {: tsCauses}
 
-When a build runs, it is running steps, which include code compilations or container image packaging. These steps require memory. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of memory is available to a build run. When the maximum memory is reached, the build run is stopped with an error message; for example,
+When a build runs, it is running steps, which include code compilations or container image packaging. These steps require memory. Depending on whether you choose a `small`, `medium`, `large`, `xlarge`, or `xxlarge` size for your build, a maximum amount of ephemeral storage is available to a build run. For more information about build size, see [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). When the maximum memory is reached, the build run is stopped with an error message; for example,
 
 Example error message 
 

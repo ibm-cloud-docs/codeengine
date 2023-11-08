@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-11-08"
 
 keywords: code engine, toolchain and code engine, continuous deliver and code engine, toolchain, code engine cicd
 
@@ -75,7 +75,7 @@ You can set the following options for your {{site.data.keyword.codeengineshort}}
 | `app-port` | The port where the application listens for incoming connections. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c` or `http1`. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port 8080. |
 | `app-visibility` | The visibility for the application. Valid values are `public`, `private`, and `project`. Setting a visibility of `public` means that your app can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. See [Options for visibility for a Code Engine application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility). |
 | `branch` | The branch in the repository that contains the buildpacks file or the Dockerfile. The default value is `main`.  |
-| `build-size` | The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). |
+| `build-size` | The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`, and `xxlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). |
 | `build-strategy` | The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. |
 | `build-timeout` | The amount of time, in seconds, that can pass before the build run must succeed or fail. The default is `1200` seconds. |
 | `build-use-native-docker` | Optional property to opt-in for using native Docker build capabilities instead of the {{site.data.keyword.codeengineshort}} build to containerize the source. You can select this value only if the `build-strategy` is set to `dockerfile`. Valid values are `true` and `false`. |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-10"
+lastupdated: "2023-11-08"
 
 keywords: troubleshooting for code engine, troubleshooting toolchain in code engine, tips for toolchain in code engine, debugging toolchain in code engine, toolchain and code engine
 
@@ -33,7 +33,7 @@ You can resolve this issue by editing your environment properties in your toolch
 4. Edit one of these fields:
 
     - `build-timeout`: The amount of time, in seconds, that can pass before the build run must succeed or fail. The default is 1200 seconds.
-    - `build-size`: The size to use for the build, which determines the amount of resources used. Valid values include `small`, `medium`, `large`, and `xlarge`. The default is `large`. You can speed up your build run by setting the size to a larger value. For more information, see [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).
+    - `build-size`: The size to use for the build, which determines the amount of resources used. Valid values include `small`, `medium`, `large`, `xlarge`, and `xxlarge`. The default is `large`. You can speed up your build run by setting the size to a larger value. For more information, see [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).
   
     You can search for `build-` to see all build-related properties.
     {: tip} 

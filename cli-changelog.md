@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-19"
+lastupdated: "2023-11-08"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.48.0 | 2023-11-09 | -  Updated the `--build-size` option for the **`app create`**, **`app update`**, **`job create`**, and **`job update`** commands to add support for `xxlarge` build sizes. The `--size` option on the  **`build create`**,  **`build update`**, and **`buildrun submit`** commands was also updated to add support for the `xxlarge` build size.  \n - Added the `--ignore-not-found` option to the **`subscription kafka delete`** command.  \n - Fixed various bugs. |
 | 1.47.1 | 2023-10-19 | - Added support for the  `--scale-down-delay` option and for the endpoint `--visibility` option for functions on the [**`function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) and [**`function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) commands.  \n - Added support for custom domain mappings for functions with the CLI. \n - Fixed various bugs. |
 | 1.46.1 | 2023-10-09 | - Fixed various bugs. |
 | 1.46.0 | 2023-09-21 | - Added support for liveness and readiness probes with applications. Added support for the `--probe-live`, `--probe-ready`, `--probe-live-clear`, and `probe-ready-reset` options on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) and [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. See [Working with liveness and readiness probes for your app](/docs/codeengine?topic=codeengine-app-probes). |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-27"
+lastupdated: "2023-11-08"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -82,7 +82,7 @@ The version of a specific runtime for a Paketo buildpack might differ between re
 ## Determine the size of the build
 {: #build-size}
 
-{{site.data.keyword.codeengineshort}} classifies builds into `small`, `medium`, `large`, and `xlarge` size. The size of the build defines how CPU cores, memory, and disk space are assigned to the build. A smaller build is less expensive, but typically also slower because it uses fewer CPU cores. Also, the memory and disk requirements of your build might cause the build to fail with a smaller size.
+{{site.data.keyword.codeengineshort}} classifies builds into `small`, `medium`, `large`, `xlarge`, and `xxlarge` size. The size of the build defines how CPU cores, memory, and disk space are assigned to the build. A smaller build is less expensive, but typically also slower because it uses fewer CPU cores. Also, the memory and disk requirements of your build might cause the build to fail with a smaller size.
 
 | Size | Dockerfile | Buildpacks |
 | --------- | -------- | -------- |
@@ -90,6 +90,7 @@ The version of a specific runtime for a Paketo buildpack might differ between re
 | `medium` | - **CPU** 1 \n - **Memory** 4 GB \n - **Disk** 4 GB | - **CPU** 1 \n - **Memory** 4 GB \n - **Disk** 4 GB |
 | `large` | - **CPU** 2 \n - **Memory** 8 GB \n - **Disk** 8 GB | - **CPU** 2 \n - **Memory** 8 GB \n - **Disk** 8 GB |
 | `xlarge` | - **CPU** 4 \n - **Memory** 16 GB \n - **Disk** 16 GB | - **CPU** 4 \n - **Memory** 16 GB \n - **Disk** 16 GB |
+| `xxlarge` | - **CPU** 12 \n - **Memory** 48 GB \n - **Disk** 48 GB | - **CPU** 12 \n - **Memory** 48 GB \n - **Disk** 48 GB |
 {: caption="Build size values." caption-side="bottom"}
 
 If you are uncertain about which size to choose, consider starting with `small` or `medium`. If the build fails due to lack of memory or disk space, or is not fast enough, then switch to larger sizes.
