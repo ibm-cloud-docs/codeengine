@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-21"
+lastupdated: "2023-11-08"
 
 keywords: billing, pricing, costs for code engine, billing for code engine, job pricing, app pricing, build pricing
 
@@ -64,7 +64,7 @@ Note that the time that it takes to pull your image or to build it from source c
 
 When you build an image from source code to deploy as an app or run as a job, you are billed for the memory and vCPU usage time that the build consumes. However, this charge is separate from the charges that you might incur when you use the resulting image in an application or job run. You are not charged for your build configuration.
 
-Builds are classified as `small`, `medium`, `large`, and `xlarge` size. The size of the build defines how CPU cores, memory, and disk space are assigned to the build when it runs. A smaller build is less expensive, but typically also slower due to the lower number of CPU cores. In addition, the memory and disk requirements of your build might cause the build to fail if you choose too small a size. For more information about build size, see [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).
+Builds are classified as `small`, `medium`, `large`, `xlarge`, and `xxlarge` size. The size of the build defines how CPU cores, memory, and disk space are assigned to the build when it runs. A smaller build is less expensive, but typically also slower due to the lower number of CPU cores. In addition, the memory and disk requirements of your build might cause the build to fail if you choose too small a size. For more information about build size, see [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).
 
 Note that the time that it takes to pull source code and push your built image is included in the billable time.
 

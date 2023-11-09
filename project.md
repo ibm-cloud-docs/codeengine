@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-11-09"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -31,7 +31,7 @@ A project provides the following items.
 
 For more information about managing access control to projects with IAM, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
-Projects incur no costs, but instead serve as folders for your apps and jobs.
+Projects incur no costs, but instead serve as folders for your apps, jobs, and functions. 
 
 ### How can I see what projects I can access?
 {: #project-access}
@@ -62,6 +62,11 @@ myproject        01234567-abcd-abcd-abcd-abcdabcd1111  active  true            u
 {: #project-details}
 
 From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
+
+When you are working with a component in {{site.data.keyword.codeengineshort}} from the console such as apps, jobs, or functions, or their related entities such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more! 
+{: note}
+ 
+
 
 You can also run the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to display details of a project. Replace `PROJECT_NAME` with the name of your project. If your project is selected as the current context, the output of this command includes details about limits and quota usage of {{site.data.keyword.codeengineshort}} project resources. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
@@ -230,7 +235,12 @@ After you create a project, you can work with the project by using the {{site.da
 
 To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external} and click the name of the project from the list.
 
-To work with {{site.data.keyword.codeengineshort}} components, you must work with the components in the context of a project. From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-plan). To determine the project from which you are currently working, see the breadcrumb of your {{site.data.keyword.codeengineshort}} component.
+To work with {{site.data.keyword.codeengineshort}} components, you must work with the components in the context of a project. From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads), [jobs](/docs/codeengine?topic=codeengine-job-plan), or [functions](/docs/codeengine?topic=codeengine-fun-work). To determine the project from which you are currently working, see the breadcrumb of your {{site.data.keyword.codeengineshort}} component.
+
+When you are working with a component in {{site.data.keyword.codeengineshort}} from the console such as apps, jobs, or functions, or their related entities such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more! 
+{: note}
+ 
+
 
 ### Working with a project with the CLI
 {: #target-project-cli}
@@ -249,7 +259,7 @@ Selecting project 'myproject'...
 ```
 {: screen}
 
-From within the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-plan).
+From within the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads), [jobs](/docs/codeengine?topic=codeengine-job-plan), or [functions](/docs/codeengine?topic=codeengine-fun-work). 
 
 ### Determining which project is selected as the current context
 {: #current-project-cli}

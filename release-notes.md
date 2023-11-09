@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-03"
+lastupdated: "2023-11-09"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,31 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for November 2023.
 {: shortdesc}
+
+### 09 November 2023
+{: #codeengine-nov0923}
+{: release-note}
+
+Added `xxlarge` size for builds 
+:   See [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).
+
+CLI version 1.48.0 released
+:   This CLI version adds support for `xxlarge` build sizes. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated information about adding authentication and authorization capabilities and rotating TLS certificates for security
+:   See [{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure).
+
+Added information about a new project details page in the console, which includes information such as the region, CRN, GUID, network addresses (public and private), and more! This page provides a convenient way to obtain project details when troubleshooting.
+:   - See [How can I see details about a project](/docs/codeengine?topic=codeengine-manage-project#project-details)? 
+:   - See [Providing support case details](/docs/codeengine?topic=codeengine-get-support#support-case-details).
+
+Added troubleshooting information for app connectivity when using a proxy
+:   See [Why does my app connection fail when using a proxy](/docs/codeengine?topic=codeengine-ts-app-connection-failwithproxy)?
+
+Added troubleshooting information for expired SSH keys during a build
+:   See [Build fails in the source step](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-expiredsshkey)?
+
+
 
 ### 03 November 2023
 {: #codeengine-nov0323}
@@ -1554,7 +1579,7 @@ Added support for build logs in the {{site.data.keyword.codeengineshort}} consol
 :   See [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui).
 
 Updated information about `reclamation` commands.
-:   See [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project).</li></ul>|
+:   See [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project). |
 
 ### 1 September 2021
 {: #codeengine-sep0121}

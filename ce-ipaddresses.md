@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-03"
+lastupdated: "2023-11-09"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -27,4 +27,11 @@ Depending on your scenario, you can send requests to a third-party proxy service
 {: tip}
   
 You can list all egress IP addresses, both public and private that are used by {{site.data.keyword.codeengineshort}} workloads in a specific project with the {{site.data.keyword.codeengineshort}} API. For more information, see [List egress IP addresses](https://cloud.ibm.com/apidocs/codeengine/v2#get-project-egress-ips).
+
+When you are working with a component in {{site.data.keyword.codeengineshort}} from the console such as apps, jobs, or functions, or their related entities such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more! 
+{: note}
+ 
+
+
+
 

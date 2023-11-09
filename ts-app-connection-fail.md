@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-11-09"
 
 keywords: troubleshooting for code engine, troubleshooting connections in code engine, tips for app connections in code engine, debugging connections in code engine, app connectivity and code engine, app connection fails
 
@@ -30,8 +30,14 @@ Your application connects to another service, such as a database. When your app 
 By default, your app times out after 5 minutes. If it does not receive any updates from the connection within this time, then your app ends the connection. For more information, see [Application defaults and limits](/docs/codeengine?topic=codeengine-limits#limits_application).
 {: tsCauses}
 
-You can resolve this issue by changing the timeout value for your app. If your app requires a connection time that is longer than 10 minutes, configure your app to include a a heartbeat connection to the other service, which keeps your connection active. You can also run a {{site.data.keyword.codeengineshort}} job and then return the output to your app. For more information about jobs, see [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan).
+You can resolve this issue by changing the timeout value for your app. If your app requires a connection time that is longer than 10 minutes, configure your app to include a a heartbeat connection to the other service, which keeps your connection active. 
 {: tsResolve}
+
+You can also run a {{site.data.keyword.codeengineshort}} job and then return the output to your app. For more information about jobs, see [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan).
+
+For more information about troubleshooting app connection failures when using a proxy, see [Why does my app connection fail when using a proxy](/docs/codeengine?topic=codeengine-ts-app-connection-failwithproxy)?
+
+
 
 
 ## Updating your app timeout value from the console
@@ -52,4 +58,6 @@ To update your app with the CLI, run the [**app update**](/docs/codeengine?topic
 
 
 After your app is updated, {{site.data.keyword.codeengineshort}} creates a revision of your app. When the app revision reaches a `Ready` state, all traffic is routed to this new instance.
+
+
 

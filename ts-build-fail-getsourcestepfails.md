@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-11"
+lastupdated: "2023-11-09"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, public repositories, private repositories
 
@@ -61,6 +61,7 @@ The error text is different based on what went wrong. The following table descri
 | `Host key verification failed`  | - The source URL was provided by using SSH protocol, but no secret was provided. The wrong protocol was used or a secret is missing or incorrect. |
 | `Permission denied (publickey)`  | - The source URL was provided by using SSH protocol, but a secret is missing or incorrect. |
 | `Couldn't find remote ref` | - The revision (branch name, tag name, commit ID) specified in the build does not exist. |
+| `Your SSH key has expired.` | - The SSH key has expired.  |
 {: caption="Error text and root cases for Git source failed step."}
 
 Try one of these solutions.
@@ -194,5 +195,32 @@ A build configuration specifies the source repository by using its URL and optio
     ```
     {: pre}
 
+
+## Resolution for an expired SSH key during build
+{: #ts-build-expiredsshkey}
+
+When you use an SSH key to connect to your source repository and you receive an error that indicates the SSH key is expired, be sure to check the settings for the SSH key that you use as a code repository access secret in the failed build.
+
+You must know how the SSH key was created, whether the key was created for a specific user, or if the SSH key is a Git deploy key to the repository. Perhaps you specified an expiration for the key. Setting an expiration for a key is a function of GitLab.
+
+{{site.data.keyword.contdelivery_full}} is based on GitLab. For more information, see [{{site.data.keyword.contdelivery_short}} Git repos and issue tracking](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started).
+{: note}
+
+To resolve this error, take the following actions. 
+
+* If you know the SSH key that you are using in {{site.data.keyword.codeengineshort}}, then update the deploy or user key with the same SSH public key in GitLab. With the update, do not use an expiration or update to a different expiration date. Because you are using the same SSH key in your secret in {{site.data.keyword.codeengineshort}}, you don't need to update the code repository access secret in {{site.data.keyword.codeengineshort}}.
+
+* Update the code repository access secret to use the new SSH key. 
+    1. In GitLab, use the SSH public key to create a deploy key or a user key. 
+    2. In {{site.data.keyword.codeengineshort}}, update the code repository access secret to use the new SSH private key. 
+
+        For example, suppose that you want to update the `mysecret-ssh` code repository access secret. Use the  [**`ibmcloud ce secret update --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-update) command to update a secret to authenticate your Git repository. 
+
+        ```txt
+        ibmcloud ce secret update --format ssh --name mysecret-ssh --key-path $HOME/.ssh/id_rsa --known-hosts-path $HOME/.ssh/known_hosts
+        ```
+        {: pre}
+
+For more information about working with SSH keys for a code repository, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).
 
 
