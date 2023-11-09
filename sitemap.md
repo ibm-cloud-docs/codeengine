@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-08"
+lastupdated: "2023-11-09"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,20 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov23)
 
     * Review the release notes for November 2023.
+
+    * [09 November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov0923)
+
+        * Added `xxlarge` size for builds 
+
+        * CLI version 1.48.0 released
+
+        * Updated information about adding authentication and authorization capabilities and rotating TLS certificates for security
+
+        * Added information about a new project details page in the console, which includes information such as the region, CRN, GUID, network addresses (public and private), and more! This page provides a convenient way to obtain project details when troubleshooting.
+
+        * Added troubleshooting information for app connectivity when using a proxy
+
+        * Added troubleshooting information for expired SSH keys during a build
 
     * [03 November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov0323)
 
@@ -4068,6 +4082,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Updating your app timeout value with the CLI](/docs/codeengine?topic=codeengine-ts-app-connection-fail#ts-app-timeout-cli)
 
+[Why does my app connection fail when using a proxy?](/docs/codeengine?topic=codeengine-ts-app-connection-failwithproxy#ts-app-connection-failwithproxy)
+
 [Can I stop my app?](/docs/codeengine?topic=codeengine-ts-app-stop-traffic#ts-app-stop-traffic)
 
 [Why aren't my app instances scaling down as expected?](/docs/codeengine?topic=codeengine-ts-app-domain-notscaledown#ts-app-domain-notscaledown)
@@ -4106,6 +4122,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [For private repositories](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-wrongprotocol-private)
 
 * [Resolution for a wrong revision during build](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-wrongrevision)
+
+* [Resolution for an expired SSH key during build](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-expiredsshkey)
 
 [Build fails when the ephemeral storage limit is exceeded](/docs/codeengine?topic=codeengine-ts-build-ephemeral-limit#ts-build-ephemeral-limit)
 

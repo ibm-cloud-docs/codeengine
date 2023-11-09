@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-11-09"
 
 keywords: getting support for code engine, help for code engine, support for code engine, errors in code engine, slack for code engine, getting support
 
@@ -32,6 +32,8 @@ To ensure that the support team can start investigating your case to provide a t
 
 * Name of the targeted region. See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 * Name of your {{site.data.keyword.codeengineshort}} project. See [Working with a project](/docs/codeengine?topic=codeengine-manage-project#target-a-project).
+    * For your project, also include its CRN (Cloud Resource Name) and GUID (globally unique identifier). The project details page in the console provides provides a convenient way to obtain project details when troubleshooting. See [How can I see details about a project](/docs/codeengine?topic=codeengine-manage-project#project-details)? 
+
 * Name of your app, job, or function.  See [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads), [Working with jobs](/docs/codeengine?topic=codeengine-job-plan), and [Working with Functions](/docs/codeengine?topic=codeengine-fun-work).
 
 * Does your app, job, or function use a a build of your source that is stored in a Git repository or is it stored locally on your workstation?  See [Working with builds](/docs/codeengine?topic=codeengine-plan-build).

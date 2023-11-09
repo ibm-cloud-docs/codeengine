@@ -228,6 +228,7 @@ toc:
               - ts-app-domain-notready.md
               - ts-allowlist-app.md
               - ts-app-connection-fail.md
+              - ts-app-connection-failwithproxy.md
               - ts-app-stop-traffic.md
               - ts-app-notscaledown.md
               - ts-app-toomanyports.md
