@@ -18,12 +18,12 @@ content-type: troubleshoot
 {: #ts-app-connection-failwithproxy}
 {: troubleshoot}
 
-Your application connects to another service with a proxy such as [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started), which is based on CloudFlare. When your app runs, you notice that the connection ends unexpectedly, and you receive an `ERROR_CONNECTION_CLOSED` message. 
+Your application connects to another service with a proxy such as [{{site.data.keyword.cis_full_notm}} (CIS)](/docs/cis?topic=cis-getting-started), which is based on CloudFlare. When your app runs, you notice that the connection ends unexpectedly, and you receive an `ERROR_CONNECTION_CLOSED` message. 
 {: tsSymptoms}
 
 
 
-If you use {{site.data.keyword.cis_full_notm}} or Cloudflare as a proxy for your {{site.data.keyword.codeengineshort}} application, after 100 seconds, if Cloudflare does not detect an HTTP response, the connection is closed and a 524 error is given by the proxy.
+If you use {{site.data.keyword.cis_short}} or Cloudflare as a proxy for your {{site.data.keyword.codeengineshort}} application, after 100 seconds, if Cloudflare does not detect an HTTP response, the connection is closed and a 524 error is given by the proxy.
 {: tsCauses}
 
 
