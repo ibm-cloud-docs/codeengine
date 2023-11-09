@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-03"
+lastupdated: "2023-11-09"
 
 keywords: code engine security, security, security features for code engine, code engine security features, code engine iam
 
@@ -30,7 +30,9 @@ You can use the following security features to enhance your security.
 | Disable external endpoints | Deploy your application with a disabled external endpoint that is not exposed to external traffic by using the `--visibility=private` or `visibility=project` option. See [Options for visibility for a Code Engine application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility). |
 | Store images in private image registries | Set up a private image registry, such as the one provided by {{site.data.keyword.registrylong_notm}}, to control access to the registry and the images that can be deployed in {{site.data.keyword.codeengineshort}}. Scan your images automatically with the [{{site.data.keyword.registrylong_notm}} Vulnerability Advisor](/docs/Registry?topic=Registry-va_index). You can also add access to your own custom private registry. See [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). |
 | Build code from a private repository | Store your source code in a private repository and then build to {{site.data.keyword.registrylong_notm}}. See [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). |
-| Use secrets to store sensitive information | You can store information, such as passwords and SSH keys in a secret. For more information, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).  | 
+| Use secrets to store sensitive information | You can store information, such as passwords and SSH keys in a secret. For more information, see [Working with secrets](/docs/codeengine?topic=codeengine-secret). |
+| Add authentication and authorization capabilities | If you are exposing your application or function in {{site.data.keyword.codeengineshort}} on a public API or website, you might want to restrict access to certain users or locations (IP address ranges). While {{site.data.keyword.codeengineshort}} provides capabilities to restrict access for APIs that you can use to manage {{site.data.keyword.codeengineshort}} projects and its entities, it is the responsibility of the owner of the code source to add proper authentication and authorization capabilities to protect the code that runs when reaching the endpoints. For example, you can use [{{site.data.keyword.appid_full_notm}}](/docs/appid) to add authentication and authorization capabilities for your code. |
+| Rotate TLS certificates regularly | If you are using custom domain mappings to expose your applications or functions, you must ensure that your TLS certificates have an expiry date; for example 90 days. You must periodically rotate your certificate with an updated certificate (that has its own expiry date). Ideally, use automation to rotate the certificates. For example, you can use a {{site.data.keyword.codeengineshort}} job that is triggered by a cron subscription to rotate the certificate. If you store secrets in {{site.data.keyword.secrets-manager_full_notm}}, consider using {{site.data.keyword.en_full_notm}} so that your {{site.data.keyword.codeengineshort}} project is aware of certificate rotations. You can find a [sample app that uses event notifications](https://github.com/IBM/CodeEngine/tree/main/app-n-event-notification){: external} by visiting our {{site.data.keyword.codeengineshort}} samples repository on GitHub. |
 {: caption="Table 1. Security features" caption-side="bottom"}
 
 ## Supported TLS versions and cipher suites

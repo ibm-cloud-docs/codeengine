@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-06"
+lastupdated: "2023-11-09"
 
 keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
 
@@ -32,6 +32,9 @@ The maximum number of projects includes projects that are active and any project
 
 When working with the console, review your defined projects from the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}. This listing includes the region where your project lives. From this page, you can delete projects as needed. When you delete a project from the console, the project is soft deleted. The deleted project does not display from the **Projects** page. 
 
+When you are working with an component in {{site.data.keyword.codeengineshort}} from the console, such as apps, jobs, or functions, or their related entities, such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more! 
+{: note}
+ 
 
 
 When working with the CLI, use the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all your projects. The output of this command displays the region where your project lives. 

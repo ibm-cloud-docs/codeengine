@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-08"
+lastupdated: "2023-11-09"
 
 keywords: troubleshooting for code engine, troubleshooting connections in code engine, tips for app connections in code engine, debugging connections in code engine, app connectivity and code engine, app connection fails
 
@@ -34,6 +34,8 @@ You can resolve this issue by changing the timeout value for your app. If your a
 {: tsResolve}
 
 You can also run a {{site.data.keyword.codeengineshort}} job and then return the output to your app. For more information about jobs, see [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan).
+
+For more information about troubleshooting app connection failures when using a proxy, see [Why does my app connection fail when using a proxy](/docs/codeengine?topic=codeengine-ts-app-connection-failwithproxy)?
 
 
 
