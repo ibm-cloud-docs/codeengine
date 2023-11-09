@@ -63,7 +63,7 @@ myproject        01234567-abcd-abcd-abcd-abcdabcd1111  active  true            u
 
 From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 
-When you are working with an component in {{site.data.keyword.codeengineshort}} from the console, such as apps, jobs, or functions, or their related entities, such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more! 
+When you are working with a component in {{site.data.keyword.codeengineshort}} from the console such as apps, jobs, or functions, or their related entities such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more! 
 {: note}
  
 
@@ -237,7 +237,7 @@ To work with a project, go to the [{{site.data.keyword.codeengineshort}} Project
 
 To work with {{site.data.keyword.codeengineshort}} components, you must work with the components in the context of a project. From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads), [jobs](/docs/codeengine?topic=codeengine-job-plan), or [functions](/docs/codeengine?topic=codeengine-fun-work). To determine the project from which you are currently working, see the breadcrumb of your {{site.data.keyword.codeengineshort}} component.
 
-When you are working with an component in {{site.data.keyword.codeengineshort}} from the console, such as apps, jobs, or functions, or their related entities, such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more! 
+When you are working with a component in {{site.data.keyword.codeengineshort}} from the console such as apps, jobs, or functions, or their related entities such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more! 
 {: note}
  
 
