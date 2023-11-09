@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-11-09"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -159,7 +159,7 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 :   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed only if the `--build-source` option is set to the URL of a Git repository. This value is *optional*. 
 
 `--build-size`, `--size`, `--bsz`, `--sz`
-:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `medium`.
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`, and `xxlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `medium`.
 
 `--build-source`, `--source`, `--bsrc`, `--src`
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
@@ -817,7 +817,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   Clear the SSH secret. This option is allowed if your application currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--build-size`, `--size`, `--bsz`, `--sz`
-:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `medium`.
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`, and `xxlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `medium`.
 
 `--build-source`, `--source`, `--bsrc`, `--src`
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
@@ -1059,7 +1059,7 @@ ibmcloud ce build create --name BUILD_NAME [--build-type BUILD_TYPE] [--commit C
 :   The registry secret that is used to access the registry. You can add the registry secret by running the `registry create` command. This value is *optional*. 
 
 `--size`, `--sz`
-:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). This value is *optional*. The default value is `medium`.
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`, and `xxlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). This value is *optional*. The default value is `medium`.
 
 `--source`, `--src`
 :   The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. The source option is required if the `--build-type` option is `git` and not allowed if the `--build-type` option is `local`. This value is *optional*. 
@@ -1301,7 +1301,7 @@ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--commit-clear] [-
 :   The name of the registry secret. The registry secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 
 `--size`, `--sz`
-:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). This value is *optional*. 
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`, and `xxlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). This value is *optional*. 
 
 `--source`, `--src`
 :   The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is *optional*. 
@@ -1762,7 +1762,7 @@ ibmcloud ce buildrun submit (--build BUILD_NAME [--name NAME]) | (--name NAME [-
 :   The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
 
 `--size`, `--sz`
-:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. This value is *optional*. The default value is `medium`.
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`, and `xxlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. This value is *optional*. The default value is `medium`.
 
 `--source`, `--src`
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. If the `--build` option is set, the source option is required if the `--build-type` option on the related build is `local` and **not** allowed if the `--build-type` option on the related build is `git`. If the `--build` option is not set, the source option is optional. This value is *optional*. The default value is `.`.
@@ -3114,7 +3114,7 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 :   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed only if the `--build-source` option is set to the URL of a Git repository. This value is *optional*. 
 
 `--build-size`, `--size`, `--bsz`, `--sz`
-:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `medium`.
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`, and `xxlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `medium`.
 
 `--build-source`, `--source`, `--bsrc`, `--src`
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
@@ -3474,7 +3474,7 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 :   Clear the SSH secret. This option is allowed if your job currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--build-size`, `--size`, `--bsz`, `--sz`
-:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `medium`.
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`, and `xxlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed only if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `medium`.
 
 `--build-source`, `--source`, `--bsrc`, `--src`
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
@@ -7049,7 +7049,7 @@ OK
 ```
 {: screen}  
   
-## Subscription `kafka` commands  
+## Subscription kafka commands  
 {: #cli-subscription-kafka}  
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
@@ -7161,7 +7161,7 @@ OK
 Delete a Kafka event subscription.  
   
 ```txt
-ibmcloud ce subscription kafka delete --name KAFKA_SOURCE_NAME [--force] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce subscription kafka delete --name KAFKA_SOURCE_NAME [--force] [--ignore-not-found] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -7173,6 +7173,9 @@ ibmcloud ce subscription kafka delete --name KAFKA_SOURCE_NAME [--force] [--no-w
 
 `--force`, `-f`
 :   Force deletion without confirmation. This value is *optional*. The default value is `false`.
+
+`--ignore-not-found`, `--inf`
+:   If not found, do not fail. This value is *optional*. The default value is `false`.
 
 `--no-wait`, `--nw`
 :   Delete the Kafka event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait. Use the `subscription kafka get` command to check the subscription status. This value is *optional*. The default value is `false`.
