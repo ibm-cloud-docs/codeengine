@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-16"
+lastupdated: "2023-11-14"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -169,13 +169,13 @@ Create a function that includes a dependency for a specific Node.js module by cr
 
     ```javascript
     function main(args) {
-	  	  const oneLinerJoke = require('one-liner-joke');
-	  	  let getRandomJoke = oneLinerJoke.getRandomJoke();
+      const LoremIpsum = require("lorem-ipsum").LoremIpsum;
+      const lorem = new LoremIpsum();
 
-  		  return {
-              	headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          	    body: getRandomJoke
-      	}
+      return {
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: lorem.generateWords(10),
+      };
     }
 
     module.exports.main = main;
@@ -186,27 +186,29 @@ Create a function that includes a dependency for a specific Node.js module by cr
 
     ```sh
     {
-	    "main": "main.js",
-    	"dependencies" : {
-   		"one-liner-joke" : "1.2.2"
+      "name": "function",
+      "version": "1.0.0",
+      "main": "main.js",
+      "dependencies" : {
+    		    "lorem-ipsum" : "2.0.8"
      	}
     }
     ```
     {: codeblock}
 
 
-3. Create your files as a Function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option.
+3. Create your files as a Function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option. 
   
     ```sh
-    ibmcloud ce fn create -n nodejoke -runtime nodejs-18 --build-source GITHUB_DIR
+    ibmcloud ce fn create -n nodelorem -runtime nodejs-18 --build-source GITHUB_DIR
     ```
     {: pre}
   
-4. Invoke your Function by pasting the provided URL into a web browser. Your browser displays a random joke!
+4. Invoke your Function by pasting the provided URL into a web browser. Your browser displays a passage of `lorem ipsum`.
 
 For more information about the `fn create` command and its options, see [Create a Function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
 
-### Including modules for a Python Function
+### Including modules for a Python function
 {: #function-python-dep-repo}
 
 Create a function that includes a dependency for a specific Python module by creating a `requirements.txt` file. In this case, both the source code and requirements file are located in the same folder.
@@ -214,31 +216,37 @@ Create a function that includes a dependency for a specific Python module by cre
 1. Create your Function by saving your code into a `__main__.py` file 
 
     ```py
-    import pyjokes
+    from lorem_text import lorem
+
+
     def main(params):
-	    return {
-	    	      "headers": { 'Content-Type': 'text/plain;charset=utf-8' },
-	    	      "body": pyjokes.get_joke()
-    	}
+         words = 10
+
+         return {
+              "headers": {
+                  "Content-Type": "text/plain;charset=utf-8",
+              },
+              "body": lorem.words(words),
+          }
     ```
     {: codeblock}
 
 2. Create a `requirements.txt` containing your required dependencies for your Function
 
     ```sh
-    pyjokes==0.6.0
+    lorem-text
     ```
     {: codeblock}
   
 
-3. Create your files as a Function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option.
+3. Create your files as a function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option.
   
     ```sh
-    ibmcloud ce fn create -n pyjokes -runtime python-3.11 --build-source GITHUB_DIR
+    ibmcloud ce fn create -n pylorem -runtime python-3.11 --build-source GITHUB_DIR
     ```
     {: pre}
     
-4. Invoke your Function by pasting the provided URL into a web browser. Your browser displays a random joke!
+4. Invoke your Function by pasting the provided URL into a web browser. Your browser displays a passage of `lorem ipsum`.
  
 
 For more information about the `fn create` command and its options, see [Create a Function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
