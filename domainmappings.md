@@ -187,8 +187,6 @@ Status:       ready
 After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
 
 
-
-
 ## Configuring custom domain mappings in {{site.data.keyword.codeengineshort}}
 {: #configure-domainmapping}
 
@@ -196,6 +194,8 @@ Now that you are familiar with the concepts of working with custom domain mappin
 
 * [Configuring custom domain mappings for your application](/docs/codeengine?topic=codeengine-app-domainmapping).
 * [Configuring custom domain mappings for your function](/docs/codeengine?topic=codeengine-fun-domainmapping). 
+
+
 
 
 ## Viewing domain mappings 

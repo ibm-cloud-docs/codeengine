@@ -400,8 +400,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [12 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1223)
 
-        * Added information about troubleshooting custom domain mappings
-
         * CLI version 1.43.1 released
 
         * Updated versions for buildpacks
@@ -4075,8 +4073,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why did my app stop running?](/docs/codeengine?topic=codeengine-ts-app-end#ts-app-end)
 
 [Why did my app restart?](/docs/codeengine?topic=codeengine-ts-app-restart#ts-app-restart)
-
-[Why isn't my custom domain mapping ready?](/docs/codeengine?topic=codeengine-ts-app-domain-notready#ts-app-domain-notready)
 
 [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-app#ts-allowlist-app)
 
