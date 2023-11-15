@@ -2514,11 +2514,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local-cli)
 
-* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-local#fun-package-local)
+* [Including dependencies for your function](/docs/codeengine?topic=codeengine-fun-create-local#fun-package-local)
 
-    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-local#function-nodejs-dep-local)
+    * [Including modules for a Node.js function](/docs/codeengine?topic=codeengine-fun-create-local#function-nodejs-dep-local)
 
-    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-local#function-python-dep-local)
+    * [Including modules for a Python function](/docs/codeengine?topic=codeengine-fun-create-local#function-python-dep-local)
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-local#nextsteps-funruncr)
 

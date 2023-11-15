@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-15"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -149,93 +149,103 @@ module.exports.main = main;
     ```
     {: screen}
 
-## Including dependencies for your Function
+## Including dependencies for your function
 {: #fun-package-local}
 
-You can create Functions in many different programming languages. When your Function code grows complex, you can add code modules as dependencies for your Function. Each language has its own modules to use with your Function code. For example, Node.js dependencies are usually existing `npm` modules, whereas Python uses Python packages. These dependencies must be declared and created in a file with your source code
+You can create functions in many different programming languages. When your function code grows complex, you can add code modules as dependencies for your function. Each language has its own modules to use with your function code. For example, Node.js dependencies are usually existing `npm` modules, whereas Python uses Python packages. These dependencies must be declared and created in a file with your source code
 
-### Including modules for a Node.js Function
+### Including modules for a Node.js function
 {: #function-nodejs-dep-local}
 
 Create a function that includes a dependency for a specific Python module by creating a `package.json` file. In this case, both the source code and package file are located in the same folder.
+
 
 1. Create your source code by writing your code into a `main.js` file. For example, copy the following code example into a file called `main.js`.
 
     ```javascript
     function main(args) {
-	  	  const oneLinerJoke = require('one-liner-joke');
-	  	  let getRandomJoke = oneLinerJoke.getRandomJoke();
+      const LoremIpsum = require("lorem-ipsum").LoremIpsum;
+      const lorem = new LoremIpsum();
 
-  		  return {
-              	headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          	    body: getRandomJoke
-      	}
+      return {
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: lorem.generateWords(10),
+      };
     }
 
     module.exports.main = main;
     ```
     {: codeblock}
   
-2. Create a `package.json` file that contains the required dependencies for your Function. For the previous code example, use the following contents for your `package.json` file.
+2. Create a `package.json` file that contains the required dependencies for your function. For the previous code example, use the following contents for your `package.json` file.
 
     ```sh
     {
-	    "main": "main.js",
-    	"dependencies" : {
-   		"one-liner-joke" : "1.2.2"
+      "name": "function",
+      "version": "1.0.0",
+      "main": "main.js",
+      "dependencies" : {
+    		    "lorem-ipsum" : "2.0.8"
      	}
     }
     ```
     {: codeblock}
 
-
-3. Create your files as a Function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.
+3. Create your files as a function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.
   
     ```sh
     ibmcloud ce fn create --name nodejokes --runtime nodejs-18 --build-source .
     ```
     {: pre}
   
-4. Invoke your Function by pasting the provided URL into a web browser. Your browser displays a random joke!
+4. Run the provided `fn get` command to find details about your function.
+5. Invoke your function by pasting the URL into a web browser. Your browser displays a passage of `lorem ipsum`.
 
-For more information about the `fn create` command and its options, see [Create a Function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
+For more information about the `fn create` command and its options, see [Create a function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
 
-### Including modules for a Python Function
+### Including modules for a Python function
 {: #function-python-dep-local}
 
 Create a function that includes a dependency for a specific Python module by creating a `requirements.txt` file. In this case, both the source code and requirements file are located in the same folder.
 
-1. Create your Function by saving your code into a `__main__.py` file 
+1. Create your function by saving your code into a `__main__.py` file 
 
     ```py
-    import pyjokes
+    from lorem_text import lorem
+
+
     def main(params):
-	    return {
-	    	      "headers": { 'Content-Type': 'text/plain;charset=utf-8' },
-	    	      "body": pyjokes.get_joke()
-    	}
+         words = 10
+
+         return {
+              "headers": {
+                  "Content-Type": "text/plain;charset=utf-8",
+              },
+              "body": lorem.words(words),
+          }
     ```
     {: codeblock}
 
-2. Create a `requirements.txt` containing your required dependencies for your Function
+2. Create a `requirements.txt` containing your required dependencies for your function
 
     ```sh
-    pyjokes==0.6.0
+    lorem-text
     ```
     {: codeblock}
   
 
-3. Create your files as a Function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.
+3. Create your files as a function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.
   
     ```sh
-    ibmcloud ce fn create --name pyjokes --runtime python-3.11 --build-source .
+    ibmcloud ce fn create --name pylorem --runtime python-3.11 --build-source .
     ```
     {: pre}
     
-4. Invoke your Function by pasting the provided URL into a web browser. Your browser displays a random joke!
+4. Run the provided `fn get` command to find details about your function.
+5. Invoke your function by pasting the URL into a web browser. Your browser displays a passage of `lorem ipsum`.
  
 
-For more information about the `fn create` command and its options, see [Create a Function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
+For more information about the `fn create` command and its options, see [Create a function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
 
 ## Next steps
 {: #nextsteps-funruncr}
