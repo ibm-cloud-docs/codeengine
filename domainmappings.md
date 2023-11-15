@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-11-14"
+lastupdated: "2023-11-15"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, functions in code engine, function workloads in code engine, Function, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -52,7 +52,6 @@ Before you implement custom domain mappings in {{site.data.keyword.codeenginesho
 {: #prepare-custom-domain}
 
 Before you configure custom domain mappings in {{site.data.keyword.codeengineshort}}, you must first obtain your custom domain from a domain registrar (*outside of {{site.data.keyword.codeengineshort}}*). 
-
 
 1. From a domain registrar, obtain your custom domain; for example, `www.example.com`.
 2. From your certificate authority (CA), you must obtain a signed SSL/TLS *certificate* for your custom domain. This certificate is a type of digital certificate that is used to establish communication privacy between a server and a client. Certificates contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate. For security reasons, {{site.data.keyword.codeengineshort}} supports only custom domain mappings that are configured with a TLS/SSL certificate that is signed by a public, trusted CA.
@@ -187,6 +186,8 @@ Status:       ready
 After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
 
 
+
+
 ## Configuring custom domain mappings in {{site.data.keyword.codeengineshort}}
 {: #configure-domainmapping}
 
@@ -194,8 +195,6 @@ Now that you are familiar with the concepts of working with custom domain mappin
 
 * [Configuring custom domain mappings for your application](/docs/codeengine?topic=codeengine-app-domainmapping).
 * [Configuring custom domain mappings for your function](/docs/codeengine?topic=codeengine-fun-domainmapping). 
-
-
 
 
 ## Viewing domain mappings 
