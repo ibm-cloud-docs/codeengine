@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-11-15"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -34,15 +34,15 @@ Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? 
 - No support for Terraform.
 
 ## How do I make my code run as a {{site.data.keyword.codeengineshort}} function component?
-{: #fun-containerimage}
+{: #fun-codebundle}
 
-Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides a streamlined way for you to run your code as a function.
+Whether your code exists as source in a local file or in a Git repository, or your code is an existing code bundle that is located in a public or private registry, {{site.data.keyword.codeengineshort}} provides a streamlined way for you to run your code as a function.
 
 - If you are starting with source code that is located in a Git repository, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the code bundle from your source and creating the function with a single operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code to {{site.data.keyword.registrylong}}. To learn more, see [Creating a function from repository source code](/docs/codeengine?topic=codeengine-fun-create-repo). 
 
-- If you are starting with source code on a local workstation, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the Function with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code to {{site.data.keyword.registrylong}}. To learn more, see [Creating your function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local). 
+- If you are starting with source code on a local workstation, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the function with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your code to {{site.data.keyword.registrylong}}. To learn more, see [Creating your function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local). 
   
-- If you are starting with source code, you can also run your source code inline. In this scenario, you paste in your source code when you create your Function. For more information, see [Creating your function with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode).
+- If you are starting with source code, you can also run your source code inline. In this scenario, you paste in your source code when you create your function. For more information, see [Creating your function with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode).
 
 
 After you create and run your function, you can also update your function by using *any* of the preceding ways, independent of how you created or previously updated your function.
@@ -66,12 +66,12 @@ You can change the amount of time that your container is kept alive with the `--
 ## Requests and responses
 {: #functions-request}
 
-Functions are invoked with the HTTP protocol. When you invoke your Function, you can specify the custom request parameters, custom request body and headers, as well as the HTTP method. The request parameters are made available to the Function code as input parameters. The Function code can set the response body, response headers, and response code, which are returned to the caller from the Functions endpoint. 
+Functions are invoked with the HTTP protocol. When you invoke your function, you can specify the custom request parameters, custom request body and headers, as well as the HTTP method. The request parameters are made available to the function code as input parameters. The function code can set the response body, response headers, and response code, which are returned to the caller from the functions endpoint. 
 
 ### Example 1: Generating an HTML response from a function
 {: #functions-response1}
 
-The following example illustrates how to generate an HTML response from a Function.
+The following example illustrates how to generate an HTML response from a function.
 
 ```javascript
   function main(params) {
@@ -94,7 +94,7 @@ The following example illustrates how to generate an HTML response from a Functi
 ### Example 2: Setting a response code and response header
 {: #functions-response2}
 
-Your Function can set a specific response code and header flags. The following example illustrates how you can set a response code and response header to add a redirect to a different URL.
+Your function can set a specific response code and header flags. The following example illustrates how you can set a response code and response header to add a redirect to a different URL.
 
 
 ```javascript
@@ -110,7 +110,7 @@ function main(params) {
 ### Example 3: Generating a plain text response from a function
 {: #functions-response3}
 
-The following example illustrates how to generate a plain text response from a Function.
+The following example illustrates how to generate a plain text response from a function.
 
 ```javascript
 function main(params) {
@@ -129,61 +129,61 @@ function main(params) {
 ## Error handling and debugging
 {: #functions-error}
 
-Function invocations can return system or application errors. For example, system errors indicate that the function code did not execute successfully, while application errors indicate a problem in the Function code itself.
+Function invocations can return system or application errors. For example, system errors indicate that the function code did not execute successfully, while application errors indicate a problem in the function code itself.
 
 When a system error occurs, an HTTP response code similar to the following codes is returned.
 
 | Code | Description |
 | ---- | ------ | 
-| 409 | The resources that are required by the Function could not be satisfied. | 
+| 409 | The resources that are required by the function was not satisfied. | 
 | 413 | The request payload exceeds the defined maximum. | 
 | 414 | The invocation URI is too long. | 
-| 416 | The Function generated a response that exceeds the defined maximum. |
-| 422 | The Function code could not be loaded from a specified source. |
-| 429 | You exceeded your resource quota, could not schedule the Function. |
+| 416 | The function generated a response that exceeds the defined maximum. |
+| 422 | The function code could not be loaded from a specified source. |
+| 429 | You exceeded your resource quota, could not schedule the function. |
 | 431 | The request headers exceed the defined maximum. |
 | 500 | Internal server error. |
 | 502 | Bad gateway. |
 | 503 | Function currently unavailable, please try again later. |
-| 507 | Insufficient storage to load the Function or Image. | 
+| 507 | Insufficient storage to load the function. | 
 {: caption="Table 1. HTTP response codes" caption-side="bottom"}
 
 
-If {{site.data.keyword.codeengineshort}} can execute the Functions code, it responds to the invocation with one of the following status codes.
+If {{site.data.keyword.codeengineshort}} can execute the functions code, it responds to the invocation with one of the following status codes.
 
 | Code | Description |
 | ---- | ------ | 
-| 200 | Function invocation accepted, the Function will be executed delayed. |
-| 202 | Function invocation accepted, the Function will be executed asynchronously. |
-| 299 | The Function exceeded the specified or maximum runtime limit and was aborted. |
+| 200 | Function invocation accepted, the function will be executed delayed. |
+| 202 | Function invocation accepted, the function will be executed asynchronously. |
+| 299 | The function exceeded the specified or maximum runtime limit and was aborted. |
 {: caption="Table 2. Status codes" caption-side="bottom"}
 
-As a developer of a Function, you can generate any arbitrary HTTP status code, even the ones listed previously. Therefore, a response header indicates that the status code was generated by the Function code.
+As a developer of a function, you can generate any arbitrary HTTP status code, even the ones listed previously. Therefore, a response header indicates that the status code was generated by the function code.
 
-{{site.data.keyword.codeengineshort}} Functions adds the following response headers to the Function invocation response.
+{{site.data.keyword.codeengineshort}} functions adds the following response headers to the function invocation response.
 
 | Code | Description |
 | ---- | ------ | 
-| `x-faas-actionstatus` | The HTTP status code set by the Function program logic. |
-| `x-faas-activation-id` | The unique ID to identify the Function invocation. |
+| `x-faas-actionstatus` | The HTTP status code set by the function program logic. |
+| `x-faas-activation-id` | The unique ID to identify the function invocation. |
 | `x-faas-result` | A `success` message or short error message that is returned by the Runtime container. |
 | `x-faas-errormessage` | A long error message with additional details. |
-| `x-faas-prewarmed` | A message that indicates whether the invocation was cold or if the Function ran in an existing (pre-warmed container. Possible values are `false` or `true`. |
+| `x-faas-prewarmed` | A message that indicates whether the invocation was cold or if the function ran in an existing (pre-warmed container. Possible values are `false` or `true`. |
 {: caption="Table 2. Status codes" caption-side="bottom"}
 
 
 ## Function data input/output characteristics
 {: #functions-data} 
   
-To run your Function in {{site.data.keyword.codeengineshort}}, your code must implement a runtime contract with the following characteristics.
+To run your function in {{site.data.keyword.codeengineshort}}, your code must implement a runtime contract with the following characteristics.
 	
 - Must be callable from a public web app endpoint, so that it can be embedded with web pages and then invoked from any Code Engine Eventing source, a Web Browser, or any other HTTPS capable client.
 - Must implement a `main` procedure as entry point. The `main` procedure can receive input parameters in form of a JSON formatted data structure and can return output parameters, also in form of a JSON formatted data structure.
-- Can receive an optional sub path, so that the Function can implement different flavors, based on the specified path. The Function's `main` procedure receives the path as a `__ce_path` input parameter.
-- Can receive optional query parameters, which can be used to configure the Function at runtime. The Function's `main` procedure receives the parameters as key-value pairs within the JSON formatted input data structure.
+- Can receive an optional sub path, so that the function can implement different flavors, based on the specified path. The function's `main` procedure receives the path as a `__ce_path` input parameter.
+- Can receive optional query parameters, which can be used to configure the function at runtime. The function's `main` procedure receives the parameters as key-value pairs within the JSON formatted input data structure.
 - Can receive request headers, so that client code can specify  accepted encodings. 
 - Can receive an optional content-type request header.
-- Can receive an optional request payload (body), which the Function processes at runtime. Depending on the selected request content-type, the data payload is passed to the Function's main entry point, either in base 64 encoded form or "unfolded" as part of the JSON input data structure. Special characters in keys values pairs of `application/x-www-form-urlencoded` input are `percent-encoded` values.
+- Can receive an optional request payload (body), which the function processes at runtime. Depending on the selected request content-type, the data payload is passed to the function's main entry point, either in base 64 encoded form or "unfolded" as part of the JSON input data structure. Special characters in keys values pairs of `application/x-www-form-urlencoded` input are `percent-encoded` values.
 - Can define an arbitrary HTTP status code (optional) that is then returned to the invoking client.
 - Can set arbitrary response headers, such as a redirect location, a response encoding, or cookie values.
 - Can return an arbitrary response body with a selected binary or non-binary encoding; for example, `application/octet-stream`, `application/json`, `text/*`, `image/*`, or `audio/*`. If no `content-type` response header is set, it defaults to `text/plain`.
@@ -245,14 +245,14 @@ From the console, set the visibility of endpoints for your function by using the
 ## Options for creating functions
 {: #functions-options} 
 
-Learn about the options that you can specify when you create your Function. Note that options can vary between the console and the CLI.
+Learn about the options that you can specify when you create your function. Note that options can vary between the console and the CLI.
 {: shortdesc}
 
 
 ### Memory and CPU
 {: #functions-combo}
 
-When you deploy your function, you can specify the amount of memory and CPU that your Function can consume. These amounts can vary, depending on if your function is compute-intensive, memory-intensive, or balanced.
+When you deploy your function, you can specify the amount of memory and CPU that your function can consume. These amounts can vary, depending on if your function is compute-intensive, memory-intensive, or balanced.
 {: shortdesc}
 
 By default, your function is assigned 2 G of memory and 0.50 vCPU. For more information about other supported memory and CPU combinations, see [Supported memory and CPU combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo).
@@ -264,7 +264,7 @@ By default, your function is assigned 2 G of memory and 0.50 vCPU. For more info
 You can define and set environment variables as key-value pairs that can be used by your function at run time. 
 {: shortdesc}
 
-You can define environment variables when you create your Function, or when you update an existing Function with the CLI. 
+You can define environment variables when you create your function, or when you update an existing function with the CLI. 
 
 For more information about defining environment variables, see [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
 
@@ -278,7 +278,7 @@ In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be consumed
 
 Both secrets and configmaps are key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the environment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
 
-Your Function can use environment variables to fully reference a configmap (or secret) or reference individual keys in a configmap (or secret).
+Your function can use environment variables to fully reference a configmap (or secret) or reference individual keys in a configmap (or secret).
 
 For more information, see [referencing secrets by using environment variables](/docs/codeengine?topic=codeengine-secret#secret-ref) and [referencing configmaps by using environment variables](/docs/codeengine?topic=codeengine-configmap#configmap-ref).
 

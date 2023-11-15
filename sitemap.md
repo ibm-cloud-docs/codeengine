@@ -2450,7 +2450,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Function limitations](/docs/codeengine?topic=codeengine-fun-work#fun-limitations)
 
-* [How do I make my code run as a {{site.data.keyword.codeengineshort}} function component?](/docs/codeengine?topic=codeengine-fun-work#fun-containerimage)
+* [How do I make my code run as a {{site.data.keyword.codeengineshort}} function component?](/docs/codeengine?topic=codeengine-fun-work#fun-codebundle)
 
 * [What happens when I invoke my function?](/docs/codeengine?topic=codeengine-fun-work#functions-invoke)
 
