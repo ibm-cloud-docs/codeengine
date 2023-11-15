@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-14"
+lastupdated: "2023-11-15"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -46,7 +46,7 @@ Create a function with source code from the console.
 13. Specify your resource information, including [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo) and [Scale down delay](/docs/codeengine?topic=codeengine-fun-work#functions-scale). 
 14. Optionally, specify a [custom domain](/docs/codeengine?topic=codeengine-fun-domainmapping) or [environment variables](/docs/codeengine?topic=codeengine-envvar). You can add these options later.
 15. Click **Create**.
-16. After the Function status changes to **Ready**, you can test the function. Click **Test function** and then click **Send request**. To open the function in a web page, click **Function URL**. 
+16. After the function status changes to **Ready**, you can test the function. Click **Test function** and then click **Send request**. To open the function in a web page, click **Function URL**. 
 17. You can also change your function code in the Editor window. When you redeploy your function, the code is stored inline.
 
 You can invoke your function by clicking **Test function** and then **Send request**.
@@ -155,12 +155,12 @@ When your function is created from repository source code or from [local source]
 {: note}
 
 
-## Including dependencies for your Function
+## Including dependencies for your function
 {: #fun-package-repo}
 
-You can create Functions in many different programming languages. When your Function code grows complex, you can add code modules as dependencies for your Function. Each language has its own modules to use with your Function code. For example, Node.js dependencies are usually existing `npm` modules, whereas Python uses Python packages. These dependencies must be declared and created in a file with your source code
+You can create functions in many different programming languages. When your function code grows complex, you can add code modules as dependencies for your function. Each language has its own modules to use with your function code. For example, Node.js dependencies are usually existing `npm` modules, whereas Python uses Python packages. These dependencies must be declared and created in a file with your source code
 
-### Including modules for a Node.js Function
+### Including modules for a Node.js function
 {: #function-nodejs-dep-repo}
 
 Create a function that includes a dependency for a specific Node.js module by creating a `package.json` file. In this case, both the source code and package file are located in the same folder.
@@ -182,7 +182,7 @@ Create a function that includes a dependency for a specific Node.js module by cr
     ```
     {: codeblock}
   
-2. Create a `package.json` file that contains the required dependencies for your Function. For the previous code example, use the following contents for your `package.json` file.
+2. Create a `package.json` file that contains the required dependencies for your function. For the previous code example, use the following contents for your `package.json` file.
 
     ```sh
     {
@@ -197,23 +197,24 @@ Create a function that includes a dependency for a specific Node.js module by cr
     {: codeblock}
 
 
-3. Create your files as a Function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option. 
+3. Create your files as a function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option. The following example pulls the files from the `https://github.com/IBM/CodeEngine` public repository.
   
     ```sh
-    ibmcloud ce fn create -n nodelorem -runtime nodejs-18 --build-source GITHUB_DIR
+    ibmcloud ce fn create -n nodelorem -runtime nodejs-18 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-codebundle-nodejs/
     ```
     {: pre}
   
-4. Invoke your Function by pasting the provided URL into a web browser. Your browser displays a passage of `lorem ipsum`.
+4. Run the provided `fn get` command to find details about your function.
+5. Invoke your function by pasting the URL into a web browser. Your browser displays a passage of `lorem ipsum`.
 
-For more information about the `fn create` command and its options, see [Create a Function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
+For more information about the `fn create` command and its options, see [Create a f unction](/docs/codeengine?topic=codeengine-cli#cli-function-create).
 
 ### Including modules for a Python function
 {: #function-python-dep-repo}
 
 Create a function that includes a dependency for a specific Python module by creating a `requirements.txt` file. In this case, both the source code and requirements file are located in the same folder.
 
-1. Create your Function by saving your code into a `__main__.py` file 
+1. Create your function by saving your code into a `__main__.py` file 
 
     ```py
     from lorem_text import lorem
@@ -231,7 +232,7 @@ Create a function that includes a dependency for a specific Python module by cre
     ```
     {: codeblock}
 
-2. Create a `requirements.txt` containing your required dependencies for your Function
+2. Create a `requirements.txt` containing your required dependencies for your function
 
     ```sh
     lorem-text
@@ -239,17 +240,18 @@ Create a function that includes a dependency for a specific Python module by cre
     {: codeblock}
   
 
-3. Create your files as a function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option.
+3. Create your files as a function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option. The following example pulls the files from the `https://github.com/IBM/CodeEngine` public repository.
   
     ```sh
-    ibmcloud ce fn create -n pylorem -runtime python-3.11 --build-source GITHUB_DIR
+    ibmcloud ce fn create -n pylorem -runtime python-3.11 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-codebundle-python/
     ```
     {: pre}
-    
-4. Invoke your Function by pasting the provided URL into a web browser. Your browser displays a passage of `lorem ipsum`.
+
+4. Run the provided `fn get` command to find details about your function.
+5. Invoke your function by pasting the URL into a web browser. Your browser displays a passage of `lorem ipsum`.
  
 
-For more information about the `fn create` command and its options, see [Create a Function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
+For more information about the `fn create` command and its options, see [Create a function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
 
 ## Next steps
 {: #nextsteps-funsource}

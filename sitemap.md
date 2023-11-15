@@ -2502,9 +2502,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating function workloads with repository source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo-cli)
 
-* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package-repo)
+* [Including dependencies for your function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package-repo)
 
-    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-nodejs-dep-repo)
+    * [Including modules for a Node.js function](/docs/codeengine?topic=codeengine-fun-create-repo#function-nodejs-dep-repo)
 
     * [Including modules for a Python function](/docs/codeengine?topic=codeengine-fun-create-repo#function-python-dep-repo)
 
