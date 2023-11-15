@@ -194,7 +194,7 @@ Create a function that includes a dependency for a specific Python module by cre
 3. Create your files as a function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.
   
     ```sh
-    ibmcloud ce fn create --name nodejokes --runtime nodejs-18 --build-source .
+    ibmcloud ce fn create --name nodelorem --runtime nodejs-18 --build-source .
     ```
     {: pre}
   
