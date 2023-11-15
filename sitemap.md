@@ -2556,7 +2556,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Key capabilities](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-key)
 
-* [How Functions compare to apps and jobs](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare-app-job)
+* [What {{site.data.keyword.codeengineshort}} entity is best for my workload?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare-app-job)
 
 * [Migrating IBM Cloud Functions Actions to Code Engine Functions FAQ](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faqs)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-02"
+lastupdated: "2023-11-15"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -18,7 +18,7 @@ subcollection: codeengine
 [IBM Cloud Functions](https://cloud.ibm.com/docs/openwhisk){: external} has been IBM’s recommended Functions-as-a-Service solution, based on IBM’s public cloud. Available in six data centers around the world, IBM Cloud Functions has been serving the needs of customers since its inception. 
 {: shortdesc}
 
-However, the increased demands and additional requirements that our customers have been articulating, lead us to constantly innovate, improve, and evolve the IBM Functions-as-a-Service technologies and offerings. As a result and to address these demands, IBM is adding Functions-as-a-Service technology to IBM Cloud Code Engine.
+However, the increased demands and additional requirements that our customers have been articulating, lead us to constantly innovate, improve, and evolve the IBM Functions-as-a-Service technologies and offerings. As a result and to address these demands, IBM is adding Functions-as-a-Service technology to IBM Cloud Code Engine. For limitations when you use functions in Code Engine, see [Function limitations](/docs/codeengine?topic=codeengine-fun-work#fun-limitations).
 
 ## Comparing Code Engine to Cloud Functions
 {: #fun-migrate-compare}
@@ -54,14 +54,16 @@ When you migrate your IBM Cloud Functions based workloads, consider the followin
 In addition, {{site.data.keyword.codeengineshort}} includes [Function limits](/docs/codeengine?topic=codeengine-limits#limits_functions), as well as [project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). 
 
 
-## How Functions compare to apps and jobs
+## What {{site.data.keyword.codeengineshort}} entity is best for my workload?
 {: #fun-migrate-compare-app-job}
 
-{{site.data.keyword.codeengineshort}} apps serve long running, complex, compute tasks on a scalable compute infrastructure. {{site.data.keyword.codeengineshort}} jobs are used for low-parallelism, scheduled workloads that can require high resources. For more information, see [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios). 
+{{site.data.keyword.codeengineshort}} apps serve long running, complex, compute tasks on a scalable compute infrastructure. 
 
-Functions can perform lightweight, short running, data transformations as results of external events. They can also serve the content for dynamic, data elements on Web pages. In general, functions can perform scalable, short running parallel tasks that must be finished in a defined or short time.
+{{site.data.keyword.codeengineshort}} jobs are used for low-parallelism, scheduled workloads that can require high resources.
 
-{{site.data.keyword.codeengineshort}} Functions offers a straight-forward programming model that uses source code snippets of supported programming languages. These code snippets are used “inline” in a Function definition with no need to compile your code first.
+{{site.data.keyword.codeengineshort}} functions can perform lightweight, short running, data transformations as results of external events. They can also serve the content for dynamic, data elements on Web pages. In general, functions can perform scalable, short running parallel tasks that must be finished in a defined or short time.
+
+{{site.data.keyword.codeengineshort}} functions offers a straight-forward programming model that uses source code snippets of supported programming languages. These code snippets are used “inline” in a function definition with no need to compile your code first.
  
 | Characteristic | App | Job | Function |
 | --------- | --------- | --------- | --------- |
@@ -86,7 +88,7 @@ If you process a bulk-load of computations that require high CPU and memory reso
 ### I used Cloud Function to include dynamic elements for my web application. Can I move to {{site.data.keyword.codeengineshort}} Functions?
 {: #fun-migrate-faq2}
  
-You can convert your action to a {{site.data.keyword.codeengineshort}} Function and then use the provided Function URL to invoke and return the required dynamic content. See [Working with Functions](/docs/codeengine?topic=codeengine-fun-work) to get started.
+You can convert your action to a {{site.data.keyword.codeengineshort}} function and then use the provided function URL to invoke and return the required dynamic content. See [Working with Functions](/docs/codeengine?topic=codeengine-fun-work) to get started.
 
 ### Can I trigger my function code?
 {: #fun-migrate-faq3}
@@ -96,7 +98,7 @@ While {{site.data.keyword.codeengineshort}} does not include an object called a 
 ### Can my function be accessed through a public URL?
 {: #fun-migrate-faq4}
 
-A {{site.data.keyword.codeengineshort}} Function includes a public URL, that is provided for you when you create it.
+A {{site.data.keyword.codeengineshort}} function includes a public URL, that is provided for you when you create it. You can also use a [custom domain](/docs/codeengine?topic=codeengine-fun-domainmapping) for your function.
 
 ### How can I secure my functions?
 {: #fun-migrate-faq5}
