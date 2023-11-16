@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-15"
+lastupdated: "2023-11-16"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -93,7 +93,7 @@ You can convert your action to a {{site.data.keyword.codeengineshort}} function 
 ### Can I trigger my function code?
 {: #fun-migrate-faq3}
 
-While {{site.data.keyword.codeengineshort}} does not include an object called a “trigger”, it does support subscribing to event producers, including cron jobs (alarms), Object storage, and Event Streams (Kafka) data. For more information, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
+While {{site.data.keyword.codeengineshort}} does not include an object called a “trigger”, it does support subscribing to event producers, including cron jobs (alarms), Object storage, and Event Streams (Kafka) data. However, functions do not support eventing. You can instead create your code as an app or job and then add a subscription. For more information, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
 
 ### Can my function be accessed through a public URL?
 {: #fun-migrate-faq4}
