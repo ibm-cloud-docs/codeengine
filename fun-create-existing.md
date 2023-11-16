@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-18"
+lastupdated: "2023-11-14"
 
 keywords: functions in code engine, functions, serverless, create functions in code engine, function workloads in code engine, registry secret, registry access, registry access secret
 
@@ -37,7 +37,7 @@ Interested in configuring your project such that all users of the project can st
 Create a function that uses an existing code bundle by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} can automatically pull code bundles from a {{site.data.keyword.registryshort}} namespace in your account. To pull code bundles from a different {{site.data.keyword.registryshort}} account, see [Creating function workloads from existing code bundles in a private registry]#fun-create-private). 
+{{site.data.keyword.codeengineshort}} can automatically pull code bundles from {{site.data.keyword.registryshort}}.
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Let's go**.

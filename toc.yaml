@@ -225,7 +225,6 @@ toc:
               - ts-app-notreadystate.md
               - ts-app-ended.md
               - ts-app-restart.md
-              - ts-app-domain-notready.md
               - ts-allowlist-app.md
               - ts-app-connection-fail.md
               - ts-app-connection-failwithproxy.md

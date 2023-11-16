@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-11-16"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov23)
 
     * Review the release notes for November 2023.
+
+    * [16 November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1623)
+
+        * Updated support for multi-domain or wildcard certificates for custom domain mappings
 
     * [13 November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1323)
 
@@ -399,8 +403,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
         * CLI version 1.43.3 released
 
     * [12 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1223)
-
-        * Added information about troubleshooting custom domain mappings
 
         * CLI version 1.43.1 released
 
@@ -2452,7 +2454,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Function limitations](/docs/codeengine?topic=codeengine-fun-work#fun-limitations)
 
-* [How do I make my code run as a {{site.data.keyword.codeengineshort}} function component?](/docs/codeengine?topic=codeengine-fun-work#fun-containerimage)
+* [How do I make my code run as a {{site.data.keyword.codeengineshort}} function component?](/docs/codeengine?topic=codeengine-fun-work#fun-codebundle)
 
 * [What happens when I invoke my function?](/docs/codeengine?topic=codeengine-fun-work#functions-invoke)
 
@@ -2504,11 +2506,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating function workloads with repository source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-repo#fun-create-repo-cli)
 
-* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package-repo)
+* [Including dependencies for your function](/docs/codeengine?topic=codeengine-fun-create-repo#fun-package-repo)
 
-    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-nodejs-dep-repo)
+    * [Including modules for a Node.js function](/docs/codeengine?topic=codeengine-fun-create-repo#function-nodejs-dep-repo)
 
-    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-repo#function-python-dep-repo)
+    * [Including modules for a Python function](/docs/codeengine?topic=codeengine-fun-create-repo#function-python-dep-repo)
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-repo#nextsteps-funsource)
 
@@ -2516,11 +2518,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a function from local source code with the CLI](/docs/codeengine?topic=codeengine-fun-create-local#fun-create-local-cli)
 
-* [Including dependencies for your Function](/docs/codeengine?topic=codeengine-fun-create-local#fun-package-local)
+* [Including dependencies for your function](/docs/codeengine?topic=codeengine-fun-create-local#fun-package-local)
 
-    * [Including modules for a Node.js Function](/docs/codeengine?topic=codeengine-fun-create-local#function-nodejs-dep-local)
+    * [Including modules for a Node.js function](/docs/codeengine?topic=codeengine-fun-create-local#function-nodejs-dep-local)
 
-    * [Including modules for a Python Function](/docs/codeengine?topic=codeengine-fun-create-local#function-python-dep-local)
+    * [Including modules for a Python function](/docs/codeengine?topic=codeengine-fun-create-local#function-python-dep-local)
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-create-local#nextsteps-funruncr)
 
@@ -2558,7 +2560,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Key capabilities](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-key)
 
-* [How Functions compare to apps and jobs](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare-app-job)
+* [What {{site.data.keyword.codeengineshort}} entity is best for my workload?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare-app-job)
 
 * [Migrating IBM Cloud Functions Actions to Code Engine Functions FAQ](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faqs)
 
@@ -4075,8 +4077,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why did my app stop running?](/docs/codeengine?topic=codeengine-ts-app-end#ts-app-end)
 
 [Why did my app restart?](/docs/codeengine?topic=codeengine-ts-app-restart#ts-app-restart)
-
-[Why isn't my custom domain mapping ready?](/docs/codeengine?topic=codeengine-ts-app-domain-notready#ts-app-domain-notready)
 
 [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-app#ts-allowlist-app)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-11-09"
+lastupdated: "2023-11-16"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, functions in code engine, function workloads in code engine, Function, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -52,7 +52,6 @@ Before you implement custom domain mappings in {{site.data.keyword.codeenginesho
 {: #prepare-custom-domain}
 
 Before you configure custom domain mappings in {{site.data.keyword.codeengineshort}}, you must first obtain your custom domain from a domain registrar (*outside of {{site.data.keyword.codeengineshort}}*). 
-
 
 1. From a domain registrar, obtain your custom domain; for example, `www.example.com`.
 2. From your certificate authority (CA), you must obtain a signed SSL/TLS *certificate* for your custom domain. This certificate is a type of digital certificate that is used to establish communication privacy between a server and a client. Certificates contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate. For security reasons, {{site.data.keyword.codeengineshort}} supports only custom domain mappings that are configured with a TLS/SSL certificate that is signed by a public, trusted CA.
@@ -242,6 +241,10 @@ To view a listing of all domain mappings for your applications or functions, inc
 {: #update-custom-domain}
 
 When you create a custom domain mapping, the TLS secret is valid until the certificate expires. From the domain mapping page, you can view information about the remaining days until the certificate expires.
+
+It is important to know whether the certificate that is used with your custom domain lists multiple domain names, or if it uses a wildcard certificate. When this case is true and your certificate is soon to expire (or has expired), you must *update* the existing TLS secret for the domain mapping with updated credentials, rather than creating a different TLS secret with updated credentials for your domain mapping. 
+{: important}
+
 
 ### Updating a domain mapping from the console
 {: #update-custom-domain-ui}

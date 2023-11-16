@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-11-16"
 
 keywords: domain mapping, custom domain, functions in code engine, http requests in code engine, function workloads in code engine, deploying workloads in code engine, Function, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -32,6 +32,11 @@ To create and set up custom domain mappings, complete these steps:
 2. [Obtain your custom domain from a domain registrar](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain) (*outside of {{site.data.keyword.codeengineshort}}*). 
 3. Configure a custom domain mapping in {{site.data.keyword.codeengineshort}} for your [function](/docs/codeengine?topic=codeengine-fun-domainmapping) (*from the {{site.data.keyword.codeengineshort}} console or CLI*). 
 4. Complete the custom domain configuration with your domain registrar. (*outside of {{site.data.keyword.codeengineshort}}*).
+
+
+Suppose that you want to create a custom domain mapping for `www.example.com` and `shop.example.com`. In this case, you must create a custom domain mapping for each unique domain or subdomain. However, you can reuse the same TLS secret for multiple custom domain mappings if the certificates of the TLS secret includes the domain that is specified in the custom domain mapping. This means that you can map a TLS secret to multiple domains, such as `www.example.com` and `shop.example.com`, or to a wildcard domain such as `*.example.com`.
+{: note}
+ 
 
 
 ## Configuring custom domain mappings from the console
