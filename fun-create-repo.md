@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-15"
+lastupdated: "2023-11-16"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -207,7 +207,7 @@ Create a function that includes a dependency for a specific Node.js module by cr
 4. Run the provided `fn get` command to find details about your function.
 5. Invoke your function by pasting the URL into a web browser. Your browser displays a passage of `lorem ipsum`.
 
-For more information about the `fn create` command and its options, see [Create a f unction](/docs/codeengine?topic=codeengine-cli#cli-function-create).
+For more information about the `fn create` command and its options, see [Create a function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
 
 ### Including modules for a Python function
 {: #function-python-dep-repo}
