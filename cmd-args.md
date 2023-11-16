@@ -30,15 +30,15 @@ When you create a {{site.data.keyword.codeengineshort}} application or job, you 
 | The arguments that are passed to the command.    | `CMD`    | `args` |
 {: caption="Docker and {{site.data.keyword.codeengineshort}} names" caption-side="bottom"}
 
-- If `--command` is used, then any image `Entrypoint` value is overwritten and any image `cmd` values are ignored.
-- If `--argument` is used, then any image `Command` value in overwritten.
+- If `--command` is used, then any image `Entrypoint` value is overwritten and any image `CMD` values are ignored.
+- If `--argument` is used, then any image `CMD` value is overwritten.
 
 
 
 
 To better understand this process, look at the following examples,
 
-| Image `Entrypoint` | Image `Cmd` |    {{site.data.keyword.codeengineshort}} `command` |    {{site.data.keyword.codeengineshort}} `args` |    Command that is run |
+| Image `Entrypoint` | Image `CMD` |    {{site.data.keyword.codeengineshort}} `command` |    {{site.data.keyword.codeengineshort}} `args` |    Command that is run |
 | ------ |  ------ | ------ | ------ | ------ |
 | `/myapp` |    `--debug` |    `<not set>` |    `<not set>` |    `/myapp --debug` |
 | `/myapp` |    `--debug` |    `/myapp2` |    `<not set>` |    `/myapp2` |
