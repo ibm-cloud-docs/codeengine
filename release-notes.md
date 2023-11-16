@@ -35,7 +35,6 @@ Updated support for multi-domain or wildcard certificates for custom domain mapp
 :   {{site.data.keyword.codeengineshort}} supports multi-domain or wildcard certificates within multiple projects within the same region. Also, if you use multi-domain or wildcard certificates and you need to update the credentials, you must update the existing TLS secret that is associated with the domain mapping, instead of creating a different TLS secret for the domain mapping. See [Working with custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings).
 
 
-
 ### 13 November 2023
 {: #codeengine-nov1323}
 {: release-note}
