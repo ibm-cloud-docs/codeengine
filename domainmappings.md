@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-11-15"
+lastupdated: "2023-11-16"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, functions in code engine, function workloads in code engine, Function, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -242,6 +242,8 @@ To view a listing of all domain mappings for your applications or functions, inc
 
 When you create a custom domain mapping, the TLS secret is valid until the certificate expires. From the domain mapping page, you can view information about the remaining days until the certificate expires.
 
+It is important to know whether the certificate that is used with your custom domain lists multiple domain names, or if it uses a wildcard certificate. When this case is true and your certificate is soon to expire (or has expired), you must *update* the existing TLS secret for the domain mapping with updated credentials, rather than creating a different TLS secret with updated credentials for your domain mapping. 
+{: important}
 
 
 ### Updating a domain mapping from the console

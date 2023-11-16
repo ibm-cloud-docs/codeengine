@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-14"
+lastupdated: "2023-11-16"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,14 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for November 2023.
 {: shortdesc}
+
+
+### 16 November 2023
+{: #codeengine-nov1623}
+{: release-note}
+
+Updated support for multi-domain or wildcard certificates for custom domain mappings
+:   {{site.data.keyword.codeengineshort}} supports multi-domain or wildcard certificates within multiple projects within the same region. Also, if you use multi-domain or wildcard certificates and you need to update the credentials, you must update the existing TLS secret that is associated with the domain mapping, instead of creating a different TLS secret for the domain mapping. See [Working with custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings).
 
 
 

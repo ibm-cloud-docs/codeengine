@@ -140,6 +140,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for November 2023.
 
+    * [16 November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1623)
+
+        * Updated support for multi-domain or wildcard certificates for custom domain mappings
+
     * [13 November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1323)
 
         * Updated versions for buildpacks
