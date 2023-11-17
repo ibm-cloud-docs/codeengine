@@ -31,7 +31,7 @@ When you create a {{site.data.keyword.codeengineshort}} application or job, you 
 {: caption="Docker and {{site.data.keyword.codeengineshort}} names" caption-side="bottom"}
 
 - If `--command` is used, then any image `Entrypoint` value is overwritten and any image `CMD` values are ignored.
-- If `--argument` is used, then any image `CMD` value is overwritten.
+- If `--argument` is used, then any image `Command` value is overwritten.
 
 
 
