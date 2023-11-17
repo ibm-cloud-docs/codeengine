@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-09"
+lastupdated: "2023-11-17"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -244,7 +244,7 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 :   Configure the liveness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-live type=tcp --probe-live port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
 
 `--probe-ready`, `--pr`
-:   Configure the readiness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-live type=tcp --probe-live port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
+:   Configure the readiness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-ready type=tcp --probe-ready port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -920,7 +920,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   Remove the liveness probe. This option is allowed only if your app currently has a liveness probe. This value is *optional*. The default value is `false`.
 
 `--probe-ready`, `--pr`
-:   Configure the readiness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-live type=tcp --probe-live port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
+:   Configure the readiness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-ready type=tcp --probe-ready port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
 
 `--probe-ready-reset`, `--prr`
 :   Resets the readiness probe to the default configuration. This value is *optional*. The default value is `false`.
@@ -7049,7 +7049,7 @@ OK
 ```
 {: screen}  
   
-## Subscription `kafka` commands  
+## Subscription kafka commands  
 {: #cli-subscription-kafka}  
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
