@@ -38,7 +38,7 @@ When you create a {{site.data.keyword.codeengineshort}} application or job, you 
 
 To better understand this process, look at the following examples,
 
-| Image `Entrypoint` | Image `CMD` |    {{site.data.keyword.codeengineshort}} `command` |    {{site.data.keyword.codeengineshort}} `args` |    Command that is run |
+| Image `Entrypoint` | Image `Command` |    {{site.data.keyword.codeengineshort}} `command` |    {{site.data.keyword.codeengineshort}} `args` |    Command that is run |
 | ------ |  ------ | ------ | ------ | ------ |
 | `/myapp` |    `--debug` |    `<not set>` |    `<not set>` |    `/myapp --debug` |
 | `/myapp` |    `--debug` |    `/myapp2` |    `<not set>` |    `/myapp2` |
