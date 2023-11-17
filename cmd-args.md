@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-11-17"
 
 keywords: commands, arguments, cmd, workloads, application, job
 
@@ -24,21 +24,21 @@ For example, if your container image has an `Entrypoint` value of `/myapp` and a
 
 When you create a {{site.data.keyword.codeengineshort}} application or job, you can provide values for both the `Entrypoint` and `Command` arrays. 
 
-| Description    | Docker name    | {{site.data.keyword.codeengineshort}} name |
+| Description    | Image    | {{site.data.keyword.codeengineshort}} name |
 | ---------- |  ------ | ------ | 
 | The command that is run by the container. | `ENTRYPOINT` | `command` |
-| The arguments that are passed to the command.    | `CMD`    | `args` |
+| The arguments that are passed to the command.    | `Command`    | `args` |
 {: caption="Docker and {{site.data.keyword.codeengineshort}} names" caption-side="bottom"}
 
-- If `--command` is used, then any image `Entrypoint` value is overwritten and any image `cmd` values are ignored.
-- If `--argument` is used, then any image `Command` value in overwritten.
+- If `--command` is used, then any image `Entrypoint` value is overwritten and any image `Command` value is ignored.
+- If `--argument` is used, then any image `Command` value is overwritten.
 
 
 
 
 To better understand this process, look at the following examples,
 
-| Image `Entrypoint` | Image `Cmd` |    {{site.data.keyword.codeengineshort}} `command` |    {{site.data.keyword.codeengineshort}} `args` |    Command that is run |
+| Image `Entrypoint` | Image `Command` |    {{site.data.keyword.codeengineshort}} `command` |    {{site.data.keyword.codeengineshort}} `args` |    Command that is run |
 | ------ |  ------ | ------ | ------ | ------ |
 | `/myapp` |    `--debug` |    `<not set>` |    `<not set>` |    `/myapp --debug` |
 | `/myapp` |    `--debug` |    `/myapp2` |    `<not set>` |    `/myapp2` |
