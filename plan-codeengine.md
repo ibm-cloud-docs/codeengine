@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-11-28"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Planning for {{site.data.keyword.codeengineshort}}
 {: #plan-codeengine}
 
-{{site.data.keyword.codeenginefull}} supports two basic workloads: Applications and Jobs.
+{{site.data.keyword.codeenginefull}} supports three basic types of workloads: applications, jobs, and functions.
 
 An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming requests and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
 
