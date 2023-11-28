@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-28"
+lastupdated: "2023-11-28"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, parallel jobs, parallel batch jobs
 subcollection: codeengine
@@ -43,6 +43,8 @@ Can running a batch job be a better approach? Yes it can! Let's see why batch jo
 
 
 3. [Run your job](/docs/codeengine?topic=codeengine-run-job). In the {{site.data.keyword.codeengineshort}} console, you can view the number of job indexes that are pending, running, and completed. The job ends when the last job index completes its run. 
+
+
 
 
 ## Benefits of running parallel batch jobs 

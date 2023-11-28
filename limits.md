@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-11-28"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -72,7 +72,7 @@ The following table lists the limits for jobs.
 | Timeout                      |    7200 seconds (2 hours) | 86400 seconds (24 hours) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 {: caption="Job limits"}
 
-*Array indices* are comma-separated lists or hyphen-separated range of indices, which specifies the job instances to run; for example, `1,3,6,9` or `1-5,7-8,10`. 
+*Array indices* are comma-separated lists or a hyphen-separated range of indices, which specifies the job instances to run; for example, `1,3,6,9` or `1-5,7-8,10`. 
 
 *Number of instances* is the number of job instances to run in parallel. 
 
