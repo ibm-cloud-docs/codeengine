@@ -2405,7 +2405,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-run-job#nextsteps-run-job)
 
-[Accessing the job details](/docs/codeengine?topic=codeengine-access-job-details#access-job-details)
+[Accessing job details](/docs/codeengine?topic=codeengine-access-job-details#access-job-details)
 
 * [Accessing job details from the console](/docs/codeengine?topic=codeengine-access-job-details#access-jobdetails-ui)
 

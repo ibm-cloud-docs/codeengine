@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Accessing the job details
+# Accessing job details
 {: #access-job-details}
 
 Find details about your job from the console or with the CLI.
