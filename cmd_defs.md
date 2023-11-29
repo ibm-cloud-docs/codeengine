@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-11-29"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -3808,6 +3808,14 @@ Runtime:
     Array Indices:       1-5
     Max Execution Time:  7200
     Retry Limit:         3
+
+Runtime:
+    Mode:                  task
+    Array Indices:         1-5 
+    Array Size:            5
+    JOP_ARRAY_SIZE Value:  5
+    Max Execution Time:    7200
+    Retry Limit:           3
 
 Status:
     Completed:          2m58s

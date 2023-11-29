@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-11-29"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -64,7 +64,7 @@ When you run a job, {{site.data.keyword.codeengineshort}} automatically injects 
 | `PWD`          | The current working directory.                                            | `PWD=/` |
 {: caption="Automatically injected environment variables when deploying {{site.data.keyword.codeengineshort}} jobs"}
 
-Note that each job run instance gets its own index from the array of indices that were specified when the job was created. The `JOB_INDEX` environment variable contains the index value.
+Note that each job run instance gets its own index from the array of indices that were specified when the job was created. {{site.data.keyword.codeengineshort}} automatically assigns indices starting from 0 to (array size - 1). The `JOB_INDEX` environment variable contains the index value.
 
 While the job itself doesn't have a URL associated with it, the `CE_DOMAIN` and `CE_SUBDOMAIN` values might be useful if you need to reference an application that is running in the same project. The full external URL of this application is `appName.CE_SUBDOMAIN.CE_DOMAIN`. To reference the private URL of an application, use `appName.CE_SUBDOMAIN`.
 

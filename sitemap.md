@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-11-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -154,7 +154,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.48.0 released
 
-        * Updated information about adding authentication and authorization capabilities and rotating TLS certificates for security
+        * Updated information about adding authentication and authorization capabilities, and rotating TLS certificates for security
 
         * Added information about a new project details page in the console, which includes information such as the region, CRN, GUID, network addresses (public and private), and more! This page provides a convenient way to obtain project details when troubleshooting.
 

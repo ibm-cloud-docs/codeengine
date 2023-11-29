@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-27"
+lastupdated: "2023-11-29"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -118,9 +118,12 @@ Registry Secrets:
     myregistry
 
 Runtime:
-    Array Indices:       1 - 5
-    Max Execution Time:  7200
-    Retry Limit:         3
+    Mode:                  task
+    Array Indices:         1 - 5
+    Array Size:            5
+    JOP_ARRAY_SIZE Value:  5
+    Max Execution Time:    7200
+    Retry Limit:           3
 
 Status:
     Completed:          9s
@@ -205,9 +208,12 @@ Registry Secrets:
     myregistry
 
 Runtime:
-    Array Indices:       1 - 5
-    Max Execution Time:  7200
-    Retry Limit:         3
+    Mode:                  task
+    Array Indices:         1 - 5
+    Array Size:            5
+    JOP_ARRAY_SIZE Value:  5
+    Max Execution Time:    7200
+    Retry Limit:           3
 
 Status:
     Completed:          91s

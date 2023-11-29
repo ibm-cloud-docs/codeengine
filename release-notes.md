@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-11-29"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,9 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for November 2023.
 {: shortdesc}
+
+
+
 
 
 ### 16 November 2023
@@ -52,7 +55,7 @@ Added `xxlarge` size for builds
 CLI version 1.48.0 released
 :   This CLI version adds support for `xxlarge` build sizes. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-Updated information about adding authentication and authorization capabilities and rotating TLS certificates for security
+Updated information about adding authentication and authorization capabilities, and rotating TLS certificates for security
 :   See [{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure).
 
 Added information about a new project details page in the console, which includes information such as the region, CRN, GUID, network addresses (public and private), and more! This page provides a convenient way to obtain project details when troubleshooting.

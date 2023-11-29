@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-11-29"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -73,9 +73,12 @@ When working with the CLI, you can display logs of all the instances of your run
         Memory:             4G
 
     Runtime:
-        Array Indices:       1-4
-        Max Execution Time:  7200
-        Retry Limit:         3
+        Mode:                  task
+        Array Indices:         1 - 4
+        Array Size:            4
+        JOP_ARRAY_SIZE Value:  4
+        Max Execution Time:    7200
+        Retry Limit:           3
 
     Status:
         Completed:          28m
@@ -197,9 +200,12 @@ You can display system events of all the instances of a job run or display syste
         Memory:             4G
 
     Runtime:
-        Array Indices:       1-4
-        Max Execution Time:  7200
-        Retry Limit:         3
+        Mode:                  task
+        Array Indices:         1 - 4
+        Array Size:            4
+        JOP_ARRAY_SIZE Value:  4
+        Max Execution Time:    7200
+        Retry Limit:           3
 
     Status:
         Completed:          28m

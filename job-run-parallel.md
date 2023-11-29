@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-11-29"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, parallel jobs, parallel batch jobs
 subcollection: codeengine
@@ -14,7 +14,7 @@ subcollection: codeengine
 # Running jobs in parallel
 {: #job-run-parallel}
 
-Learn how to run jobs in {{site.data.keyword.codeenginefull}} with operational efficiencies. 
+Learn how to run jobs in {{site.data.keyword.codeenginefull}} with operational efficiency. 
 {: shortdesc}
 
 ## How can I efficiently process a large number of files by using job processing?
@@ -61,7 +61,7 @@ This approach of implementing parallel batch jobs offers benefits.
 
 Consider the following points when you plan parallel batch job solutions. 
 
-* Balancing parallel job indexes and queue length -  It's essential to find a good balance between the number of streams (parallel job indexes) and the queue length. Too few job indexes cannot fully use available resources, while too many indexes can increase the initialization processing and increase the load on cloud services, such as {{site.data.keyword.cos_short}}. This effect can result in rate limits when calling other cloud services.
+* Balancing parallel job indexes and queue length -  It's essential to find a good balance between the number of streams (parallel job indexes) and the queue length. Too few job indexes cannot fully use available resources, while too many indexes can increase the initialization processing and increase the load on cloud services, such as {{site.data.keyword.cos_short}}. This effect can result in rate limits when you call other cloud services.
 
 * Similar job processing time -  When you plan your solution, consider that each job index takes about the same time to complete its task. Avoid scenarios where one job index takes significantly longer than others, as the processing time might cause inefficiencies in resource usage and increase the job processing time.
 
