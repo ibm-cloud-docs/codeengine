@@ -46,6 +46,35 @@ Can running a batch job be a better approach? Yes it can! Let's see why batch jo
 
 
 
+## What if I only want to process a subset of my data? Is there a way to dynamically assign work to parallel job run instances? 
+{: #job-run-parallel-dynamic}
+
+Suppose that you do not want to be limited to a specific number of parallel instances. 
+
+In the previous scenario, 26 parallel streams were defined and the job runs that were submitted run in the defined 26 parallel streams. 
+
+However, suppose that you do not want to be limited to a specific number of parallel instances and you want to run a job that dynamically assigns work streams to a particular job run instance. In this case, you can use both the `JOB_INDEX` and `JOB_ARRAY_SIZE` environment variables to derive a value that determines which work stream is processed. These environment variables are [automatically injected for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs).
+
+* The `JOB_INDEX` environment variable is the value of the index of a specific job run instance.
+* The `JOB_ARRAY_SIZE`environment variable specifies the number of job instances to run in parallel. This value is specified directly as the job run array size, or computed by counting the specified array indices. 
+
+
+For example, say that you configured an array size of 10 such that you want each job run instance to work on 10% of the overall data (10 job run instances run in parallel). With this configuration setting, the `JOB_INDEX` environment variable determines which of the 10% chunks of data are worked on, and the computed value for`JOB_ARRAY_SIZE` is 10.
+
+However, suppose you want to rerun 3 of the initial 10 job run instances because they previously failed. The other 70% of the data was successfully processed. You want to specify the particular 3 failing indices when you resubmit the job run. Assume that you want to rerun indices `3`, `7`, and `9`. 
+
+For this new job run, say that you update only the array indices; for example, `"3, 7, 9"`. Because the value of the `JOB_ARRAY_SIZE` environment variable is automatically computed when array indices are specified instead of the array size, the value of `JOB_ARRAY_SIZE` is now 3 instead of 10, since 3 array indices were specified.
+
+Instead, to ensure that your jobrun submit (or resubmit) processes the correct chunks of data for the specified indices `3`, `7`, and `9`, you can override the automatically computed value of `JOB_ARRAY_SIZE` by using the `--array-size-var-override` option in the CLI or by specifying a custom value for `JOB_ARRAY_SIZE` in the console. 
+
+By setting the custom array size override value to 10, the job run instances correctly compute the chunk size as 10% and the resubmitted job run instances process the desired data (indices `3`, `7`, and `9`). You can use this option to enforce a constant array size value for job rerun scenarios, where only some job instances are submitted or resubmitted.
+
+After you implement this job run approach, you can dynamically increase or decrease the number of parallel job runs. f
+
+In contrast to the approach of assigning of using the `JOB_INDEX` environment variable to define the job run work stream relationship, this method of overriding the `JOB_ARRAY_SIZE` environment variable to dynamically assign work streams is more flexible and enables you to adapt a particular job run to meet your needs. 
+
+
+
 
 ## Benefits of running parallel batch jobs 
 {: #job-run-parallel-benefit}

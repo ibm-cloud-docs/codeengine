@@ -63,8 +63,8 @@ The following table lists the limits for jobs.
 
 | Category                     |         Default           |    Maximum value         |     Need to extend the maximum?            |
 | ---------------------------- |  ------------------------ | ------------------------ |------------------------------------------- |
-| Array - Array indices        |                         0 |                  9999999 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Array - Array size           |                         1 |                     1000 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Array indices        |                         0 |                  9999999 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Array size           |                         1 |                     1000 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | CPU                          |                       1.0 |                     12.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Ephemeral storage            |                     400 M |  48 G \n  (limited by memory) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Memory                       |                       4 G |                    48 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
