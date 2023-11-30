@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-11-30"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -63,7 +63,6 @@ If you cannot find information about your job runs, determine whether one of the
                 Mode:                  task
                 Array Indices:         0
                 Array Size:            1
-                JOP_ARRAY_SIZE Value:  1
                 Max Execution Time:    7200
                 Retry Limit:           3
             ```

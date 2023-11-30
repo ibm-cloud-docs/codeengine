@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-11-30"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, parallel jobs, parallel batch jobs
 subcollection: codeengine
@@ -69,7 +69,7 @@ Instead, to ensure that your jobrun submit (or resubmit) processes the correct c
 
 By setting the custom array size override value to 10, the job run instances correctly compute the chunk size as 10% and the resubmitted job run instances process the desired data (indices `3`, `7`, and `9`). You can use this option to enforce a constant array size value for job rerun scenarios, where only some job instances are submitted or resubmitted.
 
-After you implement this job run approach, you can dynamically increase or decrease the number of parallel job runs. f
+After you implement this job run approach, you can dynamically increase or decrease the number of parallel job runs. 
 
 In contrast to the approach of assigning of using the `JOB_INDEX` environment variable to define the job run work stream relationship, this method of overriding the `JOB_ARRAY_SIZE` environment variable to dynamically assign work streams is more flexible and enables you to adapt a particular job run to meet your needs. 
 

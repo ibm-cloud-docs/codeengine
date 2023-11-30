@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-11-30"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -3330,9 +3330,11 @@ Resource Allocation:
     Memory:  4G
 
 Runtime:
-    Array Indices:       0
-    Max Execution Time:  7200
-    Retry Limit:         3
+    Mode:                  task
+    Array Indices:         0
+    Array Size:            1
+    Max Execution Time:    7200
+    Retry Limit:           3
 ```
 {: screen}  
   
@@ -3803,11 +3805,6 @@ Resource Allocation:
     CPU:                1
     Ephemeral Storage:  400M
     Memory:             4G
-
-Runtime:
-    Array Indices:       1-5
-    Max Execution Time:  7200
-    Retry Limit:         3
 
 Runtime:
     Mode:                  task

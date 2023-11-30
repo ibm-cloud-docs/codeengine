@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-11-30"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -106,7 +106,6 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
         Mode:                  task
         Array Indices:         0
         Array Size:            1
-        JOP_ARRAY_SIZE Value:  1
         Max Execution Time:    7200
         Retry Limit:           3
 [...]

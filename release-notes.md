@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-11-30"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -27,7 +27,16 @@ Review the release notes for November 2023.
 {: shortdesc}
 
 
+### 30 November 2023
+{: #codeengine-nov3023}
+{: release-note}
 
+Added support for providing a custom value to the `JOB_ARRAY_SIZE` environment variable.
+:   - See [Processing a subset of data by dynamically assigning work to parallel job run instances](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic). 
+:   - See the [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) and [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands in the {{site.data.keyword.codeengineshort}} CLI reference.
+
+CLI version 1.49.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 
 ### 16 November 2023
