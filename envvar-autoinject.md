@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-11-30"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -56,7 +56,7 @@ When you run a job, {{site.data.keyword.codeengineshort}} automatically injects 
 | `HOME`         | Your home directory that is running the job.                              | `HOME=/root` |
 | `HOSTNAME`     | The name of instance that your app is deployed to.                        | `HOSTNAME=myjob-jobrun-6bgmg-0-0` |
 | `JOB_ARRAY_SIZE` | The number of job instances to run in parallel. The value is specified directly as the job run array size, or computed by counting the specified indices.  | `JOB_ARRAY_SIZE=10` |
-| `JOB_INDEX`    | The index of a specific job run instance.                                 | `JOB_INDEX=0` |
+| `JOB_INDEX`    | The index of a specific job run instance.                                 | `JOB_INDEX=1` |
 | `JOB_INDEX_RETRY_COUNT` |  The current retry count of the job instance.                    | `JOB_INDEX_RETRY_COUNT=0` |
 | `JOB_MODE`    | The mode for runs of a job. In `task` mode, jobs run for a maximum time and failed instances are retried per the job retries limit. In `daemon` mode, jobs run without a maximum time and failed instances are restarted indefinitely.  | `JOB_MODE=task` |
 | `JOB_RETRY_LIMIT` | The configured retry limit of the jobrun.                              | `JOB_RETRY_LIMIT=3`
