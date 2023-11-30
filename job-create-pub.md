@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-11-30"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -34,7 +34,7 @@ Create a {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengi
 9. From your job page, when your job is in `ready` status, click **Submit job** to submit a job based on the current configuration. 
 10. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job. 
 
-From the Submit job pane, you can review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Array size** or **Array indices** for the number of parallel job instances to run. For **Array size**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. You can also [specify a custom value for the job aray size](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic), which updates the value of the automatically injected `JOB_ARRAY_SIZE` environment variable. After you submit this job, the system displays the status of the instances of your job on the Job details page. If you specify **Array size** instead of **Array indices** in the Submit job pane, from the `Configuration` section of the Job details page, this information is provided as **Array indices**.
+From the Submit job pane, you can review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Array size** or **Array indices** for the parallel job instances to run. For **Array size**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. You can also [specify a custom value for the job aray size](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic), which updates the value of the automatically injected `JOB_ARRAY_SIZE` environment variable. After you submit this job, the system displays the status of the instances of your job on the Job details page. If you specify **Array size** instead of **Array indices** in the Submit job pane, from the `Configuration` section of the Job details page, this information is provided as **Array indices**.
 {: note}
 
 
