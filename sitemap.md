@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-30"
+lastupdated: "2023-12-01"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -136,15 +136,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
-* [November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov23)
+* [December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec23)
 
-    * Review the release notes for November 2023.
+    * Review the release notes for December 2023.
 
-    * [30 November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov3023)
+    * [01 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0123)
 
         * Added support for providing a custom value to the `JOB_ARRAY_SIZE` environment variable.
 
         * CLI version 1.49.0 released
+
+* [November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov23)
+
+    * Review the release notes for November 2023.
 
     * [16 November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1623)
 
