@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-17"
+lastupdated: "2023-12-01"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -136,6 +136,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec23)
+
+    * Review the release notes for December 2023.
+
+    * [01 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0123)
+
+        * Added support for providing a custom value to the `JOB_ARRAY_SIZE` environment variable.
+
+        * CLI version 1.49.0 released
+
 * [November 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov23)
 
     * Review the release notes for November 2023.
@@ -154,7 +164,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.48.0 released
 
-        * Updated information about adding authentication and authorization capabilities and rotating TLS certificates for security
+        * Updated information about adding authentication and authorization capabilities, and rotating TLS certificates for security
 
         * Added information about a new project details page in the console, which includes information such as the region, CRN, GUID, network addresses (public and private), and more! This page provides a convenient way to obtain project details when troubleshooting.
 
@@ -2405,7 +2415,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-run-job#nextsteps-run-job)
 
-[Accessing the job details](/docs/codeengine?topic=codeengine-access-job-details#access-job-details)
+[Accessing job details](/docs/codeengine?topic=codeengine-access-job-details#access-job-details)
 
 * [Accessing job details from the console](/docs/codeengine?topic=codeengine-access-job-details#access-jobdetails-ui)
 
@@ -2440,6 +2450,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Running jobs in parallel](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel)
 
 * [How can I efficiently process a large number of files by using job processing?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-how)
+
+* [What if I only want to process a subset of my data? Is there a way to dynamically assign work to parallel job run instances?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic)
 
 * [Benefits of running parallel batch jobs](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-benefit)
 

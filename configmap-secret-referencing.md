@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-11-30"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -111,10 +111,12 @@ In this scenario, create a secret, which contains key-value pairs for a username
         CPU:     1  
         Memory:  4G  
 
-    Runtime:    
-        Array Indices:       0  
-        Max Execution Time:  7200  
-        Retry Limit:         3
+    Runtime:
+        Mode:                  task
+        Array Indices:         0
+        Array Size:            1
+        Max Execution Time:    7200
+        Retry Limit:           3
     ```
     {: screen}
 
@@ -335,10 +337,12 @@ Full references override other full references in the order in which they are se
         CPU:     1  
         Memory:  4G  
 
-    Runtime:    
-        Array Indices:       0  
-        Max Execution Time:  7200  
-        Retry Limit:         3
+    Runtime:
+        Mode:                  task
+        Array Indices:         0
+        Array Size:            1
+        Max Execution Time:    7200
+        Retry Limit:           3
     ```
     {: screen}
 
@@ -447,10 +451,12 @@ Full references override other full references in the order in which they are se
         CPU:     1  
         Memory:  4G  
 
-    Runtime:    
-        Array Indices:       0  
-        Max Execution Time:  7200  
-        Retry Limit:         3
+    Runtime:
+        Mode:                  task
+        Array Indices:         0
+        Array Size:            1
+        Max Execution Time:    7200
+        Retry Limit:           3
     ```
     {: screen}
 
@@ -535,10 +541,12 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
         CPU:     1  
         Memory:  4G  
 
-    Runtime:    
-        Array Indices:       0  
-        Max Execution Time:  7200  
-        Retry Limit:         3 
+    Runtime:
+        Mode:                  task
+        Array Indices:         0
+        Array Size:            1
+        Max Execution Time:    7200
+        Retry Limit:           3
     ```
     {: screen}
 
@@ -617,10 +625,12 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
         CPU:     1  
         Memory:  4G  
 
-    Runtime:    
-        Array Indices:       0  
-        Max Execution Time:  7200  
-        Retry Limit:         3
+    Runtime:
+        Mode:                  task
+        Array Indices:         0
+        Array Size:            1
+        Max Execution Time:    7200
+        Retry Limit:           3
     ```
     {: screen}
 
@@ -686,10 +696,12 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
         CPU:     1  
         Memory:  4G  
 
-    Runtime:    
-        Array Indices:       0  
-        Max Execution Time:  7200  
-        Retry Limit:         3
+    Runtime:
+        Mode:                  task
+        Array Indices:         0
+        Array Size:            1
+        Max Execution Time:    7200
+        Retry Limit:           3
     ```
     {: screen}
 
@@ -736,10 +748,12 @@ In this scenario, let's remove the fully referenced `mydatabasesec` secret from 
         CPU:     1  
         Memory:  4G  
 
-    Runtime:    
-        Array Indices:       0  
-        Max Execution Time:  7200  
-        Retry Limit:         3
+    Runtime:
+        Mode:                  task
+        Array Indices:         0
+        Array Size:            1
+        Max Execution Time:    7200
+        Retry Limit:           3
     ```
     {: screen}
 
@@ -789,10 +803,12 @@ Even though the `--env-from-configmap` option was used on a job to reference the
         CPU:     1  
         Memory:  4G  
 
-    Runtime:    
-        Array Indices:       0  
-        Max Execution Time:  7200  
-        Retry Limit:         3
+    Runtime:
+        Mode:                  task
+        Array Indices:         0
+        Array Size:            1
+        Max Execution Time:    7200
+        Retry Limit:           3
     ```
     {: screen}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-11-30"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Accessing the job details
+# Accessing job details
 {: #access-job-details}
 
 Find details about your job from the console or with the CLI.
@@ -62,9 +62,11 @@ Resource Allocation:
     Memory:  4G
 
 Runtime:
-    Array Indices:       0
-    Max Execution Time:  7200
-    Retry Limit:         3
+    Mode:                  task
+    Array Indices:         0
+    Array Size:            1
+    Max Execution Time:    7200
+    Retry Limit:           3
 ```
 {: screen}
 
@@ -104,9 +106,12 @@ Resource Allocation:
     Memory:             4G
 
 Runtime:
-    Array Indices:       1 - 5
-    Max Execution Time:  7200
-    Retry Limit:         2
+    Mode:                  task
+    Array Indices:         1 - 5
+    Array Size:            5
+    JOP_ARRAY_SIZE Value:  5
+    Max Execution Time:    7200
+    Retry Limit:           3
 
 Status:
     Completed:          4m

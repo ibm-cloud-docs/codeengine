@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-11-29"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -63,8 +63,8 @@ The following table lists the limits for jobs.
 
 | Category                     |         Default           |    Maximum value         |     Need to extend the maximum?            |
 | ---------------------------- |  ------------------------ | ------------------------ |------------------------------------------- |
-| Array - Array indices        |                         0 |                  9999999 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Array - Number of instances  |                         1 |                     1000 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Array indices        |                         0 |                  9999999 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Array size           |                         1 |                     1000 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | CPU                          |                       1.0 |                     12.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Ephemeral storage            |                     400 M |  48 G \n  (limited by memory) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Memory                       |                       4 G |                    48 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
@@ -72,9 +72,9 @@ The following table lists the limits for jobs.
 | Timeout                      |    7200 seconds (2 hours) | 86400 seconds (24 hours) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 {: caption="Job limits"}
 
-*Array indices* are comma-separated lists or hyphen-separated range of indices, which specifies the job instances to run; for example, `1,3,6,9` or `1-5,7-8,10`. 
+*Array indices* are comma-separated lists or a hyphen-separated range of indices, which specifies the job instances to run; for example, `1,3,6,9` or `1-5,7-8,10`. 
 
-*Number of instances* is the number of job instances to run in parallel. 
+*Array size* is the number of job instances to run in parallel. 
 
 For more information about supported CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 

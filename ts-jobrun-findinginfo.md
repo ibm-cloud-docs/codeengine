@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-09"
+lastupdated: "2023-11-30"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -60,9 +60,11 @@ If you cannot find information about your job runs, determine whether one of the
                 Memory:  4G
 
             Runtime:
-                Array Indices:       0
-                Max Execution Time:  7200
-                Retry Limit:         3
+                Mode:                  task
+                Array Indices:         0
+                Array Size:            1
+                Max Execution Time:    7200
+                Retry Limit:           3
             ```
             {: screen}
 
@@ -98,11 +100,13 @@ If you cannot find information about your job runs, determine whether one of the
             Ephemeral Storage:  400M  
             Memory:             4G  
 
-            Runtime:      
-            Mode:                task  
-            Array Indices:       0-2  
-            Max Execution Time:  7200  
-            Retry Limit:         3  
+            Runtime:
+                Mode:                  task
+                Array Indices:         0-2 
+                Array Size:            3
+                JOP_ARRAY_SIZE Value:  3
+                Max Execution Time:    7200
+                Retry Limit:           3
 
             Status:       
             Completed:          4m45s  

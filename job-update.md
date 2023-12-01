@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-11-30"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -103,9 +103,12 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
         Memory:  4G
 
     Runtime:
-        Array Indices:       0
-        Max Execution Time:  7200
-        Retry Limit:         3
+        Mode:                  task
+        Array Indices:         0
+        Array Size:            1
+        Max Execution Time:    7200
+        Retry Limit:           3
+[...]
     ```
     {: screen}
 
@@ -141,9 +144,12 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
         Memory:             4G
 
     Runtime:
-        Array Indices:       0
-        Max Execution Time:  7200
-        Retry Limit:         3
+        Mode:                  task
+        Array Indices:         0
+        Array Size:            1
+        JOP_ARRAY_SIZE Value:  1
+        Max Execution Time:    7200
+        Retry Limit:           3
 
     Status:
         Completed:          11s
@@ -203,9 +209,12 @@ You can specify changes for a job run with the [**`ibmcloud ce jobrun resubmit`*
         Memory:             4G
 
     Runtime:
-        Array Indices:       1-4
-        Max Execution Time:  7200
-        Retry Limit:         3
+        Mode:                  task
+        Array Indices:         1-4
+        Array Size:            4
+        JOP_ARRAY_SIZE Value:  4
+        Max Execution Time:    7200
+        Retry Limit:           3
 
     Status:
         Completed:          34s

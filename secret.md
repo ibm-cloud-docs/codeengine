@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-11-29"
 
 keywords: secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, secrets, configmaps, environment variables
 
@@ -591,9 +591,12 @@ The following example describes how to reference an existing generic secret with
         Memory:             4G
 
     Runtime:
-        Array Indices:       2-3
-        Max Execution Time:  7200
-        Retry Limit:         3
+        Mode:                  task
+        Array Indices:         2-3
+        Array Size:            2
+        JOP_ARRAY_SIZE Value:  2
+        Max Execution Time:    7200
+        Retry Limit:           3
 
     Status:
         Completed:          9s
@@ -740,9 +743,12 @@ The following example describes how to reference an existing generic secret with
         Memory:             4G
 
     Runtime:
-        Array Indices:       2-3
-        Max Execution Time:  7200
-        Retry Limit:         3
+        Mode:                  task
+        Array Indices:         2-3
+        Array Size:            2
+        JOP_ARRAY_SIZE Value:  2
+        Max Execution Time:    7200
+        Retry Limit:           3
 
     Status:
         Completed:          11s
@@ -937,9 +943,12 @@ The following example describes how to reference a secret that is not yet define
         Memory:             4G
 
     Runtime:
-        Array Indices:       0
-        Max Execution Time:  7200
-        Retry Limit:         3
+        Mode:                  task
+        Array Indices:         0
+        Array Size:            1
+        JOP_ARRAY_SIZE Value:  1
+        Max Execution Time:    7200
+        Retry Limit:           3
 
     Status:
         Instance Statuses:

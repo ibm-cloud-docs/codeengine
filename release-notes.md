@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-12-01"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -20,12 +20,29 @@ content-type: release-note
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
 
+## December 2023
+{: #codeengine-dec23}
+
+Review the release notes for December 2023.
+{: shortdesc}
+
+### 01 December 2023
+{: #codeengine-dec0123}
+{: release-note}
+
+Added support for providing a custom value to the `JOB_ARRAY_SIZE` environment variable.
+:   - See [Processing a subset of data by dynamically assigning work to parallel job run instances](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic).
+:   - See the [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) and [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands in the {{site.data.keyword.codeengineshort}} CLI reference.
+
+CLI version 1.49.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+
 ## November 2023
 {: #codeengine-nov23}
 
 Review the release notes for November 2023.
 {: shortdesc}
-
 
 ### 16 November 2023
 {: #codeengine-nov1623}
@@ -52,7 +69,7 @@ Added `xxlarge` size for builds
 CLI version 1.48.0 released
 :   This CLI version adds support for `xxlarge` build sizes. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-Updated information about adding authentication and authorization capabilities and rotating TLS certificates for security
+Updated information about adding authentication and authorization capabilities, and rotating TLS certificates for security
 :   See [{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure).
 
 Added information about a new project details page in the console, which includes information such as the region, CRN, GUID, network addresses (public and private), and more! This page provides a convenient way to obtain project details when troubleshooting.
