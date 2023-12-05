@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-03"
+lastupdated: "2023-12-01"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -92,6 +92,10 @@ Buildpacks create [reproducible builds](https://buildpacks.io/docs/reference/rep
 
 If you have an image that exists in a container registry and the image was built with a non-Intel based processor, {{site.data.keyword.codeengineshort}} cannot run your container image. {{site.data.keyword.codeengineshort}} uses Intel-based processing. You can build your own image if you use Intel processing (x86 processor). You can also choose to let {{site.data.keyword.codeengineshort}} handle the build process for you. For more information, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build).
 
+
+
+
+
 ## Do {{site.data.keyword.codeengineshort}} apps support WebSockets? 
 {: #app-websockets}
 {: faq}
@@ -101,6 +105,9 @@ Yes! You can find a [sample app that uses WebSockets](https://github.com/IBM/Cod
 
 The maximum time for any connection to an application is 10 minutes, even if the connection is not idle. With {{site.data.keyword.codeengineshort}}, you can configure this connection time with the `timeout` value. With the CLI, use the `--timeout` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command or the [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. From the console, you can set the `Timeout` value for your app from the **Runtime** tab. For an app that use WebSockets, the client must reconnect to the app after the connection is closed. So, if your app needs a persistent connection, create a new connection before the `timeout` value is reached.
 {: note}
+
+
+
 
 
 ## Does {{site.data.keyword.codeengineshort}} provide a way to limit access to a particular entity within a {{site.data.keyword.codeengineshort}} project?
