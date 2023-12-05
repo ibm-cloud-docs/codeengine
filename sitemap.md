@@ -140,7 +140,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for December 2023.
 
-    * [05 December 2023 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0523)
+    * [05 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0523)
 
         * Updated versions for buildpacks
 
