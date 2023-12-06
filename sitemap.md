@@ -2096,7 +2096,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.codeengineshort}} use cases](/docs/codeengine?topic=codeengine-plan-codeengine#ce-use-cases)
 
-* [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
+* [When to use an app, job, or function](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
 
 * [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
 
