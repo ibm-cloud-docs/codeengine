@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-12-06"
+lastupdated: "2023-12-07"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for December 2023.
 {: shortdesc}
+
+### 07 December 2023
+{: #codeengine-dec023}
+{: release-note}
+
+Added support for applications with gRPC
+:   See [Implementing applications with gRPC](/docs/codeengine?topic=codeengine-app-grpc).
 
 ### 06 December 2023
 {: #codeengine-dec0623}

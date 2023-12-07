@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-06"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
@@ -55,7 +55,7 @@ Bring your workload
 Testing, proof-of-concepts, or "tire-kicking”
 :    You are interested in learning more about container-based architecture. Your team developed an application, but wants to test it out before the application is presented to stakeholders. This application is small, so they do not want to pay for even a small, dedicated cluster. In this case, you can test the application and then provide a proof-of-concept of the design to the stakeholders without the cost that a dedicated cluster might require.
 
-## When to use an application or a job
+## When to use an app, job, or function
 {: #when-app-job}
 
 Applications and jobs are very similar, in the end, they both simply run code. However, there are some key aspects to consider when you decide to structure your code as an app or job,
@@ -73,7 +73,7 @@ How does your code scale?
 ## Common scenarios for {{site.data.keyword.codeengineshort}}
 {: #common-scenarios}
 
-Read through some of these common scenarios to gain understanding of when to choose an app and when to choose a job.
+Read through some of these common scenarios to gain understanding of when to choose a specific type of workload.
 
 Does your workload require low latency or is it interactive? 
 :    If your workload requires a client or user to wait synchronously for the response of the request, and the response must be available within a few milliseconds, use an application. Applications provide an externally reachable endpoint and respond synchronously to the request. Examples of such workloads are websites, chatbots, and mobile applications. Use [applications](/docs/codeengine?topic=codeengine-application-workloads).
