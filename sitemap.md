@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-06"
+lastupdated: "2023-12-07"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec23)
 
     * Review the release notes for December 2023.
+
+    * [07 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec023)
+
+        * Added support for applications with gRPC
 
     * [06 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0623)
 
@@ -2346,6 +2350,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Deleting probes with the CLI](/docs/codeengine?topic=codeengine-app-probes#app-probes-delete-cli)
 
+[Implementing applications with gRPC](/docs/codeengine?topic=codeengine-app-grpc#app-grpc)
+
+* [Benefits of using gRPC](/docs/codeengine?topic=codeengine-app-grpc#app-grpc-benefits)
+
+* [Configuring {{site.data.keyword.codeengineshort}} applications to use gRPC](/docs/codeengine?topic=codeengine-app-grpc#app-grpc-config-cli)
+
 
 ## Running jobs
 {: #sitemap_running_jobs}
@@ -4024,6 +4034,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Why do images that are built with non-Intel processors not work with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#buildimage-nonintel)
 
 * [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
+
+* [Do {{site.data.keyword.codeengineshort}} apps support gRPC?](/docs/codeengine?topic=codeengine-faqs#app-grpc-supported)
 
 * [Does {{site.data.keyword.codeengineshort}} provide a way to limit access to a particular entity within a {{site.data.keyword.codeengineshort}} project?](/docs/codeengine?topic=codeengine-faqs#limit-access-fun)
 

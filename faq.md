@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-12-01"
+lastupdated: "2023-12-07"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -107,7 +107,14 @@ The maximum time for any connection to an application is 10 minutes, even if the
 {: note}
 
 
+## Do {{site.data.keyword.codeengineshort}} apps support gRPC? 
+{: #app-grpc-supported}
+{: faq}
+{: support}
 
+Yes! You can find a [sample app that uses gRPC](https://github.com/IBM/CodeEngine/tree/main/grpc){: external} by visiting our {{site.data.keyword.codeengineshort}} samples repository on GitHub.
+
+Because gRPC depends on HTTP/2, you must set the port name to `h2c` and the port value to `8080`, and then your {{site.data.keyword.codeengineshort}} application can support HTTP/2 traffic. Use the {{site.data.keyword.codeengineshort}} CLI to configure the `--port h2c:8080` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command or the [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command to configure your application to use gRPC. See [Implementing applications with gRPC](/docs/codeengine?topic=codeengine-app-grpc).
 
 
 ## Does {{site.data.keyword.codeengineshort}} provide a way to limit access to a particular entity within a {{site.data.keyword.codeengineshort}} project?
