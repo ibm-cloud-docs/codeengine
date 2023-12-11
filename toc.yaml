@@ -105,6 +105,7 @@ toc:
           - fun-create-existing.md
           - fun-domainmapping.md
           - fun-runtime.md
+          - fun-test-local.md
           - fun-migrate.md
       - topicgroup:
           label: Building source code
