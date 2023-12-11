@@ -140,6 +140,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for December 2023.
 
+    * [12 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec1223)
+
+        * Updated versions for buildpacks
+
     * [07 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec023)
 
         * Added support for applications with gRPC
@@ -2583,6 +2587,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Supported managed runtimes for functions on {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-managed)
 
 * [Supported CPU and memory combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo)
+
+[Testing {{site.data.keyword.codeengineshort}} functions locally](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-local)
+
+* [Python wrapper](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-python)
+
+* [Node.js wrapper](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-nodejs)
 
 [Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate)
 
