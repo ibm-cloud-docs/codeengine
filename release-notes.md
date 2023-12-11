@@ -30,6 +30,12 @@ Review the release notes for December 2023.
 {: #codeengine-dec1223}
 {: release-note}
 
+Added information about testing functions locally
+:    See [Testing Code Engine functions locally](/docs/codeengine?topic=codeengine-fun-test-local)?
+
+Added troubleshooting information for builds with Dockerfiles
+:    See [Why is my build from a Dockerfile failing with a no command specified error](/docs/codeengine?topic=codeengine-ts-build-nocmdspecified)?
+
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
@@ -100,12 +106,13 @@ CLI version 1.48.0 released
 Updated information about adding authentication and authorization capabilities, and rotating TLS certificates for security
 :   See [{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure).
 
-Added information about a new project details page in the console, which includes information such as the region, CRN, GUID, network addresses (public and private), and more! This page provides a convenient way to obtain project details when troubleshooting.
-:   - See [How can I see details about a project](/docs/codeengine?topic=codeengine-manage-project#project-details)? 
-:   - See [Providing support case details](/docs/codeengine?topic=codeengine-get-support#support-case-details).
+Added information about a new project details page in the console. 
+:    This update includes information such as the region, CRN, GUID, network addresses (public and private), and more! This page provides a convenient way to obtain project details when troubleshooting.
+:    - See [How can I see details about a project](/docs/codeengine?topic=codeengine-manage-project#project-details)? 
+:    - See [Providing support case details](/docs/codeengine?topic=codeengine-get-support#support-case-details).
 
 Added troubleshooting information for app connectivity when using a proxy
-:   See [Why does my app connection fail when using a proxy](/docs/codeengine?topic=codeengine-ts-app-connection-failwithproxy)?
+:    See [Why does my app connection fail when using a proxy](/docs/codeengine?topic=codeengine-ts-app-connection-failwithproxy)?
 
 Added troubleshooting information for expired SSH keys during a build
 :   See [Build fails in the source step](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-expiredsshkey)?

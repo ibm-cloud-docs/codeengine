@@ -142,6 +142,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [12 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec1223)
 
+        * Added information about testing functions locally
+
+        * Added troubleshooting information for builds with Dockerfiles
+
         * Updated versions for buildpacks
 
     * [07 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec023)
@@ -182,7 +186,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated information about adding authentication and authorization capabilities, and rotating TLS certificates for security
 
-        * Added information about a new project details page in the console, which includes information such as the region, CRN, GUID, network addresses (public and private), and more! This page provides a convenient way to obtain project details when troubleshooting.
+        * Added information about a new project details page in the console. 
 
         * Added troubleshooting information for app connectivity when using a proxy
 
