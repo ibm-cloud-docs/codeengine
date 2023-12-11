@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-15"
+lastupdated: "2023-12-11"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -19,6 +19,7 @@ subcollection: codeengine
 You can create your {{site.data.keyword.codeengineshort}} function directly from source code on your local workstation with the {{site.data.keyword.codeenginefull}} CLI. Use the **`function create`** (or **`fn create`**) command to both build a code bundle from your local source, and deploy your function to reference this built code bundle.
 {: shortdesc}
 
+A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
 
 When you submit a build that pulls code from a local directory, your source code is packed into an archive file. {{site.data.keyword.codeengineshort}} automatically uploads the code bundle to an {{site.data.keyword.registrylong}} namespace in your account, and then creates and deploys your function to reference this built code bundle. Note that you can only target {{site.data.keyword.registrylong_notm}} for your local builds. For this scenario, you need to provide only a name for the function and the path to the local source. For a complete listing of options, see the [**`ibmcloud ce fn create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command.  
 

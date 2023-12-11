@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-12-11"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -18,6 +18,8 @@ subcollection: codeengine
 
 You can create your function directly from source code that is located in a Git repository from the {{site.data.keyword.codeenginefull}} console or with the CLI.
 {: shortdesc}
+
+A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
 
 In this scenario, {{site.data.keyword.codeengineshort}} builds a code bundle from your Git repository source, automatically uploads the code bundle to your container registry, and then creates your function to reference this built code bundle. You need to provide only a name for the function, the URL to the Git repository, and the runtime for the function. In this case, {{site.data.keyword.codeengineshort}} manages the namespace for you. However, if you want to use a different container registry, then you must specify the code bundle and a registry secret for that container registry. 
 
