@@ -244,6 +244,7 @@ toc:
               - ts-build-fail-memorylimit.md
               - ts-build-fail-buildpushstepfails.md
               - ts-build-python.md
+              - ts-build-nocmdspecified.md
           - topicgroup:
               label: Troubleshooting functions 
               topics:

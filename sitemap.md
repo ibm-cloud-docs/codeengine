@@ -4185,6 +4185,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Why does my Python app fail to deploy?](/docs/codeengine?topic=codeengine-ts-build-python#ts-build-python)
 
+[Why is my build from a Dockerfile failing with a `no command specified` error?](/docs/codeengine?topic=codeengine-ts-build-nocmdspecified#ts-build-nocmdspecified)
+
 
 ### Troubleshooting functions
 {: #sitemap_troubleshooting_functions}
