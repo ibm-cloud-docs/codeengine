@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-12-11"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}
 {: #fun-migrate}
 
-[IBM Cloud Functions](https://cloud.ibm.com/docs/openwhisk){: external} has been IBM’s recommended Functions-as-a-Service solution, based on IBM’s public cloud. Available in six data centers around the world, IBM Cloud Functions has been serving the needs of customers since its inception. 
+[IBM Cloud Functions](https://cloud.ibm.com/docs/openwhisk){: external} has been IBM’s recommended Functions-as-a-Service solution, based on IBM’s public cloud. Available in six data centers around the world, IBM Cloud Functions serves the needs of customers since its inception. 
 {: shortdesc}
 
 However, the increased demands and additional requirements that our customers have been articulating, lead us to constantly innovate, improve, and evolve the IBM Functions-as-a-Service technologies and offerings. As a result and to address these demands, IBM is adding Functions-as-a-Service technology to IBM Cloud Code Engine. For limitations when you use functions in Code Engine, see [Function limitations](/docs/codeengine?topic=codeengine-fun-work#fun-limitations).
@@ -38,7 +38,9 @@ Function sin Code Engine simplifies your user experience, with the following opt
 - Supported security capabilities such as access to private repositories and registries.
 
 
-With IBM Cloud Code Engine Functions, you can use your favorite programming language to write lightweight code that runs snippets of business logic in a scalable way. You can run code in response to HTTP requests from applications or in response to IBM Cloud services and external events. 
+With IBM Cloud Code Engine Functions, you can use your favorite programming language to write lightweight code that runs snippets of business logic in a scalable way. You can run code in response to HTTP requests from applications or in response to IBM Cloud services and external events.
+
+Rather than running a container image, Code Engine functions instead, runs a code bundle. A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
 
 ## Key capabilities
 {: #fun-migrate-key}
