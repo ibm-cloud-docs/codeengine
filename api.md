@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-19"
+lastupdated: "2023-12-12"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -62,7 +62,7 @@ Identify the service instance that represents your {{site.data.keyword.codeengin
 
 Before you begin, you must have the `access_token` from the previous step.
 
-1. Use following {{site.data.keyword.cloud_notm}} catalog API method: [Returns parent catalog entries](https://cloud.ibm.com/apidocs/resource-catalog/global-catalog#returns-parent-catalog-entries){: external}.
+1. Use following {{site.data.keyword.cloud_notm}} catalog API method: [Returns parent catalog entries](https://cloud.ibm.com/apidocs/resource-catalog/global-catalog#list-catalog-entries){: external}.
 
     Example output
 
@@ -75,7 +75,7 @@ Before you begin, you must have the `access_token` from the previous step.
 
     Identify the unique resource ID in the resources list. The field name is `ID` and the JSON path is `resources[].id`.
 
-2. Query the {{site.data.keyword.cloud_notm}} Resource controller with the {{site.data.keyword.cloud_notm}} Resource controller API method [Get a list of all resource instances](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#get-a-list-of-all-resource-instances){: external}. You must have the {{site.data.keyword.codeengineshort}} project name, the region that your project resides, and the unique resource ID of {{site.data.keyword.codeengineshort}} in the global catalog. Use the name of your {{site.data.keyword.codeengineshort}} project as the query parameter.
+2. Query the {{site.data.keyword.cloud_notm}} Resource controller with the {{site.data.keyword.cloud_notm}} Resource controller API method [Get a list of all resource instances](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#list-resource-instances){: external}. You must have the {{site.data.keyword.codeengineshort}} project name, the region that your project resides, and the unique resource ID of {{site.data.keyword.codeengineshort}} in the global catalog. Use the name of your {{site.data.keyword.codeengineshort}} project as the query parameter.
 
     Example output
 
@@ -97,7 +97,7 @@ Before you begin, you must have the following information.
 - The `guid` of your {{site.data.keyword.codeengineshort}} project.
 - The region in which your {{site.data.keyword.codeengineshort}} project is located.
 
-Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apidocs/codeengine/v2#get-kubeconfig-for-the-specified-project){: external} {{site.data.keyword.codeengineshort}} API method to get the Kubernetes configuration.
+Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apidocs/codeengine/v1#get-kubeconfig){: external} {{site.data.keyword.codeengineshort}} API method to get the Kubernetes configuration.
 
 #### Example output
 {: #api-query-example}
@@ -138,7 +138,7 @@ Now you are ready to use **`kubectl`** commands with your project.
 For more information about using {{site.data.keyword.codeengineshort}} APIs, Kubernetes API, and `kubectl`, see the following topics,
 
 - [{{site.data.keyword.codeengineshort}} API](https://cloud.ibm.com/apidocs/codeengine){: external}
-- [Kubernetes REST API](https://kubernetes.io/docs/reference/using-api/api-overview/){: external}
+- [Kubernetes REST API](https://kubernetes.io/docs/reference/using-api){: external}
 - [Kubernetes API concepts](https://kubernetes.io/docs/reference/using-api/api-concepts/){: external}
 - [API client libraries](https://kubernetes.io/docs/reference/#api-client-libraries){: external}
 - [**`kubectl`** command](https://kubernetes.io/docs/reference/#cli-reference){: external}

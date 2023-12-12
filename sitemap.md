@@ -2592,6 +2592,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Supported CPU and memory combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo)
 
+[Testing {{site.data.keyword.codeengineshort}} functions locally](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-local)
+
+* [Python wrapper](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-python)
+
+* [Node.js wrapper](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-nodejs)
+
 [Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate)
 
 * [Comparing Code Engine to Cloud Functions](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare)
