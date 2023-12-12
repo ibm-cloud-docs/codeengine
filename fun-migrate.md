@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-12-11"
+lastupdated: "2023-12-12"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -23,7 +23,7 @@ However, the increased demands and additional requirements that our customers ha
 ## Comparing Code Engine to Cloud Functions
 {: #fun-migrate-compare}
 
-The SOC2, ISO32k, BSI C5, and Financial Services Cloud-certified IBM Cloud Code Engine service is available in nine (9) regions. As a fully managed, serverless platform, it runs a broad variety of customer workloads as containers, batch jobs, applications, and functions. You can access [Code Engine in the IBM public cloud](https://cloud.ibm.com/codeengine){: external}. 
+The SOC2, ISO32k, BSI C5, and Financial Services Cloud-certified IBM Cloud Code Engine service is available in nine (9) regions. As a fully managed, serverless platform, it runs a broad variety of customer workloads as containers, batch jobs, applications, and functions. You can access [Code Engine in the IBM public cloud](https://cloud.ibm.com/codeengine/landing){: external}. 
 
 The new Functions-as-a-Service capabilities enable Code Engine customers to perform short running, run-to-completion type of workloads. Whether you are a Cloud Functions customer or you are new to Functions-as-a-Service, you can learn more about [running functions in IBM Cloud Code Engine](/docs/codeengine?topic=codeengine-fun-work). You can even [take a tutorial](/docs/codeengine?topic=codeengine-fun-tutorial).
   

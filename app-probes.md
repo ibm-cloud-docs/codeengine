@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-12-12"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -72,7 +72,7 @@ Consider the following points when you implement a readiness or liveness probe i
 
 * Because probes determine whether an app instance is available to serve requests, make sure that your code responds to probe requests quickly. 
 
-* Make sure that your code gracefully handles a SIGTERM signal. When a liveness probe fails, a SIGTERM signal is sent, and your code must handle this signal to avoid unresponsive app instances. See [Why aren't my app instances scaling down as expected](/docs/codeengine?topic=codeengine-ts-app-domain-notscaledown)? 
+* Make sure that your code safely handles a SIGTERM signal. When a liveness probe fails, a SIGTERM signal is sent, and your code must handle this signal to avoid unresponsive app instances. See [Why aren't my app instances scaling down as expected](/docs/codeengine?topic=codeengine-ts-app-domain-notscaledown)? 
 
 ## Configuring liveness and readiness probes in {{site.data.keyword.codeengineshort}} 
 {: #app-probes-config}
