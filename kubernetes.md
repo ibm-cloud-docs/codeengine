@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-12-12"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -29,7 +29,7 @@ If you decide to use Kubernetes with {{site.data.keyword.codeengineshort}}, cons
 ## Installing the Kubernetes command-line interface
 {: #kubernetes-kubectl} 
 
-To install the Kubernetes CLI, download and install the [`kubectl` CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}.
+To install the Kubernetes CLI, download and install the [`kubectl` CLI](https://kubernetes.io/docs/tasks/tools/){: external}.
 {: shortdesc}
 
 Be sure to add the `kubectl` binary to your system's PATH environment variable. 
