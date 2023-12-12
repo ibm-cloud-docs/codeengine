@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-16"
+lastupdated: "2023-12-11"
 
 keywords: functions in code engine, function workloads, function inline
 
@@ -18,7 +18,7 @@ subcollection: codeengine
 You can create your function with inline code. Your code is stored with your function. You can create this type of function from the console or with the CLI. 
 {: shortdesc}
 
-
+A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
 
 
 ## Creating a function with inline with the console

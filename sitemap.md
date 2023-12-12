@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-07"
+lastupdated: "2023-12-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -41,8 +41,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
 
 
-## About
-{: #sitemap_about}
+## About workloads
+{: #sitemap_about_workloads}
 
 
 [Learn about {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about#about)
@@ -140,6 +140,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for December 2023.
 
+    * [12 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec1223)
+
+        * Added information about testing functions locally
+
+        * Added troubleshooting information for builds with Dockerfiles
+
+        * Updated versions for buildpacks
+
     * [07 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec023)
 
         * Added support for applications with gRPC
@@ -178,7 +186,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated information about adding authentication and authorization capabilities, and rotating TLS certificates for security
 
-        * Added information about a new project details page in the console, which includes information such as the region, CRN, GUID, network addresses (public and private), and more! This page provides a convenient way to obtain project details when troubleshooting.
+        * Added information about a new project details page in the console. 
 
         * Added troubleshooting information for app connectivity when using a proxy
 
@@ -2584,6 +2592,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Supported CPU and memory combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo)
 
+[Testing {{site.data.keyword.codeengineshort}} functions locally](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-local)
+
+* [Python wrapper](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-python)
+
+* [Node.js wrapper](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-nodejs)
+
 [Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate)
 
 * [Comparing Code Engine to Cloud Functions](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare)
@@ -4184,6 +4198,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Resolution for a problem with the Docker build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-dockerbuild)
 
 [Why does my Python app fail to deploy?](/docs/codeengine?topic=codeengine-ts-build-python#ts-build-python)
+
+[Why is my build from a Dockerfile failing with a `no command specified` error?](/docs/codeengine?topic=codeengine-ts-build-nocmdspecified#ts-build-nocmdspecified)
 
 
 ### Troubleshooting functions

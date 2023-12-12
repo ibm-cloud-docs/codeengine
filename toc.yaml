@@ -9,14 +9,14 @@ toc:
     label: Code Engine
     version: 2
     console-page: /codeengine
-    product-page: https://www.ibm.com/cloud/code-engine 
+    product-page: https://www.ibm.com/products/code-engine 
   entries: 
   - navgroup: 
       id: learn
       topics:
       - getting-started.md
       - topicgroup:
-          label: About
+          label: About workloads
           topics:
           - about.md
           - app-workloads.md
@@ -105,6 +105,7 @@ toc:
           - fun-create-existing.md
           - fun-domainmapping.md
           - fun-runtime.md
+          - fun-test-local.md
           - fun-migrate.md
       - topicgroup:
           label: Building source code
@@ -243,6 +244,7 @@ toc:
               - ts-build-fail-memorylimit.md
               - ts-build-fail-buildpushstepfails.md
               - ts-build-python.md
+              - ts-build-nocmdspecified.md
           - topicgroup:
               label: Troubleshooting functions 
               topics:

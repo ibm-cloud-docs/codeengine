@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-12-12"
 
 keywords: github events, github webhooks, webhooks, application webhook, event webhook, code engine
 
@@ -87,7 +87,7 @@ To create a GitHub webhook, follow these steps.
 2. Select **Webhooks** -> **Add webhook**. Note that your GitHub repository might use **Hooks** instead of **Webhooks**.
 3. Enter your application URL as your **Payload URL**.
 4. Select the **Content type** that your application requires. If you are using the sample `github` app, then select `application/json` as your content type.  
-5. Optional. Add a secret to your webhook. For more information, see [Securing your webhooks](https://docs.github.com/en/webhooks/using-webhooks/securing-your-webhooks){: external}.
+5. Optional. Add a secret to your webhook. For more information, see [Securing your webhooks](https://docs.github.com/webhooks/using-webhooks/validating-webhook-deliveries){: external}.
 6. Select to **Enable SSL Verification**.
 7. Select **Just the push event** to trigger your webhook.
 8. Ensure **Active** is selected. You can disable your webhook without deleting it by removing the checkmark.

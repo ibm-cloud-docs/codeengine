@@ -1,6 +1,6 @@
 {
     "title": "Code Engine",
-    "lastupdated": "2023-12-07",
+    "lastupdated": "2023-12-12",
     "introduction": "Find out how you can use Code Engine to run your containerized workloads",
     "section_devtools": {
       "api": "/apidocs/codeengine/v2", 
@@ -38,6 +38,6 @@
       "developer": "https://developer.ibm.com/components/cloud-code-engine/",
       "architecture": "https://www.ibm.com/cloud/architecture",
       "training": "https://www.ibm.com/training/cloud",
-      "community": "https://community.ibm.com/community/user/publiccloud/home"
+      "community": "hhttps://community.ibm.com/community/user/cloud/home"
     }
   }

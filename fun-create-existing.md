@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-14"
+lastupdated: "2023-12-11"
 
 keywords: functions in code engine, functions, serverless, create functions in code engine, function workloads in code engine, registry secret, registry access, registry access secret
 
@@ -17,6 +17,8 @@ subcollection: codeengine
 
 Create your {{site.data.keyword.codeengineshort}} function with a code bundle in {{site.data.keyword.registrylong}}. You can create a function from the console or with the CLI. 
 {: shortdesc}
+
+A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
   
 You cannot pull code bundles from a location other than {{site.data.keyword.registryshort}}.
 {: note}
