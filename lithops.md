@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2023
+lastupdated: "2023-12-12"
 
 keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine, lithops, jobs
 
@@ -49,7 +49,7 @@ Select a [supported storage backend](https://github.com/lithops-cloud/lithops/tr
 
 To set up {{site.data.keyword.cos_full_notm}}, 
 
-1. Create an [{{site.data.keyword.cos_full_notm}} account](https://www.ibm.com/cloud/object-storage).
+1. Create an [{{site.data.keyword.cos_full_notm}} account](https://www.ibm.com/products/cloud-object-storage).
 2. Create a bucket in the region that you want to use.
 3. In the side navigation, click **Endpoints** to find your API endpoint. You must copy both the public and private endpoints of the region where you created your bucket.
 4. Create the credentials to access to your {{site.data.keyword.cos_full_notm}} account. **Choose one option**
