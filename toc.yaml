@@ -14,8 +14,7 @@ toc:
   - navgroup: 
       id: learn
       topics:
-      - getting-started.mdstaging>
-      - internal.md</staging>
+      - getting-started.md
       - topicgroup:
           label: About workloads
           topics:

@@ -22,6 +22,25 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 
+## Getting started with {{site.data.keyword.codeenginefull_notm}}
+{: #sitemap_getting_started_with_}
+
+
+[Getting started with {{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started#getting-started)
+
+* [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and functions?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
+
+* [Deploying your first {{site.data.keyword.codeengineshort}} app](/docs/codeengine?topic=codeengine-getting-started#app-hello)
+
+* [Running your first {{site.data.keyword.codeengineshort}} job](/docs/codeengine?topic=codeengine-getting-started#first-job)
+
+* [Running your first function](/docs/codeengine?topic=codeengine-getting-started#first-function)
+
+* [Building your first container image from source code](/docs/codeengine?topic=codeengine-getting-started#build-image-gs)
+
+* [Next steps for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
+
+
 ## About workloads
 {: #sitemap_about_workloads}
 
