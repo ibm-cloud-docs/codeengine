@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-12-19"
 
 keywords: configmaps with code engine, key references with code engine, key-value pair with code engine, setting up configmaps with code engine, configmaps, environment variables
 
@@ -266,7 +266,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}     
 
-2. [Deploy an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the `hello` image. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap` configmap. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}.
+2. [Deploy an app](/docs/codeengine?topic=codeengine-deploy-app&interface=cli#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the `hello` image. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap` configmap. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}.
 
     ```txt
     ibmcloud ce app create --name myhelloapp --image icr.io/codeengine/hello --env-from-configmap myliteralconfigmap

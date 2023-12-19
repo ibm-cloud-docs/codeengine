@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-12-19"
 
 keywords: kafka, kafka event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -197,7 +197,7 @@ To create the `kafka-sender-app` application from the console, complete the foll
 
 To create the `kafka-sender-app` application with the CLI, use the following commands.  
 
-1. [Create a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) that is called `kafka-sender-app` with the following information. 
+1. [Create a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-deploy-app&interface=cli#deploy-app-cli) that is called `kafka-sender-app` with the following information. 
     * Specify the `--image` option to reference the `icr.io/codeengine/kafka-sender` container image. This image is built from `sender.go`, which is available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/kafka){: external}. This sample sender app requires the `password` credentials that are stored in your `kafka-subscription-secret`, and it requires the `BROKERS` environment variable.
     * Specify the `--env-from-secret` option to reference the full secret, `kafka-subscription-secret`, which contains the `password` credentials.
     * Specify the `--env` option to add a literal environment variable, `BROKERS`, and provide the name of one of the broker hosts that are listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. However, if you want to specify more than one broker hostname, use the format `--env BROKERS-broker1,broker2,broker3`.
@@ -227,7 +227,7 @@ You can use the console to set up a Kafka event subscription so that events are 
 #### Creating a {{site.data.keyword.codeengineshort}} app to receive Kafka events from the console
 {: #create-kafka-receiverapp-ui}
 
-1. [Create an {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) to act as an event consumer of Kafka messages and receive the Kafka events. For example, create an application that is called `kafka-receiver-app` that uses the `icr.io/codeengine/kafka-receiver` image. This image is built from `receiver.go`, which is available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/kafka){: external}. This sample does not require any environment variables.
+1. [Create an {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-deploy-app&interface=ui#deploy-app-console) to act as an event consumer of Kafka messages and receive the Kafka events. For example, create an application that is called `kafka-receiver-app` that uses the `icr.io/codeengine/kafka-receiver` image. This image is built from `receiver.go`, which is available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/kafka){: external}. This sample does not require any environment variables.
 2. After you deploy this app, confirm that it is in `ready` status. 
 
 When you use the console, it is not necessary that the app or job that you use to receive Kafka events exist before you create the Kafka event subscription. However, if the app or job does not exist when you create the event subscription, the status of the subscription reflects that the consumer does not exist. You must create the app or job before the subscription is in a ready state and can receive events through this subscription. 
