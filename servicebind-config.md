@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-12-19"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project, integrating service with function in code engine
 
@@ -24,7 +24,7 @@ Before you begin
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
 * Create a {{site.data.keyword.codeengineshort}} workload to bind to your service instance. The workload that you want to bind to the service instance must exist.
-    * [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
+    * [Create an app](/docs/codeengine?topic=codeengine-deploy-app&interface=ui#deploy-app-console)
     * [Create a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui)
     * [Create a function](/docs/codeengine?topic=codeengine-fun-create-inlinecode)
 * Create the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} workload.

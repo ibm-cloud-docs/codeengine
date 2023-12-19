@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-12-19"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -41,7 +41,7 @@ Before you begin
 
 
 1. To open the dialog to define your environment variable on the Add environment variable page, complete one of the following choices.
-    * If you are [creating an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console), from the Create application page, expand the **Environment variables (optional)** section. You can add one or more environment variables to the app that you are creating. Click **Add** to open the Add environment variable page. 
+    * If you are [creating an app](/docs/codeengine?topic=codeengine-deploy-app&interface=ui#deploy-app-console), from the Create application page, expand the **Environment variables (optional)** section. You can add one or more environment variables to the app that you are creating. Click **Add** to open the Add environment variable page. 
     * If you are [creating a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui), from the Create job page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page.
     * If you are [creating a function](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inline-console), from the Create function page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page.
     * If you are updating an existing workload to add environment variables, go to the existing app, job, or function. From the **Configuration** tab, click **Environment variables**. For apps, click **Edit and create a new revision**, and then click **Add environment variable**. For jobs and functions, click **Add environment variable** to open the Add environment variable page.
