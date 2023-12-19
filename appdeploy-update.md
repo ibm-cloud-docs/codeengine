@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-12-19"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -46,7 +46,7 @@ When you deploy your updated app, the latest version of your referenced containe
 ## Updating your app from the console
 {: #update-app-console}
 
-Update the application that you created in [Deploying an application from a public registry from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) to add an environment variable.
+Update the application that you created in [Deploying an application from a public registry from the console](/docs/codeengine?topic=codeengine-deploy-app&interface=ui#deploy-app-console) to add an environment variable.
 
 1. Navigate to your application page. One way to navigate to your application page is to 
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -104,7 +104,7 @@ By changing the visibility of your app, the change is effective immediately. It 
 To update your app with the CLI, use the **`app update`** command. This command requires the name of the app that you want to update and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
 {: shortdesc}
 
-Update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) to add an environment variable. 
+Update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app&interface=cli#deploy-app-cli) to add an environment variable. 
 
 The sample `icr.io/codeengine/hello` image reads the environment variable `TARGET`, and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. The following example updates the app to modify the value of the `TARGET` environment variable to `Stranger`. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}.
 
