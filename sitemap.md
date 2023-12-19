@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-12"
+lastupdated: "2023-12-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2224,11 +2224,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
 
-* [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
+* [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app&interface=ui#deploy-app-console)
 
-* [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli)
+* [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-deploy-app&interface=cli#deploy-app-cli)
 
-* [Next steps](/docs/codeengine?topic=codeengine-deploy-app#nextsteps-appdeploypub)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-app&interface=cli#nextsteps-appdeploypub)
 
 [Deploying app workloads from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
 
