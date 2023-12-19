@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-12-19"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine, user access, access, platform roles, service roles
 
@@ -54,8 +54,8 @@ To manage access or assign new access for users by using access groups, you must
 
 Choose any of the following actions to manage access groups in the {{site.data.keyword.cloud_notm}}:
 
-* [Creating an access group](/docs/account?topic=account-groups#create_ag).
-* [Assigning access to a group](/docs/account?topic=account-groups#access_ag).
+* [Creating an access group](/docs/account?topic=account-groups&interface=ui#create_ag).
+* [Assigning access to a group](/docs/account?topic=account-groups&interface=ui#access_ag).
 
 For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=account-ibmcloud_commands_iam).
 
@@ -67,8 +67,8 @@ To manage access or assign new access for users by using IAM policies, you must 
 Choose any of the following actions to manage IAM policies in the {{site.data.keyword.cloud_notm}}:
 
 * To grant permissions to a user, see [Assigning access](/docs/account?topic=account-assign-access-resources#assign-new-access).
-* To revoke permissions, see [Removing access](/docs/account?topic=account-assign-access-resources#removing-access-console).
-* To review a user's permissions, see [Reviewing your assigned access](/docs/account?topic=account-assign-access-resources#review-your-access-console).
+* To revoke permissions, see [Removing access](/docs/account?topic=account-assign-access-resources&interface=ui#removing-access-console).
+* To review a user's permissions, see [Reviewing your assigned access](/docs/account?topic=account-assign-access-resources&interface=ui#review-your-access-console).
 
 For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=account-ibmcloud_commands_iam).
 
