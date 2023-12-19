@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-12-19"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -51,7 +51,7 @@ Before you begin
 
 * [Obtain a custom domain from a domain registrar and its signed TLS certificate and private key](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain).
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
-* [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console).
+* [Create an app](/docs/codeengine?topic=codeengine-deploy-app&interface=ui#deploy-app-console).
 
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
@@ -109,7 +109,7 @@ Before you begin
 * Obtain the signed TLS certificate and the private key for your custom domain.
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
-* [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli).
+* [Create an app](/docs/codeengine?topic=codeengine-deploy-app&interface=cli#deploy-app-cli).
 
 When your domain name is registered, you have a signed TLS certificate and its matching private key for this domain, and you have an existing {{site.data.keyword.codeengineshort}} application, you are ready to add a custom domain mapping to this application. You can use the **`domainmapping create`** command in the CLI to create a custom domain mapping with your {{site.data.keyword.codeengineshort}} application.
 

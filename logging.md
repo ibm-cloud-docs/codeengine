@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-12-19"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -82,7 +82,7 @@ conform to [limits for {{site.data.keyword.la_full_notm}} logs](/docs/log-analys
 
 Your {{site.data.keyword.la_short}} instance is now configured such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} app.
 
-Alternatively, you can configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. You can also apply [filters for your search](#view-logs-filters) in {{site.data.keyword.la_short}} for your {{site.data.keyword.codeengineshort}} log data. 
+Alternatively, you can configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs&interface=ui#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. You can also apply [filters for your search](#view-logs-filters) in {{site.data.keyword.la_short}} for your {{site.data.keyword.codeengineshort}} log data. 
 
 ### Viewing job logs from the console
 {: #view-joblogs-ui}

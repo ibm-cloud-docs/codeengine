@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-12-19"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -71,7 +71,7 @@ You can create and update {{site.data.keyword.cos_full_notm}} event subscription
 Before you begin
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
-* [Create an application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console). For example, create an application that is called `myapp` that uses the `icr.io/codeengine/cos-event` image. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
+* [Create an application](/docs/codeengine?topic=codeengine-deploy-app&interface=ui#deploy-app-console). For example, create an application that is called `myapp` that uses the `icr.io/codeengine/cos-event` image. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
 
 Complete the following steps to create and update an {{site.data.keyword.cos_full_notm}} event subscription for an application from the console.
 

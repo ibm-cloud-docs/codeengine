@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-08"
+lastupdated: "2023-12-19"
 
 keywords: code engine, toolchain and code engine, continuous deliver and code engine, toolchain, code engine cicd
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Integrating {{site.data.keyword.codeengineshort}} workloads with {{site.data.keyword.contdelivery_short}}
 {: #toolchain-ce}
 
-You can automate the build and deployment of your {{site.data.keyword.codeenginefull}} workloads by creating a toolchain with {{site.data.keyword.contdelivery_short}}. You can create a toolchain that pulls your source code from a repository and then builds and deploys your app or job. Whenever you update the source code in the repository, the toolchain automatically pulls your updated code and then builds and re-deploys your app or job.
+You can automate the build and deployment of your {{site.data.keyword.codeenginefull}} workloads by creating a toolchain with {{site.data.keyword.contdelivery_short}}. You can create a toolchain that pulls your source code from a repository and then builds and deploys your app or job. Whenever you update the source code in the repository, the toolchain automatically pulls your updated code and then builds and re-deploys your app or job. 
 {: shortdesc}
   
 ## Before you begin
@@ -95,6 +95,9 @@ You can set the following options for your {{site.data.keyword.codeengineshort}}
 | `resource-group` | The resource group that contains the {{site.data.keyword.codeengineshort}} project. |
 | `service-bindings` | The service binding that binds an {{site.data.keyword.cloud_notm}} service instance to an application. This value is in the format `"{\"<SERVICE_INSTANCE_NAME>\": \"<BINDING_PREFIX>\"}"`. For example, `"{\"object-store-rg-e\": \"CLOUD_OBJECT_STORAGE\"}`. This value must be in base64.  |
 {: caption="Table 1. Code Engine options in toolchain" caption-side="bottom"}
+
+For more options, see the **Environment properties** for your pipeline in your toolchain settings.
+{: note}
 
 
 ## Troubleshooting toolchain issues
