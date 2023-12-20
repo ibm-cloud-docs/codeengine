@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Updating your app 
+# Updating your app
 {: #update-app}
 
 An application contains one or more *revisions*. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.
@@ -235,7 +235,7 @@ You can manage your app revisions by using the [**`ibmcloud ce revision get`**](
 
 By default, when you deploy an app, the app deploys such that it can receive requests from the public internet, from a private network, or from components within the project. To change the visibility of your app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project, use the `--visibility=project` option with the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) or [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.{: shortdesc}
 
-In this scenario, update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) to change the visibility of the app to use a [project endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly).  
+In this scenario, update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app&interface=cli#deploy-app-cli) to change the visibility of the app to use a [project endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly).  
 
 1. Run the **`application update`** command. For example,
 
@@ -328,7 +328,7 @@ By default, when you deploy an app, the app deploys such that it can receive req
  You can only use your VPE to access your app with a private endpoint if your selected project supports [application private visibility](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-private). To confirm if the project supports application private visibility, use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. 
 {: important}
 
-In this scenario, update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) to change the visibility of the app to use a [private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-private). 
+In this scenario, update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app&interface=cli#deploy-app-cli) to change the visibility of the app to use a [private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-private). 
 
 
 1. Confirm that the existing project supports applications with private visibility. Use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. If the value is `false`, [contact IBM support](/docs/codeengine?topic=codeengine-get-support) to enable this capability within your existing project.
