@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-12-19"
+lastupdated: "2023-12-20"
 
 keywords: kafka, kafka event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Working with the Kafka event producer
+# Working with the Kafka event producer 
 {: #working-kafkaevent-producer}
 
 A {{site.data.keyword.codeengineshort}} Kafka subscription watches for new messages to appear in a Kafka instance. When you create a subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics. You can create at most 100 Kafka subscriptions per project. 

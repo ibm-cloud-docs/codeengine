@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-12-19"
+lastupdated: "2023-12-20"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Working with environment variables  
+# Working with environment variables
 {: #envvar} 
 
 Learn how to work with environment variables (`env variables`) in {{site.data.keyword.codeengineshort}}. You can set environment variables as key-value pairs that can be used by your application, job, or function. 
