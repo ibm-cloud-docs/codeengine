@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-12-19"
+lastupdated: "2023-12-20"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Working with the {{site.data.keyword.cos_full_notm}} event producer
+# Working with the {{site.data.keyword.cos_full_notm}} event producer 
 {: #eventing-cosevent-producer}
 
 The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. When you create a subscription to a bucket, your app or job receives a separate event for each successful change to that bucket. You can subscribe to different events such as `write` events, `delete` events, or `all` events. You can create at most 100 {{site.data.keyword.cos_short}} subscriptions per project.
@@ -82,7 +82,7 @@ Complete the following steps to create and update an {{site.data.keyword.cos_ful
    1. For **Event type**, select the Cloud Object Storage tile. Click **Next**. 
    2. For **General**, provide a name for the {{site.data.keyword.cos_short}} subscription, for example, `mycos`. You can optionally provide event attributes. Note that if the {{site.data.keyword.cos_short}} event consumer is an application, event attributes are available as HTTP headers. If the event consumer is a job, event attributes are available as environment variables. Click **Next** to proceed. 
    3. For **Bucket event details**, select or type the name of an existing {{site.data.keyword.cos_short}} bucket. Specify the types of changes for your object and optionally provide an object name prefix or suffix to filter objects in the bucket that to trigger events for the subscription. Click **Next** to proceed. 
-   4. For **Event consumer**, specify the application to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myapp` application that references the `icr.io/codeengine/cos-listen` image. If your app does not exist, you can provide the name of your application and [create your application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) after you create the {{site.data.keyword.cos_short}} subscription. For applications only, you can optionally specify a path. By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by specifying a path. For example, if your subscription path specifies `/events`, the events are sent to `https://<base application URL>/events`. Click **Next** to proceed.
+   4. For **Event consumer**, specify the application to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myapp` application that references the `icr.io/codeengine/cos-listen` image. If your app does not exist, you can provide the name of your application and [create your application](/docs/codeengine?topic=codeengine-deploy-app&interface=ui#deploy-app-console) after you create the {{site.data.keyword.cos_short}} subscription. For applications only, you can optionally specify a path. By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by specifying a path. For example, if your subscription path specifies `/events`, the events are sent to `https://<base application URL>/events`. Click **Next** to proceed.
    5. For **Summary**, review the settings for your {{site.data.keyword.cos_short}} event subscription and make changes if needed. When ready, click **Create** to create the {{site.data.keyword.cos_short}} subscription. 
 
 5. Now that your {{site.data.keyword.cos_short}} subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cos-app-ui). 

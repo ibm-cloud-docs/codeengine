@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-12-19"
+lastupdated: "2023-12-20"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -12,10 +12,10 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Working with environment variables  
+# Working with environment variables
 {: #envvar} 
 
-Learn how to work with environment variables (`env variables`) in {{site.data.keyword.codeengineshort}}. You can set environment variables as key-value pairs that can be used by your application, job, or function. 
+Learn how to work with environment variables (`env variables`) in {{site.data.keyword.codeengineshort}}. You can set environment variables as key-value pairs that can be used by your application, job, or function.
 {: shortdesc}
 
 ## Creating and updating environment variables
@@ -74,7 +74,7 @@ The following table describes information about your environment variables.
 
 For example, let's create an app and set environment variables for the app. 
 
-1. [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) that is named `myapp`, which uses the `icr.io/codeengine/codeengine` image. This `hello-world` app includes the `TARGET` environment variable, and the app prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+1. [Create an app](/docs/codeengine?topic=codeengine-deploy-app&interface=ui#deploy-app-console) that is named `myapp`, which uses the `icr.io/codeengine/codeengine` image. This `hello-world` app includes the `TARGET` environment variable, and the app prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
 2. Go to this app in the console. 
 3. When the app is in `Ready` state, you can test your app. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. The `myapp` app returns a `Hello World from {{site.data.keyword.codeengineshort}}` response and prints the environment variables that are included in this app. 
 4. Click the **Environment variables** tab.  
