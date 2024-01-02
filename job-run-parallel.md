@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-12-12"
+  years: 2023, 2024
+lastupdated: "2024-01-02"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, parallel jobs, parallel batch jobs
 subcollection: codeengine
@@ -59,7 +59,7 @@ However, suppose that you do not want to be limited to a specific number of para
 * The `JOB_ARRAY_SIZE`environment variable specifies the number of job instances to run in parallel. This value is specified directly as the job run array size, or computed by counting the specified array indices. 
 
 
-For example, say that you configured an array size of 10 such that you want each job run instance to work on 10% of the overall data (10 job run instances run in parallel). With this configuration setting, the `JOB_INDEX` environment variable determines which of the 10% chunks of data are worked on, and the computed value for`JOB_ARRAY_SIZE` is 10.
+For example, say that you configured an array size of 10 such that you want each job run instance to work on 10% of the overall data (10 job run instances run in parallel). With this configuration setting, the `JOB_INDEX` environment variable determines which of the 10% chunks of data are worked on, and the computed value for `JOB_ARRAY_SIZE` is 10.
 
 However, suppose you want to rerun 3 of the initial 10 job run instances because they previously failed. The other 70% of the data was successfully processed. You want to specify the particular 3 failing indices when you resubmit the job run. Assume that you want to rerun indices `3`, `7`, and `9`. 
 
