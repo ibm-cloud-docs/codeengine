@@ -2475,7 +2475,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Running jobs in parallel](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel)
 
-* [How can I efficiently process a large number of files by using job processing?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-how)
+* [How can I efficiently process many files by using job processing?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-how)
 
 * [What if I only want to process a subset of my data? Is there a way to dynamically assign work to parallel job run instances?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-02"
+lastupdated: "2024-01-03"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, parallel jobs, parallel batch jobs
 subcollection: codeengine
@@ -17,7 +17,7 @@ subcollection: codeengine
 Learn how to run jobs in {{site.data.keyword.codeenginefull}} with operational efficiency. 
 {: shortdesc}
 
-## How can I efficiently process a large number of files by using job processing?
+## How can I efficiently process many files by using job processing?
 {: #job-run-parallel-how}
 
 Suppose that you have many files that are stored in an {{site.data.keyword.cos_full_notm}} bucket and you want to use batch processing in {{site.data.keyword.codeengineshort}}. The objective is to read files from one bucket, manipulate the files and store the files in a different {{site.data.keyword.cos_short}} bucket in the most efficient way. Let's assume you have 2000 files in the input bucket each day.  All the files have different file name and the file names begin with an alphabetic character (A-Z, a-z). 
