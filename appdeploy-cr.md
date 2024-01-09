@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-09-27"
+  years: 2020, 2024
+lastupdated: "2024-01-09"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables, registry secret, registry access, registry access secret
 
@@ -37,7 +37,7 @@ Deploy an application that uses an image in {{site.data.keyword.registryshort}} 
 {{site.data.keyword.codeengineshort}} can automatically pull images from a {{site.data.keyword.registryshort}} namespace in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private Docker Hub account, see [Deploying application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private). 
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Start creating** from **Run a container image**.
+2. Select **Let's go**.
 3. Select **Application**.
 4. Enter a name for the application; for example, `helloapp`. Use a name for your application that is unique within the project. 
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
