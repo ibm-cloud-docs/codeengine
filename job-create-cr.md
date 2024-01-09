@@ -43,7 +43,7 @@ Create a job configuration that uses an image in {{site.data.keyword.registrysho
 4. Enter a name for the job; for example, `myjob`.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 6. Select **Container image** and click **Configure image**. 
-7. Select a container registry location, such as `IBM Registry, Dallas`.
+7. Select a container registry location, such as `IBM Registry Dallas`.
 8. Select `{{site.data.keyword.codeengineshort}} managed secret` for **Registry secret**. Because this example uses an image in a {{site.data.keyword.registryshort}} namespace in your account, {{site.data.keyword.codeengineshort}} can automatically create and manage the registry secret for you. 
 9. Select an existing namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 10. Select a value for **Tag**; for example, `latest`.
