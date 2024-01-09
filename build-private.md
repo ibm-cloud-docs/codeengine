@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-17"
+  years: 2020, 2024
+lastupdated: "2024-01-09"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret
 
@@ -43,7 +43,7 @@ You can choose to ignore certain file patterns from within your source code by u
     Click **Next** to advance to the last section.
     
 7. In the **Output** section, enter the details of your container image. 
-    - Select an existing registry access secret, or click **Create registry access secret** to add a new one. 
+    - Select an existing registry secret, or click **Create registry secret** to add a new one. 
     - If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `{{site.data.keyword.codeengineshort}} managed secret` and {{site.data.keyword.codeengineshort}} creates and manages the secret for you. 
     - Then, select the namespace, repository, and tag of the image you want to build. You can choose for {{site.data.keyword.codeengineshort}} to create and manage the namespace in {{site.data.keyword.registryshort}} for you. 
     - If your image exists in {{site.data.keyword.registryshort}}, you can select from the existing images, or enter a new repository or tag.

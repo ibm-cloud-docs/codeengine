@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-29"
+  years: 2020, 2024
+lastupdated: "2024-01-09"
 
 keywords: secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, secrets, configmaps, environment variables
 
@@ -39,7 +39,7 @@ The following table summarizes the supported secrets in {{site.data.keyword.code
 | -------------- | -------------- |
 | Basic authentication  | A secret that contains a `username` and `password` key. \n Use basic authentication secrets when you access a service that requires basic HTTP authentication. |
 | Generic  | A secret that stores simple key-value pairs and {{site.data.keyword.codeengineshort}} makes no assumptions about the defined key-value pairs nor about the intended use of the secret. \n Use generic secrets when you want to define your own key-value pairs to access a service.  |
-| Registry  | A secret that stores credentials to access a container registry. \n Use registry secrets when you work with {{site.data.keyword.codeengineshort}} apps or jobs to access a container image. Or, you use {{site.data.keyword.codeengineshort}} to build a container image and the registry secret is used by {{site.data.keyword.codeengineshort}} to access the registry to store the built container image. \n This secret is also used as a `Registry access secret` in the CLI and console. |
+| Registry  | A secret that stores credentials to access a container registry. \n Use registry secrets when you work with {{site.data.keyword.codeengineshort}} apps or jobs to access a container image. Or, you use {{site.data.keyword.codeengineshort}} to build a container image and the registry secret is used by {{site.data.keyword.codeengineshort}} to access the registry to store the built container image. \n This secret is also referred to as a `Registry access secret` in the CLI. |
 | Service access | A secret that stores credentials to access an {{site.data.keyword.cloud_notm}} service instance. \n Use service access secrets when you work with [service bindings](/docs/codeengine?topic=codeengine-service-binding) in {{site.data.keyword.codeengineshort}}.  {{site.data.keyword.codeengineshort}} can automatically generate this secret or you can create your own custom service access secret. |
 | SSH | A secret that stores credentials to authenticate to a service with an SSH key, such as authenticating to a Git repository, such as GitHub or GitLab. \n Use SSH secrets when you want {{site.data.keyword.codeengineshort}} to build a container image for you. {{site.data.keyword.codeengineshort}} uses this secret to access your source code in a code repository. For example, use this secret with build runs to access your source code in a repository, such as GitHub or GitLab. \n This secret is also used as a `Git repository access secret` in the CLI and `Code repo access` in the console. |
 | Transport Layer Security (TLS) | A secret that contains a signed TLS certificate, including all its intermediate certificates, and its corresponding private key from a certificate authority (CA). \n Use TLS secrets when you work with [custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings) in {{site.data.keyword.codeengineshort}}. |
