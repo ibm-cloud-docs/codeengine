@@ -32,9 +32,8 @@ Build runs that complete are ultimately automatically deleted. When your build r
 3. From the project page, click **Image builds**.
 4. From the **Image build** tab, select the name of the image build that you want to work with.
 5. In the **Configuration** section, you can review the build configuration and change values, if needed.
-6. To submit your build, click **Submit build**.
-7. Verify any additional information, such as the **Image tag** to create a specific tag for this build run or overwrite the **Timeout** value.
-8. Submit the build run by clicking **Submit build**.
+6. Verify any additional information, such as the **Output image** for this build run, or overwrite the **Timeout** value.
+7. Submit the build run by clicking **Submit build**.
 
 Monitor your build progress in the **Build runs** section.
 
