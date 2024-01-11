@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-11"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -45,7 +45,7 @@ This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https:
     4. Enter a name for the job; for example, `myjob`.
     5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
     6. Choose the code to run. You can create your job from an image in a [public registry](/docs/codeengine?topic=codeengine-create-job), [private registry](/docs/codeengine?topic=codeengine-create-job-private), or in [{{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-create-job-crimage). You can also create your job from [repository](/docs/codeengine?topic=codeengine-run-job-source-code) or [local](/docs/codeengine?topic=codeengine-job-local-source-code) source code. For this example, use the {{site.data.keyword.codeengineshort}} sample image, `icr.io/codeengine/helloworld`. 
-    7. In **Runtime settings**, specify `daemon` for the mode. When you specify `daemon` mode, job runs for this job can run indefinitely, and they do not time out. There is no retry limit for these job runs. Any job runs for these jobs are automatically restarted without limit. 
+    7. In the **Resources & scaling** section, specify `daemon` for the mode in the **Resiliency settings**. When you specify `daemon` mode, job runs for this job can run indefinitely, and they do not time out. There is no retry limit for these job runs. Any job runs for these jobs are automatically restarted without limit. 
     8. Click **Create** to create the job. 
 
 2. View the list of defined jobs from the **Jobs** page and click the name of your job to open the configuration.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-07-21"
+  years: 2024
+lastupdated: "2024-01-11"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -60,12 +60,12 @@ Now that your projects are created in multiple regions, deploy your application 
 For example, deploy the `codeengine/helloworld` app.
 
 1. From the [{{site.data.keyword.codeengineshort}} projects](https://cloud.ibm.com/codeengine/projects){: external} page, click the name of one of the projects that you created.
-2. Click **Create application**.    
+2. Click **Applications** and then click **Create** to create a new application.
 3. Configure your app with the following settings.
     1. Name your application `global-app`.
     2. Select **Container image** to reference a container image for your app.
     3. Enter `icr.io/codeengine/helloworld` for your image reference.
-    4. Under **Runtime settings**, set your minimum number of instances to 1. By setting your minimum number of instances to 1, you can enable health checks from your CIS instance to monitor the availability of pools so that traffic can be routed to the healthy ones.
+    4. In the **Resources & scaling** section, set your minimum number of instances to 1. By setting your minimum number of instances to 1, you can enable health checks from your CIS instance to monitor the availability of pools so that traffic can be routed to the healthy ones.
     5. Leave the rest of the options at the default settings and click **Create**.
 
 4. Repeat these steps to create the application in each project.

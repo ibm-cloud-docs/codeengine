@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-12"
+  years: 2020, 2024
+lastupdated: "2024-01-11"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, registry secret, service id,registry secret, registry access secret
 
@@ -49,10 +49,10 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 
  To access images in a registry, {{site.data.keyword.codeengineshort}} uses one of the following types of registry secrets.
 
-* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the registry secret for you. In the console, this automatically created registry access secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. In the CLI, the name of an automatically created registry secret is of the format, `ce-auto-icr-private-<region>`. 
-* User managed secret - This is a secret that you create and manage. You can [access images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) or use an access token for the container registry of your choice; for example, Docker Hub. For this case, the registry access secret that is listed in the console is the name of your registry secret. 
+* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the registry secret for you. In the console, this automatically created registry secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. In the CLI, the name of an automatically created registry secret is of the format, `ce-auto-icr-private-<region>`. 
+* User managed secret - This is a secret that you create and manage. You can [access images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) or use an access token for the container registry of your choice; for example, Docker Hub. For this case, the registry secret that is listed in the console is the name of your registry secret. 
 
-If your registry is public and does not require credentials; for example, {{site.data.keyword.codeengineshort}} sample images in `icr.io/codeengine` or Docker Hub public, then you do not need a registry secret. For this case, the registry access secret that is listed in the console is `None`. 
+If your registry is public and does not require credentials; for example, {{site.data.keyword.codeengineshort}} sample images in `icr.io/codeengine` or Docker Hub public, then you do not need a registry secret. For this case, the registry secret that is listed in the console is `None`. 
 
 
 ## Setting up authorities for image registries
@@ -70,7 +70,7 @@ To determine the authorities that you need, consider the following cases:
 * If you want to access images from a shared account, other {{site.data.keyword.cloud_notm}} accounts, or a private Docker account, you must be assigned the proper access authorities.
 
 * When you deploy apps or run jobs and your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} automatically create and manage the registry secret for you, as long as your account has the required permissions as described in the following table.
-    - In the console, this registry access secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. This option is available when you use the **Configure image** or **Specify build details** workflows for building an image with {{site.data.keyword.codeengineshort}}.
+    - In the console, this registry secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. This option is available when you use the **Configure image** or **Specify build details** workflows for building an image with {{site.data.keyword.codeengineshort}}.
     - In the CLI, this registry secret is of the format, `ce-auto-icr-private-<region>`. This registry secret is automatically created when you specify the `--build-source` option but you do not provide the `--registry-secret` option with the **`app create`**, **`app update`**, **`job create`**, or **`job update`** commands. 
 
 
