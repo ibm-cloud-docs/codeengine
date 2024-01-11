@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-20"
+  years: 2020, 2024
+lastupdated: "2024-01-11"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -59,7 +59,7 @@ Update the application that you created in [Deploying an application from a publ
 6. Click **Save and create** to save your change and deploy the application revision.
 7. After the application status changes to **Ready**, you can test the application revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. For this app, `Hello Stranger` is displayed.
 
-In this example, you updated environment variables for an app. You can also update other configuration settings for your app, including referencing a [different image](#update-app-crimage-console) or [different image build](#update-app-source-console) from the **Code** tab. From the **Runtime** tab, you can update [memory](/docs/codeengine?topic=codeengine-mem-cpu-combo) and [application scaling](/docs/codeengine?topic=codeengine-app-scale) settings for your app. From the **Environment variables** tab, you can add or update [environment variables](/docs/codeengine?topic=codeengine-envvar) for your app. From the **Command** tab, you can add or update [command and arguments](/docs/codeengine?topic=codeengine-cmd-args) to override settings within your container image. 
+In this example, you updated environment variables for an app. You can also update other configuration settings for your app, including referencing a [different image](#update-app-crimage-console) or [different image build](#update-app-source-console) from the **Code** tab. From the **Resources & scaling** tab, you can update [memory](/docs/codeengine?topic=codeengine-mem-cpu-combo) and [application scaling](/docs/codeengine?topic=codeengine-app-scale) settings for your app. From the **Environment variables** tab, you can add or update [environment variables](/docs/codeengine?topic=codeengine-envvar) for your app. From the **Command** tab, you can add or update [command and arguments](/docs/codeengine?topic=codeengine-cmd-args) to override settings within your container image. 
 
 ## Updating your app to use project-only endpoints from the console
 {: #update-app-console-projendpt}
