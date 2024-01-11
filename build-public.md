@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-11"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret
 
@@ -29,7 +29,7 @@ You can choose to ignore certain file patterns from within your source code by u
 1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
 2. Select the project where you added your container registry.
 3. From the project page, click **Image builds**.
-4. Click **Create**. The **Specify build details** side panel opens where you enter the details of your build.
+4. From the **Image build** tab, click **Create**. The **Specify build details** side panel opens where you enter the details of your build.
 5. In the **Source** section, enter a name for your build, the URL of your source repository, and your code repo access. 
     - If your code is in a public repo, use an HTTPS URL and select **None** for the code repo access. An example of an HTTPS URL is `https://github.com/IBM/CodeEngine`. 
     - If your code is in a private repo, use an SSH URL for the code repo URL and either select the name of an existing code repo access or [create a code repo access](/docs/codeengine?topic=codeengine-code-repositories). An example of an SSH URL is `git@github.com:IBM/CodeEngine.git`. 
