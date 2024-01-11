@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-19"
+  years: 2024
+lastupdated: "2024-01-11"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository, SSH secret
 
@@ -116,7 +116,7 @@ To reference your private Git repository in a build,
 1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
 2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
 3. From the project page, click **Image builds**.
-4. Click **Create**.
+4. From the **Image build** tab, click **Create**.
 5. To specify a private repository and add access, enter the URL to the repository in the **Code repo URL** field and then select either your existing code repo access or to [create access](#add-repo-access-ce-console).
 6. Finish specifying information for your build and click **Done**.
 
