@@ -122,6 +122,11 @@ To reference your private Git repository in a build,
 
 For more information about building images, see [Building a container image](/docs/codeengine?topic=codeengine-plan-build).
 
+The code repo URL must be an SSH URL such as `git@githug.com:IBM/CodeEngine.git` instead of an HTTPS URL such as `https://github.ibm.com/codeengine/ui`.
+{: note}
+
+
+
 ### Referencing an SSH secret in a build with the CLI
 {: #referencing-coderepo}
 

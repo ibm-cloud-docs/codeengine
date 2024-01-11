@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-11"
 
 keywords: secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, secrets, configmaps, environment variables
 
@@ -71,7 +71,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 2. From the Components page, click **Secrets and configmaps**.
 3. From the Secrets and configmaps page, click **Create** to create your secret.
 4. From the Create config page, complete the following steps:
-    1. Select the **Secret** option.  
+    1. Select **Generic secret**, and click **Next**.
     2. Provide a name; for example, `mysecret`.
     3. Click **Add key-value pair**. Specify one or more key-value pairs for this secret. For example, specify one key as `secret1` with the value of `mysecret1` and specify another key as `secret2` with the value of `target-secret`. The name that you choose for your key does not need to be the same as the name of your environment variable. Notice that the value for the key is hidden, but it can be viewed if needed. 
 5. Click **Create** to create the secret. 
