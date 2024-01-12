@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-01-12"
 
 keywords: secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, secrets, configmaps, environment variables
 
@@ -88,7 +88,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 2. From the Components page, click **Secrets and configmaps**.
 3. From the Secrets and configmaps page, click **Create** to create your secret.
 4. From the Create config page, complete the following steps:
-    1. Select the **TLS secret** option.  
+    1. Select **TLS secret**, and click **Next**.
     2. Provide a name; for example, `myTLSsecret`.
     3. Add the certificate chain and its private key. Note that you can concatenate the certificates by starting each in a new line. You can provide this information in a file. 
 5. Click **Create** to create the TLS secret. 
