@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-01-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -135,6 +135,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan24)
+
+    * Review the release notes for January 2024.  
+
+    * [12 January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan1224)
+
+        * [CLI release]{: tag-purple} CLI version 1.49.2 released
+
+        * [New]{: tag-green} Added support for the `scale_array_size_variable_override` property for job runs in the {{site.data.keyword.codeengineshort}} V2 API
 
 * [December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec23)
 

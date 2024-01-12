@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-01-12"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -39,7 +39,7 @@ The following table shows the service behavior changes for each version date. Sw
 ## 04 January 2024
 {: #04-jan-2024}
 
-Added support for the `scale_array_size_variable_override` property for job runs. 
+Added support for the `scale_array_size_variable_override` property for job runs.
 :   - See [Create a job run API](https://cloud.ibm.com/apidocs/codeengine/v2#create-job-run){: external}.
 
 

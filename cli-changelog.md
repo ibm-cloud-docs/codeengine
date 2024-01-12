@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-06"
+  years: 2020, 2024
+lastupdated: "2024-01-12"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.49.2 | 2024-01-12 | - Fixed various bugs. |
 | 1.49.1 | 2023-12-06 | - Fixed various bugs. |
 | 1.49.0 | 2023-12-01 | - Added the `--array-size-variable-override` option the **`jobrun submit`** and **`jobrun resubmit`** commands. Use this option to specify a custom value for the `JOB_ARRAY_SIZE` environment variable. See [Processing a subset of data by dynamically assigning work to parallel job run instances](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic). \n - Renamed the `--instances` option to `--array-size` for the **`job create`**, **`job update`**, **`jobrun submit`**, and **`jobrun resubmit`** commands. Note that `--instances` is still valid as an alias for `--array-size`. \n - Fixed various bugs. |
 | 1.48.0 | 2023-11-09 | -  Updated the `--build-size` option for the **`app create`**, **`app update`**, **`job create`**, and **`job update`** commands to add support for `xxlarge` build sizes. The `--size` option on the  **`build create`**,  **`build update`**, and **`buildrun submit`** commands was also updated to add support for the `xxlarge` build size.  \n - Added the `--ignore-not-found` option to the **`subscription kafka delete`** command.  \n - Fixed various bugs. |

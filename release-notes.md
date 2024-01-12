@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-20"
+  years: 2020, 2024
+lastupdated: "2024-01-12"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,23 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## January 2024
+{: #codeengine-jan24}
+
+Review the release notes for January 2024.  
+{: shortdesc}
+
+### 12 January 2024
+{: #codeengine-jan1224}
+{: release-note}
+
+[CLI release]{: tag-purple} CLI version 1.49.2 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+[New]{: tag-green} Added support for the `scale_array_size_variable_override` property for job runs in the {{site.data.keyword.codeengineshort}} V2 API
+:   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
+
 
 ## December 2023
 {: #codeengine-dec23}
