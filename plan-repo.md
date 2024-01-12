@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-01-12"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository, SSH secret
 
@@ -122,7 +122,7 @@ To reference your private Git repository in a build,
 
 For more information about building images, see [Building a container image](/docs/codeengine?topic=codeengine-plan-build).
 
-The code repo URL must be an SSH URL such as `git@githug.com:IBM/CodeEngine.git` instead of an HTTPS URL such as `https://github.ibm.com/codeengine/ui`.
+The code repo URL must be an SSH URL such as `git@github.com:IBM/CodeEngine.git` instead of an HTTPS URL such as `https://github.ibm.com/codeengine/ui`.
 {: note}
 
 
