@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-12-12"
+  years: 2023, 2024
+lastupdated: "2024-01-03"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, parallel jobs, parallel batch jobs
 subcollection: codeengine
@@ -17,7 +17,7 @@ subcollection: codeengine
 Learn how to run jobs in {{site.data.keyword.codeenginefull}} with operational efficiency. 
 {: shortdesc}
 
-## How can I efficiently process a large number of files by using job processing?
+## How can I efficiently process many files by using job processing?
 {: #job-run-parallel-how}
 
 Suppose that you have many files that are stored in an {{site.data.keyword.cos_full_notm}} bucket and you want to use batch processing in {{site.data.keyword.codeengineshort}}. The objective is to read files from one bucket, manipulate the files and store the files in a different {{site.data.keyword.cos_short}} bucket in the most efficient way. Let's assume you have 2000 files in the input bucket each day.  All the files have different file name and the file names begin with an alphabetic character (A-Z, a-z). 
@@ -59,7 +59,7 @@ However, suppose that you do not want to be limited to a specific number of para
 * The `JOB_ARRAY_SIZE`environment variable specifies the number of job instances to run in parallel. This value is specified directly as the job run array size, or computed by counting the specified array indices. 
 
 
-For example, say that you configured an array size of 10 such that you want each job run instance to work on 10% of the overall data (10 job run instances run in parallel). With this configuration setting, the `JOB_INDEX` environment variable determines which of the 10% chunks of data are worked on, and the computed value for`JOB_ARRAY_SIZE` is 10.
+For example, say that you configured an array size of 10 such that you want each job run instance to work on 10% of the overall data (10 job run instances run in parallel). With this configuration setting, the `JOB_INDEX` environment variable determines which of the 10% chunks of data are worked on, and the computed value for `JOB_ARRAY_SIZE` is 10.
 
 However, suppose you want to rerun 3 of the initial 10 job run instances because they previously failed. The other 70% of the data was successfully processed. You want to specify the particular 3 failing indices when you resubmit the job run. Assume that you want to rerun indices `3`, `7`, and `9`. 
 

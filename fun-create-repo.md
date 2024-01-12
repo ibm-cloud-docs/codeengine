@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-12-11"
+  years: 2023, 2024
+lastupdated: "2024-01-09"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -42,8 +42,8 @@ Create a function with source code from the console.
 7. Select to **Build code bundle from source code**. When you select this option, your function is created from source code and stored in container registry.
 8. Select a source repository, for example `https://github.com/IBM/CodeEngine`. If you choose to use the sample source, you do not need require credentials so you can select `None` for the **Code repo access**. You can optionally provide a branch name. If you do not provide a branch name and you leave the field empty, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository. Click **Next**.  
 9. Select a strategy for your build and resources for your build. For more information about build options, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build). Click **Next**.
-10. Select a container registry location, such as `IBM Registry, Dallas` to specify where to store the image of your build output. If your registry is private, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
-11. Provide registry information about where to store the image of your build output. Select an existing **Registry access secret** or create a new one. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `{{site.data.keyword.codeengineshort}} managed secret` and let {{site.data.keyword.codeengineshort}} create and manage the secret for you.
+10. Select a container registry location, such as `IBM Registry Dallas` to specify where to store the image of your build output. If your registry is private, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
+11. Provide registry information about where to store the image of your build output. Select an existing **Registry secret** or create a new one. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `{{site.data.keyword.codeengineshort}} managed secret` and let {{site.data.keyword.codeengineshort}} create and manage the secret for you.
 12. Select a namespace, name, and a tag for your image. If you are building your image to an {{site.data.keyword.registrylong_notm}} instance that is in your account, you can select an existing namespace or let {{site.data.keyword.codeengineshort}} create and manage the namespace for you. For additional help, click **Help me specify the code bundle**. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
 13. Specify your resource information, including [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo) and [Scale down delay](/docs/codeengine?topic=codeengine-fun-work#functions-scale). 
 14. Optionally, specify a [custom domain](/docs/codeengine?topic=codeengine-fun-domainmapping) or [environment variables](/docs/codeengine?topic=codeengine-envvar). You can add these options later.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-17"
+  years: 2020, 2024
+lastupdated: "2024-01-11"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -126,7 +126,7 @@ Currently, enabling service endpoints on your account is a manual step that is h
 1. From your {{site.data.keyword.codeengineshort}} project, confirm that your application is configured with a `visibility=private` setting. See [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-private). 
 
 2. Retrieve the URL of the {{site.data.keyword.codeengineshort}} application that is exposed to the private network. The URL is in the following format: `<app>.<uuid>.private.<region>.codeengine.appdomain.cloud`.
-    * From the {{site.data.keyword.codeengineshort}} console, go to the **Domain mapping** tab for your application to view the visibility of an app and its available URLs. 
+    * From the {{site.data.keyword.codeengineshort}} console, go to the **Domain mappings** tab for your application to view the visibility of an app and its available URLs. 
     * From the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli), use the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command with the `--option url` option. In the following example, because the visibility of the `myapp` is set to  `visibility=private`, specifying `--option url` with this command outputs the URL to the private network. 
 
         ```txt
@@ -156,7 +156,7 @@ Currently, enabling service endpoints on your account is a manual step that is h
 1. From your {{site.data.keyword.codeengineshort}} project, confirm that your function is configured with a `visibility=private` setting. See [Deploying your function with a private endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-private). 
 
 2. Retrieve the URL of the {{site.data.keyword.codeengineshort}} function that is exposed to the private network. The URL is in the following format: `<function>.<uuid>.private.<region>.codeengine.appdomain.cloud`.
-    * From the {{site.data.keyword.codeengineshort}} console, go to the **Domain mapping** tab for your function to view the visibility of the function and its available URLs. 
+    * From the {{site.data.keyword.codeengineshort}} console, go to the **Domain mappings** tab for your function to view the visibility of the function and its available URLs. 
     * From the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli), use the [**`ibmcloud ce function get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command. In the following example, because the visibility of the `myfunction` is set to  `visibility=private`, this command outputs the URL to the private network. 
 
         ```txt

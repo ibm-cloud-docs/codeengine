@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-20"
+  years: 2024
+lastupdated: "2024-01-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -135,6 +135,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan24)
+
+    * Review the release notes for January 2024.  
+
+    * [12 January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan1224)
+
+        * [CLI release]{: tag-purple} CLI version 1.49.2 released
+
+        * [New]{: tag-green} Added support for the `scale_array_size_variable_override` property for job runs in the {{site.data.keyword.codeengineshort}} V2 API
 
 * [December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec23)
 
@@ -2475,7 +2485,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Running jobs in parallel](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel)
 
-* [How can I efficiently process a large number of files by using job processing?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-how)
+* [How can I efficiently process many files by using job processing?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-how)
 
 * [What if I only want to process a subset of my data? Is there a way to dynamically assign work to parallel job run instances?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic)
 
@@ -3791,6 +3801,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [04 January 2024](/docs/codeengine?topic=codeengine-api-changelog#04-jan-2024)
 
 * [03 November 2023](/docs/codeengine?topic=codeengine-api-changelog#03-nov-2023)
 

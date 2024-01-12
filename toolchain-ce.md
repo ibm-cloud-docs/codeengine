@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-12-19"
+  years: 2023, 2024
+lastupdated: "2024-01-09"
 
 keywords: code engine, toolchain and code engine, continuous deliver and code engine, toolchain, code engine cicd
 
@@ -39,7 +39,7 @@ If you want to build and deploy an app or job with a toolchain, set the followin
 - Reader: To pull the image from Container registry.
 - Writer: To push the created image to the target namespace.
 - Manager: To create the specified namespace if it does not exist.
-- Administrator: To create a service ID, policies, and an API key needed to set up a {{site.data.keyword.codeengineshort}} registry access secret to use for the app or job.
+- Administrator: To create a service ID, policies, and an API key needed to set up a {{site.data.keyword.codeengineshort}} registry secret to use for the app or job.
   
 {{site.data.keyword.codeengineshort}}
 - Editor: To access a {{site.data.keyword.codeengineshort}} project or to create one, if it does not exist.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-12"
+  years: 2020, 2024
+lastupdated: "2024-01-11"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables, registry secret, registry access secret
 
@@ -33,18 +33,18 @@ Create a job configuration that uses an image in a private registry with the {{s
 Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in a private registry, you must first add access to the registry so {{site.data.keyword.codeengineshort}} can pull the image when the job is run. 
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Start creating** from **Run a container image**.
+2. Select **Let's go**.
 3. Select **Job**.
 4. Enter a name for the job; for example, `myjob`.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 6. Select **Container image** and click **Configure image**.
 7. Enter `docker.io` for **Registry server**.
-8. For **Registry access secret**, select **Create registry access secret**.
-9. From the Create registry access secret page, choose your registry source. For example, **Docker Hub**.
-10. From the Create registry access secret page, enter a username. For Docker Hub, it is your Docker ID.
-11. From the Create registry access secret page, enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/security/for-developers/access-tokens/){: external}.
-12. Click **Create** to add the registry access for {{site.data.keyword.codeengineshort}}.
-13. From the Configure image page, the registry access secret that was added is listed. Select the registry access secret for your image.
+8. For **Registry secret**, select **Create registry secret**. 
+9. From the Create registry secret page, choose your registry source. For example, **Docker Hub**.
+10. From the Create registry secret page, enter a username. For Docker Hub, it is your Docker ID.
+11. From the Create registry secret page, enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/security/for-developers/access-tokens/){: external}.
+12. Click **Create** to add the registry secret for {{site.data.keyword.codeengineshort}}.
+13. From the Configure image page, the registry secret that was added is listed. Select the registry secret for your image.
 14. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
 15. Select a value for **Tag**; for example, `latest`.
 16. Click **Done**. You selected your image in the registry to reference from your job.

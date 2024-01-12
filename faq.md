@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-07"
+  years: 2020, 2024
+lastupdated: "2024-01-11"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -103,7 +103,7 @@ If you have an image that exists in a container registry and the image was built
 
 Yes! You can find a [sample app that uses WebSockets](https://github.com/IBM/CodeEngine/tree/main/websocket){: external} by visiting our {{site.data.keyword.codeengineshort}} samples repository on GitHub.
 
-The maximum time for any connection to an application is 10 minutes, even if the connection is not idle. With {{site.data.keyword.codeengineshort}}, you can configure this connection time with the `timeout` value. With the CLI, use the `--timeout` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command or the [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. From the console, you can set the `Timeout` value for your app from the **Runtime** tab. For an app that use WebSockets, the client must reconnect to the app after the connection is closed. So, if your app needs a persistent connection, create a new connection before the `timeout` value is reached.
+The maximum time for any connection to an application is 10 minutes, even if the connection is not idle. With {{site.data.keyword.codeengineshort}}, you can configure this connection time with the `timeout` value. With the CLI, use the `--timeout` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command or the [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. From the console, you can set the `Timeout` value for your app from the **Resources & scaling** tab. For an app that use WebSockets, the client must reconnect to the app after the connection is closed. So, if your app needs a persistent connection, create a new connection before the `timeout` value is reached.
 {: note}
 
 

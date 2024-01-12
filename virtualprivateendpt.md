@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-18"
+  years: 2020, 2024
+lastupdated: "2024-01-11"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -151,7 +151,7 @@ You can only use your VPE to access your app with a private endpoint if your sel
 
 5. After you create your VPE, it might take a few minutes for the new VPE and private DNS (pDNS) to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE.   
 
-6. Retrieve the URL of the {{site.data.keyword.codeengineshort}} application that is exposed to the private network. The URL is in the following format: `<app>.<uuid>.private.<region>.codeengine.appdomain.cloud`. From the {{site.data.keyword.codeengineshort}} console, go to the **Domain mapping** tab for your application to view the visibility of an app and its available URLs. From the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli), you can use the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command with the `--option url` option. Because the visibility of the `myapp` is set to  `visibility=private`, specifying `--option url` with this command outputs the URL to the private network. 
+6. Retrieve the URL of the {{site.data.keyword.codeengineshort}} application that is exposed to the private network. The URL is in the following format: `<app>.<uuid>.private.<region>.codeengine.appdomain.cloud`. From the {{site.data.keyword.codeengineshort}} console, go to the **Domain mappings** tab for your application to view the visibility of an app and its available URLs. From the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli), you can use the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command with the `--option url` option. Because the visibility of the `myapp` is set to  `visibility=private`, specifying `--option url` with this command outputs the URL to the private network. 
 
     ```txt
     ibmcloud ce application get -n myapp -output url
@@ -196,7 +196,7 @@ You can only use your VPE to access your function with a private endpoint if you
 
 5. After you create your VPE, it might take a few minutes for the new VPE and private DNS (pDNS) to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE.   
 
-6. Retrieve the URL of the {{site.data.keyword.codeengineshort}} function that is exposed to the private network. The URL is in the following format: `<function>.<uuid>.private.<region>.codeengine.appdomain.cloud`. From the {{site.data.keyword.codeengineshort}} console, go to the **Domain mapping** tab for your function to view the visibility of your function and its available URLs. From the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli), you can use the [**`ibmcloud ce function get`**](/docs/codeengine?topic=codeengine-cli#cli-function-get) command. Because the visibility of the `myfunction` is set to  `visibility=private`, this command displays the URL to the private network. 
+6. Retrieve the URL of the {{site.data.keyword.codeengineshort}} function that is exposed to the private network. The URL is in the following format: `<function>.<uuid>.private.<region>.codeengine.appdomain.cloud`. From the {{site.data.keyword.codeengineshort}} console, go to the **Domain mappings** tab for your function to view the visibility of your function and its available URLs. From the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli), you can use the [**`ibmcloud ce function get`**](/docs/codeengine?topic=codeengine-cli#cli-function-get) command. Because the visibility of the `myfunction` is set to  `visibility=private`, this command displays the URL to the private network. 
 
     ```txt
     ibmcloud ce function get -n myfunction

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-11-09"
+  years: 2024
+lastupdated: "2024-01-11"
 
 keywords: code engine security, security, security features for code engine, code engine security features, code engine iam
 
@@ -65,7 +65,7 @@ To address Layer 7 attacks, you can take the following steps so that your traffi
 4. [Add the custom domain to the {{site.data.keyword.cis_short_notm}} instance](/docs/cis?topic=cis-multi-domain-support).
 5. [Configure a global load balancer](/docs/cis?topic=cis-configure-glb) in {{site.data.keyword.cis_short_notm}}.
 6. [Enable the HTTP proxy mode for the load balancer](/docs/cis?topic=cis-proxy-modes) in {{site.data.keyword.cis_short_notm}}. This activates DDoS protection on Layer 7 and other {{site.data.keyword.cis_short_notm}} security features.
-7. In {{site.data.keyword.codeengineshort}}, turn off the public system provided domain mappings of your application. Go to your application, from the **Domain mapping** tab for your app, select **No external system domain mapping**.
+7. In {{site.data.keyword.codeengineshort}}, turn off the public system provided domain mappings of your application. Go to your application, from the **Domain mappings** tab for your app, select **No external system domain mapping**.
 8. Click **Create** to save the application revision. 
 
 For more information about DDoS in {{site.data.keyword.cis_short_notm}}, see [Dealing with Distributed Denial of Service attacks in {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts). For more ways to address Layer 7 attacks, see [Mitigating Layer 7 attacks in {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis#cis-mitigate-layer7-attacks). 
