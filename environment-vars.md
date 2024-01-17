@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2023
-lastupdated: "2023-12-20"
+  years: 2022, 2024
+lastupdated: "2024-01-17"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -44,7 +44,7 @@ Before you begin
     * If you are [creating an app](/docs/codeengine?topic=codeengine-deploy-app&interface=ui#deploy-app-console), from the Create application page, expand the **Environment variables (optional)** section. You can add one or more environment variables to the app that you are creating. Click **Add** to open the Add environment variable page. 
     * If you are [creating a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui), from the Create job page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page.
     * If you are [creating a function](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inline-console), from the Create function page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page.
-    * If you are updating an existing workload to add environment variables, go to the existing app, job, or function. From the **Configuration** tab, click **Environment variables**. For apps, click **Edit and create a new revision**, and then click **Add environment variable**. For jobs and functions, click **Add environment variable** to open the Add environment variable page.
+    * If you are updating an existing workload to add environment variables, go to the existing app, job, or function. From the **Configuration** tab, click **Environment variables**. For apps, jobs and functions, click **Add environment variable** to open the Add environment variable page.
 
 2. From the Add environment variable page, create an environment variable in one of the following ways, 
     * To create a _literal_ environment variable, choose `Literal value`, specify the name for the literal environment variable, and provide a value. Notice that the `Resulting definition` section displays the name of the environment variable and its value.  
