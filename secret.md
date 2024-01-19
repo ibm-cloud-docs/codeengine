@@ -61,7 +61,7 @@ Learn how to create secrets from the {{site.data.keyword.codeengineshort}} conso
 Learn how to create the following types of secrets from the console. 
 
 * [Generic](#secret-create-ui-generic)
-* [Registry](#ssecret-create-ui-registry)
+* [Registry](#secret-create-ui-registry)
 * [SSH](#secret-create-ui-ssh)
 * [TLS](#secret-create-ui-tls)
 
