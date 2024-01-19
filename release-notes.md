@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-01-19"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -30,11 +30,11 @@ Review the release notes for January 2024.
 {: #codeengine-janxx24}
 {: release-note}
 
-**REVIEW**
+[Update]{: tag-magenta} Updated the user experience for making configuration changes to apps in the console.
+:   {{site.data.keyword.codeengineshort}} has enhanced the user experience to simplify deploying configuration changes for applications. When you work in the {{site.data.keyword.codeengineshort}} console, instead of specifically entering an edit mode before you can make configuration changes, you can make changes to your configuration settings and deploy to make your changes effective. You can also redeploy your application without changes to configuration settings, if needed. See [Update your application](/docs/codeengine?topic=codeengine-update-app).
 
-[Update]{: tag-magenta} Updated the user experience for making configuration changes to apps and jobs in the console.
-:   {{site.data.keyword.codeengineshort}} has enhanced the user experience to simplify deploying configuration changes for applications and jobs. When you work in the {{site.data.keyword.codeengineshort}} console, instead of specifically entering an edit mode before you can make configuration changes, you can make changes to your configuration settings and deploy to make your changes effective. You can also redeploy your application without changes to configuration settings, if needed. See [update your application](/docs/codeengine?topic=codeengine-update-app).
-
+[Update]{: tag-magenta} Updated the user experience for creating secrets and configmaps in the console.
+:   {{site.data.keyword.codeengineshort}} has enhanced the user experience to simplify creating and working with secrets and configmaps in the console. See [Working with secrets](/docs/codeengine?topic=codeengine-secret) and [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
 
 
 ### 12 January 2024

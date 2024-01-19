@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-01-19"
 
 keywords: kafka, kafka event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -145,7 +145,7 @@ For simplicity in this scenario, create one secret, `kafka-subscription-secret`,
 ##### Creating a secret with credentials required by the Kafka samples from the console 
 {: #setup-kafka-secret-ui}
 
-To create the `kafka-subscription-secret` secret from the console, go to **Secrets and configmaps** and click **Create** and select `secret` as your option. For more information, see [create a secret from the console](/docs/codeengine?topic=codeengine-secret#secret-create-ui).
+To create the `kafka-subscription-secret` secret from the console, go to **Secrets and configmaps** and click **Create** and select the secret that you want to create. For more information, see [create a secret from the console](/docs/codeengine?topic=codeengine-secret#secret-create-ui).
 
 * Specify the `username` key with the value of `user` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. For the {{site.data.keyword.messagehub}} service instance, this value is `token`. This key is required for authentication between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker.
 * Specify the `password` key with the value of `apikey` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. This key is required for the sender sample, and to enable communications between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker.

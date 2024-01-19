@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-01-19"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository, SSH secret
 
@@ -23,7 +23,7 @@ After you create access to your private code repository, you can pull code from 
 ## Create code repository access
 {: #create-code-repo}
 
-When you create access to a private code repository, you are saving credentials in {{site.data.keyword.codeengineshort}}. In the console, these credentials are called *Code repo access*. In the CLI, these credentials are called *SSH secrets*.
+When you create access to a private code repository, you are saving credentials in {{site.data.keyword.codeengineshort}}. These credentials are called *SSH secrets*.
 
 Before you begin
 
@@ -54,13 +54,18 @@ Do not create your SSH key file with a secure passphrase as this action causes y
 ### Adding private repository access from the console
 {: #add-repo-access-ce-console}
 
-To add private repository access from the console,
+Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-project).
 
-1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
-2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
-3. From the project page, click **Code repo access**.
-4. Click **Create**.
-5. Specify a name, Code repo server, and the [SSH key](#choose-ssh-key).
+1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
+2. From the Components page, click **Secrets and configmaps**.
+3. From the Secrets and configmaps page, click **Create** to create your secret.
+4. From the Create secret or configmap page, complete the following steps:
+    1. Select **SSH secret**, and click **Next**.
+    2. Provide a name; for example, `mysecret-ssh`.
+    3. Add the SSH private key for this secret. 
+    4. Click **Create** to create the secret. 
+
+Now that your secret is created from the console, go to the Secrets and configmaps page to view a list of defined secrets and configmaps. You can apply filters to customize the list to meet your needs. 
 
 You can create access when you build an image.
 {: tip}
