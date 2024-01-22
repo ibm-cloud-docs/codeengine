@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-01-22"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, registry secret, service id,registry secret, registry access secret
 
@@ -184,21 +184,26 @@ To set up access to an {{site.data.keyword.registryfull_notm}} in a different {{
 ### Adding registry access from the console
 {: #add-registry-access-ce-console}
 
-To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the console,
+Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-project).
 
-1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
-2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
-3. From the project page, click **Registry access**.
-4. Click **Create**.
-5. Select **Docker Hub** or **Custom**.
-6. Enter a name for your registry access.
-7. Enter a server name for your registry. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the server name is `https://index.docker.io/v1/`.
-8. Enter a username. For {{site.data.keyword.registryfull_notm}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.
-9. Enter the password. For {{site.data.keyword.registryfull_notm}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#access-private-docker-hub).
-10. Click **Create**.
+1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
+2. From the Components page, click **Secrets and configmaps**.
+3. From the Secrets and configmaps page, click **Create** to create your secret.
+4. From the Create secret or configmap page, complete the following steps:
+    1. Select **Registry secret**, and click **Next**.
+    2. Provide a name; for example, `mysecret-registry`.
+    3. Specify the target registry for this secret, such as {{site.data.keyword.registrylong_notm}} or Docker Hub.
+    4. Specify the location of the registry. 
+    5. Specify a username. If this secret is for {{site.data.keyword.registrylong_notm}}, the username is `iamapikey`. If this secret is for Docker Hub, it is your Docker ID.
+    6. Enter the credentials for the username. For {{site.data.keyword.registryfull_notm}}, use your IAM API key. For Docker Hub, you can use your Docker Hub password or an [access token](#access-private-docker-hub). For other target registries, specify the password or API key for the username.
+    7. Click **Create** to create the secret. 
 
-You can add access to a container registry when you create an application or job, or when you build an image. Click **Configure image** and specify the container image to run, including the registry where the image is stored and the [registry access](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets) to use to retrieve the image.  Follow previous steps 5-9.
+Now that your secret is created from the console, go to the Secrets and configmaps page to view a list of defined secrets and configmaps. You can apply filters to customize the list to meet your needs. 
+
+You can add access to a container registry when you create an application or job, or when you build an image. Click **Configure image** and specify the container image to run, including the registry where the image is stored and the [registry access](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets) to use to retrieve the image. 
 {: tip}
+
+
 
 ### Adding registry access with the CLI
 {: #add-registry-access-ce-cli}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-01-17"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -354,12 +354,11 @@ The default value for the maximum number of instances for your app is `0`, which
 To change the range within which {{site.data.keyword.codeengineshort}} autoscales the number of running instances for an app from the console, follow these steps.
 
 1. Navigate to your app.
-2. Select **Configuration**
-3. Click **Edit and create new revision**.
-4. Select **Runtime**.
+2. Select the **Configuration** tab.
+4. Select the **Resources & scaling** tab.
 5. Set the number for minimum and maximum instances for your app.
 6. (Optional) Review and set the request concurrency and timing settings for autoscaling your app. 
-7. Click **Save and Create**.
+7. Click **Deploy** to save your changes and deploy the app revision.
 
 When you update your application, your app creates a new revision and routes traffic to that instance.
 

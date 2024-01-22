@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-12-12"
+  years: 2022, 2024
+lastupdated: "2024-01-17"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -116,8 +116,8 @@ Before you begin
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. [Create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create). For example, create an application that is called `myapp` that uses the `icr.io/codeengine/helloworld` image. This image is available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}. You can configure liveness and readiness probes when you create an application. Or, you can view and update settings for liveness and readiness probes when you update an application from the **Configuration** > **Image start options** tab on your application page. 
 2. To view the configured probes and their properties for an app, go to the **Configuration** > **Image start options** tab on your application page. 
-3. To modify or edit a readiness or liveness probe, click **Edit and create new revision**. Modifying a probe creates a new application revision. For example, edit the default readiness probe to change the connection type from TCP to HTTP, and set the path for the readiness probe to `/readinessprobe`. See [properties](#app-probes-properties) for more information about the probe properties. Click **Done** when finished. 
-4. Click **Save and create** to save your change and deploy the app revision with the configured probe settings.
+3. Edit the liveness and readiness probe settings from the **Image start options** tab. Modifying a probe creates a new application revision. For example, edit the default readiness probe to change the connection type from TCP to HTTP, and set the path for the readiness probe to `/readinessprobe`. See [properties](#app-probes-properties) for more information about the probe properties. Click **Done** when finished. 
+4. Click **Deploy** to save your change and deploy the app revision with the configured probe settings.
 
 Use the view on the **Instances** tab to check the application instances. 
 {: tip}
@@ -277,9 +277,9 @@ You can modify or edit a readiness or liveness probe in the console, from the **
     * Click the name of your project to open the Overview page.
     * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
 2. From the application page, click the  **Configuration** > **Image start options** tab on your application page. 
-3. To modify or edit a readiness or liveness probe, you must create a new application revision. Click **Edit and create new revision**. Click **Edit** to modify the readiness or liveness probe that you want to change. 
+3. Edit the liveness and readiness probe settings from the **Image start options** tab. Modifying a probe creates a new application revision. Click **Edit** to modify the readiness or liveness probe that you want to change. 
 4. From the **Readiness probe** page or the **Liveness probe** page, update the [properties](#app-probes-properties) of your probe. Click **Done** when finished. 
-5. Click **Save and create** to save your change and deploy the app revision.
+5. Click **Deploy** to save your change and deploy the app revision with the configured probe settings.
 
 Use the view on the **Instances** tab to check the application instances. 
 {: tip}
@@ -394,11 +394,10 @@ From the console, you can remove a liveness probe from the **Configuration** > *
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
     * Click the name of your project to open the Overview page.
     * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
-2. From the application page, click the  **Configuration** > **Image start options** tab on your application page. 
+2. From the application page, click the  **Configuration** tab and then the **Image start options** tab on your application page. 
 3. To remove a liveness probe, you must create a new application revision. 
-    1. Click **Edit and create new revision**. 
-    2. Click **Delete** to remove the liveness probe. 
-    3. Click **Save and create** to save your change and deploy the app revision.
+    1. Click **Delete** to remove the liveness probe. 
+    2. Click **Deploy** to save your change and deploy the app revision.
 
 While you cannot delete a readiness probe, you can [update](#app-probes-update-ui) it. 
 

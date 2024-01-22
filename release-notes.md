@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-01-22"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,17 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for January 2024.  
 {: shortdesc}
+
+### 22 January 2024
+{: #codeengine-jan2224}
+{: release-note}
+
+[Update]{: tag-magenta} Updated the user experience for making configuration changes to apps in the console
+:   {{site.data.keyword.codeengineshort}} has enhanced the user experience to simplify deploying configuration changes for applications. When you work in the {{site.data.keyword.codeengineshort}} console, instead of specifically entering an edit mode before you can make configuration changes, you can make changes to your configuration settings and deploy to make your changes effective. You can also redeploy your application without changes to configuration settings, if needed. See [Update your application](/docs/codeengine?topic=codeengine-update-app).
+
+[Update]{: tag-magenta} Updated the user experience for creating secrets and configmaps in the console
+:   {{site.data.keyword.codeengineshort}} has enhanced the user experience to simplify creating and working with secrets and configmaps in the console. See [Working with secrets](/docs/codeengine?topic=codeengine-secret) and [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
+
 
 ### 12 January 2024
 {: #codeengine-jan1224}
@@ -556,7 +567,6 @@ Review the release notes for April 2023.
 ### 12 April 2023
 {: #codeengine-apr1223}
 {: release-note}
-
 
 
 [CLI release]{: tag-purple} CLI version 1.43.1 released

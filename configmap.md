@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-19"
+  years: 2020, 2024
+lastupdated: "2024-01-19"
 
 keywords: configmaps with code engine, key references with code engine, key-value pair with code engine, setting up configmaps with code engine, configmaps, environment variables
 
@@ -53,12 +53,13 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
 2. From the Overview page, click **Secrets and configmaps**.
 3. From the Secrets and configmaps page, click **Create** to create your configmap.  
-4. From the Create config page, complete the following steps.
-    1. Select the **Configmap** option.  
+4. From the Create secret or configmap page, complete the following steps:
+    1. Click **Configmap**, and click **Next**. 
     2. Provide a name; for example, `myconfigmap`.
     3. Click **Add key-value pair**. Specify one or more key-value pairs for this configmap. For example, specify one key as `key1` with the value of `value1` and specify another key as `key2` with the value of `value2`. Notice that you can specify values on one or more lines. The name that you choose for your key does not need to be the same as the name of your environment variable.
     4. Click **Create** to create the configmap. 
-5. Now that your configmap is created from the console, go to the Secrets and configmaps page to view a listing of defined secrets and configmaps.
+
+Now that your configmap is created from the console, go to the Secrets and configmaps page to view a list of defined secrets and configmaps. You can apply filters to customize the list to meet your needs.
 
 ### Create a configmap with the CLI
 {: #configmap-create-cli}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-01-22"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan24)
 
     * Review the release notes for January 2024.  
+
+    * [22 January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2224)
+
+        * [Update]{: tag-magenta} Updated the user experience for making configuration changes to apps in the console
+
+        * [Update]{: tag-magenta} Updated the user experience for creating secrets and configmaps in the console
 
     * [12 January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan1224)
 
@@ -2279,6 +2285,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Application status](/docs/codeengine?topic=codeengine-access-service#app-status)
 
 [Updating your app](/docs/codeengine?topic=codeengine-update-app#update-app)
+
+* [What if I want to redeploy my application without changing configuration settings?](/docs/codeengine?topic=codeengine-update-app#update-app-nochange)
 
 * [Updating your app from the console](/docs/codeengine?topic=codeengine-update-app#update-app-console)
 
