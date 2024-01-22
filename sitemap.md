@@ -2286,6 +2286,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Updating your app](/docs/codeengine?topic=codeengine-update-app#update-app)
 
+* [What if I want to redeploy my application without changing configuration settings?](/docs/codeengine?topic=codeengine-update-app#update-app-nochange)
+
 * [Updating your app from the console](/docs/codeengine?topic=codeengine-update-app#update-app-console)
 
 * [Updating your app to use project-only endpoints from the console](/docs/codeengine?topic=codeengine-update-app#update-app-console-projendpt)

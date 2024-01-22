@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-01-22"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -19,7 +19,9 @@ An application contains one or more *revisions*. A revision represents an immuta
 {: shortdesc} 
 
 
+When you modify an application and deploy the application with the changes, or [redeploy the application without changes to its configuration settings](#update-app-nochange), these actions deploy a new revision of the application. When you deploy (or redeploy) an application revision, {{site.data.keyword.codeengineshort}} uses any changed configuration settings, and gets any updated container image, secret, or configmap that is referenced by the application. 
 
+For more information about deploying applications, such as specifying [valid vCPU and memory combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo), defining commands and arguments, environment variables, secrets, or configmaps, see [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy).
 
 
 {{site.data.keyword.codeengineshort}} has a quota for the number of apps and app revisions in a project. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted.
@@ -45,6 +47,14 @@ When you deploy your updated app, the latest version of your referenced containe
 
 
 
+## What if I want to redeploy my application without changing configuration settings? 
+{: #update-app-nochange}
+
+You can always deploy your application with configuration changes by changing a configuration value and deploying the application. 
+
+However, you might want to redeploy an application revision without changing your application configuration settings. Perhaps your referenced container image is changed, and you want your application revision to use the updated container image. Or, perhaps you want your application to reference a secret or configmap, which contains updated content values. 
+
+For these scenarios, from the console, you can click **Redeploy** from the **Configuration** tab of your application page, without changing your app configuration. With the CLI, use the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
 
 ## Updating your app from the console
 {: #update-app-console}
