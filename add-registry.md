@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-01-22"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, registry secret, service id,registry secret, registry access secret
 
@@ -184,12 +184,6 @@ To set up access to an {{site.data.keyword.registryfull_notm}} in a different {{
 ### Adding registry access from the console
 {: #add-registry-access-ce-console}
 
-To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the console,
-
-
-
-**REVIEW**
-
 Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-project).
 
 1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -209,7 +203,7 @@ Now that your secret is created from the console, go to the Secrets and configma
 You can add access to a container registry when you create an application or job, or when you build an image. Click **Configure image** and specify the container image to run, including the registry where the image is stored and the [registry access](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets) to use to retrieve the image. 
 {: tip}
 
-**/REVIEW**
+
 
 ### Adding registry access with the CLI
 {: #add-registry-access-ce-cli}
