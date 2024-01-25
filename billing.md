@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-11-08"
+  years: 2024
+lastupdated: "2024-01-23"
 
 keywords: billing, pricing, costs for code engine, billing for code engine, job pricing, app pricing, build pricing
 
@@ -58,6 +58,8 @@ For example,
 For valid CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 Note that the time that it takes to pull your image or to build it from source code is included in the billable time.
+
+
 
 ## Build pricing
 {: #build-pricing}

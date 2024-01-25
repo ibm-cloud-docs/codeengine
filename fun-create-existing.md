@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-25"
 
 keywords: functions in code engine, functions, serverless, create functions in code engine, function workloads in code engine, registry secret, registry access, registry access secret
 
@@ -125,7 +125,7 @@ To access an existing code bundle from a private registry, you must set up acces
 3. Create your function and reference a code bundle in a private registry in {{site.data.keyword.registryshort}}. For example, use the [**`ibmcloud ce fn create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command to create the `myhellofun` function to reference the `icr.io/codeengine/samples/function-nodejs-codebundle` by using the `myregistry` access information. 
 
     ```txt
-    ibmcloud ce fn create --name myhellofun --image icr.io/NAMESPACE/REGISTRY:TAG --registry-secret myregistry
+    ibmcloud ce fn create --name myhellofun --code-bundle icr.io/NAMESPACE/REGISTRY:TAG --registry-secret myregistry
     ```
     {: pre}
 

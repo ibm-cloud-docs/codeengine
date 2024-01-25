@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-01-25"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -103,7 +103,7 @@ When the job is in a ready state, you can update the job. Let's update the job t
 4. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Array size** or **Array indices** for the parallel job instances to run. For **Array size**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. 
 5. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the job is `Hello World!`.
 6. To update the job again and add an environment variable, navigate to your job page. 
-7. From the **Configuration > Enviroment variables** tab, click **Add environment variable**. Add a literal environment variable with the name of `TARGET` with a value of `Sunshine`. The `icr.io/codeengine/testjob` outputs the message, `Hello <value_of_TARGET>!>`.
+7. From the **Configuration > Environment variables** tab, click **Add environment variable**. Add a literal environment variable with the name of `TARGET` with a value of `Sunshine`. The `icr.io/codeengine/testjob` outputs the message, `Hello <value_of_TARGET>!>`.
 8. Click **Add** to add your environment variable and then click **Save** to save the changes to your job. 
 9. Click **Submit job** to submit the updated job.
 10. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. This time, specify **Array size** as `3`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. From the `Configuration` section of the Job details page, the information about the number of instances is displayed as **Array indices**, which is `0 - 2` for this example. 
