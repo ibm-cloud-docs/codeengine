@@ -39,7 +39,7 @@ The following table shows the service behavior changes for each version date. Sw
 ## 30 January 2024
 {: #30-jan-2024}
 
-Added support for the `build` and `buildrun` property for jobs.
+Added support for the `build` and `buildrun` properties for jobs.
 :   - See [Create a job API](https://cloud.ibm.com/apidocs/codeengine/v2#create-job-response){: external}.
 :   - See [Get a job API](https://cloud.ibm.com/apidocs/codeengine/v2#get-job-response){: external}.
 :   - See [Update a job API](https://cloud.ibm.com/apidocs/codeengine/v2#update-job-response){: external}.
