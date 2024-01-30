@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-01-30"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -35,6 +35,15 @@ The following table shows the service behavior changes for each version date. Sw
 |`2022-Dec-09`| Version 2.0.0 |
 |`2021-Mar-31`| Version 1.0.0  |
 {: caption="Table 1. Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
+
+## 30 January 2024
+{: #30-jan-2024}
+
+Added support for the `build` and `buildrun` property for jobs.
+:   - See [Create a job API](https://cloud.ibm.com/apidocs/codeengine/v2#create-job-response){: external}.
+:   - See [Get a job API](https://cloud.ibm.com/apidocs/codeengine/v2#get-job-response){: external}.
+:   - See [Update a job API](https://cloud.ibm.com/apidocs/codeengine/v2#update-job-response){: external}.
+
 
 ## 04 January 2024
 {: #04-jan-2024}

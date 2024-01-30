@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-25"
+lastupdated: "2024-01-30"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for January 2024.  
 {: shortdesc}
+
+### 30 January 2024
+{: #codeengine-jan3024}
+{: release-note}
+
+[New]{: tag-green} Added support for the `build` and `buildrun` property for jobs in the {{site.data.keyword.codeengineshort}} V2 API
+:   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
 
 ### 25 January 2024
 {: #codeengine-jan2524}
