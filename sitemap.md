@@ -3830,9 +3830,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [30 May 2023](/docs/codeengine?topic=codeengine-api-changelog#30-may-2023)
 
-* [27 Mar 2023](/docs/codeengine?topic=codeengine-api-changelog#27-mar-2023)
+* [27 March 2023](/docs/codeengine?topic=codeengine-api-changelog#27-mar-2023)
 
-* [9 Dec 2022](/docs/codeengine?topic=codeengine-api-changelog#9-dec-2022)
+* [9 December 2022](/docs/codeengine?topic=codeengine-api-changelog#9-dec-2022)
 
 [Getting started with the {{site.data.keyword.codeengineshort}} REST API](/docs/codeengine?topic=codeengine-ceapi-getstart#ceapi-getstart)
 

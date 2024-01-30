@@ -28,7 +28,7 @@ When the API is changed in a way that is not compatible with previous versions, 
 ### Active version dates
 {: #active-version-dates}
 
-The following table shows the service behavior changes for each version date. Switching to a later version date will activate all changes introduced in earlier versions.
+The following table shows the service behavior changes for each version date. Switching to a later version date activates all changes that are introduced in earlier versions.
 
 | Version date | Summary of changes |
 |---|---|
@@ -80,7 +80,7 @@ Added support for service binding operations in the API.
 :   - See [Get a binding API](https://cloud.ibm.com/apidocs/codeengine/v2#get-binding){: external}.
 :   - See [Delete a binding API](https://cloud.ibm.com/apidocs/codeengine/v2#delete-binding){: external}.
 
-Added support for service access secrets which are required for service binding operations. Specify to create service access secrets with the `format` field and specify the details of service access secrets with the `service_access` field.
+Added support for service access secrets, which are required for service binding operations. Specify to create service access secrets with the `format` field and specify the details of service access secrets with the `service_access` field.
 :   - See [Create a secret API](https://cloud.ibm.com/apidocs/codeengine/v2#create-secret){: external}.
 
 
@@ -91,8 +91,7 @@ Added support for service access secrets which are required for service binding 
 Added support to get status details for a project.
 :   - See [Get the status details for a project API](https://cloud.ibm.com/apidocs/codeengine/v2#get-project-status-details){: external}.
 
-
-## 27 Mar 2023
+## 27 March 2023
 {: #27-mar-2023}
 
 Added support to provide private and public egress IP addresses for a project.
@@ -105,8 +104,7 @@ Improved documentation for create and update of secrets to include the `One of` 
 :   - See [Update secret API](https://cloud.ibm.com/apidocs/codeengine/v2#replace-secret){: external}.
 
 
-
-## 9 Dec 2022
+## 9 December 2022
 {: #9-dec-2022}
 
 {{site.data.keyword.codeenginefull}} API Version 2.0.0  
@@ -115,5 +113,4 @@ API Version 2.0.0 released
 :   This version of the API is enhanced to support more {{site.data.keyword.codeengineshort}} resources, and more regions.
     - The API supports the following {{site.data.keyword.codeengineshort}} resources: `projects`, `reclamations`, `apps`, `revisions`, `job`, `job runs`, `builds`, `build runs`, `config maps`, and `secrets`. See [{{site.data.keyword.codeengineshort}} API](https://cloud.ibm.com/apidocs/codeengine){: external}.
     - The API supports more regional endpoints. See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
-  
 
