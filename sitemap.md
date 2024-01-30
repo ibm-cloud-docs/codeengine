@@ -3818,7 +3818,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
 
-* [30 January 2024](/docs/codeengine?topic=codeengine-api-changelog#04-jan-2024)
+* [30 January 2024](/docs/codeengine?topic=codeengine-api-changelog#30-jan-2024)
 
 * [04 January 2024](/docs/codeengine?topic=codeengine-api-changelog#04-jan-2024)
 
