@@ -142,7 +142,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [30 January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan3024)
 
-        * [New]{: tag-green} Added support for the `build` and `buildrun` properties for jobs in the {{site.data.keyword.codeengineshort}} V2 API
+        * [New]{: tag-green} Added support for the `build` and `buildrun` properties for jobs in the {{site.data.keyword.codeengineshort}} V2 API 
 
     * [25 January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2524)
 

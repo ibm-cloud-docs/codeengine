@@ -30,7 +30,7 @@ Review the release notes for January 2024.
 {: #codeengine-jan3024}
 {: release-note}
 
-[New]{: tag-green} Added support for the `build` and `buildrun` properties for jobs in the {{site.data.keyword.codeengineshort}} V2 API
+[New]{: tag-green} Added support for the `build` and `buildrun` properties for jobs in the {{site.data.keyword.codeengineshort}} V2 API 
 :   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
 
 ### 25 January 2024
