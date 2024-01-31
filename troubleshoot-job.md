@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-29"
+  years: 2020, 2024
+lastupdated: "2024-01-31"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -27,6 +27,8 @@ Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.co
 The maximum number of jobs that you can have per project is 100. You are limited to a total of 100 job runs per project before you need to remove or clean up old ones. 
 
 For more information about limits for jobs including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+
+
 
 ## Getting logs for my jobs 
 {: #ts-jobrun-gettinglogs}
