@@ -2632,7 +2632,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [What {{site.data.keyword.codeengineshort}} entity is best for my workload?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare-app-job)
 
-* [Migrating IBM Cloud Functions Actions to Code Engine Functions FAQ](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faqs)
+* [Migrating IBM Cloud Functions Actions to {{site.data.keyword.codeengineshort}} Functions FAQ](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faqs)
 
     * [How can I process a bulk-load of computations?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq1)
 
@@ -2652,7 +2652,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Can I bind my function to service credentials?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq9)
 
-    * [Where can I find information about my in progress and finished Code Engine Function runs?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq10)
+    * [Where can I find information about my in progress and finished {{site.data.keyword.codeengineshort}} Function runs?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq10)
 
     * [Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?](/docs/codeengine?topic=codeengine-fun-migrate#openapi-spec-fun-migrate)
 
