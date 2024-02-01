@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-31"
+lastupdated: "2024-02-01"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [xx February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-febxx24)
 
         * [CLI release]{: tag-purple} CLI version 1.49.XX released
+
+        * [New]{: tag-green} Added troubleshooting information about displaying limits and current usage with the CLI
 
 * [January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan24)
 

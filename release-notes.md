@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-31"
+lastupdated: "2024-02-01"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,6 +26,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 [CLI release]{: tag-purple} CLI version 1.49.XX released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+[New]{: tag-green} Added troubleshooting information about displaying limits and current usage with the CLI
+:   - See [Debugging apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-limits).
+:   - See [Debugging builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-limits).
+:   - See [Debugging functions](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-limits).
+:   - See [Debugging jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-limits).
+
 
 ## January 2024
 {: #codeengine-jan24}

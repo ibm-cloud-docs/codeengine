@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-31"
+lastupdated: "2024-02-01"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -63,6 +63,7 @@ Builds                                    2     100
 Configmaps                                2     100  
 CPU                                       0     128  
 Ephemeral storage                         0     512G  
+Functions                                 0     20  
 Instances (active)                        0     250  
 Instances (total)                         0     2500  
 Job runs                                 13     100  
