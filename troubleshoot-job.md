@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-29"
+  years: 2020, 2024
+lastupdated: "2024-02-01"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -27,6 +27,56 @@ Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.co
 The maximum number of jobs that you can have per project is 100. You are limited to a total of 100 job runs per project before you need to remove or clean up old ones. 
 
 For more information about limits for jobs including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+
+With the CLI, you can use the [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to display information about limits and current usage. For example,
+
+```txt
+ibmcloud ce project create --name myproject  
+```
+{: pre}
+
+Example output
+
+```txt 
+Getting project 'myproject'...
+OK
+
+Name:                                      myproject  
+ID:                         abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
+Status:                                    active  
+Enabled:                                   true  
+Application Private Visibility Supported:  true  
+Selected:                                  true  
+Region:                                    us-south 
+Resource Group:             default
+Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+Age:                        52d 
+Created:                                   Tue, 28 Sep 2021 05:12:16 -0500  
+Updated:                                   Tue, 28 Sep 2021 05:12:19 -0500  
+
+Quotas:    
+Category                                  Used  Limit  
+App revisions                             2    120  
+Apps                                      1     40  
+Build runs                                1     100  
+Builds                                    2     100  
+Configmaps                                2     100  
+CPU                                       0     128  
+Ephemeral storage                         0     512G  
+Functions                                 0     20  
+Instances (active)                        0     250  
+Instances (total)                         0     2500  
+Job runs                                 13     100  
+Jobs                                      2     100  
+Memory                                    0     512G  
+Secrets                                   6     100  
+Subscriptions (cron)                      0     100  
+Subscriptions (IBM Cloud Object Storage)  0     100  
+Subscriptions (Kafka)                     0     100
+```
+{: screen}
+
+
 
 ## Getting logs for my jobs 
 {: #ts-jobrun-gettinglogs}

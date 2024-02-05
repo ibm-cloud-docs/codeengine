@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-08-31"
+  years: 2020, 2024
+lastupdated: "2024-02-01"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps, app instances
 
@@ -29,6 +29,57 @@ When your app isn't behaving as expected, looking at logs and system events can 
 The maximum number of apps that you can create per project is 40. You are limited to a total of 120 revisions for all apps per project. {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted. See [Updating apps](/docs/codeengine?topic=codeengine-update-app).
 
 For more information about limits for apps, including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+
+With the CLI, you can use the [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to display information about limits and current usage. For example,
+
+```txt
+ibmcloud ce project create --name myproject  
+```
+{: pre}
+
+Example output
+
+```txt 
+Getting project 'myproject'...
+OK
+
+Name:                                      myproject  
+ID:                         abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
+Status:                                    active  
+Enabled:                                   true  
+Application Private Visibility Supported:  true  
+Selected:                                  true  
+Region:                                    us-south 
+Resource Group:             default
+Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+Age:                        52d 
+Created:                                   Tue, 28 Sep 2021 05:12:16 -0500  
+Updated:                                   Tue, 28 Sep 2021 05:12:19 -0500  
+
+Quotas:    
+Category                                  Used  Limit  
+App revisions                             2    120  
+Apps                                      1     40  
+Build runs                                1     100  
+Builds                                    2     100  
+Configmaps                                2     100  
+CPU                                       0     128  
+Ephemeral storage                         0     512G  
+Functions                                 0     20  
+Instances (active)                        0     250  
+Instances (total)                         0     2500  
+Job runs                                 13     100  
+Jobs                                      2     100  
+Memory                                    0     512G  
+Secrets                                   6     100  
+Subscriptions (cron)                      0     100  
+Subscriptions (IBM Cloud Object Storage)  0     100  
+Subscriptions (Kafka)                     0     100
+```
+{: screen}
+
+
+
 
 ## Confirm port value 
 {: #ts-app-port}

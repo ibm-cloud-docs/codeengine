@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-02-05"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -135,6 +135,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb24)
+
+    * [05 February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0524)
+
+        * [CLI release]{: tag-purple} CLI version 1.49.4 released
+
+        * [New]{: tag-green} Added troubleshooting information about displaying limits and current usage with the CLI
+
+        * [Update]{: tag-magenta} The `Build` and `BuildRun` Kubernetes API objects are available in a new version
 
 * [January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan24)
 
@@ -2632,7 +2642,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [What {{site.data.keyword.codeengineshort}} entity is best for my workload?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare-app-job)
 
-* [Migrating IBM Cloud Functions Actions to Code Engine Functions FAQ](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faqs)
+* [Migrating IBM Cloud Functions Actions to {{site.data.keyword.codeengineshort}} Functions FAQ](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faqs)
 
     * [How can I process a bulk-load of computations?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq1)
 
@@ -2652,7 +2662,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Can I bind my function to service credentials?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq9)
 
-    * [Where can I find information about my in progress and finished Code Engine Function runs?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq10)
+    * [Where can I find information about my in progress and finished {{site.data.keyword.codeengineshort}} Function runs?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq10)
 
     * [Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?](/docs/codeengine?topic=codeengine-fun-migrate#openapi-spec-fun-migrate)
 
@@ -3830,9 +3840,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [30 May 2023](/docs/codeengine?topic=codeengine-api-changelog#30-may-2023)
 
-* [27 Mar 2023](/docs/codeengine?topic=codeengine-api-changelog#27-mar-2023)
+* [27 March 2023](/docs/codeengine?topic=codeengine-api-changelog#27-mar-2023)
 
-* [9 Dec 2022](/docs/codeengine?topic=codeengine-api-changelog#9-dec-2022)
+* [9 December 2022](/docs/codeengine?topic=codeengine-api-changelog#9-dec-2022)
 
 [Getting started with the {{site.data.keyword.codeengineshort}} REST API](/docs/codeengine?topic=codeengine-ceapi-getstart#ceapi-getstart)
 

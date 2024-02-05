@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-12"
+  years: 2024
+lastupdated: "2024-02-05"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -182,13 +182,13 @@ For more information about these CRDs, see [Knative Serving API Specification](h
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
-| `shipwright.io` | v1alpha1 | `Build` |
-| `shipwright.io` | v1alpha1 | `BuildRun` |
+| `shipwright.io` | v1beta1 | `Build` |
+| `shipwright.io` | v1beta1 | `BuildRun` |
 {: caption="Source-to-image CRDs for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
 
 After you retrieve the Kubernetes configuration, you can view the Source-to-image CRD details by using one of the following methods.
 
-- Use `kubectl explain --api-version='shipwright.io/v1alpha1' <KIND>`.
+- Use `kubectl explain --api-version='shipwright.io/v1beta1' <KIND>`.
 - [Download the Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
 
 ### Subscription CRD methods

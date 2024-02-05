@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-23"
+lastupdated: "2024-02-05"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -61,7 +61,7 @@ ibmcloud ce application bind --name APP_NAME (--service-instance SI_NAME | --ser
  {: #cmd-options-application-bind} 
 
 `--name`, `-n`
-:   The name of the application to bind. This value is *required*.  
+:   The name of the application to bind. This value is *required*. 
 
 `--no-wait`, `--nw`
 :   Bind the service instance and do not wait for the service binding to be ready. If you specify the `no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `app get` command to check the application bind status. This value is *optional*. The default value is `false`.
@@ -364,7 +364,7 @@ Deleted application 'myapp'
 ### `ibmcloud ce application events`  
 {: #cli-application-events}  
 
-Display the events of application instances.  
+Display the system events of application instances. System events are retained up to 60 minutes.  
   
 ```txt
 ibmcloud ce application events (--instance APP_INSTANCE | --application APP_NAME) [--output OUTPUT] [--quiet]
@@ -1433,7 +1433,7 @@ OK
 ### `ibmcloud ce buildrun events`  
 {: #cli-buildrun-events}  
 
-Display the events of a build run.  
+Display the system events of a build run. System events are retained up to 60 minutes.  
   
 ```txt
 ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT] [--quiet]
@@ -3669,7 +3669,7 @@ OK
 ### `ibmcloud ce jobrun events`  
 {: #cli-jobrun-events}  
 
-Display the events of job run instances.  
+Display the system events of job run instances. System events are retained up to 60 minutes.  
   
 ```txt
 ibmcloud ce jobrun events (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--output OUTPUT] [--quiet]
@@ -5661,7 +5661,7 @@ OK
 ### `ibmcloud ce revision events`  
 {: #cli-revision-events}  
 
-Display the events of application revision instances.  
+Display the system events of application revision instances. System events are retained up to 60 minutes.  
   
 ```txt
 ibmcloud ce revision events (--instance REVISION_INSTANCE | --revision REVISION_NAME) [--output OUTPUT] [--quiet]

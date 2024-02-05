@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-12-12"
+  years: 2023, 2024
+lastupdated: "2024-01-31"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -18,7 +18,7 @@ subcollection: codeengine
 [IBM Cloud Functions](https://cloud.ibm.com/docs/openwhisk){: external} has been IBM’s recommended Functions-as-a-Service solution, based on IBM’s public cloud. Available in six data centers around the world, IBM Cloud Functions serves the needs of customers since its inception. 
 {: shortdesc}
 
-However, the increased demands and additional requirements that our customers have been articulating, lead us to constantly innovate, improve, and evolve the IBM Functions-as-a-Service technologies and offerings. As a result and to address these demands, IBM is adding Functions-as-a-Service technology to IBM Cloud Code Engine. For limitations when you use functions in Code Engine, see [Function limitations](/docs/codeengine?topic=codeengine-fun-work#fun-limitations).
+However, the increased demands and additional requirements that our customers have been articulating, lead us to constantly innovate, improve, and evolve the IBM Functions-as-a-Service technologies and offerings. As a result and to address these demands, IBM is adding Functions-as-a-Service technology to {{site.data.keyword.codeenginefull}}. For limitations when you use functions in Code Engine, see [Function limitations](/docs/codeengine?topic=codeengine-fun-work#fun-limitations).
 
 ## Comparing Code Engine to Cloud Functions
 {: #fun-migrate-compare}
@@ -27,11 +27,11 @@ The SOC2, ISO32k, BSI C5, and Financial Services Cloud-certified IBM Cloud Code 
 
 The new Functions-as-a-Service capabilities enable Code Engine customers to perform short running, run-to-completion type of workloads. Whether you are a Cloud Functions customer or you are new to Functions-as-a-Service, you can learn more about [running functions in IBM Cloud Code Engine](/docs/codeengine?topic=codeengine-fun-work). You can even [take a tutorial](/docs/codeengine?topic=codeengine-fun-tutorial).
   
-Functions-as-a-Service in Code Engine offers an improved server-less value proposition in terms of user experience, usage patterns, security, and total cost of ownership. 
+Functions-as-a-Service in {{site.data.keyword.codeengineshort}} offers an improved server-less value proposition in terms of user experience, usage patterns, security, and total cost of ownership. 
   
-Function sin Code Engine simplifies your user experience, with the following options.
+Functions in {{site.data.keyword.codeengineshort}} simplifies your user experience, with the following options.
 
-- Integrates fully with the Code Engine development flow and features.
+- Integrates fully with the {{site.data.keyword.codeengineshort}} development flow and features.
 - Includes common programming languages and provides optimized managed runtimes.
 - Offers on-demand code execution with low cold start latency and rapid scale-out.
 - Offers a Web-URL based Function invocation mechanism with feature-rich support for web applications.
@@ -40,7 +40,7 @@ Function sin Code Engine simplifies your user experience, with the following opt
 
 With IBM Cloud Code Engine Functions, you can use your favorite programming language to write lightweight code that runs snippets of business logic in a scalable way. You can run code in response to HTTP requests from applications or in response to IBM Cloud services and external events.
 
-Rather than running a container image, Code Engine functions instead, runs a code bundle. A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
+Rather than running a container image, {{site.data.keyword.codeengineshort}} functions instead, runs a code bundle. A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
 
 ## Key capabilities
 {: #fun-migrate-key}
@@ -79,7 +79,7 @@ In addition, {{site.data.keyword.codeengineshort}} includes [Function limits](/d
 | Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out |
 {: caption="Table 1. Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
 
-## Migrating IBM Cloud Functions Actions to Code Engine Functions FAQ
+## Migrating IBM Cloud Functions Actions to {{site.data.keyword.codeengineshort}} Functions FAQ
 {: #fun-migrate-faqs}
 
 ### How can I process a bulk-load of computations?
@@ -95,7 +95,7 @@ You can convert your action to a {{site.data.keyword.codeengineshort}} function 
 ### Can I trigger my function code?
 {: #fun-migrate-faq3}
 
-While {{site.data.keyword.codeengineshort}} does not include an object called a “trigger”, it does support subscribing to event producers, including cron jobs (alarms), Object storage, and Event Streams (Kafka) data. However, functions do not support eventing. You can instead create your code as an app or job and then add a subscription. For more information, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
+No. {{site.data.keyword.codeengineshort}} supports only event producers (or triggers) for applications and jobs. You can create your code as an app or job, and then add a subscription to an event producer, including cron jobs (alarms), Object storage, and Event Streams (Kafka) data. For more information, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
 
 ### Can my function be accessed through a public URL?
 {: #fun-migrate-faq4}
@@ -127,7 +127,7 @@ If you are using Cloud Functions that are based on `whisk.system` actions, you c
 
 Yes, service binds are supported! See [Working with service bindings to integrate IBM Cloud services with Code Engine](/docs/codeengine?topic=codeengine-service-binding).                     
 
-### Where can I find information about my in progress and finished Code Engine Function runs?
+### Where can I find information about my in progress and finished {{site.data.keyword.codeengineshort}} Function runs?
 {: #fun-migrate-faq10}
 
 If you created your Function from source code, you can [view build logs](/docs/codeengine?topic=codeengine-view-logs#view-build-cli).
