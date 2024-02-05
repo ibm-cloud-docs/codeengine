@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-02-05"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -136,11 +136,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
-    * [xx February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-febxx24)
+    * [05 February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0524)
 
-        * [CLI release]{: tag-purple} CLI version 1.49.XX released
+        * [CLI release]{: tag-purple} CLI version 1.49.4 released
 
         * [New]{: tag-green} Added troubleshooting information about displaying limits and current usage with the CLI
+
+        * [Update]{: tag-magenta} The `Build` and `BuildRun` Kubernetes API objects are available in a new version
 
 * [January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan24)
 
@@ -3765,7 +3767,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce subscription cron update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update)
 
-* [Subscription `kafka` commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
+* [Subscription kafka commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
 
     * [`ibmcloud ce subscription kafka create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create)
 

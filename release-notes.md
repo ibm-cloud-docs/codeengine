@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-02-05"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -20,11 +20,11 @@ content-type: release-note
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
 
-### xx February 2024
-{: #codeengine-febxx24}
+### 05 February 2024
+{: #codeengine-feb0524}
 {: release-note}
 
-[CLI release]{: tag-purple} CLI version 1.49.XX released
+[CLI release]{: tag-purple} CLI version 1.49.4 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 [New]{: tag-green} Added troubleshooting information about displaying limits and current usage with the CLI
@@ -33,6 +33,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 :   - See [Debugging functions](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-limits).
 :   - See [Debugging jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-limits).
 
+[Update]{: tag-magenta} The `Build` and `BuildRun` Kubernetes API objects are available in a new version
+:   The `Build` and `BuildRun` Kubernetes API objects are available as `v1beta1` version. The `v1alpha1` version of these objects is deprecated. If you use the Kubernetes API to manage these objects, update to use the `v1beta1` version.  No action is required of you use the {{site.data.keyword.codeengineshort}} API, CLI, or console. See [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i).
 
 ## January 2024
 {: #codeengine-jan24}
