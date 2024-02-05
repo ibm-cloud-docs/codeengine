@@ -7060,7 +7060,7 @@ OK
 ```
 {: screen}  
   
-## Subscription kafka commands  
+## Subscription `kafka` commands  
 {: #cli-subscription-kafka}  
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
