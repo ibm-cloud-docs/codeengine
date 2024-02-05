@@ -34,7 +34,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 :   - See [Debugging jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-limits).
 
 [Update]{: tag-magenta} The `Build` and `BuildRun` Kubernetes API objects are available in a new version
-:   The `Build` and `BuildRun` Kubernetes API objects are available as `v1beta1` version. The `v1alpha1` version of these objects is deprecated. If you use the Kubernetes API to manage these objects, update to use the `v1beta1` version.  No action is required of you use the {{site.data.keyword.codeengineshort}} API, CLI, or console. See [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i).
+:   The `Build` and `BuildRun` Kubernetes API objects are available as `v1beta1` version. The `v1alpha1` version of these objects is deprecated. If you use the Kubernetes API to manage these objects, update to use the `v1beta1` version.  No action is required if you use the {{site.data.keyword.codeengineshort}} API, CLI, or console. See [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i).
 
 ## January 2024
 {: #codeengine-jan24}
