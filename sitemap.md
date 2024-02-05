@@ -136,6 +136,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb24)
+
     * [05 February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0524)
 
         * [CLI release]{: tag-purple} CLI version 1.49.4 released
