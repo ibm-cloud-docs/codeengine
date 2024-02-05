@@ -196,7 +196,7 @@ After you retrieve the Kubernetes configuration, you can view the Source-to-imag
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
-| `sources.codeengine.cloud.ibm.com` | v1beta1 | `CosSource` |
+| `sources.codeengine.cloud.ibm.com` | v1alpha1 | `CosSource` |
 | `sources.knative.dev` | v1 | `PingSource` |
 {: caption="Subscription CRDs for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
 
