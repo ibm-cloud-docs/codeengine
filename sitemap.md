@@ -1570,7 +1570,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Environment variables
 
-        * Revised subscription topic.
+        * Revised subscription topic
 
         * Ping subscription tutorial
 
@@ -1740,7 +1740,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Review the release notes for 14 October 2020.
 
-        * New troubleshooting information.
+        * New troubleshooting information
 
     * [6 October 2020](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct0620)
 

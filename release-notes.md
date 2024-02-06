@@ -2452,7 +2452,7 @@ CLI version 0.5.15 released
 Environment variables
 :   Added information about automatically injected environment variables for {{site.data.keyword.codeengineshort}} apps and jobs. See [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars).
 
-Revised subscription topic.
+Revised subscription topic
 :   See [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).
 
 Ping subscription tutorial
@@ -2722,7 +2722,7 @@ CLI version 0.4.2397 released
 Review the release notes for 14 October 2020.
 {: shortdesc}
 
-New troubleshooting information.
+New troubleshooting information
 :   See [Troubleshooting jobs](/docs/codeengine?topic=codeengine-troubleshoot-job) and [Troubleshooting builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
 
 ### 6 October 2020
