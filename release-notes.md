@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-06"
+lastupdated: "2024-02-09"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,14 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## February 2024
 {: #codeengine-feb24}
+
+### 09 February 2024
+{: #codeengine-feb0924}
+{: release-note}
+
+New region!
+:   {{site.data.keyword.codeengineshort}} is supported in a new region: Madrid, Spain (`eu-es`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
+
 
 ### 05 February 2024
 {: #codeengine-feb0524}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-02-21"
+  years: 2024
+lastupdated: "2024-02-09"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine, backing up code engine, availability of code engine, code engine regions, backing up your Code Engine instance
 
@@ -30,7 +30,8 @@ The following table lists the high-availability (HA) status for the regions (loc
 | Asia Pacific | Australia (`au-syd`) | MZR |
 | Asia Pacific | Osaka (`jp-osa`) | MZR |
 | Asia Pacific | Tokyo (`jp-tok`) | MZR |
-| Europe | Frankfurt (`eu-de`) | MZR | 
+| Europe | Frankfurt (`eu-de`) | MZR |
+| Europe | Madrid (`eu-es`) | MZR | 
 | Europe | London (`eu-gb`) | MZR | 
 | North America | Dallas (`us-south`) | MZR |
 | North America | Toronto (`ca-tor`) | MZR |
@@ -65,6 +66,7 @@ In a major regional disaster, such as an earthquake, flood, or tornado, an entir
 | `br-sao` | `BR` |
 | `ca-tor` | `CA` |
 | `eu-de` | `EU` |
+| `eu-es` | `EU` |
 | `eu-gb` | `EU` |
 | `jp-osa` | `AP` |
 | `jp-tok` | `AP` |
