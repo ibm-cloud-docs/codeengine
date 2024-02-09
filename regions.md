@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-06-13"
+  years: 2024
+lastupdated: "2024-02-09"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -27,6 +27,7 @@ subcollection: codeengine
 - Asia Pacific: Tokyo, Japan  (`jp-tok`) region
 - Europe: Germany (`eu-de`) region
 - Europe: Great Britain (`eu-gb`) region
+- Europe: Spain (`eu-es`) region
 
 You can target a specific region whenever you log in to the {{site.data.keyword.cloud_notm}} CLI or change your current region by using the [`target -r`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) option.
 
@@ -59,6 +60,7 @@ Use the following endpoints to access and manage project resources.
 | Asia Pacific: Tokyo, Japan | `api.jp-tok.codeengine.cloud.ibm.com` | `api.private.jp-tok.codeengine.cloud.ibm.com` |
 | Europe: Germany | `api.eu-de.codeengine.cloud.ibm.com` | `api.private.eu-de.codeengine.cloud.ibm.com` |
 | Europe: Great Britain | `api.eu-gb.codeengine.cloud.ibm.com` | `api.private.eu-gb.codeengine.cloud.ibm.com` |
+| Europe: Spain | `api.eu-es.codeengine.cloud.ibm.com` | `api.private.eu-es.codeengine.cloud.ibm.com` |
 {: caption="{{site.data.keyword.codeengineshort}} endpoints for project resources" caption-side="bottom"}
 
 ## {{site.data.keyword.codeengineshort}} endpoints for accessing applications
@@ -82,6 +84,7 @@ The default URL for applications is of the format `https://<appname>.<uuid>.<reg
 | Asia Pacific: Tokyo, Japan | `app.uuid.jp-tok.codeengine.appdomain.cloud` | `app.uuid.private.jp-tok.codeengine.appdomain.cloud` |
 | Europe: Germany | `app.uuid.eu-de.codeengine.appdomain.cloud` | `app.uuid.private.eu-de.codeengine.appdomain.cloud` |
 | Europe: Great Britain | `app.uuid.eu-gb.codeengine.appdomain.cloud` | `app.uuid.private.eu-gb.codeengine.appdomain.cloud` |
+| Europe: Spain | `app.uuid.eu-es.codeengine.appdomain.cloud` | `app.uuid.private.eu-es.codeengine.appdomain.cloud` |
 {: caption="{{site.data.keyword.codeengineshort}} endpoints for apps" caption-side="bottom"}
 
 
