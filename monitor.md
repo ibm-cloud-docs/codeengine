@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-07-17"
+  years: 2022, 2024
+lastupdated: "2024-02-14"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -360,6 +360,7 @@ The following attributes are available for segmenting one or more attributes as 
 | `Application name` | `ibm_codeengine_application_name` | Name of the application. |
 | `Application revision name` | `ibm_codeengine_revision_name` | Name of the application revision. |
 | `Gateway instance` | `ibm_codeengine_gateway_instance` | The gateway instance. |
+| `Job Name` | `ibm_codeengine_job_name` | Name of the job that is used to create the job run.  |
 | `Jobrun condition` | `ibm_codeengine_jobrun_condition` | The condition of the job run. |
 | `Project name` | `ibm_codeengine_project_name` | Name of the project. |
 {: caption="Table 18: Segmentation options" caption-side="bottom"}
