@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-14"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -49,9 +49,9 @@ When a job is in ready state, you can update the job. Let's update the `myjob` j
 
 1. Navigate to your job page. 
     * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
-    * From the Jobs page, click the name of the job that you want to update. 
+    * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to update. 
 
-2. To update the image reference of your job, provide the name of your image or configure an image. Update the name of the image for this job from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob`. Click **Save**. 
+2. From the **Configuration** tab, update the image reference of your job. Provide the name of your image or configure an image. Update the name of the image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob`. Click **Deploy**.  
 3. Click **Submit job**.
 4. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.  
 5. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the job is `Hello World!`.

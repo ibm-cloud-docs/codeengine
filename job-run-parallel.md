@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-14"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, parallel jobs, parallel batch jobs
 subcollection: codeengine
@@ -65,7 +65,7 @@ However, suppose you want to rerun 3 of the initial 10 job run instances because
 
 For this new job run, say that you update only the array indices; for example, `"3, 7, 9"`. Because the value of the `JOB_ARRAY_SIZE` environment variable is automatically computed when array indices are specified instead of the array size, the value of `JOB_ARRAY_SIZE` is now 3 instead of 10, since 3 array indices were specified.
 
-Instead, to ensure that your jobrun submit (or resubmit) processes the correct chunks of data for the specified indices `3`, `7`, and `9`, you can override the automatically computed value of the `JOB_ARRAY_SIZE` environment variable by using the `--array-size-var-override` option in the CLI or by specifying a custom value in the `JOB_ARRAY_SIZE` input field in the console.
+Instead, to ensure that your job run submit (or resubmit) processes the correct chunks of data for the specified indices `3`, `7`, and `9`, you can override the automatically computed value of the `JOB_ARRAY_SIZE` environment variable by using the `--array-size-var-override` option in the CLI or by specifying a custom value in the `JOB_ARRAY_SIZE` input field in the console.
 
 By setting the custom array size override value to 10, the job run instances correctly compute the chunk size as 10% and the resubmitted job run instances process the desired data (indices `3`, `7`, and `9`). You can use this option to enforce a constant array size value for job rerun scenarios, where only some job instances are submitted or resubmitted.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-25"
+lastupdated: "2024-02-14"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -56,8 +56,8 @@ After you create your job and specify your workload configuration information, y
 Note that when you run your job, the latest version of your referenced container image is downloaded and deployed, unless you specified a tag for the image. If a tag is specified for the image, then the tagged image is used for the job. 
 
 1. Navigate to your job page. 
-    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
-    * From the Jobs page, click the name of the job that you want to run. 
+    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.
+    * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to run. 
 
 2. From your job page, click **Submit job** to submit a job that is based on the current configuration. 
 3. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.
@@ -74,7 +74,10 @@ From the Submit job pane, you can review and optionally change default configura
 Find details about your job.
 {: shortdesc}
 
-After you submit your job, the job results are available in the console from the Job details page. In the console, you can also view job details by clicking the name of your job run from the **Job runs** section of your job. Job details include status of instances, configuration details, and environment variables of your job. 
+After you submit your job, the results of the specific job run are available in the console from the Job run details page. From the console, you can also view details of your job and specific job runs from the Jobs page. 
+* To view job details, click the **Job** tab, and click the name of the job you want to work with. 
+* To view details for a specific job run, click the **Job runs** tab, and click the name of the job run that you want to work with. 
+
 
 If any of the instances of your job failed to run, you can take the following actions.
 
@@ -95,10 +98,10 @@ You can manage your job by fine tuning your job configuration, which includes up
 When the job is in a ready state, you can update the job. Let's update the job that you created previously to change the container image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob` and then update an environment variable. When a request is sent to this `icr.io/codeengine/testjob` sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. For more information about the code that is used for this example, see [`testjob`](https://github.com/IBM/CodeEngine/tree/main/testjob){: external}.
 
 1. Navigate to your job page. 
-    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
-    * From the Jobs page, click the name of the job that you want to update. 
+    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.
+    * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to update. 
 
-2. To update the image reference of your job, provide the name of your image or configure an image. Update the name of the image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob`. Click **Save**. 
+2. From the **Configuration** tab, update the image reference of your job. Provide the name of your image or configure an image. Update the name of the image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob`. Click **Deploy**. 
 3. Click **Submit job**.
 4. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Array size** or **Array indices** for the parallel job instances to run. For **Array size**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. 
 5. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the job is `Hello World!`.
