@@ -35,11 +35,12 @@ When you create a job, you can run it immediately. However, you can submit and r
 2. Select Projects from the navigation menu.
 3. Select a project as the current context. 
 4. From the Overview page, select Jobs from the Summary section or select Jobs from the navigation menu.
-5. Click the name of your job to open the configuration.
-5. To run with a job, click the **Job** tab, and click the name of the job that you want to run. 
+5. To run a job, click the **Job** tab, and click the name of the job that you want to run. 
 6. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
 7. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
 8. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indices** field automatically lists the indices of the failed job run instances. After you review and optionally change configuration values, click **Submit job** to run your job.
+
+You can also rerun existing job run. To run a specific job run again, click the **Job runs** tab, and then click the name of the job run that you want to work with. Click **Rerun** to run this job run again. 
 
 You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 {: tip}
@@ -47,7 +48,6 @@ You can view job logs after you add logging capabilities. For more information, 
 The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap#inside-configmaps).
 {: note}
 
-To rerun an existing job run, click the **Job runs** tab, and click the name of the job run that you want to work with. Click **Rerun** to run this job run again. 
 
 ## Running a job with the CLI
 {: #run-job-cli}
