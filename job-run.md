@@ -32,13 +32,12 @@ Job runs that are created by subscriptions are deleted after 10 minutes. For mor
 When you create a job, you can run it immediately. However, you can submit and resubmit a job at any time. You can also submit or resubmit a job that you previously created.
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select Projects from the navigation menu.
-3. Select a project as the current context. 
-4. From the Overview page, select Jobs from the Summary section or select Jobs from the navigation menu.
-5. To run a job, click the **Job** tab, and click the name of the job that you want to run. 
-6. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
-7. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
-8. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indices** field automatically lists the indices of the failed job run instances. After you review and optionally change configuration values, click **Submit job** to run your job.
+2. Select Projects from the navigation menu.  Select a project as the current context. 
+3. From the Overview page, select Jobs from the Summary section or select Jobs from the navigation menu.
+4. Click the **Jobs** tab, and click the name of the job that you want to run. 
+5. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
+6. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
+7. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indices** field automatically lists the indices of the failed job run instances. After you review and optionally change configuration values, click **Submit job** to run your job.
 
 You can also rerun existing job run. To run a specific job run again, click the **Job runs** tab, and then click the name of the job run that you want to work with. Click **Rerun** to run this job run again. 
 

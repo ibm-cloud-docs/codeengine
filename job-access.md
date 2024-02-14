@@ -22,7 +22,7 @@ Find details about your job from the console or with the CLI.
 {: #access-jobdetails-ui}
 
 After you submit your job, the results of the specific job run are available in the console from the Job run details page. From the console, you can also view details of your job and specific job runs from the Jobs page. 
-* To view job details, click the **Job** tab, and click the name of the job you want to work with. 
+* To view job details, click the **Jobs** tab, and click the name of the job you want to work with. 
 * To view details for a specific job run, click the **Job runs** tab, and click the name of the job run that you want to work with. 
 
 
