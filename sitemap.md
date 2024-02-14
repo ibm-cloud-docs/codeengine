@@ -2556,11 +2556,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Options for visibility for a {{site.data.keyword.codeengineshort}} functions](/docs/codeengine?topic=codeengine-fun-work#optionsvisibilityfun)
 
+    * [Deploying your function with an internal endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-projectonly)
+
     * [Deploying your function with a public endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-public)
 
     * [Deploying your function with a private endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-private)
-
-    * [Deploying your function with a project endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-projectonly)
 
 * [Options for creating functions](/docs/codeengine?topic=codeengine-fun-work#functions-options)
 
