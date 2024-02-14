@@ -29,7 +29,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 {: release-note}
 
 Added the `ibm_codeengine_job_name` attribute to the `ibm_codeengine_jobruns` metric for monitoring job runs in {{site.data.keyword.codeengineshort}}
-:   See [Monitoring for {{site.data.keyword.codeengineshort}} - Total number of `jobruns`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns).
+:   See [Monitoring for {{site.data.keyword.codeengineshort}} - Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes).
 
 
 
