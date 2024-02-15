@@ -4035,6 +4035,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Job pricing](/docs/codeengine?topic=codeengine-pricing#job-pricing)
 
+* [Function pricing](/docs/codeengine?topic=codeengine-pricing#functions-pricing)
+
 * [Build pricing](/docs/codeengine?topic=codeengine-pricing#build-pricing)
 
 

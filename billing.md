@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-14"
+lastupdated: "2024-02-15"
 
 keywords: billing, pricing, costs for code engine, billing for code engine, job pricing, app pricing, build pricing
 
@@ -24,6 +24,7 @@ You are billed for the following entities,
 
 - [Applications](#app-pricing)
 - [Job runs](#job-pricing)
+- [Functions](#functions-pricing)
 - [Build runs](#build-pricing)
 
 Entities such as [projects](/docs/codeengine?topic=codeengine-manage-project) do not incur charges, but instead serve as a folder for your entities. Entities such as secrets, bindings, or subscriptions do not incur charges, but do contribute to the overall limits of your project. For more information, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
@@ -58,6 +59,18 @@ For example,
 For valid CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 Note that the time that it takes to pull your image or to build it from source code is included in the billable time.
+
+## Function pricing
+{: #functions-pricing}
+
+When you deploy a function, charges apply for HTTP requests, and for the CPU and memory resources that are consumed by running instances of the function. Incoming HTTP calls are billed by the number of HTTP calls that are received by your function. For example,
+* If your function serves 100 calls, you are then billed for 100 HTTP calls. Internal HTTP traffic within a {{site.data.keyword.codeengineshort}} project between your workloads is excluded from the billable HTTP call total. 
+* If you create a {{site.data.keyword.codeengineshort}} function with 2 GB memory and 0.5 virtual CPU, after 600 invocations (assuming each requires 6 seconds to complete the result), you are charged for 0.5 vCPU hour and 2 GB hours. 
+  
+For valid CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+
+The time that it takes to pull your code bundle or to build it from source code is included in the billable time. 
+{: note}
 
 
 
