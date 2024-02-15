@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-14"
+lastupdated: "2024-02-15"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -56,7 +56,7 @@ After you create your job and specify your workload configuration information, y
 Note that when you run your job, the latest version of your referenced container image is downloaded and deployed, unless you specified a tag for the image. If a tag is specified for the image, then the tagged image is used for the job. 
 
 1. Navigate to your job page. 
-    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.
+    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to work with your jobs and job runs. 
     * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to run. 
 
 2. From your job page, click **Submit job** to submit a job that is based on the current configuration. 
@@ -98,7 +98,7 @@ You can manage your job by fine tuning your job configuration, which includes up
 When the job is in a ready state, you can update the job. Let's update the job that you created previously to change the container image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob` and then update an environment variable. When a request is sent to this `icr.io/codeengine/testjob` sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. For more information about the code that is used for this example, see [`testjob`](https://github.com/IBM/CodeEngine/tree/main/testjob){: external}.
 
 1. Navigate to your job page. 
-    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.
+    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to work with your jobs and job runs.
     * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to update. 
 
 2. From the **Configuration** tab, update the image reference of your job. Provide the name of your image or configure an image. Update the name of the image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob`. Click **Deploy**. 

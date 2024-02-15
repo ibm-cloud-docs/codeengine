@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-14"
+lastupdated: "2024-02-15"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -193,7 +193,7 @@ To run your function in {{site.data.keyword.codeengineshort}}, your code must im
 - Does not support the `multipart/form-data` request header.
 
 
-## Options for visibility for a {{site.data.keyword.codeengineshort}} functions
+## Options for visibility for a {{site.data.keyword.codeengineshort}} function
 {: #optionsvisibilityfun}
 
 With {{site.data.keyword.codeengineshort}}, you can determine the right level of visibility for your function by defining the endpoints, or system domain mappings that are available for receiving requests.  
@@ -205,7 +205,7 @@ You can deploy your function with the following visibility levels:
 
 | Setting | Description |
 | --------- | ------------------- |
-| [internal (project)](#fun-endpoint-projectonly) | A function with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. Setting an internal (project) endpoint means that your function is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. **IMPORTANT** A function cannot invoke another function, job, or app using the internal routes.|
+| [internal (project)](#fun-endpoint-projectonly) | A function with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. Setting an internal (project) endpoint means that your function is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. **IMPORTANT:** A function cannot invoke another function, job, or app using the internal routes.|
 | [public](#fun-endpoint-public) | A function with this setting is exposed to the internet and your {{site.data.keyword.codeengineshort}} project. Setting a public endpoint means that your function can receive requests from the public internet or from components within your {{site.data.keyword.codeengineshort}} project. This setting is the default. |
 | [private](#fun-endpoint-private) | A function with this setting is exposed to the {{site.data.keyword.cloud_notm}} private network and your {{site.data.keyword.codeengineshort}} project. Setting a private endpoint means that your function is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services by using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project.|
 {: caption="Table 1. Visibility for functions" caption-side="bottom"}

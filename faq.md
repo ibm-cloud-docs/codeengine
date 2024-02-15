@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-02-15"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -77,13 +77,6 @@ The result of a Docker build that you run on your local system is the same conta
 2. You can use the resources that are provided by {{site.data.keyword.codeengineshort}}. For example, you can take advantage of the speed of {{site.data.keyword.cloud_notm}} to push and pull container registry images for you.
 3. You can build your container image by using the [Buildpacks build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) instead of Dockerfile, which detects your sources for various languages and automatically builds a container out of it.
 4. If you have an image that was built with a non-Intel based processor, {{site.data.keyword.codeengineshort}} can rebuild it for you.
-
-## Why do images that are built by using a {{site.data.keyword.codeengineshort}} buildpacks build show up in my container registry as being more than 15,000 days old?
-{: #buildpacksbld-image-size}
-{: faq}
-{: support}
-
-Buildpacks create [reproducible builds](https://buildpacks.io/docs/reference/reproducibility/){: external} of container images. When the same sources are built with the same version of the build tool, then the produced image has the same identifier. The identifier of an image is based not only on the files that are inside the image, but also based on dates in the metadata of the image. Part of this metadata is the creation timestamp. The [Buildpacks community](https://buildpacks.io/community){: external} set all these dates in the image metadata to a fixed timestamp in 1980 to achieve reproducibility.
 
 ## Why do images that are built with non-Intel processors not work with {{site.data.keyword.codeengineshort}}?  
 {: #buildimage-nonintel}
