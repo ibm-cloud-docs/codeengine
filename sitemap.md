@@ -138,6 +138,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb24)
 
+    * [16 February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb1624)
+
+        * Updated the user experience for working with jobs and job runs in the console
+
+        * Added more information about functions in {{site.data.keyword.codeengineshort}}
+
+        * Updated behavior change for image builds that are built with Cloud Native Buildpacks
+
     * [14 February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb1424)
 
         * Added the `ibm_codeengine_job_name` attribute to the `ibm_codeengine_jobruns` metric for monitoring job runs in {{site.data.keyword.codeengineshort}}
