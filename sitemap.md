@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-02-16"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3881,6 +3881,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
 
+* [Automatically injected environment variables for functions](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-fun)
+
 
 ## Defining commands and arguments for your workloads
 {: #sitemap_defining_commands_and_arguments_for_your_workloads}
@@ -4269,6 +4271,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Getting logs for my function](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-funcrtion-gettinglogs)
 
 * [Keep your runtime and CLI versions up to date](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-uptodate)
+
+* [Verifying the code bundle reference for my function](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-verifyimage)
 
 * [Additional topics](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-topics)
 
