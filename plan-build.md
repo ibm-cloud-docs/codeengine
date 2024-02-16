@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-08"
+lastupdated: "2024-02-15"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -73,9 +73,11 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 {: caption="Runtime sample files" caption-side="bottom"}
 
 
+Images that are built using Cloud Native Buildpacks no longer use the neutral timestamp of `Jan, 1st 1980` as their image creation timestamp. The timestamp of the input source is used as the image creation timestamp; for example, the Git commit timestamp of the commit that was used for your build.
+{: important}
+
 The version of a specific runtime for a Paketo buildpack might differ between regions for a brief time whenever an updated version of a buildpack is rolled out to the various {{site.data.keyword.cloud_notm}} regions.
 {: note}
-
 
 
 

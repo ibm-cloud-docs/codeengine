@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-30"
+  years: 2020, 2024
+lastupdated: "2024-02-16"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -67,5 +67,27 @@ When you run a job, {{site.data.keyword.codeengineshort}} automatically injects 
 Note that each job run instance gets its own index from the array of indices that were specified when the job was created. {{site.data.keyword.codeengineshort}} automatically assigns indices starting from 0 to (array size - 1). The `JOB_INDEX` environment variable contains the index value.
 
 While the job itself doesn't have a URL associated with it, the `CE_DOMAIN` and `CE_SUBDOMAIN` values might be useful if you need to reference an application that is running in the same project. The full external URL of this application is `appName.CE_SUBDOMAIN.CE_DOMAIN`. To reference the private URL of an application, use `appName.CE_SUBDOMAIN`.
+
+## Automatically injected environment variables for functions
+{: #inside-env-vars-fun}
+
+When you deploy an function, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the function.  The following table lists automatically injected environment variables into each instance of your deployed function. 
+
+The environment variables, `CE_FUNCTION`, `CE_DOMAIN`, and `CE_SUBDOMAIN` are used to construct the URL of a function, `https://CE_FUNCTION.CE_SUBDOMAIN.CE_DOMAIN`. For example, if `CE_FUNCTION=myfunc`, `CE_SUBDOMAIN=01234567-abcd` and `CE_DOMAIN=us-south.codeengine.dev.appdomain.cloud`, your function external URL is `https://myfunc.01234567-abcd.us-south.codeengine.dev.appdomain.cloud`. The private URL of your application is `CE_FUNCTION.CE_SUBDOMAIN.private.CE_DOMAIN`, or `myfunc.01234567-abcd.private.us-south.codeengine.appdomain.cloud`. 
+
+| Environment variable | Description | Example |
+|--------------------|-------------------------------------------------------|--------------|
+| `CE_ALLOW_CONCURRENT`| This internal boolean setting is used by the {{site.data.keyword.codeengineshort}} function controller to indicate if the runtime supports concurrent invocations of the same function instance, and can be ignored. | `CE_ALLOW_CONCURRENT=true` |
+| `CE_DOMAIN`          | The domain name portion of the URL of the function (and project).  | `CE_DOMAIN=us-south.codeengine.dev.appdomain.cloud` |
+| `CE_EXECUTION_ENV`   | The managed runtime type and its release version.                     | `CE_EXECUTION_ENV=ibm/action-python-v3.11` This example specifies to use Python v3.11.  |
+| `CE_FUNCTION`        | The name of the function.                                             | `CE_APP=myfunc` |
+| `CE_SUBDOMAIN`       | The subdomain portion of the URL associated with the function (and project). If you are familiar with Kubernetes, `CE_SUBDOMAIN` maps to the Kubernetes namespace associated with your project. | `CE_SUBDOMAIN=01234567-abcd` |
+| `HOME`               | The home directory of the runtime container for the function.         | `HOME=/root` |
+| `LC_CTYPE`           | The locale that is used by the `ctype` and `multibyte` operating system API. Available only with Python runtimes.     | `LC_CTYPE=C.UTF-8` |
+| `PATH`               | The current setting of the PATH variable, which lists the directories in which the system looks for executables. | `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin` |
+| `PYTHONIOENCODING`   | The standard encoding that is used by standard input, standard output, and standard error streams. This variable only applies to a Python runtime. | `PYTHONIOENCODING=UTF-8` |
+| `PWD`                | The current working directory.                                        | `PWD=/` |
+{: caption="Automatically injected environment variables when deploying {{site.data.keyword.codeengineshort}} functions"}
+
 
 

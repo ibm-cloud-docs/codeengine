@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-02-14"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -48,7 +48,7 @@ This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https:
     7. In the **Resources & scaling** section, specify `daemon` for the mode in the **Resiliency settings**. When you specify `daemon` mode, job runs for this job can run indefinitely, and they do not time out. There is no retry limit for these job runs. Any job runs for these jobs are automatically restarted without limit. 
     8. Click **Create** to create the job. 
 
-2. View the list of defined jobs from the **Jobs** page and click the name of your job to open the configuration.
+2. From the **Jobs** page, click the **Jobs** tab to view a list of defined jobs. Click the name of your job to open the configuration.
 
 3. Run the job. 
     1. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).

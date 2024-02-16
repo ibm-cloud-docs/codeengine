@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-14"
+lastupdated: "2024-02-16"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -138,7 +138,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb24)
 
-    * [14 February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-febxx24)
+    * [16 February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb1624)
+
+        * Updated the user experience for working with jobs and job runs in the console
+
+        * Added more information about functions in {{site.data.keyword.codeengineshort}}
+
+        * Updated behavior change for image builds that are built with Cloud Native Buildpacks
+
+    * [14 February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb1424)
 
         * Added the `ibm_codeengine_job_name` attribute to the `ibm_codeengine_jobruns` metric for monitoring job runs in {{site.data.keyword.codeengineshort}}
 
@@ -2554,13 +2562,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Function data input/output characteristics](/docs/codeengine?topic=codeengine-fun-work#functions-data)
 
-* [Options for visibility for a {{site.data.keyword.codeengineshort}} functions](/docs/codeengine?topic=codeengine-fun-work#optionsvisibilityfun)
+* [Options for visibility for a {{site.data.keyword.codeengineshort}} function](/docs/codeengine?topic=codeengine-fun-work#optionsvisibilityfun)
+
+    * [Deploying your function with an internal endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-projectonly)
 
     * [Deploying your function with a public endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-public)
 
     * [Deploying your function with a private endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-private)
-
-    * [Deploying your function with a project endpoint](/docs/codeengine?topic=codeengine-fun-work#fun-endpoint-projectonly)
 
 * [Options for creating functions](/docs/codeengine?topic=codeengine-fun-work#functions-options)
 
@@ -3873,6 +3881,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
 
+* [Automatically injected environment variables for functions](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-fun)
+
 
 ## Defining commands and arguments for your workloads
 {: #sitemap_defining_commands_and_arguments_for_your_workloads}
@@ -4027,6 +4037,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Job pricing](/docs/codeengine?topic=codeengine-pricing#job-pricing)
 
+* [Function pricing](/docs/codeengine?topic=codeengine-pricing#functions-pricing)
+
 * [Build pricing](/docs/codeengine?topic=codeengine-pricing#build-pricing)
 
 
@@ -4090,8 +4102,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Do I need a Docker Hub account to use {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerhub-options)
 
 * [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
-
-* [Why do images that are built by using a {{site.data.keyword.codeengineshort}} buildpacks build show up in my container registry as being more than 15,000 days old?](/docs/codeengine?topic=codeengine-faqs#buildpacksbld-image-size)
 
 * [Why do images that are built with non-Intel processors not work with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#buildimage-nonintel)
 
@@ -4261,6 +4271,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Getting logs for my function](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-funcrtion-gettinglogs)
 
 * [Keep your runtime and CLI versions up to date](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-uptodate)
+
+* [Verifying the code bundle reference for my function](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-verifyimage)
 
 * [Additional topics](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-topics)
 

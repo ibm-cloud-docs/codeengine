@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-12-11"
+  years: 2023, 2024
+lastupdated: "2024-02-15"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -193,7 +193,7 @@ To run your function in {{site.data.keyword.codeengineshort}}, your code must im
 - Does not support the `multipart/form-data` request header.
 
 
-## Options for visibility for a {{site.data.keyword.codeengineshort}} functions
+## Options for visibility for a {{site.data.keyword.codeengineshort}} function
 {: #optionsvisibilityfun}
 
 With {{site.data.keyword.codeengineshort}}, you can determine the right level of visibility for your function by defining the endpoints, or system domain mappings that are available for receiving requests.  
@@ -205,12 +205,26 @@ You can deploy your function with the following visibility levels:
 
 | Setting | Description |
 | --------- | ------------------- |
-| [internal (project)](#fun-endpoint-projectonly) | A function with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. Setting an internal (project) endpoint means that your function is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. |
+| [internal (project)](#fun-endpoint-projectonly) | A function with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. Setting an internal (project) endpoint means that your function is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. **IMPORTANT:** A function cannot invoke another function, job, or app using the internal routes.|
 | [public](#fun-endpoint-public) | A function with this setting is exposed to the internet and your {{site.data.keyword.codeengineshort}} project. Setting a public endpoint means that your function can receive requests from the public internet or from components within your {{site.data.keyword.codeengineshort}} project. This setting is the default. |
 | [private](#fun-endpoint-private) | A function with this setting is exposed to the {{site.data.keyword.cloud_notm}} private network and your {{site.data.keyword.codeengineshort}} project. Setting a private endpoint means that your function is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services by using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project.|
 {: caption="Table 1. Visibility for functions" caption-side="bottom"}
 
 You can set the endpoint settings for visibility of a function from the console or with the CLI when you create and deploy, or update your function. 
+
+### Deploying your function with an internal endpoint
+{: #fun-endpoint-projectonly}
+
+You can set the endpoint visibility for your function to deploy with an internal (project) endpoint. When you set an internal (project) endpoint, your function is not accessible from the public internet and network access is possible only from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. Functions are still accessible through shared components and therefore need to be secured.
+
+For example, if your solution consists of several functions within a project, you might set up your solution so that only one of those functions is visible from the internet so that it handles incoming traffic. This public-facing function can delegate work to other functions in your solution so that they do not need to be visible from the internet.
+
+With the CLI, set the endpoint visibility for your function so that it is deployed with a project endpoint by using the `--visibility=project` option on the [**`function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) or [**`function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) command. You can obtain the available URLs for your function that reflect your endpoint definition by using the [**`function get`**](/docs/codeengine?topic=codeengine-cli#cli-function-get) command.
+
+From the console, set the visibility of endpoints for your function by using the **Endpoints** setting when you create your function. After your function is deployed, you can view and modify these system domain mapping settings on the **Domain mappings** tab on your Functions page.
+
+A function with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. However, a function cannot invoke another function, job, or app using the internal routes.
+{: important}
 
 ### Deploying your function with a public endpoint
 {: #fun-endpoint-public}
@@ -232,16 +246,6 @@ From the console, set the visibility of endpoints for your function by using the
 
 For more information about connecting over private networks, see [Using Virtual Private Endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-vpe).
 
-### Deploying your function with a project endpoint
-{: #fun-endpoint-projectonly}
-
-You can set the endpoint visibility for your function to deploy with an internal (project) endpoint. When you set a project-only endpoint, your function is not accessible from the public internet and network access is possible only from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. Functions are still accessible through shared components and therefore need to be secured.
-
-For example, if your solution consists of several functions within a project, you might set up your solution so that only one of those functions is visible from the internet so that it handles incoming traffic. This public-facing function can delegate work to other functions in your solution so that they do not need to be visible from the internet.
-
-With the CLI, set the endpoint visibility for your function so that it is deployed with a project endpoint by using the `--visibility=project` option on the [**`function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) or [**`function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) command. You can obtain the available URLs for your function that reflect your endpoint definition by using the [**`function get`**](/docs/codeengine?topic=codeengine-cli#cli-function-get) command.
-
-From the console, set the visibility of endpoints for your function by using the **Endpoints** setting when you create your function. After your function is deployed, you can view and modify these system domain mapping settings on the **Domain mappings** tab on your Functions page.
 
 
 ## Options for creating functions

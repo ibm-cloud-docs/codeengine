@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-14"
+lastupdated: "2024-02-16"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,9 +23,26 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 ## February 2024
 {: #codeengine-feb24}
 
+### 16 February 2024
+{: #codeengine-feb1624}
+{: release-note}
+
+Updated the user experience for working with jobs and job runs in the console
+:   {{site.data.keyword.codeengineshort}} has enhanced the user experience to simplify working with jobs and job runs in the console. A consolidated list of job runs is now provided. See [Accessing job details from the console](/docs/codeengine?topic=codeengine-access-job-details#access-jobdetails-ui).
+
+Added more information about functions in {{site.data.keyword.codeengineshort}}
+:   - See [Automatically injected environment variables for functions](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-fun).
+:   - See [Function pricing](/docs/codeengine?topic=codeengine-pricing#functions-pricing).
+:   - See [Options for visibility for a {{site.data.keyword.codeengineshort}} function](/docs/codeengine?topic=codeengine-fun-work#optionsvisibilityfun).
+:   - See [Verifying the code bundle reference for my function](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-verifyimage).
+
+Updated behavior change for image builds that are built with Cloud Native Buildpacks
+:   Introduced a behavior change for {{site.data.keyword.codeengineshort}} image builds that are built with Buildpacks. Images that are built using Buildlpacks no longer use the neutral timestamp of `Jan, 1st 1980` as their image creation timestamp. The timestamp of the input source is now used. See [Choosing a build strategy -  Cloud Native Buildpacks](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
+
+
 
 ### 14 February 2024
-{: #codeengine-febxx24}
+{: #codeengine-feb1424}
 {: release-note}
 
 Added the `ibm_codeengine_job_name` attribute to the `ibm_codeengine_jobruns` metric for monitoring job runs in {{site.data.keyword.codeengineshort}}

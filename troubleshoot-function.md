@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-02-16"
 
 keywords: troubleshooting for code engine, troubleshooting functions in code engine, function in code engine, function
 
@@ -94,9 +94,14 @@ When you view logs from the console, you must create an {{site.data.keyword.la_f
 
 Verify that your runtime is supported. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
 
+## Verifying the code bundle reference for my function 
+{: #ts-function-verifyimage}
 
+A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.    ``
+  
+When you work with {{site.data.keyword.codeengineshort}} functions, you must specify a code bundle reference and a registry secret to access the image. For the function to work correctly, the code bundle reference and its access properties must remain valid for the life of the function.
 
-
+Because code bundles and images are similar, you can verify your code bundle in the same ways that you verify an image. See [How can I verify my image reference](/docs/codeengine?topic=codeengine-ts-build-verify-image)?
 
 
 ## Additional topics
