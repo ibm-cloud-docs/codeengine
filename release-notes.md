@@ -23,7 +23,6 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 ## February 2024
 {: #codeengine-feb24}
 
-
 ### 16 February 2024
 {: #codeengine-feb1624}
 {: release-note}
