@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-16"
+lastupdated: "2024-02-19"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -37,7 +37,7 @@ Added more information about functions in {{site.data.keyword.codeengineshort}}
 :   - See [Verifying the code bundle reference for my function](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-verifyimage).
 
 Updated behavior change for image builds that are built with Cloud Native Buildpacks
-:   Introduced a behavior change for {{site.data.keyword.codeengineshort}} image builds that are built with Buildpacks. Images that are built using Buildlpacks no longer use the neutral timestamp of `Jan, 1st 1980` as their image creation timestamp. The timestamp of the input source is now used. See [Choosing a build strategy -  Cloud Native Buildpacks](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
+:   Introduced a behavior change for {{site.data.keyword.codeengineshort}} image builds that are built with Buildpacks. Images that are built using Buildpacks no longer use the neutral timestamp of `Jan, 1st 1980` as their image creation timestamp. The timestamp of the input source is now used. See [Choosing a build strategy -  Cloud Native Buildpacks](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
 
 
 
