@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-19"
+lastupdated: "2024-02-20"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## February 2024
 {: #codeengine-feb24}
+
+### 20 February 2024
+{: #codeengine-feb2024}
+{: release-note}
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 16 February 2024
 {: #codeengine-feb1624}
