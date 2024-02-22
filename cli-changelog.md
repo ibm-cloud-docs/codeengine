@@ -20,7 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.49.5 | 2024-02-22 | - Fixed various bugs. |
+| 1.49.5 | 2024-02-22 | - Updated the output for the **`app create`**, **`app update`**, **`job create`**, **`job update`**, and **`buildrun submit`** commands to provide more information about checking logs and events.  \n - Fixed various bugs. |
 | 1.49.4 | 2024-02-05 | - Fixed various bugs. |
 | 1.49.3 | 2024-01-25 | - Fixed various bugs. |
 | 1.49.2 | 2024-01-12 | - Fixed various bugs. |
