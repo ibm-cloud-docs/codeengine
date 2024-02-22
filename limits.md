@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-11-29"
+  years: 2024
+lastupdated: "2024-02-22"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -64,7 +64,7 @@ The following table lists the limits for jobs.
 | Category                     |         Default           |    Maximum value         |     Need to extend the maximum?            |
 | ---------------------------- |  ------------------------ | ------------------------ |------------------------------------------- |
 | Array indices        |                         0 |                  9999999 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Array size           |                         1 |                     1000 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Array size           |                         1 |                     1000 | N/A  |
 | CPU                          |                       1.0 |                     12.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Ephemeral storage            |                     400 M |  48 G \n  (limited by memory) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Memory                       |                       4 G |                    48 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
