@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-10-09"
+  years: 2024
+lastupdated: "2024-02-22"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image, container as non-root
 
@@ -32,7 +32,7 @@ While you can use either strategy for your build, you might choose Dockerfile, i
 ## Dockerfile basics
 {: #dockerfile-basics}
 
-A Dockerfile describes how a container is built. Within your Dockerfile, you choose a base image that includes the necessary tools that you need during your build and runtime. You can copy files from a build context into the image, run commands, define the runtime behavior such as environment variables, exposed ports, and set the `ENTRYPOINT`. The `ENTRYPOINT` is set by the command that is invoked when the container is started. For more information about how Dockerfile instructions can be specified, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/){: external}.
+A Dockerfile describes how a container is built. Within your Dockerfile, you choose a base image that includes the necessary tools that you need during your build and runtime. You can copy files from a build context into the image, run commands, define the runtime behavior such as environment variables, exposed ports, and set the `ENTRYPOINT`. The `ENTRYPOINT` is set by the command that is invoked when the container is started. For more information about how Dockerfile instructions can be specified, see [Dockerfile reference](https://docs.docker.com/reference/dockerfile/){: external}.
 
 In a {{site.data.keyword.codeengineshort}} build, you define a source that points to a Git repository. The context that is available to the Docker build is, by default, the root directory of your Git repository. For example, if you have a directory that is named `src` in your repository, then you can use the `COPY` statement in the Dockerfile to copy this directory into your image. For example,
 
@@ -48,7 +48,7 @@ COPY . /app/src
 ```
 {: codeblock}
 
-If you copy the entire Git repository, but want to exclude some files, for example the `README.md` of the repository, then you can add a [`.dockerignore` file](https://docs.docker.com/engine/reference/builder/#dockerignore-file){: external}. Use the same file to also ignore the files and directories that you specify in your [.gitignore file](https://git-scm.com/docs/gitignore){: external}. By using the same file, you ensure that a build that you run locally has the same set of files available as the build running in {{site.data.keyword.codeengineshort}}.
+If you copy the entire Git repository, but want to exclude some files, for example the `README.md` of the repository, then you can add a [`.dockerignore` file](https://docs.docker.com/reference/dockerfile/#dockerignore-file){: external}. Use the same file to also ignore the files and directories that you specify in your [.gitignore file](https://git-scm.com/docs/gitignore){: external}. By using the same file, you ensure that a build that you run locally has the same set of files available as the build running in {{site.data.keyword.codeengineshort}}.
 {: tip}
 
 Always copy your application files into a subdirectory of the root (`/`) rather than into the root directly to avoid conflicts with operating system files. When you name your application directory, do not use one that is reserved by Unix-based operating systems, Kubernetes or {{site.data.keyword.codeengineshort}} builds, such as `/bin`, `/dev`, `/etc`, `/lib`, `/proc`, `/run`, `/sys`, `/usr`, `/var`, or `/workspace`. Naming your application directory `/app` is a best practice.
