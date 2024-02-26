@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-09-19"
+  years: 2020, 2024
+lastupdated: "2024-02-26"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -109,16 +109,19 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
     Age:           2d15h
     Created:       2022-04-14T16:10:11-04:00
-    URL:                https://myapp-local.glxo4kabcde.us-south.codeengine.appdomain.cloud
+    URL:                https://myapp-local.Sta.us-south.codeengine.appdomain.cloud
     Cluster Local URL:  http://myapp-local.glxo4kabcde.svc.cluster.local
     Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp-local/configuration
     Status Summary:  Application deployed successfully
 
-    Environment Variables:
-      Type     Name          Value
-      Literal  CE_APP        myapp-local
-      Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
-      Literal  CE_SUBDOMAIN  glxo4kabcde
+    Environment Variables:    
+        Type     Name             Value  
+        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_APP           myapp  
+        Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
+        Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+        Literal  CE_REGION        us-south  
+        Literal  CE_SUBDOMAIN     abcdabcdab
     Image:                  private.us.icr.io/ce--abcde-glxo4kabcde/app-myapp-local:220414-2010-sqsoj
     Resource Allocation:
       CPU:                1

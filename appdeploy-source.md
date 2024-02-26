@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-02-26"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -130,11 +130,14 @@ Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
 Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 Status Summary:  Application deployed successfully
 
-Environment Variables:
-  Type     Name          Value
-  Literal  CE_APP        myapp
-  Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
-  Literal  CE_SUBDOMAIN  4svg40kna19
+Environment Variables:    
+    Type     Name             Value  
+    Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+    Literal  CE_APP           myapp  
+    Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
+    Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Literal  CE_REGION        us-south  
+    Literal  CE_SUBDOMAIN     abcdabcdab
 Image:                  private.us.icr.io/ce--27fe9-4svg40kna19/app-myapp:220414-2010-sqsoj
 Resource Allocation:
   CPU:                1

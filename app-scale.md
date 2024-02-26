@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-02-26"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -173,7 +173,15 @@ You can observe the number of running instances of your app with the CLI.
     Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
     Status Summary:  Application deployed successfully
-
+    
+    Environment Variables:    
+        Type     Name             Value  
+        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_APP           myapp  
+        Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
+        Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+        Literal  CE_REGION        us-south  
+        Literal  CE_SUBDOMAIN     abcdabcdab
     Image:                icr.io/codeengine/helloworld
     Resource Allocation:
         CPU:                1
@@ -296,10 +304,13 @@ You can observe the number of running instances of your app with the CLI.
     Status Summary:     Application deployed successfully  
 
     Environment Variables:    
-    Type     Name          Value  
-    Literal  CE_APP        myapp  
-    Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud  
-    Literal  CE_SUBDOMAIN  glxo4k7nj7d  
+        Type     Name             Value  
+        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_APP           myapp  
+        Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
+        Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+        Literal  CE_REGION        us-south  
+        Literal  CE_SUBDOMAIN     abcdabcdab  
     Image:                  icr.io/codeengine/helloworld  
     Resource Allocation:      
     CPU:                1  
