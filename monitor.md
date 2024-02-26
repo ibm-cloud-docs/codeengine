@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-02-14"
+lastupdated: "2024-02-26"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -325,7 +325,7 @@ Use this metric to monitor how many job runs are in your project. {{site.data.ke
 | `Metric Name` | `ibm_codeengine_jobruns`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, the jobrun condition` |
+| `Segment By` | `Service instance, name of the namespace, project name, job Name, jobrun condition` |
 {: caption="Table 16: Total number of job runs" caption-side="bottom"}
 
 ## Attributes for segmentation
