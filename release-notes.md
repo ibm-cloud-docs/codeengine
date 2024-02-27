@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-02-27"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,8 +23,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 ## February 2024
 {: #codeengine-feb24}
 
-### XX February 2024
-{: #codeengine-febXX24}
+### 27 February 2024
+{: #codeengine-feb2724}
 {: release-note}
 
 Added `CE_REGION`, `CE_PROJECT`, and `CE_API_BASE_URL` environment variables for applications and jobs

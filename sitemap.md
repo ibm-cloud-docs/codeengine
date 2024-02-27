@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-02-27"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -138,7 +138,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb24)
 
-    * [XX February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-febXX24)
+    * [27 February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb2724)
 
         * Added `CE_REGION`, `CE_PROJECT`, and `CE_API_BASE_URL` environment variables for applications and jobs
 
