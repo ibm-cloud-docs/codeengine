@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-02-26"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -78,8 +78,11 @@ Hello World from:
 
 Some Env Vars:
 --------------
+CE_API_BASE_URL=https://api.private.us-south.codeengine.cloud.ibm.com
 CE_APP=myapp
-CE_DOMAIN=us-east.codeengine.appdomain.cloud
+CE_DOMAIN=us-south.codeengine.appdomain.cloud
+CE_PROJECT_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+CE_REGION=us-south
 CE_SUBDOMAIN=abcdabcdab
 HOME=/root
 HOSTNAME=myapp-00001-deployment-5b5895fdf7-abcd
@@ -204,8 +207,11 @@ Hello World from:
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------
+CE_API_BASE_URL=https://api.private.us-south.codeengine.cloud.ibm.com
 CE_APP=myapp
 CE_DOMAIN=us-south.codeengine.appdomain.cloud
+CE_PROJECT_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+CE_REGION=us-south
 CE_SUBDOMAIN=abcdabcdab
 HOME=/root
 HOSTNAME=myapp-00001-deployment-6db6d89dc7-k6qc7

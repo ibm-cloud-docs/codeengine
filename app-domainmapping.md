@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-12-19"
+  years: 2022, 2024
+lastupdated: "2024-02-26"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -191,8 +191,11 @@ Hello World from:
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------
+CE_API_BASE_URL=https://api.private.us-south.codeengine.cloud.ibm.com
 CE_APP=myapp
-CE_DOMAIN=us-east.codeengine.appdomain.cloud
+CE_DOMAIN=us-south.codeengine.appdomain.cloud
+CE_PROJECT_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+CE_REGION=us-south
 CE_SUBDOMAIN=abcdabcdab
 HOME=/root
 HOSTNAME=myapp-00001-deployment-6db6d89dc7-k6qc7

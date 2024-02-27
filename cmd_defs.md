@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-05"
+lastupdated: "2024-02-26"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -504,10 +504,13 @@ Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-a
 Status Summary:     Application deployed successfully  
 
 Environment Variables:    
-  Type     Name          Value  
-  Literal  CE_APP        myapp  
-  Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud  
-  Literal  CE_SUBDOMAIN  glxo4k7nj7d  
+  Type     Name             Value  
+  Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+  Literal  CE_APP           myapp  
+  Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
+  Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+  Literal  CE_REGION        us-south  
+  Literal  CE_SUBDOMAIN     abcdabcdab  
 Image:                  icr.io/codeengine/helloworld  
 Resource Allocation:      
   CPU:                1  

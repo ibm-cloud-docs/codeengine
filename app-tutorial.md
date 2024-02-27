@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-09-19"
+  years: 2020, 2024
+lastupdated: "2024-02-26"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -87,7 +87,15 @@ If you have a container image that you want to use, you can replace the image re
     Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
     Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
     Status Summary:  Application deployed successfully
-
+    
+    Environment Variables:    
+        Type     Name             Value  
+        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_APP           myapp  
+        Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
+        Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+        Literal  CE_REGION        us-south  
+        Literal  CE_SUBDOMAIN     abcdabcdab
     Image:                icr.io/codeengine/hello
     Resource Allocation:
     CPU:                1
@@ -203,9 +211,15 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
     Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
     Status Summary:  Application deployed successfully
 
-    Environment Variables:
-        Type     Name          Value
-        Literal  TARGET        Stranger
+    Environment Variables:    
+        Type     Name             Value  
+        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_APP           myapp  
+        Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
+        Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+        Literal  CE_REGION        us-south  
+        Literal  CE_SUBDOMAIN     abcdabcdab
+        Literal  TARGET           Stranger
     Image:                icr.io/codeengine/hello
 
      Status Summary:  Application deployed successfully
@@ -302,9 +316,15 @@ The following example illustrates how to scale your application with the CLI. Yo
     Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
     Status Summary:  Application deployed successfully
 
-    Environment Variables:
-        Type     Name          Value
-        Literal  TARGET        Stranger
+    Environment Variables:    
+        Type     Name             Value  
+        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_APP           myapp  
+        Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
+        Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+        Literal  CE_REGION        us-south  
+        Literal  CE_SUBDOMAIN     abcdabcdab
+        Literal  TARGET           Stranger
     Image:                  icr.io/codeengine/hello
 
     Resource Allocation:
@@ -358,9 +378,15 @@ The following example illustrates how to scale your application with the CLI. Yo
     Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
     Status Summary:  Application deployed successfully
 
-    Environment Variables:
-        Type     Name          Value
-        Literal  TARGET        Stranger
+    Environment Variables:    
+        Type     Name             Value  
+        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_APP           myapp  
+        Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
+        Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+        Literal  CE_REGION        us-south  
+        Literal  CE_SUBDOMAIN     abcdabcdab
+        Literal  TARGET           Stranger
     Image:                  icr.io/codeengine/hello
 
     Resource Allocation:
@@ -419,9 +445,15 @@ The following example illustrates how to scale your application with the CLI. Yo
     Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
     Status Summary:  Application deployed successfully
 
-    Environment Variables:
-        Type     Name          Value
-        Literal  TARGET        Stranger
+    Environment Variables:    
+        Type     Name             Value  
+        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_APP           myapp  
+        Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
+        Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+        Literal  CE_REGION        us-south  
+        Literal  CE_SUBDOMAIN     abcdabcdab
+        Literal  TARGET           Stranger
     Image:                  icr.io/codeengine/hello
 
     Resource Allocation:
