@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-12"
+  years: 2020, 2024
+lastupdated: "2024-02-28"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -119,4 +119,12 @@ After you set up your environment, you can interact with Kubernetes API. You mus
 | `daemonset` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` |
 | `pods.metrics.k8s.io` | list | list | list |
 {: caption="Table 1. Kubernetes authorities" caption-side=ottom"}
+
+
+
+
+
+
+
+
 

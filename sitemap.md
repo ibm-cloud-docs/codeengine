@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-02-28"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3828,27 +3828,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_api_reference}
 
 
-[API reference](/docs/codeengine?topic=codeengine-api#api)
-
-* [Retrieve your Kubernetes configuration with REST API](/docs/codeengine?topic=codeengine-api#api-rest)
-
-    * [Authenticate with {{site.data.keyword.iamshort}}](/docs/codeengine?topic=codeengine-api#api-iam)
-
-    * [Determine the GUID of your {{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-api#api-guid)
-
-    * [Query the IBM {{site.data.keyword.codeengineshort}} API](/docs/codeengine?topic=codeengine-api#api-query-api)
-
-* [Retrieving your Kubernetes configuration with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-api#api-cli)
-
-* [Custom resource definition (CRD)](/docs/codeengine?topic=codeengine-api#api-crd)
-
-    * [Batch CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-batch)
-
-    * [Serving CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-serving)
-
-    * [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i)
-
-    * [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription)
+[Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: external}
 
 [API change log](/docs/codeengine?topic=codeengine-api-changelog#api-changelog)
 
@@ -3879,8 +3859,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Working with a {{site.data.keyword.codeengineshort}} application in the API](/docs/codeengine?topic=codeengine-ceapi-getstart#ceapi-getstart-workapps)
 
 * [Next steps](/docs/codeengine?topic=codeengine-ceapi-getstart#ceapi-getstart-next)
-
-[Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: external}
 
 
 ## Automatically injected environment variables
