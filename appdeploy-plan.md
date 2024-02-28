@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-09"
+  years: 2020, 2024
+lastupdated: "2024-02-28"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -27,7 +27,7 @@ Before you begin
 
 For security features provided with {{site.data.keyword.codeengineshort}}, see [{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure).
 
-{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Serving CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-serving).
+{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [Serving CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-serving).
 
 Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? See [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 {: tip}

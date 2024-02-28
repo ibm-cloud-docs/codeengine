@@ -18,7 +18,7 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tools that are based on Kubernetes or Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Kubernetes (and Knative) APIs and their CLI commands. For more information about Knative, see [Using Knative with Code Engine](/docs/codeengine?topic=codeengine-knative).
 {: shortdesc}
 
-If you decide to use Kubernetes with {{site.data.keyword.codeengineshort}}, consider the following:
+If you decide to use Kubernetes with {{site.data.keyword.codeengineshort}}, consider the following information:
 
 * Most containers or pods that run on Kubernetes also run on {{site.data.keyword.codeengineshort}}.
 * Kubernetes constructs, such as deployments, run on {{site.data.keyword.codeengineshort}} if they do not use cluster-wide capabilities, such as security policies. {{site.data.keyword.codeengineshort}} is scoped to what can run in a Kubernetes namespace.

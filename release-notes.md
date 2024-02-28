@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-02-28"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -94,7 +94,7 @@ Added troubleshooting information about displaying limits and current usage with
 :   - See [Debugging jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-limits).
 
 The `Build` and `BuildRun` Kubernetes API objects are available in a new version
-:   The `Build` and `BuildRun` Kubernetes API objects are available as `v1beta1` version. The `v1alpha1` version of these objects is deprecated. If you use the Kubernetes API to manage these objects, update to use the `v1beta1` version.  No action is required if you use the {{site.data.keyword.codeengineshort}} API, CLI, or console. See [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i).
+:   The `Build` and `BuildRun` Kubernetes API objects are available as `v1beta1` version. The `v1alpha1` version of these objects is deprecated. If you use the Kubernetes API to manage these objects, update to use the `v1beta1` version.  No action is required if you use the {{site.data.keyword.codeengineshort}} API, CLI, or console. See [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-s2i).
 
 ## January 2024
 {: #codeengine-jan24}
@@ -2341,7 +2341,9 @@ Updated limits for {{site.data.keyword.codeengineshort}}
 :   See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 Updated API CRD information for subscriptions and jobs
-:   See [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription) and [Job CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-batch).
+:   See [Subscription CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-subscription) and [Job CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-batch).
+
+[Using Kubernetes with {{site.data.keyword.codeengineshort}} - Serving CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-serving).
 
 Updated information for troubleshooting your builds
 :   See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
@@ -2577,7 +2579,7 @@ Updated build information
 :   See [Building a container image](/docs/codeengine?topic=codeengine-plan-build).
 
 Added API CRD information for subscriptions
-:   See [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
+:   See [Subscription CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-subscription).
 
 Updated task information for jobs
 :   See [creating jobs with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-create-job-crimage) and [creating jobs with images from a private repository](/docs/codeengine?topic=codeengine-create-job-private).
@@ -2889,7 +2891,7 @@ CLI version 0.3.1973 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 {{site.data.keyword.codeengineshort}} batch CRDs updated to `v1beta1`
-:   See [Batch CRDs](/docs/codeengine?topic=codeengine-api#api-crd-batch).
+:   See [Batch CRDs](/docs/codeengine?topic=codeengine-kubernetes#api-crd-batch).
 
 ## August 2020
 {: #codeengine-aug20}

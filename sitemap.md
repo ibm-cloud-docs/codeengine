@@ -1494,6 +1494,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated API CRD information for subscriptions and jobs
 
+        * [Using Kubernetes with {{site.data.keyword.codeengineshort}} - Serving CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-serving).
+
         * Updated information for troubleshooting your builds
 
         * Updated service bind information

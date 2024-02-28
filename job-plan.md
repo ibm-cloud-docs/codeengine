@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-28"
+  years: 2020, 2024
+lastupdated: "2024-02-28"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -27,7 +27,7 @@ Before you begin
 Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? See [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 {: tip}
 
-{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Batch CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-batch).
+{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [Batch CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-batch).
 
 ## How do I make my code run as a {{site.data.keyword.codeengineshort}} job component?
 {: #job-containerimage}
