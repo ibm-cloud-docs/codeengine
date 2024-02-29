@@ -137,5 +137,5 @@ Otherwise, you can use [set up {{site.data.keyword.la_full_notm}}](/docs/codeeng
 ### Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function? 
 {: #openapi-spec-fun-migrate}
 
-No, {{site.data.keyword.codeengineshort}} does generate or provide an OpenAPI specification for the functions you deploy. There are packages and tools available for many programming languages to generate an OpenAPI specification from code. 
+No, {{site.data.keyword.codeengineshort}} does not generate or provide an OpenAPI specification for the functions you deploy. There are packages and tools available for many programming languages to generate an OpenAPI specification from code. 
 
