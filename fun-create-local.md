@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-12-11"
+  years: 2023, 2024
+lastupdated: "2024-03-01"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -45,16 +45,27 @@ This example uses the following Node.js code, saved as a `main.js` file. You can
 
 
 ```javascript
+/**
+ * The `main` function is the entry-point into the function.
+ * It has one optional argument, which carries all the 
+ * parameters the function was invoked with.
+*/
 async function main(params) {
-    console.log(process.env);
-    console.log(params.__ce_headers);
-    console.log("params: "+params);
-    return { 
-        statusCode: 200, 
-        headers: { 'Content-Type': 'application/json' }, 
-        body: params };
+  // log environment variables available to the function
+  console.log(process.env);
+  // log Code Engine system headers available to the function
+  console.log(params.__ce_headers);
+  // log all parameters for debugging purposes
+  console.log("params: "+params);
+  // since functions are invoked through http(s), we return an HTTP response
+  return { 
+      statusCode: 200, 
+      headers: { 'Content-Type': 'application/json' }, 
+      body: params };
 }
 
+// this step is necessary, if you gave your main function a different name
+// we include it here for documentation purposes only
 module.exports.main = main;
 ```
 {: codeblock}
