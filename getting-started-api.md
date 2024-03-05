@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-06"
+  years: 2024
+lastupdated: "2024-03-05"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -130,5 +130,7 @@ To start working with {{site.data.keyword.codeengineshort}} components with the 
 * [Create a job](https://cloud.ibm.com/apidocs/codeengine/v2#create-job){: external} or [Create a job run](https://cloud.ibm.com/apidocs/codeengine/v2#create-job-run){: external}
 
 
+
+{{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tools that are based on Kubernetes or Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Knative and Kubernetes APIs and their CLI commands. For more information, see [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes) and [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes).
 
 
