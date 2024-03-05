@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-04"
+lastupdated: "2024-03-05"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -233,7 +233,7 @@ Create a function that includes a dependency for a specific Python module by cre
 
     ```py
     # use third-party 'lorem-ipsum' package to generate random words
-from lorem_text import lorem
+    from lorem_text import lorem
 
     # The `main` function is the entry-point into the function.
     # It has one optional argument, which carries all the 
