@@ -71,14 +71,14 @@ Now that your {{site.data.keyword.codeengineshort}} API environment is set up, y
     curl -X POST "https://api.${region}.codeengine.cloud.ibm.com/v2/projects/${project_id}/apps" \
       -H "Authorization: ${token}" \
       -H "Content-Type: application/json" \
-      -d '{
-        "name": "my-app",
-        "image_reference": "icr.io/codeengine/helloworld"
+      -d '{ \
+        "name": "my-app", \
+        "image_reference": "icr.io/codeengine/helloworld" \
       }'
     ```
     {: pre}
 
-2. To display details about the `my-app` application, send a `GET` request. Be sure to reference the name of your app. Note that the last line of `jq` is optional, though it makes the output more readable.   
+2. To display details about the `my-app` application, send a `GET` request. Be sure to reference the name of your app. Note that the last line of `jq` is optional, though it makes the output more readable.
 
     ```sh
     curl -X GET "https://api.${region}.codeengine.cloud.ibm.com/v2/projects/${project_id}/apps/my-app" \
