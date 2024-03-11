@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-12-11"
+  years: 2023, 2024
+lastupdated: "2024-03-11"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -45,16 +45,27 @@ This example uses the following Node.js code, saved as a `main.js` file. You can
 
 
 ```javascript
+/**
+ * The `main` function is the entry-point into the function.
+ * It has one optional argument, which carries all the 
+ * parameters the function was invoked with.
+*/
 async function main(params) {
-    console.log(process.env);
-    console.log(params.__ce_headers);
-    console.log("params: "+params);
-    return { 
-        statusCode: 200, 
-        headers: { 'Content-Type': 'application/json' }, 
-        body: params };
+  // log environment variables available to the function
+  console.log(process.env);
+  // log Code Engine system headers available to the function
+  console.log(params.__ce_headers);
+  // log all parameters for debugging purposes
+  console.log("params: "+params);
+  // since functions are invoked through http(s), we return an HTTP response
+  return { 
+      statusCode: 200, 
+      headers: { 'Content-Type': 'application/json' }, 
+      body: params };
 }
 
+// this step is necessary, if you gave your main function a different name
+// we include it here for documentation purposes only
 module.exports.main = main;
 ```
 {: codeblock}
@@ -158,22 +169,31 @@ You can create functions in many different programming languages. When your func
 ### Including modules for a Node.js function
 {: #function-nodejs-dep-local}
 
-Create a function that includes a dependency for a specific Python module by creating a `package.json` file. In this case, both the source code and package file are located in the same folder.
+Create a function that includes a dependency for a specific Node.js module by creating a `package.json` file. In this case, both the source code and package file are located in the same folder.
 
 
 1. Create your source code by writing your code into a `main.js` file. For example, copy the following code example into a file called `main.js`.
 
     ```javascript
-    function main(args) {
+    /**
+    * The `main` function is the entry-point into the function.
+    * It has one optional argument, which carries all the 
+    * parameters the function was invoked with.
+    */
+    function main(params /* optional */) {
+      // use third-party 'lorem-ipsum' package to generate random words
       const LoremIpsum = require("lorem-ipsum").LoremIpsum;
       const lorem = new LoremIpsum();
 
+      // since functions are invoked through http(s), we return an HTTP response
       return {
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: lorem.generateWords(10),
       };
     }
 
+    // this step is necessary, if you gave your main function a different name
+    // we include it here for documentation purposes only
     module.exports.main = main;
     ```
     {: codeblock}
@@ -212,9 +232,22 @@ Create a function that includes a dependency for a specific Python module by cre
 1. Create your function by saving your code into a `__main__.py` file 
 
     ```py
+    # use third-party 'lorem-ipsum' package to generate random words
     from lorem_text import lorem
 
+    # The `main` function is the entry-point into the function.
+    # It has one optional argument, which carries all the 
+    # parameters the function was invoked with.
+    def main(params):
+        words = 10
 
+        # since functions are invoked through http(s), we return an HTTP response
+        return {
+          "headers": {
+            "Content-Type": "text/plain;charset=utf-8",
+        },
+        "body": lorem.words(words),
+    }
     def main(params):
          words = 10
 

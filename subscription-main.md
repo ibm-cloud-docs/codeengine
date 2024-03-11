@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-09-06"
+  years: 2021, 2024
+lastupdated: "2024-02-28"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -36,7 +36,7 @@ Webhooks
 :    You can use GitHub webhooks to send events from a GitHub repository to your {{site.data.keyword.codeengineshort}} workload. The event is sent as a POST request in one of the [supported content types](https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks#content-type){: external}. You must use an application with a public endpoint to receive the GitHub event; jobs are not supported. For more information, see [Sending GitHub events to an application](/docs/codeengine?topic=codeengine-github-event-webhooks).
 
 
-For more information about subscription APIs, see [{{site.data.keyword.codeengineshort}} API reference - Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
+For more information about subscription APIs, see [Subscription CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-subscription).
  
 ## Subscriptions for apps and app scaling
 {: #subscribing-events-app-scaling}

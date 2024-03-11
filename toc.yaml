@@ -186,12 +186,11 @@ toc:
       - topicgroup:
           label: API reference
           topics:
-          - api.md
-          - api-changelog.md
-          - getting-started-api.md
           - link: 
               label: Code Engine API 
               href: https://cloud.ibm.com/apidocs/codeengine
+          - api-changelog.md
+          - getting-started-api.md
       - envvar-autoinject.md
       - cmd-args.md
       - limits.md
@@ -273,6 +272,7 @@ toc:
               - troubleshoot-project.md
               - ts-project-cannotaccess.md
               - ts-project-cannotcreate.md
+
           - topicgroup:
               label: Troubleshooting service bindings 
               topics:

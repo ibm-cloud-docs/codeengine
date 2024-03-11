@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-31"
+lastupdated: "2024-03-05"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -51,7 +51,7 @@ When you migrate your IBM Cloud Functions based workloads, consider the followin
     - Node.js Release Version 18
     - Python Release Version 3.11
   
-- Provides [optimized CPU and memory combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+- Provides optimized [CPU and memory combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 In addition, {{site.data.keyword.codeengineshort}} includes [Function limits](/docs/codeengine?topic=codeengine-limits#limits_functions), as well as [project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). 
 

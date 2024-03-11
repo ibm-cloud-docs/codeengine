@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-22"
+lastupdated: "2024-02-28"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -25,7 +25,7 @@ If you have an image build that exists in a container registry and the image was
 {: important}
 
 
-{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i).
+{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-s2i).
 
 ## Prepare your source location
 {: #build-plan-repo}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-03-11"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -135,6 +135,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [March 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar24)
+
+    * [11 March 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar1124)
+
+        * Added `CE_REGION`, `CE_PROJECT`, and `CE_API_BASE_URL` environment variables for functions
 
 * [February 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb24)
 
@@ -1493,6 +1499,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
         * Updated limits for {{site.data.keyword.codeengineshort}}
 
         * Updated API CRD information for subscriptions and jobs
+
+        * [Using Kubernetes with {{site.data.keyword.codeengineshort}} - Serving CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-serving).
 
         * Updated information for troubleshooting your builds
 
@@ -3828,27 +3836,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_api_reference}
 
 
-[API reference](/docs/codeengine?topic=codeengine-api#api)
-
-* [Retrieve your Kubernetes configuration with REST API](/docs/codeengine?topic=codeengine-api#api-rest)
-
-    * [Authenticate with {{site.data.keyword.iamshort}}](/docs/codeengine?topic=codeengine-api#api-iam)
-
-    * [Determine the GUID of your {{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-api#api-guid)
-
-    * [Query the IBM {{site.data.keyword.codeengineshort}} API](/docs/codeengine?topic=codeengine-api#api-query-api)
-
-* [Retrieving your Kubernetes configuration with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-api#api-cli)
-
-* [Custom resource definition (CRD)](/docs/codeengine?topic=codeengine-api#api-crd)
-
-    * [Batch CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-batch)
-
-    * [Serving CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-serving)
-
-    * [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i)
-
-    * [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription)
+[Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: external}
 
 [API change log](/docs/codeengine?topic=codeengine-api-changelog#api-changelog)
 
@@ -3879,8 +3867,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Working with a {{site.data.keyword.codeengineshort}} application in the API](/docs/codeengine?topic=codeengine-ceapi-getstart#ceapi-getstart-workapps)
 
 * [Next steps](/docs/codeengine?topic=codeengine-ceapi-getstart#ceapi-getstart-next)
-
-[Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: external}
 
 
 ## Automatically injected environment variables
@@ -4080,6 +4066,24 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-kubeconfig)
 
 * [Required access authorities to work with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-api)
+
+* [Retrieving your Kubernetes configuration](/docs/codeengine?topic=codeengine-kubernetes#kubernetes-getconfig)
+
+    * [Retrieve your Kubernetes configuration with REST API](/docs/codeengine?topic=codeengine-kubernetes#api-rest)
+
+    * [Retrieve your Kubernetes configuration with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kubernetes#api-cli)
+
+* [Custom resource definition (CRD)](/docs/codeengine?topic=codeengine-kubernetes#kubernetes-api-crd)
+
+    * [Batch CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-batch)
+
+    * [Function CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-function)
+
+    * [Serving CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-serving)
+
+    * [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-s2i)
+
+    * [Subscription CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-subscription)
 
 
 ## Using Knative with Code Engine
