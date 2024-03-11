@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-05"
+lastupdated: "2024-03-11"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -169,7 +169,7 @@ You can create functions in many different programming languages. When your func
 ### Including modules for a Node.js function
 {: #function-nodejs-dep-local}
 
-Create a function that includes a dependency for a specific Python module by creating a `package.json` file. In this case, both the source code and package file are located in the same folder.
+Create a function that includes a dependency for a specific Node.js module by creating a `package.json` file. In this case, both the source code and package file are located in the same folder.
 
 
 1. Create your source code by writing your code into a `main.js` file. For example, copy the following code example into a file called `main.js`.
