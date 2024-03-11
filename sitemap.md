@@ -4067,6 +4067,24 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Required access authorities to work with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-api)
 
+* [Retrieving your Kubernetes configuration](/docs/codeengine?topic=codeengine-kubernetes#kubernetes-getconfig)
+
+    * [Retrieve your Kubernetes configuration with REST API](/docs/codeengine?topic=codeengine-kubernetes#api-rest)
+
+    * [Retrieve your Kubernetes configuration with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kubernetes#api-cli)
+
+* [Custom resource definition (CRD)](/docs/codeengine?topic=codeengine-kubernetes#kubernetes-api-crd)
+
+    * [Batch CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-batch)
+
+    * [Function CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-function)
+
+    * [Serving CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-serving)
+
+    * [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-s2i)
+
+    * [Subscription CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-subscription)
+
 
 ## Using Knative with Code Engine
 {: #sitemap_using_knative_with_code_engine}

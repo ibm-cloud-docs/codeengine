@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-03-11"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -27,8 +27,11 @@ The environment variables, `CE_APP`, `CE_DOMAIN`, and `CE_SUBDOMAIN` are used to
 
 | Environment variable | Description | Example |
 |--------------------|-------------------------------------------------------|--------------|
+| `CE_API_BASE_URL`  | The private {{site.data.keyword.codeengineshort}} API URL that is based on the region of the project. Use this URL for API endpoint calls to the endpoint for all components (including applications) that are located in the same region of your {{site.data.keyword.codeengineshort}} project.  | `CE_API_BASE_URL=https://api.private.us-south.codeengine.cloud.ibm.comp` |
 | `CE_APP`           | The name of the application.                                          | `CE_APP=myapp` |
 | `CE_DOMAIN`        | The domain name portion of the URL of the application (and project).  | `CE_DOMAIN=us-south.codeengine.dev.appdomain.cloud` |
+| `CE_REGION`        | The region where the application resides. | `CE_REGION=us-south` |
+| `CE_PROJECT_ID`     | The project ID of your project. | `CE_PROJECT_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f` |
 | `CE_SUBDOMAIN`     | The subdomain portion of the URL associated with the application (and project). If you are familiar with Kubernetes, CE_SUBDOMAIN maps to the Kubernetes namespace associated with your project. | `CE_SUBDOMAIN=01234567-abcd` |
 | `HOME`             | Your home directory that is running the app.                          | `HOME=/root` |
 | `HOSTNAME`         | The name of instance that your app is deployed to.                    | `HOSTNAME=myapp-00001-deployment-65684cffd-xng7z` | 
@@ -51,7 +54,10 @@ The following table lists automatically injected environment variables into each
 
 | Environment variable | Description | Example |
 |----------------|---------------------|---------|
+| `CE_API_BASE_URL`  | The private {{site.data.keyword.codeengineshort}} API URL that is based on the region of the project. Use this URL for API endpoint calls to the endpoint for all components (including jobs) that are located in the same region of your {{site.data.keyword.codeengineshort}} project.   | `CE_API_BASE_URL=https://api.private.us-south.codeengine.cloud.ibm.comp` |
 | `CE_DOMAIN`    | The domain name of the project.                                           | `CE_DOMAIN=us-south.codeengine.appdomain.cloud` |
+| `CE_REGION`    | The region where the job run resides. | `CE_REGION=us-south` |
+| `CE_PROJECT_ID` | The project ID of your project. | `CE_PROJECT_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f` |
 | `CE_JOB`       | The name of the defined job configuration that was used for the job run.  | `CE_JOB=myjobdef` |
 | `CE_JOBRUN`    | The name of the job run.                                                  | `CE_JOBRUN=myjob-jobrun-f5kxz` |
 | `CE_SUBDOMAIN` | The subdomain associated with the project in which your job is running. If you are familiar with Kubernetes, `CE_SUBDOMAIN` maps to the Kubernetes namespace that is associated with your project.                       | `CE_SUBDOMAIN=01234567-abcd` |
@@ -79,8 +85,11 @@ The environment variables, `CE_FUNCTION`, `CE_DOMAIN`, and `CE_SUBDOMAIN` are us
 
 | Environment variable | Description | Example |
 |--------------------|-------------------------------------------------------|--------------|
+| `CE_API_BASE_URL`  | The private {{site.data.keyword.codeengineshort}} API URL that is based on the region of the project. Use this URL for API endpoint calls to the endpoint for all components (including functions) that are located in the same region of your {{site.data.keyword.codeengineshort}} project.  | `CE_API_BASE_URL=https://api.private.us-south.codeengine.cloud.ibm.comp` |
 | `CE_ALLOW_CONCURRENT`| This internal boolean setting is used by the {{site.data.keyword.codeengineshort}} function controller to indicate if the runtime supports concurrent invocations of the same function instance, and can be ignored. | `CE_ALLOW_CONCURRENT=true` |
 | `CE_DOMAIN`          | The domain name portion of the URL of the function (and project).  | `CE_DOMAIN=us-south.codeengine.dev.appdomain.cloud` |
+| `CE_REGION`    | The region where the function resides. | `CE_REGION=us-south` |
+| `CE_PROJECT_ID` | The project ID of your project. | `CE_PROJECT_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f` |
 | `CE_EXECUTION_ENV`   | The managed runtime type and its release version.                     | `CE_EXECUTION_ENV=ibm/action-python-v3.11` This example specifies to use Python v3.11.  |
 | `CE_FUNCTION`        | The name of the function.                                             | `CE_APP=myfunc` |
 | `CE_SUBDOMAIN`       | The subdomain portion of the URL associated with the function (and project). If you are familiar with Kubernetes, `CE_SUBDOMAIN` maps to the Kubernetes namespace associated with your project. | `CE_SUBDOMAIN=01234567-abcd` |
