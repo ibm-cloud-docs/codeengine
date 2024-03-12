@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-03-12"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -312,6 +312,8 @@ While *stable* mode is used for general operations, *panic* mode has a much shor
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 15: Specifies if panic mode is enabled" caption-side="bottom"}
+
+
 
 ### `ibm_codeengine_jobruns`
 {: #ibm_codeengine_jobruns}
