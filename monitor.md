@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-12"
+lastupdated: "2024-03-13"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -51,7 +51,7 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 You can also start the {{site.data.keyword.mon_short}} dashboard at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
 
 
-When you use the {{site.data.keyword.mon_full_notm}} service to monitor {{site.data.keyword.codeengineshort}} workloads, there can be delays before the data is processed and available in {{site.data.keyword.mon_short}}. For example, right after you create your monitoring instance, it takes a few minutes before there is a meaningful monitoring data to display. Be aware that it might take around 5 minutes for your monitoring data to show in {{site.data.keyword.mon_short}}.
+When you use the {{site.data.keyword.mon_full_notm}} service to monitor {{site.data.keyword.codeengineshort}} workloads, delays can occur before the data is processed and available in {{site.data.keyword.mon_short}}. For example, right after you create your monitoring instance, it takes a few minutes before meaningful monitoring data is displayed. Be aware that it might take around 5 minutes for your monitoring data to show in {{site.data.keyword.mon_short}}.
 {: important}
 
 
