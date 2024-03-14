@@ -138,6 +138,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [March 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar24)
 
+    * [14 March 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar1424)
+
+        * CLI version 1.49.6 released
+
     * [11 March 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar1124)
 
         * Added `CE_REGION`, `CE_PROJECT`, and `CE_API_BASE_URL` environment variables for functions
