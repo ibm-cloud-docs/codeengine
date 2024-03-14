@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-05"
+lastupdated: "2024-03-14"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -125,7 +125,7 @@ If you are using Cloud Functions that are based on `whisk.system` actions, you c
 ### Can I bind my function to service credentials?
 {: #fun-migrate-faq9}
 
-Yes, service binds are supported! See [Working with service bindings to integrate IBM Cloud services with Code Engine](/docs/codeengine?topic=codeengine-service-binding).                     
+Yes, service binds are supported! See [Working with service bindings to integrate IBM Cloud services with Code Engine](/docs/codeengine?topic=codeengine-service-binding).
 
 ### Where can I find information about my in progress and finished {{site.data.keyword.codeengineshort}} Function runs?
 {: #fun-migrate-faq10}
@@ -137,5 +137,5 @@ Otherwise, you can use [set up {{site.data.keyword.la_full_notm}}](/docs/codeeng
 ### Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function? 
 {: #openapi-spec-fun-migrate}
 
-No, {{site.data.keyword.codeengineshort}} does generate or provide an OpenAPI specification for the functions you deploy. There are packages and tools available for many programming languages to generate an OpenAPI specification from code. 
+No, {{site.data.keyword.codeengineshort}} does not generate or provide an OpenAPI specification for the functions you deploy. There are packages and tools available for many programming languages to generate an OpenAPI specification from code. 
 
