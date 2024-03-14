@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-03-14"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -123,7 +123,7 @@ No, in {{site.data.keyword.codeengineshort}}, roles that are applied to any {{si
 {: faq}
 {: support}
 
-No, {{site.data.keyword.codeengineshort}} does generate or provide an OpenAPI specification for the functions you deploy. There are packages and tools available for many programming languages to generate an OpenAPI specification from code.
+No, {{site.data.keyword.codeengineshort}} does not generate or provide an OpenAPI specification for the functions you deploy. There are packages and tools available for many programming languages to generate an OpenAPI specification from code.
 
 ## How can I review the {{site.data.keyword.codeengineshort}} service terms?  
 {: #review-service-terms}
