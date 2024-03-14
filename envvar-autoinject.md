@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-03-11"
+lastupdated: "2024-03-14"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -91,7 +91,7 @@ The environment variables, `CE_FUNCTION`, `CE_DOMAIN`, and `CE_SUBDOMAIN` are us
 | `CE_REGION`    | The region where the function resides. | `CE_REGION=us-south` |
 | `CE_PROJECT_ID` | The project ID of your project. | `CE_PROJECT_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f` |
 | `CE_EXECUTION_ENV`   | The managed runtime type and its release version.                     | `CE_EXECUTION_ENV=ibm/action-python-v3.11` This example specifies to use Python v3.11.  |
-| `CE_FUNCTION`        | The name of the function.                                             | `CE_APP=myfunc` |
+| `CE_FUNCTION`        | The name of the function.                                             | `CE_FUNCTION=myfunc` |
 | `CE_SUBDOMAIN`       | The subdomain portion of the URL associated with the function (and project). If you are familiar with Kubernetes, `CE_SUBDOMAIN` maps to the Kubernetes namespace associated with your project. | `CE_SUBDOMAIN=01234567-abcd` |
 | `HOME`               | The home directory of the runtime container for the function.         | `HOME=/root` |
 | `LC_CTYPE`           | The locale that is used by the `ctype` and `multibyte` operating system API. Available only with Python runtimes.     | `LC_CTYPE=C.UTF-8` |
