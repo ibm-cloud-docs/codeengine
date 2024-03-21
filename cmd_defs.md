@@ -505,7 +505,7 @@ Status Summary:     Application deployed successfully
 
 Environment Variables:    
   Type     Name             Value  
-  Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+  Literal  CE_API_BASE_URL  https://api.us-south.codeengine.cloud.ibm.com  
   Literal  CE_APP           myapp  
   Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
   Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
