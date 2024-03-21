@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-03-21"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -90,7 +90,7 @@ If you have a container image that you want to use, you can replace the image re
     
     Environment Variables:    
         Type     Name             Value  
-        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_API_BASE_URL  https://api.us-south.codeengine.cloud.ibm.com  
         Literal  CE_APP           myapp  
         Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
         Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
@@ -213,7 +213,7 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 
     Environment Variables:    
         Type     Name             Value  
-        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_API_BASE_URL  https://api.us-south.codeengine.cloud.ibm.com  
         Literal  CE_APP           myapp  
         Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
         Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
