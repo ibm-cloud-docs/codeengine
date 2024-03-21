@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-03-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -137,6 +137,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [March 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar24)
+
+    * [21 March 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar2124)
+
+        * CLI version 1.49.7 released
+
+        * Updated the value of `CE_API_BASE_URL` environment variable from `CE_API_BASE_URL=https://api.private.us-south.codeengine.cloud.ibm.com/` to `CE_API_BASE_URL=https://api.us-south.codeengine.cloud.ibm.com/` for applications and jobs
+
+        * Updated the default value for the `--max-scale` option on the **`app update`** command
 
     * [14 March 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar1424)
 

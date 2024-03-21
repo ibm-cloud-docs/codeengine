@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-21"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,6 +23,20 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## March 2024
 {: #codeengine-mar24}
+
+### 21 March 2024
+{: #codeengine-mar2124}
+{: release-note}
+
+CLI version 1.49.7 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated the value of `CE_API_BASE_URL` environment variable from `CE_API_BASE_URL=https://api.private.us-south.codeengine.cloud.ibm.com/` to `CE_API_BASE_URL=https://api.us-south.codeengine.cloud.ibm.com/` for applications and jobs
+:   See [Automatically injected environment variables for apps](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app).
+:   See [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs).
+
+Updated the default value for the `--max-scale` option on the **`app update`** command
+:   See the [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command in the {{site.data.keyword.codeengineshort}} CLI reference.
 
 ### 14 March 2024
 {: #codeengine-mar1424}
