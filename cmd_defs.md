@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-03-21"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -887,7 +887,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
 
 `--max-scale`, `--max`, `--maxscale`
-:   The maximum number of instances that can be used for this application. If you set this value to `0`, the application scales as needed. The application scaling is limited only by the instances per the resource quota for the project of your application. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits). This value is *optional*. The default value is `0`.
+:   The maximum number of instances that can be used for this application. If you set this value to `0`, the application scales as needed. The application scaling is limited only by the instances per the resource quota for the project of your application. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits). This value is *optional*. The default value is `10`.
 
 `--memory`, `-m`
 :   The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. 
@@ -1068,7 +1068,7 @@ ibmcloud ce build create --name BUILD_NAME [--build-type BUILD_TYPE] [--commit C
 :   The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. The source option is required if the `--build-type` option is `git` and not allowed if the `--build-type` option is `local`. This value is *optional*. 
 
 `--strategy`, `--str`
-:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. This value is *optional*. The default value is `dockerfile`.
+:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-18`, use `codebundle-nodejs-18` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. This value is *optional*. The default value is `dockerfile`.
 
 `--timeout`, `--to`
 :   The amount of time, in seconds, that can pass before the build must succeed or fail. This value is *optional*. The default value is `600`.
@@ -1310,7 +1310,7 @@ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--commit-clear] [-
 :   The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is *optional*. 
 
 `--strategy`, `--str`
-:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. This value is *optional*. 
+:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-18`, use `codebundle-nodejs-18` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. This value is *optional*. 
 
 `--timeout`, `--to`
 :   The amount of time, in seconds, that can pass before the build must succeed or fail. This value is *optional*. The default value is `600`.
@@ -1771,7 +1771,7 @@ ibmcloud ce buildrun submit (--build BUILD_NAME [--name NAME]) | (--name NAME [-
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. If the `--build` option is set, the source option is required if the `--build-type` option on the related build is `local` and **not** allowed if the `--build-type` option on the related build is `git`. If the `--build` option is not set, the source option is optional. This value is *optional*. The default value is `.`.
 
 `--strategy`, `--str`
-:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
+:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-18`, use `codebundle-nodejs-18` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. The build strategy option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
 
 `--timeout`, `--to`
 :   The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is *optional*. The default value is `600`.
@@ -2481,7 +2481,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 :   The directory in the repository that contains the source code for your function. This value is *optional*. 
 
 `--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
-:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your code-bundle image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed only if the `--build-source` option is set to the URL of a Git repository. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your code bundle image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed only if the `--build-source` option is set to the URL of a Git repository. This value is *optional*. 
 
 `--build-source`, `--source`, `--bsrc`, `--src`
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
@@ -2490,7 +2490,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 :   The amount of time, in seconds, that can pass before the build must succeed or fail. This value is *optional*. The default value is `600`.
 
 `--code-bundle`, `--cb`
-:   The name of the `code-bundle` image to use for this function. When `build-source` is specified, this value is the path to the output image generated by the build push. When `build-source` is not specified, this value is the path to the existing code-bundle image. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
+:   The name of the `code-bundle` image to use for this function. When `build-source` is specified, this value is the path to the output image generated by the build push. When `build-source` is not specified, this value is the path to the existing code bundle image. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
 
 `--code-bundle-secret`, `--cs`, `--cbs`
 :   The name of the registry secret that is used to authenticate with a private registry. You can add the registry secret by running the `registry create` command. This value is *optional*. 
@@ -2881,7 +2881,7 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 :   The amount of time, in seconds, that can pass before the build must succeed or fail. This value is *optional*. The default value is `600`.
 
 `--code-bundle`, `--cb`
-:   The name of the `code-bundle` image to use for this function. When `build-source` is specified, this value is the path to the output image generated by the build push. When `build-source` is not specified, this value is the path to the existing code-bundle image. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
+:   The name of the `code-bundle` image to use for this function. When `build-source` is specified, this value is the path to the output image generated by the build push. When `build-source` is not specified, this value is the path to the existing code bundle image. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
 
 `--code-bundle-secret`, `--cs`, `--cbs`
 :   The name of the registry secret that is used to authenticate with a private registry. You can add the registry secret by running the `registry create` command. This value is *optional*. 
