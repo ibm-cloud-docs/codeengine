@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-03-22"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -132,7 +132,7 @@ Status Summary:  Application deployed successfully
 
 Environment Variables:    
     Type     Name             Value  
-    Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+    Literal  CE_API_BASE_URL  https://api.us-south.codeengine.cloud.ibm.com  
     Literal  CE_APP           myapp  
     Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
     Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
