@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-03-21"
+lastupdated: "2024-03-22"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -305,7 +305,7 @@ You can observe the number of running instances of your app with the CLI.
 
     Environment Variables:    
         Type     Name             Value  
-        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_API_BASE_URL  https://api.us-south.codeengine.cloud.ibm.com  
         Literal  CE_APP           myapp  
         Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
         Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f

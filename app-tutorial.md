@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-03-21"
+lastupdated: "2024-03-22"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -318,7 +318,7 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     Environment Variables:    
         Type     Name             Value  
-        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_API_BASE_URL  https://api.us-south.codeengine.cloud.ibm.com  
         Literal  CE_APP           myapp  
         Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
         Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
@@ -380,7 +380,7 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     Environment Variables:    
         Type     Name             Value  
-        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_API_BASE_URL  https://api.us-south.codeengine.cloud.ibm.com  
         Literal  CE_APP           myapp  
         Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
         Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
@@ -447,7 +447,7 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     Environment Variables:    
         Type     Name             Value  
-        Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com  
+        Literal  CE_API_BASE_URL  https://api.us-south.codeengine.cloud.ibm.com  
         Literal  CE_APP           myapp  
         Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
         Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
