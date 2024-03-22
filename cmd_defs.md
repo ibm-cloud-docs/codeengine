@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-03-21"
+lastupdated: "2024-03-22"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -4353,7 +4353,7 @@ ibmcloud ce project create --name PROJECT_NAME [--endpoint ENDPOINT] [--no-selec
    - Any Unicode or alphanumeric character.
    - Only these special characters: spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-).
 
-   This value is *required*. 
+   This value is *required*.  
 
 `--endpoint`, `-e`
 :   The endpoint for the project. Valid values are `public` and `private`. If the `--endpoint` option is not explicitly specified, the behavior is determined by the system. If the {{site.data.keyword.cloud_notm}} CLI is connected to `private.cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `private`. If the {{site.data.keyword.cloud_notm}} CLI is connected to `cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `public`. This value is *optional*. 
