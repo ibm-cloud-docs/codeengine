@@ -9,9 +9,9 @@ toc:
     label: Code Engine
     version: 2
     console-page: /codeengine
-    product-page: https://www.ibm.com/products/code-engine 
-  entries: 
-  - navgroup: 
+    product-page: https://www.ibm.com/products/code-engine
+  entries:
+  - navgroup:
       id: learn
       topics:
       - getting-started.md
@@ -21,12 +21,12 @@ toc:
           - about.md
           - app-workloads.md
           - batchjob-workloads.md
-          - function-workloads.md        
-      - release-notes.md   
-  - navgroup: 
+          - function-workloads.md
+      - release-notes.md
+  - navgroup:
       id: tutorial
       topics:
-      - link: 
+      - link:
           label: Tutorials library for Code Engine
           href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
       - topicgroup:
@@ -38,13 +38,13 @@ toc:
           - deploy-multiple-regions.md
           - tutorial-cloudant-local.md
           - build-tutorial-buildpacks.md
-          - link: 
+          - link:
               label: Serverless web application and API with Code Engine
               href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
-          - link: 
+          - link:
               label: Text analysis with Code Engine
               href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine
-          - link: 
+          - link:
               label: Serverless web app and eventing for data retrieval and analytics
               href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
       - topicgroup:
@@ -56,18 +56,18 @@ toc:
           - github-event-tutorial.md
       - migrate-cf-ce-tutorial.md
       - fun-tutorial.md
-  - navgroup: 
+  - navgroup:
       id: howto
       topics:
       - cli-install.md
       - plan-codeengine.md
       - topicgroup:
-          label: Working with projects 
+          label: Working with projects
           topics:
           - project.md
           - project-integrations.md
       - topicgroup:
-          label: Deploying applications 
+          label: Deploying applications
           topics:
           - appdeploy-plan.md
           - appdeploy-public.md
@@ -127,7 +127,7 @@ toc:
           - migrate-cf-ce-cmd.md
           - migrate-cf-ce-faq.md
       - topicgroup:
-          label: Binding Code Engine resources to IBM Cloud services 
+          label: Binding Code Engine resources to IBM Cloud services
           topics:
           - servicebind.md
           - servicebind-access.md
@@ -174,7 +174,7 @@ toc:
           - security.md
           - cbr.md
           - ce-ipaddresses.md
-  - navgroup: 
+  - navgroup:
       id: reference
       topics:
       - topicgroup:
@@ -186,8 +186,8 @@ toc:
       - topicgroup:
           label: API reference
           topics:
-          - link: 
-              label: Code Engine API 
+          - link:
+              label: Code Engine API
               href: https://cloud.ibm.com/apidocs/codeengine
           - api-changelog.md
           - getting-started-api.md
@@ -201,15 +201,15 @@ toc:
       - topicgroup:
           label: Supported IBM Cloud and third-party integrations
           topics:
-          - third-party.md          
-          - lithops.md     
+          - third-party.md
+          - lithops.md
           - getting-started-with-iter8.md
           - getting-started-with-guard.md
       - billing.md
       - notices.md
       - kubernetes.md
-      - knative.md     
-  - navgroup: 
+      - knative.md
+  - navgroup:
       id: help
       topics:
       - faq.md
@@ -219,7 +219,7 @@ toc:
           topics:
           - troubleshoot-overview.md
           - topicgroup:
-              label: Troubleshooting apps 
+              label: Troubleshooting apps
               topics:
               - troubleshoot-app.md
               - ts-app-createfails.md
@@ -233,10 +233,10 @@ toc:
               - ts-app-notscaledown.md
               - ts-app-toomanyports.md
           - topicgroup:
-              label: Troubleshooting builds 
+              label: Troubleshooting builds
               topics:
               - troubleshoot-build.md
-              - ts-build-verify-image.md            
+              - ts-build-verify-image.md
               - ts-build-fail-notregisternosecret.md
               - ts-build-fail-getsourcestepfails.md
               - ts-build-fail-ephemstoragelimit.md
@@ -245,21 +245,21 @@ toc:
               - ts-build-python.md
               - ts-build-nocmdspecified.md
           - topicgroup:
-              label: Troubleshooting functions 
+              label: Troubleshooting functions
               topics:
               - troubleshoot-function.md
               - ts-allowlist-function.md
           - topicgroup:
-              label: Troubleshooting images 
+              label: Troubleshooting images
               topics:
               - troubleshoot-image.md
               - ts-image-imagepullfails.md
           - topicgroup:
-              label: Troubleshooting jobs 
+              label: Troubleshooting jobs
               topics:
               - troubleshoot-job.md
               - ts-jobrun-submitfailscli.md
-              - ts-jobrun-notstarting.md             
+              - ts-jobrun-notstarting.md
               - ts-jobrun-notcompleting.md
               - ts-jobrun-deleteforquota.md
               - ts-jobrun-deleted.md
@@ -267,22 +267,20 @@ toc:
               - ts-allowlist-job.md
               - ts-jobrun-daemon.md
           - topicgroup:
-              label: Troubleshooting projects 
+              label: Troubleshooting projects
               topics:
               - troubleshoot-project.md
               - ts-project-cannotaccess.md
               - ts-project-cannotcreate.md
-
           - topicgroup:
-              label: Troubleshooting service bindings 
+              label: Troubleshooting service bindings
               topics:
               - troubleshoot-servicebindings.md
               - ts-sb-cosredacted.md
               - ts-sb-DB2createfails.md
-              - ts-sb-projsettings-no-details.md            
-
+              - ts-sb-projsettings-no-details.md
           - topicgroup:
-              label: Troubleshooting subscriptions 
+              label: Troubleshooting subscriptions
               topics:
               - troubleshoot-subscriptions.md
               - ts-subscription-delivererr.md
@@ -290,8 +288,15 @@ toc:
               - ts-subscription-cos-neverready.md
               - ts-subscription-cron-createfails.md
               - ts-subscription-cron-neverready.md
+
           - topicgroup:
-              label: Troubleshooting toolchain 
+              label: Troubleshooting Terraform
+              topics:
+              - troubleshoot-terraform.md
+              - ts-terraform-envars.md
+
+          - topicgroup:
+              label: Troubleshooting toolchain
               topics:
               - troubleshoot-toolchain.md
               - ts-toolchain-buildrun.md
