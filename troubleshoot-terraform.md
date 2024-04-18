@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-04-18"
 
 keywords: troubleshooting for code engine, troubleshooting terrraform in code engine, terraform in code engine, terraform
 
@@ -18,13 +18,13 @@ content-type: troubleshoot
 {: #troubleshoot-terraform}
 {: troubleshoot}
 
-Use the troubleshooting tips to learn how to troubleshoot Terraform when creating {{site.data.keyword.codeenginefull}} apps and jobs.
+Use the troubleshooting tips to learn how to troubleshoot Terraform when you create {{site.data.keyword.codeenginefull}} apps and jobs by using Terraform.
 {: shortdesc}
 
 ## Getting logs for Terraform
 {: #troubleshoot-terraform-logs}
 
-## Additional topics
+## More topics
 {: #ts-terraform-topics}
 
 You can find more help in the following topics.

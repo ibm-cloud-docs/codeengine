@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-04-18"
 
 keywords: troubleshooting for code engine terraform, terraform, tips for terraform, terraform environment variables
 
@@ -14,17 +14,18 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do I see state discrepancies related to environment variables when creating my app or job in Terraform?
+# Why does Terraform show environment variables discrepancies during app or job creation?
 {: #ts-terraform-envirobment-variables}
 {: troubleshoot}
 
-When you create an app or job in Terraform and run the `terraform apply` command without making any changes, Terraform shows that the app or job contains six additional environment varaiables and that replacement of the app or job is required to resolve the discrepancy.
+When you create an app or job in Terraform and run the `terraform apply` command without making any changes, Terraform shows that the app or job contains six extra environment variables and that you need to replace them to resolve the discrepancy.
 {: tsSymptoms}
 
-These are the default environment variables that {{site.data.keyword.codeengineshort}} creates, and they are not specified in your `.tf` file.
+These environment variables are default ones that {{site.data.keyword.codeengineshort}} creates, and they are not specified in your `.tf` file.
 {: tsCauses}
 
 Edit your `.tf` file to include the following six `run_env_variables` settings for {{site.data.keyword.codeengineshort}} resources:
+{: tsResolve}
 
 ```txt
   run_env_variables {
@@ -59,4 +60,3 @@ Edit your `.tf` file to include the following six `run_env_variables` settings f
   }
 ```
 {: screen}
-{: tsResolve}
