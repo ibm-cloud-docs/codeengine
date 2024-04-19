@@ -4418,19 +4418,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why does my cron subscription never become ready?](/docs/codeengine?topic=codeengine-ts-cronsub-notready#ts-cronsub-notready)
 
 
-### Troubleshooting Terraform
-{: #sitemap_troubleshooting_terraform}
-
-
-[Debugging Terraform](/docs/codeengine?topic=codeengine-troubleshoot-terraform#troubleshoot-terraform)
-
-* [Getting logs for Terraform](/docs/codeengine?topic=codeengine-troubleshoot-terraform#troubleshoot-terraform-logs)
-
-* [More topics](/docs/codeengine?topic=codeengine-troubleshoot-terraform#ts-terraform-topics)
-
-[Why does Terraform show environment variables discrepancies during app or job creation?](/docs/codeengine?topic=codeengine-ts-terraform-envirobment-variables#ts-terraform-envirobment-variables)
-
-
 ### Troubleshooting toolchain
 {: #sitemap_troubleshooting_toolchain}
 

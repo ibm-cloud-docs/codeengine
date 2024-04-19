@@ -290,12 +290,6 @@ toc:
               - ts-subscription-cron-neverready.md
 
           - topicgroup:
-              label: Troubleshooting Terraform
-              topics:
-              - troubleshoot-terraform.md
-              - ts-terraform-envars.md
-
-          - topicgroup:
               label: Troubleshooting toolchain
               topics:
               - troubleshoot-toolchain.md
