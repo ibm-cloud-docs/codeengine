@@ -1,3 +1,5 @@
+---
+
 copyright:
   years: 2024
 lastupdated: "2024-05-02"
@@ -16,7 +18,8 @@ content-type: troubleshoot
 {: #troubleshoot-terraform}
 {: troubleshoot}
 
-
+Use the troubleshooting tips to learn how to troubleshoot Terraform when you create {{site.data.keyword.codeenginefull}} apps and jobs by using Terraform.
+{: shortdesc}
 
 ## More topics
 {: #ts-terraform-topics}
