@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-05-06"
 
 keywords: troubleshooting for code engine terraform, terraform, tips for terraform, terraform environment variables
 
@@ -43,7 +43,6 @@ Edit your `.tf` file to include the default `run_env_variables` entries for {{si
     project_id      = data.ibm_code_engine_project.my-project.project_id
     name            = "my-app"
     image_reference = "icr.io/codeengine/helloworld"
-  }
 
   run_env_variables {
     name  = "CE_SUBDOMAIN"
@@ -74,6 +73,7 @@ Edit your `.tf` file to include the default `run_env_variables` entries for {{si
     name  = "CE_PROJECT_ID"
     type  = "literal"
     value = ibm_code_engine_project.project.project_id
+  }
   }
 ```
 {: screen}
