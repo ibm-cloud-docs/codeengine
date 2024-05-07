@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-01"
+lastupdated: "2024-05-07"
 
 keywords: functions in code engine, function workloads, function inline
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Creating function workloads with inline code
 {: #fun-create-inlinecode}
 
-You can create your function with inline code. Your code is stored with your function. You can create this type of function from the console or with the CLI. 
+You can create your function with inline code. Your code is stored with your function. You can create this type of function from the console or with the CLI.
 {: shortdesc}
 
 A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
@@ -25,19 +25,19 @@ A code bundle is a collection of files that represents your function code. This 
 {: #fun-create-inline-console}
 
 Create a function with inline code from the console.
-{: shortdesc} 
+{: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Let's go**.
 3. Select **Function**.
-4. Enter a name for the function; for example, `myfunction`. Use a name for your function that is unique within the project. 
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must select a project to create a function. 
+4. Enter a name for the function; for example, `myfunction`. Use a name for your function that is unique within the project.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must select a project to create a function.
 6. Select a **Runtime image** for your function code. For more information, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
 7. Select to **Specify your code as an inline code bundle**. When you select this option, your function is created with a sample code bundle for the selected runtime. You can edit the sample code after the function is created. The code bundle is stored inline with the function.
-8. Specify your resource information, including [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo) and [Scale down delay](/docs/codeengine?topic=codeengine-fun-work#functions-scale). 
+8. Specify your resource information, including [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo) and [Scale down delay](/docs/codeengine?topic=codeengine-fun-work#functions-scale).
 9. Optionally, specify a [custom domain](/docs/codeengine?topic=codeengine-fun-domainmapping) or [environment variables](/docs/codeengine?topic=codeengine-envvar). You can add these options later.
 10. Click **Create**.
-11. After the Function status changes to **Ready**, you can test the function. Click **Test function** and then click **Send request**. To open the function in a web page, click **Function URL**. 
+11. After the function status changes to **Ready**, you can test the function. Click **Test function** and then click **Send request**. To open the function in a web page, click **Function URL**.
 12. You can also change your function code in the Editor window. When you redeploy your function, the code is stored inline.
 
 You can invoke your function by clicking **Test function** and then **Send request**.
@@ -58,11 +58,11 @@ Before you begin
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 This example uses a code file named `main.js`. You can use the following example code to create your `main.js` file or you can substitute your own code.
-  
+
 ```javascript
 /**
  * The `main` function is the entry-point into the function.
- * It has one optional argument, which carries all the 
+ * It has one optional argument, which carries all the
  * parameters the function was invoked with.
 */
 async function main(params) {
@@ -73,9 +73,9 @@ async function main(params) {
   // log all parameters for debugging purposes
   console.log("params: "+params);
   // since functions are invoked through http(s), we return an HTTP response
-  return { 
-      statusCode: 200, 
-      headers: { 'Content-Type': 'application/json' }, 
+  return {
+      statusCode: 200,
+      headers: { 'Content-Type': 'application/json' },
       body: params };
 }
 
@@ -86,7 +86,7 @@ module.exports.main = main;
 {: codeblock}
 
 
-Create your function and include the code in the command. For example, use the [**`ibmcloud ce function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command to create the `myhellofun` function. 
+Create your function and include the code in the command. For example, use the [**`ibmcloud ce function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command to create the `myhellofun` function.
 
 ```txt
 ibmcloud ce fn create --name myhellofun --inline-code main.js --runtime nodejs-18
@@ -134,7 +134,3 @@ After your function is created, you can update your function and its referenced 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-
-
-
