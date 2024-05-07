@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-05-07"
 
 keywords: troubleshooting for code engine terraform, terraform, tips for terraform, terraform environment variables
 
@@ -34,16 +34,15 @@ When you rerun the `terraform apply` or `terraform plan`, Terraform sees these d
 Edit your `.tf` file to include the default `run_env_variables` entries for {{site.data.keyword.codeengineshort}} resources. For example, if you are working with an app, you can edit as follows:
 {: tsResolve}
 
-```txt
-  data "ibm_code_engine_project" "my-project" {
-    project_id = var.ibmcloud_code_engine_project_id
-  }
+```hcl
+data "ibm_code_engine_project" "my-project" {
+  project_id = var.ibmcloud_code_engine_project_id
+}
 
-  resource "ibm_code_engine_app" "my-app-instance" {
-    project_id      = data.ibm_code_engine_project.my-project.project_id
-    name            = "my-app"
-    image_reference = "icr.io/codeengine/helloworld"
-  }
+resource "ibm_code_engine_app" "my-app-instance" {
+  project_id      = data.ibm_code_engine_project.my-project.project_id
+  name            = "my-app"
+  image_reference = "icr.io/codeengine/helloworld"
 
   run_env_variables {
     name  = "CE_SUBDOMAIN"
@@ -53,7 +52,7 @@ Edit your `.tf` file to include the default `run_env_variables` entries for {{si
   run_env_variables {
     name  = "CE_APP"
     type  = "literal"
-    value = "${var.basename}-app"
+    value = "my-app"
   }
   run_env_variables {
     name  = "CE_REGION"
@@ -66,14 +65,15 @@ Edit your `.tf` file to include the default `run_env_variables` entries for {{si
     value = "${var.ibmcloud_region}.codeengine.appdomain.cloud"
   }
   run_env_variables {
+    name  = "CE_PROJECT_ID"
+    type  = "literal"
+    value = data.ibm_code_engine_project.my-project.project_id
+  }
+  run_env_variables {
     name  = "CE_API_BASE_URL"
     type  = "literal"
     value = "https://api.${var.ibmcloud_region}.codeengine.cloud.ibm.com"
   }
-  run_env_variables {
-    name  = "CE_PROJECT_ID"
-    type  = "literal"
-    value = ibm_code_engine_project.project.project_id
-  }
+}
 ```
 {: screen}
