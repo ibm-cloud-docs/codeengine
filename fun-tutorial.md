@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-05-14"
 
 keywords: function tutorial for code engine, function, functions in code engine, creating functions, tutorial for code engine
 
@@ -23,7 +23,7 @@ completion-time: 10m
 With this tutorial, run a function with the {{site.data.keyword.codeengineshort}} CLI from code on your local system
 {: shortdesc}
 
-A function is a stateless code snippet that performs tasks in response to an HTTP request. With IBM Code Engine functions, you can run your business logic in a scalable and serverless way. IBM Code Engine functions provide an optimized runtime environment to support low latency and rapid scale-out scenarios. Your function code can be written in a managed runtime that includes specific [Node.js or Python](/docs/codeengine?topic=codeengine-fun-runtime) versions.
+A function is a stateless code snippet that performs tasks as it is invoked in response to an HTTP request. With IBM Code Engine functions, you can run your business logic in a scalable and serverless way. IBM Code Engine functions provide an optimized runtime environment to support low latency and rapid scale-out scenarios. Your function code can be written in a managed runtime that includes specific [Node.js or Python](/docs/codeengine?topic=codeengine-fun-runtime) versions.
 
 A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
 
