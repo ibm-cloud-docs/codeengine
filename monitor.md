@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-13"
+lastupdated: "2024-05-17"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -37,6 +37,9 @@ To set up {{site.data.keyword.mon_short}},
 You can also start monitoring from your {{site.data.keyword.codeengineshort}} dashboard by selecting **Launch Monitoring**.
 {: tip}
 
+You can adapt the dashboards by creating a copy of a dashboard template and by editing it.
+{: tip}
+
 ## Accessing your {{site.data.keyword.mon_full_notm}} metrics
 {: #access-monitor}
 
@@ -45,7 +48,7 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 1. From the {{site.data.keyword.cloud_notm}} navigation menu, select **Observability**.
 2. Select **Monitoring**.
 3. Click **Open dashboard** to open the dashboard for your monitoring instance.
-4. From the navigation menu, select **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Project Overview**. If you don't see the {{site.data.keyword.codeengineshort}} dashboard in the menu, you can start monitoring from your {{site.data.keyword.codeengineshort}} application or job by selecting **Launch Monitoring**.
+4. From the navigation menu, select **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Project Overview** or **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Functions Overview**. If you don't see the {{site.data.keyword.codeengineshort}} dashboard in the menu, you can start monitoring from your {{site.data.keyword.codeengineshort}} application or job by selecting **Launch Monitoring**.
 5. Select the `10M` timeline or greater. Because Platform Metrics data has a 1 minute granularity, the first timeline that shows metrics is the `10M` timeline.
 
 You can also start the {{site.data.keyword.mon_short}} dashboard at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
@@ -74,6 +77,15 @@ When you use the {{site.data.keyword.mon_full_notm}} service to monitor {{site.d
 | [`ibm_codeengine_application_panic_request_concurrency`](#ibm_codeengine_application_panic_request_concurrency) |
 | [`ibm_codeengine_application_stable_request_concurrency`](#ibm_codeengine_application_stable_request_concurrency) |
 | [`ibm_codeengine_application_panic_mode`](#ibm_codeengine_application_panic_mode) |
+| [`ibm_codeengine_functions_activations`](#ibm_codeengine_functions_activations) |
+| [`ibm_codeengine_functions_exceeded_limit`](#ibm_codeengine_functions_exceeded_limit) |
+| [`ibm_codeengine_functions_execution_time_count`](#ibm_codeengine_functions_execution_time_count) |
+| [`ibm_codeengine_functions_execution_time_sum`](#ibm_codeengine_functions_execution_time_sum) |
+| [`ibm_codeengine_functions_init_time_count`](#ibm_codeengine_functions_init_time_count) |
+| [`ibm_codeengine_functions_init_time_sum`](#ibm_codeengine_functions_init_time_sum) |
+| [`ibm_codeengine_functions_status_success`](#ibm_codeengine_functions_status_success) |
+| [`ibm_codeengine_functions_status_error_application`](#ibm_codeengine_functions_status_error_application) |
+| [`ibm_codeengine_functions_status_error_developer`](#ibm_codeengine_functions_status_error_developer) |
 | [`ibm_codeengine_jobruns`](#ibm_codeengine_jobruns) |
 {: caption="Table 1: Metrics available for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
 
@@ -314,6 +326,131 @@ While *stable* mode is used for general operations, *panic* mode has a much shor
 {: caption="Table 15: Specifies if panic mode is enabled" caption-side="bottom"}
 
 
+### `ibm_codeengine_functions_activations`
+{: #ibm_codeengine_functions_activations}
+
+Number of invoked functions.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_codeengine_functions_activations`|
+| `Metric Type` | `counter` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name, function type` |
+{: caption="Table 16: Number of invoked functions" caption-side="top"}
+
+### `ibm_codeengine_functions_exceeded_limit`
+{: #ibm_codeengine_functions_exceeded_limit}
+
+Number of functions that are invoked after the limit for your project is exceeded. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_codeengine_functions_exceeded_limit`|
+| `Metric Type` | `counter` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name, function type` |
+{: caption="Table 17: Number of invoked functions after exceeding project limit" caption-side="top"}
+
+### `ibm_codeengine_functions_execution_time_count`
+{: #ibm_codeengine_functions_execution_time_count}
+
+Number of invoked functions that run to completion.
+
+The `ibm_codeengine_functions_execution_time_count` and `ibm_codeengine_functions_execution_time_sum` metrics are used to determine the average execution time per invoked function.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_codeengine_functions_execution_time_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name` |
+{: caption="Table 18: Number of invoked functions that complete execution" caption-side="top"}
+
+### `ibm_codeengine_functions_execution_time_sum`
+{: #ibm_codeengine_functions_execution_time_sum}
+
+Sum of all execution time for invoked functions that run to completion.
+
+The `ibm_codeengine_functions_execution_time_count` and `ibm_codeengine_functions_execution_time_sum` metrics are used to determine the average execution time per invoked function.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_codeengine_functions_execution_time_sum`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name` |
+{: caption="Table 19: Sum of all execution time for invoked functions" caption-side="top"}
+
+### `ibm_codeengine_functions_init_time_count`
+{: #ibm_codeengine_functions_init_time_count}
+
+Number of functions that complete initialization such that the code is loaded in {{site.data.keyword.codeengineshort}} and ready for execution.
+
+The `ibm_codeengine_functions_init_time_count` and `ibm_codeengine_functions_init_time_sum` metrics are used to determine the average initialization time for invoked functions.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_codeengine_functions_init_time_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name` |
+{: caption="Table 20: Number of functions that complete initialization" caption-side="top"}
+
+### `ibm_codeengine_functions_init_time_sum`
+{: #ibm_codeengine_functions_init_time_sum}
+
+Sum of all initialization time for invoked functions.
+
+The `ibm_codeengine_functions_init_time_count` and `ibm_codeengine_functions_init_time_sum` metrics are used to determine the average initialization time for invoked functions.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_codeengine_functions_init_time_sum`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name` |
+{: caption="Table 21: Sum of all initialization time for invoked functions" caption-side="top"}
+
+
+### `ibm_codeengine_functions_status_success`
+{: #ibm_codeengine_functions_status_success}
+
+Number of functions that are successfully invoked. A function is invoked successfully in {{site.data.keyword.codeengineshort}} after the function completes initialization, runs to completion, and your function code responds with a successful HTTP response status code.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_codeengine_functions_status_success`|
+| `Metric Type` | `counter` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name, function type` |
+{: caption="Table 22: Number of functions successfully invoked" caption-side="top"}
+
+### `ibm_codeengine_functions_status_error_application`
+{: #ibm_codeengine_functions_status_error_application}
+
+Number of invoked functions that fail during {{site.data.keyword.codeengineshort}} processing.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_codeengine_functions_status_error_application`|
+| `Metric Type` | `counter` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name, function type` |
+{: caption="Table 23: Number of invoked functions that fail within {{site.data.keyword.codeengineshort}}" caption-side="top"}
+
+### `ibm_codeengine_functions_status_error_developer`
+{: #ibm_codeengine_functions_status_error_developer}
+
+Number of invoked functions that fail with an error in your code. 
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_codeengine_functions_status_error_developer`|
+| `Metric Type` | `counter` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name, function type` |
+{: caption="Table 24: Number of invoked functions that fail with an error in your code" caption-side="top"}
 
 
 ### `ibm_codeengine_jobruns`
@@ -329,7 +466,7 @@ Use this metric to monitor how many job runs are in your project. {{site.data.ke
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, job Name, jobrun condition` |
-{: caption="Table 16: Total number of job runs" caption-side="bottom"}
+{: caption="Table 25: Total number of job runs" caption-side="bottom"}
 
 ## Attributes for segmentation
 {: #attributes}
@@ -348,7 +485,7 @@ The following attributes are available for segmenting all the metrics previously
 | `Resource group` | `ibm_resource_group_name` | The resource group where the service instance was created. |
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID associated with this metric. |
 | `Service name` | `ibm_service_name` | Name of the service that is generating this metric. |
-{: caption="Table 17: Global attributes" caption-side="bottom"}
+{: caption="Table 26: Global attributes" caption-side="bottom"}
 
 ### More attributes
 {: #additional-attributes}
@@ -366,7 +503,10 @@ The following attributes are available for segmenting one or more attributes as 
 | `Job Name` | `ibm_codeengine_job_name` | Name of the job that is used to create the job run.  |
 | `Jobrun condition` | `ibm_codeengine_jobrun_condition` | The condition of the job run. |
 | `Project name` | `ibm_codeengine_project_name` | Name of the project. |
-{: caption="Table 18: Segmentation options" caption-side="bottom"}
+| `Function name` | `ibm_codeengine_function_name` | Name of the invoked function.  |
+| `Function pod name` | `ibm_codeengine_function_podname` | The name of the system pod that invoked the function.  |
+| `Function type` | `ibm_codeengine_function_type` | The type for how the function was invoked (`sync` or `async`).  |
+{: caption="Table 27: Segmentation options" caption-side="bottom"}
 
 
 

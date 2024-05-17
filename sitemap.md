@@ -3514,6 +3514,24 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibm_codeengine_application_panic_mode`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_mode)
 
+    * [`ibm_codeengine_functions_activations`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_activations)
+
+    * [`ibm_codeengine_functions_exceeded_limit`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_exceeded_limit)
+
+    * [`ibm_codeengine_functions_execution_time_count`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_execution_time_count)
+
+    * [`ibm_codeengine_functions_execution_time_sum`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_execution_time_sum)
+
+    * [`ibm_codeengine_functions_init_time_count`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_init_time_count)
+
+    * [`ibm_codeengine_functions_init_time_sum`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_init_time_sum)
+
+    * [`ibm_codeengine_functions_status_success`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_status_success)
+
+    * [`ibm_codeengine_functions_status_error_application`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_status_error_application)
+
+    * [`ibm_codeengine_functions_status_error_developer`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_status_error_developer)
+
     * [`ibm_codeengine_jobruns`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns)
 
 * [Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes)
