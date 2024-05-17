@@ -136,6 +136,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [May 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may24)
+
+    * [17 May 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1724)
+
+        * CLI version 1.49.11 released
+
+        * Updated information about supported versions of Knative
+
+        * Added support for functions in the {{site.data.keyword.codeengineshort}} V2 API
+
 * [April 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr24)
 
     * [25 April 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr2524)
