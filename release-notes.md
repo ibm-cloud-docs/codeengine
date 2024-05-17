@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-05-17"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,22 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## May 2024
+{: #codeengine-may24}
+
+### 17 May 2024
+{: #codeengine-may1724}
+{: release-note}
+
+CLI version 1.49.11 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated information about supported versions of Knative
+:   See [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
+
+Added support for functions in the {{site.data.keyword.codeengineshort}} V2 API
+:   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
 
 ## April 2024
 {: #codeengine-apr24}

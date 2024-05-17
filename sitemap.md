@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-05-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -135,6 +135,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [May 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may24)
+
+    * [17 May 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1724)
+
+        * CLI version 1.49.11 released
+
+        * Updated information about supported versions of Knative
+
+        * Added support for functions in the {{site.data.keyword.codeengineshort}} V2 API
 
 * [April 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr24)
 
@@ -3504,6 +3514,24 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibm_codeengine_application_panic_mode`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_mode)
 
+    * [`ibm_codeengine_functions_activations`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_activations)
+
+    * [`ibm_codeengine_functions_exceeded_limit`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_exceeded_limit)
+
+    * [`ibm_codeengine_functions_execution_time_count`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_execution_time_count)
+
+    * [`ibm_codeengine_functions_execution_time_sum`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_execution_time_sum)
+
+    * [`ibm_codeengine_functions_init_time_count`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_init_time_count)
+
+    * [`ibm_codeengine_functions_init_time_sum`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_init_time_sum)
+
+    * [`ibm_codeengine_functions_status_success`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_status_success)
+
+    * [`ibm_codeengine_functions_status_error_application`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_status_error_application)
+
+    * [`ibm_codeengine_functions_status_error_developer`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_status_error_developer)
+
     * [`ibm_codeengine_jobruns`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns)
 
 * [Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes)
@@ -3869,6 +3897,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [17 May 2024](/docs/codeengine?topic=codeengine-api-changelog#17-may-2024)
 
 * [30 January 2024](/docs/codeengine?topic=codeengine-api-changelog#30-jan-2024)
 

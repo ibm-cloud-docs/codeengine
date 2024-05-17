@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-25"
+lastupdated: "2024-05-07"
 
 keywords: functions in code engine, functions, serverless, create functions in code engine, function workloads in code engine, registry secret, registry access, registry access secret
 
@@ -15,17 +15,17 @@ subcollection: codeengine
 # Creating function workloads from existing code bundles
 {: #fun-create-existing}
 
-Create your {{site.data.keyword.codeengineshort}} function with a code bundle in {{site.data.keyword.registrylong}}. You can create a function from the console or with the CLI. 
+Create your {{site.data.keyword.codeengineshort}} function with a code bundle in {{site.data.keyword.registrylong}}. You can create a function from the console or with the CLI.
 {: shortdesc}
 
 A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
-  
+
 You cannot pull code bundles from a location other than {{site.data.keyword.registryshort}}.
 {: note}
-  
+
 Before you begin
 
-- You must have a code bundle in {{site.data.keyword.registrylong}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started). Or, you can build an image from [repository source](/docs/codeengine?topic=codeengine-fun-create-repo) or from [local source](/docs/codeengine?topic=codeengine-fun-create-local). 
+- You must have a code bundle in {{site.data.keyword.registrylong}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started). Or, you can build an image from [repository source](/docs/codeengine?topic=codeengine-fun-create-repo) or from [local source](/docs/codeengine?topic=codeengine-fun-create-local).
 
 - Verify that you can access the registry. See [Setting up authorities for container registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
 
@@ -44,16 +44,16 @@ Create a function that uses an existing code bundle by using the {{site.data.key
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Let's go**.
 3. Select **Function**.
-4. Enter a name for the function; for example, `myfunction`. Use a name for your function that is unique within the project. 
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must select a project to create a function. 
+4. Enter a name for the function; for example, `myfunction`. Use a name for your function that is unique within the project.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must select a project to create a function.
 6. Select a **Runtime image** for your function code. For more information, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
 7. Select to **Use an existing code bundle**.
 8. Specify the location of your code bundle in the format `registry/namespace/repository:tag`.
 9. If your code bundle is in your account or in a public registry, you do not need to specify a registry secret. If the code bundle is in a private registry, you must add the registry secret. For additional help, click **Help me specify the code bundle**. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
-10. Specify your resource information, including [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo) and [Scale down delay](/docs/codeengine?topic=codeengine-fun-work#functions-scale). 
+10. Specify your resource information, including [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo) and [Scale down delay](/docs/codeengine?topic=codeengine-fun-work#functions-scale).
 11. Optionally, specify a [custom domain](/docs/codeengine?topic=codeengine-fun-domainmapping) or [environment variables](/docs/codeengine?topic=codeengine-envvar).
 12. Click **Create**.
-13. After the Function status changes to **Ready**, you can test the Function. Click **Test function** and then click **Send request**. To open the Function in a web page, click **Function URL**.  
+13. After the function status changes to **Ready**, you can test the function. Click **Test function** and then click **Send request**. To open the function in a web page, click **Function URL**.
 
 
 
@@ -73,16 +73,16 @@ Before you begin
 ### Deploying a function from a public registry with the CLI
 {: #fun-cr-cli-public}
 
-  
-If your existing code bundle is in your account or a public registry, you can use the **`ibmcloud ce fn create`** command.  
+
+If your existing code bundle is in your account or a public registry, you can use the **`ibmcloud ce fn create`** command.
 
 For example, run the following command to pull an existing code bundle from the public registry and create a function.
- 
+
 ```txt
 ibmcloud ce fn create --name myhellofun --code-bundle icr.io/codeengine/samples/function-nodejs-codebundle --runtime nodejs
 ```
 {: pre}
-  
+
 Run the provided **`fn get`** command to find the URL. You can then use the `curl` command to call that URL.
 
 Example output from the existing code bundle.
@@ -94,8 +94,8 @@ Example output from the existing code bundle.
 
 ### Deploying a function from a private registry with the CLI
 {: #fun-cr-cli-private}
-  
-To access an existing code bundle from a private registry, you must set up access to the registry, create a registry secret, and then provide that secret when you run the **`ibmcloud ce fn create`** command. 
+
+To access an existing code bundle from a private registry, you must set up access to the registry, create a registry secret, and then provide that secret when you run the **`ibmcloud ce fn create`** command.
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=account-ibmcloud_commands_iam&interface=ui#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI API key" and save it to a file called `key_file`, run the following command:
 
@@ -107,7 +107,7 @@ To access an existing code bundle from a private registry, you must set up acces
     If you choose to not save your key to a file, you must record the API key that is displayed when you create it. You cannot retrieve it later.
     {: important}
 
-2. After you create your API key, create a registry secret to {{site.data.keyword.codeengineshort}}. To create a registry secret, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. For example, the following command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`.  
+2. After you create your API key, create a registry secret to {{site.data.keyword.codeengineshort}}. To create a registry secret, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. For example, the following command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`.
 
     ```txt
     ibmcloud ce secret create --format registry --name myregistry --server us.icr.io --username iamapikey --password APIKEY
@@ -122,7 +122,7 @@ To access an existing code bundle from a private registry, you must set up acces
     ```
     {: screen}
 
-3. Create your function and reference a code bundle in a private registry in {{site.data.keyword.registryshort}}. For example, use the [**`ibmcloud ce fn create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command to create the `myhellofun` function to reference the `icr.io/codeengine/samples/function-nodejs-codebundle` by using the `myregistry` access information. 
+3. Create your function and reference a code bundle in a private registry in {{site.data.keyword.registryshort}}. For example, use the [**`ibmcloud ce fn create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command to create the `myhellofun` function to reference the `icr.io/codeengine/samples/function-nodejs-codebundle` by using the `myregistry` access information.
 
     ```txt
     ibmcloud ce fn create --name myhellofun --code-bundle icr.io/NAMESPACE/REGISTRY:TAG --registry-secret myregistry
@@ -162,7 +162,3 @@ After your function is created, you can update your function and its referenced 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-
-
-

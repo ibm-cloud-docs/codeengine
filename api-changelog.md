@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-02-19"
+lastupdated: "2024-05-17"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -35,6 +35,17 @@ The following table shows the service behavior changes for each version date. Sw
 |`2022-Dec-09`| Version 2.0.0 |
 |`2021-Mar-31`| Version 1.0.0  |
 {: caption="Table 1. Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
+
+## 17 May 2024
+{: #17-may-2024}
+
+Added support for functions in the API.
+:   - See [List function runtimes API](https://cloud.ibm.com/apidocs/codeengine/v2#list-function-runtimes){: external}.
+:   - See [List functions API](https://cloud.ibm.com/apidocs/codeengine/v2#list-functions){: external}.
+:   - See [Create a function API](https://cloud.ibm.com/apidocs/codeengine/v2#create-function){: external}.
+:   - See [Get a function API](https://cloud.ibm.com/apidocs/codeengine/v2#get-function){: external}.
+:   - See [Delete a function API](https://cloud.ibm.com/apidocs/codeengine/v2#delete-function){: external}.
+:   - See [Update a function API](https://cloud.ibm.com/apidocs/codeengine/v2#update-function){: external}.
 
 ## 30 January 2024
 {: #30-jan-2024}
