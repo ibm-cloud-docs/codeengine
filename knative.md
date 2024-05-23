@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-17"
+lastupdated: "2024-05-23"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -42,7 +42,7 @@ To interact with your project from the Kubernetes command-line interface, `kubec
 Before you begin
 
 - You must [create your project](/docs/codeengine?topic=codeengine-manage-project#create-a-project) and the project must be in `active` status.
-- Install the [Kubernetes CLI (`kubectl`)](#knative-kubectl) and the [Knative CLI (`kn`)](#knative-kubectl).
+- Install the [Kubernetes CLI (`kubectl`)](https://kubernetes.io/docs/tasks/tools/) and the [Knative CLI (`kn`)](https://knative.dev/docs/client/install-kn/).
 
 You can set up your environment in the following ways. 
 
