@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-23"
+lastupdated: "2024-05-24"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using Kubernetes with {{site.data.keyword.codeengineshort}} 
+# Using Kubernetes with {{site.data.keyword.codeengineshort}}
 {: #kubernetes}
 
 {{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tools that are based on Kubernetes or Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Kubernetes (and Knative) APIs and their CLI commands. For more information about Knative, see [Using Knative with Code Engine](/docs/codeengine?topic=codeengine-knative).
@@ -27,12 +27,12 @@ If you decide to use Kubernetes with {{site.data.keyword.codeengineshort}}, cons
 
 
 ## Installing the Kubernetes command-line interface
-{: #kubernetes-kubectl} 
+{: #kubernetes-kubectl}
 
 To install the Kubernetes CLI, download and install the [`kubectl` CLI](https://kubernetes.io/docs/tasks/tools/){: external}.
 {: shortdesc}
 
-Be sure to add the `kubectl` binary to your system's PATH environment variable. 
+Be sure to add the `kubectl` binary to your system's PATH environment variable.
 {: tip}
 
 ## Interacting with Kubernetes API
@@ -94,7 +94,7 @@ If the context is correctly set, the output matches the `Kubectl Context` value 
 
 For more information about Kubernetes and how it works with {{site.data.keyword.codeengineshort}} architecture, see [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).
 {: important}
-  
+
 ## Required access authorities to work with Kubernetes API
 {: #kubectl-api}
 
@@ -119,8 +119,6 @@ After you set up your environment, you can interact with Kubernetes API. You mus
 | `daemonset` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` |
 | `pods.metrics.k8s.io` | list | list | list |
 {: caption="Table 1. Kubernetes authorities" caption-side=ottom"}
-
-
 
 ## Retrieving your Kubernetes configuration
 {: #kubernetes-getconfig}
@@ -147,7 +145,7 @@ To retrieve your Kubernetes configuration with REST API,
 Determine the GUID of your {{site.data.keyword.codeengineshort}} project by querying the {{site.data.keyword.cloud_notm}} catalog and the {{site.data.keyword.cloud_notm}}. As this GUID does not change, you need to do this step only one time. If you already know your {{site.data.keyword.codeengineshort}} project GUID, you can skip this step.
 
 
-To use the {{site.data.keyword.codeengineshort}} CLI to discover the GUID of your {{site.data.keyword.codeengineshort}} project, complete the following steps. 
+To use the {{site.data.keyword.codeengineshort}} CLI to discover the GUID of your {{site.data.keyword.codeengineshort}} project, complete the following steps.
 
 1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group.
 
@@ -158,7 +156,7 @@ To use the {{site.data.keyword.codeengineshort}} CLI to discover the GUID of you
 
 2. Run the **`ibmcloud resource`** command.
 
-    ```txt 
+    ```txt
     ibmcloud resource service-instances --service-name codeengine --long
     ```
     {: pre}
@@ -167,7 +165,7 @@ To use the {{site.data.keyword.codeengineshort}} CLI to discover the GUID of you
 
 
 
-To use the REST API to discover the GUID of your {{site.data.keyword.codeengineshort}} project, complete the following steps. 
+To use the REST API to discover the GUID of your {{site.data.keyword.codeengineshort}} project, complete the following steps.
 
 Before you begin, you must have the `access_token` from the previous step.
 
@@ -175,7 +173,7 @@ Before you begin, you must have the `access_token` from the previous step.
 
     Example output
 
-    ```txt 
+    ```txt
     curl -X GET \
       'https://globalcatalog.cloud.ibm.com/api/v1?include=*&q=name:codeengine+active:true' \
       -H 'Authorization: Bearer ACCESS_TOKEN'
@@ -188,7 +186,7 @@ Before you begin, you must have the `access_token` from the previous step.
 
     Example output
 
-    ```txt 
+    ```txt
     curl -X GET \
         'https://resource-controller.cloud.ibm.com/v2/resource_instances?name=MY_PROJECT&resource_id=RESOURCE_ID' \
         -H 'Authorization: Bearer ACCESS_TOKEN'
@@ -210,7 +208,7 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
 
 Example output
 
-```txt 
+```txt
 curl -X GET \
     'https://resource-controller.cloud.ibm.com/v2/resource_instances?name=MY_PROJECT&resource_id=RESOURCE_ID' \
     -H 'Authorization: Bearer ACCESS_TOKEN'
@@ -229,16 +227,16 @@ curl -X GET \
     ```
     {: pre}
 
-2. Create your {{site.data.keyword.codeengineshort}} project: 
+2. Create your {{site.data.keyword.codeengineshort}} project:
 
     ```txt
-    ibmcloud ce project create --name PROJECT 
+    ibmcloud ce project create --name PROJECT
     ```
     {: pre}
 
-3. Select your {{site.data.keyword.codeengineshort}} project as the current context and append the project to the default Kubernetes configuration file. 
+3. Select your {{site.data.keyword.codeengineshort}} project as the current context and append the project to the default Kubernetes configuration file.
 
-    ```txt 
+    ```txt
     ibmcloud ce project select --name PROJECT --kubecfg
     ```
     {: pre}
@@ -338,11 +336,3 @@ After you retrieve the Kubernetes configuration, you can view the Subscription C
 
 - Use `kubectl explain --api-version='sources.knative.dev/<VERSION>' <KIND>`.
 - [Download the Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
-
-
-
-
-
-
-
-

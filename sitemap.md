@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-17"
+lastupdated: "2024-05-24"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -218,11 +218,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan24)
 
-    * Review the release notes for January 2024.  
+    * Review the release notes for January 2024.
 
     * [30 January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan3024)
 
-        * Added support for the `build` and `buildrun` properties for jobs in the {{site.data.keyword.codeengineshort}} V2 API 
+        * Added support for the `build` and `buildrun` properties for jobs in the {{site.data.keyword.codeengineshort}} V2 API
 
     * [25 January 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2524)
 
@@ -242,7 +242,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec23)
 
-    * Review the release notes for December 2023. 
+    * Review the release notes for December 2023.
 
     * [12 December 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec1223)
 
@@ -344,11 +344,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [21 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2123)
 
-        * Added support for liveness and readiness probes for applications in {{site.data.keyword.codeengineshort}} 
+        * Added support for liveness and readiness probes for applications in {{site.data.keyword.codeengineshort}}
 
         * CLI version 1.46.0 released
 
-        * Added troubleshooting information for toolchain 
+        * Added troubleshooting information for toolchain
 
         * Added getting started information about working with the {{site.data.keyword.codeengineshort}} CLI
 
@@ -364,7 +364,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [07 September 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep0723)
 
-        * Updated {{site.data.keyword.codeengineshort}} architecture diagram 
+        * Updated {{site.data.keyword.codeengineshort}} architecture diagram
 
 * [August 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug23)
 
@@ -402,7 +402,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [20 July 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul2023)
 
-        * Added support for displaying details of app instances 
+        * Added support for displaying details of app instances
 
         * Added troubleshooting information about app instances that do not scale down as expected
 
@@ -444,7 +444,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added summary information for getting started with apps and batch jobs in {{site.data.keyword.codeengineshort}}
 
-        * Added support for the scale-down delay autoscaling option 
+        * Added support for the scale-down delay autoscaling option
 
         * CLI version 1.44.0 released
 
@@ -520,7 +520,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added support for {{site.data.keyword.codeengineshort}} project-wide settings
 
-        * Updated support for TLS secrets 
+        * Updated support for TLS secrets
 
         * Added troubleshooting information for creating an allowlist for {{site.data.keyword.codeengineshort}} apps and jobs
 
@@ -692,7 +692,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [17 November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1722)
 
-        * Added more information about certificates and considerations when you use {{site.data.keyword.cis_short}} with custom domain mappings 
+        * Added more information about certificates and considerations when you use {{site.data.keyword.cis_short}} with custom domain mappings
 
         * Updated versions for buildpacks
 
@@ -720,7 +720,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.39.6 released
 
-        * Revised and improved descriptions of metrics for monitoring {{site.data.keyword.codeengineshort}} 
+        * Revised and improved descriptions of metrics for monitoring {{site.data.keyword.codeengineshort}}
 
         * Updated versions for buildpacks
 
@@ -764,9 +764,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.39.1 released
 
-        * Added support for working with service bindings from the console 
+        * Added support for working with service bindings from the console
 
-        * Updated the default maximum execution time for jobs 
+        * Updated the default maximum execution time for jobs
 
         * Updated versions for buildpacks
 
@@ -994,7 +994,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.25.2 released
 
-        * Added more information for troubleshooting jobs when job runs do not complete 
+        * Added more information for troubleshooting jobs when job runs do not complete
 
         * Added information about considerations when you use SSH keys for accessing your source repository
 
@@ -1604,9 +1604,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added an {{site.data.keyword.cos_short}} subscription tutorial.
 
-        * Added troubleshooting information for subscriptions. 
+        * Added troubleshooting information for subscriptions.
 
-        * Added an FAQ for WebSocket support. 
+        * Added an FAQ for WebSocket support.
 
         * Updated application limits.
 
@@ -1616,7 +1616,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 0.5.16 released
 
-        * Added information about potentially reaching Docker rate limits. 
+        * Added information about potentially reaching Docker rate limits.
 
     * [3 February 2021](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0321)
 
