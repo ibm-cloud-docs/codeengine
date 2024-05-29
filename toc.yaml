@@ -286,6 +286,7 @@ toc:
               - ts-subscription-delivererr.md
               - ts-subscription-cos-createfails.md
               - ts-subscription-cos-neverready.md
+              - ts-subscription-cos-multipleevents.md
               - ts-subscription-cron-createfails.md
               - ts-subscription-cron-neverready.md
           - topicgroup:

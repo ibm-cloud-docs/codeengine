@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-28"
+lastupdated: "2024-05-29"
 
 keywords: kafka, kafka event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -894,7 +894,7 @@ You can view details about your Kafka event subscription or update the subscript
 When you no longer need a Kafka subscription, you can delete it.
 {: shortdesc}
 
-
+When you delete a subscription, the service credentials for the {{site.data.keyword.messagehub}} service instance is used to remove consumer groups from the {{site.data.keyword.messagehub}} service instance. If the service credential is already deleted or if it is invalid when you delete the subscription, the consumer groups cannot be removed from the {{site.data.keyword.messagehub}} service instance. Your {{site.data.keyword.codeengineshort}} Kafka event subscription delete request fails.
 
 ### Deleting a Kafka subscription from the console
 {: #sub-kafka-delete-ui}

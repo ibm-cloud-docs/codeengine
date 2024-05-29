@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-24"
+lastupdated: "2024-05-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -4446,6 +4446,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why is my `subscription cos create` command failing?](/docs/codeengine?topic=codeengine-ts-cossub-create#ts-cossub-create)
 
 [Why does my {{site.data.keyword.cos_short}} subscription never become ready?](/docs/codeengine?topic=codeengine-ts-cossub-notready#ts-cossub-notready)
+
+[When I create a single file in my {{site.data.keyword.cos_short}} bucket, why do I get multiple events?](/docs/codeengine?topic=codeengine-ts-cossub-multipleevents#ts-cossub-multipleevents)
 
 [Why is my `subscription cron create` command failing?](/docs/codeengine?topic=codeengine-ts-cronsub-create#ts-cronsub-create)
 
