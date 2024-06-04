@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-06-04"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -205,7 +205,7 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
    This value is *optional*. 
 
 `--ephemeral-storage`, `--es`
-:   The amount of ephemeral storage to set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
+:   The amount of ephemeral storage to set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. The default value is `400M`.
 
 `--force`, `-f`
 :   Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` or `--mount-configmap` options. Secret references are specified with the `--env-from-secret`, `--mount-secret` or `--registry-secret` options. This value is *optional*. The default value is `false`.
@@ -3157,7 +3157,7 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
    This value is *optional*. 
 
 `--ephemeral-storage`, `--es`
-:   The amount of ephemeral storage to set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
+:   The amount of ephemeral storage to set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. The default value is `400M`.
 
 `--force`, `-f`
 :   Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` option. Secret references are specified with the `--env-from-secret` or `--registry-secret` options. This value is *optional*. The default value is `false`.
@@ -4236,7 +4236,7 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
    This value is *optional*. 
 
 `--ephemeral-storage`, `--es`
-:   The amount of ephemeral storage for this job run. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
+:   The amount of ephemeral storage for this job run. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. The default value is `400M`.
 
 `--force`, `-f`
 :   Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` option. Secret references are specified with the `--env-from-secret` or `--registry-secret` options. This value is *optional*. The default value is `false`.
@@ -6775,7 +6775,7 @@ ibmcloud ce subscription cron create --name CRON_SOURCE_NAME  --destination DEST
 :   The base64-encoded data to send to the destination; for example, `Q29kZSBFbmdpbmU=`. If you specify the `--data-base64` option, do not use the `--data` option. This value is *optional*. 
 
 `--destination-type`, `--dt`
-:   The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. The default value is `app`.
+:   The type of the `destination`. Valid values are `app`, `function` and `job`. This value is *optional*. The default value is `app`.
 
 `--extension`, `--ext`
 :   Set CloudEvents extensions to send to the destination. Must be in `NAME=VALUE` format. This action adds a new CloudEvents extension or overrides an existing CloudEvent attribute. Specify one extension per `--extension` option; for example, `--ext extA=A --ext extB=B`. This value is *optional*. 
@@ -7018,7 +7018,7 @@ ibmcloud ce subscription cron update --name CRON_SOURCE_NAME [--content-type CON
 :   The name of the application or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *optional*. 
 
 `--destination-type`, `--dt`
-:   The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. 
+:   The type of the `destination`. Valid values are `app`, `function` and `job`. This value is *optional*. 
 
 `--extension`, `--ext`
 :   Set CloudEvents extensions to send to the destination. Must be in `NAME=VALUE` format. This action adds a new CloudEvents extension or overrides an existing CloudEvent attribute. Specify one extension per `--extension` option; for example, `--ext extA=A --ext extB=B`. This value is *optional*. 
