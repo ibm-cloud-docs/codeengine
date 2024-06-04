@@ -3424,11 +3424,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Considerations for viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs&interface=ui#view-logs-considerations)
 
-    * [Viewing app logs from the console](/docs/codeengine?topic=codeengine-view-logs&interface=ui#view-applogs-ui)
-
-    * [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs&interface=ui#view-joblogs-ui)
-
-    * [Viewing function logs from the console](/docs/codeengine?topic=codeengine-view-logs&interface=ui#view-funlogs-ui)
+    * [Viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-view-logs&interface=ui#view-appjobfunctionlogs-ui)
 
     * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs&interface=ui#view-build-ui)
 
