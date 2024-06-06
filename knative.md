@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-17"
+lastupdated: "2024-05-24"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -18,10 +18,10 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tools that are based on Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Knative APIs (and Kubernetes) and their CLI commands. For more information about Kubernetes, see [Using Kubernetes with Code Engine](/docs/codeengine?topic=codeengine-kubernetes).
 {: shortdesc}
 
-## What is the supported version of Knative? 
+## What is the supported version of Knative?
 {: #knative-version}
 
-{{site.data.keyword.codeengineshort}} supports the version 1.13 Knative APIs and its CLI commands. 
+{{site.data.keyword.codeengineshort}} supports the version 1.13 Knative APIs and its CLI commands.
 
 ## Installing the Knative command-line interface
 {: #knative-kubectl}
@@ -42,7 +42,7 @@ To interact with your project from the Kubernetes command-line interface, `kubec
 Before you begin
 
 - You must [create your project](/docs/codeengine?topic=codeengine-manage-project#create-a-project) and the project must be in `active` status.
-- Install the [Kubernetes CLI (`kubectl`)](#knative-kubectl) and the [Knative CLI (`kn`)](#knative-kubectl).
+- Install the [Kubernetes CLI (`kubectl`)](https://kubernetes.io/docs/tasks/tools/) and the [Knative CLI (`kn`)](https://knative.dev/docs/client/install-kn/).
 
 You can set up your environment in the following ways. 
 
@@ -92,7 +92,7 @@ If the context is correctly set, the output matches the `Kubectl Context` value 
 
 For more information about Kubernetes and how it works with {{site.data.keyword.codeengineshort}} architecture, see [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).
 {: important}
-  
+
 ## Required access authorities to work with Knative API
 {: #knative-api}
 
@@ -107,4 +107,3 @@ After you set up your environment, you can interact with Knative API. You must h
 | `pingsource.serving.knative.dev` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch` |
 | `kafkasource.serving.knative.dev` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch` |
 {: caption="Table 1. Knative authorities" caption-side=ottom"}
-

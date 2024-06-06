@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-17"
+lastupdated: "2024-06-06"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,8 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.50.0 | 2024-06-06 | - The commands `sub cron create` and `sub cron update` now support **function** as a value for `--destination-type`. Use this new value to invoke a function based on CRON events. See [Subscribing to Periodic timer (cron) events for a function](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-fun-existing). \n - Fixed various bugs. |
+| 1.49.12 | 2024-05-24 | - Fixed various bugs. |
 | 1.49.11 | 2024-05-17 | - Fixed various bugs. |
 | 1.49.10 | 2024-04-25 | - Fixed various bugs. |
 | 1.49.9 | 2024-04-18 | - Fixed various bugs. |
