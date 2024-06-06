@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-04"
+lastupdated: "2024-06-06"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -136,7 +136,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [June 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-june24)
+
+    * [06 June 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-june0624)
+
+        * CLI version 1.50.0 released
+
+        * Updated versions for buildpacks
+
 * [May 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may24)
+
+    * [24 May 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may2424)
+
+        * CLI version 1.49.12 released
 
     * [17 May 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1724)
 
@@ -3209,6 +3221,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Viewing event information for an application with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-app-cli)
 
     * [Cron header and body information for events delivered to applications](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron)
+
+* [Subscribing to Periodic timer (cron) events for a function](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-fun-existing)
+
+    * [Subscribing to Periodic timer (cron) events for a function from the console](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-fun-ui)
+
+    * [Subscribing to Periodic timer (cron) events for a function with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-fun-cli)
+
+    * [Updating your cron subscription with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#update-cron-sub-fun-cli)
+
+    * [Cron header and body information for events delivered to functions](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron-fun)
 
 * [Subscribing to Periodic timer (cron) events for a job](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job)
 

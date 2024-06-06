@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-25"
+lastupdated: "2024-06-06"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -20,8 +20,28 @@ content-type: release-note
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month.
 {: shortdesc}
 
+## June 2024
+{: #codeengine-june24}
+
+### 06 June 2024
+{: #codeengine-june0624}
+{: release-note}
+
+CLI version 1.50.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ## May 2024
 {: #codeengine-may24}
+
+### 24 May 2024
+{: #codeengine-may2424}
+{: release-note}
+
+CLI version 1.49.12 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 17 May 2024
 {: #codeengine-may1724}
