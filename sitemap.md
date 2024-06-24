@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-06-24"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2604,8 +2604,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Considerations when planning parallel batch jobs](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-consider)
 
 
-## Creating a function
-{: #sitemap_creating_a_function}
+## Running functions
+{: #sitemap_running_functions}
 
 
 [Working with functions](/docs/codeengine?topic=codeengine-fun-work#fun-work)

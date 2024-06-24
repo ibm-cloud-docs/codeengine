@@ -96,7 +96,7 @@ toc:
           - job-daemon.md
           - job-run-parallel.md
       - topicgroup:
-          label: Creating a function
+          label: Running functions
           topics:
           - fun-work.md
           - fun-create-inlinecode.md
