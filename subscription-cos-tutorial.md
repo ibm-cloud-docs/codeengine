@@ -1,15 +1,15 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-09-27"
+  years: 2020, 2024
+lastupdated: "2024-06-26"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
 subcollection: codeengine
 
 content-type: tutorial
-completion-time: 10m 
+completion-time: 10m
 
 ---
 
@@ -20,7 +20,7 @@ completion-time: 10m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-With this tutorial, you can learn how to subscribe to {{site.data.keyword.cos_short}} events by using the {{site.data.keyword.codeenginefull}} CLI. 
+With this tutorial, you can learn how to subscribe to {{site.data.keyword.cos_short}} events by using the {{site.data.keyword.codeenginefull}} CLI.
 {: shortdesc}
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
@@ -34,28 +34,28 @@ Before you begin
 All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-you-Go account. Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage. For more information, see [{{site.data.keyword.codeengineshort}} pricing](/docs/codeengine?topic=codeengine-pricing).
 {: note}
 
-## Determine your {{site.data.keyword.cos_short}} bucket and region 
+## Determine your {{site.data.keyword.cos_short}} bucket and region
 {: #determine-cos-bucket-and-region}
 {: step}
 
-The {{site.data.keyword.cos_short}} event producer generates events based on operations on objects in {{site.data.keyword.cos_full_notm}} buckets. 
+The {{site.data.keyword.cos_short}} event producer generates events based on operations on objects in {{site.data.keyword.cos_full_notm}} buckets.
 {: shortdesc}
 
 1. Install the {{site.data.keyword.cos_short}} plug-in CLI.
-   
+
     ```txt
     ibmcloud plugin install cloud-object-storage
     ```
     {: pre}
 
-2. Create an {{site.data.keyword.cos_short}} resource instance. For example, create an {{site.data.keyword.cos_short}} resource that is named `mycloud-object-storage` that uses the IBM Cloud Lite service plan. 
+2. Create an {{site.data.keyword.cos_short}} resource instance. For example, create an {{site.data.keyword.cos_short}} resource that is named `mycloud-object-storage` that uses the IBM Cloud Lite service plan.
 
     ```txt
     ibmcloud resource service-instance-create mycloud-object-storage cloud-object-storage lite global
     ```
     {: pre}
 
-3. Display the details of the {{site.data.keyword.cos_short}} resource instance that you created. Use the details to get the CRN (Cloud Resource Name) from your {{site.data.keyword.cos_short}} instance. The CRN identifies which {{site.data.keyword.cos_short}} instance you want to use. The CRN is the value of the `ID` field in the output of the `ibmcloud resource service-instance COS_INSTANCE_NAME` command. 
+3. Display the details of the {{site.data.keyword.cos_short}} resource instance that you created. Use the details to get the CRN (Cloud Resource Name) from your {{site.data.keyword.cos_short}} instance. The CRN identifies which {{site.data.keyword.cos_short}} instance you want to use. The CRN is the value of the `ID` field in the output of the `ibmcloud resource service-instance COS_INSTANCE_NAME` command.
 
     ```txt
     ibmcloud resource service-instance mycloud-object-storage
@@ -65,19 +65,19 @@ The {{site.data.keyword.cos_short}} event producer generates events based on ope
     Example output
 
     ```txt
-    Name:                  mycloud-object-storage  
-    ID:                    crn:v1:bluemix:public:cloud-object-storage:global:a/ab9d57f699655f028880abcd2ccdb524:910b727b-abcd-4a73-abcd-77c68bfeabcd::   
-    GUID:                  910b727b-abcd-4a73-abcd-77c68bfeabcd   
-    Location:              global   
-    Service Name:          cloud-object-storage   
-    Service Plan Name:     lite   
-    Resource Group Name:   Default   
-    State:                 active   
-    Type:                  service_instance   
-    Sub Type:                 
-    Created at:            2020-10-14T19:09:22Z   
-    Created by:            user@us.ibm.com   
-    Updated at:            2020-10-14T19:09:22Z   
+    Name:                  mycloud-object-storage
+    ID:                    crn:v1:bluemix:public:cloud-object-storage:global:a/ab9d57f699655f028880abcd2ccdb524:910b727b-abcd-4a73-abcd-77c68bfeabcd::
+    GUID:                  910b727b-abcd-4a73-abcd-77c68bfeabcd
+    Location:              global
+    Service Name:          cloud-object-storage
+    Service Plan Name:     lite
+    Resource Group Name:   Default
+    State:                 active
+    Type:                  service_instance
+    Sub Type:
+    Created at:            2020-10-14T19:09:22Z
+    Created by:            user@us.ibm.com
+    Updated at:            2020-10-14T19:09:22Z
     [...]
     ```
     {: screen}
@@ -116,8 +116,8 @@ The {{site.data.keyword.cos_short}} event producer generates events based on ope
     ```
     {: pre}
 
-6. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket; for example use the `mybucket` bucket. 
-   
+6. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket; for example use the `mybucket` bucket.
+
     ```txt
     ibmcloud cos bucket-location-get --bucket mybucket
     ```
@@ -162,11 +162,11 @@ Only account administrators can assign the Notifications Manager role.
     ```
     {: pre}
 
-    After you assign the Notifications Manager role to your project, you can then create {{site.data.keyword.cos_short}} subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project. 
+    After you assign the Notifications Manager role to your project, you can then create {{site.data.keyword.cos_short}} subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project.
 
     The following table summarizes the options that are used with the **`iam authorization-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam authorization-policy-create`**](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 
-    | Command option           | Description      | 
+    | Command option           | Description      |
     |------------------|------------------|
     | `codeengine` | The source service that can be authorized to access. |
     | `cloud-object-storage` | The target service that the source service can be authorized to access. |
@@ -185,12 +185,12 @@ Only account administrators can assign the Notifications Manager role.
     Example output
 
     ```txt
-    ID:                        abcd1234-a123-b456-bdd9-849e337c4460   
-    Source service name:       codeengine   
-    Source service instance:   1234abcd-b456-c789-a7c5-ef82e56fb24c   
-    Target service name:       cloud-object-storage   
-    Target service instance:   a1b2c3d4-cbad-567a-8cea-77c68bfe97c9   
-    Roles:                     Notifications Manager 
+    ID:                        abcd1234-a123-b456-bdd9-849e337c4460
+    Source service name:       codeengine
+    Source service instance:   1234abcd-b456-c789-a7c5-ef82e56fb24c
+    Target service name:       cloud-object-storage
+    Target service instance:   a1b2c3d4-cbad-567a-8cea-77c68bfe97c9
+    Roles:                     Notifications Manager
     ```
     {: screen}
 
@@ -198,14 +198,14 @@ Only account administrators can assign the Notifications Manager role.
 {: #create-app-cos}
 {: step}
 
-While events can be used to trigger apps or jobs, this tutorial uses an app. 
+While events can be used to trigger apps or jobs, this tutorial uses an app.
 {: shortdesc}
 
 
 Create an application that is named `cos-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command by using an image that is called `cos-listen`. This app logs each event as it arrives. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
 
 ```txt
-ibmcloud ce app create --name cos-app --image icr.io/codeengine/cos-listen 
+ibmcloud ce app create --name cos-app --image icr.io/codeengine/cos-listen
 ```
 {: pre}
 
@@ -237,27 +237,27 @@ By default, the [**`ibmcloud ce sub cos get`**](/docs/codeengine?topic=codeengin
 Getting COS event subscription 'cos-sub'...
 OK
 Name:          cos-sub
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f   
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
-Age:           4m16s  
-Created:       2021-02-01T13:11:31-05:00  
-Destination:  App:cos-app 
-Bucket:       mybucket  
-EventType:    all       
-Ready:        true  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           4m16s
+Created:       2021-02-01T13:11:31-05:00
+Destination:  App:cos-app
+Bucket:       mybucket
+EventType:    all
+Ready:        true
 
-Conditions:    
-    Type            OK    Age  Reason  
-    CosConfigured   true  38s    
-    Ready           true  38s    
-    ReadyForEvents  true  38s    
-    SinkProvided    true  38s    
+Conditions:
+    Type            OK    Age  Reason
+    CosConfigured   true  38s
+    Ready           true  38s
+    ReadyForEvents  true  38s
+    SinkProvided    true  38s
 
-Events:        
-    Type    Reason          Age  Source                Messages  
-    Normal  CosSourceReady  39s  cossource-controller  CosSource is ready 
-   
+Events:
+    Type    Reason          Age  Source                Messages
+    Normal  CosSourceReady  39s  cossource-controller  CosSource is ready
+
 ```
 {: screen}
 
@@ -276,9 +276,8 @@ Note that subscriptions can affect how an application scales. For more informati
 
 1. Upload a `.txt` file to your bucket. For example, you can use the [**`ibmcloud cos object-put`**](/docs/cloud-object-storage?topic=cloud-object-storage-ic-cos-cli#ic-upload-object) command to upload the `sample.txt` object to a bucket with `sample` as the value for `--key`.
 
-   
     ```txt
-    ibmcloud cos object-put --bucket mybucket --key sample --body sample.txt 
+    ibmcloud cos object-put --bucket mybucket --key sample --body sample.txt
     ```
     {: pre}
 
@@ -294,7 +293,7 @@ Note that subscriptions can affect how an application scales. For more informati
     This command returns log files that include information about the event that was forwarded to your destination app. From the following output, you can see that a `Write` operation was performed on the `sample` object in the bucket named `mybucket`.
 
     ```txt
-    Body: {"bucket":"mybucket","endpoint":"","key":"sample","notification":{"bucket_name":"mybucket","content_type":"text/plain","event_type":"Object:Write","format":"2.0","object_length":"1960","object_name":"sample","request_id":"103dd6f7-dd7b-4f49-86db-c2ff4b678b0a","request_time":"2021-02-11T16:57:42.373Z"},"operation":"Object:Write"} 
+    Body: {"bucket":"mybucket","endpoint":"","key":"sample","notification":{"bucket_name":"mybucket","content_type":"text/plain","event_type":"Object:Write","format":"2.0","object_length":"1960","object_name":"sample","request_id":"103dd6f7-dd7b-4f49-86db-c2ff4b678b0a","request_time":"2021-02-11T16:57:42.373Z"},"operation":"Object:Write"}
     ```
     {: screen}
 
@@ -317,7 +316,7 @@ Now you know that your {{site.data.keyword.cos_short}} subscription was created 
 2. Run the [**`ibmcloud ce sub cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) command to find information about your subscription.
 
     ```txt
-    ibmcloud ce sub cos get --name cos-sub 
+    ibmcloud ce sub cos get --name cos-sub
     ```
     {: pre}
 
@@ -329,28 +328,28 @@ Now you know that your {{site.data.keyword.cos_short}} subscription was created 
     Getting COS event subscription 'cos-sub'...
     OK
     Name:          cos-sub
-    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f   
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
     Project Name:  myproject
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-    Age:           4m16s  
-    Created:       2021-02-01T13:11:31-05:00  
-    Destination:  App:cos-app 
-    Bucket:       mybucket  
-    EventType:    delete 
-    Prefix:       test 
-    Ready:        true  
+    Age:           4m16s
+    Created:       2021-02-01T13:11:31-05:00
+    Destination:  App:cos-app
+    Bucket:       mybucket
+    EventType:    delete
+    Prefix:       test
+    Ready:        true
 
-    Conditions:    
-        Type            OK    Age  Reason  
-        CosConfigured   true  24m    
-        Ready           true  24m    
-        ReadyForEvents  true  24m    
-        SinkProvided    true  24m    
+    Conditions:
+        Type            OK    Age  Reason
+        CosConfigured   true  24m
+        Ready           true  24m
+        ReadyForEvents  true  24m
+        SinkProvided    true  24m
 
-    Events:        
-        Type    Reason          Age               Source                Messages  
-        Normal  CosSourceReady  9s (x2 over 24m)  cossource-controller  CosSource is ready  
-    
+    Events:
+        Type    Reason          Age               Source                Messages
+        Normal  CosSourceReady  9s (x2 over 24m)  cossource-controller  CosSource is ready
+
     ```
     {: screen}
 
@@ -394,6 +393,3 @@ ibmcloud ce app delete --name cos-app
 
 
 Ready to delete your {{site.data.keyword.cos_short}} bucket and service instance? You can use the [**`ibmcloud cos bucket-delete`**](/docs/cloud-object-storage?topic=cloud-object-storage-ic-cos-cli#ic-delete-bucket) command to remove your bucket. To remove your {{site.data.keyword.cos_short}} service instance, use the [**`ibmcloud resource service-instance-delete`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command.
-
-
-
