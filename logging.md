@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-06-27"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -21,6 +21,10 @@ subcollection: codeengine
 Logging can help you troubleshoot issues in {{site.data.keyword.codeenginefull}}. You can view logs by using the console or by using the CLI.
 {: shortdesc}
 
+As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.la_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Logging is the same for both services. For information about migrating from {{site.data.keyword.la_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
+{: important}
+
+
 ## Viewing logs from the console
 {: #view-logs-ui}
 {: ui}
@@ -28,7 +32,7 @@ Logging can help you troubleshoot issues in {{site.data.keyword.codeenginefull}}
 When you work with {{site.data.keyword.codeengineshort}} apps, jobs, functions, or builds in the console with logging enabled, logs are forwarded to an {{site.data.keyword.la_full_notm}} service where they are indexed, enabling full-text search through all generated messages and convenient querying based on specific fields.
 {: shortdesc}
 
-To view logs for your app, job or build in the {{site.data.keyword.codeengineshort}} console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} component. From your {{site.data.keyword.codeengineshort}} app, job, function, or build page in the console, you can add logging capabilities.
+To view logs for your app, job, or build in the {{site.data.keyword.codeengineshort}} console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} component. From your {{site.data.keyword.codeengineshort}} app, job, function, or build page in the console, you can add logging capabilities.
 
 You need to enable logging for {{site.data.keyword.codeengineshort}} only one time per region, per account.
 {: note}

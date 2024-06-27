@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-02-21"
+  years: 2020, 2024
+lastupdated: "2024-06-27"
 
 keywords: events, serverless, code engine, activity tracker, analyzing events
 
@@ -17,6 +17,9 @@ subcollection: codeengine
 
 You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.codeenginefull}} service instance by using the {{site.data.keyword.at_full_notm}} service.
 {: shortdesc}
+
+As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
+{: important}
 
 {{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to follow regulatory audit requirements. You can also be alerted about actions as they happen. The events that are collected follow the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting Started tutorial for {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
@@ -34,9 +37,9 @@ The following events are generated when an initiator interacts with the {{site.d
 
 These actions generate project events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.project.create` | Create a project. | 
+| `codeengine.project.create` | Create a project. |
 | `codeengine.project.read` | Get information about or list projects. |
 | `codeengine.project.update` | Update a project. |
 | `codeengine.project.delete` | Delete a project. |
@@ -48,13 +51,13 @@ These actions generate project events.
 
 These actions generate application events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.application.create` | Create an application in a project. | 
-| `codeengine.application.read` | Get information about an application. | 
-| `codeengine.application.list` | List applications. | 
-| `codeengine.application.update` | Update an application. | 
-| `codeengine.application.delete` | Delete one or more applications. | 
+| `codeengine.application.create` | Create an application in a project. |
+| `codeengine.application.read` | Get information about an application. |
+| `codeengine.application.list` | List applications. |
+| `codeengine.application.update` | Update an application. |
+| `codeengine.application.delete` | Delete one or more applications. |
 {: caption="Table 2. Actions that generate application events" caption-side="bottom"}
 
 ### Configmap events
@@ -62,12 +65,12 @@ These actions generate application events.
 
 These actions generate configmap events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.configmap.create` | Create a configmap in a project. | 
-| `codeengine.configmap.read` | Get information about a configmap. | 
-| `codeengine.configmap.list` | List configmaps. | 
-| `codeengine.configmap.update` | Update a configmap. | 
+| `codeengine.configmap.create` | Create a configmap in a project. |
+| `codeengine.configmap.read` | Get information about a configmap. |
+| `codeengine.configmap.list` | List configmaps. |
+| `codeengine.configmap.update` | Update a configmap. |
 | `codeengine.configmap.delete` | Delete one or more configmaps. |
 {: caption="Table 3. Actions that generate configmap events" caption-side="bottom"}
 
@@ -76,12 +79,12 @@ These actions generate configmap events.
 
 These actions generate secret events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.secret.create` | Create a secret in a project. | 
-| `codeengine.secret.read` | Get information about a secret. | 
-| `codeengine.secret.list` | List secrets. | 
-| `codeengine.secret.update` | Update a secret. | 
+| `codeengine.secret.create` | Create a secret in a project. |
+| `codeengine.secret.read` | Get information about a secret. |
+| `codeengine.secret.list` | List secrets. |
+| `codeengine.secret.update` | Update a secret. |
 | `codeengine.secret.delete` | Delete one or more secrets. |
 {: caption="Table 4. Actions that generate secret events" caption-side="bottom"}
 
@@ -90,16 +93,16 @@ These actions generate secret events.
 
 These actions generate build and build run events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.build.create` | Create a build in a project. | 
-| `codeengine.build.read` | Get information about a build. | 
-| `codeengine.build.list` | List builds. | 
-| `codeengine.build.update` | Update a build. | 
-| `codeengine.build.delete` | Delete one or more builds. | 
-| `codeengine.buildrun.create` | Submit a build run in a project. | 
-| `codeengine.buildrun.read` | Get information about a build run. | 
-| `codeengine.buildrun.list` | List build runs. | 
+| `codeengine.build.create` | Create a build in a project. |
+| `codeengine.build.read` | Get information about a build. |
+| `codeengine.build.list` | List builds. |
+| `codeengine.build.update` | Update a build. |
+| `codeengine.build.delete` | Delete one or more builds. |
+| `codeengine.buildrun.create` | Submit a build run in a project. |
+| `codeengine.buildrun.read` | Get information about a build run. |
+| `codeengine.buildrun.list` | List build runs. |
 | `codeengine.buildrun.delete` | Delete one or more build runs. |
 {: caption="Table 5. Actions that generate build and build run events" caption-side="bottom"}
 
@@ -108,16 +111,16 @@ These actions generate build and build run events.
 
 These actions generate job and job run events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.job.create` | Create a job in a project. | 
-| `codeengine.job.read` | Get information about a job. | 
+| `codeengine.job.create` | Create a job in a project. |
+| `codeengine.job.read` | Get information about a job. |
 | `codeengine.job.list` | List jobs. |
-| `codeengine.job.update` | Update a job. | 
-| `codeengine.job.delete` | Delete one or more jobs. | 
-| `codeengine.jobrun.create` | Submit a job run. | 
-| `codeengine.jobrun.read` | Get information about a job run. | 
-| `codeengine.jobrun.list` | List job runs. | 
+| `codeengine.job.update` | Update a job. |
+| `codeengine.job.delete` | Delete one or more jobs. |
+| `codeengine.jobrun.create` | Submit a job run. |
+| `codeengine.jobrun.read` | Get information about a job run. |
+| `codeengine.jobrun.list` | List job runs. |
 | `codeengine.jobrun.delete` | Delete one or more job runs. |
 {: caption="Table 6. Actions that generate job and job run events" caption-side="bottom"}
 
@@ -126,12 +129,12 @@ These actions generate job and job run events.
 
 These actions generate subscription events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.subscription.create` | Create subscription in a project. | 
-| `codeengine.subscription.read` | Get information about a subscription. | 
-| `codeengine.subscription.list` | List subscriptions. | 
-| `codeengine.subscription.update` | Update a subscription. | 
+| `codeengine.subscription.create` | Create subscription in a project. |
+| `codeengine.subscription.read` | Get information about a subscription. |
+| `codeengine.subscription.list` | List subscriptions. |
+| `codeengine.subscription.update` | Update a subscription. |
 | `codeengine.subscription.delete` | Delete one or more subscriptions. |
 {: caption="Table 7. Actions that generate subscription events" caption-side="bottom"}
 
@@ -145,10 +148,10 @@ The following events are generated when an initiator interacts with the **`kubec
 
 These actions generate pod events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.pods.create` | Create a pod in a project. | 
-| `codeengine.pods.read` | Get information about a pod. | 
+| `codeengine.pods.create` | Create a pod in a project. |
+| `codeengine.pods.read` | Get information about a pod. |
 | `codeengine.pods.list` | List pods. |
 | `codeengine.pods.update` | Update a pod. |
 | `codeengine.pods.delete` | Delete a pod. |
@@ -159,10 +162,10 @@ These actions generate pod events.
 
 These actions generate service account events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.serviceaccounts.read` | Get information about a service account. | 
-| `codeengine.serviceaccounts.list` | List service accounts. | 
+| `codeengine.serviceaccounts.read` | Get information about a service account. |
+| `codeengine.serviceaccounts.list` | List service accounts. |
 {: caption="Table 9. Actions that generate service account events" caption-side="bottom"}
 
 ### Event events
@@ -170,10 +173,10 @@ These actions generate service account events.
 
 These actions generate event-type events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.events.read` | Get information about an event. | 
-| `codeengine.events.list` | List events. | 
+| `codeengine.events.read` | Get information about an event. |
+| `codeengine.events.list` | List events. |
 {: caption="Table 10. Actions that generate event-type events" caption-side="bottom"}
 
 ### Resource quota events
@@ -181,10 +184,10 @@ These actions generate event-type events.
 
 These actions generate resource quota events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.resourcequotas.read` | Get information about a resource quota. | 
-| `codeengine.resourcequotas.list` | List resource quotas. | 
+| `codeengine.resourcequotas.read` | Get information about a resource quota. |
+| `codeengine.resourcequotas.list` | List resource quotas. |
 {: caption="Table 11. Actions that generate resource quota events" caption-side="bottom"}
 
 ### Limit range events
@@ -192,10 +195,10 @@ These actions generate resource quota events.
 
 These actions generate limit range events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.limitranges.read` | Get information about a limit range. | 
-| `codeengine.limitranges.list` | List limit ranges. | 
+| `codeengine.limitranges.read` | Get information about a limit range. |
+| `codeengine.limitranges.list` | List limit ranges. |
 {: caption="Table 12. Actions that generate limit range events" caption-side="bottom"}
 
 ### Deployment events
@@ -203,10 +206,10 @@ These actions generate limit range events.
 
 These actions generate deployment events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.deployments.read` | Get information about a deployment. | 
-| `codeengine.deployments.list` | List deployments. | 
+| `codeengine.deployments.read` | Get information about a deployment. |
+| `codeengine.deployments.list` | List deployments. |
 {: caption="Table 13. Actions that generate deployment events" caption-side="bottom"}
 
 ### Service binding events
@@ -214,16 +217,16 @@ These actions generate deployment events.
 
 These actions generate service bind events.
 
-| Action             | Description      | 
+| Action             | Description      |
 |--------------------|------------------|
-| `codeengine.servicebindings.create` | Create a service binding in a project. | 
-| `codeengine.servicebindings.read` | Get information about a service binding. | 
+| `codeengine.servicebindings.create` | Create a service binding in a project. |
+| `codeengine.servicebindings.read` | Get information about a service binding. |
 | `codeengine.servicebindings.list` | List service bindings. |
 | `codeengine.servicebindings.update` | Update a service binding. |
 | `codeengine.servicebindings.delete` | Delete a service binding. |
 {: caption="Table 14. Actions that generate service bind events" caption-side="bottom"}
 
-Note: 
+Note:
 - The update event does not include the original value; it includes only the new value that is provided in request body. To find the original value, you can run read action before you run the update action.
 - The `requestData` field includes request body and verb of action.
 - The `responseData` field includes response body of action.
@@ -241,7 +244,7 @@ After you view events that are captured by {{site.data.keyword.at_full_notm}}, y
 {: shortdesc}
 
 Identifying the {{site.data.keyword.codeengineshort}} project that generates the event
-:    To identify the project for which the event was generated, look at the `target.id` field. You can use this field to filter events in {{site.data.keyword.loganalysisshort_notm}}, for example, showing events for only a specific project. 
+:    To identify the project for which the event was generated, look at the `target.id` field. You can use this field to filter events in {{site.data.keyword.loganalysisshort_notm}}, for example, showing events for only a specific project.
 :    You can use the CLI to find details about your [project](/docs/codeengine?topic=codeengine-manage-project).
 
 Getting the unique ID of a request
@@ -249,9 +252,7 @@ Getting the unique ID of a request
 :    To find the unique ID of a request, look at the `correlationId` value that is set in the `correlationId` field.
 
 Getting information for failures
-:    All events that are issued for failed actions display `failure` in the `outcome` field, and in addition provide more details as part of the `reason` field. Note that the `reason.reasonForFailure` field might be especially helpful, as it contains details of the failure. 
+:    All events that are issued for failed actions display `failure` in the `outcome` field, and in addition provide more details as part of the `reason` field. Note that the `reason.reasonForFailure` field might be especially helpful, as it contains details of the failure.
 
 Custom views
 :    For more information about generating custom views by using event fields, see [Creating custom views in {{site.data.keyword.loganalysislong_notm}}](/docs/activity-tracker?topic=activity-tracker-views).
-
-
