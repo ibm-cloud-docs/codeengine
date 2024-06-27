@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-24"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -94,7 +94,7 @@ After you select the project that you want to work with, you can add logging cap
 4. Now that platform logs are configured, from your {{site.data.keyword.codeengineshort}} app, job, or function page, click **Logging** from the **Test application**, **Submit job**, or **Test function** options menu to open your platform logs window. Be sure to keep this platform logs window open to receive your logging data if you are using the {{site.data.keyword.la_short}} free tier. You don't need to keep this window open if you are using a {{site.data.keyword.la_short}} paid tier as log data is preserved for a configurable amount of time, depending on your plan. To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging).
 5. (optional) Refine the [filter for your search](#view-logs-filters), if needed.
 6. Verify your configuration by doing one of the following steps:
-    * For an application or a function, test it: click **Test application** or **Test function** as apprioriate, and then click **Send request**. To open the application or function in a web page, click **Application URL** or **Function URL**. You can view platform logs from the test in the platform logs window.
+    * For an application or a function, test it: click **Test application** or **Test function** as appropriate, and then click **Send request**. To open the application or function in a web page, click **Application URL** or **Function URL**. You can view platform logs from the test in the platform logs window.
     * For a job, run it: from the **Job runs** area, click **Submit job** to run your job. Provide the job run configuration values or you can take the default values. Click **Submit job** to run your job. You can view platform logs from the job run in the platform logs window.
 
 Your {{site.data.keyword.la_short}} instance is now configured such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} app, job, or function.

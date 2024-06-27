@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-27"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2604,8 +2604,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Considerations when planning parallel batch jobs](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-consider)
 
 
-## Creating a function
-{: #sitemap_creating_a_function}
+## Running functions
+{: #sitemap_running_functions}
 
 
 [Working with functions](/docs/codeengine?topic=codeengine-fun-work#fun-work)
@@ -2649,6 +2649,24 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Considerations for functions quotas](/docs/codeengine?topic=codeengine-fun-work#functions-quotas)
 
 * [Next steps](/docs/codeengine?topic=codeengine-fun-work#function-nextsteps)
+
+[Exchanging data with functions](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-exchanging-data)
+
+* [External data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface)
+
+    * [MIME types](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-MIME-types)
+
+    * [Function request data encoding](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-function-request-data-encoding)
+
+    * [Function response data encoding](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-function-response-data-encoding)
+
+* [Internal data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-internal-data-interface)
+
+    * [{{site.data.keyword.codeengineshort}} function entry](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-function-entry)
+
+    * [{{site.data.keyword.codeengineshort}} function entry examples](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-function-entry-examples)
+
+    * [{{site.data.keyword.codeengineshort}} function results](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-function-results)
 
 [Creating function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inlinecode)
 
