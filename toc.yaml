@@ -99,6 +99,7 @@ toc:
           label: Running functions
           topics:
           - fun-work.md
+          - fun-exchanging-data-with-functions.md
           - fun-create-inlinecode.md
           - fun-create-repo.md
           - fun-create-local.md
