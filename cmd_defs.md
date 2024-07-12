@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-04"
+lastupdated: "2024-07-12"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2496,7 +2496,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 :   The name of the registry secret that is used to authenticate with a private registry. You can add the registry secret by running the `registry create` command. This value is *optional*. 
 
 `--cpu`
-:   The amount of CPU set for the instance of the function. For valid values see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `0.5`.
+:   The amount of CPU set for the instance of the function. For valid values see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `1`.
 
 `--env`, `-e`
 :   Set environment variables in the function. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
@@ -2530,7 +2530,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 :   The maximum amount of time in seconds for this function to complete its run. This value is *optional*. The default value is `60`.
 
 `--memory`, `-m`
-:   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `2G`.
+:   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `4G`.
 
 `--no-wait`, `--nw`
 :   Do not wait for the build run to complete. This value is *optional*. The default value is `true`.
@@ -2542,7 +2542,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--scale-down-delay`, `--sdd`
-:   The amount of time in seconds an instance is active after an invocation completes. This option can reduce cold start times. For more information, see [Can I keep my function instance alive longer?](/docs/codeengine?topic=codeengine-fun-work#functions-scale). This value is *optional*. The default value is `0`.
+:   The amount of time in seconds an instance is active after an invocation completes. This option can reduce cold start times. For more information, see [Can I keep my function instance alive longer?](/docs/codeengine?topic=codeengine-fun-work#functions-scale). This value is *optional*. The default value is `1`.
 
 `--visibility`, `-v`
 :   The visibility for the function. Valid values are `public`, `private`, and `project`. Visibility can only be `private` if the project supports function private visibility. This value is *optional*. The default value is `public`.
@@ -2887,7 +2887,7 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 :   The name of the registry secret that is used to authenticate with a private registry. You can add the registry secret by running the `registry create` command. This value is *optional*. 
 
 `--cpu`
-:   The amount of CPU set for the instance of the function. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `0.5`.
+:   The amount of CPU set for the instance of the function. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `1`.
 
 `--env`, `-e`
 :   Set environment variables in the function. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
@@ -2930,7 +2930,7 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 :   The maximum execution time in seconds for this function to complete its run. This value is *optional*. The default value is `60`.
 
 `--memory`, `-m`
-:   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `2G`.
+:   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `4G`.
 
 `--no-wait`, `--nw`
 :   Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is *optional*. The default value is `true`.
@@ -2948,7 +2948,7 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 :   The runtime to use for the function. To find supported runtimes for this region, run `ibmcloud ce function runtimes`. See [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime). This value is *optional*. 
 
 `--scale-down-delay`, `--sdd`
-:   The amount of time in seconds an instance is active after an invocation completes. This option can reduce cold start times. For more information, see [Can I keep my function instance alive longer?](/docs/codeengine?topic=codeengine-fun-work#functions-scale). This value is *optional*. The default value is `0`.
+:   The amount of time in seconds an instance is active after an invocation completes. This option can reduce cold start times. For more information, see [Can I keep my function instance alive longer?](/docs/codeengine?topic=codeengine-fun-work#functions-scale). This value is *optional*. The default value is `1`.
 
 `--visibility`, `-v`
 :   The visibility for the function. Valid values are `public`, `private`, and `project`. Visibility can only be `private` if the project supports function private visibility. This value is *optional*. 
