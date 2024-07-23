@@ -182,7 +182,7 @@ As a developer of a function, you can generate any arbitrary HTTP status code, e
 
 To run your function in {{site.data.keyword.codeengineshort}}, your code must implement a runtime contract with the following characteristics.
 
-- Must be callable from a public web app endpoint, so that it can be embedded with web pages and then invoked from any Code Engine Eventing source, a Web Browser, or any other HTTPS capable client.
+- Must be callable from a public web application endpoint, so that it can be embedded with web pages and then invoked from any Code Engine Eventing source, a Web Browser, or any other HTTPS capable client.
 - Must implement a `main` procedure as entry point. The `main` procedure can receive input parameters in form of a JSON formatted data structure and can return output parameters, also in form of a JSON formatted data structure.
 - Can receive an optional sub path, so that the function can implement different flavors, based on the specified path. The function's `main` procedure receives the path as a `__ce_path` input parameter.
 - Can receive optional query parameters, which can be used to configure the function at runtime. The function's `main` procedure receives the parameters as key-value pairs within the JSON formatted input data structure.
@@ -208,7 +208,7 @@ You can deploy your function with the following visibility levels:
 
 | Setting | Description |
 | --------- | ------------------- |
-| [internal (project)](#fun-endpoint-projectonly) | A function with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. Setting an internal (project) endpoint means that your function is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. **IMPORTANT:** A function cannot invoke another job or app using the internal routes.|
+| [internal (project)](#fun-endpoint-projectonly) | A function with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. Setting an internal (project) endpoint means that your function is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. **Important:** A function cannot invoke another job or application using the internal routes.|
 | [public](#fun-endpoint-public) | A function with this setting is exposed to the internet and your {{site.data.keyword.codeengineshort}} project. Setting a public endpoint means that your function can receive requests from the public internet or from components within your {{site.data.keyword.codeengineshort}} project. This setting is the default. |
 | [private](#fun-endpoint-private) | A function with this setting is exposed to the {{site.data.keyword.cloud_notm}} private network and your {{site.data.keyword.codeengineshort}} project. Setting a private endpoint means that your function is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services by using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project.|
 {: caption="Table 1. Visibility for functions" caption-side="bottom"}
@@ -226,7 +226,7 @@ With the CLI, set the endpoint visibility for your function so that it is deploy
 
 From the console, set the visibility of endpoints for your function by using the **Endpoints** setting when you create your function. After your function is deployed, you can view and modify these system domain mapping settings on the **Domain mappings** tab on your Functions page.
 
-A function with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. However, a function cannot invoke another job or app using the internal routes.
+A function with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. However, a function cannot invoke another job or application using the internal routes.
 {: important}
 
 ### Deploying your function with a public endpoint

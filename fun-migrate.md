@@ -59,7 +59,7 @@ In addition, {{site.data.keyword.codeengineshort}} includes [Function limits](/d
 ## What {{site.data.keyword.codeengineshort}} entity is best for my workload?
 {: #fun-migrate-compare-app-job}
 
-{{site.data.keyword.codeengineshort}} apps serve long running, complex, compute tasks on a scalable compute infrastructure.
+{{site.data.keyword.codeengineshort}} applicationss serve long running, complex, compute tasks on a scalable compute infrastructure.
 
 {{site.data.keyword.codeengineshort}} jobs are used for low-parallelism, scheduled workloads that can require high resources.
 
@@ -95,7 +95,7 @@ You can convert your action to a {{site.data.keyword.codeengineshort}} function 
 ### Can I trigger my function code?
 {: #fun-migrate-faq3}
 
-Yes. {{site.data.keyword.codeengineshort}} supports cron jobs (alarms) for functions. Other types of event producers (or triggers) are only supported for applications and jobs. You can create your code as an app or job, and then add a subscription to an event producer, including cron jobs, Object storage, and Event Streams (Kafka) data. For more information, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
+Yes. {{site.data.keyword.codeengineshort}} supports cron jobs (alarms) for functions. Other types of event producers (or triggers) are only supported for applications and jobs. You can create your code as an lication or job, and then add a subscription to an event producer, including cron jobs, Object storage, and Event Streams (Kafka) data. For more information, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
 
 ### Can my function be accessed through a public URL?
 {: #fun-migrate-faq4}
