@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-07-23"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -115,7 +115,7 @@ You can include dynamic elements that are supported by {{site.data.keyword.codee
 ### Can I use sequences to chain my functions together?
 {: #fun-migrate-faq7}
 
-{{site.data.keyword.codeengineshort}} does not include support for sequences. However, because any function can be invoked by calling its web URL, you can chain your functions together with a series of REST calls. This logic must be added directly to your function code.
+{{site.data.keyword.codeengineshort}} does not include support for sequences. However, because any function can be invoked by calling its [private or public endpoint](/docs/codeengine?topic=codeengine-fun-work#optionsvisibilityfun), you can chain your functions together with a series of REST calls. This logic must be added directly to your function code.
 
 ### Can I use `whisk.system` actions?
 {: #fun-migrate-faq8}
