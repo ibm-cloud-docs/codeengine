@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-07-23"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -25,7 +25,7 @@ First, learn about some [key terms](#term-summary) for {{site.data.keyword.codee
 
 - [Deploy an application](#app-hello)
 - [Create and run a job](#first-job)
-- [Run Function code](#first-function)
+- [Run function code](#first-function)
 - [Building your first container image from source code](#build-image-gs)
 
 
@@ -39,7 +39,7 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 | Project | A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities.|
 | Application | An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. |
 | Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile or Cloud Native Buildpacks. |
-| Function | A Function is a stateless code snippet that performs tasks in response to an HTTP request. |
+| Function | A function is a stateless code snippet that performs tasks in response to an HTTP request. |
 | Job | A job runs one or more instances of your executable code in parallel. Unlike applications, which include an HTTP Server to handle incoming requests, jobs are designed to run one time and exit. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
 
@@ -51,17 +51,17 @@ Not sure what to choose? See [Planning for {{site.data.keyword.codeengineshort}}
 ## Deploying your first {{site.data.keyword.codeengineshort}} app
 {: #app-hello}
 
-Create your first {{site.data.keyword.codeengineshort}} app by using the `icr.io/codeengine/helloworld` image.  
+Create your first {{site.data.keyword.codeengineshort}} app by using the `icr.io/codeengine/helloworld` image.
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Let's go**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 4. Select **Application**.
-5. Enter a name for the application, for example, `myapp`. Use a name for your application that is unique within the project. 
+5. Enter a name for the application, for example, `myapp`. Use a name for your application that is unique within the project.
 6. Select to run a **Container image** and specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/helloworld){: external}.
-7. Click **Create**. 
-8. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
+7. Click **Create**.
+8. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.
 
 Example output
 
@@ -100,7 +100,7 @@ You deployed your first application to {{site.data.keyword.codeengineshort}} and
 ## Running your first {{site.data.keyword.codeengineshort}} job
 {: #first-job}
 
-Create and run your first {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengine/helloworld` image. 
+Create and run your first {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengine/helloworld` image.
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
@@ -108,9 +108,9 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 4. Select **Job**.
 5. Enter a name for the job, for example, `myjob`. Use a name for your job that is unique within the project.
-6. Specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}. 
+6. Specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}.
 7. Click **Create**.
-8. From your job page, click **Submit job** to submit a job based on the current configuration.  
+8. From your job page, click **Submit job** to submit a job based on the current configuration.
 9. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.
 
 When logging is enabled, the following example is displayed in the logs. To learn about running jobs with logging enabled, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
@@ -131,12 +131,12 @@ Hello World from:
 
 Some Env Vars:
 --------------
-CE_DOMAIN=us-east.codeengine.appdomain.cloud 
+CE_DOMAIN=us-east.codeengine.appdomain.cloud
 CE_JOB=myjob
 CE_JOBRUN=myjob-jobrun-xgpmz
 CE_SUBDOMAIN=abcdabcdab
 HOME=/root
-HOSTNAME=myjob-jobrun-abcde-0-0 
+HOSTNAME=myjob-jobrun-abcde-0-0
 JOB_INDEX=0
 ...
 z=Set env var 'SHOW' to see all variables
@@ -158,7 +158,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} function with sa
 5. Enter a name for the function. Use a name for your function that is unique within the project.
 6. Select **Node.js 18**
 7. Click **Create**. Your function is created with sample code. You can edit this code on the **Function -> Configuration** page.
-8. Click **Test function** and then click **Send request** in the Test function pane. To open the function in a web page, click **Function URL**. 
+8. Click **Test function** and then click **Send request** in the Test function pane. To open the function in a web page, click **Function URL**.
 
 Example output
 
@@ -184,26 +184,26 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 2. Select **Let's go**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 4. Select **Application**.
-5. Enter a name for the application. Use a name for your application that is unique within the project. 
+5. Enter a name for the application. Use a name for your application that is unique within the project.
 6. Select to run a **Container image** and specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/helloworld){: external}.
 7. Select **Source code**.
 8. Click **Specify build details**.
-9. Accept the default for each page, clicking **Next** and then **Done**. 
+9. Accept the default for each page, clicking **Next** and then **Done**.
 16. Click **Create**.
 
-After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. 
+After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.
 
 Example output
 
 ```txt
 Hello World from:
-     ___  __  ____  ____             
-    / __)/  \(    \(  __)            
-   ( (__(  O )) D ( ) _)             
-    \___)\__/(____/(____)            
- ____  __ _   ___  __  __ _  ____ 
+     ___  __  ____  ____
+    / __)/  \(    \(  __)
+   ( (__(  O )) D ( ) _)
+    \___)\__/(____/(____)
+ ____  __ _   ___  __  __ _  ____
 (  __)(  ( \ / __)(  )(  ( \(  __)
- ) _) /    /( (_ \ )( /    / ) _) 
+ ) _) /    /( (_ \ )( /    / ) _)
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------
@@ -239,5 +239,3 @@ Learn more about performing these {{site.data.keyword.codeengineshort}} tasks fr
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-
