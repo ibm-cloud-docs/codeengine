@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-07-24"
 
 keywords: function tutorial for code engine, function, functions in code engine, creating functions, tutorial for code engine
 
@@ -204,9 +204,10 @@ When you delete your function, the associated build files are also deleted.
 
 Lastly, delete the code bundle that the build created from {{site.data.keyword.registrylong_notm}}.
 
-1. Navigate to [**Registry**](https://cloud.ibm.com/registry/start){: external} in the {{site.data.keyword.cloud_notm}} console.
-2. Find the code bundle that are associated with your function by searching for your function name.
-3. Select the code bundle and **Delete**.
+1. Navigate to [**Container Registry** > **Images**](https://cloud.ibm.com/registry/images){: external} in the {{site.data.keyword.cloud_notm}} console.s
+2. Select the region in the **Location** drop-down menu which you selected when you logged on to {{site.data.keyword.cloud_notm}}. 
+3. Find the image (which represents your code bundle) that is associated with your function by searching for your function name (for example, funhello).
+4. Select the image (for example au.icr.io/ce--27b98-1jp42v8n9n3o/function-funhello@sha256:b53683f47e0e548b4fa1d3fc93404399fdc4008b54ccecc0852794ea88d01538) and select **Delete** from the ellipses (...) menu.
 
 ## Next steps
 {: #fun-tutorial-nextsteps}
