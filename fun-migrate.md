@@ -59,7 +59,7 @@ In addition, {{site.data.keyword.codeengineshort}} includes [Function limits](/d
 ## What {{site.data.keyword.codeengineshort}} entity is best for my workload?
 {: #fun-migrate-compare-app-job}
 
-{{site.data.keyword.codeengineshort}} applicationss serve long running, complex, compute tasks on a scalable compute infrastructure.
+{{site.data.keyword.codeengineshort}} applications serve long running, complex, compute tasks on a scalable compute infrastructure.
 
 {{site.data.keyword.codeengineshort}} jobs are used for low-parallelism, scheduled workloads that can require high resources.
 
