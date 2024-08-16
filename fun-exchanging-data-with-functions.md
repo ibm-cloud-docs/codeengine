@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-27"
+lastupdated: "2024-08-16"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -67,7 +67,7 @@ Depending on the value of the `Content-Type`, the function receives input data:
 
 The function receives the keys and values of the JSON document as dedicated parameters.
 
-In addition, the JSON payload is made available to the function as-is (byte array) by using the `body` parameter, but in Base64-encoded form.
+In addition, the JSON payload is made available to the function as-is (byte array) by using the `__ce_body` parameter, but in Base64-encoded form.
 
 Example JSON content:
 
@@ -89,7 +89,7 @@ Example JSON content:
 #### Percent-encoded content
 {: #function-request-data-encoding-percent-encoded}
 
-Percent-encoding is widely used in web technology. All 8-bit characters are written as hexadecimal value preceded by a percentage sign (%). This type of encoding is also known as URL-encoding. The payload is made available to the function as-is (byte array) by using the `body` parameter, whereas the percent-encoded values are unaltered and therefore the function code requires decoding them.
+Percent-encoding is widely used in web technology. All 8-bit characters are written as hexadecimal value preceded by a percentage sign (%). This type of encoding is also known as URL-encoding. The payload is made available to the function as-is (byte array) by using the `__ce_body` parameter, whereas the percent-encoded values are unaltered and therefore the function code requires decoding them.
 
 Example percent-encoded content:
 
@@ -111,7 +111,7 @@ Example percent-encoded content:
 #### Text content
 {: #function-request-data-encoding-text}
 
-The text payload is made available to the function as-is (byte array) by using the `body` parameter. The caller can send an arbitrary sequence of 7- or 8-bit characters as the request payload. As the input to the function code is a JSON formatted data structure, some characters are escaped to make them compatible to JSON. {{site.data.keyword.codeengineshort}} runs this escaping before it forwards the request payload to the function. The function's program logic might need to un-escape them to re-create the original data.
+The text payload is made available to the function as-is (byte array) by using the `__ce_body` parameter. The caller can send an arbitrary sequence of 7- or 8-bit characters as the request payload. As the input to the function code is a JSON formatted data structure, some characters are escaped to make them compatible to JSON. {{site.data.keyword.codeengineshort}} runs this escaping before it forwards the request payload to the function. The function's program logic might need to un-escape them to re-create the original data.
 
 Supported escape characters:
 
@@ -143,7 +143,7 @@ Example text content, with correctly-escaped response characters in Python:
 #### Binary content
 {: #function-request-data-encoding-binary}
 
-Data payload is made available to the function as-is (byte array) by using the `body` parameter, but in Base64 encoded form.
+Data payload is made available to the function as-is (byte array) by using the `__ce_body` parameter, but in Base64 encoded form.
 
 Example binary content:
 
