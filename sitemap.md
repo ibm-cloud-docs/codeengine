@@ -136,6 +136,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [August 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august24)
+
+    * [16 August 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august1624)
+
+        * Updated information about supported versions of Knative
+
 * [July 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july24)
 
     * [11 July 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july1124)
