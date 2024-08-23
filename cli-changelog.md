@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-12"
+lastupdated: "2024-08-23"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.50.3 | 2024-08-23 | - Fixed various bugs. |
 | 1.50.1 | 2024-07-11 | - The default values for the following options of command `fn create` have been changed. \n     - `--cpu` old default value: 0.5, new default value: **1** \n     - `--memory` old default value: 2G, new default value **4G** \n     - `--scale-down-delay` old default value: 0, new default value: **1** \n - Fixed various bugs.
 | 1.50.0 | 2024-06-06 | - The commands `sub cron create` and `sub cron update` now support **function** as a value for `--destination-type`. Use this new value to invoke a function based on CRON events. See [Subscribing to Periodic timer (cron) events for a function](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-fun-existing). \n - Fixed various bugs. |
 | 1.49.12 | 2024-05-24 | - Fixed various bugs. |

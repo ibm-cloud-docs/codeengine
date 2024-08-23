@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-08-16"
+lastupdated: "2024-08-23"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## August 2024
 {: #codeengine-august24}
+
+### 23 August 2024
+{: #codeengine-august2324}
+{: release-note}
+
+CLI version 1.50.3 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 16 August 2024
 {: #codeengine-august1624}
