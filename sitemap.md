@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-16"
+lastupdated: "2024-08-23"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -137,6 +137,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [August 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august24)
+
+    * [23 August 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august2324)
+
+        * CLI version 1.50.3 released
 
     * [16 August 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august1624)
 
