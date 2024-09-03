@@ -2748,9 +2748,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Supported CPU and memory combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo)
 
-* [Runtimes support lifecycle](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtimes-support-lifecycle)
+* [Runtime support lifecycle](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtimes-support-lifecycle)
 
-* [How to upgrade a Function to a new runtime release](/docs/codeengine?topic=codeengine-fun-runtime#fun-upgrade-to-new-runtime-release)
+* [Upgrading a function to a new runtime release](/docs/codeengine?topic=codeengine-fun-runtime#fun-upgrade-to-new-runtime-release)
 
 [Testing {{site.data.keyword.codeengineshort}} functions locally](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-local)
 
