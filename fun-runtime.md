@@ -61,16 +61,16 @@ The support lifecycle of managed runtimes for {{site.data.keyword.codeengineshor
 
 Each function has a managed runtime release associated with it, even if the (generic) runtime family was specified during the function creation. Managed runtimes expire after a deprecation period, and are in line with the official support period of the runtime provider. After the end of the deprecation period (end of life of the runtime), a function using this runtime will stop working.
 
-Existing functions, therefore, must be migrated to the currently supported (new) runtime release. As new runtime releases can contain breaking API changes, the update of a function to a new runtime release comprises of migration (code changes) and testing steps. You can use the {{site.data.keyword.codeengineshort}} CLI's `ibmcloud ce function update --runtime ...` command to update existing functions with a new runtime version. Doing so will immediately cause the function to run untested with the new (selected) runtime release as the base (in-place update). Therefore, any in-place updates are not recommended for production code.
+Existing functions, therefore, must be migrated to the currently supported (new) runtime release. As new runtime releases can contain breaking API changes, the update of a function to a new runtime release comprises of migration (code changes) and testing steps. You can use the {{site.data.keyword.codeengineshort}} CLI's `ibmcloud ce function update --runtime` command to update existing functions with a new runtime version. Doing so will immediately cause the function to run untested with the new (selected) runtime release as the base (in-place update). Therefore, any in-place updates are not recommended for production code.
 
 As a best practice, updating production code depends on whether it is acceptable that the function's URL is changed or if the URL must be kept:
 
-1. If function URL endpoint changes are acceptable:
-- create a new function based on the same source code (or code bundle) as the original function, using the new runtime release.
-- ensure that the new function works as expected. If it does not, adapt the source code and rebuild the function.
-- use the new function URL and remove the previous version.
+* If function URL endpoint changes are acceptable:
+    - create a new function based on the same source code (or code bundle) as the original function, using the new runtime release.
+    - ensure that the new function works as expected. If it does not, adapt the source code and rebuild the function.
+    - use the new function URL and remove the previous version.
 
-2. If the original function URL endpoint must be kept:
-- create a new function (as a test function) based on the same source code (or code bundle) as the original function, using the new runtime release
-- ensure that the test function works as expected. If it does not, adapt the code and rebuild the test function.
-- update the original function to use the new runtime release, and then as the adapted source code.
+*  If the original function URL endpoint must be kept:
+    - create a new function (as a test function) based on the same source code (or code bundle) as the original function, using the new runtime release
+    - ensure that the test function works as expected. If it does not, adapt the code and rebuild the test function.
+    - update the original function to use the new runtime release, and then as the adapted source code.
