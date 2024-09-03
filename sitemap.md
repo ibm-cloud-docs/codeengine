@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-23"
+lastupdated: "2024-09-03"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2748,6 +2748,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Supported CPU and memory combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo)
 
+* [Runtimes support lifecycle](/docs/codeengine?topic=codeengine-fun-runtime#fun-runtimes-support-lifecycle)
+
+* [How to upgrade a Function to a new runtime release](/docs/codeengine?topic=codeengine-fun-runtime#fun-upgrade-to-new-runtime-release)
+
 [Testing {{site.data.keyword.codeengineshort}} functions locally](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-local)
 
 * [Python wrapper](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-python)
@@ -4548,4 +4552,3 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Getting help and support for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-get-support#get-support)
 
 * [Providing support case details](/docs/codeengine?topic=codeengine-get-support#support-case-details)
-

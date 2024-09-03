@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-09-03"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -264,7 +264,7 @@ Learn about the options that you can specify when you create your function. Note
 When you deploy your function, you can specify the amount of memory and CPU that your function can consume. These amounts can vary, depending on if your function is compute-intensive, memory-intensive, or balanced.
 {: shortdesc}
 
-By default, your function is assigned 2 G of memory and 0.50 vCPU. For more information about other supported memory and CPU combinations, see [Supported memory and CPU combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo).
+By default, your function is assigned 4 G of memory and 1.0 vCPU. For more information about other supported memory and CPU combinations, see [Supported memory and CPU combinations for functions](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo).
 
 
 ### Creating and running your function with environment variables
