@@ -1,10 +1,10 @@
 {
     "title": "Code Engine",
-    "lastupdated": "2024-06-27",
+    "lastupdated": "2024-09-10",
     "introduction": "Find out how you can use Code Engine to run your containerized workloads",
     "section_devtools": {
-      "api": "/apidocs/codeengine/v2", 
-      "cli": "/docs/codeengine?topic=codeengine-cli", 
+      "api": "/apidocs/codeengine/v2",
+      "cli": "/docs/codeengine?topic=codeengine-cli",
       "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_app"
     },
     "section_recommended": [
@@ -38,6 +38,6 @@
       "developer": "https://developer.ibm.com/components/cloud-code-engine/",
       "architecture": "https://www.ibm.com/architectures/hybrid",
       "training": "https://www.ibm.com/training/cloud",
-      "community": "hhttps://community.ibm.com/community/user/cloud/home"
+      "community": "https://community.ibm.com/community/user/cloud/home"
     }
   }
