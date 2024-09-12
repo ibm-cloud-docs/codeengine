@@ -47,21 +47,21 @@ For memory and CPU information, see [Supported memory and CPU combinations](/doc
 ## Runtime support lifecycle
 {: #fun-runtimes-support-lifecycle}
 
-The support lifecycle of managed runtimes for {{site.data.keyword.codeengineshort}} functions depends on the official support cycles of the programming language release they are based on. If the runtime that your function uses reaches end-of-life, your function will stop working. Before end-of-life, there is a deprecation period (typically 6 months), during which time the runtime continues to receive security updates while users are migrating their functions to the new runtime release. The following table lists the deprecation and end of life dates:
+The support lifecycle of managed runtimes for {{site.data.keyword.codeengineshort}} functions depends on the official support cycles of the programming language release on which they are based. If the runtime that your function uses reaches end oflife, your function will stop working. Before end oflife, there is a deprecation period (typically six months), during which time the runtime continues to receive security updates while users are migrating their functions to the new runtime release. The following table lists the deprecation and end of life dates:
 
 | Runtime | Deprecation | End of life |
 | -------------- | -------------- | -------------- |
-| Node.js 18 | October 1st 2024 | April 30th 2025 |
-| Node.js 20  | November 1st 2025 | April 30th 2026 |
-| Python 3.11 | May 1st 2027 | September 30th 2027|
+| Node.js 18 | 1 October 2024 | 30 April 2025 |
+| Node.js 20  | 1 November 2025 | 30 April 2026 |
+| Python 3.11 | 1 May 2027 | 30 September 2027|
 {: caption="Table 1. Deprecation and end of life dates" caption-side="bottom"}
 
 ## Upgrading a function to a new runtime release
 {: #fun-upgrade-to-new-runtime-release}
 
-New runtime releases can contain breaking API changes and functions might require code changes, which must be tested. Use the {{site.data.keyword.codeengineshort}} CLI's `ibmcloud ce function update --runtime` command to update your existing functions to use a new runtime version. Doing so will immediately cause the function to run with the new (selected) runtime release as the base (=in-place update). Therefore, any in-place updates are not recommended for production code. We recommend creating a test function during the migration phase.
+New runtime releases can contain breaking API changes and functions might require code changes, which must be tested. Use the {{site.data.keyword.codeengineshort}} CLI's `ibmcloud ce function update --runtime` command to update your existing functions to use a new runtime version. Doing so will immediately cause the function to run with the new (selected) runtime release as the base (=in-place update). Therefore, any in-place updates are not recommended for production code. Create a test function during the migration phase.
 
-As a best practice, updating production code depends on whether it is acceptable that the function's URL is changed or if the URL must be kept:
+Updating production code depends on whether it is acceptable that the function's URL is changed or if the URL must be kept:
 
 * If function URL endpoint changes are acceptable:
     - create a new function based on the same source code (or code bundle) as the original function, using the new runtime release.
