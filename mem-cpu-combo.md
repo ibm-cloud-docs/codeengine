@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-10-17"
+  years: 2024
+lastupdated: "2024-09-03"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine, memory and CPU
 
@@ -67,9 +67,9 @@ Your existing apps and jobs might be using other memory and CPU combinations, an
   
 See the following list for valid combinations of CPU and memory for functions.
 
-- 0.25 vCPU and 1 GB memory 
-- 0.5 vCPU and 2 GB memory (**Default**)
-- 1 vCPU and 4 GB memory
+- 0.25 vCPU and 1 GB memory
+- 0.5 vCPU and 2 GB memory
+- 1 vCPU and 4 GB memory (**Default**)
   
 
 ## Units of measurement
@@ -84,5 +84,3 @@ Decimal units such as kilobyte (KB), megabyte (MB), and gigabyte (GB) are common
 | gibibyte (GiB) | 2^30 | gigabyte (GB) | 10^9 |
 | tebibyte (TiB) | 2^40 | terabyte (TB) | 10^12 |
 {: caption="Table 2. Comparison of binary and decimal units and values" caption-side="bottom"}
-
-

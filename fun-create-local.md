@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-11"
+lastupdated: "2024-09-04"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -21,7 +21,7 @@ You can create your {{site.data.keyword.codeengineshort}} function directly from
 
 A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
 
-When you submit a build that pulls code from a local directory, your source code is packed into an archive file. {{site.data.keyword.codeengineshort}} automatically uploads the code bundle to an {{site.data.keyword.registrylong}} namespace in your account, and then creates and deploys your function to reference this built code bundle. Note that you can only target {{site.data.keyword.registrylong_notm}} for your local builds. For this scenario, you need to provide only a name for the function and the path to the local source. For a complete listing of options, see the [**`ibmcloud ce fn create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command.  
+When you submit a build that pulls code from a local directory, your source code is packed into an archive file. {{site.data.keyword.codeengineshort}} automatically uploads the code bundle to an {{site.data.keyword.registrylong}} namespace in your account, and then creates and deploys your function to reference this built code bundle. Note that you can only target {{site.data.keyword.registrylong_notm}} for your local builds. For this scenario, you need to provide only a name for the function and the path to the local source. For a complete listing of options, see the [**`ibmcloud ce fn create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command.
 
 For information about required permissions for accessing image registries, see [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
 
@@ -36,7 +36,7 @@ Before you begin
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-Before you work with local source, make sure that your source is in an accessible location on your local workstation.  
+Before you work with local source, make sure that your source is in an accessible location on your local workstation.
 
 ## Creating a function from local source code with the CLI
 {: #fun-create-local-cli}
@@ -47,7 +47,7 @@ This example uses the following Node.js code, saved as a `main.js` file. You can
 ```javascript
 /**
  * The `main` function is the entry-point into the function.
- * It has one optional argument, which carries all the 
+ * It has one optional argument, which carries all the
  * parameters the function was invoked with.
 */
 async function main(params) {
@@ -58,9 +58,9 @@ async function main(params) {
   // log all parameters for debugging purposes
   console.log("params: "+params);
   // since functions are invoked through http(s), we return an HTTP response
-  return { 
-      statusCode: 200, 
-      headers: { 'Content-Type': 'application/json' }, 
+  return {
+      statusCode: 200,
+      headers: { 'Content-Type': 'application/json' },
       body: params };
 }
 
@@ -71,7 +71,7 @@ module.exports.main = main;
 {: codeblock}
 
 
-1. Change to the directory that contains the `main.js` file or record the path to it. 
+1. Change to the directory that contains the `main.js` file or record the path to it.
 
 2. Create a function called `myfun-local` that uses a the `main.js` file as source. This command automatically builds and pushes the code bundle to a {{site.data.keyword.registryshort}} namespace in your account. If you do not have an existing {{site.data.keyword.registryshort}} namespace, {{site.data.keyword.codeengineshort}} automatically creates one for you.
 
@@ -94,23 +94,23 @@ module.exports.main = main;
     Run 'ibmcloud ce buildrun get -n myfun-local-run-230626-115011911' to check the build run status.
     Waiting for function 'myfun-local' to become ready...
     Function 'myfun-local' is ready.
-    OK                                                
+    OK
     Run 'ibmcloud ce function get -n myfun-local' to see more details.
 
     https://myfun-local.glxo4kabcde.us-south.codeengine.test.appdomain.cloud
     ```
     {: screen}
 
-    Notice the output of the **`function create`** command provides information on the progression of the build run before the function is created. 
+    Notice the output of the **`function create`** command provides information on the progression of the build run before the function is created.
     {: tip}
 
-    In this example, the built code-bundle is uploaded to the `ce--abcde-glxo4kabcde` namespace in {{site.data.keyword.registryshort}}. 
+    In this example, the built code-bundle is uploaded to the `ce--abcde-glxo4kabcde` namespace in {{site.data.keyword.registryshort}}.
 
-    The following table summarizes the options that are used with the **`fn create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command.
+    The following table summarizes the options that are used with the **`fn create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command. Because these options vary based on where the source code resides, make sure that your source code resides in the location that matches the example.
 
     | Option | Description |
     | -------------- | -------------- |
-    | `--name` | The name of the function. Use a name that is unique within the project. This value is required. \n - The name must begin with a lowercase letter. \n - The name must end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain letters, numbers, and hyphens (-). | 
+    | `--name` | The name of the function. Use a name that is unique within the project. This value is required. \n - The name must begin with a lowercase letter. \n - The name must end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain letters, numbers, and hyphens (-). |
     | `--build-source` | The path to the local source. This value is required. |
     | `--runtime` | The runtime to use for this function. This value is required. |
     {: caption="Table 1. Command description" caption-side="bottom"}
@@ -127,37 +127,37 @@ module.exports.main = main;
     ```txt
     Getting function 'myfun-local'...
     OK
-    
-    Name:          myfun-local  
-    Project Name:  sample  
-    Project ID:    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f  
-    Age:           5m41s  
-    Created:       2023-06-26T16:50:14Z  
-    URL:           https://myfun-local.glxo4kabcde.us-south.codeengine.test.appdomain.cloud  
-    Status:        Ready  
 
-    Resources:    
-      CPU:                 0.25  
-      Memory:              500M  
-      Max Execution Time:  60 seconds  
+    Name:          myfun-local
+    Project Name:  sample
+    Project ID:    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Age:           5m41s
+    Created:       2023-06-26T16:50:14Z
+    URL:           https://myfun-local.glxo4kabcde.us-south.codeengine.test.appdomain.cloud
+    Status:        Ready
 
-    Build Information:    
-      Build Run Name:     myfun-local-run-230123-111011111 
-      Build Type:         local  
-      Build Strategy:     codebundle-nodejs-18  
-      Timeout:            600  
-      Source:             main.js  
-                      
-      Build Run Summary:  Succeeded  
-      Build Run Status:   Succeeded  
-      Build Run Reason:   All Steps have completed executing  
-      Run 'ibmcloud ce buildrun get -n myfun-local-run-230123-111011111' for details.  
+    Resources:
+      CPU:                 0.25
+      Memory:              500M
+      Max Execution Time:  60 seconds
 
-    Function Code:    
-      Runtime:        nodejs-18 (managed)  
-      Bundle Secret:  ce-auto-icr-us-south  
-      Code Bundle:    cr://icr.io/ce--abcde-glxo4kabcde/function-myfun-local:230123-1650-yrj86  
-      Main:           main() 
+    Build Information:
+      Build Run Name:     myfun-local-run-230123-111011111
+      Build Type:         local
+      Build Strategy:     codebundle-nodejs-18
+      Timeout:            600
+      Source:             main.js
+
+      Build Run Summary:  Succeeded
+      Build Run Status:   Succeeded
+      Build Run Reason:   All Steps have completed executing
+      Run 'ibmcloud ce buildrun get -n myfun-local-run-230123-111011111' for details.
+
+    Function Code:
+      Runtime:        nodejs-18 (managed)
+      Bundle Secret:  ce-auto-icr-us-south
+      Code Bundle:    cr://icr.io/ce--abcde-glxo4kabcde/function-myfun-local:230123-1650-yrj86
+      Main:           main()
     ```
     {: screen}
 
@@ -177,7 +177,7 @@ Create a function that includes a dependency for a specific Node.js module by cr
     ```javascript
     /**
     * The `main` function is the entry-point into the function.
-    * It has one optional argument, which carries all the 
+    * It has one optional argument, which carries all the
     * parameters the function was invoked with.
     */
     function main(params /* optional */) {
@@ -197,7 +197,7 @@ Create a function that includes a dependency for a specific Node.js module by cr
     module.exports.main = main;
     ```
     {: codeblock}
-  
+
 2. Create a `package.json` file that contains the required dependencies for your function. For the previous code example, use the following contents for your `package.json` file.
 
     ```sh
@@ -213,12 +213,12 @@ Create a function that includes a dependency for a specific Node.js module by cr
     {: codeblock}
 
 3. Create your files as a function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.
-  
+
     ```sh
     ibmcloud ce fn create --name nodelorem --runtime nodejs-18 --build-source .
     ```
     {: pre}
-  
+
 4. Run the provided `fn get` command to find details about your function.
 5. Invoke your function by pasting the URL into a web browser. Your browser displays a passage of `lorem ipsum`.
 
@@ -229,14 +229,14 @@ For more information about the `fn create` command and its options, see [Create 
 
 Create a function that includes a dependency for a specific Python module by creating a `requirements.txt` file. In this case, both the source code and requirements file are located in the same folder.
 
-1. Create your function by saving your code into a `__main__.py` file 
+1. Create your function by saving your code into a `__main__.py` file
 
     ```py
     # use third-party 'lorem-ipsum' package to generate random words
     from lorem_text import lorem
 
     # The `main` function is the entry-point into the function.
-    # It has one optional argument, which carries all the 
+    # It has one optional argument, which carries all the
     # parameters the function was invoked with.
     def main(params):
         words = 10
@@ -266,18 +266,18 @@ Create a function that includes a dependency for a specific Python module by cre
     lorem-text
     ```
     {: codeblock}
-  
+
 
 3. Create your files as a function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.
-  
+
     ```sh
     ibmcloud ce fn create --name pylorem --runtime python-3.11 --build-source .
     ```
     {: pre}
-    
+
 4. Run the provided `fn get` command to find details about your function.
 5. Invoke your function by pasting the URL into a web browser. Your browser displays a passage of `lorem ipsum`.
- 
+
 
 For more information about the `fn create` command and its options, see [Create a function](/docs/codeengine?topic=codeengine-cli#cli-function-create).
 
@@ -286,11 +286,8 @@ For more information about the `fn create` command and its options, see [Create 
 
 Now that your function is created and deployed from local source code, you can update the function to meet your needs by using the [**`ibmcloud ce function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) command. If you want to update your source to use with your function, you must provide the `--build-source` option on the **`function update`** command.
 
-When your function is deployed from local source or from [repository source code](/docs/codeengine?topic=codeengine-app-source-code) from the CLI, the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console.  
+When your function is deployed from local source or from [repository source code](/docs/codeengine?topic=codeengine-app-source-code) from the CLI, the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console.
 {: note}
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-
-
