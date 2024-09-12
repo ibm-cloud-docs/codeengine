@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-03"
+lastupdated: "2024-09-12"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -47,21 +47,19 @@ For memory and CPU information, see [Supported memory and CPU combinations](/doc
 ## Runtime support lifecycle
 {: #fun-runtimes-support-lifecycle}
 
-The support lifecycle of managed runtimes for {{site.data.keyword.codeengineshort}} functions depends on the official support cycles of the language upon they are based. With end of life of the underlying runtime, functions will stop working. When deprecation begins, the successor release becomes the default runtime. The following table lists the deprecation and end of life dates:
+The support lifecycle of managed runtimes for {{site.data.keyword.codeengineshort}} functions depends on the official support cycles of the programming language release they are based on. If the runtime that your function uses reaches end-of-life, your function will stop working. Before end-of-life, there is a deprecation period (typically 6 months), during which time the runtime continues to receive security updates while users are migrating their functions to the new runtime release. The following table lists the deprecation and end of life dates:
 
 | Runtime | Deprecation | End of life |
 | -------------- | -------------- | -------------- |
-| Node.js 18 | 1 October 2024 | 1 May 2025 |
-| Node.js 20  | 1 November 2025 | 1 May 2026 |
-| Python 3.11 | 1 May 2027 | 1 November 2027|
-{: caption="Table 1. Decpreation and end of life dates" caption-side="bottom"}
+| Node.js 18 | October 1st 2024 | April 30th 2025 |
+| Node.js 20  | November 1st 2025 | April 30th 2026 |
+| Python 3.11 | May 1st 2027 | September 30th 2027|
+{: caption="Table 1. Deprecation and end of life dates" caption-side="bottom"}
 
 ## Upgrading a function to a new runtime release
 {: #fun-upgrade-to-new-runtime-release}
 
-Each function has a managed runtime release associated with it, even if the (generic) runtime family was specified during the function creation. Managed runtimes expire after a deprecation period, and are in line with the official support period of the runtime provider. After the end of the deprecation period (end of life of the runtime), a function using this runtime will stop working.
-
-Existing functions, therefore, must be migrated to the currently supported (new) runtime release. As new runtime releases can contain breaking API changes, the update of a function to a new runtime release comprises of migration (code changes) and testing steps. You can use the {{site.data.keyword.codeengineshort}} CLI's `ibmcloud ce function update --runtime` command to update existing functions with a new runtime version. Doing so will immediately cause the function to run untested with the new (selected) runtime release as the base (in-place update). Therefore, any in-place updates are not recommended for production code.
+New runtime releases can contain breaking API changes and functions might require code changes, which must be tested. Use the {{site.data.keyword.codeengineshort}} CLI's `ibmcloud ce function update --runtime` command to update your existing functions to use a new runtime version. Doing so will immediately cause the function to run with the new (selected) runtime release as the base (=in-place update). Therefore, any in-place updates are not recommended for production code. We recommend creating a test function during the migration phase.
 
 As a best practice, updating production code depends on whether it is acceptable that the function's URL is changed or if the URL must be kept:
 
