@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-12"
+lastupdated: "2024-09-13"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -47,7 +47,7 @@ For memory and CPU information, see [Supported memory and CPU combinations](/doc
 ## Runtime support lifecycle
 {: #fun-runtimes-support-lifecycle}
 
-The support lifecycle of managed runtimes for {{site.data.keyword.codeengineshort}} functions depends on the official support cycles of the programming language release on which they are based. If the runtime that your function uses reaches end oflife, your function will stop working. Before end oflife, there is a deprecation period (typically six months), during which time the runtime continues to receive security updates while users are migrating their functions to the new runtime release. The following table lists the deprecation and end of life dates:
+The support lifecycle of managed runtimes for {{site.data.keyword.codeengineshort}} functions depends on the official support cycles of the programming language release on which they are based. If the runtime that your function uses reaches end of life, your function will stop working. Before end oflife, there is a deprecation period (typically six months), during which time the runtime continues to receive security updates while users are migrating their functions to the new runtime release. The following table lists the deprecation and end of life dates:
 
 | Runtime | Deprecation | End of life |
 | -------------- | -------------- | -------------- |
@@ -71,4 +71,4 @@ Updating production code depends on whether it is acceptable that the function's
 *  If the original function URL endpoint must be kept:
     - create a new function (as a test function) based on the same source code (or code bundle) as the original function, using the new runtime release
     - ensure that the test function works as expected. If it does not, adapt the code and rebuild the test function.
-    - update the original function to use the new runtime release, and then as the adapted source code.
+    - update the original function to use the new runtime release and the adapted source code.
