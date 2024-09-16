@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-03"
+lastupdated: "2024-09-16"
 
 keywords: code engine, function, create function, code engine function, create code engine function
 
@@ -144,7 +144,8 @@ When a system error occurs, an HTTP response code similar to the following codes
 | 413 | The request payload exceeds the defined maximum. |
 | 414 | The invocation URI is too long. |
 | 416 | The function generated a response that exceeds the defined maximum. |
-| 422 | The function code could not be loaded from a specified source. |
+| 422 | Invalid function code cannot be processed. See platform logs for details. |
+| 424 | The function code could not be executed. Try again later. |
 | 429 | You exceeded your resource quota, could not schedule the function. |
 | 431 | The request headers exceed the defined maximum. |
 | 500 | Internal server error. |

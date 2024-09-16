@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-12"
+lastupdated: "2024-09-16"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -4402,11 +4402,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Debugging functions](/docs/codeengine?topic=codeengine-troubleshoot-function#troubleshoot-function)
 
+* [Function return codes](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-return-codes)
+
 * [Function limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-limits)
 
 * [Getting logs for my function](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-funcrtion-gettinglogs)
 
-* [Keep your runtime and CLI versions up to date](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-uptodate)
+* [Keeping your runtime and CLI versions up to date](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-uptodate)
 
 * [Verifying the code bundle reference for my function](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-verifyimage)
 
