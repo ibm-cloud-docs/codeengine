@@ -24,7 +24,7 @@ Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.co
 ## Function return codes
 {: #ts-function-return-codes}
 
-Function invocations can return system or application errors. For example, system errors indicate that the function code did not execute successfully, while application errors indicate a problem in the function code itself. See the [{{site.data.keyword.codeengineshort}} functions HTTP response codes](/docs/codeengine?topic=codeengine-fun-work#functions-error) for details on error handling and debugging functions.
+Function invocations can return system or application errors. For example, system errors indicate that the function code did not execute successfully, while application errors indicate a problem in the function code itself. See the [{{site.data.keyword.codeengineshort}} functions HTTP return codes](/docs/codeengine?topic=codeengine-fun-work#functions-error) for details on error handling and debugging functions.
 
 ## Function limits to consider
 {: #ts-function-limits}
