@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-16"
+lastupdated: "2024-09-17"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -21,11 +21,11 @@ Invoking a {{site.data.keyword.codeengineshort}} function is accomplished on the
 * through request headers
 * through the request body
 
-The following diagram shows how information flows from an external (caller) data interface, to the {{site.data.keyword.codeengineshort}} function controller and an internal (function) request and response data interfaces for processing, and then returning back to the external caller:
+The following diagram shows information flow from an external (caller) data interface, to the {{site.data.keyword.codeengineshort}} function controller. An internal (function) request and response data interface for processing, and then return back to the external caller:
 
 ![Functions interfaces.](images/ce_functions_interfaces.svg "Functions interfaces"){: caption="Figure 1. External (caller) data interface and internal (function) data interface" caption-side="bottom"}
 
-This flow depicts how client (caller) information from an external data interface comes in, then the {{site.data.keyword.codeengineshort}} function controller wraps the information, and then passes the information to the function as part of the function's call parameters by using an internal request data interface. The function can then process, and when complete, it provides response data such as an HTTP status code, response headers, and a response body through that internal response data interface. The {{site.data.keyword.codeengineshort}} function controller unwraps the response data from the function, and then returns the data to the client in the HTTP response through the external data interface.
+This flow depicts a client (caller) information enters from an external data interface, then the {{site.data.keyword.codeengineshort}} function controller wraps the information, and finally passes the information to the function as part of the function's call parameters by using an internal request data interface. The function can then process, and when complete, it provides response data such as an HTTP status code, response headers, and a response body through that internal response data interface. The {{site.data.keyword.codeengineshort}} function controller unwraps the response data from the function, and then returns the data to the client in the HTTP response through the external data interface.
 
 In the external data interface request and response body, the caller or the function can choose to exchange unstructured text or binary messages, or structured content.
 
@@ -111,7 +111,7 @@ Example percent-encoded content:
 #### Text content
 {: #function-request-data-encoding-text}
 
-The text payload is made available to the function as-is (byte array) by using the `__ce_body` parameter. The caller can send an arbitrary sequence of 7- or 8-bit characters as the request payload. As the input to the function code is a JSON formatted data structure, some characters are escaped to make them compatible to JSON. {{site.data.keyword.codeengineshort}} runs this escaping before it forwards the request payload to the function. The function's program logic might need to un-escape them to re-create the original data.
+The text payload is made available to the function as-is (byte array) by using the `__ce_body` parameter. The caller can send an arbitrary sequence of 7- or 8-bit characters as the request payload. As the input to the function code is a JSON formatted data structure, some characters are escaped to make them compatible to JSON. {{site.data.keyword.codeengineshort}} runs this escaping before it forwards the request payload to the function. The function's program logic might need to unescape them to re-create the original data.
 
 Supported escape characters:
 
@@ -123,7 +123,7 @@ Supported escape characters:
 * Double quotation marks are replaced with `\"`.
 * Backslash is replaced with `\\`.
 
-Example text content, with correctly-escaped response characters in Python:
+Example text content, with correctly escaped response characters in Python:
 
 ```javascript
     import os
@@ -596,7 +596,8 @@ A {{site.data.keyword.codeengineshort}} function returns a JSON object with the 
 | `body` | A string that is either plain text, a JSON object or array, or a Base64 encoded string for binary data. The body is considered empty if it is null, an empty string (""), or undefined. The default is an empty body. |
 {: caption="JSON property results in a {{site.data.keyword.codeengineshort}} function"}
 
-Depending on the value of the `Content-Type` set in the header field of the function results, the content of the body field needs to contain the the following:
+Depending on the value of the `Content-Type` set in the header field of the function results, the content of the body field needs to contain the following information:
+
 | `Content-Type` | Body value | Example |
 |----------------|------------|---------|
 | Empty or `application/json` | A JSON object | `body: { env: process.env }` |
