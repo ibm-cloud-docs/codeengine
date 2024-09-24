@@ -38,6 +38,7 @@ Review the capabilities that {{site.data.keyword.codeengineshort}} provides to r
 | Based on open source | {{site.data.keyword.codeengineshort}} is built on a set of open source technologies such as Kubernetes, Knative, Istio, and Tekton, keeping your apps and jobs portable. |
 | DDoS protection | {{site.data.keyword.codeengineshort}} provides immediate DDoS protection for your application. {{site.data.keyword.codeengineshort}}'s DDoS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} benefits" caption-side="bottom"}
+{: #benefits-table}
 
 
 ## {{site.data.keyword.codeengineshort}} terminology
