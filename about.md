@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-09-24"
 
 keywords: benefits, terminology, developers, capabilities, code engine
 
@@ -17,6 +17,7 @@ subcollection: codeengine
 
 {{site.data.keyword.codeenginefull}} (or "{{site.data.keyword.codeengineshort}}") was developed by IBM with the goal of helping you create modern, source-centric, containerized, and serverless apps and jobs. The platform is designed to address the needs of developers who just want their code to run. {{site.data.keyword.codeengineshort}} abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code.
 {: shortdesc}
+{: #about-par}
 
 
 ## Benefits of {{site.data.keyword.codeengineshort}}
