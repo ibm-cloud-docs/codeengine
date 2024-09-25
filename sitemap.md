@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-16"
+lastupdated: "2024-09-25"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3995,7 +3995,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars)
 
-* [Automatically injected environment variables for apps](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app)
+* [Automatically injected environment variables for applicationss](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app)
 
 * [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
 
