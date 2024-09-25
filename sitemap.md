@@ -3995,11 +3995,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars)
 
-* [Automatically injected environment variables for applicationss](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app)
-
-* [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
+* [Automatically injected environment variables for applications](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app)
 
 * [Automatically injected environment variables for functions](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-fun)
+
+* [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
 
 
 ## Defining commands and arguments for your workloads
