@@ -155,7 +155,7 @@ toc:
           - configmap-secret-referencing.md
           - configmap-secret-referencing-vol.md
       - topicgroup:
-          label: Logging and monitoring
+          label: Observability
           topics:
           - logging.md
           - at-events.md

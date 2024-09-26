@@ -1,7 +1,7 @@
 {
     "version": 2,
     "title": "IBM Cloud Code Engine",
-    "lastupdated": "2024-09-10",
+    "lastupdated": "2024-09-26",
     "introduction": "Find out how you can use Code Engine to run your containerized workloads.",
     "product_page": "https://www.ibm.com/products/code-engine",
     "console_page": "/codeengine",
