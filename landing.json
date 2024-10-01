@@ -37,13 +37,13 @@
         "title": "Developing",
         "description": "Visit IBM Developer for technical articles, code patterns, tutorials, and more.",
         "href": "https://developer.ibm.com/components/cloud-code-engine",
-        "type": "developer"
+        "type": "training"
       },
       {
         "title": "Architecture",
         "description": "Discover the architecture references available.",
         "href": "https://www.ibm.com/architectures/hybrid",
-        "type": "architecture"
+        "type": "training"
       },
     ],
     "section_devtools": {
