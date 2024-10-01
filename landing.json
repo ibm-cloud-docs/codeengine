@@ -44,7 +44,7 @@
         "description": "Discover the architecture references available.",
         "href": "https://www.ibm.com/architectures/hybrid",
         "type": "training"
-      },
+      }
     ],
     "section_devtools": {
       "api": "/apidocs/codeengine/v2",
