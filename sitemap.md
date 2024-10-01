@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-26"
+lastupdated: "2024-10-01"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -130,11 +130,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [How can I get started with functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
 
 
-## Release notes
-{: #sitemap_release_notes}
+## Release notes for {{site.data.keyword.codeengineshort}}
+{: #sitemap_release_notes_for_}
 
 
-[Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+[Release notes for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [September 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september24)
 
