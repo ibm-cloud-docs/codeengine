@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-13"
+lastupdated: "2024-09-17"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -59,7 +59,7 @@ The support lifecycle of managed runtimes for {{site.data.keyword.codeengineshor
 ## Upgrading a function to a new runtime release
 {: #fun-upgrade-to-new-runtime-release}
 
-New runtime releases can contain breaking API changes and functions might require code changes, which must be tested. Use the {{site.data.keyword.codeengineshort}} CLI's `ibmcloud ce function update --runtime` command to update your existing functions to use a new runtime version. Doing so Immediately causes the function to run with the new (selected) runtime release as the base (=in-place update). Therefore, do not use any in-place updates for production code. Create a test function during the migration phase.
+New runtime releases can contain breaking API changes and functions might require code changes, which must be tested. Use the {{site.data.keyword.codeengineshort}} `ibmcloud ce function update --runtime` CLI command to update your existing functions to use a new runtime version. Doing so Immediately causes the function to run with the new (selected) runtime release as the base (=in-place update). Therefore, do not use any in-place updates for production code. Create a test function during the migration phase.
 
 Updating production code depends on whether it is acceptable that the function's URL is changed or if the URL must be kept:
 

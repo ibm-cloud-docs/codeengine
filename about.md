@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-09-24"
 
 keywords: benefits, terminology, developers, capabilities, code engine
 
@@ -17,6 +17,7 @@ subcollection: codeengine
 
 {{site.data.keyword.codeenginefull}} (or "{{site.data.keyword.codeengineshort}}") was developed by IBM with the goal of helping you create modern, source-centric, containerized, and serverless apps and jobs. The platform is designed to address the needs of developers who just want their code to run. {{site.data.keyword.codeengineshort}} abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code.
 {: shortdesc}
+{: #about-par}
 
 
 ## Benefits of {{site.data.keyword.codeengineshort}}
@@ -37,6 +38,7 @@ Review the capabilities that {{site.data.keyword.codeengineshort}} provides to r
 | Based on open source | {{site.data.keyword.codeengineshort}} is built on a set of open source technologies such as Kubernetes, Knative, Istio, and Tekton, keeping your apps and jobs portable. |
 | DDoS protection | {{site.data.keyword.codeengineshort}} provides immediate DDoS protection for your application. {{site.data.keyword.codeengineshort}}'s DDoS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} benefits" caption-side="bottom"}
+{: #benefits-table}
 
 
 ## {{site.data.keyword.codeengineshort}} terminology

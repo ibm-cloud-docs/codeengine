@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-12"
+lastupdated: "2024-10-03"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -130,11 +130,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [How can I get started with functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
 
 
-## Release notes
-{: #sitemap_release_notes}
+## Release notes for {{site.data.keyword.codeengineshort}}
+{: #sitemap_release_notes_for_}
 
 
-[Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+[Release notes for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [October 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october24)
+
+    * [03 October 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october0324)
+
+        * Updated SDK versions with support for functions
 
 * [September 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september24)
 
@@ -3482,27 +3488,27 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Referencing a secret as a mounted file with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles#secret-reference-mount-file-cli)
 
 
-## Logging and monitoring
-{: #sitemap_logging_and_monitoring}
+## Observability
+{: #sitemap_observability}
 
 
-[Viewing logs](/docs/codeengine?topic=codeengine-view-logs#view-logs)
+[Viewing logs](/docs/codeengine?topic=codeengine-logging#logging)
 
-* [Viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs&interface=ui#view-logs-ui)
+* [Viewing logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-ui)
 
-    * [Considerations for viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs&interface=ui#view-logs-considerations)
+    * [Considerations for viewing logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-considerations)
 
-    * [Viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-view-logs&interface=ui#view-appjobfunctionlogs-ui)
+    * [Viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui)
 
-    * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs&interface=ui#view-build-ui)
+    * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-build-ui)
 
-* [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs&interface=cli#view-logs-cli)
+* [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-logs-cli)
 
-    * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs&interface=cli#view-applog-cli)
+    * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-applog-cli)
 
-    * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs&interface=cli#view-joblog-cli)
+    * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-joblog-cli)
 
-    * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs&interface=cli#view-build-cli)
+    * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-build-cli)
 
 [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events#at_events)
 
@@ -3995,11 +4001,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars)
 
-* [Automatically injected environment variables for apps](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app)
-
-* [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
+* [Automatically injected environment variables for applications](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app)
 
 * [Automatically injected environment variables for functions](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-fun)
+
+* [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
 
 
 ## Defining commands and arguments for your workloads
@@ -4402,11 +4408,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Debugging functions](/docs/codeengine?topic=codeengine-troubleshoot-function#troubleshoot-function)
 
+* [Function return codes](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-return-codes)
+
 * [Function limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-limits)
 
 * [Getting logs for my function](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-funcrtion-gettinglogs)
 
-* [Keep your runtime and CLI versions up to date](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-uptodate)
+* [Keeping your runtime and CLI versions up to date](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-uptodate)
 
 * [Verifying the code bundle reference for my function](/docs/codeengine?topic=codeengine-troubleshoot-function#ts-function-verifyimage)
 

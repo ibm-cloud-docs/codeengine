@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-17"
+lastupdated: "2024-09-25"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -32,8 +32,8 @@ The following table shows the service behavior changes for each version date. Sw
 
 | Version date | Summary of changes |
 |---|---|
-|`2022-Dec-09`| Version 2.0.0 |
-|`2021-Mar-31`| Version 1.0.0  |
+|`2022-12-09`| Version 2.0.0 |
+|`2021-03-31`| Version 1.0.0  |
 {: caption="Table 1. Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
 
 ## 17 May 2024
@@ -124,4 +124,3 @@ API Version 2.0.0 released
 :   This version of the API is enhanced to support more {{site.data.keyword.codeengineshort}} resources, and more regions.
     - The API supports the following {{site.data.keyword.codeengineshort}} resources: `projects`, `reclamations`, `apps`, `revisions`, `job`, `job runs`, `builds`, `build runs`, `config maps`, and `secrets`. See [{{site.data.keyword.codeengineshort}} API](https://cloud.ibm.com/apidocs/codeengine){: external}.
     - The API supports more regional endpoints. See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
-

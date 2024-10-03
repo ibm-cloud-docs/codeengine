@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-09"
+lastupdated: "2024-10-01"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -63,7 +63,7 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
-| Go        | 1.22.6  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
+| Go        | 1.22.7  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 17.0.12  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
 | Node.js   | 20.15.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 8.1.28  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |

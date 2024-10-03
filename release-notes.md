@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-12"
+lastupdated: "2024-10-03"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -14,11 +14,24 @@ content-type: release-note
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Release notes
+# Release notes for {{site.data.keyword.codeengineshort}}
 {: #codeengine-relnotes}
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month.
 {: shortdesc}
+
+## October 2024
+{: #codeengine-october24}
+
+### 03 October 2024
+{: #codeengine-october0324}
+{: release-note}
+
+Updated SDK versions with support for functions
+:   - See [Go](https://github.com/IBM/code-engine-go-sdk){: external} version 4.10.0
+    - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 4.10.0
+    - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 4.10.0
+    - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 4.1.1
 
 ## September 2024
 {: #codeengine-september24}
