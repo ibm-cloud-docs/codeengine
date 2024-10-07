@@ -1,7 +1,63 @@
-
+{
+    "version": 2,
+    "title": "IBM Cloud Code Engine",
+    "introduction": "Find out how you can use Code Engine to run your containerized workloads.",
+    "product_page": "https://www.ibm.com/products/code-engine",
+    "console_page": "/codeengine",
+    "section_topics": {
+      "links": [
+        {
+          "title": "Getting started",
+          "href": "/docs/codeengine?topic=codeengine-getting-started"
+        },
+        {
+          "title": "Understanding Code Engine and workloads",
+          "href": "/docs/codeengine?topic=codeengine-about"
+        },
+        {
+          "title": "Managing IAM user access",
+          "href": "/docs/codeengine?topic=codeengine-iam"
+        },
+        {
+          "title": "Logging and monitoring",
+          "href": "/docs/codeengine?topic=codeengine-view-logs"
+        },
+        {
+          "title": "Responsibilities",
+          "href": "/docs/codeengine?topic=codeengine-responsibilities"
+        },
+        {
+          "title": "FAQs",
+          "href": "/docs/codeengine?topic=codeengine-faqs"
+        }
+      ]
+    },
+    "section_highlights": [
+      {
+        "title": "Developing",
+        "description": "Visit IBM Developer for technical articles, code patterns, tutorials, and more.",
+        "href": "https://developer.ibm.com/components/cloud-code-engine",
+        "type": "training"
+      },
+      {
+        "title": "Architecture",
+        "description": "Discover the architecture references available.",
+        "href": "https://www.ibm.com/architectures/hybrid",
+        "type": "training"
+      }
+    ],
+    "section_devtools": {
+      "api": "/apidocs/codeengine/v2",
+      "cli": "/docs/codeengine?topic=codeengine-cli",
+      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_app"
+    },
+    "section_updates": {
+      "view_more": "/docs/codeengine?topic=codeengine-codeengine-relnotes"
+    }
+  }</staging>
 {
     "title": "Code Engine",
-    "lastupdated": "2024-10-03",
+    "lastupdated": "2024-10-07",
     "introduction": "Find out how you can use Code Engine to run your containerized workloads",
     "section_devtools": {
       "api": "/apidocs/codeengine/v2",
