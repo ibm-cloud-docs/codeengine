@@ -15,7 +15,7 @@ subcollection: codeengine
 # Exchanging data with functions
 {: #fun-exchanging-data}
 
-Invoking a {{site.data.keyword.codeengineshort}} function service (or simply function) is accomplished on the client side through HTTP requests. Information can be passed to the function in the following ways:
+Invoking a {{site.data.keyword.codeengineshort}} functions service (or simply function) is accomplished on the client side through HTTP requests. Information can be passed to the function in the following ways:
 
 * As part of the URL (path and optionally, query parameters)
 * Through HTTP request headers
@@ -31,7 +31,7 @@ All rules and capabilities to invoke a function through HTTP request and the res
 
 An incoming HTTP request is forwarded to the function code for processing according to the rules of the _internal request data interface_. The results provided by the  function code must follow the rules of the _internal response data interface_.
 
-The following diagram shows the information flow from a client using the external data interface by using the {{site.data.keyword.codeengineshort}} function service and the internal request data interface to the function code. Likewise, the result data flow from the function code to the internal response data interface through the the {{site.data.keyword.codeengineshort}} function service and the external data interface back to the caller:
+The following diagram shows the information flow from a client using the external data interface by using the {{site.data.keyword.codeengineshort}} functions service and the internal request data interface to the function code. Likewise, the result data flow from the function code to the internal response data interface through the the {{site.data.keyword.codeengineshort}} functions service and the external data interface back to the caller:
 
 ![Functions interfaces.](images/ce_functions_interfaces.svg "Functions interfaces"){: caption="Figure 1. External (caller) data interface and internal (user's function code) data interface" caption-side="bottom"}
 
@@ -71,7 +71,7 @@ The following IANA MIME types are supported for the content type (`Content-Type`
 #### Request data
 {: #fun-external-data-interface-request-data}
 
-When a function is invoked, it can receive arbitrary data (request payload) in text or binary form. The presence of a `Content-Type` in the HTTP request header determines the form and encoding of the data that is sent to the function. The data structure, the format and the content type must match. The {{site.data.keyword.codeengineshort}} function service runs a minimal validation check on the data considering the content type and responds with the HTTP status code `400` in certain cases; for example, if the JSON data format or encoding is invalid.
+When a function is invoked, it can receive arbitrary data (request payload) in text or binary form. The presence of a `Content-Type` in the HTTP request header determines the form and encoding of the data that is sent to the function. The data structure, the format and the content type must match. The {{site.data.keyword.codeengineshort}} functions service runs a minimal validation check on the data considering the content type and responds with the HTTP status code `400` in certain cases; for example, if the JSON data format or encoding is invalid.
 
 For all other selected `Content-Type` values it is expected that the data format matches the restrictions of the MIME-type.
 
@@ -124,7 +124,7 @@ curl -v -H "Sample_Data: Sample_Value"  https://sample.1kweru2e873.eu-gb.codeeng
 #### Providing request mixed data
 {: #fun-external-data-interface-providing-request-mixed data}
 
-The function service supports combining using different ways to provide request data within one HTTP request.
+The functions service supports combining using different ways to provide request data within one HTTP request.
 
 Example of invoking a function by using body data and header fields:
 
@@ -381,7 +381,7 @@ module.exports.main = main;
 
 The function receives the keys and values of the JSON document as dedicated top-level property parameters.
 
-If no `Content-type` is set in the HTTP request then the {{site.data.keyword.codeengineshort}} function service uses `application/json` as the default.
+If no `Content-type` is set in the HTTP request then the {{site.data.keyword.codeengineshort}} functions service uses `application/json` as the default.
 
 In addition, the JSON payload is made available to the function as-is (as byte array) in Base64-encoded format in the `__ce_body` parameter.
 
@@ -632,7 +632,7 @@ module.exports.main = main;
 ## Internal response data interface
 {: #fun-internal-response-data-interface}
 
-The internal response data interface depicts how a user's function code provides response data. The {{site.data.keyword.codeengineshort}} function service consumes them and provides it as HTTP response to the caller.
+The internal response data interface depicts how a user's function code provides response data. The {{site.data.keyword.codeengineshort}} functions service consumes them and provides it as HTTP response to the caller.
 
 Independent of the programming language the user's function code has to provide the response data as data structure in the return statement.
 
@@ -714,9 +714,9 @@ def main(args):
 
 The user function code should explicitly set a status code (default 200) to inform the caller about the execution result. Any valid HTTP RC status code may be used ( 200 <= statusCode < 600 ).
 
-The {{site.data.keyword.codeengineshort}} function service is returning the user function's status code in the header field (x-faas-actionstatus) and as HTTP status code.
+The {{site.data.keyword.codeengineshort}} functions service is returning the user function's status code in the header field (x-faas-actionstatus) and as HTTP status code.
 
-If the statusCode is invalid then the {{site.data.keyword.codeengineshort}} function service return the HTTP RC = 422 ("Invalid function code cannot be processed") without the x-faas-actionstatus header field and without additional response data.
+If the statusCode is invalid then the {{site.data.keyword.codeengineshort}} functions service return the HTTP RC = 422 ("Invalid function code cannot be processed") without the x-faas-actionstatus header field and without additional response data.
 
 If the result size limit for functions is reached, an HTTP status code 400 is returned to the client.
 
@@ -833,7 +833,7 @@ module.exports.main = main;
 #### body value of `Content-type` `text/plain`
 {: #fun-body-element-text-plain}
 
-The user function code provides the whole response in one single string. The {{site.data.keyword.codeengineshort}} function service is not checking the response data in any way. The data are transfered to the caller as provided.
+The user function code provides the whole response in one single string. The {{site.data.keyword.codeengineshort}} functions service is not checking the response data in any way. The data are transfered to the caller as provided.
 
 Example Python `text/plain` response:
 
@@ -854,7 +854,7 @@ def main(args):
 #### body value of Content-type "application/x-www-form-urlencoded" (Percent-encoded content)
 {: #fun-body-element-x-www-form-urlencoded}
 
-The user function code has to ensure that the response data are url-encoded before being added to the result data structure. The {{site.data.keyword.codeengineshort}} function service is not checking the response data for correct syntax. The data are transfered to the caller as provided.
+The user function code has to ensure that the response data are url-encoded before being added to the result data structure. The {{site.data.keyword.codeengineshort}} functions service is not checking the response data for correct syntax. The data are transfered to the caller as provided.
 
 Example Python `application/x-www-form-urlencoded` response:
 
