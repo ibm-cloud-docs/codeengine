@@ -38,7 +38,7 @@ Depending on the request or response content types, appropriate elements of the 
 ### MIME types
 {: #fun-external-data-interface-MIME-types}
 
-The following IANA MIME types are supported for the content type (`Content-Type`) of an {{site.data.keyword.codeengineshort}} function request or response. Options are supported, but not included in this list:
+The following IANA MIME types are supported for the content-type of an {{site.data.keyword.codeengineshort}} function request or response. Options are supported, but not included in this list:
 
 * JSON type: `application/json; ...`
 * Binary types:
@@ -61,7 +61,7 @@ The following IANA MIME types are supported for the content type (`Content-Type`
 
 When a function is invoked, it can receive arbitrary data (request payload) in text or binary form. The presence of a `Content-Type` request header determines the form and encoding of the data that is sent to the function. The data structure and format, and the content type, must match. {{site.data.keyword.codeengineshort}} runs a minimal validity check on the data and content type, and responds with HTTP status code `400` if data format or encoding is invalid.
 
-Depending on the value of the `Content-Type`, the function receives input data:
+Depending on the value of `Content-Type`, the function receives input data:
 
 #### JSON content
 {: #function-request-data-encoding-json}
