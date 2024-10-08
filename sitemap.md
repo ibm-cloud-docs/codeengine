@@ -2682,9 +2682,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Exchanging data with functions](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-exchanging-data)
 
-* [External data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface)
+* [External request data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-request)
 
-    * [External data interface for requests](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-request)
+    * [MIME types](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-MIME-types)
+
+    * [Request data](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-request-data)
+
+    * [Providing request data as query parameters](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-providing-request-data=as=query)
+
+    * [Providing request data in the request body](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-providing-request-data-in-body)
+
+    * [Providing request header data](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-providing-request-header)
+
+    * [Providing request mixed data](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-providing-request-mixed)
 
 * [Internal data interface for requests](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-internal-data-interface-requests)
 
@@ -2696,13 +2706,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Internal response data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-internal-response-data-interface)
 
-    * [The headers element](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-header-element)
+    * [The headers element](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-headers-element)
 
     * [The statusCode element](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-statusCode-element)
 
     * [The body element](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-body-element)
 
-* [External data interface - Response](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-response)
+* [External response data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-response)
 
     * [MIME types](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-response-mime)
 

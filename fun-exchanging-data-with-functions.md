@@ -35,17 +35,14 @@ The following diagram shows the information flow from a client using the externa
 
 ![Functions interfaces.](images/ce_functions_interfaces.svg "Functions interfaces"){: caption="Figure 1. External (caller) data interface and internal (user's function code) data interface" caption-side="bottom"}
 
-## External data interface
-{: #fun-external-data-interface}
+## External request data interface
+{: #fun-external-data-interface-request}
 
 The external data interface definition is derived from the standardized HTTP.
 
-### External data interface for requests
-{: #fun-external-data-interface-request}
-
 MIME types are used to define the format of the HTTP request information and the HTTP response.
 
-#### MIME types
+### MIME types
 {: #fun-external-data-interface-MIME-types}
 
 The following IANA MIME types are supported for the content type (`Content-Type`) of the HTTP requests or HTTP responses. MIME type parameters are supported, but not included in this list:
@@ -68,14 +65,14 @@ The following IANA MIME types are supported for the content type (`Content-Type`
 * Percent-encoded type:
     * `application/x-www-form-urlencoded; <parameters>`
 
-#### Request data
+### Request data
 {: #fun-external-data-interface-request-data}
 
 When a function is invoked, it can receive arbitrary data (request payload) in text or binary form. The presence of a `Content-Type` in the HTTP request header determines the form and encoding of the data that is sent to the function. The data structure, the format and the content type must match. The {{site.data.keyword.codeengineshort}} functions service runs a minimal validation check on the data considering the content type and responds with the HTTP status code `400` in certain cases; for example, if the JSON data format or encoding is invalid.
 
 For all other selected `Content-Type` values it is expected that the data format matches the restrictions of the MIME-type.
 
-#### Providing request data as query parameters
+### Providing request data as query parameters
 {: #fun-external-data-interface-providing-request-data=as=query}
 
 Request data can be provided as key-value pairs in URL-encoded format (also called percent-encoded) in the HTTP URL.
@@ -89,7 +86,7 @@ curl -v "https://sample.1kweru2e873.eu-gb.codeengine.appdomain.cloud/?planet1=Ma
 ```
 {: screen}
 
-#### Providing request data in the request body
+### Providing request data in the request body
 {: #fun-external-data-interface-providing-request-data-in-body}
 
 Request data are provided in the body section of the HTTP request. The format of the data should match the provided `Content-Type`.
@@ -109,7 +106,7 @@ curl -v  -H "Content-Type: application/json" -d "{\"key_1\":\"Mars\",\"planet2\"
 If `Content-Type` is missing for a request, then {{site.data.keyword.codeengineshort}} handles the data payload as described for `application/json`.
 {: tip}
 
-#### Providing request header data
+### Providing request header data
 {: #fun-external-data-interface-providing-request-header}
 
 Request data is provided in key-value pairs in the header section of the HTTP request.
@@ -121,7 +118,7 @@ curl -v -H "Sample_Data: Sample_Value"  https://sample.1kweru2e873.eu-gb.codeeng
 ```
 {: screen}
 
-#### Providing request mixed data
+### Providing request mixed data
 {: #fun-external-data-interface-providing-request-mixed data}
 
 The functions service supports combining using different ways to provide request data within one HTTP request.
@@ -214,7 +211,6 @@ For example:
   "eyAicGxhbmV0MSI6Ik1hcnMiLCAicGxhbmV0MiI6Ikp1cGl0ZXIiIH0="
 ```
 {: screen}
-
 
 #### Percent encoding (Url-encoding)
 {: #fun-internal-data-interface-requests-percent}
@@ -429,7 +425,6 @@ module.exports.main = main;
 ```
 {: screen}
 
-
 #### Args parameter from request data of `Content-type` `application/octet-stream`
 {: #fun-args-request-data-application-octet-stream}
 
@@ -486,7 +481,6 @@ module.exports.main = main;
 The function receives the text type data in Base64-encoded format in the __ce_body parameter.
 
 The function's program logic might need to unescape them to recreate the original data.
-
 
 | args field         | is set ?          | description |
 |--------------------|-------------------|-------------|
@@ -568,7 +562,6 @@ function main(args) {
 module.exports.main = main;
 ```
 {: screen}
-
 
 #### Args parameter from request data of Content-type "application/x-www-form-urlencoded" and query params
 {: #fun-args-request-data-application-application-x-www-form-urlencoded-query}
@@ -665,7 +658,7 @@ Always set `body` and `statusCode`. The implicit setting of `statusCode` and bod
 {: note}
 
 ### The headers element
-{: #fun-header-element}
+{: #fun-headers-element}
 
  The main intention of the headers section is to define the content_type in which the user's function is going to provide the response data. Result data supports the identical MIME-Types as accepted on request.
 
@@ -873,7 +866,7 @@ def main(args):
 ```
 {: screen}
 
-## External data interface - Response
+## External response data interface
 {: #fun-external-data-interface-response}
 
 The external data interface definition is derived from the standardized HTTP (Hypertext Transfer Protocol). MIME types in the HTTP Response header are used to define the format of the HTTP response.
