@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-03"
+lastupdated: "2024-10-08"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2684,19 +2684,31 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [External data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface)
 
-    * [MIME types](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-MIME-types)
+    * [External data interface for requests](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-request)
 
-    * [Function request data encoding](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-function-request-data-encoding)
+* [Internal data interface for requests](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-internal-data-interface-requests)
 
-    * [Function response data encoding](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-function-response-data-encoding)
+    * [Text encoding](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-internal-data-interface-requests-text)
 
-* [Internal data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-internal-data-interface)
+    * [The args parameter](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-args)
 
-    * [{{site.data.keyword.codeengineshort}} function entry](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-function-entry)
+    * [{{site.data.keyword.codeengineshort}} function environment variables](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-env-vars)
 
-    * [{{site.data.keyword.codeengineshort}} function entry examples](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-function-entry-examples)
+* [Internal response data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-internal-response-data-interface)
 
-    * [{{site.data.keyword.codeengineshort}} function results](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-function-results)
+    * [The headers element](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-header-element)
+
+    * [The statusCode element](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-statusCode-element)
+
+    * [The body element](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-body-element)
+
+* [External data interface - Response](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-response)
+
+    * [MIME types](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-response-mime)
+
+    * [Response data](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-response-response-data)
+
+* [{{site.data.keyword.codeengineshort}} function invocation examples](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-invocation-examples)
 
 [Creating function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inlinecode)
 
