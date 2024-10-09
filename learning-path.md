@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-19"
+  years: 2024
+lastupdated: "2024-10-09"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -45,15 +45,15 @@ Need help? Check out [troubleshooting tips for projects](/docs/codeengine?topic=
 ## Develop your application, job, or function
 {: #lp-develop-app-job}
 
-{{site.data.keyword.codeengineshort}} deploys applications and runs jobs that are bundled into container images. If you do not have a container image, you can build and deploy your code from within {{site.data.keyword.codeengineshort}}. 
+{{site.data.keyword.codeengineshort}} deploys applications and runs jobs that are bundled into container images. If you do not have a container image, you can build and deploy your code from within {{site.data.keyword.codeengineshort}}.
 
 {{site.data.keyword.codeengineshort}} runs functions as code bundles. If you do not have a code bundle, you can build and run your function from within {{site.data.keyword.codeengineshort}}.
 
-**Do you have source code or a container image for your application or job?** 
+**Do you have source code or a container image for your application or job?**
 
-I have a container image. **Where is your image stored?** 
+I have a container image. **Where is your image stored?**
 
-- If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-add-registry) that you have access to, then you are ready to deploy. 
+- If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-add-registry) that you have access to, then you are ready to deploy.
 - If your image is in a private registry, either in a different {{site.data.keyword.registryshort}} account or in private registry such as Docker Hub, you must [set up access](/docs/codeengine?topic=codeengine-add-registry).
 
 Then, you are ready to [deploy your application](#lp-deploy-app), [run your job](#lp-run-job), or [run your function](#lp-run-fun).
@@ -61,7 +61,7 @@ Then, you are ready to [deploy your application](#lp-deploy-app), [run your job]
 I have source code. **How do I get started?**
 
 - Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
-- [Plan for your build](/docs/codeengine?topic=codeengine-plan-build). 
+- [Plan for your build](/docs/codeengine?topic=codeengine-plan-build).
 - You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
 - If your source code is in a private repository, [set up access](/docs/codeengine?topic=codeengine-code-repositories).
 - Optionally, set up an {{site.data.keyword.registrylong_notm}} namespace to hold your built image. If the {{site.data.keyword.registryshort}} namespace is in a different account, [set up access](/docs/codeengine?topic=codeengine-add-registry). If you do not set up access to your {{site.data.keyword.registrylong_notm}} namespace, access is created automatically for you.
@@ -103,7 +103,7 @@ Make your [**app highly available**](/docs/codeengine?topic=codeengine-deploy-mu
 
 **Ready to access your application?**
 
-- [Access the application](/docs/codeengine?topic=codeengine-access-service). 
+- [Access the application](/docs/codeengine?topic=codeengine-access-service).
 - You can also [create a custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings) for your app.
 
 Each **update of an application** configuration property creates a new revision of the application.
@@ -130,7 +130,7 @@ By creating a job definition, you can more easily run your job multiple times ba
 
 With the CLI, you can submit a job run without first creating a job configuration. You can specify the same configuration options on the `jobrun submit` and `jobrun resubmit` commands that are available with the `job create` command.
 
-- [Run a job with the CLI without first creating a job configuration](/docs/codeengine?topic=codeengine-run-job#run-job-cli-withoutjobconfig). 
+- [Run a job with the CLI without first creating a job configuration](/docs/codeengine?topic=codeengine-run-job#run-job-cli-withoutjobconfig).
 
 **Want to customize your job?**
 
@@ -145,7 +145,7 @@ With the CLI, you can submit a job run without first creating a job configuratio
 
 **Ready to create and run your job?**
 
-You can run your job directly or create a job definition and run your job based on that configuration. 
+You can run your job directly or create a job definition and run your job based on that configuration.
 
 - To run a job directly, see [Run a job with the CLI without first creating a job configuration](/docs/codeengine?topic=codeengine-run-job#run-job-cli-withoutjobconfig).
 - To run a job from a job definition, see [run a job](/docs/codeengine?topic=codeengine-run-job).
@@ -183,7 +183,7 @@ Functions use a *managed runtime*. Find out more at [Runtimes](/docs/codeengine?
 ## Log and monitor your workloads
 {: #lp-log-mon}
 
-Logging can help you troubleshoot your applications, jobs and functions. See [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
+Logging can help you troubleshoot your applications, jobs and functions. See [Viewing logs](/docs/codeengine?topic=codeengine-logging).
 
 You can also [view, manage, and audit](/docs/codeengine?topic=codeengine-at_events) user-initiated activities that occur in your {{site.data.keyword.codeengineshort}} project.
 
@@ -198,4 +198,3 @@ If you are moving from a different service to Code Engine, there are several top
 - [Migrating IBM Cloud Functions to Code Engine](/docs/codeengine?topic=codeengine-fun-migrate).
 - [Getting started with your migration from Heroku to Code Engine](/docs/codeengine?topic=codeengine-heroku-migrate).
 - [Getting started with your migration from Cloud Foundry to Code Engine](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-08-07"
+lastupdated: "2024-10-09"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -130,9 +130,9 @@ Yes, service binds are supported! See [Working with service bindings to integrat
 ### Where can I find information about my in progress and finished {{site.data.keyword.codeengineshort}} Function runs?
 {: #fun-migrate-faq10}
 
-If you created your function from source code, you can [view build logs](/docs/codeengine?topic=codeengine-view-logs#view-build-cli).
+If you created your function from source code, you can [view build logs](/docs/codeengine?topic=codeengine-logging#view-build-cli).
 
-Otherwise, you can use [set up {{site.data.keyword.la_full_notm}}](/docs/codeengine?topic=codeengine-view-logs#view-funlogs-ui) to view Platform logs, which contain information about your function invocation (meta information) as well as log messages emitted by the function code.
+Otherwise, you can use [set up {{site.data.keyword.la_full_notm}}](/docs/codeengine?topic=codeengine-logging#view-funlogs-ui) to view Platform logs, which contain information about your function invocation (meta information) as well as log messages emitted by the function code.
 
 ### Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?
 {: #openapi-spec-fun-migrate}

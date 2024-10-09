@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-09"
+  years: 2020, 2024
+lastupdated: "2024-10-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -14,7 +14,7 @@ subcollection: codeengine
 
 # Application workloads
 {: #ceapplications}
- 
+
 
 {{site.data.keyword.codeenginefull}} is designed to address the needs of developers who want their code to run. {{site.data.keyword.codeengineshort}} abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code. Developers can deploy and scale their applications, which are written in any framework or language, by delegating the complexity of building and managing their workloads to {{site.data.keyword.codeengineshort}}. Learn about working with applications in {{site.data.keyword.codeenginefull}}.
 {: shortdesc}
@@ -69,7 +69,7 @@ When you work with {{site.data.keyword.codeengineshort}} applications with the c
 
 System event information can also be helpful to troubleshoot problems when you run jobs. You can view system event information with the CLI. See [Getting system event information for applications](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent).
 
-For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-logging).
 
 ### Running applications
 {: #ceapp-runapp}
@@ -84,20 +84,20 @@ You can deploy and run applications in {{site.data.keyword.codeengineshort}} in 
 
 For more information about deploying and running applications, see [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads).
 
-### Scaling 
+### Scaling
 {: #ceapp-scaling}
 
-{{site.data.keyword.codeengineshort}} applications scale up or down depending on the incoming requests. Applications follow the *scale-to-zero* model, where no instances are created in the absence of traffic, leading to cost optimization. When there is an incoming request, an app automatically scales up from zero to accommodate the workload. 
+{{site.data.keyword.codeengineshort}} applications scale up or down depending on the incoming requests. Applications follow the *scale-to-zero* model, where no instances are created in the absence of traffic, leading to cost optimization. When there is an incoming request, an app automatically scales up from zero to accommodate the workload.
 
-With {{site.data.keyword.codeengineshort}}, you can control autoscaling by setting the minimum and maximum number of instances. You can also specify the concurrency of the application by specifying the number of requests to run in parallel for a specific application instance to help determine when a new instance is provisioned. 
+With {{site.data.keyword.codeengineshort}}, you can control autoscaling by setting the minimum and maximum number of instances. You can also specify the concurrency of the application by specifying the number of requests to run in parallel for a specific application instance to help determine when a new instance is provisioned.
 
 For more information about scaling your app, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
 
-### Security 
+### Security
 {: #ceapp-security}
 
-{{site.data.keyword.codeengineshort}} provides immediate DDOS protection for your application. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). 
+{{site.data.keyword.codeengineshort}} provides immediate DDOS protection for your application. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos).
 
 {{site.data.keyword.codeengineshort}} also provides a service mesh to use its networking layer, which enables mutual Transport Layer Security (TLS) traffic on applications, thus securing *service-to-service* and *user-to-service* communication.
 
@@ -106,11 +106,11 @@ For more information about security, see [{{site.data.keyword.codeengineshort}} 
 ### Triggering applications with events
 {: #ceapp-eventing}
 
-You can configure your {{site.data.keyword.codeengineshort}} applications to receive cron events, {{site.data.keyword.cos_full_notm}} events, or Kafka topics. When you subscribe to an event producer, you must specify the name of your destination application to receive the events. 
+You can configure your {{site.data.keyword.codeengineshort}} applications to receive cron events, {{site.data.keyword.cos_full_notm}} events, or Kafka topics. When you subscribe to an event producer, you must specify the name of your destination application to receive the events.
 
 For more information about working with event producers, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
 
-### Visibility 
+### Visibility
 {: #ceapp-visibility}
 
 With {{site.data.keyword.codeengineshort}}, you can determine the right level of visibility for your application by defining the endpoints, or system domain mappings that are available for receiving requests. An application can be exposed to the internet, to the {{site.data.keyword.cloud_notm}} private network or scoped only to other resources in the same {{site.data.keyword.codeengineshort}} project.
@@ -121,14 +121,11 @@ In addition, you can map your own custom domain to a {{site.data.keyword.codeeng
 
 For more information about visibility, see [Options for visibility for a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility) and [Configuring custom domain mappings for your application](/docs/codeengine?topic=codeengine-domain-mappings).
 
-## How can I get started with applications? 
+## How can I get started with applications?
 {: #ceapp-getstart}
 
 To deploy a simple {{site.data.keyword.codeengineshort}} application with the `icr.io/codeengine/helloworld` sample image, see [Creating your first {{site.data.keyword.codeengineshort}} app](/docs/codeengine?topic=codeengine-getting-started#app-hello).
 
-Also, you can try an application tutorial, see [Deploying and scaling applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial). 
+Also, you can try an application tutorial, see [Deploying and scaling applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial).
 
 To dive deeper into working with applications, see [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads).
-
-
-

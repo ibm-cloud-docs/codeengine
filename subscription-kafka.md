@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-10-09"
 
 keywords: kafka, kafka event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -268,8 +268,8 @@ Complete the following steps to create a Kafka event subscription for an applica
  Now that your Kafka event subscription, which references the `kafka-receiver-app` application, is created, use the `kafka-sender-app` to send message events to the receiver application.
  {: shortdesc}
 
- 1. Start logging for the receiver application to [view application logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui) to see events.
- 2. (optional) Start logging for the sender application to [view application logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui) to see information about events that are sent.
+ 1. Start logging for the receiver application to [view application logs from the console](/docs/codeengine?topic=codeengine-logging#view-applogs-ui) to see events.
+ 2. (optional) Start logging for the sender application to [view application logs from the console](/docs/codeengine?topic=codeengine-logging#view-applogs-ui) to see information about events that are sent.
  3. After logging is started, call the `kafka-sender-app` application with `curl` and specify the public URL of the `kafka-sender-app`, the name of your topic, and the number of messages to send. You can obtain the public URL of this application from the **Domain mappings** tab for your application. For example,
 
     ```txt
@@ -458,7 +458,7 @@ You can create a Kafka event subscription, which defines the relationship betwee
     ```
     {: screen}
 
-    Note that log information for apps lasts for only one hour. For more information about viewing logs for apps (or jobs), see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+    Note that log information for apps lasts for only one hour. For more information about viewing logs for apps (or jobs), see [Viewing logs](/docs/codeengine?topic=codeengine-logging).
 
 
 ### Header and body information for Kafka events that are delivered to apps
@@ -558,8 +558,8 @@ Complete the following steps to create a Kafka event subscription for an applica
  Now that your Kafka event subscription, which references the `kafka-receiver-job` job, is created, use the `kafka-sender-app` to send message events to the receiver job.
  {: shortdesc}
 
- 1. Start logging for the receiver job to [view job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) to see events.
- 2. (optional) Start logging for the sender application to [view application logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui) to see information about events that are sent.
+ 1. Start logging for the receiver job to [view job logs from the console](/docs/codeengine?topic=codeengine-logging#view-joblogs-ui) to see events.
+ 2. (optional) Start logging for the sender application to [view application logs from the console](/docs/codeengine?topic=codeengine-logging#view-applogs-ui) to see information about events that are sent.
  3. After logging is started, call the `kafka-sender-app` application with `curl` and specify the public URL of the `kafka-sender-app`, the name of your topic, and the number of messages to send. You can obtain the public URL of this application from the **Domain mappings** tab for your application. For example,
 
     ```txt
@@ -762,7 +762,7 @@ You can create a Kafka event subscription, which defines the relationship betwee
 
     When you use the Kafka receiver job (`icr.io/codeengine/codeengine`), search for `CE_DATA` in the logs for the receiver job to see the messages that are received.
 
-    Note that log information for job runs lasts for only one hour. For more information about viewing logs for apps or jobs, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+    Note that log information for job runs lasts for only one hour. For more information about viewing logs for apps or jobs, see [Viewing logs](/docs/codeengine?topic=codeengine-logging).
 
 
 

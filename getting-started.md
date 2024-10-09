@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-10-09"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -113,7 +113,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 8. From your job page, click **Submit job** to submit a job based on the current configuration.
 9. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.
 
-When logging is enabled, the following example is displayed in the logs. To learn about running jobs with logging enabled, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+When logging is enabled, the following example is displayed in the logs. To learn about running jobs with logging enabled, see [Viewing logs](/docs/codeengine?topic=codeengine-logging).
 {: tip}
 
 Example output from logging instance

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-08-31"
+  years: 2023, 2024
+lastupdated: "2024-10-09"
 
 keywords: troubleshooting for code engine, troubleshooting applications in code engine, tips for applications in code engine, debugging applications in code engine, custom domain mapping and code engine
 
@@ -14,16 +14,16 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why did my app restart? 
+# Why did my app restart?
 {: #ts-app-restart}
 {: troubleshoot}
 
-My app is running, but I see that app instances are restarted. 
+My app is running, but I see that app instances are restarted.
 {: tsSymptoms}
 
 When an application restart occurs, {{site.data.keyword.codeengineshort}} automatically starts a new instance of the app. When your new app instance is marked as `Ready`, {{site.data.keyword.codeengineshort}} routes traffic to it.
 
-If your app is restarted, determine whether one of the following cases is true. 
+If your app is restarted, determine whether one of the following cases is true.
 {: tsCauses}
 
 
@@ -41,7 +41,7 @@ Try one of these solutions.
 
 
 1. If an exception occurred, take the following actions.
-    * Check for messages that might help you determine what is happening. If you set up logging for {{site.data.keyword.codeengineshort}}, your log files might contain messages. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+    * Check for messages that might help you determine what is happening. If you set up logging for {{site.data.keyword.codeengineshort}}, your log files might contain messages. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-logging).
     * After you update your application source code and build an updated container image, create a new revision for your app by [updating your application](/docs/codeengine?topic=codeengine-update-app).
     * Use the detailed views of your application instances to help you in troubleshooting your apps. Use the {{site.data.keyword.codeengineshort}} console to view details of your app instances. See [Getting details about app instances](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-instancedetails).
 
@@ -52,9 +52,3 @@ Try one of these solutions.
     * Use the detailed views of your application instances to help you in troubleshooting your apps. Use the {{site.data.keyword.codeengineshort}} console to view details of your app instances. See [Getting details about app instances](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-instancedetails).
 
 3. In general, you cannot rely on specific application instances to run without interruption in the managed {{site.data.keyword.codeengineshort}} environment. You can make sure that your app follows the [12-factor app methodology](https://12factor.net/){: external} to avoid downtime with your app during these types of system upgrades. See [Why did my app stop running](/docs/codeengine?topic=codeengine-ts-app-end)?
-
-
-
-
-
-

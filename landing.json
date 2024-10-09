@@ -20,11 +20,11 @@
         },
         {
           "title": "Logging and monitoring",
-          "href": "/docs/codeengine?topic=codeengine-view-logs"
+          "href": "/docs/codeengine?topic=codeengine-logging"
         },
         {
           "title": "Responsibilities",
-          "href": "/docs/codeengine?topic=codeengine-responsibilities"
+          "href": "/docs/codeengine?topic=codeengine-responsibilities-ce"
         },
         {
           "title": "FAQs",

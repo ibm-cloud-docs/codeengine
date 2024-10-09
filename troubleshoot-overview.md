@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2024
+lastupdated: "2024-10-09"
 
 keywords: troubleshooting, issues, status, get help, code engine, getting help
 
@@ -27,7 +27,7 @@ Review some general help for troubleshooting issues with {{site.data.keyword.cod
     * When you use any of the CLI `get` commands, such as the **`app get`**, **`job get`**, **`jobrun get`**, **`build get`**, or **`buildrun get`** commands, you can specify the `--o yaml` option to obtain more fine-grained details about your {{site.data.keyword.codeengineshort}} component, which can be helpful in troubleshooting. For more information about the `get` commands, see [CLI Reference](/docs/codeengine?topic=codeengine-cli).
 * Review the other troubleshooting issues for {{site.data.keyword.codeengineshort}}.
 * Review the [FAQs](/docs/codeengine?topic=codeengine-faqs).
-* Enable and review [logging](/docs/codeengine?topic=codeengine-view-logs) and [monitoring](/docs/codeengine?topic=codeengine-monitor) details to troubleshoot your {{site.data.keyword.codeengineshort}} components.
+* Enable and review [logging](/docs/codeengine?topic=codeengine-logging) and [monitoring](/docs/codeengine?topic=codeengine-monitor) details to troubleshoot your {{site.data.keyword.codeengineshort}} components.
 
 ## Reviewing Cloud issues and status
 {: #help-cloud-status}
@@ -41,6 +41,3 @@ Review some general help for troubleshooting issues with {{site.data.keyword.cod
 {: #help-functions}
 
 If you still cannot resolve your issue, see [Getting support](/docs/codeengine?topic=codeengine-get-support). For any general questions or feedback, post in Slack.
-
-
-

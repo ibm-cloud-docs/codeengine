@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-10-09"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -69,7 +69,7 @@ For more information about workload isolation, see [{{site.data.keyword.codeengi
 ### Logging
 {: #functions-logging}
 
-Function code can write `stdout` and `stderr` logs that are captured and forwarded to an {{site.data.keyword.loganalysisfull_notm}} instance. {{site.data.keyword.loganalysisfull_notm}} is a Platform logging instances that you can set up to index your logs. For more information, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+Function code can write `stdout` and `stderr` logs that are captured and forwarded to an {{site.data.keyword.loganalysisfull_notm}} instance. {{site.data.keyword.loganalysisfull_notm}} is a Platform logging instances that you can set up to index your logs. For more information, see [Viewing logs](/docs/codeengine?topic=codeengine-logging).
 
 
 ### Runtimes

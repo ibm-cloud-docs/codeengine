@@ -1,15 +1,15 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-03-17"
+  years: 2020, 2024
+lastupdated: "2024-10-09"
 
 keywords: tutorial code engine, subscription tutorial for code engine, eventing and code engine, subscriptions, subscribing, tutorial for code engine, eventing tutorial for code engine, subscription, kafka, kafka event, event producers, kafka event producer
 
 subcollection: codeengine
 
 content-type: tutorial
-completion-time: 20m 
+completion-time: 20m
 
 ---
 
@@ -30,7 +30,7 @@ The Kafka event producer watches for new messages to appear in a Kafka instance.
 
 
 While you can use any Kafka instance, the examples in this tutorial use the {{site.data.keyword.messagehub_full}} service. {{site.data.keyword.messagehub}} is an IBM event streaming service for Kafka events. For more information about this service, see [{{site.data.keyword.messagehub}} documentation](/docs/EventStreams?topic=EventStreams-about).
-{: note}  
+{: note}
 
 Before you begin
 
@@ -42,14 +42,14 @@ All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-yo
 {: note}
 
 
-## Setting up the Kafka event producer 
+## Setting up the Kafka event producer
 {: #tutkafka-setup-sender}
 {: step}
 
 You can set up your Kafka message producer to send messages to {{site.data.keyword.codeengineshort}} Kafka event subscriptions. Use your {{site.data.keyword.codeengineshort}} Kafka event subscription to trigger applications or jobs when a Kafka message is received.
 {: shortdesc}
 
-To get started, [create an {{site.data.keyword.messagehub}} service instance](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_prereqs) for your event streaming service. While you can use the console or the CLI, the following steps describe how to set up the {{site.data.keyword.messagehub}} event producer with the CLI. 
+To get started, [create an {{site.data.keyword.messagehub}} service instance](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_prereqs) for your event streaming service. While you can use the console or the CLI, the following steps describe how to set up the {{site.data.keyword.messagehub}} event producer with the CLI.
 
 
 1. Create a service instance for {{site.data.keyword.messagehub}}. The name of the {{site.data.keyword.messagehub}} CLI service is `messagehub`. For this example, create an {{site.data.keyword.messagehub}} service instance that is named `myeventstream`.
@@ -60,7 +60,7 @@ To get started, [create an {{site.data.keyword.messagehub}} service instance](/d
     {: pre}
 
 
-2. Create a service key to provide credentials to your service instance. 
+2. Create a service key to provide credentials to your service instance.
 
     ```txt
     ibmcloud resource service-key-create myeventstream-key Manager --instance-name myeventstream
@@ -90,16 +90,16 @@ To get started, [create an {{site.data.keyword.messagehub}} service instance](/d
                 kafka_brokers_sasl:       [broker-1-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 broker-2-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 broker-5-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 broker-3-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 broker-4-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 broker-0-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093]
                 kafka_http_url:           https://abcdabcdabcdabcd.svc07.us-south.eventstreams.cloud.ibm.com
                 password:                 abcdeH9tu3qE5Sn8VbJfcDEWtjR_l0iPisB3abcdefgh
-                user:                     token  
+                user:                     token
     ```
     {: screen}
 
-    Make note of the values for `user`, `password`, and `kafka-brokers_sasl` for your service key. You need this information when you set up your {{site.data.keyword.codeengineshort}} Kafka subscription. The values for `password` and `apikey` are the same in the service key for your {{site.data.keyword.messagehub}} service instance. You can also use the `ibmcloud resource service-key myeventstream-key` command to retrieve the service key information.  
+    Make note of the values for `user`, `password`, and `kafka-brokers_sasl` for your service key. You need this information when you set up your {{site.data.keyword.codeengineshort}} Kafka subscription. The values for `password` and `apikey` are the same in the service key for your {{site.data.keyword.messagehub}} service instance. You can also use the `ibmcloud resource service-key myeventstream-key` command to retrieve the service key information.
 
-3. Initialize the {{site.data.keyword.messagehub}} plug-in relative to your {{site.data.keyword.messagehub}} service instance. 
+3. Initialize the {{site.data.keyword.messagehub}} plug-in relative to your {{site.data.keyword.messagehub}} service instance.
 
     ```txt
-    ibmcloud es init --instance-name myeventstream 
+    ibmcloud es init --instance-name myeventstream
     ```
     {: pre}
 
@@ -118,11 +118,11 @@ To get started, [create an {{site.data.keyword.messagehub}} service instance](/d
 
 For this tutorial, set up a {{site.data.keyword.codeengineshort}} application to act as an event producer of Kafka messages. The purpose of this `kafka-sender-app` app is to connect to your {{site.data.keyword.messagehub}} instance and to produce (send) Kafka messages to a receiver of the messages (Kafka consumer). This app that produces events for Kafka messages uses the [{{site.data.keyword.codeengineshort}} Kafka sender sample app](https://github.com/IBM/CodeEngine/tree/main/kafka){: external} to send Kafka messages. This sample sender image requires the `BROKERS` environment variable and a secret that includes the `password` credentials.
 
-1. Create a secret with credentials that are required by the {{site.data.keyword.codeengineshort}} Kafka samples. For example, create the `kafka-subscription-secret` secret, to contain the credentials that are required for both the Kafka sender sample app and the Kafka event subscription, which uses the Kafka receiver sample. These credentials are required for the sample Kafka sender app and the {{site.data.keyword.codeengineshort}} Kafka event subscription to communicate with the service instance for {{site.data.keyword.messagehub}}. While it not required that you create this secret before you create the Kafka sender app and the event subscription, this action simplifies the required steps. 
+1. Create a secret with credentials that are required by the {{site.data.keyword.codeengineshort}} Kafka samples. For example, create the `kafka-subscription-secret` secret, to contain the credentials that are required for both the Kafka sender sample app and the Kafka event subscription, which uses the Kafka receiver sample. These credentials are required for the sample Kafka sender app and the {{site.data.keyword.codeengineshort}} Kafka event subscription to communicate with the service instance for {{site.data.keyword.messagehub}}. While it not required that you create this secret before you create the Kafka sender app and the event subscription, this action simplifies the required steps.
 
     To create the `kafka-subscription-secret` secret, add a literal environment variable for `password`, and `username`. For more information, see [create a secret with the CLI](/docs/codeengine?topic=codeengine-secret#secret-create-cli).
 
-    * Specify the `username` key with the value of `user` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. For the {{site.data.keyword.messagehub}} service instance, this value is `token`. This key is required for authentication between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker. 
+    * Specify the `username` key with the value of `user` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. For the {{site.data.keyword.messagehub}} service instance, this value is `token`. This key is required for authentication between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker.
     * Specify the `password` key with the value of `apikey` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. This key is required for the sender sample, and to enable communications between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker.
 
         ```txt
@@ -137,12 +137,12 @@ For this tutorial, set up a {{site.data.keyword.codeengineshort}} application to
         ```
         {: pre}
 
-2. Create the `kafka-sender-app` with the following information. 
+2. Create the `kafka-sender-app` with the following information.
     * Specify the `--image` option to reference the `icr.io/codeengine/kafka-sender` container image. This image is built from `sender.go`, which is available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/kafka){: external}. This sample sender app requires the `password` credentials that are stored in your `kafka-subscription-secret`, and it requires the `BROKERS` environment variable.
     * Specify the `--env-from-secret` option to reference the full secret, `kafka-subscription-secret`, which contains the `password` credentials.
     * Specify the `--env` option to add a literal environment variable, `BROKERS`, and provide the name of one of the brokers hosts listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. However, if you want to specify more than one broker hostname, use the format `--env BROKERS-broker1,broker2,broker3`.
     * (optional) Specify the `--min-scale=1` option so that the app always has an instance that is running and does not scale to zero. Configuring the app to always have a running instance is useful when you view logs. If you are running in a production environment, consider the cost of keeping a running instance of your app or whether you want {{site.data.keyword.codeengineshort}} to autoscale to zero. By default, the app scales to zero when not in use.
- 
+
         ```txt
         ibmcloud ce app create --name kafka-sender-app --image icr.io/codeengine/kafka-sender --env-from-secret kafka-subscription-secret --env BROKERS=broker-4-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --min-scale 1
         ```
@@ -156,14 +156,14 @@ For this tutorial, set up a {{site.data.keyword.codeengineshort}} application to
     {: pre}
 
 
-You created the `kafka-sender-app` app to produce Kafka messages for {{site.data.keyword.codeengineshort}} event subscriptions, and you created the `kafka-subscription-secret` secret that contains the required credentials. 
+You created the `kafka-sender-app` app to produce Kafka messages for {{site.data.keyword.codeengineshort}} event subscriptions, and you created the `kafka-subscription-secret` secret that contains the required credentials.
 
-## Setting up a {{site.data.keyword.codeengineshort}} Kafka subscription   
+## Setting up a {{site.data.keyword.codeengineshort}} Kafka subscription
 {: #tutkafka-subscribe-setup}
 {: step}
 
 For {{site.data.keyword.codeengineshort}} to work with Kafka events, set up a {{site.data.keyword.codeengineshort}} Kafka eventing subscription to connect to Kafka event brokers and listen for Kafka events. Also, set up a {{site.data.keyword.codeengineshort}} app to act as the receiver of the Kafka events. The Kafka event subscription defines the relationship between the Kafka producer (sender) and consumer (receiver) of events.
-{: shortdesc} 
+{: shortdesc}
 
 The {{site.data.keyword.codeengineshort}} Kafka event subscription connects to your Kafka message broker and sends HTTP Post requests for each incoming Kafka message to the receiver application. For more information about the information that is included with Kafka events, see [HTTP headers and body information for events that are delivered to apps](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subkafka-headerbody-app).
 
@@ -187,13 +187,13 @@ The {{site.data.keyword.codeengineshort}} Kafka event subscription connects to y
     {: pre}
 
 3. Create a {{site.data.keyword.codeengineshort}} Kafka event subscription for your Kafka events by using the [**`ibmcloud ce sub kafka create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create) command. Use the `kafka-subscription-secret` secret that you previously created to access the message broker. Specify the broker information based on the service credentials information for your Kafka resource. For this example, you can obtain the broker information from the output of the `ibmcloud resource service-key myeventstream-key` command. Notice that you must specify a `--broker` option for each broker for your topic. The `--destination` option specifies the {{site.data.keyword.codeengineshort}} resource that receives the events.
- 
+
     ```txt
     ibmcloud ce sub kafka create --name mykafkasubscription --destination kafka-receiver-app --secret kafka-subscription-secret --topic kafka-topic1 --broker broker-3-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-5-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker  broker-0-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-1-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-4-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-2-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
     ```
     {: pre}
 
-4. Display the details of the Kafka event subscription. 
+4. Display the details of the Kafka event subscription.
 
     ```txt
     ibmcloud ce sub kafka get -n mykafkasubscription
@@ -206,7 +206,7 @@ The {{site.data.keyword.codeengineshort}} Kafka event subscription connects to y
     Getting Kafka event subscription 'mykafkasubscription'...
     OK
 
-    Name:          mykafkasubscription  
+    Name:          mykafkasubscription
     [...]
     Destination Type:                 app
     Destination:                      kafka-receiver-app
@@ -236,20 +236,20 @@ The {{site.data.keyword.codeengineshort}} Kafka event subscription connects to y
     Type     Reason           Age  Source                  Messages
     Normal   FinalizerUpdate  26s  kafkasource-controller  Updated "mykafkasubscription" finalizers
     ```
-    {: screen} 
+    {: screen}
 
 
-## Testing your subscription 
+## Testing your subscription
 {: #tutkafka-test-subscription}
 {: step}
 
  Now that your Kafka event subscription, which references the `kafka-receiver-app` application, is created, use the `kafka-sender-app` to send message events to the receiver application.
  {: shortdesc}
 
- 
 
 
- 1. Obtain the public URL of the destination app, `kafka-sender-app` by using the [**`ibmcloud ce app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command with the `--output url` option to find the URL of your app. 
+
+ 1. Obtain the public URL of the destination app, `kafka-sender-app` by using the [**`ibmcloud ce app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command with the `--output url` option to find the URL of your app.
 
     ```txt
     ibmcloud ce app get -n kafka-sender-app --output url
@@ -263,14 +263,14 @@ The {{site.data.keyword.codeengineshort}} Kafka event subscription connects to y
     ```
     {: screen}
 
- 2. Run the Kafka event producer app, `kafka-sender-app` to send events to the destination {{site.data.keyword.codeengineshort}} application. Call the `kafka-sender-app` application with `curl` and specify values for the topic and the number of messages. Use the output of the **`ibmcloud ce app get`** command to find the public URL of your app. Be sure to wrap the value to curl in quotation marks to ensure that it is treated as a single string. For example, 
+ 2. Run the Kafka event producer app, `kafka-sender-app` to send events to the destination {{site.data.keyword.codeengineshort}} application. Call the `kafka-sender-app` application with `curl` and specify values for the topic and the number of messages. Use the output of the **`ibmcloud ce app get`** command to find the public URL of your app. Be sure to wrap the value to curl in quotation marks to ensure that it is treated as a single string. For example,
 
     ```txt
     curl "<public_URL_of_Kafka_sender_app>?topic=<your_topic_name>&num=<number_of_messages_to_produce>"
     ```
     {: pre}
 
-    For example, 
+    For example,
 
     ```txt
     curl "https://kafka-sender-app.abcdabcdabc.us-south.codeengine.appdomain.cloud?topic=kafka-topic1&num=1"
@@ -319,22 +319,22 @@ The {{site.data.keyword.codeengineshort}} Kafka event subscription connects to y
     ```
     {: screen}
 
-    Note that log information for apps lasts for only one hour. For more information about viewing logs for apps (or jobs), see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+    Note that log information for apps lasts for only one hour. For more information about viewing logs for apps (or jobs), see [Viewing logs](/docs/codeengine?topic=codeengine-logging).
 
 
 
-## Updating your subscription 
+## Updating your subscription
 {: #tutkafka-update-subscription}
 {: step}
 
-To update an event subscription with the CLI, use the [**`ibmcloud ce subscription kafka update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-update) command. The following example updates the topic name. 
+To update an event subscription with the CLI, use the [**`ibmcloud ce subscription kafka update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-update) command. The following example updates the topic name.
 
 ```txt
 ibmcloud ce sub kafka update -n mykafkasubscription --topic kafka-topic2
 ```
 {: pre}
 
-You can use the [**`ibmcloud ce subscription kafka update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-update) command to update the values for the Kafka subscription. However, you cannot modify the value for the consumer group with this command. If you want to update the subscription to reference a different topic, make sure that the Kafka topic exists before you update the subscription. 
+You can use the [**`ibmcloud ce subscription kafka update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-update) command to update the values for the Kafka subscription. However, you cannot modify the value for the consumer group with this command. If you want to update the subscription to reference a different topic, make sure that the Kafka topic exists before you update the subscription.
 {: tip}
 
 
@@ -344,7 +344,7 @@ You can use the [**`ibmcloud ce subscription kafka update`**](/docs/codeengine?t
 
 Ready to delete your Kafka subscription, the sending and receiving apps, and the secret? You can use the [**`ibmcloud ce app delete`**](/docs/codeengine?topic=codeengine-cli#cli-application-delete), the [**`ibmcloud ce sub kafka delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-delete), and the [**`ibmcloud ce sub kafka delete`**](/docs/codeengine?topic=codeengine-cli#cli-secret-delete) commands. You can optionally use the `-f` option to force the delete of the component without confirmation.
 
-When you delete the Kafka subscription, the delete does not delete the app that is referenced by the subscription. 
+When you delete the Kafka subscription, the delete does not delete the app that is referenced by the subscription.
 {: note}
 
 To remove your subscription,
@@ -362,7 +362,7 @@ ibmcloud ce app delete --name kafka-receiver-app -f
 ```
 {: pre}
 
-Similarly, you can remove the `kafka-sender-app`. 
+Similarly, you can remove the `kafka-sender-app`.
 
 ```txt
 ibmcloud ce app delete --name kafka-sender-app -f
@@ -376,7 +376,7 @@ ibmcloud ce secret delete --name kafka-subscription-secret -f
 ```
 {: pre}
 
-Ready to delete your service instance for {{site.data.keyword.messagehub}} service instance? The `--recursive` option specifies to remove all resources for the service instance, which includes the associated service key. 
+Ready to delete your service instance for {{site.data.keyword.messagehub}} service instance? The `--recursive` option specifies to remove all resources for the service instance, which includes the associated service key.
 
 ```txt
 ibmcloud resource service-instance-delete myeventstream --recursive -f
@@ -387,11 +387,7 @@ ibmcloud resource service-instance-delete myeventstream --recursive -f
 ## Next steps
 {: #nextsteps-kafkatut}
 
-For more information about working with Kafka event subscriptions, see [Working with the Kafka event producer](/docs/codeengine?topic=codeengine-working-kafkaevent-producer). 
+For more information about working with Kafka event subscriptions, see [Working with the Kafka event producer](/docs/codeengine?topic=codeengine-working-kafkaevent-producer).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-
-
-

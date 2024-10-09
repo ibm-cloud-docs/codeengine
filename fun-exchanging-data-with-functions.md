@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-17"
+lastupdated: "2024-10-09"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -11,6 +11,7 @@ subcollection: codeengine
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Exchanging data with functions
 {: #fun-exchanging-data}
@@ -25,7 +26,7 @@ The following diagram shows information flow from an external (caller) data inte
 
 ![Functions interfaces.](images/ce_functions_interfaces.svg "Functions interfaces"){: caption="Figure 1. External (caller) data interface and internal (function) data interface" caption-side="bottom"}
 
-This flow depicts a client (caller) information enters from an external data interface, then the {{site.data.keyword.codeengineshort}} function controller wraps the information, and finally passes the information to the function as part of the function's call parameters by using an internal request data interface. The function can then process, and when complete, it provides response data such as an HTTP status code, response headers, and a response body through that internal response data interface. The {{site.data.keyword.codeengineshort}} function controller unwraps the response data from the function, and then returns the data to the client in the HTTP response through the external data interface.
+This flow depicts a client (caller) information that enters from an external data interface. The {{site.data.keyword.codeengineshort}} function controller then wraps the information. Finally, it passes the information to the function as part of the function's call parameters by using an internal request data interface. The function can then process, and when complete, it provides response data such as an HTTP status code, response headers, and a response body through that internal response data interface. The {{site.data.keyword.codeengineshort}} function controller unwraps the response data from the function, and then returns the data to the client in the HTTP response through the external data interface.
 
 In the external data interface request and response body, the caller or the function can choose to exchange unstructured text or binary messages, or structured content.
 
@@ -37,7 +38,7 @@ Depending on the request or response content types, appropriate elements of the 
 ### MIME types
 {: #fun-external-data-interface-MIME-types}
 
-The following IANA MIME types are supported for the content type (`Content-Type`) of an {{site.data.keyword.codeengineshort}} function request or response. Options are supported, but not included in this list:
+The following IANA MIME types are supported for the content-type of an {{site.data.keyword.codeengineshort}} function request or response. Options are supported, but not included in this list:
 
 * JSON type: `application/json; ...`
 * Binary types:
@@ -60,7 +61,7 @@ The following IANA MIME types are supported for the content type (`Content-Type`
 
 When a function is invoked, it can receive arbitrary data (request payload) in text or binary form. The presence of a `Content-Type` request header determines the form and encoding of the data that is sent to the function. The data structure and format, and the content type, must match. {{site.data.keyword.codeengineshort}} runs a minimal validity check on the data and content type, and responds with HTTP status code `400` if data format or encoding is invalid.
 
-Depending on the value of the `Content-Type`, the function receives input data:
+Depending on the value of `Content-Type`, the function receives input data:
 
 #### JSON content
 {: #function-request-data-encoding-json}
@@ -111,7 +112,7 @@ Example percent-encoded content:
 #### Text content
 {: #function-request-data-encoding-text}
 
-The text payload is made available to the function as-is (byte array) by using the `__ce_body` parameter. The caller can send an arbitrary sequence of 7- or 8-bit characters as the request payload. As the input to the function code is a JSON formatted data structure, some characters are escaped to make them compatible to JSON. {{site.data.keyword.codeengineshort}} runs this escaping before it forwards the request payload to the function. The function's program logic might need to unescape them to re-create the original data.
+The text payload is made available to the function as-is (byte array) by using the `__ce_body` parameter. The caller can send an arbitrary sequence of 7-bit or 8-bit characters as the request payload. As the input to the function code is a JSON formatted data structure, some characters are escaped to make them compatible to JSON. {{site.data.keyword.codeengineshort}} runs this escaping before it forwards the request payload to the function. The function's program logic might need to unescape them to re-create the original data.
 
 Supported escape characters:
 
@@ -143,7 +144,7 @@ Example text content, with correctly escaped response characters in Python:
 #### Binary content
 {: #function-request-data-encoding-binary}
 
-Data payload is made available to the function as-is (byte array) by using the `__ce_body` parameter, but in Base64 encoded form.
+Data payload is made available to the function as-is (byte array) by using the `__ce_body` parameter, but in Base64-encoded form.
 
 Example binary content:
 
@@ -175,10 +176,9 @@ If `Content-Type` is missing for a request, then {{site.data.keyword.codeengines
 
 A function can return arbitrary data in text or binary form, whereas the presence of a `Content-Type` response header determines the form and encoding of the data returned.
 
-{{site.data.keyword.codeengineshort}} runs a limited validity check on the response data and content type, and returns HTTP status code 400 if the data format or encoding (generated by the function code) is invalid.
+{{site.data.keyword.codeengineshort}} runs a limited validity check on the response data and content type, and returns an HTTP status code `400` if the data format or encoding (generated by the function code) is invalid.
 
-When {{site.data.keyword.codeengineshort}} returns data to the external world, {{site.data.keyword.codeengineshort}} functions can support the same IANA MIME types as described in [MIME types](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-MIME-types).
-
+When {{site.data.keyword.codeengineshort}} returns data to the external world, {{site.data.keyword.codeengineshort}} functions can support the same IANA MIME types as described in [MIME types](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-MIME-types)
 When a caller invokes the function, the caller can send an optional `Accept-Encoding` request header that {{site.data.keyword.codeengineshort}} forwards to the function. However, it is at the discretion of the function to return the response in accordance with the accepted encoding.
 
 The function code must set the `Content-Type` response header and format and encode the data as follows:
@@ -222,7 +222,7 @@ The function code can opt to omit a response `Content-Type`, in which case {{sit
 ### {{site.data.keyword.codeengineshort}} function entry
 {: #fun-function-entry}
 
-In general, the main method of a {{site.data.keyword.codeengineshort}} function exchanges data with the caller by using a JSON-formatted message structure (function input or output messages). The message content is independent of the chosen runtime ([Node.js or Python](/docs/codeengine?topic=codeengine-fun-runtime)), and is handed over to the function's main method by using a single parameter. The type of parameter depends on the runtime: it is a JSON object for Node.js and of `dict` type for Python.
+In general, the main method of a {{site.data.keyword.codeengineshort}} function exchanges data with the caller by using a JSON-formatted message structure (function input or output messages). The message content is independent of the chosen runtime ([Node.js or Python](/docs/codeengine?topic=codeengine-fun-runtime), and is handed over to the function's main method by using a single parameter. The type of parameter depends on the runtime: it is a JSON object for Node.js and of `dict` type for Python.
 
 Example of a function JSON input structure:
 
@@ -593,10 +593,10 @@ A {{site.data.keyword.codeengineshort}} function returns a JSON object with the 
 |---------------|-------------|
 | `header` | A JSON object in which the keys are header names and the values are strings, numbers, or Boolean values. To send multiple values for a single header, the header's value is a JSON array of the multiple values. No headers are set by default. |
 | `statusCode` | A valid HTTP status code. If body content is present, the default is `200 OK`. If no body content is present, the default is `204 No Content`. |
-| `body` | A string that is either plain text, a JSON object or array, or a Base64 encoded string for binary data. The body is considered empty if it is null, an empty string (""), or undefined. The default is an empty body. |
+| `body` | A string that is either plain text, a JSON object or array, or a Base64-encoded string for binary data. The body is considered empty if it is null, an empty string (""), or undefined. The default is an empty body. |
 {: caption="JSON property results in a {{site.data.keyword.codeengineshort}} function"}
 
-Depending on the value of the `Content-Type` set in the header field of the function results, the content of the body field needs to contain the following information:
+Depending on the value of `Content-Type` set in the header field of the function results, the content of the body field needs to contain the following information:
 
 | `Content-Type` | Body value | Example |
 |----------------|------------|---------|
