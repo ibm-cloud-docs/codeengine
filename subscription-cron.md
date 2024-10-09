@@ -100,7 +100,7 @@ The following table summarizes the options that are used in the previous example
 | `--destination` | The name of a {{site.data.keyword.codeengineshort}} application or job in the current project to receive the events from the event producer. This value is required. |
 | `--destination-type` | The type of the `destination`, in this case, `app`. The default value is `app`. |
 | `--schedule` | Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional. |
-{: caption="Table 1. Command options" caption-side="bottom"}
+{: caption="Command options" caption-side="bottom"}
 
 Tips for using the **`sub cron`** commands
 :    - By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by using the `--path` option. For example, if your subscription specifies `--path /events`, the events are sent to `https://<base application URL>/events`.
@@ -255,7 +255,7 @@ The following table describes the headers for Periodic timer (cron) events:
 | `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `ce-time` | The time that the event was generated. |
 | `ce-type` | The type of the event. For cron events, this is `dev.knative.sources.ping`. |
-{: caption="Table 2. Header fields for events" caption-side="bottom"}
+{: caption="Header fields for events" caption-side="bottom"}
 
 Example output
 
@@ -413,7 +413,7 @@ The following table summarizes the options that are used in the previous example
 | `--destination` | The name of a {{site.data.keyword.codeengineshort}} application, function, or job in the current project to receive the events from the event producer. This value is required. |
 | `--destination-type` | The type of the `destination`, in this case, `function`. The default value is `app`. |
 | `--schedule` | Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional. |
-{: caption="Table 3. Command options" caption-side="bottom"}
+{: caption="Command options" caption-side="bottom"}
 
 Tips for using the **`sub cron`** commands
 :    - The size of data for Periodic timer events is limited to a maximum of 4096 bytes. Thus, if you use the `--data` option or the `--data-base64` option, you can send a maximum of 4096 bytes. For more information, see [Limits and quotas for Code Engine](/docs/codeengine?topic=codeengine-limits).
@@ -511,7 +511,7 @@ The following table describes the key-value pairs in `__ce_headers` for Periodic
 | `Ce-Specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `Ce-Time` | The time that the event was generated. |
 | `Ce-Type` | The type of the event. For cron events, this is `dev.knative.sources.ping`. |
-{: caption="Table 4. Header files for events" caption-side="bottom"}
+{: caption="Header files for events" caption-side="bottom"}
 
 Example output
 
@@ -630,7 +630,7 @@ The following table summarizes the options that are used with the **`sub cron cr
 | `--destination-type` | The type of the `destination`, in this case, `job`. |
 | `--destination` | The name of a {{site.data.keyword.codeengineshort}} job in the current project to receive the events from the event producer. |
 | `--schedule` | Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional. |
-{: caption="Table 5. Command options" caption-side="bottom"}
+{: caption="Command options" caption-side="bottom"}
 
 Tips for using the **`sub cron`** commands
 :    - The size of data for Periodic timer events is limited to a maximum of 4096 bytes. Thus, if you use the `--data` option or the `--data-base64` option, you can send a maximum of 4096 bytes. For more information, see [Limits and quotas for Code Engine](/docs/codeengine?topic=codeengine-limits).
@@ -814,7 +814,7 @@ The following table describes the environment variables that are specific to cro
 | `CE_SPECVERSION` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `CE_TIME` | The time that the event was generated. |
 | `CE_TYPE` | The type of the event. For cron events, this is `dev.knative.sources.ping`.  |
-{: caption="Table 6. Environment variables for events" caption-side="bottom"}
+{: caption="Environment variables for events" caption-side="bottom"}
 
 #### `CE_DATA` environment variable
 {: #subcron-envvar-cedata}

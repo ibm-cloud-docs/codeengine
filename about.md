@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-24"
+lastupdated: "2024-10-09"
 
 keywords: benefits, terminology, developers, capabilities, code engine
 
@@ -37,7 +37,7 @@ Review the capabilities that {{site.data.keyword.codeengineshort}} provides to r
 | Control access | Assign platform and services access permissions to your projects in IBM Cloud Identity and Access Management to control who can provision and manage resources in your IBM Cloud account. |
 | Based on open source | {{site.data.keyword.codeengineshort}} is built on a set of open source technologies such as Kubernetes, Knative, Istio, and Tekton, keeping your apps and jobs portable. |
 | DDoS protection | {{site.data.keyword.codeengineshort}} provides immediate DDoS protection for your application. {{site.data.keyword.codeengineshort}}'s DDoS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). |
-{: caption="Table 1. {{site.data.keyword.codeengineshort}} benefits" caption-side="bottom"}
+{: caption="{{site.data.keyword.codeengineshort}} benefits" caption-side="bottom"}
 {: #benefits-table}
 
 
@@ -60,4 +60,4 @@ Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the fo
 | Secret | A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app, function, or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs. |
 | Service binding | Service bindings provide applications, jobs, and functions access to {{site.data.keyword.cloud_notm}} services. |
 | Subscription | A subscription provides a way of signing up to receive events from a particular event producer. For more information about the different types of event producers and how to subscribe to them, see [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events). |
-{: caption="Table 2. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
+{: caption="{{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}

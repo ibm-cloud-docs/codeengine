@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-10-09"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -154,7 +154,7 @@ The following table summarizes the options that are used with the **`domainmappi
 | `--domain-name` | The name of the custom domain mapping. Specify the name of your custom domain, such as `www.example.com`.  This value is required. |
 | `--target` | The name of the target {{site.data.keyword.codeengineshort}} application. This value is required.  |
 | `--tls-secret` | The TLS secret for the domain mapping. This value is required.  |
-{: caption="Table 1. Command description" caption-side="bottom"}
+{: caption="Command description" caption-side="bottom"}
 
 
 Now you have a custom domain mapping that is created in {{site.data.keyword.codeengineshort}}. However, requests that are sent to your application are not (yet) routed to your custom domain. Next, [complete the custom domain configuration with your domain registrar](#app-completing-custom-domain) (*outside of {{site.data.keyword.codeengineshort}}*).
@@ -213,6 +213,3 @@ The output of the call to the custom domain is mapped to the `myapp` application
 {: note}
 
 For more information about domain mappings in {{site.data.keyword.codeengineshort}}, see [Working with custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings).
-
-
-

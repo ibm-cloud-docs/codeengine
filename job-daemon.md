@@ -93,7 +93,7 @@ This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https:
     | `--name` | The name of the job. Use a name that is unique within the project. This value is required. \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain letters, numbers, and hyphens (-). |
     | `--image` | The name of the image that is used for runs of the job.  |
     | `--mode` | The mode for runs of the job. Valid values are `task` (default) and `daemon`. In `daemon` mode, there is no timeout value and failed instances are restarted indefinitely. |
-    {: caption="Table 1. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 2. (optional) Use the **`job get`** command to display information about your job.
 

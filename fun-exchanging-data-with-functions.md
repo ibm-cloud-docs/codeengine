@@ -24,7 +24,7 @@ Invoking a {{site.data.keyword.codeengineshort}} function is accomplished on the
 
 The following diagram shows information flow from an external (caller) data interface, to the {{site.data.keyword.codeengineshort}} function controller. An internal (function) request and response data interface for processing, and then return back to the external caller:
 
-![Functions interfaces.](images/ce_functions_interfaces.svg "Functions interfaces"){: caption="Figure 1. External (caller) data interface and internal (function) data interface" caption-side="bottom"}
+![Functions interfaces.](images/ce_functions_interfaces.svg "Functions interfaces"){: caption="External (caller) data interface and internal (function) data interface" caption-side="bottom"}
 
 This flow depicts a client (caller) information that enters from an external data interface. The {{site.data.keyword.codeengineshort}} function controller then wraps the information. Finally, it passes the information to the function as part of the function's call parameters by using an internal request data interface. The function can then process, and when complete, it provides response data such as an HTTP status code, response headers, and a response body through that internal response data interface. The {{site.data.keyword.codeengineshort}} function controller unwraps the response data from the function, and then returns the data to the client in the HTTP response through the external data interface.
 

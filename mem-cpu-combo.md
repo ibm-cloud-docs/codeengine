@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-03"
+lastupdated: "2024-10-09"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine, memory and CPU
 
@@ -56,7 +56,7 @@ The default combination for apps and jobs is 1 vCPU and 4 GB memory.
 | 8 vCPU \n 16 GB | 8 vCPU \n 32 GB |  |
 | 10 vCPU \n 20 GB | 10 vCPU \n 40 GB |  |
 | 12 vCPU \n 24 GB | 12 vCPU \n 48 GB |  |
-{: caption="Table 1. Valid vCPU and memory combinations" caption-side="bottom"}
+{: caption="Valid vCPU and memory combinations" caption-side="bottom"}
 
 Your existing apps and jobs might be using other memory and CPU combinations, and those will remain unaffected. However, these other combinations are not valid and only the valid combinations are supported. Therefore, any new apps or jobs as well as any changes to existing apps or jobs must comply with the list of valid choices. 
 {: important}
@@ -83,4 +83,4 @@ Decimal units such as kilobyte (KB), megabyte (MB), and gigabyte (GB) are common
 | mebibyte (MiB) | 2^20 | megabyte (MB) | 10^6 |
 | gibibyte (GiB) | 2^30 | gigabyte (GB) | 10^9 |
 | tebibyte (TiB) | 2^40 | terabyte (TB) | 10^12 |
-{: caption="Table 2. Comparison of binary and decimal units and values" caption-side="bottom"}
+{: caption="Comparison of binary and decimal units and values" caption-side="bottom"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-10-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -105,7 +105,7 @@ For information about required permissions for accessing image registries, see [
     | `--build-source` | The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`. |
     | `--build-context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. |
     | `--wait` | Specifies to wait for the image build to complete before creating the job. |
-    {: caption="Table 1. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 2. (optional) Use the **`job get`** command to display information about your job, including information about the build.
 
@@ -262,4 +262,3 @@ When your job is created from repository source code or from [local source](/doc
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-11-16"
+  years: 2023, 2024
+lastupdated: "2024-10-09"
 
 keywords: domain mapping, custom domain, functions in code engine, http requests in code engine, function workloads in code engine, deploying workloads in code engine, Function, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -153,7 +153,7 @@ The following table summarizes the options that are used with the **`domainmappi
 | `--domain-name` | The name of the custom domain mapping. Specify the name of your custom domain, such as `www.example.com`.  This value is required. |
 | `--target` | The name of the target {{site.data.keyword.codeengineshort}} function. This value is required.  |
 | `--tls-secret` | The TLS secret for the domain mapping. This value is required.  |
-{: caption="Table 1. Command description" caption-side="bottom"}
+{: caption="Command description" caption-side="bottom"}
 
 
 Now your custom domain mapping is created in {{site.data.keyword.codeengineshort}}. However, requests that are sent to your function are not (yet) routed to your custom domain. Next, you must [complete the custom domain configuration with your domain registrar](#fun-completing-custom-domain).
@@ -181,7 +181,3 @@ curl -v -X GET https://www.example.com
 
 The output of the call to the custom domain is mapped to the `myhellofun` function, which uses the `icr.io/codeengine/helloworld` sample image.
 {: note}
-
-
-
-

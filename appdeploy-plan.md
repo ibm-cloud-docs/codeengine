@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-28"
+lastupdated: "2024-10-09"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -99,7 +99,7 @@ You can deploy your application with the following visibility levels:
 | [internal (project)](#app-endpoint-projectonly) | An app with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. Setting an internal (project) endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. |
 | [public](#app-endpoint-public) | An app with this setting is exposed to the internet and your {{site.data.keyword.codeengineshort}} project. Setting a public endpoint means that your app can receive requests from the public internet or from components within your {{site.data.keyword.codeengineshort}} project. This setting is the default. |
 | [private](#app-endpoint-private) | An app with this setting is exposed to the {{site.data.keyword.cloud_notm}} private network and your {{site.data.keyword.codeengineshort}} project. Setting a private endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services by using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project.|
-{: caption="Table 1. Visibility for applications" caption-side="bottom"}
+{: caption="Visibility for applications" caption-side="bottom"}
 
 You can set the endpoint settings for visibility of an application from the console or with the CLI when you create and deploy, or update your app. 
 
@@ -216,6 +216,3 @@ For more information about working with apps, see
 * Working with [environment variables](/docs/codeengine?topic=codeengine-envvar), [configmaps](/docs/codeengine?topic=codeengine-configmap), and [secrets](/docs/codeengine?topic=codeengine-secret).
 * [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).
 * [Troubleshooting apps](/docs/codeengine?topic=codeengine-troubleshoot-apps).
-
-
-

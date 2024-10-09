@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-05"
+lastupdated: "2024-10-09"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -106,7 +106,7 @@ The following table summarizes the options that are used with the **`function cr
 | `--build-source` | The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`. |
 | `--build-context-dir` | The directory in the repository that contains the code. This value is optional. |
 | `--runtime` | The runtime for the function. |
-{: caption="Table 1. Command description" caption-side="bottom"}
+{: caption="Command description" caption-side="bottom"}
 
 The following output shows the result of the **`function get`** command for this example, including information about the build.
 
@@ -304,7 +304,3 @@ After your function is created, you can update your function and its referenced 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-
-
-

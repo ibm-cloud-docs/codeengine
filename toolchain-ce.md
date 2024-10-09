@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-10-09"
 
 keywords: code engine, toolchain and code engine, continuous deliver and code engine, toolchain, code engine cicd
 
@@ -94,7 +94,7 @@ You can set the following options for your {{site.data.keyword.codeengineshort}}
 | `registry-region` | The Container registry region.  |
 | `resource-group` | The resource group that contains the {{site.data.keyword.codeengineshort}} project. |
 | `service-bindings` | The service binding that binds an {{site.data.keyword.cloud_notm}} service instance to an application. This value is in the format `"{\"<SERVICE_INSTANCE_NAME>\": \"<BINDING_PREFIX>\"}"`. For example, `"{\"object-store-rg-e\": \"CLOUD_OBJECT_STORAGE\"}`. This value must be in base64.  |
-{: caption="Table 1. Code Engine options in toolchain" caption-side="bottom"}
+{: caption="Code Engine options in toolchain" caption-side="bottom"}
 
 For more options, see the **Environment properties** for your pipeline in your toolchain settings.
 {: note}
@@ -109,6 +109,3 @@ Troubleshoot your {{site.data.keyword.codeengineshort}} toolchain with the follo
 - [Troubleshooting for toolchains](/docs/ContinuousDelivery?topic=ContinuousDelivery-troubleshoot-toolchains).
 
   
-
-
-

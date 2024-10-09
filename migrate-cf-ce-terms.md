@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-11-28"
+  years: 2022, 2024
+lastupdated: "2024-10-09"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -25,7 +25,7 @@ Before you get started with deploying apps in {{site.data.keyword.codeengineshor
 | `cf push` | Build and deploy | Process of building a container image from source code and deploying an app in a single step. You can build code based on a Dockerfile or that use a Paketo buildpack. You can build from a single step in the CLI as well as from the {{site.data.keyword.codeengineshort}} console. See [Planning your build](/docs/codeengine?topic=codeengine-plan-build). |
 | Service binding | Service binding | Attach a workload to an {{site.data.keyword.cloud_notm}} managed service. The credentials and connection information is exposed to the workload through environment variables. The `VCAP_SERVICES` environment variable in Cloud Foundry is called `CE_SERVICES` in {{site.data.keyword.codeengineshort}}. See [Integrating {{site.data.keyword.cloud_notm}} services with service bind](/docs/codeengine?topic=codeengine-service-binding). |
 | Routes and domains | Custom domain mapping | Define and manage external URLs to your workloads. {{site.data.keyword.codeengineshort}} provides support for [custom domains mappings](/docs/codeengine?topic=codeengine-domain-mappings) from the console. You can also add [custom domains](/docs/codeengine?topic=codeengine-deploy-multiple-regions) through {{site.data.keyword.cis_full_notm}} or any other domain provider of your choice. |
-{: caption="Table 1. Terminology" caption-side="bottom"}
+{: caption="Terminology" caption-side="bottom"}
 
 For more terms and capabilities for {{site.data.keyword.codeengineshort}}, see [Learn about {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about).
 
@@ -45,4 +45,3 @@ Other information
 - Find out about [{{site.data.keyword.codeengineshort}} pricing](/docs/codeengine?topic=codeengine-pricing).
 - Try other [{{site.data.keyword.codeengineshort}} tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}.
 - Explore other [{{site.data.keyword.codeengineshort}} topics](/docs/codeengine?topic=codeengine-learning-paths).
-

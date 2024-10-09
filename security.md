@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-10-09"
 
 keywords: code engine security, security, security features for code engine, code engine security features, code engine iam
 
@@ -33,7 +33,7 @@ You can use the following security features to enhance your security.
 | Use secrets to store sensitive information | You can store information, such as passwords and SSH keys in a secret. For more information, see [Working with secrets](/docs/codeengine?topic=codeengine-secret). |
 | Add authentication and authorization capabilities | If you are exposing your application or function in {{site.data.keyword.codeengineshort}} on a public API or website, you might want to restrict access to certain users or locations (IP address ranges). While {{site.data.keyword.codeengineshort}} provides capabilities to restrict access for APIs that you can use to manage {{site.data.keyword.codeengineshort}} projects and its entities, it is the responsibility of the owner of the code source to add proper authentication and authorization capabilities to protect the code that runs when reaching the endpoints. For example, you can use [{{site.data.keyword.appid_full_notm}}](/docs/appid) to add authentication and authorization capabilities for your code. |
 | Rotate TLS certificates regularly | If you are using custom domain mappings to expose your applications or functions, you must ensure that your TLS certificates have an expiry date; for example 90 days. You must periodically rotate your certificate with an updated certificate (that has its own expiry date). Ideally, use automation to rotate the certificates. For example, you can use a {{site.data.keyword.codeengineshort}} job that is triggered by a cron subscription to rotate the certificate. If you store secrets in {{site.data.keyword.secrets-manager_full_notm}}, consider using {{site.data.keyword.en_full_notm}} so that your {{site.data.keyword.codeengineshort}} project is aware of certificate rotations. You can find a [sample app that uses event notifications](https://github.com/IBM/CodeEngine/tree/main/app-n-event-notification){: external} by visiting our {{site.data.keyword.codeengineshort}} samples repository on GitHub. |
-{: caption="Table 1. Security features" caption-side="bottom"}
+{: caption="Security features" caption-side="bottom"}
 
 ## Supported TLS versions and cipher suites
 {: #secure-tls}
@@ -69,6 +69,3 @@ To address Layer 7 attacks, you can take the following steps so that your traffi
 8. Click **Create** to save the application revision. 
 
 For more information about DDoS in {{site.data.keyword.cis_short_notm}}, see [Dealing with Distributed Denial of Service attacks in {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts). For more ways to address Layer 7 attacks, see [Mitigating Layer 7 attacks in {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis#cis-mitigate-layer7-attacks). 
-
-
-

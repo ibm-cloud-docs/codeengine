@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-24"
+lastupdated: "2024-10-09"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -118,7 +118,7 @@ After you set up your environment, you can interact with Kubernetes API. You mus
 | `deployments` | `get`, `list`, `watch`, `create`, `delete`, `patch`, `apply` | `get`, `list`, `watch`, `create`, `delete`, `patch`, `apply` | `get`, `list`, `watch` |
 | `daemonset` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` |
 | `pods.metrics.k8s.io` | list | list | list |
-{: caption="Table 1. Kubernetes authorities" caption-side=ottom"}
+{: caption="Kubernetes authorities" caption-side=ottom"}
 
 ## Retrieving your Kubernetes configuration
 {: #kubernetes-getconfig}

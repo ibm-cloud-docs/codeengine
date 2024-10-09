@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-30"
+  years: 2020, 2024
+lastupdated: "2024-10-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -82,7 +82,7 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
     | `--name` | The name of the job. Use a name that is unique within the project. This value is required. \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain letters, numbers, and hyphens (-). | 
     | `--build-source` | The path to the local source. |
     | `--wait` | Specifies to wait for the image build to complete before creating the job. |
-    {: caption="Table 1. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 4. (optional) Use the **`job get`** command to display information about your job, including information about the build.
 
@@ -240,6 +240,3 @@ When your job is created from local source or from [repository source code](/doc
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-
-

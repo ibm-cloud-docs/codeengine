@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-02-28"
+lastupdated: "2024-10-09"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -70,7 +70,7 @@ The following table lists some key common attributes. Each attribute indicates w
 | Type | This *required* attribute describes the type of the event. For example, the type of event might be that a resource was created or deleted. |
 | Subject | This *optional* attribute indicates the resource about which the event is related. For example, in an object storage system, this value might be the object from the bucket that was modified. |
 | Time | This *optional* attribute is the timestamp of when the occurrence happened. |
-{: caption="Table 1. Common CloudEvent attributes" caption-side="bottom"}
+{: caption="Common CloudEvent attributes" caption-side="bottom"}
 
 For more information about the complete list of attributes, see the [`CloudEvents` specification](https://github.com/cloudevents/spec){: external}.
 
@@ -110,6 +110,3 @@ By default, the [**`subscription cron create`**](/docs/codeengine?topic=codeengi
 After the subscription is created, the subscription is repeatedly polled for status to verify its readiness. This polling lasts for 15 seconds by default before it times out. You can change the amount of time before the command times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
 You can display the status of your subscription by using the [**`subscription cron get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-get), [**`subscription cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) or the [**`subscription kafka get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-get) CLI commands.
-
-
-

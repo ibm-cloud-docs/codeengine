@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-10-09"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret
 
@@ -93,7 +93,7 @@ Before you begin
     | `--name` | The name of the build. Use a name that is unique within the project. This value is required. \n - The name must begin with a lowercase letter. \n - The name must end with a lowercase alphanumeric character. \n - The name must be 55 characters or fewer and can contain letters, numbers, and hyphens (-). |  |
     | `--source` | The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`.  |
     | `--context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpacks file or Dockerfile is contained in a subdirectory. This value is optional. |
-    {: caption="Table 1. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 
 2. Use the **`build get`** command to check the status of your build. 
@@ -176,7 +176,7 @@ Before you begin
     | `--registry-secret` | The registry secret that is used to access the registry. You can add the registry secret by running the **`secret create --format registry`** command. The registry secret is used to authenticate with a private registry.  |
     | `--source` | The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`.  |
     | `--context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpacks file or Dockerfile is contained in a subdirectory. This value is optional. |
-    {: caption="Table 2. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 2. Use the **`build get`** command to check the status of your build. 
 
@@ -216,6 +216,3 @@ After you create the build configuration, you must [run the build](/docs/codeeng
 
 If you receive a command validation failure, check that your secret exists. If you refer to an registry secret (`--registry-secret`) for your image and the secret does not exist, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
 {: tip}
-
-
-

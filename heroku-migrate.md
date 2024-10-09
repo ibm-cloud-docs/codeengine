@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-11-28"
+  years: 2022, 2024
+lastupdated: "2024-10-09"
 
 keywords: migrate, migration, heroku, terms, code engine
 
@@ -73,7 +73,7 @@ Before you get started with deploying apps in {{site.data.keyword.codeengineshor
 | N/A | Job or batch job | A job runs one or more instances of your executable code in parallel. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. See [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan). |
 | `heroku create` and `git push heroku main` or `heroku container:push web` | `app create` | The process of creating an application. With Heroku, you create an app and then push your code to it. Your code is build and deployed in that single step. With {{site.data.keyword.codeengineshort}}, you can pull a container image from an image repository, build your source code from a repository such as GitHub, or pull your code from a local file on your system, all from a single command. You can build code based on a Dockerfile or that use a Paketo buildpack. You can build from a single step in the CLI as well as from the {{site.data.keyword.codeengineshort}} console. See [Planning your build](/docs/codeengine?topic=codeengine-plan-build). |
 | Custom domains | Custom domain mapping | Both services allow you to define and manage external URLs to your workloads. {{site.data.keyword.codeengineshort}} provides support for [custom domains mappings](/docs/codeengine?topic=codeengine-domain-mappings) from the console. You can also add [custom domains](/docs/codeengine?topic=codeengine-deploy-multiple-regions) through {{site.data.keyword.cis_full_notm}} or any other domain provider of your choice. |
-{: caption="Table 1. Terminology" caption-side="bottom"}
+{: caption="Terminology" caption-side="bottom"}
 
 For more terms and capabilities for {{site.data.keyword.codeengineshort}}, see [Learn about {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about).
 
@@ -232,5 +232,3 @@ Thanks so much for watching and if you have any questions, my Twitter handle is 
 Thanks so much.
 
 Bye y'all.
-
-
