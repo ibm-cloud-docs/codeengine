@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-08-29"
+  years: 2020, 2024
+lastupdated: "2024-10-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -16,14 +16,14 @@ subcollection: codeengine
 {: #cebatchjobs}
 
 
-{{site.data.keyword.codeenginefull}} is a fully managed, serverless platform that runs your containerized workloads, including batch job or application workloads. Learn about running batch jobs in {{site.data.keyword.codeenginefull}}. 
+{{site.data.keyword.codeenginefull}} is a fully managed, serverless platform that runs your containerized workloads, including batch job or application workloads. Learn about running batch jobs in {{site.data.keyword.codeenginefull}}.
 {: shortdesc}
 
 
 ## What are batch job workloads?
 {: #batchjob-workloads}
 
-A job in {{site.data.keyword.codeengineshort}} runs one or more instances of your executable code. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit, such that the resources to run the job workload are freed up. 
+A job in {{site.data.keyword.codeengineshort}} runs one or more instances of your executable code. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit, such that the resources to run the job workload are freed up.
 
 You can scale batch jobs by defining multiple instances. Workloads can be split into parallel tasks to reduce compute time. You can set the job to run with automatic retry to address failing workloads within a job instance. You can trigger batch jobs manually, programmatically, and by events, such as {{site.data.keyword.cos_short}} events.
 
@@ -90,7 +90,7 @@ When you work with {{site.data.keyword.codeengineshort}} jobs in the console wit
 
 System event information can also be helpful to troubleshoot problems when you run jobs. You can view system event information with the CLI. See [Getting system event information for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-gettingevent).
 
-For more information, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+For more information, see [Viewing logs](/docs/codeengine?topic=codeengine-logging).
 
 ### Queuing
 {: #batchjob-queue}
@@ -121,7 +121,7 @@ For more information, see [Working with jobs](/docs/codeengine?topic=codeengine-
 A job in {{site.data.keyword.codeengineshort}} (batch job) consists of one or more job instances. While job instances run independent of each other, they run the same code. Suppose you have a database with 100 records to analyze. You can run your job such that each job instance analyzes 10 records each. For example, the first job instance analyzes records 0 - 9, the second job instance can analyze records 10 - 19, and so on. In this example, each job instance receives the system provided job input parameter `JOB_INDEX` as an environment variable that you can use to calculate the range of database records to analyze by each job instance. The number of job instances is specified when the batch job is submitted.
 
 
-When you run a batch job, during the startup time, job instances might linger in a pending state as the instances are being started. Pending times for job instances can vary due to the system and network infrastructure, as the system adjusts to fulfill the resource demands related to this run of the job. If the system infrastructure is responding to a high usage demand, the result might be a multi-minute delay of the startup for jobs because job instances are provisioned just-in-time. 
+When you run a batch job, during the startup time, job instances might linger in a pending state as the instances are being started. Pending times for job instances can vary due to the system and network infrastructure, as the system adjusts to fulfill the resource demands related to this run of the job. If the system infrastructure is responding to a high usage demand, the result might be a multi-minute delay of the startup for jobs because job instances are provisioned just-in-time.
 {: note}
 
 
@@ -138,13 +138,13 @@ A batch job is in `Failed` status after one or more job run instances reaches th
 ### Submitting similar batch jobs
 {: #batchjob-reuse}
 
-When you create a job, you can specify workload configuration information that is used each time that the job is run. When you use a common set of configuration information for batch jobs, with {{site.data.keyword.codeengineshort}}, you can specify additional parameters with the job submission to overwrite the batch job parameters for this specific job submission. 
+When you create a job, you can specify workload configuration information that is used each time that the job is run. When you use a common set of configuration information for batch jobs, with {{site.data.keyword.codeengineshort}}, you can specify additional parameters with the job submission to overwrite the batch job parameters for this specific job submission.
 
 
 ### Triggering batch jobs with events
 {: #batchjob-eventing}
 
-Batch jobs can be submitted automatically based on events, such as periodic timers, {{site.data.keyword.cos_short}} events, or Kafka topics. 
+Batch jobs can be submitted automatically based on events, such as periodic timers, {{site.data.keyword.cos_short}} events, or Kafka topics.
 
 Suppose you want to trigger your batch job automatically based on a subscription to an {{site.data.keyword.cos_full_notm}} bucket that generates events whenever a file changes or is added to the {{site.data.keyword.cos_short}} bucket. Review the [{{site.data.keyword.codeengineshort}} `cos-event-job` sample](https://github.com/IBM/CodeEngine/tree/main/cos-event-job){: external} for information about how to create {{site.data.keyword.cos_short}} events and use the events to trigger batch jobs.
 
@@ -158,9 +158,6 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 
 To create and run a simple {{site.data.keyword.codeengineshort}} batch job application with the `icr.io/codeengine/firstjob` sample image, see [Running your first {{site.data.keyword.codeengineshort}} job](/docs/codeengine?topic=codeengine-getting-started#first-job).
 
-Also, you can try a batch job tutorial, see [Running and updating jobs](/docs/codeengine?topic=codeengine-run-job-tutorial). 
+Also, you can try a batch job tutorial, see [Running and updating jobs](/docs/codeengine?topic=codeengine-run-job-tutorial).
 
 To dive deeper into working with batch jobs, see [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan).
-
-
-

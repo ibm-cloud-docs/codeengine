@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-11-28"
+  years: 2022, 2024
+lastupdated: "2024-10-09"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -52,7 +52,7 @@ ibmcloud ce app update --name myapp --min-scale 1
 After the application updates, a single instance is always running. Be aware that charges might apply. For more information, see [Pricing for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-pricing).
 
 
-## Can I route requests to a specific application instance?  
+## Can I route requests to a specific application instance?
 {: #specific-app-instance}
 
 No, this functionality is not currently supported. You can approximate this functionality by using [Knative traffic splitting](https://knative.dev/docs/getting-started/first-traffic-split/){: external}. For more information about using Knative with {{site.data.keyword.codeengineshort}}, see [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
@@ -67,7 +67,7 @@ These steps use the console.
 1. Create a domain mapping for your app. When you create your domain mapping, provide your private key and the full certificate chain of the domain(s). For more information, see [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings). Wait until the domain mappings in all projects are showing a `Ready` state.
 
 2. Open the details of each domain mapping and record the `CNAME` value, for example, `custom.<your-random-id>.us-south.codeengine.appdomain.cloud` or `custom.<your-other-random-id>.us-east.codeengine.appdomain.cloud`.
-  
+
 3. Navigate to the details page for each application and select **Domain mappings** tab and then, select `No external system domain mapping` in the system domain mappings section. This step ensures that your applications are only accessible through the custom domains when called from outside of this project.
 
 4. In your {{site.data.keyword.cis_short}} instance, navigate to **Reliability. > Global load balancers > Origin pools** and edit the existing origin pools by changing the Origin address to the `CNAME` that you recorded earlier.
@@ -77,12 +77,12 @@ Your global load balancer is now pointing to your {{site.data.keyword.codeengine
 ## Does my app need to follow any specifications?
 {: #12factor}
 
-Your app must follow the [12-factor app methodology](https://12factor.net/){: external}. 
+Your app must follow the [12-factor app methodology](https://12factor.net/){: external}.
 
 ## What types of workloads are available with {{site.data.keyword.codeengineshort}}?
 {: #workloads}
 
-{{site.data.keyword.codeengineshort}} supports two types of workloads: Applications and Batch Jobs. 
+{{site.data.keyword.codeengineshort}} supports two types of workloads: Applications and Batch Jobs.
 
 An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming requests and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
 
@@ -146,7 +146,7 @@ ibmcloud target -s dev
 
 When you then deploy an app with Cloud Foundry, that `Org` and `Space` is targeted for the deployment.
 
-{{site.data.keyword.codeengineshort}} uses the concept of an IBM Cloud resource group and a {{site.data.keyword.codeengineshort}} project.  
+{{site.data.keyword.codeengineshort}} uses the concept of an IBM Cloud resource group and a {{site.data.keyword.codeengineshort}} project.
 
 ```txt
 ibmcloud target -g <RESOURCE-GROUP>
@@ -168,7 +168,7 @@ ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
 ```
 {: codeblock}
 
-You can also use the {{site.data.keyword.la_full_notm}} service, which is available for more long-term persistence of log messages. For more information, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+You can also use the {{site.data.keyword.la_full_notm}} service, which is available for more long-term persistence of log messages. For more information, see [Viewing logs](/docs/codeengine?topic=codeengine-logging).
 
 ### Creating a service
 {: #create-service}
@@ -182,7 +182,7 @@ ibmcloud cf create-service cloudantNoSQLDB lite myNameCloudant
 ```
 {: codeblock}
 
-To create a new service to use with {{site.data.keyword.codeengineshort}} applications, 
+To create a new service to use with {{site.data.keyword.codeengineshort}} applications,
 
 ```txt
 ibmcloud resource service-instance-create myNameCOS cloud-object-storage lite global
@@ -192,7 +192,7 @@ ibmcloud resource service-instance-create myNameCOS cloud-object-storage lite gl
 ### Service binding
 {: #service-binding-cfce}
 
-After you create your application, you can then "bind" your application to the service. 
+After you create your application, you can then "bind" your application to the service.
 
 With Cloud Foundry, run the following command.
 
@@ -213,7 +213,7 @@ The service instance credentials (coordinates) are injected into the app (or job
 ### Updating an app or job
 {: #update-app-job}
 
-After you create your application or job, you can update properties of your workload by using the update command. For example, to update an application in {{site.data.keyword.codeengineshort}}, 
+After you create your application or job, you can update properties of your workload by using the update command. For example, to update an application in {{site.data.keyword.codeengineshort}},
 
 ```txt
 ibmcloud ce app update --name <APPNAME> ...
@@ -254,5 +254,3 @@ Other information
 - Find out about [{{site.data.keyword.codeengineshort}} pricing](/docs/codeengine?topic=codeengine-pricing).
 - Try other [{{site.data.keyword.codeengineshort}} tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}.
 - Explore other [{{site.data.keyword.codeengineshort}} topics](/docs/codeengine?topic=codeengine-learning-paths).
-
-

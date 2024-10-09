@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-14"
+lastupdated: "2024-10-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -19,7 +19,7 @@ subcollection: codeengine
 After you create your job, you can run a job based on its definition, or you can run the job with overriding properties. Run your job from the console or with the CLI.
 {: shortdesc}
 
-Each time your job runs, the latest version of your referenced container image is used for the job run, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the job run. 
+Each time your job runs, the latest version of your referenced container image is used for the job run, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the job run.
 
 Submitted batch jobs are run in parallel, if possible. If the number or size of the submitted jobs exceeds the configured quota limits, such as maximum number of running instances, then {{site.data.keyword.codeengineshort}} queues the jobs and delays running them until enough jobs finish. For more information about quotas and limits for jobs, including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
@@ -32,16 +32,16 @@ Job runs that are created by subscriptions are deleted after 10 minutes. For mor
 When you create a job, you can run it immediately. However, you can submit and resubmit a job at any time. You can also submit or resubmit a job that you previously created.
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select Projects from the navigation menu.  Select a project as the current context. 
+2. Select Projects from the navigation menu.  Select a project as the current context.
 3. From the Overview page, select Jobs from the Summary section or select Jobs from the navigation menu.
-4. Click the **Jobs** tab, and click the name of the job that you want to run. 
+4. Click the **Jobs** tab, and click the name of the job that you want to run.
 5. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
-6. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
+6. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page.
 7. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indices** field automatically lists the indices of the failed job run instances. After you review and optionally change configuration values, click **Submit job** to run your job.
 
-You can also rerun existing job run. To run a specific job run again, click the **Job runs** tab, and then click the name of the job run that you want to work with. Click **Rerun** to run this job run again. 
+You can also rerun existing job run. To run a specific job run again, click the **Job runs** tab, and then click the name of the job run that you want to work with. Click **Rerun** to run this job run again.
 
-You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-logging).
 {: tip}
 
 The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap#inside-configmaps).
@@ -56,11 +56,11 @@ Before you begin
 * Set up your [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create a job](/docs/codeengine?topic=codeengine-create-job#create-job-cli).
 
-To run a job with the CLI, use the **`jobrun submit`** command. For a complete listing of options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command. 
+To run a job with the CLI, use the **`jobrun submit`** command. For a complete listing of options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command.
 
-With the CLI, you can [run a job based on a job configuration](#run-job-cli-withjobconfig) or you can [run a job without first creating a job configuration](#run-job-cli-withoutjobconfig). 
+With the CLI, you can [run a job based on a job configuration](#run-job-cli-withjobconfig) or you can [run a job without first creating a job configuration](#run-job-cli-withoutjobconfig).
 
-### Running a job with the CLI based on a job configuration 
+### Running a job with the CLI based on a job configuration
 {: #run-job-cli-withjobconfig}
 
 By creating a job configuration, you can more easily run your job multiple times.
@@ -68,7 +68,7 @@ By creating a job configuration, you can more easily run your job multiple times
 For example, the following **`jobrun submit`** command creates five new instances to run the container image that is specified in the defined `myjob` job configuration. To reference a defined job configuration, use the `--job` option. While the `--name` option is not required if the `--job` option is specified, the following example command specifies the `--name` option to provide a name for this job run. For jobs, the default value for `cpu` is `1` and the default value for `memory` is `4G`. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```txt
-ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"  
+ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"
 ```
 {: pre}
 
@@ -82,9 +82,9 @@ The following table summarizes the options that are used with the **`jobrun subm
 {: caption="Table 1. Command options" caption-side="bottom"}
 
 The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap#inside-configmaps).
-{: note} 
+{: note}
 
-### Running a job with the CLI without first creating a job configuration 
+### Running a job with the CLI without first creating a job configuration
 {: #run-job-cli-withoutjobconfig}
 
 With the CLI, you can submit a job run without first creating a job configuration. You can specify the same configuration options on the `jobrun submit` and `jobrun resubmit` commands that are available with the `job create` command.
@@ -92,11 +92,11 @@ With the CLI, you can submit a job run without first creating a job configuratio
 For example, the following [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command submits a job run to reference the `us.icr.io/mynamespace/myhello_bld` image by using the `myregistry` access information. Because this job run is not referencing a defined job configuration, you must specify values for the `--name` and `image` options. Use `--name` to specify the name of this job run and use `--image` to provide the name of the image that is used for this job run. The `--array-indices` option creates five new instances to run the container image. For job runs, the default value for `cpu` is `1` and the default value for `memory` is `4G`. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job run allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```txt
-ibmcloud ce jobrun submit --name myhellojob-jobruna --image us.icr.io/mynamespace/myhello_bld --registry-secret myregistry   --array-indices "1 - 5"  
+ibmcloud ce jobrun submit --name myhellojob-jobruna --image us.icr.io/mynamespace/myhello_bld --registry-secret myregistry   --array-indices "1 - 5"
 ```
 {: pre}
 
-Run the `jobrun get -n myhellojob-jobruna` command to check the job run status. 
+Run the `jobrun get -n myhellojob-jobruna` command to check the job run status.
 
 Example output
 
@@ -153,19 +153,19 @@ Instances:
 {: screen}
 
 
-Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
+Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console.
 {: note}
 
 ## Resubmitting your job with the CLI
 {: #resubmit-job-cli}
 
-If you want to resubmit a job run based the configuration of a previous job run, use the **`jobrun resubmit`** command. This command requires the name of the previous job run and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. 
+If you want to resubmit a job run based the configuration of a previous job run, use the **`jobrun resubmit`** command. This command requires the name of the previous job run and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command.
 {: shortdesc}
 
-For example, the following **`jobrun resubmit`** command resubmits the `testjobrun` job run. 
+For example, the following **`jobrun resubmit`** command resubmits the `testjobrun` job run.
 
 ```txt
-ibmcloud ce jobrun resubmit --jobrun testjobrun 
+ibmcloud ce jobrun resubmit --jobrun testjobrun
 ```
 {: pre}
 
@@ -179,18 +179,18 @@ Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
 ```
 {: screen}
 
-For example, the following **`jobrun resubmit`** command resubmits the `myhellojob-jobruna` job run, which was run without first creating the job configuration. Because the referenced job run does not have a related job configuration, you must specify the `--name` option to specify a name this job run. 
+For example, the following **`jobrun resubmit`** command resubmits the `myhellojob-jobruna` job run, which was run without first creating the job configuration. Because the referenced job run does not have a related job configuration, you must specify the `--name` option to specify a name this job run.
 
 ```txt
 ibmcloud ce jobrun resubmit --jobrun myhellojob-jobruna --name myhellojob-jobrunb
 ```
 {: pre}
 
-Run the `jobrun get -n myhellojob-jobrunb` command to check the job run status. 
+Run the `jobrun get -n myhellojob-jobrunb` command to check the job run status.
 
 Example output
 
-```txt 
+```txt
 Getting jobrun 'myhellojob-jobrunb'...
 [...]
 
@@ -243,7 +243,7 @@ myhellojob-jobrunb-5-0  0/1      Succeeded  0         97s
 {: screen}
 
 
-Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
+Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console.
 {: note}
 
 ## Next steps
@@ -275,7 +275,3 @@ Job runs that are submitted (or resubmitted) with the CLI that do not reference 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-
-
-
