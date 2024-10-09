@@ -2,20 +2,20 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-10-09"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
 subcollection: codeengine
 
 content-type: tutorial
-completion-time: 10m 
+completion-time: 10m
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Running and updating jobs 
+# Running and updating jobs
 {: #run-job-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
@@ -27,39 +27,39 @@ A job runs one or more instances of your executable code in parallel. Unlike app
 
 Before you begin
 
-To use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
+To use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}.
 
 All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-you-Go account. Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage. For more information, see [{{site.data.keyword.codeengineshort}} pricing](/docs/codeengine?topic=codeengine-pricing).
 {: note}
 
-## Creating a job 
+## Creating a job
 {: #batch-jobcreate}
 {: step}
 
-Create a {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengine/firstjob` image. This job prints `Hi from a batch job! My index is:`. 
+Create a {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengine/firstjob` image. This job prints `Hi from a batch job! My index is:`.
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} Overview page.
 2. Select **Let's go**.
 3. Select **Job**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
-5. Enter a name for the job and specify `icr.io/codeengine/firstjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings. For more information about the code that is used for this example, see [`firstjob`](https://github.com/IBM/CodeEngine/tree/main/job){: external}. 
+5. Enter a name for the job and specify `icr.io/codeengine/firstjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings. For more information about the code that is used for this example, see [`firstjob`](https://github.com/IBM/CodeEngine/tree/main/job){: external}.
 6. Click **Create**.
 
 ## Running a job
 {: #batch-jobrun-ui}
 {: step}
 
-After you create your job and specify your workload configuration information, you are ready to run your job. You can override some configuration information. 
+After you create your job and specify your workload configuration information, you are ready to run your job. You can override some configuration information.
 {: shortdesc}
 
-Note that when you run your job, the latest version of your referenced container image is downloaded and deployed, unless you specified a tag for the image. If a tag is specified for the image, then the tagged image is used for the job. 
+Note that when you run your job, the latest version of your referenced container image is downloaded and deployed, unless you specified a tag for the image. If a tag is specified for the image, then the tagged image is used for the job.
 
-1. Navigate to your job page. 
-    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to work with your jobs and job runs. 
-    * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to run. 
+1. Navigate to your job page.
+    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to work with your jobs and job runs.
+    * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to run.
 
-2. From your job page, click **Submit job** to submit a job that is based on the current configuration. 
+2. From your job page, click **Submit job** to submit a job that is based on the current configuration.
 3. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.
 
 From the Submit job pane, you can review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Array size** or **Array indices** for the parallel job instances to run. For **Array size**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. You can also [specify a custom value for the job array size](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic), which updates the value of the automatically injected `JOB_ARRAY_SIZE` environment variable. After you submit this job, the system displays the status of the instances of your job on the Job details page. If you specify **Array size** instead of **Array indices** in the Submit job pane, from the `Configuration` section of the Job details page, this information is provided as **Array indices**.
@@ -81,14 +81,14 @@ After you submit your job, the results of the specific job run are available in 
 
 If any of the instances of your job failed to run, you can take the following actions.
 
-1. Click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
+1. Click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances.
 
 2. Click **Submit job** to submit the job for the failed indices.
 
-You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui). 
+You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-logging#view-joblogs-ui).
 {: tip}
 
-## Updating a job 
+## Updating a job
 {: #batch-updatejob-ui}
 {: step}
 
@@ -97,19 +97,19 @@ You can manage your job by fine tuning your job configuration, which includes up
 
 When the job is in a ready state, you can update the job. Let's update the job that you created previously to change the container image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob` and then update an environment variable. When a request is sent to this `icr.io/codeengine/testjob` sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. For more information about the code that is used for this example, see [`testjob`](https://github.com/IBM/CodeEngine/tree/main/testjob){: external}.
 
-1. Navigate to your job page. 
+1. Navigate to your job page.
     * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to work with your jobs and job runs.
-    * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to update. 
+    * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to update.
 
-2. From the **Configuration** tab, update the image reference of your job. Provide the name of your image or configure an image. Update the name of the image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob`. Click **Deploy**. 
+2. From the **Configuration** tab, update the image reference of your job. Provide the name of your image or configure an image. Update the name of the image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob`. Click **Deploy**.
 3. Click **Submit job**.
-4. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Array size** or **Array indices** for the parallel job instances to run. For **Array size**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. 
-5. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the job is `Hello World!`.
-6. To update the job again and add an environment variable, navigate to your job page. 
+4. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Array size** or **Array indices** for the parallel job instances to run. For **Array size**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page.
+5. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-logging#view-joblogs-ui) for this job, the output of the job is `Hello World!`.
+6. To update the job again and add an environment variable, navigate to your job page.
 7. From the **Configuration > Environment variables** tab, click **Add environment variable**. Add a literal environment variable with the name of `TARGET` with a value of `Sunshine`. The `icr.io/codeengine/testjob` outputs the message, `Hello <value_of_TARGET>!>`.
-8. Click **Add** to add your environment variable and then click **Save** to save the changes to your job. 
+8. Click **Add** to add your environment variable and then click **Save** to save the changes to your job.
 9. Click **Submit job** to submit the updated job.
-10. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. This time, specify **Array size** as `3`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. From the `Configuration` section of the Job details page, the information about the number of instances is displayed as **Array indices**, which is `0 - 2` for this example. 
+10. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. This time, specify **Array size** as `3`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. From the `Configuration` section of the Job details page, the information about the number of instances is displayed as **Array indices**, which is `0 - 2` for this example.
 11. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the updated job is `Hello Sunshine!`.
 
 ## Next steps
@@ -143,4 +143,3 @@ When the job is in a ready state, you can update the job. Let's update the job t
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
