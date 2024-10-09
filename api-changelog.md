@@ -32,7 +32,6 @@ The following table shows the service behavior changes for each version date. Sw
 
 | Version date | Summary of changes |
 |---|---|
-|`2024-05-13`| Version 2.1.0 |
 |`2022-12-09`| Version 2.0.0 |
 |`2021-03-31`| Version 1.0.0  |
 {: caption="Table 1. Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
