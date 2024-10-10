@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-11-28"
+  years: 2023, 2024
+lastupdated: "2024-10-10"
 
 
 subcollection: codeengine
@@ -190,6 +190,7 @@ Now that you successfully created your first {{site.data.keyword.codeengineshort
 * [`ibm_code_engine_build`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_build){: external}
 * [`ibm_code_engine_config_map`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_config_map){: external}
 * [`ibm_code_engine_domain_mapping`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_domain_mapping){: external}
+* [`ibm_code_engine_function`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_function){: external}
 * [`ibm_code_engine_job`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_job){: external}
 * [`ibm_code_engine_project`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_project){: external}
 * [`ibm_code_engine_secret`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_secret){: external}
@@ -202,11 +203,9 @@ Now that you successfully created your first {{site.data.keyword.codeengineshort
 * [`ibm_code_engine_build`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_build){: external}
 * [`ibm_code_engine_config_map`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_config_map){: external}
 * [`ibm_code_engine_domain_mapping`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_domain_mapping){: external}
+* [`ibm_code_engine_function`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_function){: external}
 * [`ibm_code_engine_job`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_job){: external}
 * [`ibm_code_engine_project`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_project){: external}
 * [`ibm_code_engine_secret`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_secret){: external}
 
 For more information about {{site.data.keyword.cloud_notm}} and Terraform, see [IBM Cloud Provider](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external}.
-
-
-

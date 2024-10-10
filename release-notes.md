@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-10"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## October 2024
 {: #codeengine-october24}
+
+### 10 October 2024
+{: #codeengine-october1024}
+{: release-note}
+
+Terraform support for {{site.data.keyword.codeengineshort}} functions is generally available
+:   See [Setting up Terraform for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-terraform-setup-ce).
 
 ### 03 October 2024
 {: #codeengine-october0324}
