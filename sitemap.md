@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-08"
+lastupdated: "2024-10-10"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -137,6 +137,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [October 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october24)
+
+    * [10 October 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october1024)
+
+        * Terraform support for {{site.data.keyword.codeengineshort}} functions is generally available
 
     * [03 October 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october0324)
 

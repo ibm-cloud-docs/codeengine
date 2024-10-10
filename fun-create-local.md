@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-10-09"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -113,7 +113,7 @@ module.exports.main = main;
     | `--name` | The name of the function. Use a name that is unique within the project. This value is required. \n - The name must begin with a lowercase letter. \n - The name must end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain letters, numbers, and hyphens (-). |
     | `--build-source` | The path to the local source. This value is required. |
     | `--runtime` | The runtime to use for this function. This value is required. |
-    {: caption="Table 1. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 4. Use the **`function get`** command to display information about your app, including information about the build.
 

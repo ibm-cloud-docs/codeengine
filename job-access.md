@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-14"
+lastupdated: "2024-10-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -152,5 +152,4 @@ The following table shows the possible status that your job might have.
 | Succeeded | All job instances finished successfully and none are restarting. |
 | Failed | All job instances finished, and at least one instance ended in failure. That is, the instance either exited with nonzero status or was terminated by the system.
 | Unknown | For some reason, the state of the job cannot be obtained, typically due to an error in communicating with the host. |
-{: caption="Table 1. Job status" caption-side="bottom"}
-
+{: caption="Job status" caption-side="bottom"}

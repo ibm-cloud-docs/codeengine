@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-10-09"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -97,7 +97,7 @@ The following table summarizes the properties that are used with liveness and re
 | Initial delay | The amount of time in seconds to wait before the first liveness probe check is performed. |
 | Timeout | The amount of time in seconds that the probe waits for a response from the app before it times out and is considered failed. |
 | Failure threshold | The number of consecutive, unsuccessful checks for the probe to be considered failed. |
-{: caption="Table 1. Properties for liveness and readiness probes" caption-side="bottom"}
+{: caption="Properties for liveness and readiness probes" caption-side="bottom"}
 
 
 ### Configuring probes from the console
@@ -471,8 +471,3 @@ While you cannot delete a readiness probe, you can [update](#app-probes-update-u
     [...]
     ```
     {: screen}
-
-
-
-
-

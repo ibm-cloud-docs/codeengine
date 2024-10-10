@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-10-17"
+  years: 2024
+lastupdated: "2024-10-09"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine, registry secret, registry access secret, SSH secret, Git repository access secret
 
@@ -95,7 +95,7 @@ Before you begin
     | `--name` | The name of the build run. Use a name that is unique within the project.  \n - The name must begin and end with a lowercase letter. \n - The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-). |  |
     | `--source` | The URL of the Git repository or the path to the local source that contains your source code; for example, `https://github.com/IBM/CodeEngine`.  |
     | `--context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpacks file or Dockerfile is contained in a subdirectory.  |
-    {: caption="Table 1. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 
 2. Use the **`buildrun get`** command to check the status of your build run. 
@@ -188,7 +188,7 @@ Before you begin
     | `--registry-secret` | The registry secret that is used to access the registry when you create the container image. Run the **`secret create --format registry`** command to create a registry secret. The registry secret is used to authenticate with a private registry.  |
     | `--source` | The URL of the Git repository or the path to the local source that contains your source code; for example, `https://github.com/IBM/CodeEngine`.  |
     | `--context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpacks file or Dockerfile is contained in a subdirectory.  |
-    {: caption="Table 2. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 2. Use the **`buildrun get`** command to check the status of your build run. 
 
@@ -284,7 +284,7 @@ Before you begin
     | `--context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpacks file or Dockerfile is contained in a subdirectory.  |
     | `--strategy` | The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`.  |
     | `--git-repo-secret` | The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. Run the **`secret create --ssh`** command to create this secret. An SSH secret is also used as a Git repository access secret. |
-    {: caption="Table 3. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 2. Use the **`buildrun get`** command to check the status of your build run. 
 
@@ -365,7 +365,7 @@ Before you begin
     | `--context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpacks file or Dockerfile is contained in a subdirectory.  |
     | `--strategy` | The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`.  |
     | `--git-repo-secret` | The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. Run the **`secret create --ssh`** command to create this secret. An SSH secret is also used as a Git repository access secret. |
-    {: caption="Table 4. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 2. Use the **`buildrun get`** command to check the status of your build run.
 
@@ -481,7 +481,7 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
     | --- | --- |
     | `--name` | The name of the build run. Use a name that is unique within the project. This value is required. \n - The name must begin and end with a lowercase letter. \n - The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-). |  |
     | `--source` | The path to the local source that contains your source code or the URL of the Git repository; for example, `.`.  |
-    {: caption="Table 5. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 4. Use the **`buildrun get`** command to check the status of your build run. 
 
@@ -571,7 +571,7 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
     | `--source` | The path to the local source that contains your source code or the URL of the Git repository; for example, `.`.  |
     | `--image` | The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. |
     | `--registry-secret` | The registry secret that is used to access the registry when you create the container image. Run the **`secret create --format registry`** command to create a registry secret. The registry secret is used to authenticate with a private registry.  |
-    {: caption="Table 6. Command description" caption-side="bottom"}
+    {: caption="Command description" caption-side="bottom"}
 
 
 4. Use the **`buildrun get`** command to check the status of your build run. 
@@ -623,8 +623,3 @@ Now that you have built a container image from your source, you can now create a
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-
-
-
-

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-19"
+  years: 2024
+lastupdated: "2024-10-09"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine, user access, access, platform roles, service roles
 
@@ -91,7 +91,7 @@ Use the following table to identify the platform role that you can grant a user 
 | Update a project.                                               | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    |        |      |
 | View {{site.data.keyword.codeengineshort}} dashboard.  | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    | ![Checkmark icon.](images/confirm.png "Feature available")      |        |
 | View details of a project.                                      | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")    |
-{: caption="Table 1. IAM user platform roles and actions" caption-side="bottom"}
+{: caption="IAM user platform roles and actions" caption-side="bottom"}
 
 
 ## {{site.data.keyword.cloud_notm}} service roles
@@ -105,7 +105,7 @@ Use the following table to identify the service roles that you can grant a user 
 | Update items within a project.                                                | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")                    |    |
 | Delete items within a project.                                          | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")                    |    |
 | List and view items within a project.                                           | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")                    | ![Checkmark icon.](images/confirm.png "Feature available")    |
-{: caption="Table 2. IAM service roles and actions" caption-side="bottom"}
+{: caption="IAM service roles and actions" caption-side="bottom"}
 
 ## {{site.data.keyword.codeengineshort}} CLI access requirements
 {: #cli-access-req}
@@ -126,6 +126,3 @@ For more information about {{site.data.keyword.codeengineshort}} service binding
 {: #toolchain-access-req}
 
 For more information about {{site.data.keyword.codeengineshort}} access requirements for building and deploying an app or job with a toolchain, see [Configuring access for your toolchain](/docs/codeengine?topic=codeengine-toolchain-ce#permissions-toolchain).
-
-
-

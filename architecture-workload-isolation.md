@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-08-11"
+  years: 2024
+lastupdated: "2024-10-09"
 
 keywords: code engine, architecture, workload isolation, isolation, workload
 
@@ -17,7 +17,7 @@ subcollection: codeengine
 
 {{site.data.keyword.codeenginefull}} is the {{site.data.keyword.cloud_notm}} platform that unifies container images, 12-factor-apps, functions, and batch jobs as a one-stop-shop. It's a multi-tenant system that consists of three major building blocks: A control plane, a (set of) shard (or shards), and a routing layer. The control plane and the shards are realized as separate multi-zone Kubernetes clusters. The following diagram gives a graphical overview of the architecture.
 
-![Code Engine architecture diagram](images/codeengine-architecture.svg "Code Engine architecture diagram"){: caption="Figure 1. Code Engine architecture diagram" caption-side="bottom"}
+![Code Engine architecture diagram](images/codeengine-architecture.svg "Code Engine architecture diagram"){: caption="Code Engine architecture diagram" caption-side="bottom"}
 
 {{site.data.keyword.codeengineshort}} is based on {{site.data.keyword.containerlong_notm}} clusters and depends on the components and workload isolation of the {{site.data.keyword.containerlong_notm}}. For more information, see [{{site.data.keyword.containerlong_notm}} VPC cluster architecture](/docs/containers?topic=containers-service-arch#architecture_vpc).
 
@@ -31,7 +31,7 @@ The {{site.data.keyword.codeengineshort}} control plane runs the components that
 | Project placement controller | Selects a shard and requests the creation, deletion, and isolation of the project on the shard. |
 | API server |    Provides the target information (`KUBECONFIG` file) for the selected project. It also performs IAM access policy checks and writes audit records. |
 | `Kube API proxy` | Proxies each API request to the proper shard cluster, perform IAM policy checks, and writes audit records. |
-{: caption="Table 1. {{site.data.keyword.codeengineshort}} control-plane microservices" caption-side="bottom"}
+{: caption="{{site.data.keyword.codeengineshort}} control-plane microservices" caption-side="bottom"}
 
 The shards are running the customer workload, such as builds, batch jobs, or apps. Therefore, the shard cluster runs the following microservices to control the customer workloads.
 
@@ -47,7 +47,7 @@ The shards are running the customer workload, such as builds, batch jobs, or app
 | Cluster node autoscaler | Scales the shard by adding and removing worker nodes based on capacity demand.  |
 | {{site.data.keyword.mon_full_notm}} | Sends service metrics to {{site.data.keyword.mon_full_notm}}. For more information about these metrics, see [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor).|
 | {{site.data.keyword.la_full}} | Forward platform logs and metrics to {{site.data.keyword.la_full_notm}}. For more information, see [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events). |
-{: caption="Table 2. Shard cluster microservices" caption-side="bottom"}
+{: caption="Shard cluster microservices" caption-side="bottom"}
 
 ## {{site.data.keyword.codeengineshort}} workload isolation
 {: #workload-isolation}
@@ -68,5 +68,3 @@ The shards are running the customer workload, such as builds, batch jobs, or app
 - Shared multi-tenant components are secured, for example, by disabling reverse lookup in `KubeDNS`.
 - To limit the blast radius, each shard cluster is running in its own VPC, which is isolated from other shard VPCs.
 - DDoS protection is enabled automatically for all endpoints, including customer applications, through {{site.data.keyword.cis_short}} with no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). 
-
-

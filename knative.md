@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-08-16"
+lastupdated: "2024-10-09"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -106,4 +106,4 @@ After you set up your environment, you can interact with Knative API. You must h
 | `revisions.serving.knative.dev` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit`  | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch` |
 | `pingsource.serving.knative.dev` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch` |
 | `kafkasource.serving.knative.dev` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch` |
-{: caption="Table 1. Knative authorities" caption-side=ottom"}
+{: caption="Knative authorities" caption-side=ottom"}

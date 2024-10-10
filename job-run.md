@@ -79,7 +79,7 @@ The following table summarizes the options that are used with the **`jobrun subm
 | `--name` | The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project. \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-). |
 | `--job` | The name of the job to be run. This value is required if you do not specify the `--name`  and `--image` values. |
 | `--array-indices` | Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is `0`. |
-{: caption="Table 1. Command options" caption-side="bottom"}
+{: caption="Command options" caption-side="bottom"}
 
 The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap#inside-configmaps).
 {: note}

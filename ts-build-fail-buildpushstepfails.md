@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-22"
+lastupdated: "2024-10-09"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -54,7 +54,7 @@ The following table describes error text and potential root causes for this scen
 | `ERROR: No buildpack groups passed detection.` | Buildpacks | - The source of the build was not specified correctly. The typical reason for this error is that the sources are not in the root directory of the Git repository, but rather in a child directory. \n - Buildpacks is not supported to build the sources. |
 | `429 Too Many Requests - Server message: toomanyrequests: You have reached your pull rate limit.` | Dockerfile | - The Dockerfile pull rate limit is reached. |
 | Any other error message | Dockerfile, Buildpacks | - There's a problem with the Docker build. \n - There's a problem with the source code. |
-{: caption="Table 1. Error text and root cases for build and push steps" caption-side="bottom"}
+{: caption="Error text and root cases for build and push steps" caption-side="bottom"}
 
 
 Try one of these solutions.
@@ -239,6 +239,3 @@ A good practice is to include directories like `node_modules` also in a [.docker
 {: tip}
 
 Another reason for a project to be successfully built locally but to fail as {{site.data.keyword.codeengineshort}} build are security limitations. As with applications and batch jobs, {{site.data.keyword.codeengineshort}} does not allow arbitrary system operations within the {{site.data.keyword.codeengineshort}} cluster. Most of those system operations are not relevant for Docker builds anyway. However, {{site.data.keyword.codeengineshort}} does not allow opening server sockets for privileged ports. The range is `0 to 1023`. For example, if you build a web application and your build includes a test step that brings up a web application server, then you must use ports with higher numbers for this server.
-
-
-

@@ -118,7 +118,7 @@ If you use manifest files for your Cloud Foundry applications, map your manifest
 | `timeout` | Not needed in {{site.data.keyword.codeengineshort}}. |
 | Environment variables | `-env` option |
 | Services | See the [**`ibmcloud ce app bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command. |
-{: caption="Table 1. Markdown coding for tables" caption-side="bottom"}
+{: caption="Markdown coding for tables" caption-side="bottom"}
 
 {{site.data.keyword.codeengineshort}} supports many options that are not available in Cloud Foundry, such as how autoscaling is managed. See [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads) and [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 

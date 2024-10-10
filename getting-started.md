@@ -41,7 +41,7 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 | Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile or Cloud Native Buildpacks. |
 | Function | A function is a stateless code snippet that performs tasks in response to an HTTP request. |
 | Job | A job runs one or more instances of your executable code in parallel. Unlike applications, which include an HTTP Server to handle incoming requests, jobs are designed to run one time and exit. |
-{: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
+{: caption="{{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
 
 For more information about terms, see [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology).
 

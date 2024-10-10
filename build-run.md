@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-10-09"
 
 keywords: code engine, build, buildrun, running a build, building from source code
 
@@ -66,7 +66,7 @@ The following table summarizes the options that are used with the **`buildrun su
 | --- | --- |
 | `--build` | The name of the build configuration to use. This value is required. |
 | `--name` | The name of the build run. Use a name that is unique within the project. \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-). |
-{: caption="Table 3. Command description" caption-side="bottom"}
+{: caption="Command description" caption-side="bottom"}
 
 Your build runs begins. Monitor the progress by using the [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. 
 

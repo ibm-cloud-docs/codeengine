@@ -478,7 +478,7 @@ All events that are delivered to applications are received as HTTP POST messages
 | `ce-subject` | The Kafka partition number and offset. For example, `partition:0#1` refers to partition `0` and offset `1`. |
 | `ce-time` | The time that the event was generated. |
 | `ce-type` | The type of the event. For Kafka events, this is `dev.knative.kafka.event`. |
-{: caption="Table 1. Header files for events" caption-side="bottom"}
+{: caption="Header files for events" caption-side="bottom"}
 
 Example output
 
@@ -787,7 +787,7 @@ The following table describes the environment variables that are specific to Kaf
 | `CE_SUBJECT` | The Kafka partition number and offset. For example, `partition:0#1` refers to partition `0` and offset `1`. |
 | `CE_TIME` | The time that the event was generated. |
 | `CE_TYPE` | The type of the event. For Kafka events, this is `dev.knative.kafka.event`. |
-{: caption="Table 2. Environment variables for events" caption-side="bottom"}
+{: caption="Environment variables for events" caption-side="bottom"}
 
 Example output
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-10-09"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -47,7 +47,7 @@ For example, create a project called `global-app-project` in the `au-syd`, `eu-d
 | `global-app-project` | Ready | `global-app` | Sydney (`au-syd`) | default |  |
 | `global-app-project` | Ready | `global-app` | Frankfurt (`eu-de`) | default | 2 min |
 | `global-app-project` | Ready | `global-app` | Sao Paulo (`br-sao`) | default | 3 min |
-{: caption="Table 1. Projects in multiple regions" caption-side="bottom"}
+{: caption="Projects in multiple regions" caption-side="bottom"}
 
 For more information, see [Managing projects](/docs/codeengine?topic=codeengine-manage-project).
 
