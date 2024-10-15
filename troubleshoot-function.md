@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-17"
+lastupdated: "2024-10-15"
 
 keywords: troubleshooting for code engine, troubleshooting functions in code engine, function in code engine, function
 
@@ -90,7 +90,7 @@ Subscriptions (Kafka)                     0     100
 Logs can be helpful to troubleshoot problems when you run functions. You can view function logs from the console.
 {: shortdesc}
 
-When you view logs from the console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} function. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your functions. You can view function logs after you add logging capabilities. For more information, see [viewing function logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-funlogs-ui).
+When you view logs from the console, you must create an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} function. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your functions. You can view function logs after you add logging capabilities. For more information, see [viewing function logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 ## Keeping your runtime and CLI versions up to date
 {: #ts-function-uptodate}

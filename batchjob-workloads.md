@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-15"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -86,7 +86,7 @@ For more information about workload isolation, see [{{site.data.keyword.codeengi
 ### Logging
 {: #batchjob-logs}
 
-When you work with {{site.data.keyword.codeengineshort}} jobs in the console with logging enabled, logs are forwarded to an {{site.data.keyword.la_full_notm}} service instance that is associated with your {{site.data.keyword.codeengineshort}} project. In the {{site.data.keyword.la_short}} service instance, the logs are indexed, enabling full-text search through all generated messages and convenient querying based on specific fields. See [Getting logs for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs).
+When you work with {{site.data.keyword.codeengineshort}} jobs in the console with logging enabled, logs are forwarded to an {{site.data.keyword.logs_full_notm}} service instance that is associated with your {{site.data.keyword.codeengineshort}} project. In the {{site.data.keyword.logs_full_notm}} service instance, the logs are indexed, enabling full-text search through all generated messages and convenient querying based on specific fields. See [Getting logs for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs).
 
 System event information can also be helpful to troubleshoot problems when you run jobs. You can view system event information with the CLI. See [Getting system event information for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-gettingevent).
 

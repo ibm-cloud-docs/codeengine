@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-15"
 
 keywords: code engine, architecture, workload isolation, isolation, workload
 
@@ -46,7 +46,7 @@ The shards are running the customer workload, such as builds, batch jobs, or app
 | {{site.data.keyword.cos_full_notm}} event source controller | Manage the lifecycle of event subscriptions from the {{site.data.keyword.cos_full_notm}} service. |
 | Cluster node autoscaler | Scales the shard by adding and removing worker nodes based on capacity demand.  |
 | {{site.data.keyword.mon_full_notm}} | Sends service metrics to {{site.data.keyword.mon_full_notm}}. For more information about these metrics, see [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor).|
-| {{site.data.keyword.la_full}} | Forward platform logs and metrics to {{site.data.keyword.la_full_notm}}. For more information, see [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events). |
+| {{site.data.keyword.logs_full}} | Forward platform logs and metrics to {{site.data.keyword.logs_full_notm}}. For more information, see [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events). |
 {: caption="Shard cluster microservices" caption-side="bottom"}
 
 ## {{site.data.keyword.codeengineshort}} workload isolation

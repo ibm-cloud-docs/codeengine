@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-15"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3502,7 +3502,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Considerations for viewing logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-considerations)
 
-    * [Viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui)
+    * [Viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#viewing-app-job-or-function-logs-from-the-console)
 
     * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-build-ui)
 

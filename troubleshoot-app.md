@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-16"
+lastupdated: "2024-10-15"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps, app instances
 
@@ -94,7 +94,7 @@ By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for i
 Logs can be helpful to troubleshoot problems when you run apps. You can view app logs from the console or with the CLI. 
 {: shortdesc}
 
-When you view logs from the console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} app. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your apps. You can view app logs after you add logging capabilities. For more information, see [viewing app logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui).
+When you view logs from the console, you must create an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} app. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your apps. You can view app logs after you add logging capabilities. For more information, see [viewing app logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 When you work with the CLI, you can display logs for all the instances of an app or display logs of a specific instance of an app. 
 
@@ -205,7 +205,7 @@ When you work with the CLI, you can display logs for all the instances of an app
         ```
         {: screen}
 
-For more information, see [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli).
+For more information, see [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-codeengine-logging&interface=cli#view-applog-cli).
 
 
 ## Getting details about app instances 
