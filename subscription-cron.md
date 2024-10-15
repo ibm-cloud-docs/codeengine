@@ -56,7 +56,8 @@ Complete the following steps to create and update a Periodic timer event subscri
    5. For **Event consumer**, specify the application or job to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myapp` application that references the `icr.io/codeengine/cron` image. If you have not yet created your app or job, you can specify the name of your application or job and [create your application](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [create your job](/docs/codeengine?topic=codeengine-job-plan) after you create the Periodic timer subscription. For applications only, you can optionally specify a path. By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by specifying a path. For example, if your subscription path specifies `/events`, the events are sent to `https://<base application URL>/events`. Click **Next** to proceed.
    6. For **Summary**, review the settings for your Periodic timer event subscription and make changes if needed. When ready, click **Create** to create the Periodic timer subscription.
 
-5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cron-app-ui).
+5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to [view event information for a job](#view-eventing-cron-job-ui).
+
 6. To update a subscription, navigate to your Periodic timer subscription page. From the Event subscriptions page, click the name of the subscription that you want to update.
 7. From your Periodic timer subscription page, change the data in the event message. From the **Custom event data** tab, change the event data to `hello sunshine`. Click **Save** to save your changes.
 8. Because the `myapp` application references the sample `cron` application, which prints information to log files, you can view the logs. View the application logs for the `myapp` event consumer application and see that the event message is `hello sunshine`. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
@@ -336,7 +337,7 @@ Complete the following steps to create and update a Periodic timer event subscri
    5. For **Event consumer**, choose component type `Function` and specify the function to receive events. Notice that you can choose from a list of defined functions. For this example, use the `myfun` function that uses the sample inline code. If you have not yet created your function, you can specify the name of your function and [Creating function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode) after you create the Periodic timer subscription. Click **Next** to proceed.
    6. For **Summary**, review the settings for your Periodic timer event subscription and make changes if needed. When ready, click **Create** to create the Periodic timer subscription.
 
-5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to view event information for a job [from the console](#view-eventing-cron-job-ui) or [from the CLI](#view-eventing-cron-job-cli).
+5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to [view event information for a job](#view-eventing-cron-job-ui).
 
 6. To update a subscription, navigate to your Periodic timer subscription page. From the Event subscriptions page, click the name of the subscription that you want to update.
 7. From your Periodic timer subscription page, change the data in the event message. From the **Custom event data** tab, change the event data to `{ "hello": "world" }` and choose `application/json` as the **Content Type of custom event data**. Click **Save** to save your changes.
@@ -585,7 +586,8 @@ Complete the following steps to create and update a Periodic timer event subscri
    4. For **Event consumer**, specify the application or job to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myjob` job that references the `icr.io/codeengine/codeengine` image. If you have not yet created your job, you can specify the name of your job and [create your job](/docs/codeengine?topic=codeengine-job-plan) after you create the Periodic timer subscription. Click **Next** to proceed.
    5. For **Summary**, review the settings for your Periodic timer event subscription and make changes if needed. When ready, click **Create** to create the Periodic timer subscription.
 
-5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cron-app-ui).
+5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to[view event information for a job](#view-eventing-cron-job-ui).
+
 6. To update a subscription, navigate to your Periodic timer subscription page. From the Event subscriptions page, click the name of the subscription that you want to update.
 7. From your Periodic timer subscription page, change the data in the event message. From the **Custom event data** tab, change the event data to `hello sunshine`. Click **Save** to save your changes.
 8. Because the `myjob` job references the sample `codeengine` application, which prints information to log files, you can view the logs. View the job logs for the `myjob` event consumer job and see that the event message is `hello sunshine`. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
