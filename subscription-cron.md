@@ -336,7 +336,7 @@ Complete the following steps to create and update a Periodic timer event subscri
    5. For **Event consumer**, choose component type `Function` and specify the function to receive events. Notice that you can choose from a list of defined functions. For this example, use the `myfun` function that uses the sample inline code. If you have not yet created your function, you can specify the name of your function and [Creating function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode) after you create the Periodic timer subscription. Click **Next** to proceed.
    6. For **Summary**, review the settings for your Periodic timer event subscription and make changes if needed. When ready, click **Create** to create the Periodic timer subscription.
 
-5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to [view a listing of defined subscription](#view-eventing-cron-app-ui).
+5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to [view a listing of defined subscription](#view-eventing-cron-fun-ui).
 6. To update a subscription, navigate to your Periodic timer subscription page. From the Event subscriptions page, click the name of the subscription that you want to update.
 7. From your Periodic timer subscription page, change the data in the event message. From the **Custom event data** tab, change the event data to `{ "hello": "world" }` and choose `application/json` as the **Content Type of custom event data**. Click **Save** to save your changes.
 8. Because the `myfun` function uses the sample inline code, which prints the full `params` object to log files, you can view the logs to verify that the function was invoked. View the function logs for the `myfun` event consumer function and see that the `params` object contains a key-value pair `hello: world`. You can also see that the `body` field of the `params` object contains the Base64 encoded value `{ "hello": "world" }` See [Viewing function logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
@@ -552,6 +552,16 @@ Example `params` object for an event invocation with custom event data set to `h
 
 The value for `body` is Base64 encoded, if **Content Type of custom event data** is set to `application/json`.
 {: note}
+
+### Viewing event information for a function from the console
+{: #view-eventing-cron-fun-ui}
+
+To view information about your event subscriptions:
+
+1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
+2. From the Overview page, click **Event subscriptions** to view a listing of defined subscriptions.
+
+If your function prints information to log files, as the sample `codeengine` job does, then view the log files for your function. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 ## Subscribing to Periodic timer (cron) events for a job
 {: #eventing-cron-job}
