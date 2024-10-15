@@ -3502,7 +3502,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Considerations for viewing logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-considerations)
 
-    * [Viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#viewing-app-job-or-function-logs-from-the-console)
+    * [Viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui)
 
     * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-build-ui)
 

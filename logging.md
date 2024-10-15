@@ -82,7 +82,7 @@ Every log line must contain log level and timestamp information to appear correc
 conform to [limits for {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-limits). After you make log formatting changes, you can take advantage of {{site.data.keyword.logs_full_notm}} search and formatting features.
 
 ### Viewing app, job, or function logs from the console
-{: &interface=ui#view-appjobfunctionlogs-ui}
+{: #view-appjobfunctionlogs-ui}
 {: ui}
 
 You can view logs for apps, jobs, or functions. The steps to view any of these from the console are very similar.
