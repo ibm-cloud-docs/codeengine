@@ -88,7 +88,7 @@ Complete the following steps to create and update an {{site.data.keyword.cos_ful
 5. Now that your {{site.data.keyword.cos_short}} subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cos-app-ui). 
 6. To update a subscription, navigate to your {{site.data.keyword.cos_short}} subscription page. From the Event subscriptions page, click the name of the subscription that you want to update. 
 7. From your {{site.data.keyword.cos_short}} subscription page, let's change the type of object change to only `delete` object changes. From the **Bucket event details** tab, select only the `delete` type of object change. Click **Save** to save your changes. 
-8. Because the `myapp` application references the sample `cos-listen` application, which prints information to log files, you can view the logs. After an object is deleted from the bucket, you can see an event for the delete in the app logs. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui). 
+8. Because the `myapp` application references the sample `cos-listen` application, which prints information to log files, you can view the logs. After an object is deleted from the bucket, you can see an event for the delete in the app logs. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui). 
 
 After you define an {{site.data.keyword.cos_full_notm}} event subscription that references a specific bucket, you cannot update this subscription to use a different bucket. You must create a new subscription to reference the bucket that you want.
 {: important}
@@ -165,7 +165,7 @@ To view information about your event subscriptions,
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Event subscriptions** to view a listing of defined subscriptions.
 
-If your application prints information to log files, as the sample `cos-listen` application does, then view the log files for your event consumer application. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
+If your application prints information to log files, as the sample `cos-listen` application does, then view the log files for your event consumer application. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 
 ### Viewing event information for an application with the CLI
@@ -313,7 +313,7 @@ Complete the following steps to create and update an {{site.data.keyword.cos_ful
 5. Now that your {{site.data.keyword.cos_short}} subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cos-job-ui). 
 6. To update a subscription, navigate to your {{site.data.keyword.cos_short}} subscription page. From the Event subscriptions page, click the name of the subscription that you want to update. 
 7. From your {{site.data.keyword.cos_short}} subscription page, let's change the type of object change to only `delete` object changes. From the **Bucket event details** tab, only select the `delete` type of object change. Click **Save** to save your changes. 
-8. Because the `myjob` job references the sample `icr.io/codeengine/codeengine` job, which prints information to log files, you can view the logs. After an object is deleted from the bucket, you can see an event for the delete in the logs for the job run. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
+8. Because the `myjob` job references the sample `icr.io/codeengine/codeengine` job, which prints information to log files, you can view the logs. After an object is deleted from the bucket, you can see an event for the delete in the logs for the job run. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 Job runs that are created by subscriptions are deleted after 10 minutes.
 {: note}
@@ -398,7 +398,7 @@ To view information about your event subscriptions,
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Event subscriptions** to view a listing of defined subscriptions.
 
-If your job prints information to log files, as the sample `codeengine` job does, then view the log files for your event consumer application. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=cli#view-joblog-cli).
+If your job prints information to log files, as the sample `codeengine` job does, then view the log files for your event consumer application. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=cli#view-joblog-cli).
 
 ### Viewing event information for a job with the CLI
 {: #view-eventing-cos-job-cli}

@@ -102,7 +102,7 @@ You can display logs for specific build run instances from the console.
 5. From the build page for your defined build, click the name of the instance of your build run in the **Build runs** section. You might need to click **Submit build** to create a build run.  
 6. From the build run instance page, you can view the build log information. Expand the specific build steps for detailed logging information.
 
-For more information, see [viewing build logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
+For more information, see [viewing build logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 ### Getting logs for my builds with the CLI
 {: #ts-build-gettinglogs-cli}

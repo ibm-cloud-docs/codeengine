@@ -53,7 +53,7 @@ Review the documentation on [Data Pipelines](/docs/cloud-logs?topic=cloud-logs-t
 
 When you use logging with the CLI, you do not need to configure {{site.data.keyword.logs_full_notm}} platform logs, as the {{site.data.keyword.codeengineshort}} CLI logging fetches its data differently.
 
-The logging capabilities offered through the CLI are limited and should only be considered for development purposes. When running production workload, you should always use a {{site.data.keyword.logs_full_notm}} instance, which offers log retention, filter and search capabilities.
+The logging capabilities offered through the CLI are limited and should only be considered for development purposes. When running production workload, you should always use an {{site.data.keyword.logs_full_notm}} instance, which offers log retention, filter and search capabilities.
 
 #### Can I apply filters on {{site.data.keyword.logs_full_notm}} data?
 {: #view-logs-filters}
@@ -79,7 +79,7 @@ For more information about configuring and starting logging in the console, see 
 {: ui}
 
 Every log line must contain log level and timestamp information to appear correctly in {{site.data.keyword.logs_full_notm}}. If your log lines span multiple lines, change how you format and output your logs so that they are in a single line. Use the JSONL format for your logs with {{site.data.keyword.logs_full_notm}}. Your logs must also
-conform to [limits for {{site.data.keyword.logs_full_notm}} logs](/docs/cloud-logs?topic=cloud-logs-limits). After you make log formatting changes, you can take advantage of {{site.data.keyword.logs_full_notm}} search and formatting features.
+conform to [limits for {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-limits). After you make log formatting changes, you can take advantage of {{site.data.keyword.logs_full_notm}} search and formatting features.
 
 ### Viewing app, job, or function logs from the console
 {: &interface=ui#view-appjobfunctionlogs-ui}
@@ -91,11 +91,11 @@ After you select the project that you want to work with, you can add logging cap
 {: note}
 
 1. Go to an app, job, or function that you created and deployed. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, select your project and then select **Applications**, **Jobs**, or **Functions** as appropriate. Select the app, job, or function with which you want to work.
-2. If you previously created a {{site.data.keyword.logs_full_notm}} instance, click **Logging**, to open the {{site.data.keyword.logs_full_notm}} service.
+2. If you previously created an {{site.data.keyword.logs_full_notm}} instance, click **Logging**, to open the {{site.data.keyword.logs_full_notm}} service.
 3. Add and configure logging capabilities:
     1. From the **Test application**, **Submit job**, or **Test function** options menu, click **Add logging** to create the {{site.data.keyword.logs_full_notm}} instance. This action opens the {{site.data.keyword.logs_full_notm}} service.
     2. From the {{site.data.keyword.logs_full_notm}} service, create your logging instance. To confirm that your logging instance is created, check the [Observability dashboard](https://cloud.ibm.com/observe/logging).
-    3. From your {{site.data.keyword.codeengineshort}} app, job, or function page, click **Add logging** from the **Test application**, **Submit job**, or **Test function** options menu. This time, select a {{site.data.keyword.logs_full_notm}} instance to receive platform logs. Choose the logging instance that you created in the prior step. Click **Select**. {{site.data.keyword.codeengineshort}} requires enabled platform logs to receive {{site.data.keyword.codeengineshort}} logging data. When you complete this action, {{site.data.keyword.codeengineshort}} enables platform logging for you.
+    3. From your {{site.data.keyword.codeengineshort}} app, job, or function page, click **Add logging** from the **Test application**, **Submit job**, or **Test function** options menu. This time, select an {{site.data.keyword.logs_full_notm}} instance to receive platform logs. Choose the logging instance that you created in the prior step. Click **Select**. {{site.data.keyword.codeengineshort}} requires enabled platform logs to receive {{site.data.keyword.codeengineshort}} logging data. When you complete this action, {{site.data.keyword.codeengineshort}} enables platform logging for you.
 4. Now that platform logs are configured, from your {{site.data.keyword.codeengineshort}} app, job, or function page, click **Logging** from the **Test application**, **Submit job**, or **Test function** options menu to open your platform logs window. To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging).
 5. (optional) Refine the [filter for your search](#view-logs-filters), if needed.
 6. Verify your configuration by doing one of the following steps:
@@ -104,7 +104,7 @@ After you select the project that you want to work with, you can add logging cap
 
 Your {{site.data.keyword.logs_full_notm}} instance is now configured such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} app, job, or function.
 
-Alternatively, you can configure a {{site.data.keyword.logs_full_notm}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs routing](/docs/logs-router?topic=logs-router-about-platform-logs).
+Alternatively, you can configure an {{site.data.keyword.logs_full_notm}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs routing](/docs/logs-router?topic=logs-router-about-platform-logs).
 
 ### Viewing build logs from the console
 {: #view-build-ui}

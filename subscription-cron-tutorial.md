@@ -160,7 +160,7 @@ Body: {"mydata":"hello world"}
 
 For more information about headers and body, see [HTTP headers and body information for cron events](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron).
 
-For more information about viewing logs with the CLI, see [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-codeengine-logging&interface=cli#view-logs-cli).
+For more information about viewing logs with the CLI, see [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-logs-cli).
 
 Note that subscriptions can affect how an application scales. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 

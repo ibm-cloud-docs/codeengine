@@ -696,7 +696,7 @@ Added troubleshooting information about stopping an app from receiving traffic
 :   See [Can I stop my app](/docs/codeengine?topic=codeengine-ts-app-stop-traffic)?
 
 Updated information about working with multi-line log data
-:   See [Considerations for viewing logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-logs-considerations).
+:   See [Considerations for viewing logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-considerations).
 
 ## May 2023
 {: #codeengine-may23}
@@ -725,7 +725,7 @@ Added troubleshooting information for app connectivity
 :   See [Why does my app connection fail](/docs/codeengine?topic=codeengine-ts-app-connection-fail)?
 
 Updated information about applying filters on {{site.data.keyword.la_short}} data
-:   See [Can I apply filters on {{site.data.keyword.la_short}} data](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-logs-filters)?
+:   See [Can I apply filters on {{site.data.keyword.la_short}} data](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-filters)?
 
 
 ### 18 May 2023
@@ -1915,7 +1915,7 @@ Review the release notes for 2 September 2021.
 {: shortdesc}
 
 Added support for build logs in the {{site.data.keyword.codeengineshort}} console
-:   See [Viewing build logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-build-ui).
+:   See [Viewing build logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-build-ui).
 
 Updated information about `reclamation` commands
 :   See [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project). |
@@ -2489,7 +2489,7 @@ Automatically create registry access
 :   From the console, {{site.data.keyword.codeengineshort}} can now automatically create registry access for {{site.data.keyword.registryshort}} instances that are in your account. When you push images, {{site.data.keyword.codeengineshort}} can even create a namespace in your container registry instance. See [Deploying an app that references an image in Container Registry with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console), [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code), [Creating a job from images in Container Registry with the console](/docs/codeengine?topic=codeengine-create-job-crimage), and [Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code).
 
 Added logging information for apps and jobs from the console
-:   See [Viewing logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-logs-ui).
+:   See [Viewing logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-ui).
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
@@ -3036,7 +3036,7 @@ Review the release notes for 4 September 2020.
 {: shortdesc}
 
 Application logs
-:   Added [viewing application logs](/docs/codeengine?topic=codeengine-codeengine-logging&interface=cli#view-applog-cli) information.
+:   Added [viewing application logs](/docs/codeengine?topic=codeengine-logging&interface=cli#view-applog-cli) information.
 
 ### 2 September 2020
 {: #codeengine-sep0220}

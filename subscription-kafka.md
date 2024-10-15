@@ -268,8 +268,8 @@ Complete the following steps to create a Kafka event subscription for an applica
  Now that your Kafka event subscription, which references the `kafka-receiver-app` application, is created, use the `kafka-sender-app` to send message events to the receiver application.
  {: shortdesc}
 
- 1. Start logging for the receiver application to [view application logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) to see events.
- 2. (optional) Start logging for the sender application to [view application logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) to see information about events that are sent.
+ 1. Start logging for the receiver application to [view application logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) to see events.
+ 2. (optional) Start logging for the sender application to [view application logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) to see information about events that are sent.
  3. After logging is started, call the `kafka-sender-app` application with `curl` and specify the public URL of the `kafka-sender-app`, the name of your topic, and the number of messages to send. You can obtain the public URL of this application from the **Domain mappings** tab for your application. For example,
 
     ```txt
@@ -558,8 +558,8 @@ Complete the following steps to create a Kafka event subscription for an applica
  Now that your Kafka event subscription, which references the `kafka-receiver-job` job, is created, use the `kafka-sender-app` to send message events to the receiver job.
  {: shortdesc}
 
- 1. Start logging for the receiver job to [view job logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) to see events.
- 2. (optional) Start logging for the sender application to [view application logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) to see information about events that are sent.
+ 1. Start logging for the receiver job to [view job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) to see events.
+ 2. (optional) Start logging for the sender application to [view application logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) to see information about events that are sent.
  3. After logging is started, call the `kafka-sender-app` application with `curl` and specify the public URL of the `kafka-sender-app`, the name of your topic, and the number of messages to send. You can obtain the public URL of this application from the **Domain mappings** tab for your application. For example,
 
     ```txt

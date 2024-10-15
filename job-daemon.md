@@ -54,7 +54,7 @@ This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https:
     1. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
     2. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. If any of the instances of your job failed to run, these instances are automatically retried indefinitely.
 
-4. (optional) View logs of the job run. From the console, you can [view job logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) for your job runs. Notice in the log output for the `helloworld` sample, that the `JOB_MODE` environment variable displays the mode of the job.
+4. (optional) View logs of the job run. From the console, you can [view job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) for your job runs. Notice in the log output for the `helloworld` sample, that the `JOB_MODE` environment variable displays the mode of the job.
 
 
 
@@ -193,7 +193,7 @@ This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https:
     ```
     {: screen}
 
-5. (optional) View logs for the job run. With the CLI, you can [view job logs](/docs/codeengine?topic=codeengine-codeengine-logging&interface=cli#view-joblog-cli) for all instances of a job run or for a particular job run instance. The following example displays job logs for all instances of the `myjobrun-daemon` job run. 
+5. (optional) View logs for the job run. With the CLI, you can [view job logs](/docs/codeengine?topic=codeengine-logging&interface=cli#view-joblog-cli) for all instances of a job run or for a particular job run instance. The following example displays job logs for all instances of the `myjobrun-daemon` job run. 
 
     ```txt
     ibmcloud ce jobrun logs --name myjobrun-daemon

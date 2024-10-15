@@ -59,7 +59,7 @@ Complete the following steps to create and update a Periodic timer event subscri
 5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cron-app-ui). 
 6. To update a subscription, navigate to your Periodic timer subscription page. From the Event subscriptions page, click the name of the subscription that you want to update. 
 7. From your Periodic timer subscription page, change the data in the event message. From the **Custom event data** tab, change the event data to `hello sunshine`. Click **Save** to save your changes. 
-8. Because the `myapp` application references the sample `cron` application, which prints information to log files, you can view the logs. View the application logs for the `myapp` event consumer application and see that the event message is `hello sunshine`. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
+8. Because the `myapp` application references the sample `cron` application, which prints information to log files, you can view the logs. View the application logs for the `myapp` event consumer application and see that the event message is `hello sunshine`. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 ### Subscribing to Periodic timer (cron) events for an application with the CLI
 {: #eventing-cron-existing-app-cli}
@@ -185,7 +185,7 @@ To view information about your event subscriptions,
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Event subscriptions** to view a listing of defined subscriptions.
 
-If your application prints information to log files, as the sample `cron` application does, then view the log files for your event consumer application. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
+If your application prints information to log files, as the sample `cron` application does, then view the log files for your event consumer application. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 ### Viewing event information for an application with the CLI
 {: #view-eventing-cron-app-cli}
@@ -339,7 +339,7 @@ Complete the following steps to create and update a Periodic timer event subscri
 5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cron-fun-ui). 
 6. To update a subscription, navigate to your Periodic timer subscription page. From the Event subscriptions page, click the name of the subscription that you want to update. 
 7. From your Periodic timer subscription page, change the data in the event message. From the **Custom event data** tab, change the event data to `{ "hello": "world" }` and choose `application/json` as the **Content Type of custom event data**. Click **Save** to save your changes. 
-8. Because the `myfun` function uses the sample inline code, which prints the full `params` object to log files, you can view the logs to verify that the function was invoked. View the function logs for the `myfun` event consumer function and see that the `params` object contains a key-value pair `hello: world`. You can also see that the `body` field of the `params` object contains the Base64 encoded value `{ "hello": "world" }` See [Viewing function logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
+8. Because the `myfun` function uses the sample inline code, which prints the full `params` object to log files, you can view the logs to verify that the function was invoked. View the function logs for the `myfun` event consumer function and see that the `params` object contains a key-value pair `hello: world`. You can also see that the `body` field of the `params` object contains the Base64 encoded value `{ "hello": "world" }` See [Viewing function logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 ### Subscribing to Periodic timer (cron) events for a function with the CLI
 {: #eventing-cron-existing-fun-cli}
@@ -587,7 +587,7 @@ Complete the following steps to create and update a Periodic timer event subscri
 5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cron-app-ui). 
 6. To update a subscription, navigate to your Periodic timer subscription page. From the Event subscriptions page, click the name of the subscription that you want to update. 
 7. From your Periodic timer subscription page, change the data in the event message. From the **Custom event data** tab, change the event data to `hello sunshine`. Click **Save** to save your changes. 
-8. Because the `myjob` job references the sample `codeengine` application, which prints information to log files, you can view the logs. View the job logs for the `myjob` event consumer job and see that the event message is `hello sunshine`. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
+8. Because the `myjob` job references the sample `codeengine` application, which prints information to log files, you can view the logs. View the job logs for the `myjob` event consumer job and see that the event message is `hello sunshine`. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 
 ### Subscribing to Periodic timer (cron) events for a job with the CLI
@@ -718,7 +718,7 @@ To view information about your event subscriptions,
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Event subscriptions** to view a listing of defined subscriptions.
 
-If your job prints information to log files, as the sample `codeengine` job does, then view the log files for your event consumer job. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui). 
+If your job prints information to log files, as the sample `codeengine` job does, then view the log files for your event consumer job. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui). 
 
 ### Viewing event information for a job with the CLI
 {: #view-eventing-cron-job-cli}

@@ -143,7 +143,7 @@ Try one of these solutions.
 
 1. Debug runs of your job by getting [logs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs).
 
-    To view logs from the console, you must first add logging capabilities by creating an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
+    To view logs from the console, you must first add logging capabilities by creating an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
     To view logs with the CLI,
     * Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all your defined job runs.

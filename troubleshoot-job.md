@@ -82,7 +82,7 @@ Subscriptions (Kafka)                     0     100
 Logs can be helpful to troubleshoot problems when you run jobs. You can view job logs from the console or with the CLI. 
 {: shortdesc}
 
-When you view logs from the console, you must create an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} job. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your jobs. You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
+When you view logs from the console, you must create an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} job. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your jobs. You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 When working with the CLI, you can display logs of all the instances of your running job or display logs of a specific instance of your job. 
 
@@ -205,7 +205,7 @@ When working with the CLI, you can display logs of all the instances of your run
         ```
         {: screen}
 
-For more information, see [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-codeengine-logging&interface=cli#view-joblog-cli).
+For more information, see [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-joblog-cli).
 
 ## Getting system event information for my jobs 
 {: #ts-job-gettingevent}
