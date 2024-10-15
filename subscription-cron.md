@@ -493,6 +493,16 @@ Events:
 Want to try a tutorial? See [Subscribing to Periodic timer (cron) events](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
+### Viewing event information for a function from the console
+{: #view-eventing-cron-fun-ui}
+
+To view information about your event subscriptions:
+
+1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
+2. From the Overview page, click **Event subscriptions** to view a listing of defined subscriptions.
+
+If your function prints information to log files, as the sample `codeengine` job does, then view the log files for your function. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
+
 ### Cron header and body information for events delivered to functions
 {: #sub-header-body-cron-fun}
 
@@ -552,16 +562,6 @@ Example `params` object for an event invocation with custom event data set to `h
 
 The value for `body` is Base64 encoded, if **Content Type of custom event data** is set to `application/json`.
 {: note}
-
-### Viewing event information for a function from the console
-{: #view-eventing-cron-fun-ui}
-
-To view information about your event subscriptions:
-
-1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
-2. From the Overview page, click **Event subscriptions** to view a listing of defined subscriptions.
-
-If your function prints information to log files, as the sample `codeengine` job does, then view the log files for your function. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 ## Subscribing to Periodic timer (cron) events for a job
 {: #eventing-cron-job}

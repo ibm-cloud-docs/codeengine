@@ -3286,9 +3286,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Updating your cron subscription with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#update-cron-sub-fun-cli)
 
-    * [Cron header and body information for events delivered to functions](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron-fun)
-
     * [Viewing event information for a function from the console](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-fun-ui)
+
+    * [Cron header and body information for events delivered to functions](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron-fun)
 
 * [Subscribing to Periodic timer (cron) events for a job](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job)
 
