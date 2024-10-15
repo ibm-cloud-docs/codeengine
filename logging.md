@@ -72,7 +72,7 @@ Yes! You can modify and scope the filter to display log data at a specific level
     * The filter `message.serviceName:"codeengine" AND message._app:"mybuild"` scopes the logs to the specific `mybuild` build level.
     * The filter `message.serviceName:"codeengine" AND message._app:"mybuild\-run\-121212"` scopes the logs to the specific `mybuild-run-121212` build run level.
 
-For more information about configuring and starting logging in the console, see [viewing app, job, or function logs from the console](#view-appjobfunctionlogs-ui).
+For more information about configuring and starting logging in the console, see [viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 #### What if my log data is multi-line?
 {: #view-logs-multiline}
@@ -97,7 +97,7 @@ After you select the project that you want to work with, you can add logging cap
     2. From the {{site.data.keyword.logs_full_notm}} service, create your logging instance. To confirm that your logging instance is created, check the [Observability dashboard](https://cloud.ibm.com/observe/logging).
     3. From your {{site.data.keyword.codeengineshort}} app, job, or function page, click **Add logging** from the **Test application**, **Submit job**, or **Test function** options menu. This time, select an {{site.data.keyword.logs_full_notm}} instance to receive platform logs. Choose the logging instance that you created in the prior step. Click **Select**. {{site.data.keyword.codeengineshort}} requires enabled platform logs to receive {{site.data.keyword.codeengineshort}} logging data. When you complete this action, {{site.data.keyword.codeengineshort}} enables platform logging for you.
 4. Now that platform logs are configured, from your {{site.data.keyword.codeengineshort}} app, job, or function page, click **Logging** from the **Test application**, **Submit job**, or **Test function** options menu to open your platform logs window. To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging).
-5. (optional) Refine the [filter for your search](#view-logs-filters), if needed.
+5. (optional) Refine the [filter for your search](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-filters), if needed.
 6. Verify your configuration by doing one of the following steps:
     * For an application or a function, test it: click **Test application** or **Test function** as appropriate, and then click **Send request**. To open the application or function in a web page, click **Application URL** or **Function URL**. You can view platform logs from the test in the platform logs window.
     * For a job, run it: from the **Job runs** area, click **Submit job** to run your job. Provide the job run configuration values or you can take the default values. Click **Submit job** to run your job. You can view platform logs from the job run in the platform logs window.
