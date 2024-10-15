@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2022, 2022
-lastupdated: "2022-11-21"
+  years:  2022, 2024
+lastupdated: "2024-10-15"
 
 keywords: code engine, context-based restrictions, access, protect resources, cbr
 
@@ -25,9 +25,7 @@ You must have the `Administrator` role on a service to create, update, or delete
 
 Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events generated comes from the context-based restrictions service and not {{site.data.keyword.codeengineshort}}. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
 
-To get started protecting your {{site.data.keyword.codeengineshort}} resources with context-based restrictions, see the tutorial for [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial).
+To get started protecting your {{site.data.keyword.codeengineshort}} resources with context-based restrictions, see [Creating context-based restrictions](/docs/account?topic=account-context-restrictions-create).
 
 Context-based restrictions for {{site.data.keyword.codeengineshort}} can be scoped to a location (region), project, or resource group. You can also limit which of your services can be accessed from {{site.data.keyword.codeengineshort}}.
 {: note}
-
-

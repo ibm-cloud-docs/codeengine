@@ -72,7 +72,7 @@ Yes! You can modify and scope the filter to display log data at a specific level
     * The filter `message.serviceName:"codeengine" AND message._app:"mybuild"` scopes the logs to the specific `mybuild` build level.
     * The filter `message.serviceName:"codeengine" AND message._app:"mybuild\-run\-121212"` scopes the logs to the specific `mybuild-run-121212` build run level.
 
-For more information about configuring and starting logging in the console, see [viewing app, job, or function logs from the console](&interface=ui#view-appjobfunctionlogs-ui).
+For more information about configuring and starting logging in the console, see [viewing app, job, or function logs from the console](#view-appjobfunctionlogs-ui).
 
 #### What if my log data is multi-line?
 {: #view-logs-multiline}

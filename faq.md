@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-09"
+lastupdated: "2024-10-15"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -135,4 +135,4 @@ For the latest service level agreement terms, see the [terms of service](/docs/o
 Your feedback on {{site.data.keyword.codeengineshort}} is important to us and helps us improve. You can provide feedback in multiple ways:
 
 * Click **Open doc issue** at the end of a documentation page to open an issue  and provide your comments.
-* Share feedback through Slack. You can [register](https://cloud.ibm.com/kubernetes/slack){: external} and join the discussion in the [#code-engine channel](https://ibm-cloud-success.slack.com){: external}.
+* Share feedback through Slack. You can join the discussion in the [#code-engine channel](https://ibm-cloud-success.slack.com/archives/C014051FRCG){: external}.
