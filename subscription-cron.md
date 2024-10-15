@@ -586,7 +586,7 @@ Complete the following steps to create and update a Periodic timer event subscri
    4. For **Event consumer**, specify the application or job to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myjob` job that references the `icr.io/codeengine/codeengine` image. If you have not yet created your job, you can specify the name of your job and [create your job](/docs/codeengine?topic=codeengine-job-plan) after you create the Periodic timer subscription. Click **Next** to proceed.
    5. For **Summary**, review the settings for your Periodic timer event subscription and make changes if needed. When ready, click **Create** to create the Periodic timer subscription.
 
-5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to[view event information for a job](#view-eventing-cron-job-ui).
+5. Now that your Periodic timer subscription is created, go to the Event subscriptions page to [view event information for a job](#view-eventing-cron-job-ui).
 
 6. To update a subscription, navigate to your Periodic timer subscription page. From the Event subscriptions page, click the name of the subscription that you want to update.
 7. From your Periodic timer subscription page, change the data in the event message. From the **Custom event data** tab, change the event data to `hello sunshine`. Click **Save** to save your changes.
