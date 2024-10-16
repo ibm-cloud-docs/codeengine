@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-16"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -321,10 +321,10 @@ Follow these steps as an example of creating a {{site.data.keyword.codeenginesho
 1. Save the following code as `hello.js`:
   ```javascript
     function main(args) {
-        return { headers: { content_type: "application/json" },
-             statusCode: 200,
-  		        body: {args: args}
-        };
+          return { headers: { content_type: "application/json" },
+              statusCode: 200,
+  		          body: {args: args}
+          };
     }
     ```
 {: screen}
