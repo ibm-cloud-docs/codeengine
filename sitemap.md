@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-15"
+lastupdated: "2024-10-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2629,9 +2629,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Running jobs in parallel](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel)
 
-* [How can I efficiently process many files by using job processing?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-how)
+* [Efficiently process many files by using job processing](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-how)
 
-* [What if I only want to process a subset of my data? Is there a way to dynamically assign work to parallel job run instances?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic)
+* [Process a subset of data and dynamically assign work to parallel job run instances](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic)
 
 * [Benefits of running parallel batch jobs](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-benefit)
 
@@ -4280,11 +4280,39 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Develop your application, job, or function](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
 
+    * [Do you have source code or a container image for your application or job?](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job-source-code-image)
+
 * [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
+
+    * [How does your application scale?](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app-how-app-scale)
+
+    * [Do yo want to customize your application?](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app-customize-app)
+
+    * [Are you ready to deploy?](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app-ready-to-deploy)
+
+    * [Do you want to add more customizations?](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app-add-customizations)
+
+    * [Are you ready to access your application?](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app-ready-to-access-app)
 
 * [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
 
+    * [Do you want to create a job definition?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job-create-job-definition)
+
+    * [Do you want to run a job without first creating a definition?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job_run-job-without-definition)
+
+    * [Do you want to customize your job?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job-customize-job)
+
+    * [Are you ready to create and run your job?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job_ready-to-create-run-job)
+
+    * [Do you want to add more customizations?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job-add-customizations)
+
 * [Run your Function](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun)
+
+    * [Do you want to customize your function?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun-customize)
+
+    * [Areyou ready to deploy?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun-ready-to-deploy)
+
+    * [Do you want to add more customizations?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun-add-customizations)
 
 * [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
 
