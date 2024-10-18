@@ -4090,6 +4090,21 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [{{site.data.keyword.codeengineshort}} endpoints for accessing applications](/docs/codeengine?topic=codeengine-regions#endpoints-app)
 
 
+## Provided TLS certificates for {{site.data.keyword.codeengineshort}} projects
+{: #sitemap_provided_tls_certificates_for_projects}
+
+
+[Provided TLS certificates for {{site.data.keyword.codeengineshort}} projects](/docs/codeengine?topic=codeengine-tls-certificate#tls-certificate)
+
+* [About certificates](/docs/codeengine?topic=codeengine-tls-certificate#certificates-about)
+
+* [{{site.data.keyword.codeengineshort}} certificates and their certificate authority](/docs/codeengine?topic=codeengine-tls-certificate#ce-certificates-about)
+
+    * [Let's Encrypt as the certificate authority](/docs/codeengine?topic=codeengine-tls-certificate#ce-certificates-lets-encrypt)
+
+    * [Need more control?](/docs/codeengine?topic=codeengine-tls-certificate#ce-certificates-lets-encrypt-more-control)
+
+
 ## Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}
 {: #sitemap_understanding_your_responsibilities_when_using_}
 
