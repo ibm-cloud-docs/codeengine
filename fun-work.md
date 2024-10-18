@@ -205,7 +205,7 @@ With {{site.data.keyword.codeengineshort}}, you can determine the right level of
 
 Every function has an *internal* system domain mapping that is visible to all components within the same {{site.data.keyword.codeengineshort}} project, but not outside of the project. In addition to the internal system domain mapping, you choose to make the function visible to either the *public* internet or the {{site.data.keyword.cloud_notm}} *private* network.
 
-For public or provate visibility, the function is exposed on an HTTPS endpoint. For details about the TLS certificate that is used, see [TLS certificates for {{site.data.keyword.codeengineshort}} projects](/docs/codeengine?topic=codeengine-tls-certificate).
+For public or private visibility, the function is exposed on an HTTPS endpoint. For details about the TLS certificate that is used, see [TLS certificates for {{site.data.keyword.codeengineshort}} projects](/docs/codeengine?topic=codeengine-tls-certificate).
 
 You can deploy your function with the following visibility levels:
 
