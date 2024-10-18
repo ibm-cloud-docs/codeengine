@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-17"
+lastupdated: "2024-10-18"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -92,7 +92,7 @@ With {{site.data.keyword.codeengineshort}}, you can determine the right level of
 
 Every application has an *internal* system domain mapping that is visible to all components within the same {{site.data.keyword.codeengineshort}} project, but not outside of the project. In addition to the internal system domain mapping, you choose to make the application visible to either the *public* internet or the {{site.data.keyword.cloud_notm}} *private* network.
 
-
+For public or provate visibility, the function is exposed on an HTTPS endpoint. For details about the TLS certificate that is used, see [TLS certificates for {{site.data.keyword.codeengineshort}} projects](/docs/codeengine?topic=codeengine-tls-certificate).
 
 You can deploy your application with the following visibility levels:
 
