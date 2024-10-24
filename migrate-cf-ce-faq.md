@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-15"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -168,7 +168,7 @@ ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
 ```
 {: codeblock}
 
-You can also use the {{site.data.keyword.la_full_notm}} service, which is available for more long-term persistence of log messages. For more information, see [Viewing logs](/docs/codeengine?topic=codeengine-logging).
+You can also use the {{site.data.keyword.logs_full_notm}} service, which is available for more long-term persistence of log messages. For more information, see [Viewing logs](/docs/codeengine?topic=codeengine-logging).
 
 ### Creating a service
 {: #create-service}

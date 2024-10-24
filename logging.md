@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-26"
+lastupdated: "2024-10-15"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -29,10 +29,10 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 {: #view-logs-ui}
 {: ui}
 
-When you work with {{site.data.keyword.codeengineshort}} apps, jobs, functions, or builds in the console with logging enabled, logs are forwarded to an {{site.data.keyword.la_full_notm}} service where they are indexed, enabling full-text search through all generated messages and convenient querying based on specific fields.
+When you work with {{site.data.keyword.codeengineshort}} apps, jobs, functions, or builds in the console with logging enabled, logs are forwarded to an {{site.data.keyword.logs_full_notm}} service where they are indexed, enabling full-text search through all generated messages and convenient querying based on specific fields.
 {: shortdesc}
 
-To view logs for your app, job, or build in the {{site.data.keyword.codeengineshort}} console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} component. From your {{site.data.keyword.codeengineshort}} app, job, function, or build page in the console, you can add logging capabilities.
+To view logs for your app, job, or build in the {{site.data.keyword.codeengineshort}} console, you must create an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} component. From your {{site.data.keyword.codeengineshort}} app, job, function, or build page in the console, you can add logging capabilities.
 
 You need to enable logging for {{site.data.keyword.codeengineshort}} only one time per region, per account.
 {: note}
@@ -41,44 +41,45 @@ You need to enable logging for {{site.data.keyword.codeengineshort}} only one ti
 {: #view-logs-considerations}
 {: ui}
 
-When you want to use logging from the console, you must first configure {{site.data.keyword.la_full_notm}} platform logs to receive {{site.data.keyword.codeengineshort}} logging data. To check for active {{site.data.keyword.la_short}} instances, see the [Observability dashboard](https://cloud.ibm.com/observe/logging).
+When you want to use logging from the console, you must first configure {{site.data.keyword.logs_full_notm}} platform logs to receive {{site.data.keyword.codeengineshort}} logging data. To check for active {{site.data.keyword.logs_full_notm}} instances, see the [Observability dashboard](https://cloud.ibm.com/observe/logging).
 
-Review the {{site.data.keyword.la_short}} [service plan](/docs/log-analysis?topic=log-analysis-service_plans) information as you consider retention, search, and log analysis needs.
+Review the {{site.data.keyword.logs_full_notm}} [service plan](/docs/cloud-logs?topic=cloud-logs-service_plans) information as you consider retention, search, and log analysis needs.
 
-When you use the {{site.data.keyword.la_short}} *free* tier and you want to view log data, configure and start logging before you start your application, or run your job or build. Also, be sure to keep your platform logs window open to receive your {{site.data.keyword.codeengineshort}} logging data. Take these actions because log data is not retained when you use the Lite service plan and is lost when you close the window.
-
-When you use a {{site.data.keyword.la_short}} *paid* tier, you do not need to leave your logging window open. Log data is preserved for a configurable amount of time, depending on your plan. You can adjust log filters and apply searches for past log entries.
-
-When you view log data for {{site.data.keyword.codeengineshort}} applications, runs of your job, or runs of your build, delays can occur before the data is available in {{site.data.keyword.la_short}}. For example, it might take around 5 minutes for your log data to show in {{site.data.keyword.la_short}}, especially if you are using the Lite service plan.
+When you view log data for {{site.data.keyword.codeengineshort}} applications, runs of your job, or runs of your build, delays can occur before the data is available in {{site.data.keyword.logs_full_notm}}. For example, it might take around 5 to 10 minutes for your log data to show in {{site.data.keyword.logs_full_notm}}, especially if you are using the `Store and search` data pipeline.
 {: important}
 
-When you use logging with the CLI, you do not need to configure {{site.data.keyword.la_short}} platform logs, as the {{site.data.keyword.codeengineshort}} CLI logging fetches its data differently.
+Review the documentation on [Data Pipelines](/docs/cloud-logs?topic=cloud-logs-tco-data-pipelines) to learn about options to balance log latency and cost for your {{site.data.keyword.logs_full_notm}} instances.
+{: important}
 
-#### Can I apply filters on {{site.data.keyword.la_short}} data?
+When you use logging with the CLI, you do not need to configure {{site.data.keyword.logs_full_notm}} platform logs, as the {{site.data.keyword.codeengineshort}} CLI logging fetches its data differently.
+
+The logging capabilities offered through the CLI are limited and should only be considered for development purposes. When running production workload, you should always use an {{site.data.keyword.logs_full_notm}} instance, which offers log retention, filter and search capabilities.
+
+#### Can I apply filters on {{site.data.keyword.logs_full_notm}} data?
 {: #view-logs-filters}
 {: ui}
 
-Yes! When you configure and start logging in the {{site.data.keyword.codeengineshort}} console for a specific component, {{site.data.keyword.codeengineshort}} automatically sets log filters in {{site.data.keyword.la_short}} that are scoped to the context of your application, job, or build. However, you can modify and scope the preset filter to display log data at a specific level or a more granular level to a specific application revision, job run, or build run from the {{site.data.keyword.la_full_notm}} page, based on your needs.
+Yes! You can modify and scope the filter to display log data at a specific level or a more granular level to a specific application revision, job run, or build run from the {{site.data.keyword.logs_full_notm}} page, based on your needs.
 
-* If `_platform` is set to `'Code Engine'`, then only {{site.data.keyword.codeengineshort}} logs are displayed.
+* If `message.serviceName:"codeengine"` is set, then only {{site.data.keyword.codeengineshort}} logs are displayed.
 * If `label.Project:'<project_name>'` is set, then only logs from a specific project are displayed.
-* If `app:'<your_component_name>'` is set, then only logs from the specified component (application, job, or build) are displayed. If your {{site.data.keyword.codeengineshort}} components share the same name, the filter includes logs from these components. For example,
+* If `message._app:'<your_component_name>'` is set, then only logs from the specified component (application, job, or build) are displayed. If your {{site.data.keyword.codeengineshort}} components share the same name, the filter includes logs from these components. For example,
 
-    * The filter `_platform:'{{site.data.keyword.codeengineshort}}' app:myapp` scopes the logs to the `myapp` application level.
-    * The filter `_platform:'{{site.data.keyword.codeengineshort}}' app:myapp-00002` scopes the logs to the `myapp-0002` application revision level.
-    * The filter `_platform:'{{site.data.keyword.codeengineshort}}' app:myjob` scopes the logs to the specific `myjob` job level.
-    * The filter `_platform:'{{site.data.keyword.codeengineshort}}' app:myjob-jobrun-t6m7l` scopes the logs to the specific `myjob-jobrun-t6m7l` job run level.
-    * The filter `_platform:'{{site.data.keyword.codeengineshort}}' app:mybuild` scopes the logs to the specific `mybuild` build level.
-    * The filter `_platform:'{{site.data.keyword.codeengineshort}}' app:mybuild-run-121212` scopes the logs to the specific `mybuild-run-121212` build run level.
+    * The filter `message.serviceName:"codeengine" AND message._app:"myapp"` scopes the logs to the `myapp` application level.
+    * The filter `message.serviceName:"codeengine" AND message._app:"myapp\-00002"` scopes the logs to the `myapp-0002` application revision level.
+    * The filter `message.serviceName:"codeengine" AND message._app:"myjob"` scopes the logs to the specific `myjob` job level.
+    * The filter `message.serviceName:"codeengine" AND message._app:"myjob\-jobrun\-t6m7l"` scopes the logs to the specific `myjob-jobrun-t6m7l` job run level.
+    * The filter `message.serviceName:"codeengine" AND message._app:"mybuild"` scopes the logs to the specific `mybuild` build level.
+    * The filter `message.serviceName:"codeengine" AND message._app:"mybuild\-run\-121212"` scopes the logs to the specific `mybuild-run-121212` build run level.
 
-For more information about configuring and starting logging in the console, see [Viewing logs for apps](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui), [Viewing logs for jobs](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui), and [Viewing logs for functions](/docs/codeengine?topic=codeengine-view-logs#view-funlogs-ui).
+For more information about configuring and starting logging in the console, see [viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
 #### What if my log data is multi-line?
 {: #view-logs-multiline}
 {: ui}
 
-Every log line must contain log level and timestamp information to appear correctly in {{site.data.keyword.la_full_notm}}. If your log lines span multiple lines, change how you format and output your logs so that they are in a single line. Use the JSONL format for your logs with {{site.data.keyword.la_full_notm}}. Your logs must also
-conform to [limits for {{site.data.keyword.la_full_notm}} logs](/docs/log-analysis?topic=log-analysis-ingest_limits). After you make log formatting changes, you can take advantage of {{site.data.keyword.la_full_notm}} search and formatting features.
+Every log line must contain log level and timestamp information to appear correctly in {{site.data.keyword.logs_full_notm}}. If your log lines span multiple lines, change how you format and output your logs so that they are in a single line. Use the JSONL format for your logs with {{site.data.keyword.logs_full_notm}}. Your logs must also
+conform to [limits for {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-limits). After you make log formatting changes, you can take advantage of {{site.data.keyword.logs_full_notm}} search and formatting features.
 
 ### Viewing app, job, or function logs from the console
 {: #view-appjobfunctionlogs-ui}
@@ -90,20 +91,20 @@ After you select the project that you want to work with, you can add logging cap
 {: note}
 
 1. Go to an app, job, or function that you created and deployed. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, select your project and then select **Applications**, **Jobs**, or **Functions** as appropriate. Select the app, job, or function with which you want to work.
-2. If you previously created a {{site.data.keyword.la_short}} instance, click **Logging**, to open the {{site.data.keyword.la_short}} service.
+2. If you previously created an {{site.data.keyword.logs_full_notm}} instance, click **Logging**, to open the {{site.data.keyword.logs_full_notm}} service.
 3. Add and configure logging capabilities:
-    1. From the **Test application**, **Submit job**, or **Test function** options menu, click **Add logging** to create the {{site.data.keyword.la_full_notm}} instance. This action opens the {{site.data.keyword.la_short}} service.
-    2. From the {{site.data.keyword.la_short}} service, create your logging instance. To confirm that your logging instance is created, check the [Observability dashboard](https://cloud.ibm.com/observe/logging).
-    3. From your {{site.data.keyword.codeengineshort}} app, job, or function page, click **Add logging** from the **Test application**, **Submit job**, or **Test function** options menu. This time, select a {{site.data.keyword.la_short}} instance to receive platform logs. Choose the logging instance that you created in the prior step. Click **Select**. {{site.data.keyword.codeengineshort}} requires enabled platform logs to receive {{site.data.keyword.codeengineshort}} logging data. When you complete this action, {{site.data.keyword.codeengineshort}} enables platform logging for you.
-4. Now that platform logs are configured, from your {{site.data.keyword.codeengineshort}} app, job, or function page, click **Logging** from the **Test application**, **Submit job**, or **Test function** options menu to open your platform logs window. Be sure to keep this platform logs window open to receive your logging data if you are using the {{site.data.keyword.la_short}} free tier. You don't need to keep this window open if you are using a {{site.data.keyword.la_short}} paid tier as log data is preserved for a configurable amount of time, depending on your plan. To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging).
-5. (optional) Refine the [filter for your search](#view-logs-filters), if needed.
+    1. From the **Test application**, **Submit job**, or **Test function** options menu, click **Add logging** to create the {{site.data.keyword.logs_full_notm}} instance. This action opens the {{site.data.keyword.logs_full_notm}} service.
+    2. From the {{site.data.keyword.logs_full_notm}} service, create your logging instance. To confirm that your logging instance is created, check the [Observability dashboard](https://cloud.ibm.com/observe/logging).
+    3. From your {{site.data.keyword.codeengineshort}} app, job, or function page, click **Add logging** from the **Test application**, **Submit job**, or **Test function** options menu. This time, select an {{site.data.keyword.logs_full_notm}} instance to receive platform logs. Choose the logging instance that you created in the prior step. Click **Select**. {{site.data.keyword.codeengineshort}} requires enabled platform logs to receive {{site.data.keyword.codeengineshort}} logging data. When you complete this action, {{site.data.keyword.codeengineshort}} enables platform logging for you.
+4. Now that platform logs are configured, from your {{site.data.keyword.codeengineshort}} app, job, or function page, click **Logging** from the **Test application**, **Submit job**, or **Test function** options menu to open your platform logs window. To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging).
+5. (optional) Refine the [filter for your search](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-filters), if needed.
 6. Verify your configuration by doing one of the following steps:
     * For an application or a function, test it: click **Test application** or **Test function** as appropriate, and then click **Send request**. To open the application or function in a web page, click **Application URL** or **Function URL**. You can view platform logs from the test in the platform logs window.
     * For a job, run it: from the **Job runs** area, click **Submit job** to run your job. Provide the job run configuration values or you can take the default values. Click **Submit job** to run your job. You can view platform logs from the job run in the platform logs window.
 
-Your {{site.data.keyword.la_short}} instance is now configured such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} app, job, or function.
+Your {{site.data.keyword.logs_full_notm}} instance is now configured such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} app, job, or function.
 
-Alternatively, you can configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs&interface=ui#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. You can also apply [filters for your search](#view-logs-filters) in {{site.data.keyword.la_short}} for your {{site.data.keyword.codeengineshort}} log data.
+Alternatively, you can configure an {{site.data.keyword.logs_full_notm}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs routing](/docs/logs-router?topic=logs-router-about-platform-logs).
 
 ### Viewing build logs from the console
 {: #view-build-ui}
@@ -116,13 +117,13 @@ You can display logs for specific build run instances from the console.
 2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
 3. From the project page, click **Image builds**.
 4. From the **Image build** tab, click the name of your image build to open the build page for a defined build, or [create a build](/docs/codeengine?topic=codeengine-build-create-config1#build-create-console).
-5. From the build page for your defined build, click the name of the instance of your build run in the **Build runs** section. You might need to click **Submit build** to create a build run. You can view platform logs from the build run in the platform logs window. Alternatively, you can also view build log information for the build step details from the build run instance page. Expand the build steps for specific build step log data. You can optionally refine the [filter for your search](#view-logs-filters), if needed.
+5. From the build page for your defined build, click the name of the instance of your build run in the **Build runs** section. You might need to click **Submit build** to create a build run. You can view platform logs from the build run in the platform logs window. Alternatively, you can also view build log information for the build step details from the build run instance page. Expand the build steps for specific build step log data. You can optionally refine the [filter for your search](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-filters), if needed.
 
 ## Viewing logs with the CLI
 {: #view-logs-cli}
 {: cli}
 
-To view logging output with the CLI, you must have a running instance of your app or job. If an [app is scaled to zero](/docs/codeengine?topic=codeengine-app-scale) or a job run instance is completed, the output for the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) and [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) commands does not have log data. Alternatively, you can use the {{site.data.keyword.la_full_notm}} service to view log data.
+To view logging output with the CLI, you must have a running instance of your app or job. If an [app is scaled to zero](/docs/codeengine?topic=codeengine-app-scale) or a job run instance is completed, the output for the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) and [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) commands does not have log data. Alternatively, you can use the {{site.data.keyword.logs_full_notm}} service to view log data.
 {: important}
 
 ### Viewing application logs with the CLI

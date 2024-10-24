@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-12-12"
+  years: 2022, 2024
+lastupdated: "2024-10-15"
 
 keywords: github events, github webhooks, webhooks, application webhook, event webhook, code engine
 
@@ -93,7 +93,7 @@ To create a GitHub webhook, follow these steps.
 8. Ensure **Active** is selected. You can disable your webhook without deleting it by removing the checkmark.
 9. Click **Add webhook**.
 
-After you finish, verify that your application is subscribed by checking the log files for the application. For more information about logs, see [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-cli).
+After you finish, verify that your application is subscribed by checking the log files for the application. For more information about logs, see [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-logs-cli).
 
 ```sh
 ibmcloud ce app logs --name my-github-app
@@ -119,7 +119,7 @@ Note that if your applications scales to zero, you might receive a message about
 Test your webhook by triggering the event that your application expects. In this case, the application is expecting a change to be committed in the GitHub repository.
 
 1. In your GitHub repository, perform an action that triggers your webhook. For the `github` app, commit a change to a file in the repository.
-2. After a minute or two, find the logs for your application. If your application scaled to zero, you might see a message indicating that your app does not have any running instances. Your application scales up when it receives an event so try again in a few minutes. For more information about logs, see [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-cli).
+2. After a minute or two, find the logs for your application. If your application scaled to zero, you might see a message indicating that your app does not have any running instances. Your application scales up when it receives an event so try again in a few minutes. For more information about logs, see [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-logs-cli).
 
     ```sh
     ibmcloud ce app logs --name my-github-app
@@ -183,5 +183,3 @@ After you finish this tutorial, you can clean up the resources that you created 
     1. Navigate to [**Registry**](https://cloud.ibm.com/registry/start){: external} in the {{site.data.keyword.cloud_notm}} console.
     2. Find the archive and the image that are associated with your application by searching for your application name.
     3. Select the archive and image and delete.
-
-

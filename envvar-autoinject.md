@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-25"
+lastupdated: "2024-10-17"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, application workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -33,13 +33,13 @@ The environment variables, `CE_APP`, `CE_DOMAIN`, and `CE_SUBDOMAIN` are used to
 | `CE_REGION`        | The region where the application resides. | `CE_REGION=us-south` |
 | `CE_PROJECT_ID`     | The project ID of your project. | `CE_PROJECT_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f` |
 | `CE_SUBDOMAIN`     | The subdomain portion of the URL associated with the application (and project). If you are familiar with Kubernetes, CE_SUBDOMAIN maps to the Kubernetes namespace associated with your project. | `CE_SUBDOMAIN=01234567-abcd` |
-| `HOME`             | Your home directory that is running the app.                          | `HOME=/root` |
+| `HOME`             | Your home directory that is running the application.                          | `HOME=/root` |
 | `HOSTNAME`         | The name of instance that your application is deployed to.                    | `HOSTNAME=myapp-00001-deployment-65684cffd-xng7z` |
-| `K_CONFIGURATION`  | The name of your app.                                                 | `K_CONFIGURATION=myapp` |
-| `K_REVISION`       | The name of the current revision of your deployed app.                | `K_REVISION=myapp-00001` |
-| `K_SERVICE`        | The name of your app.                                                 | `K_SERVICE=myapp` |
+| `K_CONFIGURATION`  | The name of your application.                                                 | `K_CONFIGURATION=myapp` |
+| `K_REVISION`       | The name of the current revision of your deployed application.                | `K_REVISION=myapp-00001` |
+| `K_SERVICE`        | The name of your application.                                                 | `K_SERVICE=myapp` |
 | `PATH`             | The list of directories in which the system looks for executables.    | `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin` |
-| `PORT`             | The port that your aapplication pp listens to receive HTTP requests.              | `PORT=8080` |
+| `PORT`             | The port that your application listens to, to receive HTTP requests.              | `PORT=8080` |
 | `PWD`              | The current working directory.                                        | `PWD=/` |
 {: caption="Automatically injected environment variables when deploying {{site.data.keyword.codeengineshort}} apps"}
 

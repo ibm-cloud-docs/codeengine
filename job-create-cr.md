@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-10-17"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables, registry secret, registry access secret
 
@@ -15,12 +15,12 @@ subcollection: codeengine
 # Creating a job from images in {{site.data.keyword.registrylong_notm}}
 {: #create-job-crimage}
 
-Create your job configuration that uses an image in {{site.data.keyword.registrylong}}. You can create a job from the console or with the CLI. 
+Create your job configuration that uses an image in {{site.data.keyword.registrylong}}. You can create a job from the console or with the CLI.
 {: shortdesc}
 
 Before you begin
 
-- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started). Or, you can build an image from [repository source](/docs/codeengine?topic=codeengine-run-job-source-code) or from [local source](/docs/codeengine?topic=codeengine-job-local-source-code). 
+- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started). Or, you can build an image from [repository source](/docs/codeengine?topic=codeengine-run-job-source-code) or from [local source](/docs/codeengine?topic=codeengine-job-local-source-code).
 
 - Verify that you can access the registry. See [Setting up authorities for container registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
 
@@ -42,20 +42,20 @@ Create a job configuration that uses an image in {{site.data.keyword.registrysho
 3. Select **Job**.
 4. Enter a name for the job; for example, `myjob`.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
-6. Select **Container image** and click **Configure image**. 
+6. Select **Container image** and click **Configure image**.
 7. Select a container registry location, such as `IBM Registry Dallas`.
-8. Select `{{site.data.keyword.codeengineshort}} managed secret` for **Registry secret**. Because this example uses an image in a {{site.data.keyword.registryshort}} namespace in your account, {{site.data.keyword.codeengineshort}} can automatically create and manage the registry secret for you. 
+8. Select `{{site.data.keyword.codeengineshort}} managed secret` for **Registry secret**. Because this example uses an image in a {{site.data.keyword.registryshort}} namespace in your account, {{site.data.keyword.codeengineshort}} can automatically create and manage the registry secret for you.
 9. Select an existing namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 10. Select a value for **Tag**; for example, `latest`.
 11. Click **Done**.
 12. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
-13. From the Create job page, click **Create**. 
-14. From your job page, click **Submit job** to submit a job based on the current configuration.  
+13. From the Create job page, click **Create**.
+14. From your job page, click **Submit job** to submit a job based on the current configuration.
 
 Now that you have created your job and [run your job](/docs/codeengine?topic=codeengine-run-job), you can view details about your job configuration and job runs from your job page.  
 
 
-If you want to add registry access before you create a job, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). 
+If you want to add registry access before you create a job, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
 
 ## Creating a job with an image in {{site.data.keyword.registryshort}} with the CLI
 {: #create-job-crimage-cli}
@@ -69,7 +69,7 @@ Before you begin
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 * Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry so {{site.data.keyword.codeengineshort}} can pull the image when the job is run. For information about required permissions for accessing image registries, see [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
 
-1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [**`iam api-key-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI API key" and save it to a file called `key_file`, run the following command:
+1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [**`iam api-key-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of `My CLI API key` and save it to a file called `key_file`, run the following command:
 
     ```txt
     ibmcloud iam api-key-create cliapikey -d "My CLI API key" --file key_file
@@ -79,7 +79,7 @@ Before you begin
     If you choose to not save your key to a file, you must record the API key that is displayed when you create it. You cannot retrieve it later.
     {: important}
 
-2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command to create a registry secret. For example, the following command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`. 
+2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command to create a registry secret. For example, the following command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`.
 
     ```txt
     ibmcloud ce secret create --format registry --name myregistry --server us.icr.io --username iamapikey --password APIKEY
@@ -94,7 +94,7 @@ Before you begin
     ```
     {: screen}
 
-3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, the following **`job create`** command creates the `myhellojob` job to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
+3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, the following **`job create`** command creates the `myhellojob` job to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information.
 
     ```txt
     ibmcloud ce job create --name myhellojob --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
@@ -136,5 +136,3 @@ Before you begin
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-

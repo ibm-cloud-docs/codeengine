@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-24"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -137,6 +137,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [October 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october24)
+
+    * [24 October 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october2424)
+
+        * Updated versions for buildpacks
 
     * [10 October 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october1024)
 
@@ -2629,9 +2633,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Running jobs in parallel](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel)
 
-* [How can I efficiently process many files by using job processing?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-how)
+* [Efficiently process many files by using job processing](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-how)
 
-* [What if I only want to process a subset of my data? Is there a way to dynamically assign work to parallel job run instances?](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic)
+* [Process a subset of data and dynamically assign work to parallel job run instances](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic)
 
 * [Benefits of running parallel batch jobs](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-benefit)
 
@@ -2686,21 +2690,43 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Exchanging data with functions](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-exchanging-data)
 
-* [External data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface)
+* [External request data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-request)
 
     * [MIME types](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-MIME-types)
 
-    * [Function request data encoding](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-function-request-data-encoding)
+    * [Request data](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-request-data)
 
-    * [Function response data encoding](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-function-response-data-encoding)
+    * [Providing request data as query parameters](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-providing-request-data=as=query)
 
-* [Internal data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-internal-data-interface)
+    * [Providing request data in the request body](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-providing-request-data-in-body)
 
-    * [{{site.data.keyword.codeengineshort}} function entry](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-function-entry)
+    * [Providing request header data](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-providing-request-header)
 
-    * [{{site.data.keyword.codeengineshort}} function entry examples](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-function-entry-examples)
+    * [Providing request mixed data](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-providing-request-mixed-data)
 
-    * [{{site.data.keyword.codeengineshort}} function results](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-function-results)
+* [Internal request data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-internal-data-interface-requests)
+
+    * [Text encoding](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-internal-data-interface-requests-text)
+
+    * [The `args` parameter](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-args)
+
+    * [{{site.data.keyword.codeengineshort}} function environment variables](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-env-vars)
+
+* [Internal response data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-internal-response-data-interface)
+
+    * [`headers` element](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-headers-element)
+
+    * [`statusCode` element](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-statusCode-element)
+
+    * [`body` element](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-body-element)
+
+* [External response data interface](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-response)
+
+    * [MIME types](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-response-mime)
+
+    * [Response data](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-external-data-interface-response-response-data)
+
+* [{{site.data.keyword.codeengineshort}} function invocation examples](/docs/codeengine?topic=codeengine-fun-exchanging-data#fun-invocation-examples)
 
 [Creating function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inlinecode)
 
@@ -3285,6 +3311,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Subscribing to Periodic timer (cron) events for a function with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-fun-cli)
 
     * [Updating your cron subscription with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#update-cron-sub-fun-cli)
+
+    * [Viewing event information for a function from the console](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-fun-ui)
 
     * [Cron header and body information for events delivered to functions](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron-fun)
 
@@ -4066,6 +4094,21 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [{{site.data.keyword.codeengineshort}} endpoints for accessing applications](/docs/codeengine?topic=codeengine-regions#endpoints-app)
 
 
+## Provided TLS certificates for {{site.data.keyword.codeengineshort}} projects
+{: #sitemap_provided_tls_certificates_for_projects}
+
+
+[Provided TLS certificates for {{site.data.keyword.codeengineshort}} projects](/docs/codeengine?topic=codeengine-tls-certificate#tls-certificate)
+
+* [About certificates](/docs/codeengine?topic=codeengine-tls-certificate#certificates-about)
+
+* [{{site.data.keyword.codeengineshort}} certificates and their certificate authority](/docs/codeengine?topic=codeengine-tls-certificate#ce-certificates-about)
+
+    * [Let's Encrypt as the certificate authority](/docs/codeengine?topic=codeengine-tls-certificate#ce-certificates-lets-encrypt)
+
+    * [Need more control?](/docs/codeengine?topic=codeengine-tls-certificate#ce-certificates-lets-encrypt-more-control)
+
+
 ## Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}
 {: #sitemap_understanding_your_responsibilities_when_using_}
 
@@ -4278,11 +4321,39 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Develop your application, job, or function](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
 
+    * [Do you have source code or a container image for your application or job?](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job-source-code-image)
+
 * [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
+
+    * [How does your application scale?](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app-how-app-scale)
+
+    * [Do yo want to customize your application?](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app-customize-app)
+
+    * [Are you ready to deploy?](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app-ready-to-deploy)
+
+    * [Do you want to add more customizations?](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app-add-customizations)
+
+    * [Are you ready to access your application?](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app-ready-to-access-app)
 
 * [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
 
+    * [Do you want to create a job definition?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job-create-job-definition)
+
+    * [Do you want to run a job without first creating a definition?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job_run-job-without-definition)
+
+    * [Do you want to customize your job?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job-customize-job)
+
+    * [Are you ready to create and run your job?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job_ready-to-create-run-job)
+
+    * [Do you want to add more customizations?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job-add-customizations)
+
 * [Run your Function](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun)
+
+    * [Do you want to customize your function?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun-customize)
+
+    * [Areyou ready to deploy?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun-ready-to-deploy)
+
+    * [Do you want to add more customizations?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun-add-customizations)
 
 * [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
 

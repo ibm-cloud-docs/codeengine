@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-17"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, registry secret, service id,registry secret, registry access secret
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Accessing container registries 
+# Accessing container registries
 {: #add-registry}
 
 Images that are used by {{site.data.keyword.codeenginefull}} are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry).
@@ -25,7 +25,7 @@ A container registry, or registry, is a service that stores container images. Fo
 - To store a newly created container image as an output of an image build
 - To store and retrieve local files when a build is run from local source
 
-{{site.data.keyword.codeengineshort}} handles many of the underlying details of the interactions between the system and your registry.  
+{{site.data.keyword.codeengineshort}} handles many of the underlying details of the interactions between the system and your registry.
 
 To pull images from a registry, {{site.data.keyword.codeengineshort}} uses a special type of Kubernetes secret that is called an `imagePullSecret`. This image pull secret stores the credentials to access a container registry. When you add access to a container registry with {{site.data.keyword.codeengineshort}} to pull images, you are creating an image pull secret. For more information about image pull secrets, see [Kubernetes documentation](https://kubernetes.io/docs/home/){: external}.
 {: note}
@@ -35,13 +35,13 @@ To pull images from a registry, {{site.data.keyword.codeengineshort}} uses a spe
 
 Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry).
 
-Public registries, such as public Docker Hub, can be used to get started with Docker and {{site.data.keyword.codeengineshort}} to create your first application or job. But when it comes to enterprise workloads, use a private registry, such as the one provided in {{site.data.keyword.registrylong_notm}} to protect your images from being used by unauthorized users. For private registries, use registry secrets to ensure that the credentials are available to gain access to the private registry. 
+Public registries, such as public Docker Hub, can be used to get started with Docker and {{site.data.keyword.codeengineshort}} to create your first application or job. But when it comes to enterprise workloads, use a private registry, such as the one provided in {{site.data.keyword.registrylong_notm}} to protect your images from being used by unauthorized users. For private registries, use registry secrets to ensure that the credentials are available to gain access to the private registry.
 
 | Registry | Description |
 |--------|---------------------|
 | [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started) | With this type of registry, you can set up your own secured image repository in {{site.data.keyword.registrylong_notm}} where you can safely store and share images between users. \n With {{site.data.keyword.registrylong_notm}}, you can \n - Manage access to images in your account. \n - Use {{site.data.keyword.IBM_notm}} provided images and sample apps, such as {{site.data.keyword.IBM_notm}} Liberty, as a base image and add your own app code to it. |
 |Any other private registry | Connect any existing private registry to {{site.data.keyword.codeengineshort}} by adding access. Adding access securely saves your registry URL and credentials in a Kubernetes secret. \n With private registries, you can: \n - Use existing private registries independent of their source (Docker Hub, organization-owned registries, or other private Cloud registries). |
-| [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub} | Use this type of registry to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. \n  \n **Important** \n - This registry type might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy. \n - When you pull an image from Docker Hub to use with apps or jobs in {{site.data.keyword.codeengineshort}}, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error which indicates that you have reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription. \n  \n With public Docker Hub, you can: \n - These images can be referred to directly when you create an app or job, no additional setup is required. \n - Includes various open source applications. |
+| [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub} | Use this type of registry to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. \n  \n Important:  \n - This registry type might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy. \n - When you pull an image from Docker Hub to use with apps or jobs in {{site.data.keyword.codeengineshort}}, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error which indicates that you have reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription. \n  \n With public Docker Hub, you can: \n - These images can be referred to directly when you create an app or job, no additional setup is required. \n - Includes various open source applications. |
 {: caption="Public and private image registry types" caption-side="bottom"}
 
 ## Types of registry secrets
@@ -49,10 +49,10 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 
  To access images in a registry, {{site.data.keyword.codeengineshort}} uses one of the following types of registry secrets.
 
-* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the registry secret for you. In the console, this automatically created registry secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. In the CLI, the name of an automatically created registry secret is of the format, `ce-auto-icr-private-<region>`. 
-* User managed secret - This is a secret that you create and manage. You can [access images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) or use an access token for the container registry of your choice; for example, Docker Hub. For this case, the registry secret that is listed in the console is the name of your registry secret. 
+* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the registry secret for you. In the console, this automatically created registry secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. In the CLI, the name of an automatically created registry secret is of the format, `ce-auto-icr-private-<region>`.
+* User managed secret - This is a secret that you create and manage. You can [access images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) or use an access token for the container registry of your choice; for example, Docker Hub. For this case, the registry secret that is listed in the console is the name of your registry secret.
 
-If your registry is public and does not require credentials; for example, {{site.data.keyword.codeengineshort}} sample images in `icr.io/codeengine` or Docker Hub public, then you do not need a registry secret. For this case, the registry secret that is listed in the console is `None`. 
+If your registry is public and does not require credentials; for example, {{site.data.keyword.codeengineshort}} sample images in `icr.io/codeengine` or Docker Hub public, then you do not need a registry secret. For this case, the registry secret that is listed in the console is `None`.
 
 
 ## Setting up authorities for image registries
@@ -71,7 +71,7 @@ To determine the authorities that you need, consider the following cases:
 
 * When you deploy apps or run jobs and your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} automatically create and manage the registry secret for you, as long as your account has the required permissions as described in the following table.
     - In the console, this registry secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. This option is available when you use the **Configure image** or **Specify build details** workflows for building an image with {{site.data.keyword.codeengineshort}}.
-    - In the CLI, this registry secret is of the format, `ce-auto-icr-private-<region>`. This registry secret is automatically created when you specify the `--build-source` option but you do not provide the `--registry-secret` option with the **`app create`**, **`app update`**, **`job create`**, or **`job update`** commands. 
+    - In the CLI, this registry secret is of the format, `ce-auto-icr-private-<region>`. This registry secret is automatically created when you specify the `--build-source` option but you do not provide the `--registry-secret` option with the **`app create`**, **`app update`**, **`job create`**, or **`job update`** commands.
 
 
 | Action | IAM service access | Description |
@@ -130,7 +130,7 @@ To create an {{site.data.keyword.cloud_notm}} IAM API key from the console,
 2. Select **API keys**.
 3. Click **Create an {{site.data.keyword.cloud_notm}} API key**.
 4. Enter a name and optional description for your API key and click **Create**.
-5. Copy the API key or click download to save it. 
+5. Copy the API key or click download to save it.
 
     You won’t be able to see this API key again, so be sure to record it in a safe place.
     {: important}
@@ -140,7 +140,7 @@ Now that you created your API key, [save it as registry access](#add-registry-ac
 ### Creating an API key with the CLI
 {: #access-registry-account-cli}
 
-To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI API key" and save it to a file called `key_file`, run the following command:
+To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of `My CLI API key` and save it to a file called `key_file`, run the following command:
 
 ```txt
 ibmcloud iam api-key-create cliapikey -d "My CLI API key" --file key_file
@@ -172,7 +172,7 @@ For example, to access images in other {{site.data.keyword.cloud_notm}} accounts
 ## Accessing images in a private Docker Hub account
 {: #access-private-docker-hub}
 
-To access images in a private Docker Hub account, create registry access by providing your password or an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/security/for-developers/access-tokens/){: external}.  
+To access images in a private Docker Hub account, create registry access by providing your password or an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/security/for-developers/access-tokens/){: external}.
 
 After you decide whether to use your password directly or to create an access token, [create your registry access](#add-registry-access-ce).
 
@@ -186,21 +186,21 @@ To set up access to an {{site.data.keyword.registryfull_notm}} in a different {{
 
 Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-project).
 
-1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
+1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 2. From the Components page, click **Secrets and configmaps**.
 3. From the Secrets and configmaps page, click **Create** to create your secret.
 4. From the Create secret or configmap page, complete the following steps:
     1. Select **Registry secret**, and click **Next**.
     2. Provide a name; for example, `mysecret-registry`.
     3. Specify the target registry for this secret, such as {{site.data.keyword.registrylong_notm}} or Docker Hub.
-    4. Specify the location of the registry. 
+    4. Specify the location of the registry.
     5. Specify a username. If this secret is for {{site.data.keyword.registrylong_notm}}, the username is `iamapikey`. If this secret is for Docker Hub, it is your Docker ID.
     6. Enter the credentials for the username. For {{site.data.keyword.registryfull_notm}}, use your IAM API key. For Docker Hub, you can use your Docker Hub password or an [access token](#access-private-docker-hub). For other target registries, specify the password or API key for the username.
-    7. Click **Create** to create the secret. 
+    7. Click **Create** to create the secret.
 
-Now that your secret is created from the console, go to the Secrets and configmaps page to view a list of defined secrets and configmaps. You can apply filters to customize the list to meet your needs. 
+Now that your secret is created from the console, go to the Secrets and configmaps page to view a list of defined secrets and configmaps. You can apply filters to customize the list to meet your needs.
 
-You can add access to a container registry when you create an application or job, or when you build an image. Click **Configure image** and specify the container image to run, including the registry where the image is stored and the [registry access](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets) to use to retrieve the image. 
+You can add access to a container registry when you create an application or job, or when you build an image. Click **Configure image** and specify the container image to run, including the registry where the image is stored and the [registry access](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets) to use to retrieve the image.
 {: tip}
 
 
@@ -271,7 +271,7 @@ To pull or push images from or to {{site.data.keyword.registryfull_notm}}, you m
 #### Step 2 Enabling Container Registry discovery
 {: #registry-discovery}
 
-To allow the Code Engine console to automatically discover Container registry, you must authenticate the service ID to the IAM Identity Service. 
+To allow the Code Engine console to automatically discover Container registry, you must authenticate the service ID to the IAM Identity Service.
 
 
 1. From the Service ID page, from the **Access policies** section, select **Assign access**.
@@ -289,7 +289,7 @@ Create an API key for a service ID.
 
 1. From the Service ID page, select **API keys** and then **Create**.
 2. Enter a name and optional description for your API key and click **Create**.
-3. Copy the API key or click download to save it. 
+3. Copy the API key or click download to save it.
 
     You won’t be able to see this API key again, so be sure to record it in a safe place.
     {: important}
@@ -326,11 +326,11 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     | -------------- | -------------- |
     | `<service_ID>` | Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created. |
     | `--roles <service_access_role>` | Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are `Reader`, `Writer`, and `Manager`. If you are pulling images, then `Reader` access is sufficient. For more information, see [Setting up authorities for image registries](#authorities-registry).|
-    | `--service-name <container-registry>` | Required. Enter `container-registry` to create an IAM policy for {{site.data.keyword.registrylong_notm}}. 
+    | `--service-name <container-registry>` | Required. Enter `container-registry` to create an IAM policy for {{site.data.keyword.registrylong_notm}}.
     {: caption="iam service-policy-create command components" caption-side="bottom"}
 
 
-3. Create a custom service policy to allow access to `iam-identity` service so that {{site.data.keyword.codeengineshort}} can retrieve the API key for your service ID with the **`iam service-policy-create`** command. 
+3. Create a custom service policy to allow access to `iam-identity` service so that {{site.data.keyword.codeengineshort}} can retrieve the API key for your service ID with the **`iam service-policy-create`** command.
 
     For example, create a policy for `codeengine-myproject-id` service ID with the role of `Operator`:
 
@@ -363,13 +363,13 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     ```txt
     Please preserve the API key! It cannot be retrieved after it's created.
 
-    Name          codeengine-myproject-key   
-    Description   API key for service ID codeengine-myproject-id for Code Engine myproject   
-    Bound To      crn:v1:bluemix:public:iam-identity::a/1bb222bb2b33333ddd3d3333ee4ee444::serviceid:ServiceId-ff55555f-5fff-6666-g6g6-777777h7h7hh   
-    Created At    2019-02-01T19:06+0000   
-    API Key       i-8i88ii8jjjj9jjj99kkkkkkkkk_k9-llllll11mmm1   
-    Locked        false   
-    UUID          ApiKey-222nn2n2-o3o3-3o3o-4p44-oo444o44o4o4   
+    Name          codeengine-myproject-key
+    Description   API key for service ID codeengine-myproject-id for Code Engine myproject
+    Bound To      crn:v1:bluemix:public:iam-identity::a/1bb222bb2b33333ddd3d3333ee4ee444::serviceid:ServiceId-ff55555f-5fff-6666-g6g6-777777h7h7hh
+    Created At    2019-02-01T19:06+0000
+    API Key       i-8i88ii8jjjj9jjj99kkkkkkkkk_k9-llllll11mmm1
+    Locked        false
+    UUID          ApiKey-222nn2n2-o3o3-3o3o-4p44-oo444o44o4o4
     ```
     {: screen}
 
@@ -383,11 +383,11 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
 ## Controlling access to {{site.data.keyword.registryshort}} for {{site.data.keyword.codeengineshort}} workloads
 {: #control-cr-access}
 
-Suppose that you want to control access to {{site.data.keyword.registrylong_notm}} when {{site.data.keyword.codeengineshort}} pulls images. For example, you want to control access to {{site.data.keyword.registryshort}} to specific IP addresses. Consider the following approaches. 
+Suppose that you want to control access to {{site.data.keyword.registrylong_notm}} when {{site.data.keyword.codeengineshort}} pulls images. For example, you want to control access to {{site.data.keyword.registryshort}} to specific IP addresses. Consider the following approaches.
 
-* Use a [context-based restriction](/docs/Registry?topic=Registry-registry-cbr). By using a context-based restriction, if the IP addresses for your {{site.data.keyword.codeengineshort}} project ever change, you do not need to change your access. You can restrict access to {{site.data.keyword.registryshort}} to a network zone, where your network zone includes {{site.data.keyword.codeengineshort}} and anything that requires access to the registry. 
+* Use a [context-based restriction](/docs/Registry?topic=Registry-registry-cbr). By using a context-based restriction, if the IP addresses for your {{site.data.keyword.codeengineshort}} project ever change, you do not need to change your access. You can restrict access to {{site.data.keyword.registryshort}} to a network zone, where your network zone includes {{site.data.keyword.codeengineshort}} and anything that requires access to the registry.
 
-* Disable the public access to {{site.data.keyword.registrylong_notm}} and make sure {{site.data.keyword.codeengineshort}} uses the private endpoints instead of the public endpoints. See [Securing your connection to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry-cbr). 
+* Disable the public access to {{site.data.keyword.registrylong_notm}} and make sure {{site.data.keyword.codeengineshort}} uses the private endpoints instead of the public endpoints. See [Securing your connection to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry-cbr).
 
 * To control access by a specific IP range, use an API endpoint to fetch the IP addresses for your particular {{site.data.keyword.codeengineshort}} project. It is important to note that these IP addresses are subject to change, and you must take appropriate steps when this happens. See [{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses) and [How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist](/docs/codeengine?topic=codeengine-ts-allowlist-app)?
 
@@ -398,7 +398,7 @@ Suppose that you want to control access to {{site.data.keyword.registrylong_notm
 
 The name of your image that is used for your app or job must be in one of the following formats.
 
-- `REGISTRY/NAMESPACEorDOCKERUSERorDOCKERORG/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, do not include the colon (:). The default for `TAG` is `latest`.  
+- `REGISTRY/NAMESPACEorDOCKERUSERorDOCKERORG/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, do not include the colon (:). The default for `TAG` is `latest`.
 - `REGISTRY/NAMESPACEorDOCKERUSERorDOCKERORG/REPOSITORY@IMAGEID` where `REGISTRY` is optional. If `REGISTRY` is not specified, the default is `docker.io` and `ibm` as the Docker organization.
 
 | Component | Characters allowed | Length | Additional rules |

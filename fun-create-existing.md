@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-10-17"
 
 keywords: functions in code engine, functions, serverless, create functions in code engine, function workloads in code engine, registry secret, registry access, registry access secret
 
@@ -97,7 +97,7 @@ Example output from the existing code bundle.
 
 To access an existing code bundle from a private registry, you must set up access to the registry, create a registry secret, and then provide that secret when you run the **`ibmcloud ce fn create`** command.
 
-1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=account-ibmcloud_commands_iam&interface=ui#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI API key" and save it to a file called `key_file`, run the following command:
+1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=account-ibmcloud_commands_iam&interface=ui#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of `My CLI API key` and save it to a file called `key_file`, run the following command:
 
     ```txt
     ibmcloud iam api-key-create cliapikey -d "My CLI API key" --file key_file

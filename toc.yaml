@@ -197,6 +197,7 @@ toc:
       - limits.md
       - mem-cpu-combo.md
       - regions.md
+      - tls-certificate-https-enpoint.md
       - responsibilities.md
       - ha-dr.md
       - topicgroup:

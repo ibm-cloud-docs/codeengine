@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-15"
 
 subcollection: codeengine
 
@@ -41,7 +41,7 @@ You and IBM share responsibilities for the setup and maintenance of your {{site.
 | Task | IBM responsibilities | Your responsibilities |
 | ------ | ----------------------- | ---------------------- |
 | {{site.data.keyword.codeengineshort}} projects and entities | - Deploy a fully managed, highly available platform in a secured, IBM-owned account to host projects. \n - Fulfill requests for more infrastructure, such as adding, reloading, updating, and removing worker nodes. \n - Fulfill automation requests to help recover projects. |- Use the provided CLI or console tools to adjust the runtime options (including scaling characteristics) of your workload. |
-| Observability | - Provide {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} to enable observability of your {{site.data.keyword.codeengineshort}} projects and entities. \n - Provide integration with {{site.data.keyword.at_short}} and send {{site.data.keyword.codeengineshort}} events for auditability. | - Set up and monitor the health of your {{site.data.keyword.codeengineshort}} projects and entities. \n - Set up and send logs to [{{site.data.keyword.at_short}}](/docs/codeengine?topic=codeengine-at_events).|
+| Observability | - Provide {{site.data.keyword.logs_full_notm}} and {{site.data.keyword.mon_short}} to enable observability of your {{site.data.keyword.codeengineshort}} projects and entities. \n - Provide integration with {{site.data.keyword.at_short}} and send {{site.data.keyword.codeengineshort}} events for auditability. | - Set up and monitor the health of your {{site.data.keyword.codeengineshort}} projects and entities. \n - Set up and send logs to [{{site.data.keyword.at_short}}](/docs/codeengine?topic=codeengine-at_events).|
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Responsibilities for incident and operations management" caption-side="bottom"}
 

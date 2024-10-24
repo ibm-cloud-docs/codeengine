@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-09"
+  years: 2020, 2024
+lastupdated: "2024-10-15"
 
 keywords: getting support for code engine, help for code engine, support for code engine, errors in code engine, slack for code engine, getting support
 
@@ -20,7 +20,7 @@ If you have problems or questions about {{site.data.keyword.codeengineshort}}, y
 
 * Review the [FAQs](/docs/codeengine?topic=codeengine-faqs) in the product documentation.
 * Review the [troubleshooting documentation](/docs/codeengine?topic=codeengine-troubleshooting_over) to troubleshoot and resolve common issues.
-* Engage our team through Slack. You can [register](https://cloud.ibm.com/kubernetes/slack){: external} and join the discussion in the [#code-engine channel](https://ibm-cloud-success.slack.com){: external}. 
+* Engage our team through Slack. You can join the discussion in the [#code-engine channel](https://ibm-cloud-success.slack.com/archives/C014051FRCG){: external}. 
 * Review forums such as Stack Overflow to see whether other users ran into the same issue. If you have technical questions, [post your question on Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud-code-engine){: external} and tag your question with `ibm-cloud-code-engine`.
 * Get help from the open source community by searching for information on the internet or by asking questions in forums and on websites that support these tools.  
 * You can also contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support). 
@@ -42,5 +42,3 @@ To ensure that the support team can start investigating your case to provide a t
     * Name of the repository for your built image.  
 
 * Does your app, job, or function subscribe to an event producer? See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
-
-

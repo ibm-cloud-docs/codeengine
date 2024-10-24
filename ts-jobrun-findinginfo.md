@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-15"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -143,7 +143,7 @@ Try one of these solutions.
 
 1. Debug runs of your job by getting [logs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs).
 
-    To view logs from the console, you must first add logging capabilities by creating an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-logging#view-logs-ui).
+    To view logs from the console, you must first add logging capabilities by creating an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
     To view logs with the CLI,
     * Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all your defined job runs.
@@ -158,7 +158,7 @@ Try one of these solutions.
 
     * To display system events for a specific instance of your job run, use the [**`ibmcloud ce jobrun events --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command.
 
-These CLI commands can retrieve logs and system event information as long as the job run instances are in the system. If you want to access logs for job runs that have been completed hours or days ago, then use {{site.data.keyword.la_full_notm}} capabilities. {{site.data.keyword.la_short}} offers various plans to control the retention period for logs. If your job runs are no longer in the system, use an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. See [Getting started with {{site.data.keyword.la_full_notm}}](/docs/log-analysis?topic=log-analysis-getting-started).
+These CLI commands can retrieve logs and system event information as long as the job run instances are in the system. If you want to access logs for job runs that have been completed hours or days ago, then use {{site.data.keyword.logs_full_notm}} capabilities. {{site.data.keyword.logs_full_notm}} offers various plans to control the retention period for logs. If your job runs are no longer in the system, use an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. See [Getting started with {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-getting-started).
 {: important}
 
 

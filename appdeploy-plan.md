@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-18"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Working with apps in {{site.data.keyword.codeengineshort}}  
+# Working with apps in {{site.data.keyword.codeengineshort}}
 {: #application-workloads}
 
 An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming requests and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
@@ -20,7 +20,7 @@ An application, or app, runs your code to serve HTTP requests. In addition to tr
 
 Before you begin
 
-* If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
+* If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}.
 * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 * Plan and choose your approach for making your code run as a {{site.data.keyword.codeengineshort}} application component.
 * Ensure that your app follows the [12-factor app methodology](https://12factor.net/){: external}.
@@ -35,14 +35,14 @@ Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? 
 ## How do I make my code run as a {{site.data.keyword.codeengineshort}} application component?
 {: #deploy-app-containerimage}
 
-Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides you with a streamlined way to run your code as an app. 
+Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides you with a streamlined way to run your code as an app.
 
 
 - If you have a container image, per the [Open Container Initiative (OCI) standard](https://opencontainers.org/){: external}, then you need to provide only a reference to the image, which points to the location of your container registry when you create and deploy your app. You can deploy your app with an image in a [public registry](/docs/codeengine?topic=codeengine-deploy-app) or [private registry](/docs/codeengine?topic=codeengine-deploy-app-private).
 
-- If you are starting with source code that resides in a Git repository, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and deploying the app with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create and deploy your app. 
+- If you are starting with source code that resides in a Git repository, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and deploying the app with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create and deploy your app.
 
-- If you are starting with source code that resides on a local workstation, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and deploying the app with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Deploying your app from local source code with the CLI](/docs/codeengine?topic=codeengine-app-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create and deploy your app. 
+- If you are starting with source code that resides on a local workstation, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and deploying the app with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Deploying your app from local source code with the CLI](/docs/codeengine?topic=codeengine-app-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create and deploy your app.
 
 After your app is deployed, you can also [update your deployed app](/docs/codeengine?topic=codeengine-update-app) by using *any* of the preceding ways, independent of how you created or previously updated your app.
 
@@ -74,23 +74,25 @@ If a port scan shows more open ports, see [Why does my port scan show more open 
 
 When you are working with applications (or jobs), it is helpful to be aware of basic HTTP handling in {{site.data.keyword.codeengineshort}}.
 
-- For incoming application connections that use HTTP, the transport layer security (TLS) aspects are managed automatically by {{site.data.keyword.codeengineshort}} outside of the application code. The HTTP Server for the application needs to be concerned about only HTTP connectivity and not HTTPS connectivity. In particular, {{site.data.keyword.codeengineshort}} uses {{site.data.keyword.cis_short}} in {{site.data.keyword.cloud_notm}}, which is based on CloudFlare, as the intrusion prevention system (IPS) for DNS and DDOS protection on layer 4. In other words, the TCP/IP connection that is established on the IPS is owned and managed by Cloudflare. For more information, see [Cloudflare documentation](https://developers.cloudflare.com/fundamentals/reference/network-ports/#how-to-block-traffic-on-additional-ports){: external}. 
+- For incoming application connections that use HTTP, the transport layer security (TLS) aspects are managed automatically by {{site.data.keyword.codeengineshort}} outside of the application code. The HTTP Server for the application needs to be concerned about only HTTP connectivity and not HTTPS connectivity. In particular, {{site.data.keyword.codeengineshort}} uses {{site.data.keyword.cis_short}} in {{site.data.keyword.cloud_notm}}, which is based on CloudFlare, as the intrusion prevention system (IPS) for DNS and DDOS protection on layer 4. In other words, the TCP/IP connection that is established on the IPS is owned and managed by Cloudflare. For more information, see [Cloudflare documentation](https://developers.cloudflare.com/fundamentals/reference/network-ports/#how-to-block-traffic-on-additional-ports){: external}.
 
 - Internet connections that are bound for {{site.data.keyword.codeengineshort}} applications are automatically redirected to use HTTPS.
 
 - Outbound connections from applications to other {{site.data.keyword.codeengineshort}} applications are automatically protected by TLS. {{site.data.keyword.codeengineshort}} automatically manages this connectivity, so the protocol (or URL) that is used is `HTTP` and not `HTTPS`.
 
-- Outbound connections from applications to non-{{site.data.keyword.codeengineshort}} applications, such as the internet, use `HTTP` or `HTTPS` depending on the protocol that is specified in the app code or URL.  
+- Outbound connections from applications to non-{{site.data.keyword.codeengineshort}} applications, such as the internet, use `HTTP` or `HTTPS` depending on the protocol that is specified in the app code or URL.
 
-- Outbound connections from batch jobs use the `HTTP` or `HTTPS` protocol that is specified in the job code or URL. This behavior includes connections from batch jobs to {{site.data.keyword.codeengineshort}} apps. 
+- Outbound connections from batch jobs use the `HTTP` or `HTTPS` protocol that is specified in the job code or URL. This behavior includes connections from batch jobs to {{site.data.keyword.codeengineshort}} apps.
 
 ## Options for visibility for a {{site.data.keyword.codeengineshort}} application
 {: #optionsvisibility}
 
-With {{site.data.keyword.codeengineshort}}, you can determine the right level of visibility for your application by defining the endpoints, or system domain mappings that are available for receiving requests.  
+With {{site.data.keyword.codeengineshort}}, you can determine the right level of visibility for your application by defining the endpoints, or system domain mappings that are available for receiving requests.
 {: shortdesc}
 
 Every application has an *internal* system domain mapping that is visible to all components within the same {{site.data.keyword.codeengineshort}} project, but not outside of the project. In addition to the internal system domain mapping, you choose to make the application visible to either the *public* internet or the {{site.data.keyword.cloud_notm}} *private* network.
+
+For public or private visibility, the application is exposed on an HTTPS endpoint. For details about the TLS certificate that is used, see [TLS certificates for {{site.data.keyword.codeengineshort}} projects](/docs/codeengine?topic=codeengine-tls-certificate).
 
 You can deploy your application with the following visibility levels:
 
@@ -101,7 +103,7 @@ You can deploy your application with the following visibility levels:
 | [private](#app-endpoint-private) | An app with this setting is exposed to the {{site.data.keyword.cloud_notm}} private network and your {{site.data.keyword.codeengineshort}} project. Setting a private endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services by using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project.|
 {: caption="Visibility for applications" caption-side="bottom"}
 
-You can set the endpoint settings for visibility of an application from the console or with the CLI when you create and deploy, or update your app. 
+You can set the endpoint settings for visibility of an application from the console or with the CLI when you create and deploy, or update your app.
 
 ### Deploying your app with a public endpoint
 {: #app-endpoint-public}
@@ -165,22 +167,22 @@ ibmcloud ce app create --name myapp --image icr.io/codeengine/hello --cmd /myapp
 
 For more information about using `cmd` and `arg`, see [Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-cmd-args).
 
-### Creating and running your app with environment variables 
+### Creating and running your app with environment variables
 {: #app-option-envvar}
 
-You can define and set environment variables as key-value pairs that can be used by your application at run time. 
+You can define and set environment variables as key-value pairs that can be used by your application at run time.
 {: shortdesc}
 
-You can define environment variables when you create your application, or when you update an existing application from the console or with the CLI. 
+You can define environment variables when you create your application, or when you update an existing application from the console or with the CLI.
 
 For more information about defining environment variables, see [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
 
 {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app. For more information about automatically injected environment variables, see [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars).
 
-### Creating and running your app when using secrets and configmaps 
+### Creating and running your app when using secrets and configmaps
 {: #app-option-secconfigmap}
 
-In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be consumed by your application by using environment variables. 
+In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be consumed by your application by using environment variables.
 {: shortdesc}
 
 Both secrets and configmaps are key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the environment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
@@ -205,7 +207,7 @@ Now that you are familiar with key concepts of working with {{site.data.keyword.
 * [Deploying app workloads from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-deploy-app-crimage).
 * [Deploying app workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private).
 * [Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code).
-* [Deploying your app from local source code](/docs/codeengine?topic=codeengine-app-local-source-code). 
+* [Deploying your app from local source code](/docs/codeengine?topic=codeengine-app-local-source-code).
 
 For more information about working with apps, see
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-12-02"
+  years: 2024
+lastupdated: "2024-10-15"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, cron, app, event, cron event, ping event
 
@@ -160,7 +160,7 @@ Body: {"mydata":"hello world"}
 
 For more information about headers and body, see [HTTP headers and body information for cron events](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron).
 
-For more information about viewing logs with the CLI, see [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-cli).
+For more information about viewing logs with the CLI, see [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-logs-cli).
 
 Note that subscriptions can affect how an application scales. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
@@ -227,5 +227,3 @@ ibmcloud ce app delete --name cron-app
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-
