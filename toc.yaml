@@ -297,7 +297,6 @@ toc:
               - troubleshoot-toolchain.md
               - ts-toolchain-buildrun.md
               - ts-toolchain-size.md
-
           - topicgroup:
               label: Troubleshooting Terraform
               topics:
