@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-06"
+lastupdated: "2024-11-12"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,15 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## November 2024
 {: #codeengine-november24}
+
+### 14 November 2024
+{: #codeengine-november1424}
+{: release-note}
+
+Updated versions for buildpacks
+: See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
+: Note: The default Java version is changing from `17` to `21`. You can continue to build your projects with Java 17 by adding a file called `.buildenv` to your source directory with the following content: `BP_JVM_VERSION=17`.
 
 ### 05 November 2024
 {: #codeengine-november0524}
