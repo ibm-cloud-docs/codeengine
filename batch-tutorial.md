@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-15"
+lastupdated: "2024-11-13"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -60,7 +60,7 @@ Note that when you run your job, the latest version of your referenced container
     * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to run.
 
 2. From your job page, click **Submit job** to submit a job that is based on the current configuration.
-3. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.
+3. From the "Submit job" pane, accept all the default values, and click **Submit job** again to run your job.
 
 From the Submit job pane, you can review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Array size** or **Array indices** for the parallel job instances to run. For **Array size**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. You can also [specify a custom value for the job array size](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic), which updates the value of the automatically injected `JOB_ARRAY_SIZE` environment variable. After you submit this job, the system displays the status of the instances of your job on the Job details page. If you specify **Array size** instead of **Array indices** in the Submit job pane, from the `Configuration` section of the Job details page, this information is provided as **Array indices**.
 {: note}
@@ -79,13 +79,17 @@ After you submit your job, the results of the specific job run are available in 
 * To view details for a specific job run, click the **Job runs** tab, and click the name of the job run that you want to work with. 
 
 
-If any of the instances of your job failed to run, you can take the following actions.
+If any of the instances of your job failed to run, you can take the following actions:
 
-1. Click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances.
+
+
+
+
+1. Click **Rerun failed indexes** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indexes field automatically lists the indices of the failed job run instances.
 
 2. Click **Submit job** to submit the job for the failed indices.
 
-You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui). 
+You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 {: tip}
 
 ## Updating a job
@@ -103,13 +107,13 @@ When the job is in a ready state, you can update the job. Let's update the job t
 
 2. From the **Configuration** tab, update the image reference of your job. Provide the name of your image or configure an image. Update the name of the image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob`. Click **Deploy**.
 3. Click **Submit job**.
-4. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Array size** or **Array indices** for the parallel job instances to run. For **Array size**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. 
+4. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Array size** or **Array indexes** for the parallel job instances to run. For **Array size**, provide the number of instances to run in parallel for this job. For **Array indexes**, provide a comma-separated list for your custom set of indexes. For example, to run this job with a custom set of `5` indexes, specify `3,12-14,25`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page.
 5. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) for this job, the output of the job is `Hello World!`.
-6. To update the job again and add an environment variable, navigate to your job page. 
+6. To update the job again and add an environment variable, navigate to your job page.
 7. From the **Configuration > Environment variables** tab, click **Add environment variable**. Add a literal environment variable with the name of `TARGET` with a value of `Sunshine`. The `icr.io/codeengine/testjob` outputs the message, `Hello <value_of_TARGET>!>`.
 8. Click **Add** to add your environment variable and then click **Save** to save the changes to your job.
 9. Click **Submit job** to submit the updated job.
-10. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. This time, specify **Array size** as `3`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. From the `Configuration` section of the Job details page, the information about the number of instances is displayed as **Array indices**, which is `0 - 2` for this example. 
+10. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. This time, specify **Array size** as `3`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. From the `Configuration` section of the Job details page, the information about the number of instances is displayed as **Array indexes**, which is `0 - 2` for this example.
 11. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) for this job, the output of the updated job is `Hello Sunshine!`.
 
 ## Next steps
