@@ -3841,6 +3841,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce function update`](/docs/codeengine?topic=codeengine-cli#cli-function-update)
 
+* [Help command](/docs/codeengine?topic=codeengine-cli#cli-help)
+
+    * [`ibmcloud ce help`](/docs/codeengine?topic=codeengine-cli#cli-helpcmd)
+
 * [Job commands](/docs/codeengine?topic=codeengine-cli#cli-job)
 
     * [`ibmcloud ce job bind`](/docs/codeengine?topic=codeengine-cli#cli-job-bind)

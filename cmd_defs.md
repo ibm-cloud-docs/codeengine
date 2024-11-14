@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-23"
+lastupdated: "2024-11-14"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2994,6 +2994,25 @@ https://myfunction.11c22def3rhz.us-south.codeengine.appdomain.cloud
 When you run `ibmcloud ce fn get -n 'myfunction'` to check the function status, the URL for your function is displayed.  
 {: tip}  
   
+## Help command  
+{: #cli-help}  
+
+Show help.  
+  
+### `ibmcloud ce help`  
+{: #cli-helpcmd}  
+
+Show help.  
+  
+```txt
+ibmcloud ce help COMMAND
+```
+{: pre}
+
+{[cli-help-example.md]}  
+  
+  
+
 ## Job commands  
 {: #cli-job}  
 
@@ -7455,4 +7474,3 @@ commit:   3ab130b746f4784c9ff8d3da7bb05b6e7acda6d5
 {: screen}  
   
   
-
