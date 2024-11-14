@@ -3009,7 +3009,7 @@ ibmcloud ce help COMMAND
 ```
 {: pre}
 
-{[cli-help-example.md]}  
+
   
   
 
