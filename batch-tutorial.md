@@ -55,7 +55,7 @@ After you create your job and specify your workload configuration information, y
 
 Note that when you run your job, the latest version of your referenced container image is downloaded and deployed, unless you specified a tag for the image. If a tag is specified for the image, then the tagged image is used for the job.
 
-1. Navigate to your job page.
+1. Navigate to your job page:
     * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to work with your jobs and job runs.
     * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to run.
 
