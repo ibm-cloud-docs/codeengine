@@ -4024,6 +4024,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
 
+* [21 November 2024](/docs/codeengine?topic=codeengine-api-changelog#21-november-2024)
+
 * [17 May 2024](/docs/codeengine?topic=codeengine-api-changelog#17-may-2024)
 
 * [30 January 2024](/docs/codeengine?topic=codeengine-api-changelog#30-jan-2024)

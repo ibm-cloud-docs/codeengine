@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-11-21"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -35,6 +35,16 @@ The following table shows the service behavior changes for each version date. Sw
 |`2022-12-09`| Version 2.0.0 |
 |`2021-03-31`| Version 1.0.0  |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
+
+## 21 November 2024
+{: #21-november-2024}
+
+Added support for allowed outbound destinations in the API.
+:   - See [List allowed outbound destinations API](https://cloud.ibm.com/apidocs/codeengine/v2#list-allowed-outbound-destination){: external}.
+:   - See [Create an allowed outbound destination API](https://cloud.ibm.com/apidocs/codeengine/v2#create-allowed-outbound-destination){: external}.
+:   - See [Get an allowed outbound destination API](https://cloud.ibm.com/apidocs/codeengine/v2#get-allowed-outbound-destination){: external}.
+:   - See [Delete an allowed outbound destination API](https://cloud.ibm.com/apidocs/codeengine/v2#delete-allowed-outbound-destination){: external}.
+:   - See [Update an allowed outbound destination API](https://cloud.ibm.com/apidocs/codeengine/v2#update-allowed-outbound-destination){: external}.
 
 ## 17 May 2024
 {: #17-may-2024}
