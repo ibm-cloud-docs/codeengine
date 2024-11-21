@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-14"
+lastupdated: "2024-11-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -137,6 +137,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [November 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-november24)
+
+    * [21 November 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-november2124)
+
+        * Updated SDK versions with support for allowed outbound destinations
 
     * [14 November 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-november1424)
 
@@ -4020,6 +4024,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
 
+* [21 November 2024](/docs/codeengine?topic=codeengine-api-changelog#21-november-2024)
+
 * [17 May 2024](/docs/codeengine?topic=codeengine-api-changelog#17-may-2024)
 
 * [30 January 2024](/docs/codeengine?topic=codeengine-api-changelog#30-jan-2024)
@@ -4161,6 +4167,53 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Disaster Recovery for {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-disaster)
 
 * [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
+
+
+## Understanding data portability for {{site.data.keyword.codeengineshort}}
+{: #sitemap_understanding_data_portability_for_}
+
+
+[Understanding data portability for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-data-portability#data-portability)
+
+* [Responsibilities](/docs/codeengine?topic=codeengine-data-portability#data-portability-responsibilities)
+
+* [Data export procedures](/docs/codeengine?topic=codeengine-data-portability#data-portability-procedures)
+
+    * [Tools required for exporting data](/docs/codeengine?topic=codeengine-data-portability#tools-required-for-exporting-data)
+
+    * [Exporting `project` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-project-configuration)
+
+    * [Exporting a `KUBECONFIG` to export project entities](/docs/codeengine?topic=codeengine-data-portability#exporting-a-kubeconfig-to-export-project-entities)
+
+    * [Exporting `application` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-application-configuration)
+
+    * [Exporting `application revision` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-application-revision-configuration)
+
+    * [Exporting `build` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-build-configuration)
+
+    * [Exporting `build run` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-build-run-configuration)
+
+    * [Exporting `configmap` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-configmap-configuration)
+
+    * [Exporting `secret` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-secret-configuration)
+
+    * [Exporting `domain mapping` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-domain-mapping-configuration)
+
+    * [Exporting `{{site.data.keyword.cos_full_notm}} event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting--event-subscription-configuration)
+
+    * [Exporting `cron event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-cron-event-subscription-configuration)
+
+    * [Exporting `Kafka event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-kafka-event-subscription-configuration)
+
+    * [Exporting `function` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-function-configuration)
+
+    * [Exporting `job` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-job-configuration)
+
+    * [Exporting `job run` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-job-run-configuration)
+
+* [Exported data formats](/docs/codeengine?topic=codeengine-data-portability#data-portability-data-formats)
+
+* [Data ownership](/docs/codeengine?topic=codeengine-data-portability#data-portability-ownership)
 
 
 ## Supported IBM Cloud and third-party integrations

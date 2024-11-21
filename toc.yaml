@@ -200,6 +200,7 @@ toc:
       - tls-certificate-https-enpoint.md
       - responsibilities.md
       - ha-dr.md
+      - data-portability.md
       - topicgroup:
           label: Supported IBM Cloud and third-party integrations
           topics:
