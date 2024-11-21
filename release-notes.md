@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-14"
+lastupdated: "2024-11-21"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## November 2024
 {: #codeengine-november24}
+
+### 21 November 2024
+{: #codeengine-november2124}
+{: release-note}
+
+Updated SDK versions with support for allowed outbound destinations
+:   - See [Go](https://github.com/IBM/code-engine-go-sdk){: external} version 4.14.1
+    - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 4.12.1
+    - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 4.14.1
+    - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 4.4.1
 
 ### 14 November 2024
 {: #codeengine-november1424}
