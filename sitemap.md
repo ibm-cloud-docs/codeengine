@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-12-06"
+lastupdated: "2024-12-11"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3696,8 +3696,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Public endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-public-endpoints)
 
 * [Private endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-private-endpoints)
-
-* [Enabling service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-enabling-service-endpoints)
 
 * [Managing {{site.data.keyword.codeengineshort}} resources securely by using service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-manageresources)
 
