@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-21"
+lastupdated: "2024-12-16"
 
 keywords: code engine, data portability
 
@@ -65,52 +65,59 @@ Configuration data for the following {{site.data.keyword.codeengineshort}} entit
 - Job runs
 
 ### Tools required for exporting data
+{: #ools}
 
 For exporting {{site.data.keyword.codeengineshort}} data, you need to download and install the following commandline tools:
 
 - The {{site.data.keyword.cloud_notm}} CLI client
     - Visit the {{site.data.keyword.cloud_notm}} CLI [Getting started page](/docs/cli?topic=cli-getting-started) to install the CLI client for your operating system.
 - The {{site.data.keyword.codeengineshort}} CLI plug-in
-    - Visit the [{{site.data.keyword.codeengineshort}} CLI page](/docs/codeengine?topic=codeengine-cli) which has instructions on how to install the {{site.data.keyword.codeengineshort}} plug-in for the {{site.data.keyword.cloud_notm}} CLI. 
+    - Visit the [{{site.data.keyword.codeengineshort}} CLI page](/docs/codeengine?topic=codeengine-cli) which has instructions on how to install the {{site.data.keyword.codeengineshort}} plug-in for the {{site.data.keyword.cloud_notm}} CLI.
 - The Kubernetes CLI client
     - Visit the [Kubernetes Install Tools page](https://kubernetes.io/docs/tasks/tools/#kubectl) to install the `kubectl` CLI client for your operating system.
 
 ### Exporting `project` configuration
+{: #exporting}
 
 A project in {{site.data.keyword.codeengineshort}} is a container of related configurations and workloads. If you want to export a project, use the following `ibmcloud resource` commands:
 
 To list all {{site.data.keyword.codeengineshort}} projects use:
-```
+```text
 ibmcloud resource service-instances --service-name codeengine
 ```
+{: pre}
 
 To list all {{site.data.keyword.codeengineshort}} projects in a specific region use:
-```
+```text
 ibmcloud resource service-instances --service-name codeengine --location us-south
 ```
+{: pre}
 
 When you have identified the {{site.data.keyword.codeengineshort}} project you want to export use:
-```
+```text
 ibmcloud resource service-instance <project-name> -o json >project-name.json
 ```
+{: pre}
 
 Exporting a {{site.data.keyword.codeengineshort}} project only exports configuration of the project entity itself. Contained configuration entities and workload entities need to be exported separately.
-{:note}
+{: note}
 
 ### Exporting a `KUBECONFIG` to export project entities
+{: #exporting-kubeconfig}
 
 When you have identified a project you want to export, you have to export a `KUBECONFIG` environment variable to scope the `kubectl` commands described in this document to that project.
 
 To obtain this `KUBECONFIG` environment variable, run the following commands
 
-```
+```text
 ibmcloud code-engine project select -n <project-name>
 ibmcloud code-engine project current
 ```
+{: pre}
 
 This selects the project and prints a statement similar to the following one:
 
-```
+```text
 Getting the current project context...
 OK
 
@@ -124,213 +131,252 @@ Kubernetes Config:
 Context:               1abc2defi34
 Environment Variable:  export KUBECONFIG="/Users/<username>/.bluemix/plugins/code-engine/<project-name>-123a4cbc-567d-8e90-1f2b-032d33d931ba.yaml"
 ```
+{: pre}
 
 Copy the `export KUBECONFIG=xxx` statement to your terminal prompt and run it. All following `kubectl` commands are now scoped to this project.
 
 ### Exporting `application` configuration
+{: #exporting-application}
 
 To export the configuration of all applications in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get service -o json >project-name_application-configurations.json
 ```
+{: pre}
 
 If you want to export the configuration of a single application, use the following `kubectl` command:
 
-```
+```text
 kubectl get service <application-name> -o json >project-name-application-name_application-configuration.json
 ```
+{: pre}
 
 ### Exporting `application revision` configuration
+{: #exporting-application-revision}
 
 To export the configuration of all application revisions in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get revision -o json >project-name_application-revisions.json
 ```
+{: pre}
 
 If you want to export the configuration of a single application revision, use the following `kubectl` command:
 
-```
+```text
 kubectl get revision <application-revision-name> -o json >project-name-application-revision-name_revision.json
 ```
+{: pre}
 
 ### Exporting `build` configuration
+{: #exporting-build}
 
 To export the configuration of all builds in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get build -o json >project-name_build-configurations.json
 ```
+{: pre}
 
 If you want to export the configuration of a single build, use the following `kubectl` command:
 
-```
+```text
 kubectl get build <build-name> -o json >project-name-build-name_build-configuration.json
 ```
+{: pre}
 
 ### Exporting `build run` configuration
+{: #exporting-buid-run}
 
 To export the configuration of all buildruns in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get buildrun -o json >project-name_buildrun-configurations.json
 ```
+{: pre}
 
 If you want to export the configuration of a single buildrun, use the following `kubectl` command:
 
-```
+```text
 kubectl get buildrun <buildrun-name> -o json >project-name-buildrun-name_buildrun-configuration.json
 ```
+{: pre}
 
 ### Exporting `configmap` configuration
+{: #exporting-configmap}
 
 To export the content of all configmaps in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get configmap -o json >project-name_configmaps.json
 ```
+{: pre}
 
 If you want to export the content of a single configmap, use the following `kubectl` command:
 
-```
+```text
 kubectl get configmap <configmap-name> -o json >project-name-configmap-name_configmap.json
 ```
+{: pre}
 
 ### Exporting `secret` configuration
+{: #exporting-secret}
 
 Do not export the contents of secrets to a file on a persistent storage.
-{:note}
+{: note}
 
 To export the content of all secrets in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get secret -o json >project-name_secrets.json
 ```
+{: pre}
 
 If you want to export the content of a single secret, use the following `kubectl` command:
 
-```
+```text
 kubectl get secret <secret-name> -o json >project-name-secret-name_secret.json
 ```
+{: pre}
 
-Values stored in {{site.data.keyword.codeengineshort}} secrets are usually copies of values managed in other systems, like {{site.data.keyword.secrets-manager_full_notm}}. Therefore, most of the time exporting secrets is not required. If you still require to export secrets from {{site.data.keyword.codeengineshort}}, you should choose exporting single secrets over exporting all secrets to avoid unintentional disclosure of sensitive information. 
-{:note}
+Values stored in {{site.data.keyword.codeengineshort}} secrets are usually copies of values managed in other systems, like {{site.data.keyword.secrets-manager_full_notm}}. Therefore, most of the time exporting secrets is not required. If you still require to export secrets from {{site.data.keyword.codeengineshort}}, you should choose exporting single secrets over exporting all secrets to avoid unintentional disclosure of sensitive information.
+{: note}
 
 ### Exporting `domain mapping` configuration
+{: #exporting-domain-mapping}
 
 To export the configuration of all domain mappings in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get domainmapping -o json >project-name_domainmappings.json
 ```
+{: pre}
 
 If you want to export the configuration of a single domain mapping, use the following `kubectl` command:
 
-```
+```text
 kubectl get domainmapping <domainmapping-name> -o json >project-name-domainmapping-name_domainmapping.json
 ```
+{: pre}
 
 ### Exporting `{{site.data.keyword.cos_full_notm}} event subscription` configuration
+{: #exporting-cos-event-subscription}
 
 To export the configuration of all {{site.data.keyword.cos_full_notm}} event subscriptions in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get cossource -o json >project-name_cos-event-subscriptions.json
 ```
+{: pre}
 
 If you want to export the configuration of a single {{site.data.keyword.cos_full_notm}} event subscription, use the following `kubectl` command:
 
-```
+```text
 kubectl get cossource <cos-event-subscription-name> -o json >project-name-cos-event-subscription-name_cos-event-subscription.json
 ```
+{: pre}
 
 ### Exporting `cron event subscription` configuration
+{: #exporting-cron-event-subscription}
 
 To export the configuration of all `cron` event subscriptions in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get pingsource -o json >project-name_cron-event-subscriptions.json
 ```
+{: pre}
 
 If you want to export the configuration of a single `cron` event subscription, use the following `kubectl` command:
 
-```
+```text
 kubectl get pingsource <cron-event-subscription-name> -o json >project-name-cron-event-subscription-name_cron-event-subscription.json
 ```
+{: pre}
 
 ### Exporting `Kafka event subscription` configuration
+{: #exporting-kafka-event-subscription}
 
 To export the configuration of all Kafka event subscriptions in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get kafkasource -o json >project-name_kafka-event-subscriptions.json
 ```
+{: pre}
 
 If you want to export the configuration of a single Kafka event subscription, use the following `kubectl` command:
 
-```
+```text
 kubectl get kafkasource <cron-event-subscription-name> -o json >project-name-kafka-event-subscription-name_kafka-event-subscription.json
 ```
+{: pre}
 
 ### Exporting `function` configuration
+{: #exporting-function}
 
 To export the configuration of all functions in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get function -o json >project-name_functions.json
 ```
+{: pre}
 
 If you want to export the configuration of a single function, use the following `kubectl` command:
 
-```
+```text
 kubectl get function <function-name> -o json >project-name-function-name_function.json
 ```
+{: pre}
 
 ### Exporting `job` configuration
+{: #exporting-job}
 
 To export the configuration of all jobs in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get jobdefinition -o json >project-name_jobs.json
 ```
+{: pre}
 
 If you want to export the configuration of a single job, use the following `kubectl` command:
 
-```
+```text
 kubectl get jobdefinition <function-name> -o json >project-name-job-name_job.json
 ```
+{: pre}
 
 ### Exporting `job run` configuration
+{: #exporting-job-run}
 
 To export the configuration of all jobruns in your project, run the following `kubectl` command:
 
-```
+```text
 kubectl get jobrun -o json >project-name_jobruns.json
 ```
+{: pre}
 
 If you want to export the configuration of a single jobrun, use the following `kubectl` command:
 
-```
+```text
 kubectl get jobrun <function-name> -o json >project-name-jobrun-name_jobrun.json
 ```
-
+{: pre}
 
 ## Exported data formats
 {: #data-portability-data-formats}
 
 
 
-{{site.data.keyword.codeengineshort}} supports the following data format and schema of the exported data, configuration, and application: 
+{{site.data.keyword.codeengineshort}} supports the following data format and schema of the exported data, configuration, and application:
 * JSON
 
 **Example:** Exporting a ConfigMap with name `export-sample` and format `JSON` results in the following JSON output:
 
-- Command:
+Command:
 `kubectl get configmap export-sample -o json`
 
-- Output:
-```
+Output:
+```text
 {
     "apiVersion": "v1",
     "data": {
@@ -348,16 +394,15 @@ kubectl get jobrun <function-name> -o json >project-name-jobrun-name_jobrun.json
     }
 }
 ```
+{: codeblock}
 
 All commands that use the `kubectl` command with the `-o json` option, produce a JSON output that is compatible with Kubernetes. The JSON produced by other commands, like `ibmcloud resource` or `ibmcloud code-engine` cannot be assumed to be compatible with Kubernetes as is.
 
 
-{{site.data.keyword.codeengineshort}} doesn't support the export of the following data format and schema of the exported data, configuration, and application: 
+{{site.data.keyword.codeengineshort}} doesn't support the export of the following data format and schema of the exported data, configuration, and application:
 * YAML
 
 ## Data ownership
 {: #data-portability-ownership}
 
 All exported data is classified as customer content. Apply the full customer ownership and licensing rights, as stated in the [{{site.data.keyword.cloud_notm}} Service Agreement](https://www.ibm.com/terms/?id=Z126-6304_WS).
-
-

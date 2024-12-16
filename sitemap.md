@@ -4185,37 +4185,37 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Data export procedures](/docs/codeengine?topic=codeengine-data-portability#data-portability-procedures)
 
-    * [Tools required for exporting data](/docs/codeengine?topic=codeengine-data-portability#tools-required-for-exporting-data)
+    * [Tools required for exporting data](/docs/codeengine?topic=codeengine-data-portability#ools)
 
-    * [Exporting `project` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-project-configuration)
+    * [Exporting `project` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting)
 
-    * [Exporting a `KUBECONFIG` to export project entities](/docs/codeengine?topic=codeengine-data-portability#exporting-a-kubeconfig-to-export-project-entities)
+    * [Exporting a `KUBECONFIG` to export project entities](/docs/codeengine?topic=codeengine-data-portability#exporting-kubeconfig)
 
-    * [Exporting `application` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-application-configuration)
+    * [Exporting `application` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-application)
 
-    * [Exporting `application revision` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-application-revision-configuration)
+    * [Exporting `application revision` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-application-revision)
 
-    * [Exporting `build` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-build-configuration)
+    * [Exporting `build` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-build)
 
-    * [Exporting `build run` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-build-run-configuration)
+    * [Exporting `build run` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-buid-run)
 
-    * [Exporting `configmap` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-configmap-configuration)
+    * [Exporting `configmap` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-configmap)
 
-    * [Exporting `secret` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-secret-configuration)
+    * [Exporting `secret` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-secret)
 
-    * [Exporting `domain mapping` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-domain-mapping-configuration)
+    * [Exporting `domain mapping` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-domain-mapping)
 
-    * [Exporting `{{site.data.keyword.cos_full_notm}} event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting--event-subscription-configuration)
+    * [Exporting `{{site.data.keyword.cos_full_notm}} event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-cos-event-subscription)
 
-    * [Exporting `cron event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-cron-event-subscription-configuration)
+    * [Exporting `cron event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-cron-event-subscription)
 
-    * [Exporting `Kafka event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-kafka-event-subscription-configuration)
+    * [Exporting `Kafka event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-kafka-event-subscription)
 
-    * [Exporting `function` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-function-configuration)
+    * [Exporting `function` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-function)
 
-    * [Exporting `job` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-job-configuration)
+    * [Exporting `job` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-job)
 
-    * [Exporting `job run` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-job-run-configuration)
+    * [Exporting `job run` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-job-run)
 
 * [Exported data formats](/docs/codeengine?topic=codeengine-data-portability#data-portability-data-formats)
 
