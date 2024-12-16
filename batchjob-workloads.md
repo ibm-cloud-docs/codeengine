@@ -16,7 +16,7 @@ subcollection: codeengine
 {: #cebatchjobs}
 
 
-{{site.data.keyword.codeenginefull}} is a fully managed, serverless platform that runs your containerized workloads, including batch job or application workloads. Learn about running batch jobs in {{site.data.keyword.codeenginefull}}.
+{{site.data.keyword.codeenginefull}} is a fully managed, serverless platform that runs your containerized workloads, including batch job or application workloads. Learn about running batch jobs in {{site.data.keyword.codeengineshort}}.
 {: shortdesc}
 
 
