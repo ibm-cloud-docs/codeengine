@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-12-16"
+lastupdated: "2024-12-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2083,6 +2083,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Running and updating jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial)
 
+* [Before you begin](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial-before-you-begin)
+
 * [Creating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobcreate)
 
 * [Running a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobrun-ui)
@@ -2556,6 +2558,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan#job-plan)
+
+* [Before you begin](/docs/codeengine?topic=codeengine-job-plan#jobs-efore-you-begin)
 
 * [How do I make my code run as a {{site.data.keyword.codeengineshort}} job component?](/docs/codeengine?topic=codeengine-job-plan#job-containerimage)
 

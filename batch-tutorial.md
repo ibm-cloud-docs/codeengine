@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-15"
+lastupdated: "2024-12-17"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -25,7 +25,10 @@ With this tutorial, run a batch job by using the {{site.data.keyword.codeenginef
 
 A job runs one or more instances of your executable code in parallel. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
 
-Before you begin
+## Before you begin
+{: #run-job-tutorial-before-you-begin}
+
+For more information about batch jobs, see [Batch jobs workload](/docs/codeengine?topic=codeengine-cebatchjobs).
 
 To use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}.
 
