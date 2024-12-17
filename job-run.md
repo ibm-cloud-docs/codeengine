@@ -37,7 +37,7 @@ When you create a job, you can run it immediately. However, you can submit and r
 4. Click the **Jobs** tab, and click the name of the job that you want to run.
 5. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
 6. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page.
-7. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indices** field automatically lists the indices of the failed job run instances. After you review and optionally change configuration values, click **Submit job** to run your job.
+7. If any of the instances of your job failed to run, click **Rerun failed indexes** to run the job again for indexes that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indexes** field automatically lists the indexes of the failed job run instances. After you review and optionally change configuration values, click **Submit job** to run your job.
 
 You can also rerun existing job run. To run a specific job run again, click the **Job runs** tab, and then click the name of the job run that you want to work with. Click **Rerun** to run this job run again.
 
@@ -78,7 +78,7 @@ The following table summarizes the options that are used with the **`jobrun subm
 | --- | --- |
 | `--name` | The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project. \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-). |
 | `--job` | The name of the job to be run. This value is required if you do not specify the `--name`  and `--image` values. |
-| `--array-indices` | Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is `0`. |
+| `--array-indices` | Specifies the indexes of the instances that are used to run the job. Specify the list or range of indexes that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is `0`. |
 {: caption="Command options" caption-side="bottom"}
 
 The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap#inside-configmaps).
