@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-12-17"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -21,7 +21,7 @@ After you create your job, you can run a job based on its definition, or you can
 
 Each time your job runs, the latest version of your referenced container image is used for the job run, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the job run.
 
-Submitted batch jobs are run in parallel, if possible. If the number or size of the submitted jobs exceeds the configured quota limits, such as maximum number of running instances, then {{site.data.keyword.codeengineshort}} queues the jobs and delays running them until enough jobs finish. For more information about quotas and limits for jobs, including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+Submitted batch jobs are run in parallel, if possible. If the number or size of the submitted jobs exceeds the configured quota limits, such as maximum number of running instances, then {{site.data.keyword.codeengineshort}} queues the jobs and delays running them until enough jobs finish. For more information about batch jobs, see [Batch jobs workload](/docs/codeengine?topic=codeengine-cebatchjobs). For more information about quotas and limits for jobs, including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 Job runs that are created by subscriptions are deleted after 10 minutes. For more information about subscriptions, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
 {: note}
@@ -37,7 +37,7 @@ When you create a job, you can run it immediately. However, you can submit and r
 4. Click the **Jobs** tab, and click the name of the job that you want to run.
 5. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
 6. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page.
-7. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indices** field automatically lists the indices of the failed job run instances. After you review and optionally change configuration values, click **Submit job** to run your job.
+7. If any of the instances of your job failed to run, click **Rerun failed indexes** to run the job again for indexes that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indexes** field automatically lists the indexes of the failed job run instances. After you review and optionally change configuration values, click **Submit job** to run your job.
 
 You can also rerun existing job run. To run a specific job run again, click the **Job runs** tab, and then click the name of the job run that you want to work with. Click **Rerun** to run this job run again.
 
@@ -78,7 +78,7 @@ The following table summarizes the options that are used with the **`jobrun subm
 | --- | --- |
 | `--name` | The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project. \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-). |
 | `--job` | The name of the job to be run. This value is required if you do not specify the `--name`  and `--image` values. |
-| `--array-indices` | Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is `0`. |
+| `--array-indices` | Specifies the indexes of the instances that are used to run the job. Specify the list or range of indexes that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is `0`. |
 {: caption="Command options" caption-side="bottom"}
 
 The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap#inside-configmaps).

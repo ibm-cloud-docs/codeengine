@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-28"
+lastupdated: "2024-12-17"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -18,16 +18,16 @@ subcollection: codeengine
 Learn how to run jobs in {{site.data.keyword.codeenginefull}}. A job runs one or more instances of your executable code in parallel. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
 {: shortdesc}
 
-Before you begin
+## Before you begin
+{: #jobs-efore-you-begin}
 
-* If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
-* If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-* Plan and choose your approach for making your code run as a {{site.data.keyword.codeengineshort}} job component.
+* Understand the concepts of batch job workloads within {{site.data.keyword.codeengineshort}}. For more information about batch jobs, see [Batch jobs workload](/docs/codeengine?topic=codeengine-cebatchjobs).
+* Plan and choose your approach for making your code run as a {{site.data.keyword.codeengineshort}} job component. For more information on the types of {{site.data.keyword.codeengineshort}} workload to create, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
+* You can work with jobs and job runs, in two ways:
+   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}.
+   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 
-Not sure what type of {{site.data.keyword.codeengineshort}} workload to create? See [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
-{: tip}
-
-{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [Batch CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-batch).
+{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see the [batch CRD methods](/docs/codeengine?topic=codeengine-kubernetes#api-crd-batch).
 
 ## How do I make my code run as a {{site.data.keyword.codeengineshort}} job component?
 {: #job-containerimage}
@@ -36,7 +36,7 @@ Whether your code exists as source in a local file or in a Git repository, or yo
 
 - If you have a container image, per the [Open Container Initiative (OCI) standard](https://opencontainers.org/){: external}, then you need to provide only a reference to the image, which points to the location of your container registry when you create your job. You can create your job from images in a [public registry](/docs/codeengine?topic=codeengine-create-job) or [private registry](/docs/codeengine?topic=codeengine-create-job-private) and then access the referenced image from your job run.
 
-- If you are starting with source code that is located in a Git repository, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the job with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create your job and run the job.  
+- If you are starting with source code that is located in a Git repository, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the job with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create your job and run the job.
 
 - If you are starting with source code on a local workstation, you can choose to point to the location of your source, and {{site.data.keyword.codeengineshort}} takes care of building the image from your source and creating the job with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create your job and run the job.
 
@@ -73,7 +73,7 @@ By default, your job is assigned 4 G of memory and 1 vCPU. For more information 
 ### Creating and running a job with commands and arguments
 {: #job-cmd-args}
 
-You can define commands and arguments for your job to use at run time when you create or run your job. 
+You can define commands and arguments for your job to use at run time when you create or run your job.
 {: shortdesc}
 
 You can add commands and arguments to your job by using the CLI or the console.
@@ -84,20 +84,20 @@ To add commands and arguments by using the CLI, add the `--cmd` and `--args` opt
 
 For more information about defining commands and arguments, see [Defining commands and arguments for your Code Engine workloads](/docs/codeengine?topic=codeengine-cmd-args).
 
-### Creating and running a job with environment variables 
+### Creating and running a job with environment variables
 {: #job-option-envvar}
 
-You can define and set environment variables as key-value pairs that can be used by your job at run time. 
+You can define and set environment variables as key-value pairs that can be used by your job at run time.
 {: shortdesc}
 
-You can define environment variables when you create your job, or when you update an existing job from the console or with the CLI. You can create environment variables for your jobs that fully reference a configmap (or secret) or reference individual keys in a configmap (or secret). 
+You can define environment variables when you create your job, or when you update an existing job from the console or with the CLI. You can create environment variables for your jobs that fully reference a configmap (or secret) or reference individual keys in a configmap (or secret).
 
 For more information about defining environment variables, see [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
 
-### Creating and running a job with secrets and configmaps 
+### Creating and running a job with secrets and configmaps
 {: #job-option-secconfigmap}
 
-In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be used by your job by using environment variables. 
+In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be used by your job by using environment variables.
 {: shortdesc}
 
 Both secrets and configmaps are key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the environment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
@@ -118,7 +118,7 @@ With {{site.data.keyword.codeengineshort}}, you can choose the `mode` of your jo
 
 If you want to create a job that can run indefinitely and does not time out, use `daemon` mode for your jobs. Failed instances are automatically restarted indefinitely.
 
-With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use. When your job runs in `daemon` mode, be aware that the job is always running until you delete the job. 
+With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use. When your job runs in `daemon` mode, be aware that the job is always running until you delete the job.
 {: important}
 
 For more information, see [Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-daemon) commands.
@@ -140,17 +140,12 @@ Now that you are familiar with key concepts of working with {{site.data.keyword.
 * [Creating a job from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-create-job-crimage).
 * [Creating a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private).
 * [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code).
-* [Running a job](/docs/codeengine?topic=codeengine-job-local-source-code). 
+* [Running a job](/docs/codeengine?topic=codeengine-job-local-source-code).
 
 
 For more information about working with jobs, see
 
-* [Batch job workloads](/docs/codeengine?topic=codeengine-cebatchjobs).
 * [Integrating {{site.data.keyword.cloud_notm}} services with service bindings](/docs/codeengine?topic=codeengine-service-binding).
 * Working with [environment variables](/docs/codeengine?topic=codeengine-envvar), [configmaps](/docs/codeengine?topic=codeengine-configmap), and [secrets](/docs/codeengine?topic=codeengine-secret).
 * [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).
 * [Troubleshooting jobs](/docs/codeengine?topic=codeengine-troubleshoot-job).
-
-
-
-

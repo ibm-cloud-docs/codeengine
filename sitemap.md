@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-12-06"
+lastupdated: "2024-12-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -81,7 +81,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [What is the lifecycle of a batch job?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-lifecycle)
 
-* [How do jobs compare to apps and functions?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-compare)
+* [How do jobs compare to applications and functions?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-compare)
 
 * [What are the key features of working with {{site.data.keyword.codeengineshort}} batch jobs?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-features)
 
@@ -2083,6 +2083,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Running and updating jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial)
 
+* [Before you begin](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial-before-you-begin)
+
 * [Creating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobcreate)
 
 * [Running a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobrun-ui)
@@ -2556,6 +2558,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan#job-plan)
+
+* [Before you begin](/docs/codeengine?topic=codeengine-job-plan#jobs-efore-you-begin)
 
 * [How do I make my code run as a {{site.data.keyword.codeengineshort}} job component?](/docs/codeengine?topic=codeengine-job-plan#job-containerimage)
 
@@ -3697,8 +3701,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Private endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-private-endpoints)
 
-* [Enabling service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-enabling-service-endpoints)
-
 * [Managing {{site.data.keyword.codeengineshort}} resources securely by using service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-manageresources)
 
 * [Accessing your app securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-app)
@@ -4187,37 +4189,37 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Data export procedures](/docs/codeengine?topic=codeengine-data-portability#data-portability-procedures)
 
-    * [Tools required for exporting data](/docs/codeengine?topic=codeengine-data-portability#tools-required-for-exporting-data)
+    * [Tools required for exporting data](/docs/codeengine?topic=codeengine-data-portability#ools)
 
-    * [Exporting `project` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-project-configuration)
+    * [Exporting `project` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting)
 
-    * [Exporting a `KUBECONFIG` to export project entities](/docs/codeengine?topic=codeengine-data-portability#exporting-a-kubeconfig-to-export-project-entities)
+    * [Exporting a `KUBECONFIG` to export project entities](/docs/codeengine?topic=codeengine-data-portability#exporting-kubeconfig)
 
-    * [Exporting `application` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-application-configuration)
+    * [Exporting `application` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-application)
 
-    * [Exporting `application revision` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-application-revision-configuration)
+    * [Exporting `application revision` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-application-revision)
 
-    * [Exporting `build` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-build-configuration)
+    * [Exporting `build` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-build)
 
-    * [Exporting `build run` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-build-run-configuration)
+    * [Exporting `build run` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-buid-run)
 
-    * [Exporting `configmap` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-configmap-configuration)
+    * [Exporting `configmap` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-configmap)
 
-    * [Exporting `secret` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-secret-configuration)
+    * [Exporting `secret` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-secret)
 
-    * [Exporting `domain mapping` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-domain-mapping-configuration)
+    * [Exporting `domain mapping` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-domain-mapping)
 
-    * [Exporting `{{site.data.keyword.cos_full_notm}} event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting--event-subscription-configuration)
+    * [Exporting `{{site.data.keyword.cos_full_notm}} event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-cos-event-subscription)
 
-    * [Exporting `cron event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-cron-event-subscription-configuration)
+    * [Exporting `cron event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-cron-event-subscription)
 
-    * [Exporting `Kafka event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-kafka-event-subscription-configuration)
+    * [Exporting `Kafka event subscription` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-kafka-event-subscription)
 
-    * [Exporting `function` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-function-configuration)
+    * [Exporting `function` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-function)
 
-    * [Exporting `job` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-job-configuration)
+    * [Exporting `job` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-job)
 
-    * [Exporting `job run` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-job-run-configuration)
+    * [Exporting `job run` configuration](/docs/codeengine?topic=codeengine-data-portability#exporting-job-run)
 
 * [Exported data formats](/docs/codeengine?topic=codeengine-data-portability#data-portability-data-formats)
 

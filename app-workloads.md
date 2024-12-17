@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-15"
+lastupdated: "2024-12-16"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -27,17 +27,17 @@ An application, or app, runs your code to serve HTTP requests. In addition to tr
 ## How do apps compare to jobs and functions?
 {: #ceapp-workloads-compare}
 
-| Characteristic | App | Job | Function |
+| Characteristic | Application | Job | Function |
 | --------- | --------- | --------- | --------- |
 | Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) |
-| Startup latency | Medium | Scheduled start | Low  | 
+| Startup latency | Medium | Scheduled start | Low  |
 | Termination | Run-continuously | Run-to-completion | Run-to-completion |
 | Invocation | On request or permanently running | Scheduled | On request, instant |
 | Programming Model | Container-based build and execution | Container-based build and execution | Language-specific source code files and dependency metadata |
 | Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution |
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
 | Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out |
-{: caption="Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
+{: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, and functions" caption-side="bottom"}
 
 For more information, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 

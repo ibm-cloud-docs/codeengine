@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-15"
+lastupdated: "2024-12-16"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -67,17 +67,17 @@ In addition, {{site.data.keyword.codeengineshort}} includes [Function limits](/d
 
 {{site.data.keyword.codeengineshort}} functions offers a straight-forward programming model that uses source code snippets of supported programming languages. These code snippets are used “inline” in a function definition with no need to compile your code first.
 
-| Characteristic | App | Job | Function |
+| Characteristic | Application | Job | Function |
 | --------- | --------- | --------- | --------- |
 | Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) |
-| Startup latency | Medium | Scheduled start | Low  | 
+| Startup latency | Medium | Scheduled start | Low  |
 | Termination | Run-continuously | Run-to-completion | Run-to-completion |
 | Invocation | On request or permanently running | Scheduled | On request, instant |
 | Programming Model | Container-based build and execution | Container-based build and execution | Language-specific source code files and dependency metadata |
 | Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution |
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
 | Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out |
-{: caption="Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
+{: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, and functions" caption-side="bottom"}
 
 ## Migrating IBM Cloud Functions Actions to {{site.data.keyword.codeengineshort}} Functions FAQ
 {: #fun-migrate-faqs}

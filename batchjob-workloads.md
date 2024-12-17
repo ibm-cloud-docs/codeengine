@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-15"
+lastupdated: "2024-12-16"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -16,7 +16,7 @@ subcollection: codeengine
 {: #cebatchjobs}
 
 
-{{site.data.keyword.codeenginefull}} is a fully managed, serverless platform that runs your containerized workloads, including batch job or application workloads. Learn about running batch jobs in {{site.data.keyword.codeenginefull}}.
+{{site.data.keyword.codeenginefull}} is a fully managed, serverless platform that runs your containerized workloads, including batch job or application workloads. Learn about running batch jobs in {{site.data.keyword.codeengineshort}}.
 {: shortdesc}
 
 
@@ -29,12 +29,12 @@ You can scale batch jobs by defining multiple instances. Workloads can be split 
 
 When you create a job, you can specify the workload configuration information that is used each time that the job is run.
 
-Typical batch job workloads include,
+Typical batch job workloads include:
 
-- machine model training
-- analyzing files, such as voice analysis or image recognition
-- compressing or decompressing files
-- archiving information
+- Machine model training
+- Analyzing files, such as voice analysis or image recognition
+- Compressing or decompressing files
+- Archiving information
 
 When you create a job, you can specify workload configuration information that is used each time that the job is run.
 
@@ -43,20 +43,22 @@ When you create a job, you can specify workload configuration information that i
 
 When you submit a batch job, it runs to completion. Typically, batch jobs retrieve input data, do computational work, and store the results in persistent data stores. When the batch job is completed, resources that are used to run the job are removed and no cost is incurred for any stand-by resources.
 
-## How do jobs compare to apps and functions?
+
+
+## How do jobs compare to applications and functions?
 {: #batchjob-compare}
 
-| Characteristic | App | Job | Function |
+| Characteristic | Application | Job | Function |
 | --------- | --------- | --------- | --------- |
 | Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) |
-| Startup latency | Medium | Scheduled start | Low  | 
+| Startup latency | Medium | Scheduled start | Low  |
 | Termination | Run-continuously | Run-to-completion | Run-to-completion |
 | Invocation | On request or permanently running | Scheduled | On request, instant |
 | Programming Model | Container-based build and execution | Container-based build and execution | Language-specific source code files and dependency metadata |
 | Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution |
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
 | Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out |
-{: caption="Comparing {{site.data.keyword.codeengineshort}} apps, jobs, and functions" caption-side="bottom"}
+{: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, and functions" caption-side="bottom"}
 
 For more information, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 

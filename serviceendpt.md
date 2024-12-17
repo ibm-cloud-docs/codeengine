@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-12-11"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -33,12 +33,6 @@ A deployment with a service endpoint on the private network gets an endpoint tha
 {{site.data.keyword.codeengineshort}} application deployments with private endpoints are reachable from any account within the private network and access to each instance requires authentication. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [allowlists](/docs/cloud-databases?topic=cloud-databases-allowlisting). 
 {: .important}
 
-## Enabling service endpoints
-{: #serviceendpt-enabling-service-endpoints}
-
-If you want to use connections over the public internet, you do not have to enable service endpoints on your {{site.data.keyword.cloud_notm}} account. If you want to enable private networking on your deployments, you need to follow the instructions in the Service Endpoint documentation under [Enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint).
-
-Currently, enabling service endpoints on your account is a manual step that is handled by support ticket. After you complete the [request](/docs/account?topic=account-vrf-service-endpoint#service-endpoint), you can check on the status of the ticket by going to your [Support](https://cloud.ibm.com/unifiedsupport/cases/manage) page on {{site.data.keyword.cloud_notm}}
 
 ## Managing {{site.data.keyword.codeengineshort}} resources securely by using service endpoints
 {: #serviceendpt-ce-manageresources}
@@ -170,13 +164,3 @@ Currently, enabling service endpoints on your account is a manual step that is h
         http://myfunction.1abc23def19.private.us-south.codeengine.appdomain.cloud
         ```
         {: screen}
-
-
-
-
-
-
-
-
-
-
