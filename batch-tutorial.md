@@ -82,10 +82,6 @@ After you submit your job, the results of the specific job run are available in 
 
 If any of the instances of your job failed to run, you can take the following actions:
 
-
-
-
-
 1. Click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The **Array indices** field automatically lists the indices of the failed job run instances.
 
 2. Click **Submit job** to submit the job for the failed indices.
