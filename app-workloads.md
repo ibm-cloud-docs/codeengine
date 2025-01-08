@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-16"
+  years: 2020, 2025
+lastupdated: "2025-01-07"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -16,7 +16,7 @@ subcollection: codeengine
 {: #ceapplications}
 
 
-{{site.data.keyword.codeenginefull}} is designed to address the needs of developers who want their code to run. {{site.data.keyword.codeengineshort}} abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code. Developers can deploy and scale their applications, which are written in any framework or language, by delegating the complexity of building and managing their workloads to {{site.data.keyword.codeengineshort}}. Learn about working with applications in {{site.data.keyword.codeenginefull}}.
+{{site.data.keyword.codeenginefull}} is designed to address the needs of developers who want their code to run. {{site.data.keyword.codeengineshort}} abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code. Developers can deploy and scale their applications, which are written in any framework or language, by delegating the complexity of building and managing their workloads to {{site.data.keyword.codeengineshort}}. Learn about working with applications in {{site.data.keyword.codeengineshort}}.
 {: shortdesc}
 
 ## What are application workloads?

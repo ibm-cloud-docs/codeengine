@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-16"
+  years: 2020, 2025
+lastupdated: "2025-01-08"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -43,7 +43,23 @@ When you create a job, you can specify workload configuration information that i
 
 When you submit a batch job, it runs to completion. Typically, batch jobs retrieve input data, do computational work, and store the results in persistent data stores. When the batch job is completed, resources that are used to run the job are removed and no cost is incurred for any stand-by resources.
 
+### What are job arrays and job array statuses?
+{: #batchjob-jobarray}
 
+The job array specification is part of the job and the job run configuration. A job array has two functions:
+
+- It determines the number of concurrent instances that are started for the job run.
+- It allows user code to determine which part of the work each instance should perform based on the individual array index provided to it.
+
+Specify a job array by either array size or by a set of array indexes:
+
+- If you specify an array size with a value of value _n_, then the number of instances that are started for the job run is _n_. Each instance is provided an array index (either 0, 1, 2, and so on, until _n_-1), using the `JOB_INDEX` environment variable. The `JOB_ARRAY_SIZE` environment variable is set to _n_ unless you specify a particular value for it.
+
+- If you specify a set of one or more array indexes, then the number of instances that are started is the number of indexes. Each instance is provided with one of the specified indexes by using the `JOB_INDEX` environment variable. The `JOB_ARRAY_SIZE` environment variable is set to the number of specified indexes unless you specify a particular value for it.
+
+The `JOB_ARRAY_SIZE` environment variable is also available for user code and is, by default, set to the number of indexes.
+
+If an instance finishes with a successful return code, then the status of the associated array index changes to completed. Otherwise, {{site.data.keyword.codeengineshort}} starts a new instance for the same index, if the configured number of retries has not yet exceeded. If an instance fails, and no more retries are allowed, the associated array index changes its status to failed.
 
 ## How do jobs compare to applications and functions?
 {: #batchjob-compare}
