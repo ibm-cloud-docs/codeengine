@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-12-17"
+  years: 2025
+lastupdated: "2025-01-08"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -80,6 +80,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [What are batch job workloads?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-workloads)
 
     * [What is the lifecycle of a batch job?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-lifecycle)
+
+    * [What are job arrays and job array statuses?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-jobarray)
 
 * [How do jobs compare to applications and functions?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-compare)
 
