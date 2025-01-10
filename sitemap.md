@@ -140,7 +140,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [January 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january25)
 
-    * CLI version 1.50.9 released
+    * [10 January 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january1025)
+
+        * Terraform support for {{site.data.keyword.codeengineshort}} allowed outbound destinations is available
+
+        * CLI version 1.50.9 released
 
 * [December 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-december24)
 

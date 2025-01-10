@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 ## January 2025
 {: #codeengine-january25}
 
+### 10 January 2025
+{: #codeengine-january1025}
+{: release-note}
+
+Terraform support for {{site.data.keyword.codeengineshort}} allowed outbound destinations is available
+:   See [Setting up Terraform for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-terraform-setup-ce).
+
 CLI version 1.50.9 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 

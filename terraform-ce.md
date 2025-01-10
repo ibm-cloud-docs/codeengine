@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-10"
+  years: 2023, 2025
+lastupdated: "2025-01-10"
 
 
 subcollection: codeengine
@@ -185,6 +185,7 @@ Now that you successfully created your first {{site.data.keyword.codeengineshort
 ### Resources 
 {: #terraform-supported-resources}
 
+* [`ibm_code_engine_allowed_outbound_destination`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_allowed_outbound_destination){: external}
 * [`ibm_code_engine_app`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_app){: external}
 * [`ibm_code_engine_binding`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_binding){: external}
 * [`ibm_code_engine_build`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_build){: external}
@@ -198,6 +199,7 @@ Now that you successfully created your first {{site.data.keyword.codeengineshort
 ### Data Sources
 {: #terraform-supported-data-sources}
 
+* [`ibm_code_engine_allowed_outbound_destination`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_allowed_outbound_destination){: external}
 * [`ibm_code_engine_app`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_app){: external}
 * [`ibm_code_engine_binding`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_binding){: external}
 * [`ibm_code_engine_build`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_build){: external}
