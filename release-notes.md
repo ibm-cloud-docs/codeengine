@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-10"
+lastupdated: "2025-01-16"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## January 2025
 {: #codeengine-january25}
+
+### 16 January 2025
+{: #codeengine-january1625}
+{: release-note}
+
+Updated SDK versions by adding jobrun index details property to the existing jobrun status_details property
+:   - See [Go](https://github.com/IBM/code-engine-go-sdk){: external} version 4.18.0
+    - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 4.17.0
+    - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 4.19.0
+    - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 4.9.0
 
 ### 10 January 2025
 {: #codeengine-january1025}

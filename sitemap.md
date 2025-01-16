@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-10"
+lastupdated: "2025-01-16"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [January 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january25)
+
+    * [16 January 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january1625)
+
+        * Updated SDK versions by adding jobrun index details property to the existing jobrun status_details property
 
     * [10 January 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january1025)
 
@@ -4043,6 +4047,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [16 January 2025](/docs/codeengine?topic=codeengine-api-changelog#16-january-2025)
 
 * [21 November 2024](/docs/codeengine?topic=codeengine-api-changelog#21-november-2024)
 
