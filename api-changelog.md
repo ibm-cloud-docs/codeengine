@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-11-21"
+  years: 2022, 2025
+lastupdated: "2025-01-16"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -35,6 +35,12 @@ The following table shows the service behavior changes for each version date. Sw
 |`2022-12-09`| Version 2.0.0 |
 |`2021-03-31`| Version 1.0.0  |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
+
+## 16 January 2025
+{: #16-january-2025}
+
+Added jobrun `indices_details` property to the existing jobrun `status_details` property.
+:   - See [Get a job run API](https://cloud.ibm.com/apidocs/codeengine/v2#get-job-run){: external}.
 
 ## 21 November 2024
 {: #21-november-2024}
