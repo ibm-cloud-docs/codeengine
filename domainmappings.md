@@ -27,7 +27,7 @@ To work with custom domain mappings in {{site.data.keyword.codeengineshort}}, co
 1. Review the [Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}}](#considerations-custom-domain).
 2. [Obtain your custom domain from a domain registrar](#prepare-custom-domain) (*outside of {{site.data.keyword.codeengineshort}}*).
 3. Configure a custom domain mapping in {{site.data.keyword.codeengineshort}} for your [application](/docs/codeengine?topic=codeengine-app-domainmapping) or [function](/docs/codeengine?topic=codeengine-fun-domainmapping) (*from the {{site.data.keyword.codeengineshort}} console or CLI*).
-4. Complete the custom domain configuration with your domain registrar. (*outside of {{site.data.keyword.codeengineshort}}*)
+4. Complete the custom domain configuration with your domain registrar (*outside of {{site.data.keyword.codeengineshort}}*).
 
 After you complete the custom domain setup with your domain registrar, and you configure a domain mapping for your application or function in {{site.data.keyword.codeengineshort}}, test the domain mapping.
 
@@ -38,7 +38,7 @@ In {{site.data.keyword.codeengineshort}}, you can [view](#view-domain-mapping), 
 
 Before you implement custom domain mappings in {{site.data.keyword.codeengineshort}}, be aware of the following considerations:
 
-* Use only custom domain mappings for domains that are protected with a SSL/TLS certificate, which a public, trusted CA signs.
+* Use only custom domain mappings for domains that are protected with a SSL/TLS certificate, which a public, trusted certificate authority (CA) signs.
 * You can define custom domain mappings that point to public domain names.
 * If your domain name can be resolved only by a nonpublic domain name system (DNS), provide a certificate that lists the domain name and is signed by a public, trusted CA.
 * Provide the *entire* certificate chain, starting with the certificate that corresponds to the custom domain, followed by all intermediate certificates up to the root certificate.
@@ -54,11 +54,11 @@ Before you configure custom domain mappings in {{site.data.keyword.codeenginesho
 1. From a domain registrar, obtain your custom domain; for example, `www.example.com`.
 2. Obtain your SSL/TLS *certificate* for your custom domain:
     * You can create a certificate that is not self-certified, by using the [Let's Encrypt](https://letsencrypt.org/){: external} service and [Certbot](https://certbot.eff.org/){: external}. If the custom domain is within your control and you want to quickly create a certificate, you can use Certbot and the Let's Encrypt services to obtain a certificate.
-    * You can obtain a certificate that is your trusted, public CA certifies. This type of digital certificate is used to establish communication privacy between a server and a client. Certificates contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate.
+    * You can obtain a certificate that is trusted and signed. This type of digital certificate is used to establish communication privacy between a server and a client. Certificates contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate.
 
-    You can obtain your certificate and key from your CA. Obtain a signed SSL/TLS *certificate* for your custom domain. For security reasons, {{site.data.keyword.codeengineshort}} supports only custom domain mappings that are configured with a TLS/SSL certificate that is signed by a public, trusted CA.
+        You can obtain your certificate and key from your CA. Obtain a signed SSL/TLS *certificate* for your custom domain. For security reasons, {{site.data.keyword.codeengineshort}} supports only custom domain mappings that are configured with a TLS/SSL certificate that is signed by a public, trusted CA.
 
-    
+        
 
 ### How can I use Certbot and the Let's Encrypt service for my custom domain?
 {: #prepare-custom-domain-cert}
