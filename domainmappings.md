@@ -54,7 +54,7 @@ Before you configure custom domain mappings in {{site.data.keyword.codeenginesho
 1. From a domain registrar, obtain your custom domain; for example, `www.example.com`.
 2. Obtain your SSL/TLS *certificate* for your custom domain:
     * You can create a certificate that is not self-certified, by using the [Let's Encrypt](https://letsencrypt.org/){: external} service and [Certbot](https://certbot.eff.org/){: external}. If the custom domain is within your control and you want to quickly create a certificate, you can use Certbot and the Let's Encrypt services to obtain a certificate.
-    * You can obtain a certificate that is trusted and signed. This type of digital certificate is used to establish communication privacy between a server and a client. Certificates contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate.
+    * You can obtain a signed certificate from a trusted authority. This type of digital certificate is used to establish communication privacy between a server and a client. These certificates contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate.
 
         You can obtain your certificate and key from your CA. Obtain a signed SSL/TLS *certificate* for your custom domain. For security reasons, {{site.data.keyword.codeengineshort}} supports only custom domain mappings that are configured with a TLS/SSL certificate that is signed by a public, trusted CA.
 
