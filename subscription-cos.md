@@ -310,7 +310,7 @@ Complete the following steps to create or update an {{site.data.keyword.cos_full
 
         
 
-    Click **Next** to proceed.
+        Click **Next** to proceed.
 
    4. For **Event consumer**, specify the job to receive events. Notice that you can choose from a list of defined jobs. For this example, use the `myjob` job that references the `icr.io/codeengine/codeengine` image. If your job does not exist, you can specify the name of your job and [create your job](/docs/codeengine?topic=codeengine-create-job#create-job-ui) after you create the {{site.data.keyword.cos_short}} subscription. Click **Next** to proceed.
    5. For **Summary**, review the settings for your {{site.data.keyword.cos_short}} event subscription and make changes if needed. When ready, click **Create** to create the {{site.data.keyword.cos_short}} subscription.
