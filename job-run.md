@@ -23,11 +23,9 @@ Each time your job runs, the latest version of your referenced container image i
 
 Submitted batch jobs are run in parallel, if possible. If the number or size of the submitted jobs exceeds the configured quota limits, such as maximum number of running instances, then {{site.data.keyword.codeengineshort}} queues the jobs and delays running them until enough jobs finish. For more information about batch jobs, see [Batch jobs workload](/docs/codeengine?topic=codeengine-cebatchjobs). For more information about quotas and limits for jobs, including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
-
 Job runs that are created by subscriptions are deleted after ten minutes. For more information about subscriptions, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
-{: note}
 
-
+{: note}>
 
 ## Running a job from the console
 {: #run-job-ui}
