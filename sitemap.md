@@ -4373,11 +4373,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Required access authorities to work with Knative API](/docs/codeengine?topic=codeengine-knative#knative-api)
 
 
-## FAQ for {{site.data.keyword.codeengineshort}}
-{: #sitemap_faq_for_}
+## FAQ
+{: #sitemap_faq}
 
 
-[FAQ for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#faqs)
+[FAQ](/docs/codeengine?topic=codeengine-faqs#faqs)
 
 * [What is {{site.data.keyword.codeenginefull_notm}}?](/docs/codeengine?topic=codeengine-faqs#what-is-codeengine)
 

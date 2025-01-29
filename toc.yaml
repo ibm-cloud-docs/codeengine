@@ -215,7 +215,8 @@ toc:
   - navgroup:
       id: help
       topics:
-      - faq.md
+      - topic: faq.md
+        navtitle: FAQ
       - learning-path.md
       - topicgroup:
           label: Troubleshooting
