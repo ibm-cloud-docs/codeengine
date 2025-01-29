@@ -84,6 +84,8 @@ If any of the instances of your job failed to run, you can take the following ac
 
 1. Click **Rerun failed indexes** to run the job again for indexes that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indexes**. The **Array indexes** section automatically lists the indexes of the failed job run instances.
 
+
+
 2. Click **Submit job** to submit the job for the failed indexes.
 
 You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
