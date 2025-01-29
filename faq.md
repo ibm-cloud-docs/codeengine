@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-15"
+  years: 2020, 2025
+lastupdated: "2025-01-29"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -14,7 +14,7 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# FAQs
+# FAQ for {{site.data.keyword.codeengineshort}}
 {: #faqs}
 
 Answers to common questions about the {{site.data.keyword.codeenginefull}} service.

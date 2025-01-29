@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-28"
+lastupdated: "2025-01-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -4373,11 +4373,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Required access authorities to work with Knative API](/docs/codeengine?topic=codeengine-knative#knative-api)
 
 
-## FAQs
-{: #sitemap_faqs}
+## FAQ for {{site.data.keyword.codeengineshort}}
+{: #sitemap_faq_for_}
 
 
-[FAQs](/docs/codeengine?topic=codeengine-faqs#faqs)
+[FAQ for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#faqs)
 
 * [What is {{site.data.keyword.codeenginefull_notm}}?](/docs/codeengine?topic=codeengine-faqs#what-is-codeengine)
 
