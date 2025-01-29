@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-29"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -30,10 +30,11 @@ When the API is changed in a way that is not compatible with previous versions, 
 
 The following table shows the service behavior changes for each version date. Switching to a later version date activates all changes that are introduced in earlier versions.
 
-| Version date | Summary of changes |
-|---|---|
-|`2022-12-09`| Version 2.0.0 |
-|`2021-03-31`| Version 1.0.0  |
+| Version date | Version number | Summary of changes                                                                                                                                                                        |
+|---|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|`2024-05-13`| Version 2.1.0 | Environment variables defined and set by Code Engine are now split out from user-defined environment variables and are exposed as part of the `computed_env_variables` field in the API.  |
+|`2022-12-09`| Version 2.0.0 |                                                                                                                                                                                           |
+|`2021-03-31`| Version 1.0.0 |                                                                                                                                                                                           |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
 
 ## 16 January 2025

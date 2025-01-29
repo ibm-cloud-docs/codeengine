@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [January 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january25)
+
+    * [28 January 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january2825)
+
+        * CLI version 1.50.10 released
 
     * [16 January 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january1625)
 
@@ -3285,11 +3289,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Obtaining a custom domain and its TLS certificate and private key](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain)
 
-    * [How can I obtain a certificate for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert)
-
-    * [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis)
-
-    * [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cis)
+    * [How can I use Certbot and the Let's Encrypt service for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert)
 
     * [How do I obtain the CNAME record for a custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cname)
 
@@ -4373,11 +4373,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Required access authorities to work with Knative API](/docs/codeengine?topic=codeengine-knative#knative-api)
 
 
-## FAQs
-{: #sitemap_faqs}
+## FAQ
+{: #sitemap_faq}
 
 
-[FAQs](/docs/codeengine?topic=codeengine-faqs#faqs)
+[FAQ](/docs/codeengine?topic=codeengine-faqs#faqs)
 
 * [What is {{site.data.keyword.codeenginefull_notm}}?](/docs/codeengine?topic=codeengine-faqs#what-is-codeengine)
 
