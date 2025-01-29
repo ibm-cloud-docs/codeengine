@@ -25,7 +25,7 @@ Submitted batch jobs are run in parallel, if possible. If the number or size of 
 
 Job runs that are created by subscriptions are deleted after ten minutes. For more information about subscriptions, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
 
-{: note}>
+
 
 ## Running a job from the console
 {: #run-job-ui}
