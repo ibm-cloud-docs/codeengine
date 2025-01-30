@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-17"
+  years: 2020, 2025
+lastupdated: "2025-01-29"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -82,7 +82,9 @@ After you submit your job, the results of the specific job run are available in 
 
 If any of the instances of your job failed to run, you can take the following actions:
 
-1. Click **Rerun failed indexes** to run the job again for indexes that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indexes**. The **Array indexes** field automatically lists the indexes of the failed job run instances.
+1. Click **Rerun failed indexes** to run the job again for indexes that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indexes**. The **Array indexes** section automatically lists the indexes of the failed job run instances.
+
+
 
 2. Click **Submit job** to submit the job for the failed indexes.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-28"
+lastupdated: "2025-01-30"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -308,7 +308,11 @@ Complete the following steps to create or update an {{site.data.keyword.cos_full
    2. For **General**, provide a name for the {{site.data.keyword.cos_short}} subscription, for example, `mycos-job`. You can optionally provide event attributes. When the event consumer is a job, event attributes are available as environment variables. Click **Next** to proceed.
    3. For **Bucket event details**, select or type the name of an existing {{site.data.keyword.cos_short}} bucket, and specify the types of changes for your object where you want to trigger events.
 
-        
+        For **Object change type**, specify when to receive events for actions on your {{site.data.keyword.cos_short}} object; you can select either or both types of object changes:
+        * Use **Create and update** to receive an event whenever a new object is created or updated. For an updated object, the existing object in the selected bucket is reuploaded.
+        * Use **Delete** to receive an event whenever an existing object is removed from your bucket.
+
+        You can also optionally provide an object name prefix or suffix to filter objects in the bucket to trigger events for the subscription. Specify **Object name prefix** or **Object name suffix** values, to indicate strings that match  the beginning (prefix) or end (suffix) of the object names for which you want to receive events. The value limits the objects in your {{site.data.keyword.cos_short}} bucket that trigger events to the file names that start or end with the specified prefix or suffix. Do not use wildcard characters or regular expressions; specify only plain text for the prefix and suffix (for example, specify `abc`, not `*abc` to indicate all objects that start with `abc`). Addfitionally, file names include the file extension (for example, if you specify `json` as the suffix, then the event will be handled for files such as `abc.json`, but not for `abcjson.txt`).
 
         Click **Next** to proceed.
 

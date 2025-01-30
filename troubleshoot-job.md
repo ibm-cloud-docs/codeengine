@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-15"
+  years: 2020, 2025
+lastupdated: "2025-01-29"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -21,10 +21,10 @@ content-type: troubleshoot
 Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} jobs and runs of your job.
 {: shortdesc}
 
-## Job limits to consider 
+## Job limits to consider
 {: #ts-job-limits}
 
-The maximum number of jobs that you can have per project is 100. You are limited to a total of 100 job runs per project before you need to remove or clean up old ones. 
+The maximum number of jobs that you can have per project is 100. You are limited to a total of 100 job runs per project before you need to remove or clean up old ones.
 
 For more information about limits for jobs including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
@@ -76,31 +76,31 @@ Subscriptions (Kafka)                     0     100
 ```
 {: screen}
 
-## Getting logs for my jobs 
+## Getting logs for my jobs
 {: #ts-jobrun-gettinglogs}
 
-Logs can be helpful to troubleshoot problems when you run jobs. You can view job logs from the console or with the CLI. 
+Logs can be helpful to troubleshoot problems when you run jobs. You can view job logs from the console or with the CLI.
 {: shortdesc}
 
 When you view logs from the console, you must create an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} job. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your jobs. You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
-When working with the CLI, you can display logs of all the instances of your running job or display logs of a specific instance of your job. 
+When working with the CLI, you can display logs of all the instances of your running job or display logs of a specific instance of your job.
 
 1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all your defined job runs; for example,
 
     ```txt
-    ibmcloud ce jobrun list  
+    ibmcloud ce jobrun list
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to get the details of your job run, including the name of the instances for the job run; for example,
 
     ```txt
-    ibmcloud ce jobrun get --name myjobrun 
+    ibmcloud ce jobrun get --name myjobrun
     ```
     {: pre}
 
-    Example output 
+    Example output
 
     ```txt
     Getting jobrun 'myjobrun'...
@@ -156,16 +156,16 @@ When working with the CLI, you can display logs of all the instances of your run
     {: tip}
 
 
-3. Display the logs of instances of your job run. 
+3. Display the logs of instances of your job run.
 
     * To display the logs of a specific instance of your job run, use the [**`ibmcloud ce jobrun logs --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
 
         ```txt
         ibmcloud ce jobrun logs --instance  myjobrun-4-0
         ```
-        {: pre} 
+        {: pre}
 
-        Example output 
+        Example output
 
         ```txt
         Getting logs for job run instance 'myjobrun-4-0'...
@@ -179,11 +179,11 @@ When working with the CLI, you can display logs of all the instances of your run
     * To display the logs of all the instances of your job run, use the [**`ibmcloud ce jobrun logs --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
 
         ```txt
-        ibmcloud ce jobrun logs --jobrun myjobrun 
+        ibmcloud ce jobrun logs --jobrun myjobrun
         ```
-        {: pre} 
+        {: pre}
 
-        Example output 
+        Example output
 
         ```txt
         Getting logs for all instances of job run 'myjobrun'...
@@ -207,29 +207,29 @@ When working with the CLI, you can display logs of all the instances of your run
 
 For more information, see [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-joblog-cli).
 
-## Getting system event information for my jobs 
+## Getting system event information for my jobs
 {: #ts-job-gettingevent}
 
 System event information can be helpful to troubleshoot problems when you run jobs. You can view system event information with the CLI.
 {: shortdesc}
 
-You can display system events of all the instances of a job run or display system events of a specific instance of a job run. 
+You can display system events of all the instances of a job run or display system events of a specific instance of a job run.
 
 1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all your defined job runs; for example,
 
     ```txt
-    ibmcloud ce jobrun list  
+    ibmcloud ce jobrun list
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to get the details of your job run, including the name of the instances of the job run; for example,
 
     ```txt
-    ibmcloud ce jobrun get --name myjobrun 
+    ibmcloud ce jobrun get --name myjobrun
     ```
     {: pre}
 
-    Example output 
+    Example output
 
     ```txt
     Getting jobrun 'myjobrun'...
@@ -282,16 +282,16 @@ You can display system events of all the instances of a job run or display syste
     If you want more fine-grained details about your job run, use the `--o yaml` option with the **`jobrun get`** command; for example, `ibmcloud ce jobrun get --name myjobrun --o yaml`. This option is useful to show more detailed information in the CLI for the job run.
     {: tip}
 
-3. Display the system events of instances of your job run.  
+3. Display the system events of instances of your job run.
 
     * To display the events of a specific instance of your job run, use the [**`ibmcloud ce jobrun events --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
 
         ```txt
-        ibmcloud ce jobrun events --instance myjobrun-4-0 
+        ibmcloud ce jobrun events --instance myjobrun-4-0
         ```
-        {: pre} 
+        {: pre}
 
-        Example output 
+        Example output
 
         ```txt
         Getting events for job run instance 'myjobrun-4-0'...
@@ -310,11 +310,11 @@ You can display system events of all the instances of a job run or display syste
     * To display events of all the instances of your job run, use the [**`ibmcloud ce jobrun events --jobrun JUBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
 
         ```txt
-        ibmcloud ce jobrun events --jobrun myjobrun 
+        ibmcloud ce jobrun events --jobrun myjobrun
         ```
-        {: pre} 
+        {: pre}
 
-        Example output 
+        Example output
 
         ```txt
         Getting jobrun 'myjobrun'...
@@ -356,9 +356,11 @@ You can display system events of all the instances of a job run or display syste
         ```
         {: screen}
 
-## Verifying the container image reference for my job 
+
+
+## Verifying the container image reference for my job
 {: #ts-jobrun-verifyimage}
 
-When you work with {{site.data.keyword.codeengineshort}} jobs, you must specify a container image reference and a registry secret to access the image. For the job to work correctly, the image reference and its access properties must remain valid for the life of the job. 
+When you work with {{site.data.keyword.codeengineshort}} jobs, you must specify a container image reference and a registry secret to access the image. For the job to work correctly, the image reference and its access properties must remain valid for the life of the job.
 
 See [How can I verify my image reference](/docs/codeengine?topic=codeengine-ts-build-verify-image)?
