@@ -40,7 +40,8 @@ When you create a job, you can run it immediately. However, you can submit and r
 6. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page.
 7. If any of the instances of your job fail to run, troubleshoot the error, and then click **Rerun failed indexes** to run the job again for indexes that failed. From the "Submit job" pane, review and optionally change the configuration values. The **Array indexes** section automatically lists the indexes of the failed job run instances. After you review and optionally change configuration values, click **Submit job** to run your job.
 
-
+For troubleshotting common job run index errors, see [Understanding why job run indexes can fail](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-failure-messages)
+{: tip}
 
 You can also rerun existing job runs. To run a specific job run again, click the **Job runs** tab, and then click the name of the job run that you want to work with. Click **Rerun** to run this job run again.
 

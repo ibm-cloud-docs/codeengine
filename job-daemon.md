@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-30"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -54,7 +54,8 @@ This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https:
     1. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
     2. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. If any of the instances of your job failed to run, these instances are automatically retried indefinitely.
 
-      
+      For troubleshotting common job run index errors, see [Understanding why job run indexes can fail](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-failure-messages)
+      {: tip}
 
 4. (optional) View logs of the job run. From the console, you can [view job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) for your job runs. Notice in the log output for the `helloworld` sample, that the `JOB_MODE` environment variable displays the mode of the job.
 

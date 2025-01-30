@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-30"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -356,7 +356,23 @@ You can display system events of all the instances of a job run or display syste
         ```
         {: screen}
 
+## Understanding why job run indexes can fail
+{: #ts-job-failure-messages}
 
+When job run indexes fail in the console, you can look up the errors and reasoning to help troubleshoot problems, rectify the issues, and then rerun the job run indexes.
+
+To work with your jobs and job runs, from the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console, click the name of your project in the project list, and then click **Jobs**. From the **Jobs** tab, select a job. Click **Submit job**, and in the "Submit job" pane, click the **Submit job** button to see the job run instances. Incomplete job runs show as `Failed (<error>)` in the **Status** column. The following table explains the common job run index errors and actions to take:
+
+| Error | Explanation | Suggested user action |
+|-------|-------|-------|
+| `ContainerExitedCode` | A user error, which includes an exit code that is provided by the user workload. | Determine the reason for the exit code within your application and debug it. |
+| `ExceededEphemeralStorage` | The instance allocated more ephemeral storage within its container than is allowed. | Increase your resource's ephemeral storage. |
+| `ExecutableNotFound` | Unable to find the specified executable file within the container. The container cannot start without it. | Verify that the entry point that is specified within your container image is correct, and that the executable exists within the image. |
+| `MaxExecutionTimeExceeded` | The job run did not complete within the maximum execution time. If multiple instances were running, all instances that did not yet complete show this error. | Increase the job run timeout value. |
+|  `OOMKilled` | An out of memory error. The instance exceeded the allocated memory limit. | Increase your resource's CPU and memory. |
+{: caption="Error and reasons for failed job run indexes" caption-side="bottom"}
+
+After you address the errors, click **Rerun failed indexes** to run the job again for indexes that failed.
 
 ## Verifying the container image reference for my job
 {: #ts-jobrun-verifyimage}

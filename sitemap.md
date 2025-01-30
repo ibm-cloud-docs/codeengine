@@ -4628,6 +4628,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Getting system event information for my jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-gettingevent)
 
+* [Understanding why job run indexes can fail](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-failure-messages)
+
 * [Verifying the container image reference for my job](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-verifyimage)
 
 [Why can't I submit a job run with the CLI?](/docs/codeengine?topic=codeengine-ts-jobrun-submit-fails-cli#ts-jobrun-submit-fails-cli)
