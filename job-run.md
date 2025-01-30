@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-30"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -25,7 +25,7 @@ Submitted batch jobs are run in parallel, if possible. If the number or size of 
 
 Job runs that are created by subscriptions are deleted after ten minutes. For more information about subscriptions, see [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events).
 
-
+Job runs that complete are automatically deleted after one week.
 
 ## Running a job from the console
 {: #run-job-ui}

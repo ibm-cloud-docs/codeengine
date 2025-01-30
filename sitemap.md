@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-30"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2596,6 +2596,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [What if I want my job to run indefinitely?](/docs/codeengine?topic=codeengine-job-plan#job-indefinite)
 
 * [Considerations for job quotas](/docs/codeengine?topic=codeengine-job-plan#job-quotas)
+
+* [Cleaning up completed job runs](/docs/codeengine?topic=codeengine-job-plan#job-cleanup)
 
 * [Next steps](/docs/codeengine?topic=codeengine-job-plan#job-nextsteps)
 

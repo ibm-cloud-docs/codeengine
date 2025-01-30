@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-30"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -130,7 +130,10 @@ When you work with applications, functions, and batch jobs, these resources run 
 
 For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
+## Cleaning up completed job runs
+{: #job-cleanup}
 
+Job runs that complete are automatically deleted after one week.
 
 ## Next steps
 {: #job-nextsteps}
