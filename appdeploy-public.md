@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-05"
+lastupdated: "2025-02-07"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Deploying app workloads from images in a public registry
 {: #deploy-app}
 
-Deploy your app with {{site.data.keyword.codeengineshort}}. You can create an app from the console or [with the CLI](/docs/codeengine?topic=codeengine-deploy-app&interface=cli).
+Deploy your app with {{site.data.keyword.codeengineshort}}. You can create an app [from the console](/docs/codeengine?topic=codeengine-deploy-app&interface=ui) or [with the CLI](/docs/codeengine?topic=codeengine-deploy-app&interface=cli).
 {: shortdesc}
 
 ## Deploying an app from the console
