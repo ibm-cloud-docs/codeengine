@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-02-11"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3699,8 +3699,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Scenario 2: Using PromQL queries with {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-monitor-custom#custom-monitor-scenario2)
 
 
-## Connecting over private networks
-{: #sitemap_connecting_over_private_networks}
+## Connectivity over private networks
+{: #sitemap_connectivity_over_private_networks}
 
 
 [Using Virtual Private Endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-vpe#vpe)
