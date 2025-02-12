@@ -162,7 +162,7 @@ toc:
           - monitor.md
           - monitor-custom.md
       - topicgroup:
-          label: Connectivity over private networks
+          label: Connectivity
           topics:
           - virtualprivateendpt.md
           - serviceendpt.md
