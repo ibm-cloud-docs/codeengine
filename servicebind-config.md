@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-09"
+  years: 2020, 2025
+lastupdated: "2025-02-18"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project, integrating service with function in code engine
 
@@ -223,7 +223,7 @@ ibmcloud ce application create --name my-application --image icr.io/codeengine/h
 To create a function to use for these steps, run the following command.
 
 ```txt
-ibmcloud ce function create --name myfun --runtime nodejs-18 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs
+ibmcloud ce function create --name myfun --runtime nodejs-20 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs
 ```
 {: pre}
 

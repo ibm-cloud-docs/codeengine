@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-09"
+  years: 2023, 2025
+lastupdated: "2025-02-18"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -69,7 +69,7 @@ Before you begin
 The following example **`function create`** command creates the `myfun` function, which references code that is located in `https://github.com/IBM/CodeEngine`. This command automatically builds the code bundle and uploads it to an {{site.data.keyword.registrylong}} namespace in your account. The function references this built code bundle. By specifying the `--build-context-dir` option, the build uses the source in the `helloworld-samples/function-nodejs` directory.   
 
 ```txt
-ibmcloud ce function create --name myfun --runtime nodejs-18 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs
+ibmcloud ce function create --name myfun --runtime nodejs-20 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs
 ```
 {: pre}
 
@@ -133,7 +133,7 @@ Resources:
 Build Information:    
   Build Run Name:     myfun-run-230111-111212718  
   Build Type:         git  
-  Build Strategy:     codebundle-nodejs-18  
+  Build Strategy:     codebundle-nodejs-20  
   Timeout:            600  
   Source:             https://github.com/IBM/CodeEngine  
   Context Directory:  /helloworld-samples/function-nodejs    
@@ -144,7 +144,7 @@ Build Information:
   Run 'ibmcloud ce buildrun get -n myfun-run-230111-111212718' for details.  
 
 Function Code:    
-  Runtime:        nodejs-18 (managed)  
+  Runtime:        nodejs-20 (managed)  
   Bundle Secret:  ce-auto-icr-us-south  
   Code Bundle:    cr://icr.io/ce--abcde-glxo4kabcde/function-myfun:230111-1532-vwo4o 
   Main:           main() 
@@ -211,7 +211,7 @@ Create a function that includes a dependency for a specific Node.js module by cr
 3. Create your files as a function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option. The following example pulls the files from the `https://github.com/IBM/CodeEngine` public repository.
   
     ```sh
-    ibmcloud ce fn create -n nodelorem -runtime nodejs-18 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-codebundle-nodejs/
+    ibmcloud ce fn create -n nodelorem -runtime nodejs-20 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-codebundle-nodejs/
     ```
     {: pre}
   
