@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-18"
+lastupdated: "2025-02-20"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## February 2025
 {: #codeengine-february25}
+
+### 20 February 2025
+{: #codeengine-february2025}
+{: release-note}
+
+CLI version 1.51.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 01 February 2025
 {: #codeengine-february0125}
