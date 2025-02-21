@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-02-21"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -36,6 +36,16 @@ The following table shows the service behavior changes for each version date. Sw
 |`2022-12-09`| Version 2.0.0 |                                                                                                                                                                                           |
 |`2021-03-31`| Version 1.0.0 |                                                                                                                                                                                           |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
+
+## 21 Feruary 2025
+{: #21-february-2025}
+
+Added support for `run_build_params` property for build and buildrun.
+:   - See [Create a build API](https://cloud.ibm.com/apidocs/codeengine/v2#create-build){: external}.
+:   - See [Get a build API](https://cloud.ibm.com/apidocs/codeengine/v2#get-build){: external}.
+:   - See [Update a build API](https://cloud.ibm.com/apidocs/codeengine/v2#update-build){: external}.
+:   - See [Create a build run API](https://cloud.ibm.com/apidocs/codeengine/v2#create-build-run){: external}.
+:   - See [Get a build run API](https://cloud.ibm.com/apidocs/codeengine/v2#get-build-run){: external}.
 
 ## 16 January 2025
 {: #16-january-2025}
