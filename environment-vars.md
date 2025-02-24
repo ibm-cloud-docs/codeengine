@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-05-24"
+  years: 2022, 2025
+lastupdated: "2025-02-18"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -228,7 +228,7 @@ Set and update environment variables for your function as follows.
 
 
     ```txt
-    ibmcloud ce function create --name myfunction --runtime nodejs-18 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs  --env envA=A
+    ibmcloud ce function create --name myfunction --runtime nodejs-20 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs  --env envA=A
     ```
     {: pre}
 

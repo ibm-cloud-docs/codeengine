@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-05-07"
+  years: 2023, 2025
+lastupdated: "2025-02-18"
 
 keywords: functions in code engine, function workloads, function inline
 
@@ -89,7 +89,7 @@ module.exports.main = main;
 Create your function and include the code in the command. For example, use the [**`ibmcloud ce function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command to create the `myhellofun` function.
 
 ```txt
-ibmcloud ce fn create --name myhellofun --inline-code main.js --runtime nodejs-18
+ibmcloud ce fn create --name myhellofun --inline-code main.js --runtime nodejs-20
 ```
 {: pre}
 

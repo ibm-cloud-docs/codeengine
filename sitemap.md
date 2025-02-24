@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-02-24"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -137,6 +137,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [February 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february25)
+
+    * [20 February 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february2025)
+
+        * CLI version 1.51.0 released
+
+    * [01 February 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february0125)
+
+        * Automatic deletion of completed jobs and build runs
 
 * [January 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january25)
 
@@ -3699,8 +3709,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Scenario 2: Using PromQL queries with {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-monitor-custom#custom-monitor-scenario2)
 
 
-## Connecting over private networks
-{: #sitemap_connecting_over_private_networks}
+## Connectivity
+{: #sitemap_connectivity}
 
 
 [Using Virtual Private Endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-vpe#vpe)
@@ -3722,6 +3732,26 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Accessing your app securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-app)
 
 * [Accessing your function securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-fun)
+
+[Outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound#connectivity-outbound)
+
+* [Working with allowed destination IP address ranges by using the console](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#working-with-allowed-destination-ui)
+
+    * [Adding an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#add-allowed-destination-ui)
+
+    * [Updating an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#update-allowed-destination-ui)
+
+    * [Deleting an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#delete-allowed-destination-ui)
+
+* [Working with allowed destination IP address ranges by using the CLI](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#working-with-allowed-destination-cli)
+
+    * [Adding an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#add-allowed-destination-cli)
+
+    * [Showing existing allowed destination IP address ranges for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#show-allowed-destination-cli)
+
+    * [Updating an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#update-allowed-destination-cli)
+
+    * [Deleting an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#delete-allowed-destination-cli)
 
 
 ## Enhancing security for Code Engine
@@ -4049,6 +4079,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [21 Feruary 2025](/docs/codeengine?topic=codeengine-api-changelog#21-february-2025)
 
 * [16 January 2025](/docs/codeengine?topic=codeengine-api-changelog#16-january-2025)
 

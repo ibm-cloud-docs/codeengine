@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-14"
+  years: 2025
+lastupdated: "2025-02-18"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2559,7 +2559,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 {: #function-create-example}
 
 ```txt
-ibmcloud ce fn create --name myfunction --build-source main.js --runtime nodejs-18
+ibmcloud ce fn create --name myfunction --build-source main.js --runtime nodejs-20
 ```
 {: pre}
 
@@ -2691,7 +2691,7 @@ Resources:
 Build Information:    
   Build Run Name:     myfunction-run-111111-12345678 
   Build Type:         local  
-  Build Strategy:     codebundle-nodejs-18  
+  Build Strategy:     codebundle-nodejs-20  
   Timeout:            600  
   Source:             main.js  
                       
@@ -2701,7 +2701,7 @@ Build Information:
   Run 'ibmcloud ce buildrun get -n myfunction-run-111111-12345678' for details.  
 
 Function Code:    
-  Runtime:        nodejs-18 (managed)  
+  Runtime:        nodejs-20 (managed)  
   Bundle Secret:  ce-auto-icr-private-us-south  
   Code Bundle:    cr://icr.io/ce--1a1a1-11c22def3rhz/function-myfunction:12345678-1111-dexla 
   Main:           main()
@@ -2790,7 +2790,7 @@ ibmcloud ce fn runtimes
 
 ```txt
 Name         ID           Family  Default  Optimized  
-Node.js 18   nodejs-18    nodejs  true     true  
+Node.js 20   nodejs-20    nodejs  true     true  
 Python 3.11  python-3.11  python  true     true 
 ```
 {: screen}
@@ -2965,7 +2965,7 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 {: #function-update-example}
 
 ```txt
-ibmcloud ce fn update --name myfunction --runtime nodejs-18 --build-source main.js
+ibmcloud ce fn update --name myfunction --runtime nodejs-20 --build-source main.js
 ```
 {: pre}
 
