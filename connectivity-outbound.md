@@ -65,7 +65,7 @@ When you update the outbound connectivity rules, note:
 
 * Specifying the IP address range `0.0.0.0/0` removes all existing rules and opens up full connectivity.
 
-* Even after you restrict outbound connectivity rules, it can take some time for your workload to pick up the rules. For example, if the HTTP client that is used in your code establishes a connection before you update the outbound connectivity rule, it can open a connection to that endpoint. To make sure that your outbound connectivity rules are applied immediately, reset all connections. You can reset by redeploying your workloads or by handling such situations in your code.
+* After you restrict outbound connectivity rules, it can take some time for your workload to pick up the rules. For example, if the HTTP client that is used in your code establishes a connection before you update the outbound connectivity rule, it can open a connection to that endpoint. To make sure that your outbound connectivity rules are applied immediately, reset all connections. You can reset by redeploying your workloads or by handling such situations in your code.
 
 * After you restrict outbound connections from your {{site.data.keyword.codeengineshort}} project, you can see unintended side effects such as failing build runs because no external requests can be made.
 
