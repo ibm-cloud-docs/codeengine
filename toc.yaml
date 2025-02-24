@@ -166,6 +166,7 @@ toc:
           topics:
           - virtualprivateendpt.md
           - serviceendpt.md
+          - connectivity-outbound.md
       - topicgroup:
           label: Enhancing security for Code Engine
           topics:
