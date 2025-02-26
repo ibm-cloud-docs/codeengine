@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-26"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## February 2025
 {: #codeengine-february25}
+
+### 25 February 2025
+{: #codeengine-february2525}
+{: release-note}
+
+Added support for `run_build_params` property for builds and build runs.
+:   - See [Go](https://github.com/IBM/code-engine-go-sdk){: external} version 4.23.1
+    - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 4.22.1
+    - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 4.24.0
+    - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 4.14.1
 
 ### 20 February 2025
 {: #codeengine-february2025}
