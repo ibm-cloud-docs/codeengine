@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-02-28"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -126,6 +126,8 @@ No, {{site.data.keyword.codeengineshort}} does not generate or provide an OpenAP
 {: support}
 
 For the latest service level agreement terms, see the [terms of service](/docs/overview?topic=overview-terms).
+
+
 
 ## How can I give feedback?
 {: #give-feedback}

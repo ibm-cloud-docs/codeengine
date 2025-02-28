@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-12-16"
+lastupdated: "2025-02-28"
 
 keywords: code engine, data portability
 
@@ -37,7 +37,7 @@ The customer is responsible for the use of the exported data and configuration f
 
 
 
-For more information about your responsibilities for {{site.data.keyword.codeengineshort}}, see [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce).
+For more information about your responsibilities for {{site.data.keyword.codeengineshort}}, see [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce). 
 
 ## Data export procedures
 {: #data-portability-procedures}
