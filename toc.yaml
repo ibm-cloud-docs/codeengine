@@ -305,7 +305,6 @@ toc:
               topics:
               - troubleshoot-terraform.md
               - ts-terraform-envars.md
-
           - topicgroup:
               label: Troubleshooting - other
               topics:
