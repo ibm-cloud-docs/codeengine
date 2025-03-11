@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-03-11"
 
 keywords: connectivity, outbound connections
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Outbound connectivity in {{site.data.keyword.codeengineshort}}
+# Working with outbound connectivity in {{site.data.keyword.codeengineshort}}
 {: #connectivity-outbound}
 
 The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects by using allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
@@ -30,7 +30,7 @@ Your use case can determine your outbound connection specifications. Typical use
 
 You can create outbound connections by using the console or the CLI.
 
-## Working with allowed destination IP address ranges by using the console
+## Managing allowed destination IP address ranges by using the console
 {: #working-with-allowed-destination-ui}
 {: ui}
 
@@ -84,7 +84,7 @@ Deleting allowed destination IP address ranges blocks outbound traffic for {{sit
 2. Go to the row with the allowed destination IP address range that you want to remove and click the delete (trash can) icon.
 3. Confirm the deletion when prompted.
 
-## Working with allowed destination IP address ranges by using the CLI
+## Managing allowed destination IP address ranges by using the CLI
 {: #working-with-allowed-destination-cli}
 {: cli}
 
@@ -128,7 +128,7 @@ You can create allowed destination IP address ranges to limit where your workloa
 To show a specific allowed destination IP address range, specify the CIDR name. For example:
 
  ```txt
-ibmcloud ce ibmcloud ce connectivity outbound get --cidr-name mycidr
+ibmcloud ce connectivity outbound get --cidr-name mycidr
 ```
 {: pre}
 

@@ -3743,9 +3743,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Accessing your function securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-fun)
 
-[Outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound#connectivity-outbound)
+[Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound#connectivity-outbound)
 
-* [Working with allowed destination IP address ranges by using the console](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#working-with-allowed-destination-ui)
+* [Managing allowed destination IP address ranges by using the console](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#working-with-allowed-destination-ui)
 
     * [Adding an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#add-allowed-destination-ui)
 
@@ -3753,7 +3753,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Deleting an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#delete-allowed-destination-ui)
 
-* [Working with allowed destination IP address ranges by using the CLI](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#working-with-allowed-destination-cli)
+* [Managing allowed destination IP address ranges by using the CLI](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#working-with-allowed-destination-cli)
 
     * [Adding an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#add-allowed-destination-cli)
 
