@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-14"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,23 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month.
 {: shortdesc}
+
+## March 2025
+{: #codeengine-march25}
+
+### 13 March 2025
+{: #codeengine-march1325}
+{: release-note}
+
+CLI version 1.51.3 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+### 05 March 2025
+{: #codeengine-march0525}
+{: release-note}
+
+CLI version 1.51.2 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 
 
@@ -50,9 +67,11 @@ Automatic deletion of completed jobs and build runs
 :   Starting on 1 February 2025, all job and build runs will be automatically deleted 7 days after completion, whether successful or not.
     To access job and build run details before deletion, use the Code Engine console, CLI or API:
        - [Retrieving Job Information](https://cloud.ibm.com/docs/codeengine?topic=codeengine-ts-jobrun-learnmore)
+
        - [Retrieving Build Information](https://cloud.ibm.com/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs)
+
     Make sure that you save any information that requires long-term storage to IBM Cloud Logs.
-    
+
 : Note: Job runs that are created by subscriptions will still be deleted 10 minutes after completion.
 
 
