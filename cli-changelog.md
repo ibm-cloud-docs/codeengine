@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-05"
+lastupdated: "2025-03-14"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.51.3 | 2025-03-13 | - Fixed various bugs. |
 | 1.51.2 | 2025-03-05 | - Fixed various bugs. |
 | 1.51.0 | 2025-02-20 | - Added support for the `connectivity outbound` command group. Use these CLI commands to manage allowed destination IP address ranges for outbound connections. See [Outbound connectivity in Code Engine](/docs/codeengine?topic=codeengine-connectivity-outbound). \n - Fixed various bugs. |
 | 1.50.10 | 2025-01-28 | - Fixed various bugs. |
