@@ -65,15 +65,12 @@ CLI version 1.51.0 released
 
 Automatic deletion of completed jobs and build runs
 :   Starting on 1 February 2025, all job and build runs will be automatically deleted 7 days after completion, whether successful or not.
-    To access job and build run details before deletion, use the Code Engine console, CLI or API:
-       - [Retrieving Job Information](https://cloud.ibm.com/docs/codeengine?topic=codeengine-ts-jobrun-learnmore)
+:   To access job and build run details before deletion, use the Code Engine console, CLI or API:
+    - [Retrieving Job Information](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore)
+    - [Retrieving Build Information](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs)
 
-       - [Retrieving Build Information](https://cloud.ibm.com/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs)
-
-    Make sure that you save any information that requires long-term storage to IBM Cloud Logs.
-
-: Note: Job runs that are created by subscriptions will still be deleted 10 minutes after completion.
-
+:   Make sure that you save any information that requires long-term storage to IBM Cloud Logs.
+:   Note: Job runs that are created by subscriptions will still be deleted 10 minutes after completion.
 
 ## January 2025
 {: #codeengine-january25}
