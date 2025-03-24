@@ -301,11 +301,6 @@ toc:
               - ts-toolchain-buildrun.md
               - ts-toolchain-size.md
           - topicgroup:
-              label: Troubleshooting Terraform
-              topics:
-              - troubleshoot-terraform.md
-              - ts-terraform-envars.md
-          - topicgroup:
               label: Troubleshooting - other
               topics:
               - ts-other-econnreseterror.md

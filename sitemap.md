@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-14"
+lastupdated: "2025-03-24"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -4763,17 +4763,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why does my build run in my toolchain time out?](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain#ts-buildrun-timeout-toolchain)
 
 [Why is my toolchain package too large?](/docs/codeengine?topic=codeengine-ts-toolchain-size#ts-toolchain-size)
-
-
-### Troubleshooting Terraform
-{: #sitemap_troubleshooting_terraform}
-
-
-[Debugging Terraform](/docs/codeengine?topic=codeengine-troubleshoot-terraform#troubleshoot-terraform)
-
-* [More topics](/docs/codeengine?topic=codeengine-troubleshoot-terraform#ts-terraform-topics)
-
-[Why does Terraform show environment variables discrepancies during app or job creation?](/docs/codeengine?topic=codeengine-ts-terraform-environment-variables#ts-terraform-environment-variables)
 
 
 ### Troubleshooting - other
