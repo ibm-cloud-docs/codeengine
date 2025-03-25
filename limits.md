@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-17"
+  years: 2025
+lastupdated: "2025-03-25"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -101,6 +101,7 @@ The following table lists the limits for functions.
 | ---------------------- |  --------- |
 | Length of runtime | 120 seconds |
 | Memory | 48000 MB |
+| Size of request body and response body | 5 MB |
 | Code size  (inline)  | 100 KB, including base64 overhead |
 | Code size  (local source) | 200 MB compressed|
 | Code size  (API) | 100 KB, including base64 overhead |
