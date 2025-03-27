@@ -3178,6 +3178,23 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Unbinding a service instance with the CLI](/docs/codeengine?topic=codeengine-bind-services#unbind-cli)
 
 
+## Trusted profiles to access IBM Cloud services
+{: #sitemap_trusted_profiles_to_access_ibm_cloud_services}
+
+
+[Working with trusted profiles in {{site.data.keyword.codeengineshort}} to access {{site.data.keyword.cloud_notm}} services](/docs/codeengine?topic=codeengine-trusted-profiles#trusted-profiles)
+
+* [Configuring {{site.data.keyword.codeengineshort}} to support trusted profiles by using the CLI](/docs/codeengine?topic=codeengine-trusted-profiles&interface=cli#configuring-trusted-profiles-cli)
+
+    * [Configuring a {{site.data.keyword.codeengineshort}} application to use trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles&interface=cli#configuring-trusted-profiles-app-cli)
+
+    * [Configuring a {{site.data.keyword.codeengineshort}} job to use trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles&interface=cli#configuring-trusted-profiles-job-cli)
+
+    * [Configuring a {{site.data.keyword.codeengineshort}} function to use trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles&interface=cli#configuring-trusted-profiles-function-cli)
+
+[Enabling your component code to authenticate trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles-authentication-file#trusted-profiles-authentication-file)
+
+
 ## Accessing container registries
 {: #sitemap_accessing_container_registries}
 

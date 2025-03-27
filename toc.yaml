@@ -134,6 +134,11 @@ toc:
           - servicebind.md
           - servicebind-access.md
           - servicebind-config.md
+      - topicgroup:
+          label: Trusted profiles to access IBM Cloud services
+          topics:
+          - trusted-profiles.md
+          - trusted-profiles-authenticate-file.md
       - add-registry.md
       - plan-repo.md
       - dockerfiletips.md
