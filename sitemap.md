@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-24"
+lastupdated: "2025-03-27"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -132,13 +132,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [How can I get started with functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
 
 
-## Release notes for {{site.data.keyword.codeengineshort}}
-{: #sitemap_release_notes_for_}
+## Release notes
+{: #sitemap_release_notes}
 
 
-[Release notes for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+[Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [March 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-march25)
+
+    * [28 March 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-march2825)
+
+        * CLI version 1.52.0 released
 
     * [13 March 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-march1325)
 
@@ -3172,6 +3176,23 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Unbinding a service instance from the console](/docs/codeengine?topic=codeengine-bind-services#unbind-ui)
 
     * [Unbinding a service instance with the CLI](/docs/codeengine?topic=codeengine-bind-services#unbind-cli)
+
+
+## Trusted profiles to access IBM Cloud services
+{: #sitemap_trusted_profiles_to_access_ibm_cloud_services}
+
+
+[Working with trusted profiles in {{site.data.keyword.codeengineshort}} to access {{site.data.keyword.cloud_notm}} services](/docs/codeengine?topic=codeengine-trusted-profiles#trusted-profiles)
+
+* [Configuring {{site.data.keyword.codeengineshort}} to support trusted profiles by using the CLI](/docs/codeengine?topic=codeengine-trusted-profiles&interface=cli#configuring-trusted-profiles-cli)
+
+    * [Configuring a {{site.data.keyword.codeengineshort}} application to use trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles&interface=cli#configuring-trusted-profiles-app-cli)
+
+    * [Configuring a {{site.data.keyword.codeengineshort}} job to use trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles&interface=cli#configuring-trusted-profiles-job-cli)
+
+    * [Configuring a {{site.data.keyword.codeengineshort}} function to use trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles&interface=cli#configuring-trusted-profiles-function-cli)
+
+[Enabling your component code to authenticate trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles-authentication-file#trusted-profiles-authentication-file)
 
 
 ## Accessing container registries
