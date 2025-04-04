@@ -285,21 +285,6 @@ OK
 ## Next steps
 {: #domain-mappings-next}
 
-### Adding a DNS record in CIS to direct traffic to your {{site.data.keyword.codeengineshort}} application
-{: #adding-DNS-in-CIS}
-
-Update the DNS records to point to your {{site.data.keyword.codeengineshort}} project:
-
-1. On the CIS instance details page, go to **Reliability>DNS**. Scroll to **DNS records** and click **Add**.
-2. In the "Add record" pane:
-    * Select **CNAME** as the type.
-    * Set your subdomain; for example, `myapp`.
-    * Provide the CNAME target value that you previously copied, as the **Alias domain name**.
-    * Verify that the details output for the DNS record indicates that your domain mapping is an alias. For example, look for a message similar to: `myapp.example.com is an alias of custom.<id>.<region>.codeeng.appdomain.cloud`. Click **Add** to confirm adding the DNS record.
-
-    If you need to register multiple domains and subdomains, such as `example.com` and `www.example.com`, you must repeat the steps for each subdomain. You can consider creating a single certificate that covers more than one domain. However, you can use that single certificate only one time in a region. If you plan to use your custom domains in more than one project in a single region, keep them separate.
-    {: note}
-
 ### Otaining the CNAME record for a custom domain mapping
 {: #completing-custom-domain-cname}
 
@@ -311,7 +296,7 @@ To obtain the CNAME record from the {{site.data.keyword.codeengineshort}} consol
 
 From the **Update domain mappings** page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
 
-To obtain the CNAME record with the CLI, use the [**`ibmcloud ce domainmapping get`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-get) command. For example,
+To obtain the CNAME record with the CLI, use the [**`ibmcloud ce domainmapping get`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-get) command. For example:
 
 
 ```txt
@@ -335,5 +320,20 @@ Status:       ready
 {: screen}
 
 After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
+
+### Adding a DNS record in CIS to direct traffic to your {{site.data.keyword.codeengineshort}} application
+{: #adding-DNS-in-CIS}
+
+If you have a CIS instance to manage your custom domain, update the DNS records to point to your {{site.data.keyword.codeengineshort}} project, as follows. Note that for non-CIS domain registrars, the steps slightly are different, but the goal is the same: creating a DNS record with the **CNAME** type, that points to the {{site.data.keyword.codeengineshort}} projects CNAME endpoint:
+
+1. On the CIS instance details page, go to **Reliability>DNS**. Scroll to **DNS records** and click **Add**.
+2. In the "Add record" pane:
+    * Select **CNAME** as the type.
+    * Set your subdomain; for example, `myapp`.
+    * Provide the CNAME target value that you previously copied, as the **Alias domain name**.
+    * Verify that the details output for the DNS record indicates that your domain mapping is an alias. For example, look for a message similar to: `myapp.example.com is an alias of custom.<id>.<region>.codeeng.appdomain.cloud`. Click **Add** to confirm adding the DNS record.
+
+    If you need to register multiple domains and subdomains, such as `example.com` and `www.example.com`, you must repeat the steps for each subdomain. You can consider creating a single certificate that covers more than one domain. However, you can use that single certificate only one time in a region. If you plan to use your custom domains in more than one project in a single region, keep them separate.
+    {: note}
 
 You are now familiar with working with custom domain mappings, and you have obtained a custom domain with its TLS certificate and private key. You are ready to configure a custom domain mapping in {{site.data.keyword.codeengineshort}} for your [application](/docs/codeengine?topic=codeengine-app-domainmapping) or [function](/docs/codeengine?topic=codeengine-fun-domainmapping).

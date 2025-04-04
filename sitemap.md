@@ -3376,9 +3376,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings-next)
 
-    * [Adding a DNS record in CIS to direct traffic to your {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-domain-mappings#adding-DNS-in-CIS)
-
     * [Otaining the CNAME record for a custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cname)
+
+    * [Adding a DNS record in CIS to direct traffic to your {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-domain-mappings#adding-DNS-in-CIS)
 
 
 ## Subscribing to event producers
