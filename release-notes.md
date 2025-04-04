@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-04-04"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,25 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month.
 {: shortdesc}
+
+## April 2025
+{: #codeengine-april25}
+
+### 3 April 2025
+{: #codeengine-april0325}
+{: release-note}
+
+Added support for Trusted Profiles. See [Working with trusted profiles in Code Engine to access IBM Cloud services](/docs/codeengine?topic=codeengine-trusted-profiles).
+
+Updated API and SDKs. See [API change log](/docs/codeengine?topic=codeengine-api-changelog) for details.
+:   - Added the `run_compute_resource_token_enabled` property for app create, app update, job create, job update, function create, and function update. Use this property to enable or disable Trusted Profiles support for the selected resource. 
+    - Added support support for `hmac_auth` secret `format`.
+    - Replaced nodejs-18 runtime with nodejs-20.
+
+:   - See [Go](https://github.com/IBM/code-engine-go-sdk){: external} version 4.29.0
+    - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 4.27.1
+    - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 4.29.0
+    - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 4.19.0
 
 ## March 2025
 {: #codeengine-march25}

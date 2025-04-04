@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-11"
+lastupdated: "2025-04-01"
 
-keywords: connectivity, outbound connections
+keywords: connectivity, outbound connections, outbound connectivity
 
 subcollection: codeengine
 

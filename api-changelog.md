@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-02-21"
+lastupdated: "2025-04-04"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -35,9 +35,28 @@ The following table shows the service behavior changes for each version date. Sw
 |`2024-05-13`| Version 2.1.0 | Environment variables defined and set by Code Engine are now split out from user-defined environment variables and are exposed as part of the `computed_env_variables` field in the API.  |
 |`2022-12-09`| Version 2.0.0 |                                                                                                                                                                                           |
 |`2021-03-31`| Version 1.0.0 |                                                                                                                                                                                           |
-{: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
+{: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"}
 
-## 21 Feruary 2025
+## 3 April 2025
+{: #3-april-2025}
+
+Added support for HMAC auth secrets. Specify to create HMAC auth secrets with the `format` field and specify the details of HMAC auth secrets with the `hmac_auth` field.
+:   - See [Create a secret API](https://cloud.ibm.com/apidocs/codeengine/v2#create-secret){: external}.
+
+Added the `run_compute_resource_token_enabled` property for app create, app update, job create, job update, function create, and function update. Use this property to enable or disable Trusted Profiles support for the selected resource.
+:   - See [Create an app API](https://cloud.ibm.com/apidocs/codeengine/v2#create-app){: external}.
+:   - See [Update an app API](https://cloud.ibm.com/apidocs/codeengine/v2#update-app){: external}.
+:   - See [Create a job API](https://cloud.ibm.com/apidocs/codeengine/v2#create-job){: external}.
+:   - See [Update a job API](https://cloud.ibm.com/apidocs/codeengine/v2#update-job){: external}.
+:   - See [Create a function API](https://cloud.ibm.com/apidocs/codeengine/v2#create-function){: external}.
+:   - See [Update a function API](https://cloud.ibm.com/apidocs/codeengine/v2#update-function){: external}.
+
+Replaced nodejs-18 support with nodejs-20
+:   - See [List the function runtimes API](https://cloud.ibm.com/apidocs/codeengine/v2#list-function-runtimes){: external}.
+:   - See [Create a function API](https://cloud.ibm.com/apidocs/codeengine/v2#create-function){: external}.
+:   - See [Update a function API](https://cloud.ibm.com/apidocs/codeengine/v2#update-function){: external}.
+
+## 21 February 2025
 {: #21-february-2025}
 
 Added support for `run_build_params` property for build and buildrun.

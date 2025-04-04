@@ -170,17 +170,21 @@ toc:
       - topicgroup:
           label: Connectivity
           topics:
-          - virtualprivateendpt.md
           - serviceendpt.md
+          - virtualprivateendpt.md
           - connectivity-outbound.md
       - topicgroup:
           label: Enhancing security for Code Engine
           topics:
           - architecture-workload-isolation.md
+          - security.md
           - iam.md
           - data-security.md
-          - security.md
-          - cbr.md
+          - topicgroup:
+              label: Securing Code Engine resources with context-based restrictions
+              topics:
+              - navtitle: Protecting Code Engine resources
+                topic: cbr.md
           - ce-ipaddresses.md
   - navgroup:
       id: reference

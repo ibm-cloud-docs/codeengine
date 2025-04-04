@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-04-04"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -137,6 +137,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [April 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-april25)
+
+    * [3 April 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-april0325)
+
+        * Added support for Trusted Profiles. See [Working with trusted profiles in Code Engine to access IBM Cloud services](/docs/codeengine?topic=codeengine-trusted-profiles).
+
+        * Updated API and SDKs. See [API change log](/docs/codeengine?topic=codeengine-api-changelog) for details.
 
 * [March 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-march25)
 
@@ -3184,6 +3192,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Working with trusted profiles in {{site.data.keyword.codeengineshort}} to access {{site.data.keyword.cloud_notm}} services](/docs/codeengine?topic=codeengine-trusted-profiles#trusted-profiles)
 
+* [Configuring {{site.data.keyword.codeengineshort}} to support trusted profiles by using the console](/docs/codeengine?topic=codeengine-trusted-profiles&interface=ui#configuring-trusted-profiles-ui)
+
+    * [Configuring a {{site.data.keyword.codeengineshort}} application to use trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles&interface=ui#configuring-trusted-profiles-app-ui)
+
+    * [Configuring a {{site.data.keyword.codeengineshort}} job to use trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles&interface=ui#configuring-trusted-profiles-job-ui)
+
+    * [Configuring a {{site.data.keyword.codeengineshort}} function to use trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles&interface=ui#configuring-trusted-profiles-function-ui)
+
 * [Configuring {{site.data.keyword.codeengineshort}} to support trusted profiles by using the CLI](/docs/codeengine?topic=codeengine-trusted-profiles&interface=cli#configuring-trusted-profiles-cli)
 
     * [Configuring a {{site.data.keyword.codeengineshort}} application to use trusted profiles](/docs/codeengine?topic=codeengine-trusted-profiles&interface=cli#configuring-trusted-profiles-app-cli)
@@ -3748,14 +3764,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_connectivity}
 
 
-[Using Virtual Private Endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-vpe#vpe)
-
-* [Using your VPE to manage project resources securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-project)
-
-* [Using your VPE to access an app securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-app)
-
-* [Using your VPE to access a function securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-fun)
-
 [Using service endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt)
 
 * [Public endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-public-endpoints)
@@ -3767,6 +3775,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Accessing your app securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-app)
 
 * [Accessing your function securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-fun)
+
+[Using Virtual Private Endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-vpe#vpe)
+
+* [Using your VPE to manage project resources securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-project)
+
+* [Using your VPE to access an app securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-app)
+
+* [Using your VPE to access a function securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-fun)
 
 [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound#connectivity-outbound)
 
@@ -3797,6 +3813,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.codeengineshort}} workload isolation](/docs/codeengine?topic=codeengine-architecture#workload-isolation)
 
+[{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure#secure)
+
+* [Supported TLS versions and cipher suites](/docs/codeengine?topic=codeengine-secure#secure-tls)
+
+    * [TLS cipher suites](/docs/codeengine?topic=codeengine-secure#secure-cipher-suites)
+
+* [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos)
+
 [Managing user access](/docs/codeengine?topic=codeengine-iam#iam)
 
 * [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
@@ -3823,15 +3847,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete)
 
-[{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure#secure)
 
-* [Supported TLS versions and cipher suites](/docs/codeengine?topic=codeengine-secure#secure-tls)
+### Securing Code Engine resources with context-based restrictions
+{: #sitemap_securing_code_engine_resources_with_context-based_restrictions}
 
-    * [TLS cipher suites](/docs/codeengine?topic=codeengine-secure#secure-cipher-suites)
 
-* [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos)
-
-[Protecting {{site.data.keyword.codeengineshort}} resources with context-based restrictions](/docs/codeengine?topic=codeengine-cbr#cbr)
+[Protecting Code Engine resources](/docs/codeengine?topic=codeengine-cbr#cbr)
 
 [{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses#network-addresses)
 
@@ -4115,7 +4136,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
 
-* [21 Feruary 2025](/docs/codeengine?topic=codeengine-api-changelog#21-february-2025)
+* [3 April 2025](/docs/codeengine?topic=codeengine-api-changelog#3-april-2025)
+
+* [21 February 2025](/docs/codeengine?topic=codeengine-api-changelog#21-february-2025)
 
 * [16 January 2025](/docs/codeengine?topic=codeengine-api-changelog#16-january-2025)
 
