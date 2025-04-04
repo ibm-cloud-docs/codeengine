@@ -22,7 +22,6 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## April 2025
 {: #codeengine-april25}
-
 ### 3 April 2025
 {: #codeengine-april0325}
 {: release-note}
@@ -35,9 +34,9 @@ Updated API and SDKs. See [API change log](/docs/codeengine?topic=codeengine-api
     - Replaced nodejs-18 runtime with nodejs-20.
 
 :   - See [Go](https://github.com/IBM/code-engine-go-sdk){: external} version 4.29.0
-    - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 4.27.1
+
     - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 4.29.0
-    - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 4.19.0
+
 
 ## March 2025
 {: #codeengine-march25}
