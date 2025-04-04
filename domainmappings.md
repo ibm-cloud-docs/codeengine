@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-04-04"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, functions in code engine, function workloads in code engine, Function, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -128,46 +128,6 @@ If you like Certbot, please consider supporting our work by:
 Your certificate is ready.
 
 
-
-
-
-
-
-### How do I obtain the CNAME record for a custom domain mapping?
-{: #completing-custom-domain-cname}
-
-{{site.data.keyword.codeengineshort}} provides the CNAME target for your defined custom domain mapping.
-
-To obtain the CNAME record from the {{site.data.keyword.codeengineshort}} console, open your defined custom domain mapping and view the Update domain mapping page. Open the Update domain mapping page in one of the following ways:
-* From the Domain mappings table, click in the row of your defined custom domain.
-* Click the **Actions** icon ![Actions](../icons/action-menu-icon.svg "Actions") > **Edit** to edit the mapping.
-
-From the **Update domain mappings** page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
-
-To obtain the CNAME record with the CLI, use the [**`ibmcloud ce domainmapping get`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-get) command. For example,
-
-
-```txt
-ibmcloud ce domainmapping get --domain-name www.example.com
-```
-{: pre}
-
-Example output
-
-```txt
-Getting domain mapping 'www.example.com'...
-OK
-
-Domain Name:  www.example.com
-CNAME:        custom.abcdabcdabc.us-south.codeengine.appdomain.cloud
-Target Name:  myapp
-Target Type:  app
-TLS Secret:   mytlssecret
-Status:       ready
-```
-{: screen}
-
-After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
 
 ## Configuring custom domain mappings in {{site.data.keyword.codeengineshort}}
 {: #configure-domainmapping}
@@ -324,5 +284,56 @@ OK
 
 ## Next steps
 {: #domain-mappings-next}
+
+### Adding a DNS record in CIS to direct traffic to your {{site.data.keyword.codeengineshort}} application
+{: #adding-DNS-in-CIS}
+
+Update the DNS records to point to your {{site.data.keyword.codeengineshort}} project:
+
+1. On the CIS instance details page, go to **Reliability>DNS**. Scroll to **DNS records** and click **Add**.
+2. In the "Add record" pane:
+    * Select **CNAME** as the type.
+    * Set your subdomain; for example, `myapp`.
+    * Provide the CNAME target value that you previously copied, as the **Alias domain name**.
+    * Verify that the details output for the DNS record indicates that your domain mapping is an alias. For example, look for a message similar to: `myapp.example.com is an alias of custom.<id>.<region>.codeeng.appdomain.cloud`. Click **Add** to confirm adding the DNS record.
+
+    If you need to register multiple domains and subdomains, such as `example.com` and `www.example.com`, you must repeat the steps for each subdomain. You can consider creating a single certificate that covers more than one domain. However, you can use that single certificate only one time in a region. If you plan to use your custom domains in more than one project in a single region, keep them separate.
+    {: note}
+
+### Otaining the CNAME record for a custom domain mapping
+{: #completing-custom-domain-cname}
+
+{{site.data.keyword.codeengineshort}} provides the CNAME target for your defined custom domain mapping.
+
+To obtain the CNAME record from the {{site.data.keyword.codeengineshort}} console, open your defined custom domain mapping and view the Update domain mapping page. Open the Update domain mapping page in one of the following ways:
+* From the Domain mappings table, click in the row of your defined custom domain.
+* Click the **Actions** icon ![Actions](../icons/action-menu-icon.svg "Actions") > **Edit** to edit the mapping.
+
+From the **Update domain mappings** page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
+
+To obtain the CNAME record with the CLI, use the [**`ibmcloud ce domainmapping get`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-get) command. For example,
+
+
+```txt
+ibmcloud ce domainmapping get --domain-name www.example.com
+```
+{: pre}
+
+Example output
+
+```txt
+Getting domain mapping 'www.example.com'...
+OK
+
+Domain Name:  www.example.com
+CNAME:        custom.abcdabcdabc.us-south.codeengine.appdomain.cloud
+Target Name:  myapp
+Target Type:  app
+TLS Secret:   mytlssecret
+Status:       ready
+```
+{: screen}
+
+After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
 
 You are now familiar with working with custom domain mappings, and you have obtained a custom domain with its TLS certificate and private key. You are ready to configure a custom domain mapping in {{site.data.keyword.codeengineshort}} for your [application](/docs/codeengine?topic=codeengine-app-domainmapping) or [function](/docs/codeengine?topic=codeengine-fun-domainmapping).

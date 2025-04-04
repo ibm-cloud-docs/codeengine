@@ -3354,8 +3354,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [How can I use Certbot and the Let's Encrypt service for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert)
 
-    * [How do I obtain the CNAME record for a custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cname)
-
 * [Configuring custom domain mappings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-domain-mappings#configure-domainmapping)
 
 * [Viewing domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping)
@@ -3377,6 +3375,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-cli)
 
 * [Next steps](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings-next)
+
+    * [Adding a DNS record in CIS to direct traffic to your {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-domain-mappings#adding-DNS-in-CIS)
+
+    * [Otaining the CNAME record for a custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cname)
 
 
 ## Subscribing to event producers
