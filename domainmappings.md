@@ -285,7 +285,7 @@ OK
 ## Next steps
 {: #domain-mappings-next}
 
-### Otaining the CNAME record for a custom domain mapping
+### Obtaining the CNAME record for a custom domain mapping
 {: #completing-custom-domain-cname}
 
 {{site.data.keyword.codeengineshort}} provides the CNAME target for your defined custom domain mapping.
@@ -324,7 +324,7 @@ After you have the CNAME target, you are ready to add the CNAME record entry to 
 ### Adding a DNS record in CIS to direct traffic to your {{site.data.keyword.codeengineshort}} application
 {: #adding-DNS-in-CIS}
 
-If you have a CIS instance to manage your custom domain, update the DNS records to point to your {{site.data.keyword.codeengineshort}} project, as follows. Note that for non-CIS domain registrars, the steps slightly are different, but the goal is the same: creating a DNS record with the **CNAME** type, that points to the {{site.data.keyword.codeengineshort}} projects CNAME endpoint:
+If you have a CIS instance to manage your custom domain, update the DNS records to point to your {{site.data.keyword.codeengineshort}} project, as follows. Note that for non-CIS domain registrars, the steps differ, but the goal is the same: creating a DNS record with the **CNAME** type, that points to the {{site.data.keyword.codeengineshort}} projects CNAME endpoint:
 
 1. On the CIS instance details page, go to **Reliability>DNS**. Scroll to **DNS records** and click **Add**.
 2. In the "Add record" pane:
