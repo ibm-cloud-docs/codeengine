@@ -138,6 +138,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [April 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-april25)
+
     * [3 April 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-april0325)
 
         * Added support for Trusted Profiles. See [Working with trusted profiles in Code Engine to access IBM Cloud services](/docs/codeengine?topic=codeengine-trusted-profiles).
