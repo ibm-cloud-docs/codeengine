@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-04-05"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, functions in code engine, function workloads in code engine, Function, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -58,7 +58,7 @@ Before you configure custom domain mappings in {{site.data.keyword.codeenginesho
 
         You can obtain your certificate and key from your CA. Obtain a signed SSL/TLS *certificate* for your custom domain. For security reasons, {{site.data.keyword.codeengineshort}} supports only custom domain mappings that are configured with a TLS/SSL certificate that is signed by a public, trusted CA.
 
-        
+        You can also obtain your certificate and key from [{{site.data.keyword.cis_short}}](#prepare-custom-domain-cert-CIS) by ordering an origin certificate if your custom domain management has been delegated to CIS. Following this approach, you then apply the [End-to-End flexible TLS mode](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-flexible).
 
 ### How can I use Certbot and the Let's Encrypt service for my custom domain?
 {: #prepare-custom-domain-cert}
@@ -127,47 +127,27 @@ If you like Certbot, please consider supporting our work by:
 
 Your certificate is ready.
 
+### How can I use an origin certificate obtained from my CIS for for my custom domain?
+{: #prepare-custom-domain-cert-CIS}
+
+If you obtain your certificate and key from your public and trusted CA, then they are signed and secure. You work with your CA to obtain the signed SSL/TLS certificate for your custom domain.
+
+You can also use {{site.data.keyword.cis_short}} to order an origin certificate, and then configure CIS to forward the user IP addresses to your application or function according to this flow:
+
+1. Order your origin certificate:
+
+   1. In the {{site.data.keyword.cloud_notm}} console, go to [Resource list](/resources){: external}, and filter for your `Internet Services` instance. From the search results, click the name of the target instance to see its details page.
+   2. On the CIS instance details page, go to the Origin page (**Security>Origin**), and click **Order**.
+   3. In the "Order origin certificate" pane, keep all the defaults and enter the domain name with which you want to work. For example, `myapp.example.com`. Click **Order** to confirm.
+   4. Copy the **Origin certificate** and **Private key** values. You require this information when you map your domain.
+
+2. Configure and apply the [End-to-End flexible TLS mode](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-flexible).
+
+    The edge certificate is provided by CIS. The origin certificate is used to encrypt only traffic between CIS and the {{site.data.keyword.codeengineshort}} application or function.
 
 
 
-
-
-
-### How do I obtain the CNAME record for a custom domain mapping?
-{: #completing-custom-domain-cname}
-
-{{site.data.keyword.codeengineshort}} provides the CNAME target for your defined custom domain mapping.
-
-To obtain the CNAME record from the {{site.data.keyword.codeengineshort}} console, open your defined custom domain mapping and view the Update domain mapping page. Open the Update domain mapping page in one of the following ways:
-* From the Domain mappings table, click in the row of your defined custom domain.
-* Click the **Actions** icon ![Actions](../icons/action-menu-icon.svg "Actions") > **Edit** to edit the mapping.
-
-From the **Update domain mappings** page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
-
-To obtain the CNAME record with the CLI, use the [**`ibmcloud ce domainmapping get`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-get) command. For example,
-
-
-```txt
-ibmcloud ce domainmapping get --domain-name www.example.com
-```
-{: pre}
-
-Example output
-
-```txt
-Getting domain mapping 'www.example.com'...
-OK
-
-Domain Name:  www.example.com
-CNAME:        custom.abcdabcdabc.us-south.codeengine.appdomain.cloud
-Target Name:  myapp
-Target Type:  app
-TLS Secret:   mytlssecret
-Status:       ready
-```
-{: screen}
-
-After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
+After your DNS record is successfully created in CIS, you configured CIS to forward user IP addresses to your application or function.
 
 ## Configuring custom domain mappings in {{site.data.keyword.codeengineshort}}
 {: #configure-domainmapping}
@@ -324,5 +304,56 @@ OK
 
 ## Next steps
 {: #domain-mappings-next}
+
+### Obtaining the CNAME record for a custom domain mapping
+{: #completing-custom-domain-cname}
+
+{{site.data.keyword.codeengineshort}} provides the CNAME target for your defined custom domain mapping.
+
+To obtain the CNAME record from the {{site.data.keyword.codeengineshort}} console, open your defined custom domain mapping and view the Update domain mapping page. Open the Update domain mapping page in one of the following ways:
+* From the Domain mappings table, click in the row of your defined custom domain.
+* Click the **Actions** icon ![Actions](../icons/action-menu-icon.svg "Actions") > **Edit** to edit the mapping.
+
+From the **Update domain mappings** page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
+
+To obtain the CNAME record with the CLI, use the [**`ibmcloud ce domainmapping get`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-get) command. For example:
+
+
+```txt
+ibmcloud ce domainmapping get --domain-name www.example.com
+```
+{: pre}
+
+Example output
+
+```txt
+Getting domain mapping 'www.example.com'...
+OK
+
+Domain Name:  www.example.com
+CNAME:        custom.abcdabcdabc.us-south.codeengine.appdomain.cloud
+Target Name:  myapp
+Target Type:  app
+TLS Secret:   mytlssecret
+Status:       ready
+```
+{: screen}
+
+After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
+
+### Adding a DNS record in CIS to direct traffic to your {{site.data.keyword.codeengineshort}} application
+{: #adding-DNS-in-CIS}
+
+If you have a CIS instance to manage your custom domain, update the DNS records to point to your {{site.data.keyword.codeengineshort}} project, as follows. Note that for non-CIS domain registrars, the steps differ, but the goal is the same: creating a DNS record with the **CNAME** type, that points to the {{site.data.keyword.codeengineshort}} projects CNAME endpoint:
+
+1. On the CIS instance details page, go to **Reliability>DNS**. Scroll to **DNS records** and click **Add**.
+2. In the "Add record" pane:
+    * Select **CNAME** as the type.
+    * Set your subdomain; for example, `myapp`.
+    * Provide the CNAME target value that you previously copied, as the **Alias domain name**.
+    * Verify that the details output for the DNS record indicates that your domain mapping is an alias. For example, look for a message similar to: `myapp.example.com is an alias of custom.<id>.<region>.codeeng.appdomain.cloud`. Click **Add** to confirm adding the DNS record.
+
+    If you need to register multiple domains and subdomains, such as `example.com` and `www.example.com`, you must repeat the steps for each subdomain. You can consider creating a single certificate that covers more than one domain. However, you can use that single certificate only one time in a region. If you plan to use your custom domains in more than one project in a single region, keep them separate.
+    {: note}
 
 You are now familiar with working with custom domain mappings, and you have obtained a custom domain with its TLS certificate and private key. You are ready to configure a custom domain mapping in {{site.data.keyword.codeengineshort}} for your [application](/docs/codeengine?topic=codeengine-app-domainmapping) or [function](/docs/codeengine?topic=codeengine-fun-domainmapping).
