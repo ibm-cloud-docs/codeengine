@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-04"
+lastupdated: "2025-04-05"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3353,6 +3353,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Obtaining a custom domain and its TLS certificate and private key](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain)
 
     * [How can I use Certbot and the Let's Encrypt service for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert)
+
+    * [How can I use an origin certificate obtained from my CIS for for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert-CIS)
 
 * [Configuring custom domain mappings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-domain-mappings#configure-domainmapping)
 

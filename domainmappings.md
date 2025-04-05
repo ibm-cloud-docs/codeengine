@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-04"
+lastupdated: "2025-04-05"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, functions in code engine, function workloads in code engine, Function, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -58,7 +58,7 @@ Before you configure custom domain mappings in {{site.data.keyword.codeenginesho
 
         You can obtain your certificate and key from your CA. Obtain a signed SSL/TLS *certificate* for your custom domain. For security reasons, {{site.data.keyword.codeengineshort}} supports only custom domain mappings that are configured with a TLS/SSL certificate that is signed by a public, trusted CA.
 
-        
+        You can also obtain your certificate and key from [{{site.data.keyword.cis_short}}](#prepare-custom-domain-cert-CIS) by ordering an origin certificate if your custom domain management has been delegated to CIS. Following this approach, you then apply the [End-to-End flexible TLS mode](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-flexible).
 
 ### How can I use Certbot and the Let's Encrypt service for my custom domain?
 {: #prepare-custom-domain-cert}
@@ -127,7 +127,27 @@ If you like Certbot, please consider supporting our work by:
 
 Your certificate is ready.
 
+### How can I use an origin certificate obtained from my CIS for for my custom domain?
+{: #prepare-custom-domain-cert-CIS}
 
+If you obtain your certificate and key from your public and trusted CA, then they are signed and secure. You work with your CA to obtain the signed SSL/TLS certificate for your custom domain.
+
+You can also use {{site.data.keyword.cis_short}} to order an origin certificate, and then configure CIS to forward the user IP addresses to your application or function according to this flow:
+
+1. Order your origin certificate:
+
+   1. In the {{site.data.keyword.cloud_notm}} console, go to [Resource list](/resources){: external}, and filter for your `Internet Services` instance. From the search results, click the name of the target instance to see its details page.
+   2. On the CIS instance details page, go to the Origin page (**Security>Origin**), and click **Order**.
+   3. In the "Order origin certificate" pane, keep all the defaults and enter the domain name with which you want to work. For example, `myapp.example.com`. Click **Order** to confirm.
+   4. Copy the **Origin certificate** and **Private key** values. You require this information when you map your domain.
+
+2. Configure and apply the [End-to-End flexible TLS mode](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-flexible).
+
+    The edge certificate is provided by CIS. The origin certificate is used to encrypt only traffic between CIS and the {{site.data.keyword.codeengineshort}} application or function.
+
+
+
+After your DNS record is successfully created in CIS, you configured CIS to forward user IP addresses to your application or function.
 
 ## Configuring custom domain mappings in {{site.data.keyword.codeengineshort}}
 {: #configure-domainmapping}
