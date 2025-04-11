@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-07"
+lastupdated: "2025-04-11"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -140,7 +140,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [April 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-april25)
 
-    * [3 April 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-april0325)
+    * [10 April 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-april1025)
+
+        * CLI version 1.52.1 released
+
+    * [03 April 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-april0325)
 
         * Added support for Trusted Profiles. See [Working with trusted profiles in Code Engine to access IBM Cloud services](/docs/codeengine?topic=codeengine-trusted-profiles).
 
@@ -4146,7 +4150,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
 
-* [3 April 2025](/docs/codeengine?topic=codeengine-api-changelog#3-april-2025)
+* [03 April 2025](/docs/codeengine?topic=codeengine-api-changelog#03-april-2025)
 
 * [21 February 2025](/docs/codeengine?topic=codeengine-api-changelog#21-february-2025)
 

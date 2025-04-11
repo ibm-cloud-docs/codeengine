@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-04"
+lastupdated: "2025-04-11"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -37,8 +37,8 @@ The following table shows the service behavior changes for each version date. Sw
 |`2021-03-31`| Version 1.0.0 |                                                                                                                                                                                           |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"}
 
-## 3 April 2025
-{: #3-april-2025}
+## 03 April 2025
+{: #03-april-2025}
 
 Added support for HMAC auth secrets. Specify to create HMAC auth secrets with the `format` field and specify the details of HMAC auth secrets with the `hmac_auth` field.
 :   - See [Create a secret API](https://cloud.ibm.com/apidocs/codeengine/v2#create-secret){: external}.
