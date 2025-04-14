@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-15"
+  years: 2025
+lastupdated: "2025-04-14"
 
 keywords: code engine, architecture, workload isolation, isolation, workload
 
@@ -67,4 +67,5 @@ The shards are running the customer workload, such as builds, batch jobs, or app
     - Network policies to control the network flows within the environment.  
 - Shared multi-tenant components are secured, for example, by disabling reverse lookup in `KubeDNS`.
 - To limit the blast radius, each shard cluster is running in its own VPC, which is isolated from other shard VPCs.
-- DDoS protection is enabled automatically for all endpoints, including customer applications, through {{site.data.keyword.cis_short}} with no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos). 
+- DDoS protection is enabled automatically for all endpoints, including customer applications, through {{site.data.keyword.cis_short}} with no additional cost to you. DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. See [DDoS protection](/docs/codeengine?topic=codeengine-secure#secure-ddos).
+- Clients who require web application firewall rules will have to configure their own IBM Cloud Internet Services instance or third-party gateway service with a custom domain in front of their Code Engine endpoints and enable WAF in this instance.
