@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-11"
+lastupdated: "2025-04-15"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -42,9 +42,9 @@ Updated API and SDKs. See [API change log](/docs/codeengine?topic=codeengine-api
     - Replaced nodejs-18 runtime with nodejs-20.
 
 :   - See [Go](https://github.com/IBM/code-engine-go-sdk){: external} version 4.29.0
-
+    - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 4.28.0
     - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 4.29.0
-
+    - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 4.20.0
 
 ## March 2025
 {: #codeengine-march25}
