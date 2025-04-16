@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-11"
+lastupdated: "2025-04-16"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3862,7 +3862,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Protecting Code Engine resources](/docs/codeengine?topic=codeengine-cbr#cbr)
 
-[Restricting inbound traffic to Code Engine reseources](/docs/codeengine?topic=codeengine-cbr-inbound#cbr-inbound)
+[Restricting inbound traffic to Code Engine resources](/docs/codeengine?topic=codeengine-cbr-inbound#cbr-inbound)
 
 * [Creating a context-based restriction for your {{site.data.keyword.codeengineshort}} resources](/docs/codeengine?topic=codeengine-cbr-inbound#add-cbr-ui)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-07"
+lastupdated: "2025-04-16"
 
 keywords: connectivity, inbound connections, inbound connectivity, private, private inbound connectivity
 
@@ -12,13 +12,13 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Restricting inbound traffic to {{site.data.keyword.codeengineshort}} applications and functions with context-based restrictions
+# Restricting inbound traffic to applications and functions using context-based restrictions for private endpoints
 {: #cbr-inbound}
 
  This feature is a beta feature and is available for evaluation and testing purposes only.
  {: beta}
 
- You can restritct inbound traffic to your {{site.data.keyword.codeenginefull}} applications and functions by using {{site.data.keyword.cloud_notm}} context-based rules to restrict access to your {{site.data.keyword.codeengineshort}} applications or functions. This feature is not supported for {{site.data.keyword.codeengineshort}} jobs. Instead of assigning access, context-based restrictions check that an access request comes from an allowed context that you configure. You can limit inbound traffic to your applications and functions within your {{site.data.keyword.codeengineshort}} projects to [safeguard your projects from unwanted inbound traffic](/docs/codeengine?topic=codeengine-cbr).
+ You can restritct inbound traffic to your {{site.data.keyword.codeenginefull}} applications and functions by using {{site.data.keyword.cloud_notm}} context-based rules to restrict private endpoint access to your {{site.data.keyword.codeengineshort}} applications or functions. This feature is not supported for {{site.data.keyword.codeengineshort}} jobs. Instead of assigning access, context-based restrictions check that an access request comes from an allowed context that you configure. You can limit inbound traffic to your applications and functions within your {{site.data.keyword.codeengineshort}} projects to [safeguard your projects from unwanted inbound traffic](/docs/codeengine?topic=codeengine-cbr).
 {: shortdesc}
 
 When you secure {{site.data.keyword.codeengineshort}} resources with context-based restrictions with private endpoints, in addition to restricting the inbound traffic that connects to your application or functions with context-based rules, you can [restrict who can manage your {{site.data.keyword.codeengineshort}} resources](/docs/codeengine?topic=codeengine-cbr), such as deploying or updating applications and secrets.
