@@ -185,7 +185,7 @@ toc:
               topics:
               - navtitle: Protecting Code Engine resources
                 topic: cbr.md
-              - navtitle: Restricting inbound traffic to Code Engine reseources
+              - navtitle: Restricting inbound traffic to Code Engine resources
                 topic: cbr-inbound.md
           - ce-ipaddresses.md
   - navgroup:
