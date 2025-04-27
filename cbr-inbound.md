@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-16"
+lastupdated: "2025-04-27"
 
 keywords: connectivity, inbound connections, inbound connectivity, private, private inbound connectivity
 
@@ -18,7 +18,7 @@ subcollection: codeengine
  This feature is a beta feature and is available for evaluation and testing purposes only.
  {: beta}
 
- You can restritct inbound traffic to your {{site.data.keyword.codeenginefull}} applications and functions by using {{site.data.keyword.cloud_notm}} context-based rules to restrict private endpoint access to your {{site.data.keyword.codeengineshort}} applications or functions. This feature is not supported for {{site.data.keyword.codeengineshort}} jobs. Instead of assigning access, context-based restrictions check that an access request comes from an allowed context that you configure. You can limit inbound traffic to your applications and functions within your {{site.data.keyword.codeengineshort}} projects to [safeguard your projects from unwanted inbound traffic](/docs/codeengine?topic=codeengine-cbr).
+ You can use {{site.data.keyword.cloud_notm}} context-based rules to restrict private endpoints from accessing your {{site.data.keyword.codeenginefull}} applications and functions. This feature is not supported for {{site.data.keyword.codeengineshort}} jobs. Instead of assigning access, context-based restrictions check that an access request comes from an allowed context that you configure. You can limit inbound traffic to your applications and functions within your {{site.data.keyword.codeengineshort}} projects to [safeguard your projects from unwanted inbound traffic](/docs/codeengine?topic=codeengine-cbr).
 {: shortdesc}
 
 When you secure {{site.data.keyword.codeengineshort}} resources with context-based restrictions with private endpoints, in addition to restricting the inbound traffic that connects to your application or functions with context-based rules, you can [restrict who can manage your {{site.data.keyword.codeengineshort}} resources](/docs/codeengine?topic=codeengine-cbr), such as deploying or updating applications and secrets.
