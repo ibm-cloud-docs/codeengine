@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-03"
+lastupdated: "2025-04-29"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Using service endpoints with {{site.data.keyword.codeengineshort}}
 {: #serviceendpt}
 
-All {{site.data.keyword.codeenginefull}} projects offer integration with {{site.data.keyword.cloud}} service endpoints. This support gives you the ability to connect from your classic infrastructure  to {{site.data.keyword.codeengineshort}} workloads and stay within the {{site.data.keyword.cloud_notm}} network.
+All {{site.data.keyword.codeenginefull}} projects offer integration with {{site.data.keyword.cloud}} service endpoints. This support gives you the ability to connect from your classic infrastructure to {{site.data.keyword.codeengineshort}} workloads and stay within the {{site.data.keyword.cloud_notm}} network.
 {: shortdesc}
 
 You can control the visibility of {{site.data.keyword.codeengineshort}} workloads and specify whether to expose the application or function to public or private endpoints. An application or function that is configured for `visibility = private`, is accessed through service endpoints.  Applications or functions that are accessed through a service endpoint do not leave the IBM network and stay within the {{site.data.keyword.cloud_notm}} network.
@@ -58,7 +58,7 @@ A deployment with a service endpoint on the private network gets an endpoint tha
     For the **`project create`** and **`project select`** commands, if the `--endpoint` option is not explicitly specified, the behavior is determined by the system. If the {{site.data.keyword.cloud_notm}} CLI is connected to `private.cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `private`. If the {{site.data.keyword.cloud_notm}} CLI is connected to `cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `public`.
     {: important}
 
-2. If you did not create a new project and you selected an existing project, and you want your app to only be visible to the private endpoint, confirm the existing project supports applications with private visibility. Use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. If the value is `false`, [contact IBM support](/docs/codeengine?topic=codeengine-get-support) to enable this capability within your existing project.
+2. If you did not create a new project and you selected an existing project, and you want your application to only be visible to the private endpoint, confirm the existing project supports applications with private visibility. Use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. If the value is `false`, [contact IBM support](/docs/codeengine?topic=codeengine-get-support) to enable this capability within your existing project.
 
     ```txt
     ibmcloud ce project get -n myproject
@@ -105,7 +105,7 @@ A deployment with a service endpoint on the private network gets an endpoint tha
     ```
     {: screen}
 
-3. Create an application or function that is only visible to the private endpoint. Use the  [**`ibmcloud ce application create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or the [**`ibmcloud ce function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command with the `--visibility=private` option. Alternatively, you can use the console to create or update an app or function and set the [visibility of your app](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility).
+3. Create an application or function that is only visible to the private endpoint. Use the  [**`ibmcloud ce application create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or the [**`ibmcloud ce function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command with the `--visibility=private` option. Alternatively, you can use the console to create or update an application or function and set the [visibility of your app](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility).
 
     ```txt
     ibmcloud ce application create -n myapp --visibility=private
@@ -114,14 +114,14 @@ A deployment with a service endpoint on the private network gets an endpoint tha
 
 
 
-## Accessing your app securely with service endpoints
+## Accessing your application securely with service endpoints
 {: #serviceendpt-ce-access-app}
 
 
-1. From your {{site.data.keyword.codeengineshort}} project, confirm that your application is configured with a `visibility=private` setting. See [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-private).
+1. From your {{site.data.keyword.codeengineshort}} project, confirm that your application is configured with a `visibility=private` setting. See [Deploying your application with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-private).
 
 2. Retrieve the URL of the {{site.data.keyword.codeengineshort}} application that is exposed to the private network. The URL is in the following format: `<app>.<uuid>.private.<region>.codeengine.appdomain.cloud`.
-    * From the {{site.data.keyword.codeengineshort}} console, go to the **Domain mappings** tab for your application to view the visibility of an app and its available URLs.
+    * From the {{site.data.keyword.codeengineshort}} console, go to the **Domain mappings** tab for your application to view the visibility of an application and its available URLs.
     * From the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli), use the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command with the `--option url` option. In the following example, because the visibility of the `myapp` is set to  `visibility=private`, specifying `--option url` with this command outputs the URL to the private network.
 
         ```txt
@@ -136,7 +136,9 @@ A deployment with a service endpoint on the private network gets an endpoint tha
         ```
         {: screen}
 
-3. Call the application. The `myapp` application is a simple Hello World application. When you curl the `myapp` app, `Hello World` is returned.
+3. Call the application from within the {{site.data.keyword.cloud_notm}} private network (for instance, by calling the application from the [{{site.data.keyword.cloud_notm}} Shell](/docs/cloud-shell?topic=cloud-shell-getting-started)).
+
+    The `myapp` application is a simple Hello World application. When you execute the `myapp` application using cURL, `Hello World` is returned. For example, from the {{site.data.keyword.cloud_notm}} Shell, run:
 
    ```txt
    curl http://myapp.4svg40kna19.private.us-south.codeengine.appdomain.cloud
