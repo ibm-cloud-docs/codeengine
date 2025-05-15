@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-29"
+lastupdated: "2025-05-15"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3945,6 +3945,20 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce configmap update`](/docs/codeengine?topic=codeengine-cli#cli-configmap-update)
 
+* [Connectivity commands](/docs/codeengine?topic=codeengine-cli#cli-connectivity)
+
+    * [`ibmcloud ce connectivity outbound`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound)
+
+    * [`ibmcloud ce connectivity outbound create`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound-create)
+
+    * [`ibmcloud ce connectivity outbound delete`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound-delete)
+
+    * [`ibmcloud ce connectivity outbound get`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound-get)
+
+    * [`ibmcloud ce connectivity outbound list`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound-list)
+
+    * [`ibmcloud ce connectivity outbound update`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound-update)
+
 * [Domainmapping commands](/docs/codeengine?topic=codeengine-cli#cli-domainmapping)
 
     * [`ibmcloud ce domainmapping create`](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-create)
@@ -3956,6 +3970,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce domainmapping list`](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-list)
 
     * [`ibmcloud ce domainmapping update`](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-update)
+
+* [Experimental command](/docs/codeengine?topic=codeengine-cli#cli-experimental)
+
+    * [`ibmcloud ce experimental`](/docs/codeengine?topic=codeengine-cli#cli-experimentalcmd)
 
 * [Function commands](/docs/codeengine?topic=codeengine-cli#cli-function)
 

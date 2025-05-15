@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-18"
+lastupdated: "2025-05-15"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -127,7 +127,7 @@ OK
 Create an application.  
   
 ```txt
-ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--probe-live PROBE_LIVE] [--probe-ready PROBE_READY] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--probe-live PROBE_LIVE] [--probe-ready PROBE_READY] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -270,6 +270,9 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 
 `--service-account`, `--sa`
 :   The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
+
+`--trusted-profiles-enabled`, `--trusted`, `--tpe`
+:   Enable mounting of a compute resource token to the container of this application. This value is *optional*. The default value is `false`.
 
 `--user`, `-u`
 :   The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is *optional*. The default value is `0`.
@@ -782,7 +785,7 @@ OK
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```txt
-ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--probe-live PROBE_LIVE] [--probe-live-clear] [--probe-ready PROBE_READY] [--probe-ready-reset] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--probe-live PROBE_LIVE] [--probe-live-clear] [--probe-ready PROBE_READY] [--probe-ready-reset] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -962,6 +965,9 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 `--service-account-clear`, `--sac`
 :   Clear the service account. This value is *optional*. The default value is `false`.
 
+`--trusted-profiles-enabled`, `--trusted`, `--tpe`
+:   Enable mounting of a compute resource token to the container of this application. This value is *optional*. The default value is `false`.
+
 `--user`, `-u`
 :   The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is *optional*. The default value is `0`.
 
@@ -1068,7 +1074,7 @@ ibmcloud ce build create --name BUILD_NAME [--build-type BUILD_TYPE] [--commit C
 :   The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. The source option is required if the `--build-type` option is `git` and not allowed if the `--build-type` option is `local`. This value is *optional*. 
 
 `--strategy`, `--str`
-:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-18`, use `codebundle-nodejs-18` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. This value is *optional*. The default value is `dockerfile`.
+:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-20`, use `codebundle-nodejs-20` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. This value is *optional*. The default value is `dockerfile`.
 
 `--timeout`, `--to`
 :   The amount of time, in seconds, that can pass before the build must succeed or fail. This value is *optional*. The default value is `600`.
@@ -1310,7 +1316,7 @@ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--commit-clear] [-
 :   The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is *optional*. 
 
 `--strategy`, `--str`
-:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-18`, use `codebundle-nodejs-18` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. This value is *optional*. 
+:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-20`, use `codebundle-nodejs-20` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. This value is *optional*. 
 
 `--timeout`, `--to`
 :   The amount of time, in seconds, that can pass before the build must succeed or fail. This value is *optional*. The default value is `600`.
@@ -1771,7 +1777,7 @@ ibmcloud ce buildrun submit (--build BUILD_NAME [--name NAME]) | (--name NAME [-
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. If the `--build` option is set, the source option is required if the `--build-type` option on the related build is `local` and **not** allowed if the `--build-type` option on the related build is `git`. If the `--build` option is not set, the source option is optional. This value is *optional*. The default value is `.`.
 
 `--strategy`, `--str`
-:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-18`, use `codebundle-nodejs-18` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. The build strategy option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
+:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-20`, use `codebundle-nodejs-20` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. The build strategy option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
 
 `--timeout`, `--to`
 :   The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is *optional*. The default value is `600`.
@@ -2112,6 +2118,152 @@ Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
 ```
 {: screen}  
   
+## Connectivity commands  
+{: #cli-connectivity}  
+
+Manage connectivity commands  
+  
+### `ibmcloud ce connectivity outbound`  
+{: #cli-connectivity-outbound}  
+
+Manage outbound connectivity commands  
+  
+```txt
+ibmcloud ce connectivity outbound COMMAND
+```
+{: pre}
+
+### `ibmcloud ce connectivity outbound create`  
+{: #cli-connectivity-outbound-create}  
+
+Create an allowed destination IP address range.  
+  
+```txt
+ibmcloud ce connectivity outbound create --cidr-name OUTBOUND_DESTINATION_NAME --cidr CIDR_IP_ADDRESS [--force] [--quiet]
+```
+{: pre}
+
+**Command Options**  
+
+`--cidr`, `-c`
+:   Required. Provide a valid IP address range in CIDR format (for example 1.2.3.0/24). This value is *required*. 
+
+`--cidr-name`
+:   Required. Name of the allowed destination IP address range. This value is *required*. 
+
+`--force`, `-f`
+:   Force creation without confirmation. This value is *optional*. The default value is `false`.
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+  
+  
+{[cli-connectivity-outbound-create-example.md]}  
+  
+### `ibmcloud ce connectivity outbound delete`  
+{: #cli-connectivity-outbound-delete}  
+
+Delete an allowed destination IP address range.  
+  
+```txt
+ibmcloud ce connectivity outbound delete --cidr-name OUTBOUND_DESTINATION_NAME [--force] [--ignore-not-found] [--quiet]
+```
+{: pre}
+
+**Command Options**  
+
+`--cidr-name`
+:   Required. Name of the allowed destination IP address range. This value is *required*. 
+
+`--force`, `-f`
+:   Force deletion without confirmation. This value is *optional*. The default value is `false`.
+
+`--ignore-not-found`, `--inf`
+:   If not found, do not fail. This value is *optional*. The default value is `false`.
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+  
+  
+{[cli-connectivity-outbound-delete-example.md]}  
+  
+### `ibmcloud ce connectivity outbound get`  
+{: #cli-connectivity-outbound-get}  
+
+Get an allowed destination IP address range.  
+  
+```txt
+ibmcloud ce connectivity outbound get --cidr-name OUTBOUND_DESTINATION_NAME [--quiet]
+```
+{: pre}
+
+**Command Options**  
+
+`--cidr-name`
+:   Required. Name of the allowed destination IP address range. This value is *required*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+  
+  
+{[cli-connectivity-outbound-get-example.md]}  
+  
+### `ibmcloud ce connectivity outbound list`  
+{: #cli-connectivity-outbound-list}  
+
+List allowed destination IP address ranges.  
+  
+```txt
+ibmcloud ce connectivity outbound list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+
+`--output`, `-o`
+:   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--sort-by`, `-s`
+:   Specifies the column by which to sort the list. Valid values are `name` and `type`. This value is *optional*. The default value is `name`.
+
+  
+  
+{[cli-connectivity-outbound-list-example.md]}  
+  
+### `ibmcloud ce connectivity outbound update`  
+{: #cli-connectivity-outbound-update}  
+
+Update an allowed destination IP address range.  
+  
+```txt
+ibmcloud ce connectivity outbound update --cidr-name OUTBOUND_DESTINATION_NAME [--force] [--quiet]
+```
+{: pre}
+
+**Command Options**  
+
+`--cidr`, `-c`
+:   Required. Provide a valid IP address range in CIDR format (for example 1.2.3.0/24). This value is *required*. 
+
+`--cidr-name`
+:   Required. Name of the allowed destination IP address range. This value is *required*. 
+
+`--force`, `-f`
+:   Force update without confirmation. This value is *optional*. The default value is `false`.
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+  
+  
+{[cli-connectivity-outbound-update-example.md]}  
+  
 ## Domainmapping commands  
 {: #cli-domainmapping}  
 
@@ -2376,6 +2528,25 @@ Updating domainmapping 'www.example.com'...
 
   
   
+## Experimental command  
+{: #cli-experimental}  
+
+Experimental Code Engine commands  
+  
+### `ibmcloud ce experimental`  
+{: #cli-experimentalcmd}  
+
+Experimental Code Engine commands  
+  
+```txt
+ibmcloud ce experimental COMMAND
+```
+{: pre}
+
+{[cli-experimental-example.md]}  
+  
+  
+
 ## Function commands  
 {: #cli-function}  
 
@@ -2455,7 +2626,7 @@ OK
 Create a function.  
   
 ```txt
-ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-source BUILD_SOURCE] [--build-timeout BUILD_TIMEOUT] [--code-bundle CODE_BUNDLE] [--code-bundle-secret CODE_BUNDLE_SECRET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--force] [--inline-code INLINE_CODE] [--main MAIN] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--output OUTPUT] [--quiet] [--runtime RUNTIME] [--scale-down-delay SCALE_DOWN_DELAY] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-source BUILD_SOURCE] [--build-timeout BUILD_TIMEOUT] [--code-bundle CODE_BUNDLE] [--code-bundle-secret CODE_BUNDLE_SECRET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--force] [--inline-code INLINE_CODE] [--main MAIN] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--output OUTPUT] [--quiet] [--runtime RUNTIME] [--scale-down-delay SCALE_DOWN_DELAY] [--trusted-profiles-enabled] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2533,7 +2704,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 :   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `4G`.
 
 `--no-wait`, `--nw`
-:   Do not wait for the build run to complete. This value is *optional*. The default value is `true`.
+:   Do not wait for the build run to complete. This value is *optional*. The default value is `false`.
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -2543,6 +2714,9 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 
 `--scale-down-delay`, `--sdd`
 :   The amount of time in seconds an instance is active after an invocation completes. This option can reduce cold start times. For more information, see [Can I keep my function instance alive longer?](/docs/codeengine?topic=codeengine-fun-work#functions-scale). This value is *optional*. The default value is `1`.
+
+`--trusted-profiles-enabled`, `--trusted`, `--tpe`
+:   Enable mounting of a compute resource token for runs of the function. This value is *optional*. The default value is `false`.
 
 `--visibility`, `-v`
 :   The visibility for the function. Valid values are `public`, `private`, and `project`. Visibility can only be `private` if the project supports function private visibility. This value is *optional*. The default value is `public`.
@@ -2846,7 +3020,7 @@ OK
 Update a function.  
   
 ```txt
-ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-source BUILD_SOURCE] [--build-timeout BUILD_TIMEOUT] [--code-bundle CODE_BUNDLE] [--code-bundle-secret CODE_BUNDLE_SECRET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--force] [--inline-code INLINE_CODE] [--main MAIN] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--runtime RUNTIME] [--scale-down-delay SCALE_DOWN_DELAY] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-source BUILD_SOURCE] [--build-timeout BUILD_TIMEOUT] [--code-bundle CODE_BUNDLE] [--code-bundle-secret CODE_BUNDLE_SECRET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--force] [--inline-code INLINE_CODE] [--main MAIN] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--runtime RUNTIME] [--scale-down-delay SCALE_DOWN_DELAY] [--trusted-profiles-enabled] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2933,7 +3107,7 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 :   The amount of memory that is set for the function. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `4G`.
 
 `--no-wait`, `--nw`
-:   Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is *optional*. The default value is `true`.
+:   Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is *optional*. The default value is `false`.
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -2949,6 +3123,9 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 
 `--scale-down-delay`, `--sdd`
 :   The amount of time in seconds an instance is active after an invocation completes. This option can reduce cold start times. For more information, see [Can I keep my function instance alive longer?](/docs/codeengine?topic=codeengine-fun-work#functions-scale). This value is *optional*. The default value is `1`.
+
+`--trusted-profiles-enabled`, `--trusted`, `--tpe`
+:   Enable mounting of a compute resource token for runs of the function. This value is *optional*. The default value is `false`.
 
 `--visibility`, `-v`
 :   The visibility for the function. Valid values are `public`, `private`, and `project`. Visibility can only be `private` if the project supports function private visibility. This value is *optional*. 
@@ -3009,7 +3186,7 @@ ibmcloud ce help COMMAND
 ```
 {: pre}
 
-
+{[cli-help-example.md]}  
   
   
 
@@ -3102,7 +3279,7 @@ OK
 Create a job.  
   
 ```txt
-ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3200,7 +3377,7 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 :   Add the contents of a secret to the file system of runs of the job by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
 
 `--no-wait`, `--nw`
-:   Do not wait for the build run to complete. If you specify the `--no-wait` option, the build run begins and does not wait. Use the `buildrun get` command to check the build run status. The no-wait option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `true`.
+:   Do not wait for the build run to complete. If you specify the `--no-wait` option, the build run begins and does not wait. Use the `buildrun get` command to check the build run status. The no-wait option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `false`.
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -3217,8 +3394,11 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 `--service-account`, `--sa`
 :   The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
 
+`--trusted-profiles-enabled`, `--trusted`, `--tpe`
+:   Enable mounting of a compute resource token for runs of the job. This value is *optional*. The default value is `false`.
+
 `--wait`, `-w`
-:   Wait for the build run to complete. If you specify the `--wait` option, the build run waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run fails. The wait option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `false`.
+:   Wait for the build run to complete. If you specify the `--wait` option, the build run waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run fails. The wait option is allowed only if the `--build-source` option is set. This value is *optional*. The default value is `true`.
 
 `--wait-timeout`, `--wto`
 :   The length of time in seconds to wait for the build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The wait-timeout option is allowed only if the `--build-source` option is set. The default value is `600`.
@@ -3457,7 +3637,7 @@ OK
 Update a job.  
   
 ```txt
-ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3577,7 +3757,7 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 :   Add the contents of a secret to the file system of runs of the job by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
 
 `--no-wait`, `--nw`
-:   Do not wait for the build run to complete. If you specify the `--no-wait` option, the build run begins and does not wait. Use the `buildrun get` command to check the build run status. The no-wait option is allowed only if the `--build-source` option is set on this `job update` command or your job currently has an associated build. This value is *optional*. The default value is `true`.
+:   Do not wait for the build run to complete. If you specify the `--no-wait` option, the build run begins and does not wait. Use the `buildrun get` command to check the build run status. The no-wait option is allowed only if the `--build-source` option is set on this `job update` command or your job currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -3603,8 +3783,11 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 `--service-account-clear`, `--sac`
 :   Clear the service account. This value is *optional*. The default value is `false`.
 
+`--trusted-profiles-enabled`, `--trusted`, `--tpe`
+:   Enable mounting of a compute resource token for runs of the job. This value is *optional*. The default value is `false`.
+
 `--wait`, `-w`
-:   Wait for the build run to complete. If you specify the `--wait` option, the build run waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run fails. The wait option is allowed only if the `--build-source` option is set on this `job update` command or your job currently has an associated build. This value is *optional*. The default value is `false`.
+:   Wait for the build run to complete. If you specify the `--wait` option, the build run waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run fails. The wait option is allowed only if the `--build-source` option is set on this `job update` command or your job currently has an associated build. This value is *optional*. The default value is `true`.
 
 `--wait-timeout`, `--wto`
 :   The length of time in seconds to wait for the build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The wait-timeout option is allowed if the `--build-source` option is set on this `job update` command or your job currently has an associated build. The default value is `600`.
@@ -4063,7 +4246,7 @@ OK
 Resubmit a job run based on the configuration of a previous job run.  
   
 ```txt
-ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--name NAME] [--no-wait] [--output OUTPUT] [--quiet] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--name NAME] [--no-wait] [--output OUTPUT] [--quiet] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -4175,6 +4358,9 @@ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT
 `--service-account-clear`, `--sac`
 :   Clear the service account. This value is *optional*. The default value is `false`.
 
+`--trusted-profiles-enabled`, `--trusted`, `--tpe`
+:   Enable mounting of a compute resource token for instances of this job run. This value is *optional*. The default value is `false`.
+
 `--wait`, `-w`
 :   Resubmit the job run and wait for the instances of this job run to complete. If you specify the `--wait` option, the job run resubmit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `--wait-timeout` period, the job run resubmit fails. This value is *optional*. The default value is `false`.
 
@@ -4210,7 +4396,7 @@ OK
 Submit a job run based on a job.  
   
 ```txt
-ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -4306,6 +4492,9 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
 
 `--service-account`, `--sa`
 :   The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
+
+`--trusted-profiles-enabled`, `--trusted`, `--tpe`
+:   Enable mounting of a compute resource token for instances of this job run. This value is *optional*. The default value is `false`.
 
 `--wait`, `-w`
 :   Submit the job run and wait for the instances of this job run to complete. If you specify the `--wait` option, the job run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `--wait-timeout` period, the job run submit fails. This value is *optional*. The default value is `false`.
@@ -5956,12 +6145,18 @@ Beginning with CLI version 1.42.0, defining and working with secrets in the CLI 
 Create a secret.  
   
 ```txt
-ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE) [--cert-chain-file CERT_CHAIN_FILE] [--email EMAIL] [--format FORMAT] [--key-path KEY_PATH] [--known-hosts-path KNOWN_HOSTS_PATH] [--output OUTPUT] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--password-from-json-file PASSWORD_FROM_JSON_FILE] [--private-key-file PRIVATE_KEY_FILE] [--quiet] [--server SERVER] [--username USERNAME]
+ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE) [--access-key-id ACCESS_KEY_ID] [--access-key-id-prompt] [--cert-chain-file CERT_CHAIN_FILE] [--email EMAIL] [--format FORMAT] [--from-json-file FROM_JSON_FILE] [--key-path KEY_PATH] [--known-hosts-path KNOWN_HOSTS_PATH] [--output OUTPUT] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--password-from-json-file PASSWORD_FROM_JSON_FILE] [--private-key-file PRIVATE_KEY_FILE] [--quiet] [--secret-access-key SECRET_ACCESS_KEY] [--secret-access-key-prompt] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
 
 #### Command Options  
  {: #cmd-options-secret-create} 
+
+`--access-key-id`, `--akid`
+:   Specify the access_key_id of the HMAC credential. This value is *optional*. 
+
+`--access-key-id-prompt`
+:   Prompt for the access_key_id of the HMAC credential. This value is *optional*. The default value is `false`.
 
 `--cert-chain-file`, `--ccf`
 :   Specify a file containing the certificate chain provided by your certificate authority for a TLS secret. You must provide the path to the file as a value. This value is required for `tls` secrets. This value is *optional*. 
@@ -5970,13 +6165,16 @@ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file
 :   The email address to access the registry server for a registry secret. This value applies only for `registry` secrets. This value is *optional*. 
 
 `--format`, `--fo`
-:   The format of the secret. Valid values are `basic_auth`, `generic`, `registry`, `ssh`, or `tls`. This value is *optional*. The default value is `generic`.
+:   The format of the secret. Valid values are `basic_auth`, `generic`, `hmac`, `registry`, `ssh`, or `tls`. This value is *optional*. The default value is `generic`.
 
 `--from-env-file`, `-e`
 :   Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. This value is required if `--from-literal` or `--from-file` is not specified. This option can be specified multiple times. This value applies only for `generic` secrets. 
 
 `--from-file`, `-f`
 :   Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This option can be specified multiple times. This value applies only for `generic` secrets. 
+
+`--from-json-file`, `--json`
+:   The path to a file containing the secret values in JSON format. This option is supported for secret format `hmac` This value is *optional*. 
 
 `--from-literal`, `-l`
 :   Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. This value applies only for `generic` secrets. 
@@ -6012,6 +6210,12 @@ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This option applies for `basic_auth`, `generic`, `registry`, `ssh`, and `tls` secrets. This value is *optional*. The default value is `false`.
+
+`--secret-access-key`, `--sak`
+:   Specify the secret_access_key of the HMAC credential. This value is *optional*. 
+
+`--secret-access-key-prompt`
+:   Prompt for the secret_access_key of the HMAC credential. This value is *optional*. The default value is `false`.
 
 `--server`, `-s`
 :   The URL of the registry server for a registry secret. This option is required for `registry` secrets. This value is *optional*. The default value is `us.icr.io`.
@@ -6328,7 +6532,7 @@ mysecret-tls                  tls             2     3h47m
 Update a secret.  
   
 ```txt
-ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY) [--cert-chain-file CERT_CHAIN_FILE] [--email EMAIL] [--key-path KEY_PATH] [--known-hosts-path KNOWN_HOSTS_PATH] [--output OUTPUT] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--password-from-json-file PASSWORD_FROM_JSON_FILE] [--private-key-file PRIVATE_KEY_FILE] [--quiet] [--server SERVER] [--username USERNAME]
+ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY) [--access-key-id ACCESS_KEY_ID] [--access-key-id-prompt] [--cert-chain-file CERT_CHAIN_FILE] [--email EMAIL] [--from-json-file FROM_JSON_FILE] [--key-path KEY_PATH] [--known-hosts-path KNOWN_HOSTS_PATH] [--output OUTPUT] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--password-from-json-file PASSWORD_FROM_JSON_FILE] [--private-key-file PRIVATE_KEY_FILE] [--quiet] [--secret-access-key SECRET_ACCESS_KEY] [--secret-access-key-prompt] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
 
@@ -6337,6 +6541,12 @@ ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file
 
 `--name`, `-n`
 :   The name of the secret. This value is *required*. 
+
+`--access-key-id`, `--akid`
+:   Specify the access_key_id of the HMAC credential. This value is *optional*. 
+
+`--access-key-id-prompt`
+:   Prompt for the access_key_id of the HMAC credential. This value is *optional*. The default value is `false`.
 
 `--cert-chain-file`, `--ccf`
 :   Specify a file containing the certificate chain provided by your certificate authority for a TLS secret. You must provide the path to the file as a value. This value is *optional*. 
@@ -6349,6 +6559,9 @@ ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file
 
 `--from-file`, `-f`
 :   Update a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
+
+`--from-json-file`, `--json`
+:   The path to a file containing the secret values in JSON format. This option is supported for secret format `hmac` This value is *optional*. 
 
 `--from-literal`, `-l`
 :   Update a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. 
@@ -6379,6 +6592,12 @@ ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file
 
 `--rm`
 :   Remove an individual key-value pair in a generic secret by specifying the name of the key. This option can be specified multiple times. This value is *optional*. 
+
+`--secret-access-key`, `--sak`
+:   Specify the secret_access_key of the HMAC credential. This value is *optional*. 
+
+`--secret-access-key-prompt`
+:   Prompt for the secret_access_key of the HMAC credential. This value is *optional*. The default value is `false`.
 
 `--server`, `-s`
 :   The URL of the registry server for a registry secret. This value is *optional*. The default value is `us.icr.io`.
