@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-29"
+lastupdated: "2025-05-15"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.53.0 | 2025-05-15 | - Added `hmac` as supported format in the **`secret`** command group. See [Working with secrets](/docs/codeengine?topic=codeengine-secret) and [{{site.data.keyword.codeengineshort}} CLI reference (`secret` command)](/docs/codeengine?topic=codeengine-cli#cli-secret).  \n Added the `--trusted-profiles-enabled` option also for the **`jobrun submit`** and **`jobrun resubmit`** commands. \n - Fixed various bugs. |
 | 1.52.2 | 2025-04-28 | - Fixed various bugs. |
 | 1.52.1 | 2025-04-10 | - Fixed various bugs. |
 | 1.52.0 | 2025-03-28 | - Added the `--trusted-profiles-enabled` option for the **`app create`**, **`app update`**, **`job create`**, **`job update`**, **`function create`**, and **`function update`** commands. Use this option to enable or disable Trusted Profiles support for the selected resource. See [Working with trusted profiles in Code Engine to access IBM Cloud services](/docs/codeengine?topic=codeengine-trusted-profiles). \n - Fixed various bugs. |
@@ -48,7 +49,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 | 1.49.3 | 2024-01-25 | - Fixed various bugs. |
 | 1.49.2 | 2024-01-12 | - Fixed various bugs. |
 | 1.49.1 | 2023-12-06 | - Fixed various bugs. |
-| 1.49.0 | 2023-12-01 | - Added the `--array-size-variable-override` option the **`jobrun submit`** and **`jobrun resubmit`** commands. Use this option to specify a custom value for the `JOB_ARRAY_SIZE` environment variable. See [Processing a subset of data by dynamically assigning work to parallel job run instances](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic). \n - Renamed the `--instances` option to `--array-size` for the **`job create`**, **`job update`**, **`jobrun submit`**, and **`jobrun resubmit`** commands. Note that `--instances` is still valid as an alias for `--array-size`. \n - Fixed various bugs. |
+| 1.49.0 | 2023-12-01 | - Added the `--array-size-variable-override` option to the **`jobrun submit`** and **`jobrun resubmit`** commands. Use this option to specify a custom value for the `JOB_ARRAY_SIZE` environment variable. See [Processing a subset of data by dynamically assigning work to parallel job run instances](/docs/codeengine?topic=codeengine-job-run-parallel#job-run-parallel-dynamic). \n - Renamed the `--instances` option to `--array-size` for the **`job create`**, **`job update`**, **`jobrun submit`**, and **`jobrun resubmit`** commands. Note that `--instances` is still valid as an alias for `--array-size`. \n - Fixed various bugs. |
 | 1.48.0 | 2023-11-09 | -  Updated the `--build-size` option for the **`app create`**, **`app update`**, **`job create`**, and **`job update`** commands to add support for `xxlarge` build sizes. The `--size` option on the  **`build create`**,  **`build update`**, and **`buildrun submit`** commands was also updated to add support for the `xxlarge` build size.  \n - Added the `--ignore-not-found` option to the **`subscription kafka delete`** command.  \n - Fixed various bugs. |
 | 1.47.1 | 2023-10-19 | - Added support for the  `--scale-down-delay` option and for the endpoint `--visibility` option for functions on the [**`function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) and [**`function update`**](/docs/codeengine?topic=codeengine-cli#cli-function-update) commands.  \n - Added support for custom domain mappings for functions with the CLI. \n - Fixed various bugs. |
 | 1.46.1 | 2023-10-09 | - Fixed various bugs. |
