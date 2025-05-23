@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-05-15"
+lastupdated: "2025-05-23"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2121,7 +2121,18 @@ Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
 ## Connectivity commands  
 {: #cli-connectivity}  
 
-Manage connectivity commands  
+The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects by using allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
+{: shortdesc}
+
+Outbound connection rules do not affect internal cluster communication: specifying outbound connections does not prevent applications within your {{site.data.keyword.codeengineshort}} project from communicating with each other.
+{: remember}
+{: shortdesc}
+
+You must be within the context of a [project](#cli-project) before you use `connectivity` commands.
+
+For more information about working with outbound connectivity commands, see [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli).
+
+You can use either `connectivity` or `conn` in your `connectivity` commands. To see CLI help for the `connectivity` commands, run `ibmcloud ce connectivity -h`.  
   
 ### `ibmcloud ce connectivity outbound`  
 {: #cli-connectivity-outbound}  
@@ -2159,7 +2170,22 @@ ibmcloud ce connectivity outbound create --cidr-name OUTBOUND_DESTINATION_NAME -
 
   
   
-{[cli-connectivity-outbound-create-example.md]}  
+#### Example
+{: #connectivity-outbound-create-example}
+
+```txt
+ibmcloud ce connectivity outbound create --cidr-name allow-to-subnet-a --cidr 5.6.7.8/29
+```
+{: pre}
+
+#### Example output
+{: #connectivity-outbound-create-example-output}
+
+```txt
+Creating allowed destination IP address range 'allow-to-subnet-a'...
+OK
+```
+{: screen}  
   
 ### `ibmcloud ce connectivity outbound delete`  
 {: #cli-connectivity-outbound-delete}  
@@ -2187,7 +2213,23 @@ ibmcloud ce connectivity outbound delete --cidr-name OUTBOUND_DESTINATION_NAME [
 
   
   
-{[cli-connectivity-outbound-delete-example.md]}  
+#### Example
+{: #connectivity-outbound-delete-example}
+
+```txt
+ibmcloud ce connectivity outbound delete --cidr-name allow-to-subnet-a
+```
+{: pre}
+
+#### Example output
+{: #connectivity-outbound-delete-example-output}
+
+```txt
+Are you sure you want to delete an allowed destination IP address range 'allow-to-subnet-a'? [y/N]> y
+Deleting allowed destination IP address range 'allow-to-subnet-a'...
+OK
+```
+{: screen}  
   
 ### `ibmcloud ce connectivity outbound get`  
 {: #cli-connectivity-outbound-get}  
@@ -2209,7 +2251,27 @@ ibmcloud ce connectivity outbound get --cidr-name OUTBOUND_DESTINATION_NAME [--q
 
   
   
-{[cli-connectivity-outbound-get-example.md]}  
+#### Example
+{: #connectivity-outbound-get-example}
+
+```txt
+ibmcloud ce connectivity outbound get --cidr-name allow-to-subnet-a
+```
+{: pre}
+
+#### Example output
+{: #connectivity-outbound-get-example-output}
+
+```txt
+Getting allowed destination IP address range 'allow-to-subnet-a'...
+OK
+
+Project Name:      project123
+Name:              allow-to-subnet-a
+IP address range:  5.6.7.8/29
+Type:              cidr_block
+```
+{: screen}  
   
 ### `ibmcloud ce connectivity outbound list`  
 {: #cli-connectivity-outbound-list}  
@@ -2234,7 +2296,23 @@ ibmcloud ce connectivity outbound list [--output OUTPUT] [--quiet] [--sort-by SO
 
   
   
-{[cli-connectivity-outbound-list-example.md]}  
+#### Example
+{: #connectivity-outbound-list-example}
+
+```txt
+ibmcloud ce connectivity outbound list
+```
+{: pre}
+
+#### Example output
+{: #connectivity-outbound-list-example-output}
+
+```txt
+Name               Type        IP Address
+allow-to-subnet-a  cidr_block  5.6.7.8/29
+allow-to-subnet-b  cidr_block  11.12.13.0/24
+```
+{: screen}  
   
 ### `ibmcloud ce connectivity outbound update`  
 {: #cli-connectivity-outbound-update}  
@@ -2262,7 +2340,22 @@ ibmcloud ce connectivity outbound update --cidr-name OUTBOUND_DESTINATION_NAME [
 
   
   
-{[cli-connectivity-outbound-update-example.md]}  
+#### Example
+{: #connectivity-outbound-update-example}
+
+```txt
+ibmcloud ce connectivity outbound update --cidr-name allow-to-subnet-a --cidr 5.6.7.0/27
+```
+{: pre}
+
+#### Example output
+{: #connectivity-outbound-update-example-output}
+
+```txt
+Updating allowed destination IP address range 'allow-to-subnet-a'...
+OK
+```
+{: screen}  
   
 ## Domainmapping commands  
 {: #cli-domainmapping}  
@@ -2276,7 +2369,7 @@ You must be within the context of a [project](#cli-project) before you use `doma
 
 For more information about working with domain mappings, see [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings).
 
-You can use either `domainmapping` or `dm` in your `configmap` commands. To see CLI help for the `domainmapping` commands, run `ibmcloud ce domainmapping -h`.
+You can use either `domainmapping` or `dm` in your `domainmapping` commands. To see CLI help for the `domainmapping` commands, run `ibmcloud ce domainmapping -h`.
 
   
   
@@ -2531,19 +2624,52 @@ Updating domainmapping 'www.example.com'...
 ## Experimental command  
 {: #cli-experimental}  
 
-Experimental Code Engine commands  
+{{site.data.keyword.codeengineshort}} experimental commands are not generally available. This command group provides access to potential future features for easy exploration by selected early adopters.
+{: shortdesc}
+
+You must be within the context of a [project](#cli-project) before you use `experimental` commands.
+
+You can use either `experimental` or `exp` in your `experimental` commands. To see CLI help for the `experimental` commands, run `ibmcloud ce exp -h`.  
   
 ### `ibmcloud ce experimental`  
 {: #cli-experimentalcmd}  
 
-Experimental Code Engine commands  
+{{site.data.keyword.codeengineshort}} experimental commands are not generally available. This command group provides access to potential future features for easy exploration by selected early adopters.
+{: shortdesc}
+
+You must be within the context of a [project](#cli-project) before you use `experimental` commands.
+
+You can use either `experimental` or `exp` in your `experimental` commands. To see CLI help for the `experimental` commands, run `ibmcloud ce exp -h`.  
   
 ```txt
 ibmcloud ce experimental COMMAND
 ```
 {: pre}
 
-{[cli-experimental-example.md]}  
+#### Example
+{: #experimental-example}
+
+```txt
+ibmcloud ce experimental help
+```
+{: pre}
+
+#### Example output
+{: #experimental-example-output}
+
+```txt
+NAME:
+  ibmcloud code-engine experimental - Experimental Code Engine commands
+
+USAGE:
+  ibmcloud code-engine experimental command [arguments...] [command options]
+
+COMMANDS:
+  help, h   Show help
+
+Enter 'ibmcloud code-engine experimental help [command]' for more information about a command.
+```
+{: screen}  
   
   
 
@@ -3174,19 +3300,64 @@ When you run `ibmcloud ce fn get -n 'myfunction'` to check the function status, 
 ## Help command  
 {: #cli-help}  
 
-Show help.  
+The {{site.data.keyword.codeengineshort}} help command provides information about available commands per command group.
+{: shortdesc}  
   
 ### `ibmcloud ce help`  
 {: #cli-helpcmd}  
 
-Show help.  
+The {{site.data.keyword.codeengineshort}} help command provides information about available commands per command group.
+{: shortdesc}  
   
 ```txt
 ibmcloud ce help COMMAND
 ```
 {: pre}
 
-{[cli-help-example.md]}  
+#### Example
+{: #help-example}
+
+```txt
+ibmcloud ce help
+```
+{: pre}
+
+#### Example output
+{: #help-example-output}
+
+```txt
+NAME:
+  code-engine, ce - Manage Code Engine components
+
+USAGE:
+  ibmcloud ce command [arguments...] [options...]
+
+COMMANDS:
+  application, app     Manage applications.
+  binding              Manage bindings.
+  build, bd, b         Manage configurations for generating images from source code.
+  buildrun, br         Generate images from a build.
+  configmap, cm        Manage configmaps.
+  domainmapping, dm    Manage domain mappings.
+  experimental, exp    Experimental Code Engine commands
+  function, fn         Manage functions.
+  help, h              Show help.
+  job                  Manage jobs to configure tasks.
+  jobrun, jr           Manage instances of a job.
+  connectivity, conn   Manage connectivity commands
+  project, proj        Manage Code Engine projects.
+  reclamation, recl    Manage Code Engine project reclamations.
+  registry             Manage image registry access secrets.
+  repo                 Manage Git repository access secrets.
+  revision, rev        Manage application revisions.
+  secret               Manage secrets.
+  serviceaccess        Manage service access secrets.
+  subscription, sub    Manage event subscriptions.
+  version, v           Display the 'code-engine' command-line interface version.
+
+Enter 'ibmcloud ce help command' for more information about a command.
+```
+{: screen}  
   
   
 
@@ -5256,7 +5427,7 @@ For more information about accessing registries, see [Adding access to a private
 To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 
 
-Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. 
+Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `hmac`, `ssh`, `tls`, or `registry`. 
 While you can continue to use the **`registry`** command group, take advantage of the unified **`secret`** command group.
 To create a secret to access a container registry, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
 {: important}
@@ -5548,7 +5719,7 @@ For more information about accessing repositories, see [Accessing private code r
 To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
 
 
-Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. While you can continue to use the **`repo`** command group, take advantage of the unified **`secret`** command group. To create a secret to access a service with an SSH key, such as to authenticate to a Git repository like GitHub or GitLab, use the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
+Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `hmac`, `ssh`, `tls`, or `registry`. While you can continue to use the **`repo`** command group, take advantage of the unified **`secret`** command group. To create a secret to access a service with an SSH key, such as to authenticate to a Git repository like GitHub or GitLab, use the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
 {: important}
 
   
@@ -6134,7 +6305,7 @@ For more information about working with secrets, see [Working with secrets](/doc
 
 To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 
-Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. The default value for the `--format` option is `generic`. 
+Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `hmac`, `ssh`, `tls`, or `registry`. The default value for the `--format` option is `generic`. 
 {: important}
 
   
@@ -6289,6 +6460,29 @@ ibmcloud ce secret create --name mysecret-genericfromfile  --from-file ./value1.
 
 ```txt
 Creating secret mysecret-genericfromfile...
+OK
+```
+{: screen}
+
+#### Example of an HMAC secret
+{: #secret-create-hmac-example}
+
+An HMAC secret contains an `access-key-id` and a `secret_access_key` key and is used with S3-compatible tools and libraries that require authentication but do not support IBM Cloud® Identity and Access Management API keys. 
+
+To see CLI help for creating an HMAC secret, run `ibmcloud ce secret create --format hmac`.
+
+The following example creates an HMAC secret that is named `mysecret-hmac`. This secret contains the `access_key_id` and the `secret_access_key` values provided when prompted. If any of the two options is not provided with the command or from a JSON file, then you are prompted to enter their values. 
+
+```txt
+ibmcloud ce secret create --name mysecret-hmac --format hmac --access-key-id-prompt --secret-access-key-prompt
+```
+{: pre}
+
+#### Example output for an HMAC secret
+{: #secret-create-hmac-example-output}
+
+```txt
+Creating hmac_auth secret 'mysecret-hmac'...
 OK
 ```
 {: screen}
@@ -6520,6 +6714,7 @@ myregistry-seccmd             registry        4     3h31m
 mysecret-basicauth            basic_auth      2     7m37s  
 mysecret-generic              generic         1     7m7s  
 mysecret-genericfromfile      generic         2     2m29s  
+mysecret-hmac                 hmac_auth       2     21m
 mysecret-registry             registry        4     111s  
 mysecret-ssh                  ssh_auth        2     42m  
 mysecret-tls                  tls             2     3h47m 
@@ -6932,13 +7127,13 @@ ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTIN
 :   The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. 
 
 `--prefix`, `-p`
-:   Prefix of the IBM Cloud Object Storage object. This value is *optional*. 
+:   Prefix of the {{site.data.keyword.cos_full_notm}} object. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--suffix`, `-s`
-:   Suffix of the IBM Cloud Object Storage object. Consider the file type (extension) of your file when specifying the suffix. This value is *optional*. 
+:   Suffix of the {{site.data.keyword.cos_full_notm}} object. Consider the file type (extension) of your file when specifying the suffix. This value is *optional*. 
 
  
   
