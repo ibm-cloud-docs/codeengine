@@ -5421,7 +5421,7 @@ For more information about accessing registries, see [Adding access to a private
 To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 
 
-Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. 
+Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `hmac`, `ssh`, `tls`, or `registry`. 
 While you can continue to use the **`registry`** command group, take advantage of the unified **`secret`** command group.
 To create a secret to access a container registry, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
 {: important}
@@ -5713,7 +5713,7 @@ For more information about accessing repositories, see [Accessing private code r
 To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
 
 
-Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. While you can continue to use the **`repo`** command group, take advantage of the unified **`secret`** command group. To create a secret to access a service with an SSH key, such as to authenticate to a Git repository like GitHub or GitLab, use the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
+Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `hmac`, `ssh`, `tls`, or `registry`. While you can continue to use the **`repo`** command group, take advantage of the unified **`secret`** command group. To create a secret to access a service with an SSH key, such as to authenticate to a Git repository like GitHub or GitLab, use the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
 {: important}
 
   
@@ -6299,7 +6299,7 @@ For more information about working with secrets, see [Working with secrets](/doc
 
 To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 
-Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. The default value for the `--format` option is `generic`. 
+Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `hmac`, `ssh`, `tls`, or `registry`. The default value for the `--format` option is `generic`. 
 {: important}
 
   
@@ -6454,6 +6454,29 @@ ibmcloud ce secret create --name mysecret-genericfromfile  --from-file ./value1.
 
 ```txt
 Creating secret mysecret-genericfromfile...
+OK
+```
+{: screen}
+
+#### Example of an HMAC secret
+{: #secret-create-hmac-example}
+
+An HMAC secret contains an `access-key-id` and a `secret_access_key` key and is used with S3-compatible tools and libraries that require authentication but do not support IBM Cloud® Identity and Access Management API keys. 
+
+To see CLI help for creating an HMAC secret, run `ibmcloud ce secret create --format hmac`.
+
+The following example creates an HMAC secret that is named `mysecret-hmac`. This secret contains the `access_key_id` and the `secret_access_key` values provided when prompted. If any of the two options is not provided with the command or from a JSON file, then you are prompted to enter their values. 
+
+```txt
+ibmcloud ce secret create --name mysecret-hmac --format hmac --access-key-id-prompt --secret-access-key-prompt
+```
+{: pre}
+
+#### Example output for an HMAC secret
+{: #secret-create-hmac-example-output}
+
+```txt
+Creating hmac_auth secret 'mysecret-hmac'...
 OK
 ```
 {: screen}
@@ -6685,6 +6708,7 @@ myregistry-seccmd             registry        4     3h31m
 mysecret-basicauth            basic_auth      2     7m37s  
 mysecret-generic              generic         1     7m7s  
 mysecret-genericfromfile      generic         2     2m29s  
+mysecret-hmac                 hmac_auth       2     21m
 mysecret-registry             registry        4     111s  
 mysecret-ssh                  ssh_auth        2     42m  
 mysecret-tls                  tls             2     3h47m 

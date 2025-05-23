@@ -62,6 +62,7 @@ Learn how to create secrets from the {{site.data.keyword.codeengineshort}} conso
 Learn how to create the following types of secrets from the console. 
 
 * [Generic](#secret-create-ui-generic)
+* [HMAC](#secret-create-ui-hmac)
 * [Registry](#secret-create-ui-registry)
 * [SSH](#secret-create-ui-ssh)
 * [TLS](#secret-create-ui-tls)
@@ -84,6 +85,28 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
     4. Click **Create** to create the secret.
 
 Now that your secret is created from the console, go to the Secrets and configmaps page to view a list of defined secrets and configmaps. You can apply filters to customize the list to meet your needs. 
+
+#### Creating an HMAC secret from the console
+{: #secret-create-ui-hmac}
+
+Learn how to create HMAC secrets from the {{site.data.keyword.codeengineshort}} console that can be consumed by functions, jobs, or apps as environment variables. They are used with S3-compatible tools and libraries that require authentication but do not support {{site.data.keyword.iamlong}} API keys.
+{: shortdesc}
+
+Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-project).
+
+1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
+2. From the Components page, click **Secrets and configmaps**.
+3. From the Secrets and configmaps page, click **Create** to create your secret.
+4. From the Create secret or configmap page, complete the following steps:
+    1. Select **HMAC secret**, and click **Next**.
+    2. Provide a name; for example, `mysecret-hmac`.
+    3. Specify the Access key ID.
+    4. Specify the Secret access key. Notice that the value for the key is hidden, but it can be viewed if needed. 
+    5. Click **Create** to create the secret.
+
+Now that your secret is created from the console, go to the Secrets and configmaps page to view a list of defined secrets and configmaps. You can apply filters to customize the list to meet your needs.
+
+For more information about HMAC secrets, see [{{site.data.keyword.cos_full_notm}} - API Key vs HMAC](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials#service-credentials-iam-hmac).
 
 #### Creating a registry secret from the console
 {: #secret-create-ui-registry}
@@ -160,7 +183,7 @@ Before you begin
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. The default value for the `--format` option is `generic`. 
+Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `hmac`, `ssh`, `tls`, or `registry`. The default value for the `--format` option is `generic`. 
 {: important}
 
 
@@ -285,7 +308,7 @@ TARGET: TXkgbGl0ZXJhbCBzZWNyZXQ=
 
 Notice that the value of the key `TARGET` for this generic secret is encoded. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.  
 
-#### Creating a HMAC secret with the CLI
+#### Creating an HMAC secret with the CLI
 {: #secret-create-cli-hmac}
 
 An HMAC secret contains an `access-key-id` and a `secret_access_key` key and is used with S3-compatible tools and libraries that require authentication but do not support {{site.data.keyword.iamlong}} API keys. See [{{site.data.keyword.cos_full_notm}} - API Key vs HMAC](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials#service-credentials-iam-hmac) when to use {{site.data.keyword.iamlong}} API Keys or HMAC credentials.
@@ -309,7 +332,7 @@ Example output
 Getting secret 'mysecret-hmac'...
 OK
 
-Name:          mysecret-basicauth
+Name:          mysecret-hmac
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Format:        hmac_auth
 Project Name:  myproject
