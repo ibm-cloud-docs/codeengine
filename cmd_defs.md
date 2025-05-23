@@ -2634,15 +2634,18 @@ You can use either `experimental` or `exp` in your `experimental` commands. To s
 ### `ibmcloud ce experimental`  
 {: #cli-experimentalcmd}  
 
-Experimental {{site.data.keyword.codeengineshort}} commands  
+{{site.data.keyword.codeengineshort}} experimental commands are not generally available. This command group provides access to potential future features for easy exploration by selected early adopters.
+{: shortdesc}
+
+You must be within the context of a [project](#cli-project) before you use `experimental` commands.
+
+You can use either `experimental` or `exp` in your `experimental` commands. To see CLI help for the `experimental` commands, run `ibmcloud ce exp -h`.  
   
 ```txt
 ibmcloud ce experimental COMMAND
 ```
 {: pre}
 
- 
-  
 #### Example
 {: #experimental-example}
 
@@ -2668,6 +2671,8 @@ Enter 'ibmcloud code-engine experimental help [command]' for more information ab
 ```
 {: screen}  
   
+  
+
 ## Function commands  
 {: #cli-function}  
 
@@ -3301,7 +3306,8 @@ The {{site.data.keyword.codeengineshort}} help command provides information abou
 ### `ibmcloud ce help`  
 {: #cli-helpcmd}  
 
-Show help.  
+The {{site.data.keyword.codeengineshort}} help command provides information about available commands per command group.
+{: shortdesc}  
   
 ```txt
 ibmcloud ce help COMMAND
