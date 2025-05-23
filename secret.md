@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-09"
+  years: 2020, 2025
+lastupdated: "2025-05-23"
 
 keywords: secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, secrets, configmaps, environment variables
 
@@ -38,9 +38,10 @@ The following table summarizes the supported secrets in {{site.data.keyword.code
 | Name | Description | 
 | -------------- | -------------- |
 | Basic authentication  | A secret that contains a `username` and `password` key. \n Use basic authentication secrets when you access a service that requires basic HTTP authentication. |
-| Generic  | A secret that stores simple key-value pairs and {{site.data.keyword.codeengineshort}} makes no assumptions about the defined key-value pairs nor about the intended use of the secret. \n Use generic secrets when you want to define your own key-value pairs to access a service.  |
+| Generic  | A secret that stores simple key-value pairs and {{site.data.keyword.codeengineshort}} makes no assumptions about the defined key-value pairs nor about the intended use of the secret. \n Use generic secrets when you want to define your own key-value pairs to access a service. |
+| HMAC  | A secret that contains an `access-key-id` and a `secret_access_key` key. \n Use HMAC credentials to use S3-compatible tools and libraries that require authentication but don't support {{site.data.keyword.iamlong}} API keys. |
 | Registry  | A secret that stores credentials to access a container registry. \n Use registry secrets when you work with {{site.data.keyword.codeengineshort}} apps or jobs to access a container image. Or, you use {{site.data.keyword.codeengineshort}} to build a container image and the registry secret is used by {{site.data.keyword.codeengineshort}} to access the registry to store the built container image. \n This secret is also referred to as a `Registry access secret` in the CLI. |
-| Service access | A secret that stores credentials to access an {{site.data.keyword.cloud_notm}} service instance. \n Use service access secrets when you work with [service bindings](/docs/codeengine?topic=codeengine-service-binding) in {{site.data.keyword.codeengineshort}}.  {{site.data.keyword.codeengineshort}} can automatically generate this secret or you can create your own custom service access secret. |
+| Service access | A secret that stores credentials to access an {{site.data.keyword.cloud_notm}} service instance. \n Use service access secrets when you work with [service bindings](/docs/codeengine?topic=codeengine-service-binding) in {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} can automatically generate this secret or you can create your own custom service access secret. |
 | SSH | A secret that stores credentials to authenticate to a service with an SSH key, such as authenticating to a Git repository, such as GitHub or GitLab. \n Use SSH secrets when you want {{site.data.keyword.codeengineshort}} to build a container image for you. {{site.data.keyword.codeengineshort}} uses this secret to access your source code in a code repository. For example, use this secret with build runs to access your source code in a repository, such as GitHub or GitLab. \n This secret is also used as a `Git repository access secret` in the CLI and `Code repo access` in the console. |
 | Transport Layer Security (TLS) | A secret that contains a signed TLS certificate, including all its intermediate certificates, and its corresponding private key from a certificate authority (CA). \n Use TLS secrets when you work with [custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings) in {{site.data.keyword.codeengineshort}}. |
 {: caption="Secrets in {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
@@ -168,6 +169,7 @@ By using the **`secret create`** command, you can create and manage various secr
 Learn how to create the following types of secrets with the CLI,
 * [Basic authentication](#secret-create-cli-basicauth)
 * [Generic](#secret-create-cli-generic)
+* [HMAC](#secret-create-cli-hmac)
 * [Registry](#secret-create-cli-registry)
 * [SSH](#secret-create-cli-ssh)
 * [TLS](#secret-create-cli-tls)
@@ -282,6 +284,47 @@ TARGET: TXkgbGl0ZXJhbCBzZWNyZXQ=
 {: screen}
 
 Notice that the value of the key `TARGET` for this generic secret is encoded. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.  
+
+#### Creating a HMAC secret with the CLI
+{: #secret-create-cli-hmac}
+
+An HMAC secret contains an `access-key-id` and a `secret_access_key` key and is used with S3-compatible tools and libraries that require authentication but do not support {{site.data.keyword.iamlong}} API keys. See [{{site.data.keyword.cos_full_notm}} - API Key vs HMAC](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials#service-credentials-iam-hmac) when to use {{site.data.keyword.iamlong}} API Keys or HMAC credentials.
+The following example creates an HMAC secret with sample credentials, to be provided when prompted.
+
+```txt
+ibmcloud ce secret create --name mysecret-hmac --format hmac --access-key-id-prompt --secret-access-key-prompt
+```
+{: pre}
+
+To display the details of this secret,
+
+```txt
+ibmcloud ce secret get --name mysecret-hmac
+```
+{: pre}
+
+Example output
+
+```txt
+Getting secret 'mysecret-hmac'...
+OK
+
+Name:          mysecret-basicauth
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Format:        hmac_auth
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           86s
+Created:       2025-05-15T12:41:15-05:00
+
+Data:
+---
+access_key_id: MWEyYjNjNGQ1ZTZmMWEyYjNjNGQ1ZTZmMWEyYjNjNGQK
+secret_access_key: REDACTED
+```
+{: screen}
+
+Notice that the value of the key `access_key_id` for this HMAC secret is encoded, and the value of `secret_access_key` is redacted. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.
 
 #### Creating a registry secret with the CLI
 {: #secret-create-cli-registry}
@@ -439,6 +482,7 @@ myregistry-seccmd             registry        4     3h31m
 mysecret-basicauth            basic_auth      2     7m37s  
 mysecret-generic              generic         1     7m7s  
 mysecret-genericfromfile      generic         2     2m29s  
+mysecret-hmac                 hmac_auth       2     21m
 mysecret-registry             registry        4     111s  
 mysecret-ssh                  ssh_auth        2     42m  
 mysecret-tls                  tls             2     3h47m 

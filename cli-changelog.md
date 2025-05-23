@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-15"
+lastupdated: "2025-05-23"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,7 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.53.0 | 2025-05-15 | - Added `hmac` as supported format in the **`secret`** command group. See [Working with secrets](/docs/codeengine?topic=codeengine-secret) and [{{site.data.keyword.codeengineshort}} CLI reference (`secret` command)](/docs/codeengine?topic=codeengine-cli#cli-secret).  \n Added the `--trusted-profiles-enabled` option also for the **`jobrun submit`** and **`jobrun resubmit`** commands. \n - Fixed various bugs. |
+| 1.53.0 | 2025-05-15 | - Added `hmac` as supported format in the **`secret`** command group. See [Working with secrets](/docs/codeengine?topic=codeengine-secret) and [{{site.data.keyword.codeengineshort}} CLI reference (`secret` command)](/docs/codeengine?topic=codeengine-cli#cli-secret).  \n - Added the `--trusted-profiles-enabled` option also for the **`jobrun submit`** and **`jobrun resubmit`** commands. \n - Fixed various bugs. |
 | 1.52.2 | 2025-04-28 | - Fixed various bugs. |
 | 1.52.1 | 2025-04-10 | - Fixed various bugs. |
 | 1.52.0 | 2025-03-28 | - Added the `--trusted-profiles-enabled` option for the **`app create`**, **`app update`**, **`job create`**, **`job update`**, **`function create`**, and **`function update`** commands. Use this option to enable or disable Trusted Profiles support for the selected resource. See [Working with trusted profiles in Code Engine to access IBM Cloud services](/docs/codeengine?topic=codeengine-trusted-profiles). \n - Fixed various bugs. |
