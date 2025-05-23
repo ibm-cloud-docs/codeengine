@@ -2634,7 +2634,7 @@ You can use either `experimental` or `exp` in your `experimental` commands. To s
 ### `ibmcloud ce experimental`  
 {: #cli-experimentalcmd}  
 
-Experimental Code Engine commands  
+Experimental {{site.data.keyword.codeengineshort}} commands  
   
 ```txt
 ibmcloud ce experimental COMMAND
@@ -7097,13 +7097,13 @@ ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTIN
 :   The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. 
 
 `--prefix`, `-p`
-:   Prefix of the IBM Cloud Object Storage object. This value is *optional*. 
+:   Prefix of the {{site.data.keyword.cos_full_notm}} object. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--suffix`, `-s`
-:   Suffix of the IBM Cloud Object Storage object. Consider the file type (extension) of your file when specifying the suffix. This value is *optional*. 
+:   Suffix of the {{site.data.keyword.cos_full_notm}} object. Consider the file type (extension) of your file when specifying the suffix. This value is *optional*. 
 
  
   
