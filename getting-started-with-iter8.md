@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-02-21"
+  years: 2025
+lastupdated: "2025-06-03"
 
 keywords: low latency, zero error code engine apps, conformance testing, service-level objectives (SLOs), SLO, Iter8, code engine application, rolling back a revision, validating application code
 
@@ -25,7 +25,7 @@ completion-time: 5m
 
 Before you begin
 
-- Set up [Docker](https://docs.docker.com/get-docker/){: external} on your local system.
+- Set up [Docker](https://docs.docker.com/get-started/get-docker/){: external} on your local system.
 - Create a {{site.data.keyword.codeengineshort}} application. Not sure how to create one? Then try the [Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) tutorial.
 
 ## Finding the URL of your {{site.data.keyword.codeengineshort}} application
@@ -193,5 +193,3 @@ docker rm -f -v ind
 {: #nextsteps-slovalidationtut}
 
 This tutorial is based on the Iter8 open source project. For more information, see [Iter8 open source project page](https://iter8.tools){: external}.
-
-

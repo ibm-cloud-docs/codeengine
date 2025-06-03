@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-23"
+lastupdated: "2025-06-03"
 
 keywords: secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, secrets, configmaps, environment variables
 
@@ -39,7 +39,7 @@ The following table summarizes the supported secrets in {{site.data.keyword.code
 | -------------- | -------------- |
 | Basic authentication  | A secret that contains a `username` and `password` key. \n Use basic authentication secrets when you access a service that requires basic HTTP authentication. |
 | Generic  | A secret that stores simple key-value pairs and {{site.data.keyword.codeengineshort}} makes no assumptions about the defined key-value pairs nor about the intended use of the secret. \n Use generic secrets when you want to define your own key-value pairs to access a service. |
-| HMAC  | A secret that contains an `access-key-id` and a `secret_access_key` key. \n Use HMAC credentials to use S3-compatible tools and libraries that require authentication but don't support {{site.data.keyword.iamlong}} API keys. |
+| HMAC  | A secret that contains an `access_key_id` and a `secret_access_key` key. \n Use HMAC credentials to use S3-compatible tools and libraries that require authentication but don't support {{site.data.keyword.iamlong}} API keys. |
 | Registry  | A secret that stores credentials to access a container registry. \n Use registry secrets when you work with {{site.data.keyword.codeengineshort}} apps or jobs to access a container image. Or, you use {{site.data.keyword.codeengineshort}} to build a container image and the registry secret is used by {{site.data.keyword.codeengineshort}} to access the registry to store the built container image. \n This secret is also referred to as a `Registry access secret` in the CLI. |
 | Service access | A secret that stores credentials to access an {{site.data.keyword.cloud_notm}} service instance. \n Use service access secrets when you work with [service bindings](/docs/codeengine?topic=codeengine-service-binding) in {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} can automatically generate this secret or you can create your own custom service access secret. |
 | SSH | A secret that stores credentials to authenticate to a service with an SSH key, such as authenticating to a Git repository, such as GitHub or GitLab. \n Use SSH secrets when you want {{site.data.keyword.codeengineshort}} to build a container image for you. {{site.data.keyword.codeengineshort}} uses this secret to access your source code in a code repository. For example, use this secret with build runs to access your source code in a repository, such as GitHub or GitLab. \n This secret is also used as a `Git repository access secret` in the CLI and `Code repo access` in the console. |
@@ -311,7 +311,7 @@ Notice that the value of the key `TARGET` for this generic secret is encoded. To
 #### Creating an HMAC secret with the CLI
 {: #secret-create-cli-hmac}
 
-An HMAC secret contains an `access-key-id` and a `secret_access_key` key and is used with S3-compatible tools and libraries that require authentication but do not support {{site.data.keyword.iamlong}} API keys. See [{{site.data.keyword.cos_full_notm}} - API Key vs HMAC](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials#service-credentials-iam-hmac) when to use {{site.data.keyword.iamlong}} API Keys or HMAC credentials.
+An HMAC secret contains an `access_key_id` and a `secret_access_key` key and is used with S3-compatible tools and libraries that require authentication but do not support {{site.data.keyword.iamlong}} API keys. See [{{site.data.keyword.cos_full_notm}} - API Key vs HMAC](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials#service-credentials-iam-hmac) when to use {{site.data.keyword.iamlong}} API Keys or HMAC credentials.
 The following example creates an HMAC secret with sample credentials, to be provided when prompted.
 
 ```txt

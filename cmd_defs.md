@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-05-23"
+lastupdated: "2025-06-03"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -6467,7 +6467,7 @@ OK
 #### Example of an HMAC secret
 {: #secret-create-hmac-example}
 
-An HMAC secret contains an `access-key-id` and a `secret_access_key` key and is used with S3-compatible tools and libraries that require authentication but do not support IBM Cloud® Identity and Access Management API keys. 
+An HMAC secret contains an `access_key_id` and a `secret_access_key` key and is used with S3-compatible tools and libraries that require authentication but do not support IBM Cloud® Identity and Access Management API keys. 
 
 To see CLI help for creating an HMAC secret, run `ibmcloud ce secret create --format hmac`.
 

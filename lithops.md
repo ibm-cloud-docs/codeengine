@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-12"
+  years: 2025
+lastupdated: "2025-06-03"
 
 keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine, lithops, jobs
 
@@ -34,7 +34,7 @@ Before you begin
 
 1. Install [Lithops](https://github.com/lithops-cloud/lithops#quick-start){: external}.
 2. Create the [Lithops configuration file](https://github.com/lithops-cloud/lithops/tree/master/config#lithops-configuration){: external}.
-3. Install [Docker (community edition) version](https://docs.docker.com/get-docker/){: external}. 
+3. Install [Docker (community edition) version](https://docs.docker.com/get-started/get-docker/){: external}. 
 4. Log in to Docker.
 
     ```txt
@@ -142,5 +142,3 @@ if __name__ == '__main__':
 {: #nextsteps-lithops}
 
 You can find more examples and use cases, as well as ask questions, on the [Lithops project page](https://github.com/lithops-cloud/lithops){: external}. 
-
-
