@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-17"
+  years: 2020, 2025
+lastupdated: "2025-06-11"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -21,14 +21,14 @@ When you create a job, you can specify workload configuration information that i
 ## Creating a job with the console
 {: #create-job-ui}
 
-Create a {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengine/firstjob` image. This job prints `Hi from a batch job! My index is:`. 
+Create a {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengine/helloworld` image. This job prints `Hello from helloworld! I'm a task job!`. 
 
 1. Open [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Let's go**.
 3. Select **Job**.
 4. Enter a name for the job; for example, `myjob`.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
-6. Specify a container image for your job, for example, `icr.io/codeengine/firstjob`. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-plan-build). For more information about the code that is used for this example, see [`firstjob`](https://github.com/IBM/CodeEngine/tree/main/job){: external}. 
+6. Specify a container image for your job, for example, `icr.io/codeengine/helloworld`. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-plan-build). For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/helloworld){: external}. 
 7. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
 8. Click **Create**.
 9. From your job page, when your job is in `ready` status, click **Submit job** to submit a job based on the current configuration. 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-02"
+  years: 2023, 2025
+lastupdated: "2025-06-11"
 
 keywords: troubleshooting for code engine, troubleshooting connections in code engine, tips for app connections in code engine, debugging connections in code engine, app connectivity and code engine, app connection fails with proxy
 
@@ -32,11 +32,7 @@ To resolve this situation, make sure that your code responds to the proxy within
 
 For more information about addressing timeout errors in {{site.data.keyword.cis_short}}, see [Troubleshooting 500 class errors](/docs/cis?topic=cis-html-5xx-errors). 
 
-For more information about the Cloudflare timeout error, see [Timeout error 524 for Cloudflare](https://developers.cloudflare.com/support/troubleshooting/cloudflare-errors/troubleshooting-cloudflare-5xx-errors/#error-524-a-timeout-occurred){: external}. 
+For more information about the Cloudflare timeout error, see [Timeout error 524 for Cloudflare](https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/#error-524-a-timeout-occurred){: external}. 
 
 
 For more information about troubleshooting other app connection failures, see [Why does my app connection fail](/docs/codeengine?topic=codeengine-ts-app-connection-fail)?
-
-
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-25"
+lastupdated: "2025-06-11"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -39,13 +39,13 @@ The following table lists the limits for applications.
 
 | Category                    |         Default           |   Maximum value       |     Need to extend the maximum?            |
 | --------------------------- | ------------------------- | ---------------------- |------------------------------------------- |
-| CPU                         |                       1.0 |                  12.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Ephemeral storage            |                     400 M |  48 G \n  (limited by memory) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Max scale                   |                        10 |                   250 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Memory                      |                       4 G |                  48 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Min scale                   |                         0 |                    250 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Concurrency                 |                       100 |                   1000 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Timeout                     |                300 seconds|            600 seconds |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| CPU                         |                       1.0 |                  12.0 |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
+| Ephemeral storage            |                     400 M |  48 G \n  (limited by memory) |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
+| Max scale                   |                        10 |                   250 |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
+| Memory                      |                       4 G |                  48 G |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
+| Min scale                   |                         0 |                    250 |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
+| Concurrency                 |                       100 |                   1000 |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
+| Timeout                     |                300 seconds|            600 seconds |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
 {: caption="Application limits"}
 
 For more information about supported CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
@@ -63,13 +63,13 @@ The following table lists the limits for jobs.
 
 | Category                     |         Default           |    Maximum value         |     Need to extend the maximum?            |
 | ---------------------------- |  ------------------------ | ------------------------ |------------------------------------------- |
-| Array indices        |                         0 |                  9999999 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Array indices        |                         0 |                  9999999 |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
 | Array size           |                         1 |                     1000 | N/A  |
-| CPU                          |                       1.0 |                     12.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Ephemeral storage            |                     400 M |  48 G \n  (limited by memory) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Memory                       |                       4 G |                    48 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Retries                      |                         3 |                        5 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Timeout                      |    7200 seconds (2 hours) | 86400 seconds (24 hours) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| CPU                          |                       1.0 |                     12.0 |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
+| Ephemeral storage            |                     400 M |  48 G \n  (limited by memory) |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
+| Memory                       |                       4 G |                    48 G |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
+| Retries                      |                         3 |                        5 |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
+| Timeout                      |    7200 seconds (2 hours) | 86400 seconds (24 hours) |  [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
 {: caption="Job limits"}
 
 *Array indices* are comma-separated lists or a hyphen-separated range of indices, which specifies the job instances to run; for example, `1,3,6,9` or `1-5,7-8,10`.
@@ -114,7 +114,7 @@ The following table lists the limits for the periodic timer subscription.
 
 | Category  |   Maximum   |      Need to extend the maximum?            |
 | ---------------------- |  --------- | ------------------------------------------- |
-| Size of data | 4096 bytes | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Size of data | 4096 bytes | [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
 {: caption="Periodic timer limits"}
 
 {{site.data.keyword.codeengineshort}} limits the size of data for Periodic timer (cron) events with a maximum of 4096 bytes. When you create or update periodic timer (cron) events, {{site.data.keyword.codeengineshort}} checks the size of the cron event data. If the Periodic timer (cron) event data exceeds the limit, a size limit exceeded error is given. If you receive this error, try reducing the cron event data size to less than 4096 bytes.
@@ -128,7 +128,7 @@ The following table lists the limits for projects.
 
 | Category  |   Maximum      |       Need to extend the maximum?            |
 | ---------------------- |  --------- | ------------------------------------------- |
-| Project per region | 20 | [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Project per region | 20 | [Contact IBM support](/docs/account?topic=account-open-case&interface=ui) |
 {: caption="Project limits"}
 
 The maximum number of projects includes projects that are active and any projects that are not permanently deleted. When you delete a project, the project is soft deleted, and can be restored within 7 days before it is permanently deleted. Use the console or the CLI to display soft-deleted projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).

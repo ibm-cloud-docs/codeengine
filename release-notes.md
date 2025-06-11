@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-06-11"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -1301,7 +1301,7 @@ Review the release notes for November 2022.
 {: release-note}
 
 Added more information about certificates and considerations when you use {{site.data.keyword.cis_short}} with custom domain mappings
-:   See [How can I obtain a certificate for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert) and [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis)
+:   See [How can I use Certbot and the Let's Encrypt service for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert) and [How can I use an origin certificate obtained from my {{site.data.keyword.cis_short}} for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert-CIS)
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
