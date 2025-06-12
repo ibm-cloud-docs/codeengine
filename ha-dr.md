@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-09"
+  years: 2025
+lastupdated: "2025-06-11"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine, backing up code engine, availability of code engine, code engine regions, backing up your Code Engine instance
 
@@ -18,7 +18,7 @@ subcollection: codeengine
 All {{site.data.keyword.cloud_notm}} general availability (GA) offerings have a Service Level Agreement of 99.99% availability. {{site.data.keyword.codeenginefull}} is a GA service that is offered in several locations. Each location has three different data centers for redundancy.
 {: shortdesc}
 
-For more information about high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}, see [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime). You can also find information about [Service Level Agreements](/docs/overview?topic=overview-slas).  
+For more information about high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}, see [How IBM Cloud ensures high availability and redundancy](/docs/resiliency?topic=resiliency-ha-redundancy). You can also find information about [Service Level Agreements](/docs/overview?topic=overview-slas).  
 
 ## {{site.data.keyword.codeengineshort}} regions
 {: #ha-dr-regions}

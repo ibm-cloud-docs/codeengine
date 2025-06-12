@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-05-23"
+lastupdated: "2025-06-11"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository, SSH secret
 
@@ -37,8 +37,8 @@ Before you begin
 For both GitHub and GitLab, you can decide between two kinds of SSH keys to connect to your source repository.
 
 1. An SSH key associated with the source code repository, this key has access to only those repositories where you register the SSH key. This access is read only, by default, which is the level that is required by {{site.data.keyword.codeengineshort}} to download the source code. You can select write access, if needed. Consider choosing this option to set an SSH key that is scoped to specific repositories to control access to only the specified repositories.  
-    - [GitHub - Deployment keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys#deploy-keys){: external}
-    - [GitLab - Deployment keys](https://docs.gitlab.com/ee/user/project/deploy_keys/){: external}
+    - [GitHub - Deploy keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys#deploy-keys){: external}
+    - [GitLab - Deploy keys](https://docs.gitlab.com/user/project/deploy_keys/){: external}
 
 2. An SSH key associated with a user, for example, your own user account or a functional ID that is available in your organization. This SSH key has the repository permissions from the user account. {{site.data.keyword.codeengineshort}} requires read access to download the source code.
 
@@ -46,7 +46,7 @@ For both GitHub and GitLab, you can decide between two kinds of SSH keys to conn
     {: important}
 
     - [Adding an SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account){: external}.
-    - [Adding an SSH key to your GitLab account](https://docs.gitlab.com/ee/user/ssh){: external}.
+    - [Add an SSH key to your GitLab account](https://docs.gitlab.com/user/ssh/#add-an-ssh-key-to-your-gitlab-account){: external}.
 
 Do not create your SSH key file with a secure passphrase as this action causes your `build` command to fail.
 {: tip}

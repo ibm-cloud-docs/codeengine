@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-06-11"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2932,8 +2932,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Can I use sequences to chain my functions together?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq7)
 
-    * [Can I use `whisk.system` actions?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq8)
-
     * [Can I bind my function to service credentials?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq9)
 
     * [Where can I find information about my in progress and finished {{site.data.keyword.codeengineshort}} Function runs?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq10)
@@ -3374,7 +3372,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [How can I use Certbot and the Let's Encrypt service for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert)
 
-    * [How can I use an origin certificate obtained from my CIS for for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert-CIS)
+    * [How can I use an origin certificate obtained from my CIS for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert-CIS)
 
 * [Configuring custom domain mappings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-domain-mappings#configure-domainmapping)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2025-02-28"
+lastupdated: "2025-06-11"
 
 keywords: code engine, data portability
 
@@ -405,4 +405,4 @@ All commands that use the `kubectl` command with the `-o json` option, produce a
 ## Data ownership
 {: #data-portability-ownership}
 
-All exported data is classified as customer content. Apply the full customer ownership and licensing rights, as stated in the [{{site.data.keyword.cloud_notm}} Service Agreement](https://www.ibm.com/terms/?id=Z126-6304_WS).
+All exported data is classified as customer content. Apply the full customer ownership and licensing rights, as stated in the [{{site.data.keyword.cloud_notm}} Service Agreement](https://www.ibm.com/support/customer/csol/terms/?id=Z126-6304_WS).

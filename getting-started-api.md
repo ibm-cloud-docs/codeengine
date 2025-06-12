@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-03-11"
+  years: 2025
+lastupdated: "2025-06-11"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -23,7 +23,7 @@ You can use the {{site.data.keyword.codeenginefull}} API to create and manage yo
 
 To work with the API to create and manage {{site.data.keyword.codeengineshort}} entities, set up your API environment.
 
-Before you begin, [download and install the `jq` tool](https://jqlang.github.io/jq/){: external}, which is a lightweight and flexible command-line JSON processor. This tool makes it easier to work with JSON responses that you receive from {{site.data.keyword.codeengineshort}} API.
+Before you begin, [download and install the `jq` tool](https://jqlang.org/){: external}, which is a lightweight and flexible command-line JSON processor. This tool makes it easier to work with JSON responses that you receive from {{site.data.keyword.codeengineshort}} API.
 
 1. Set values for `region`, `api_key`, and `project_name` before you run the example Curl commands in the API. For example, 
 
@@ -132,5 +132,3 @@ To start working with {{site.data.keyword.codeengineshort}} components with the 
 
 
 {{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tools that are based on Kubernetes or Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Knative and Kubernetes APIs and their CLI commands. For more information, see [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes) and [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
-
-

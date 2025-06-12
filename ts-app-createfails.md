@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-09-19"
+  years: 2020, 2025
+lastupdated: "2025-06-11"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps, app create fails
 
@@ -80,12 +80,10 @@ Try one of these solutions.
 
 7. To address the Docker Hub rate limit problem, you can take the following actions. 
 
-    * Authenticate with Docker Hub to increase the rate limit. Be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external}.  
+    * Authenticate with Docker Hub to increase the rate limit. Be aware of [Docker rate limits](https://docs.docker.com/docker-hub/usage/){: external}.  
     
     * Pull the image from Docker Hub and publish the image in a different registry, such as {{site.data.keyword.registrylong}}. Then, pull your image from the new location. 
 
 If these solutions do not solve your issue, for further debugging, try retrieving the logs or the system event information for your app. For more information, see [How do I get logs for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs) and [How do I get system event information for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent).
 
 For more about working with apps, see [Deploying apps](/docs/codeengine?topic=codeengine-application-workloads).
-
-

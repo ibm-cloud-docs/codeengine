@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-09"
+  years: 2020, 2025
+lastupdated: "2025-06-11"
 
 keywords: events, serverless, code engine, activity tracker, analyzing events
 
@@ -15,13 +15,10 @@ subcollection: codeengine
 # Auditing events for {{site.data.keyword.codeengineshort}}
 {: #at_events}
 
-You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.codeenginefull}} service instance by using the {{site.data.keyword.at_full_notm}} service.
+You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.codeenginefull}} service instance by using the {{site.data.keyword.logs_full_notm}} service.
 {: shortdesc}
 
-As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
-{: important}
-
-{{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to follow regulatory audit requirements. You can also be alerted about actions as they happen. The events that are collected follow the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting Started tutorial for {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
+{{site.data.keyword.logs_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to follow regulatory audit requirements. You can also be alerted about actions as they happen. The events that are collected follow the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting Started with {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-getting-started).
 
 You can also start auditing from your {{site.data.keyword.codeengineshort}} dashboard by selecting **Add auditing**.
 {: tip}
@@ -29,7 +26,7 @@ You can also start auditing from your {{site.data.keyword.codeengineshort}} dash
 ## List of events from {{site.data.keyword.cloud_notm}} console and CLI actions
 {: #list-events-cli-console}
 
-The following events are generated when an initiator interacts with the {{site.data.keyword.codeenginefull_notm}} console and CLI or with the **`kubectl`** and **`kn`** commands. These events are sent to {{site.data.keyword.at_full_notm}}.
+The following events are generated when an initiator interacts with the {{site.data.keyword.codeenginefull_notm}} console and CLI or with the **`kubectl`** and **`kn`** commands. These events are sent to {{site.data.keyword.logs_full_notm}}.
 {: shortdesc}
 
 ### Project events
@@ -141,7 +138,7 @@ These actions generate subscription events.
 ## List of events from **`kubectl`** and **`kn`** commands
 {: #kubect1-events}
 
-The following events are generated when an initiator interacts with the **`kubectl`** and **`kn`** commands. These events are sent to {{site.data.keyword.at_full_notm}}.
+The following events are generated when an initiator interacts with the **`kubectl`** and **`kn`** commands. These events are sent to {{site.data.keyword.logs_full_notm}}.
 
 ### Pod events
 {: #kubect1-pod-events}
@@ -235,12 +232,12 @@ Note:
 ## Viewing events
 {: #view}
 
-{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started) service in the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs in an {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a logging instance in `us-south`. For more information about setting up {{site.data.keyword.at_full_notm}}, see [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision).
+{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-getting-started) service in the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs in an {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a logging instance in `us-south`. For more information about setting up {{site.data.keyword.logs_full_notm}}, see [Provisioning an instance](/docs/cloud-logs?topic=cloud-logs-instance-provision&interface=ui).
 
 ## Analyzing events
 {: #at_events_analyze}
 
-After you view events that are captured by {{site.data.keyword.at_full_notm}}, you can then analyze the events.
+After you view events that are captured by {{site.data.keyword.logs_full_notm}}, you can then analyze the events.
 {: shortdesc}
 
 Identifying the {{site.data.keyword.codeengineshort}} project that generates the event
@@ -255,4 +252,4 @@ Getting information for failures
 :    All events that are issued for failed actions display `failure` in the `outcome` field, and in addition provide more details as part of the `reason` field. Note that the `reason.reasonForFailure` field might be especially helpful, as it contains details of the failure.
 
 Custom views
-:    For more information about generating custom views by using event fields, see [Creating custom views in {{site.data.keyword.loganalysislong_notm}}](/docs/activity-tracker?topic=activity-tracker-views).
+:    For more information about generating custom views by using event fields, see [Managing custom views in {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-custom_views&interface=ui).

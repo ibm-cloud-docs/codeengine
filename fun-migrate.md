@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-12-16"
+  years: 2023, 2025
+lastupdated: "2025-06-11"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -116,11 +116,6 @@ You can include dynamic elements that are supported by {{site.data.keyword.codee
 {: #fun-migrate-faq7}
 
 {{site.data.keyword.codeengineshort}} does not include support for sequences. However, because any function can be invoked by calling its [private or public endpoint](/docs/codeengine?topic=codeengine-fun-work#optionsvisibilityfun), you can chain your functions together with a series of REST calls. This logic must be added directly to your function code.
-
-### Can I use `whisk.system` actions?
-{: #fun-migrate-faq8}
-
-If you are using Cloud Functions that are based on `whisk.system` actions, you can export your `whisk.system` action with the [`ibmcloud fn action get`](/docs/openwhisk?topic=openwhisk-functions-cli#cli_action_get) command and including the `--save` option. The output contains the source code and references to required libraries. Then, [create a Code Engine Function](/docs/codeengine?topic=codeengine-fun-create-local), based on the exported source artifacts. While a certain level of artifact compatibility is retained, you cannot export the Action metadata directly into Code Engine Functions.
 
 ### Can I bind my function to service credentials?
 {: #fun-migrate-faq9}

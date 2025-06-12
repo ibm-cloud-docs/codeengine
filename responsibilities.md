@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-14"
+lastupdated: "2025-06-11"
 
 subcollection: codeengine
 
@@ -66,7 +66,7 @@ You and IBM share responsibilities for controlling access to your {{site.data.ke
 | Task | IBM responsibilities | Your responsibilities |
 | ------ | ----------------------- | ---------------------- |
 | General | - Create projects with a service ID so that your deployments in the project can pull images from {{site.data.keyword.registrylong_notm}}. | - Maintain responsibility for any service roles that you create. |
-| Observability | - Provide integration of {{site.data.keyword.at_full_notm}} with your  {{site.data.keyword.codeengineshort}} project entities to audit any activity. | - Set up {{site.data.keyword.at_full_notm}} or other capabilities to track user activity. |
+| Observability | - Provide integration of {{site.data.keyword.logs_full_notm}} with your  {{site.data.keyword.codeengineshort}} project entities to audit any activity. | - Set up {{site.data.keyword.logs_full_notm}} or other capabilities to track user activity. |
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Responsibilities for identity and access management" caption-side="bottom"}
 

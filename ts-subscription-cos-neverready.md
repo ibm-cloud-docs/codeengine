@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-15"
+  years: 2025
+lastupdated: "2025-06-11"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, object storage
 
@@ -38,7 +38,7 @@ Look at the subscription source to see whether any error messages returned by ru
     4. Be sure to select the **Notifications Manager** service access checkbox.
     5. Click **Authorize**.
 
-2. If the error message includes `Error accessing bucket in region`, check the region that your project is in by running [`ibmcloud ce project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current). Find your bucket region by running [`ibmcloud cos bucket-location-get --bucket BUCKET_NAME`](/docs/cloud-object-storage-cli-plugin?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-find-bucket). Both the project and bucket must be in the same region. In addition, be sure that the resiliency is set to `regional`.
+2. If the error message includes `Error accessing bucket in region`, check the region that your project is in by running [`ibmcloud ce project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current). Find your bucket region by running [`ibmcloud cos bucket-location-get --bucket BUCKET_NAME`](/docs/cloud-object-storage?topic=cloud-object-storage-ic-cos-cli#find-a-bucket). Both the project and bucket must be in the same region. In addition, be sure that the resiliency is set to `regional`.
 
 3. If the error message shows `NotFound : Sink not found`, then your destination app or job is not available. Run the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command or the [**`ibmcloud ce job list`**](/docs/codeengine?topic=codeengine-cli#cli-job-list) command to make sure that your destination app or job exists. If the app or job doesn't exist, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command or create the job with the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 

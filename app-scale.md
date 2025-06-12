@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-03-22"
+  years: 2020, 2025
+lastupdated: "2025-06-11"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -62,7 +62,7 @@ Use the following configuration settings to control application scaling.
 
 For example, if the maximum number of instances value is set to `10` and the concurrency is set to `100`, then an application can process 1000 concurrent requests before potential queuing of requests might occur. If you expect more than 1000 requests concurrently, then you might consider increasing the maximum number of instances value for your app. 
 
-For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimizing Application Scaling, Latency, and Throughput](https://www.ibm.com/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}, and [Tuning IBM Cloud Code Engine Scale-Down Delay to Reduce Application Response Times](https://community.ibm.com/community/user/cloud/blogs/samuel-matzek1/2023/08/30/tuning-ibm-cloud-code-engine-scale-down-delay){: external}.
+For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimizing Application Scaling, Latency, and Throughput](https://www.ibm.com/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}, and [Tuning IBM Cloud Code Engine Scale-Down Delay to Reduce Application Response Times](https://community.ibm.com/community/user/blogs/samuel-matzek1/2023/08/30/tuning-ibm-cloud-code-engine-scale-down-delay){: external}.
 
 If you set the minimum number of instances equal to the maximum number of instances, then scaling does not occur and the target currency and scale-down delay values do not apply. However, the concurrency value is still in effect. 
 {: tip}
@@ -379,6 +379,3 @@ When you update your application, your app creates a new revision and routes tra
 To change the range within which {{site.data.keyword.codeengineshort}} autoscales the number of running instances for an app with the CLI, run the [**`application update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command with the `--min-scale` and `--max-scale` options set to the number of instances that you want for your app. You can optionally set request concurrency and timing settings for your app. These options include `--concurrency`, `--concurrency-target`, `--request-timeout`, and `--scale-down-delay`. For more information about setting these autoscaling values, see [Scaling boundaries](#app-scale-boundaries), and [Autoscaling settings for concurrency and timing](#app-scale-timeconcurrency).
 
 When you update your application, your app creates a new revision and routes traffic to that instance.
-
-
-
