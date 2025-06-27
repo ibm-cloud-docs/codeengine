@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-03"
+lastupdated: "2025-06-27"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -3089,9 +3089,11 @@ ibmcloud ce fn runtimes
 {: #function-runtimes-example-output}
 
 ```txt
-Name         ID           Family  Default  Optimized  
-Node.js 20   nodejs-20    nodejs  true     true  
-Python 3.11  python-3.11  python  true     true 
+Name         ID           Family  Default  
+Python 3.11  python-3.11  python  true  
+Node.js 20   nodejs-20    nodejs  true  
+Node.js 22   nodejs-22    nodejs  false  
+Python 3.13  python-3.13  python  false  
 ```
 {: screen}
   

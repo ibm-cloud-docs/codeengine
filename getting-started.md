@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-04-25"
+lastupdated: "2025-06-27"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -156,7 +156,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} function with sa
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a function.
 4. Select **Function**.
 5. Enter a name for the function. Use a name for your function that is unique within the project.
-6. Select **Node.js 18**
+6. Select **Node.js 20**
 7. Click **Create**. Your function is created with sample code. You can edit this code on the **Function -> Configuration** page.
 8. Click **Test function** and then click **Send request** in the Test function pane. To open the function in a web page, click **Function URL**.
 
