@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-25"
+lastupdated: "2025-06-30"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,9 +23,12 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 ## June 2025
 {: #codeengine-june25}
 
-### 25 June 2025
-{: #codeengine-june2525}
+### 26 June 2025
+{: #codeengine-june2625}
 {: release-note}
+
+Added support for functions runtimes Node.js 22 and Python 3.13
+:   See [Function runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
 
 CLI version 1.53.3 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
