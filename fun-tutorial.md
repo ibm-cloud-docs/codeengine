@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-02-18"
+lastupdated: "2025-07-01"
 
 keywords: function tutorial for code engine, function, functions in code engine, creating functions, tutorial for code engine
 
@@ -120,7 +120,7 @@ Create a Node.js source file called `funhello.js` with the following sample code
 Create the function from the `funhello.js` file.
 
 ```txt
-ibmcloud ce fn create --name funhello --runtime nodejs-20 --build-source funhello.js
+ibmcloud ce fn create --name funhello --runtime nodejs --build-source funhello.js
 ```
 {: pre}
 
