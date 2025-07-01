@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-02-18"
+lastupdated: "2025-07-01"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -69,7 +69,7 @@ Before you begin
 The following example **`function create`** command creates the `myfun` function, which references code that is located in `https://github.com/IBM/CodeEngine`. This command automatically builds the code bundle and uploads it to an {{site.data.keyword.registrylong}} namespace in your account. The function references this built code bundle. By specifying the `--build-context-dir` option, the build uses the source in the `helloworld-samples/function-nodejs` directory.   
 
 ```txt
-ibmcloud ce function create --name myfun --runtime nodejs-20 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs
+ibmcloud ce function create --name myfun --runtime nodejs --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs
 ```
 {: pre}
 
@@ -211,7 +211,7 @@ Create a function that includes a dependency for a specific Node.js module by cr
 3. Create your files as a function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option. The following example pulls the files from the `https://github.com/IBM/CodeEngine` public repository.
   
     ```sh
-    ibmcloud ce fn create -n nodelorem -runtime nodejs-20 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-codebundle-nodejs/
+    ibmcloud ce fn create -n nodelorem -runtime nodejs --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-codebundle-nodejs/
     ```
     {: pre}
   
@@ -268,7 +268,7 @@ Create a function that includes a dependency for a specific Python module by cre
 3. Create your files as a function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option. The following example pulls the files from the `https://github.com/IBM/CodeEngine` public repository.
   
     ```sh
-    ibmcloud ce fn create -n pylorem -runtime python-3.11 --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-codebundle-python/
+    ibmcloud ce fn create -n pylorem -runtime python --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-codebundle-python/
     ```
     {: pre}
 

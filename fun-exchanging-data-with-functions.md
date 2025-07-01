@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2025-02-18"
+lastupdated: "2025-07-01"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -982,7 +982,7 @@ Follow these steps to see the creation of a {{site.data.keyword.codeengineshort}
  2. After you log on to {{site.data.keyword.Bluemix}} and selecting the {{site.data.keyword.codeengineshort}} functions service, create a new function:
 
     ```javascript
-    ibmcloud ce fn create --name sample --runtime nodejs-20 --inline-code sample.js --cpu 0.5 --memory 2G
+    ibmcloud ce fn create --name sample --runtime nodejs --inline-code sample.js --cpu 0.5 --memory 2G
     ```
     {: screen}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-27"
+lastupdated: "2025-07-01"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2859,7 +2859,7 @@ ibmcloud ce function create --name FUNCTION_NAME [--build-commit BUILD_COMMIT] [
 {: #function-create-example}
 
 ```txt
-ibmcloud ce fn create --name myfunction --build-source main.js --runtime nodejs-20
+ibmcloud ce fn create --name myfunction --build-source main.js --runtime nodejs
 ```
 {: pre}
 

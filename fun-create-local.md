@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-02-18"
+lastupdated: "2025-07-01"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -76,7 +76,7 @@ module.exports.main = main;
 2. Create a function called `myfun-local` that uses a the `main.js` file as source. This command automatically builds and pushes the code bundle to a {{site.data.keyword.registryshort}} namespace in your account. If you do not have an existing {{site.data.keyword.registryshort}} namespace, {{site.data.keyword.codeengineshort}} automatically creates one for you.
 
     ```txt
-    ibmcloud ce fn create --name myfun-local --runtime nodejs-20 --build-source main.js
+    ibmcloud ce fn create --name myfun-local --runtime nodejs --build-source main.js
     ```
     {: pre}
 
@@ -215,7 +215,7 @@ Create a function that includes a dependency for a specific Node.js module by cr
 3. Create your files as a function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.
 
     ```sh
-    ibmcloud ce fn create --name nodelorem --runtime nodejs-20 --build-source .
+    ibmcloud ce fn create --name nodelorem --runtime nodejs --build-source .
     ```
     {: pre}
 
@@ -271,7 +271,7 @@ Create a function that includes a dependency for a specific Python module by cre
 3. Create your files as a function in {{site.data.keyword.codeengineshort}}. In this case, you are in the directory where the local files exist so you can use `.` as the build source.
 
     ```sh
-    ibmcloud ce fn create --name pylorem --runtime python-3.11 --build-source .
+    ibmcloud ce fn create --name pylorem --runtime python --build-source .
     ```
     {: pre}
 
