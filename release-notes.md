@@ -28,7 +28,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 {: release-note}
 
 Updated SDK version
-    - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 4.20.1
+:   See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 4.20.1
 
 ## June 2025
 {: #codeengine-june25}
