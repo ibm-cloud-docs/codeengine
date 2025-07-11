@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-01"
+lastupdated: "2025-07-11"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -127,7 +127,7 @@ OK
 Create an application.  
   
 ```txt
-ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--probe-live PROBE_LIVE] [--probe-ready PROBE_READY] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--probe-live PROBE_LIVE] [--probe-ready PROBE_READY] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -224,6 +224,9 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 
 `--mount-configmap`, `--mount-cm`
 :   Add the contents of a configmap to the file system of your application container by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
+
+`--mount-data-store`, `--mount-ds`
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:SUBPATH. This option can be specified multiple times. This value is *optional*. 
 
 `--mount-secret`, `--mount-sec`
 :   Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
@@ -785,7 +788,7 @@ OK
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```txt
-ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--probe-live PROBE_LIVE] [--probe-live-clear] [--probe-ready PROBE_READY] [--probe-ready-reset] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--probe-live PROBE_LIVE] [--probe-live-clear] [--probe-ready PROBE_READY] [--probe-ready-reset] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--scale-down-delay SCALE_DOWN_DELAY] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -900,6 +903,9 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 
 `--mount-configmap`, `--mount-cm`
 :   Add the contents of a configmap to the file system of your application container by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
+
+`--mount-data-store`, `--mount-ds`
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:SUBPATH. This option can be specified multiple times. This value is *optional*. 
 
 `--mount-rm`
 :   Remove the contents of a configmap or secret from the file system of your application container by specifying the directory where the configmap or secret is mounted. Specify one mount directory per `--mount-rm` option; for example, `--mount-rm /etc/configmap-a --mount-rm /etc/secret-b`. This value is *optional*. 
@@ -3452,7 +3458,7 @@ OK
 Create a job.  
   
 ```txt
-ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3545,6 +3551,9 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 
 `--mount-configmap`, `--mount-cm`
 :   Add the contents of a configmap to the file system of runs of the job by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
+
+`--mount-data-store`, `--mount-ds`
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:SUBPATH. This option can be specified multiple times. This value is *optional*. 
 
 `--mount-secret`, `--mount-sec`
 :   Add the contents of a secret to the file system of runs of the job by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
@@ -3810,7 +3819,7 @@ OK
 Update a job.  
   
 ```txt
-ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3922,6 +3931,9 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 
 `--mount-configmap`, `--mount-cm`
 :   Add the contents of a configmap to the file system of runs of the job by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
+
+`--mount-data-store`, `--mount-ds`
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:SUBPATH. This option can be specified multiple times. This value is *optional*. 
 
 `--mount-rm`
 :   Remove the contents of a configmap or secret from the file system of runs of the job by specifying the directory where the configmap or secret is mounted. Specify one mount directory per `--mount-rm` option; for example, `--mount-rm /etc/configmap-a --mount-rm /etc/secret-b`. This value is *optional*. 
@@ -4419,7 +4431,7 @@ OK
 Resubmit a job run based on the configuration of a previous job run.  
   
 ```txt
-ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--name NAME] [--no-wait] [--output OUTPUT] [--quiet] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--name NAME] [--no-wait] [--output OUTPUT] [--quiet] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -4499,6 +4511,9 @@ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT
 `--mount-configmap`, `--mount-cm`
 :   Add the contents of a configmap to the file system of this job run by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
 
+`--mount-data-store`, `--mount-ds`
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:SUBPATH. This option can be specified multiple times. This value is *optional*. 
+
 `--mount-rm`
 :   Remove the contents of a configmap or secret from the file system of this job run by specifying the directory where the configmap or secret is mounted. Specify one mount directory per `--mount-rm` option; for example, `--mount-rm /etc/configmap-a --mount-rm /etc/secret-b`. This value is *optional*. 
 
@@ -4569,7 +4584,7 @@ OK
 Submit a job run based on a job.  
   
 ```txt
-ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -4637,6 +4652,9 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
 `--mount-configmap`, `--mount-cm`
 :   Add the contents of a configmap to the file system of this job run by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
 
+`--mount-data-store`, `--mount-ds`
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:SUBPATH. This option can be specified multiple times. This value is *optional*. 
+
 `--mount-secret`, `--mount-sec`
 :   Add the contents of a secret to the file system of this job run by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
 
@@ -4692,6 +4710,204 @@ ibmcloud ce jobrun submit --name myjobrun --image icr.io/codeengine/firstjob --a
 Submitting job run 'myjobrun'...
 Run 'ibmcloud ce jobrun get -n myjobrun' to check the job run status.
 OK
+```
+{: screen}  
+  
+## Persistentdatastore commands  
+{: #cli-persistentdatastore}  
+
+Manage persistent data stores.  
+  
+### `ibmcloud ce persistentdatastore create`  
+{: #cli-persistentdatastore-create}  
+
+Create a persistent data stores.  
+  
+```txt
+ibmcloud ce persistentdatastore create --name NAME --cos-bucket-name BUCKET_NAME --cos-bucket-location BUCKET_LOCATION --cos-access-secret SECRET_NAME [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-persistentdatastore-create} 
+
+`--cos-access-secret`, `--cos-sec`
+:   Required. The name of the secret that contains the credentials to access the COS instance. This value is *required*. 
+
+`--cos-bucket-name`, `--cos-bucket`
+:   Required. The name of the COS bucket. This value is *required*. 
+
+`--name`, `-n`
+:   Required. The name of the persistent data store. Use a name that is unique within the project. This value is *required*. 
+
+`--cos-bucket-location`, `--cos-loc`
+:   Required. The location of the COS bucket. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #persistentdatastore-create-example}
+
+```txt
+ibmcloud ce persistentdatastore create --name my-pds-2 --cos-bucket-name my-test-bucket-2 --cos-access-secret my-hmac-secret-2
+
+```
+{: pre}
+
+#### Example output
+{: #persistentdatastore-create-example-output}
+
+```txt
+Successfully created persistent data store named 'my-pds-2'.
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce persistentdatastore delete`  
+{: #cli-persistentdatastore-delete}  
+
+Delete a persistent data store.  
+  
+```txt
+ibmcloud ce persistentdatastore delete --name PERSISTENT_DATA_STORE_NAME [--force] [--ignore-not-found] [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-persistentdatastore-delete} 
+
+`--name`, `-n`
+:   Required. Name of the persistent data store. This value is *required*. 
+
+`--force`, `-f`
+:   Force deletion without confirmation. This value is *optional*. The default value is `false`.
+
+`--ignore-not-found`, `--inf`
+:   If not found, do not fail. This value is *optional*. The default value is `false`.
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #persistentdatastore-delete-example}
+
+```txt
+ibmcloud ce persistentdatastore delete --name my-pds-3 -f
+```
+{: pre}
+
+#### Example output
+{: #persistentdatastore-delete-example-output}
+
+```txt
+Deleting persistent data store 'my-pds-3'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce persistentdatastore get`  
+{: #cli-persistentdatastore-get}  
+
+Display the details of a persistent data store.  
+  
+```txt
+ibmcloud ce persistentdatastore get --name NAME [--output OUTPUT] [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-persistentdatastore-get} 
+
+`--name`, `-n`
+:   Required. The name of the persistent data store. This value is *required*. 
+
+`--output`, `-o`
+:   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #persistentdatastore-get-example}
+
+```txt
+ibmcloud ce persistentdatastore get --name my-pds-2
+```
+{: pre}
+
+#### Example output
+{: #persistentdatastore-get-example-output}
+
+```txt
+Getting persistent data store 'my-pds-2'...
+OK
+
+Name:          my-pds-2  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f  
+Type:          object_storage  
+Created:       Fri, 11 Jul 2025 13:52:30 +0200  
+Age:           103s  
+Project Name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
+
+Data:    
+  COS bucket:     my-test-bucket-2  
+  Access secret:  my-hmac-secret-2  
+  Bucket region:  eu-de  
+```
+{: screen}  
+  
+### `ibmcloud ce persistentdatastore list`  
+{: #cli-persistentdatastore-list}  
+
+List all persistent data stores in a project.  
+  
+```txt
+ibmcloud ce persistentdatastore list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-persistentdatastore-list} 
+
+`--output`, `-o`
+:   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--sort-by`, `-s`
+:   Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is `name`.
+
+ 
+  
+#### Example
+{: #persistentdatastore-list-example}
+
+This command lists all persistent data stores in a project. 
+
+```txt
+ibmcloud ce persistentdatastore list
+```
+{: pre}
+
+#### Example output
+{: #persistentdatastore-list-example-output}
+
+```txt
+Listing persistent data stores...
+OK
+Name                       COS bucket          Access secret     Bucket region  Age  
+my-pds-1                   my-test-bucket-1    my-hmac-secret-1  eu-gb          36d  
+my-pds-2                   my-test-bucket-2    my-hmac-secret-2  eu-de          86s  
+my-pds-3                   my-test-bucket-3    my-hmac-secret-3  us-south       6m30s  
 ```
 {: screen}  
   

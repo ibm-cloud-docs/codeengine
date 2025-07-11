@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-02"
+lastupdated: "2025-07-11"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july25)
+
+    * [11 July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july1125)
+
+        * CLI version 1.54.0 released
+
+        * Updated SDK version
 
     * [02 July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july0225)
 
@@ -4054,6 +4060,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit)
 
     * [`ibmcloud ce jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit)
+
+* [Persistentdatastore commands](/docs/codeengine?topic=codeengine-cli#cli-persistentdatastore)
+
+    * [`ibmcloud ce persistentdatastore create`](/docs/codeengine?topic=codeengine-cli#cli-persistentdatastore-create)
+
+    * [`ibmcloud ce persistentdatastore delete`](/docs/codeengine?topic=codeengine-cli#cli-persistentdatastore-delete)
+
+    * [`ibmcloud ce persistentdatastore get`](/docs/codeengine?topic=codeengine-cli#cli-persistentdatastore-get)
+
+    * [`ibmcloud ce persistentdatastore list`](/docs/codeengine?topic=codeengine-cli#cli-persistentdatastore-list)
 
 * [Project commands](/docs/codeengine?topic=codeengine-cli#cli-project)
 
