@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-11"
+lastupdated: "2025-07-18"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july25)
+
+    * [18 July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july1825)
+
+        * Updated the value of `CE_API_BASE_URL` environment variable from `CE_API_BASE_URL=https://api.<region>.codeengine.cloud.ibm.com/` to `CE_API_BASE_URL=https://api.private.<region>.codeengine.cloud.ibm.com/` for applications and jobs.
 
     * [11 July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july1125)
 

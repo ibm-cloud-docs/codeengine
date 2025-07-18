@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-11"
+lastupdated: "2025-07-18"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,14 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## July 2025
 {: #codeengine-july25}
+
+### 18 July 2025
+{: #codeengine-july1825}
+{: release-note}
+
+Updated the value of `CE_API_BASE_URL` environment variable from `CE_API_BASE_URL=https://api.<region>.codeengine.cloud.ibm.com/` to `CE_API_BASE_URL=https://api.private.<region>.codeengine.cloud.ibm.com/` for applications and jobs.
+:   - See [Automatically injected environment variables for apps](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app).
+    - See [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs).
 
 ### 11 July 2025
 {: #codeengine-july1125}

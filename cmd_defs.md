@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-11"
+lastupdated: "2025-07-18"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -511,7 +511,7 @@ Status Summary:     Application deployed successfully
 
 Environment Variables:    
   Type     Name             Value  
-  Literal  CE_API_BASE_URL  https://api.us-south.codeengine.cloud.ibm.com  
+  Literal  CE_API_BASE_URL  https://api.private.us-south.codeengine.cloud.ibm.com
   Literal  CE_APP           myapp  
   Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
   Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
@@ -4721,10 +4721,10 @@ Manage persistent data stores.
 ### `ibmcloud ce persistentdatastore create`  
 {: #cli-persistentdatastore-create}  
 
-Create a persistent data stores.  
+Create a persistent data store.  
   
 ```txt
-ibmcloud ce persistentdatastore create --name NAME --cos-bucket-name BUCKET_NAME --cos-bucket-location BUCKET_LOCATION --cos-access-secret SECRET_NAME [--quiet]
+ibmcloud ce persistentdatastore create --name NAME --cos-access-secret SECRET_NAME --cos-bucket-name BUCKET_NAME [--cos-bucket-location BUCKET_LOCATION] [--quiet]
 ```
 {: pre}
 
@@ -4741,7 +4741,7 @@ ibmcloud ce persistentdatastore create --name NAME --cos-bucket-name BUCKET_NAME
 :   Required. The name of the persistent data store. Use a name that is unique within the project. This value is *required*. 
 
 `--cos-bucket-location`, `--cos-loc`
-:   Required. The location of the COS bucket. This value is *optional*. 
+:   The location of the COS bucket. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.

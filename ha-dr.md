@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-11"
+lastupdated: "2025-07-18"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine, backing up code engine, availability of code engine, code engine regions, backing up your Code Engine instance
 
@@ -39,7 +39,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 | South America | Brazil Sao Paulo (`br-sao`) | MZR |
 {: caption="Highly available {{site.data.keyword.codeengineshort}} regions" caption-side="bottom"}
 
-A geography is a geographic area or larger political body that contains one or more regions. A region contains [multiple availability zones](https://www.ibm.com/cloud/data-centers/) to meet local access, low latency, and security requirements for the region. Each [multizone region (MZR)](/docs/overview?topic=overview-locations#table-mzr) is composed of 3 or more zones that are independent from each other to ensure that single failure events affect only a single zone.
+A geography is a geographic area or larger political body that contains one or more regions. A region contains [multiple availability zones](https://www.ibm.com/solutions/cloud-data-centers) to meet local access, low latency, and security requirements for the region. Each [multizone region (MZR)](/docs/overview?topic=overview-locations#table-mzr) is composed of 3 or more zones that are independent from each other to ensure that single failure events affect only a single zone.
 
 
 ## Availability of {{site.data.keyword.codeengineshort}} instances

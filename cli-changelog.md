@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-11"
+lastupdated: "2025-07-14"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,7 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.54.0 | 2025-07-11 | - Added support for the `persistentdatastore` command group. Use these CLI commands to manage persistent data stores. A persistent data store configuration is a combination of a COS bucket name, optionally the COS bucket's location, and the associated `secret` of type HMAC. It can be used to mount a persistent data store into an **app** or **job**. \n - Upgraded to Go 1.24. \n - Fixed various bugs. |
+| 1.54.0 | 2025-07-11 | - Added support for the `persistentdatastore` command group. Use these CLI commands to manage persistent data stores. A persistent data store configuration is a combination of a COS bucket name, optionally the COS bucket's location, and the associated `secret` of type HMAC. It can be used to mount a persistent data store by specifying the `--mount-data-store` option for the **`app create`**, **`app update`**, **`job create`**, **`job update`**, **`jobrun submit`** and **`jobrun resubmit`** commands. See [{{site.data.keyword.codeengineshort}} CLI reference (`persistentdatastore` command)](/docs/codeengine?topic=codeengine-cli#cli-persistentdatastore). \n - Upgraded to Go 1.24. \n - Fixed various bugs. |
 | 1.53.3 | 2025-06-25 | - Fixed various bugs. |
 | 1.53.1 | 2025-05-28 | - Fixed various bugs. |
 | 1.53.0 | 2025-05-15 | - Added `hmac` as supported format in the **`secret`** command group. See [Working with secrets](/docs/codeengine?topic=codeengine-secret) and [{{site.data.keyword.codeengineshort}} CLI reference (`secret` command)](/docs/codeengine?topic=codeengine-cli#cli-secret).  \n - Added the `--trusted-profiles-enabled` option also for the **`jobrun submit`** and **`jobrun resubmit`** commands. \n - Fixed various bugs. |

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-17"
+  years: 2020, 2025
+lastupdated: "2025-07-18"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, application workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -27,7 +27,7 @@ The environment variables, `CE_APP`, `CE_DOMAIN`, and `CE_SUBDOMAIN` are used to
 
 | Environment variable | Description | Example |
 |--------------------|-------------------------------------------------------|--------------|
-| `CE_API_BASE_URL`  | The {{site.data.keyword.codeengineshort}} API URL that is based on the region of the project. Use this URL for API endpoint calls to the endpoint for all components (including applications) that are located in the same region of your {{site.data.keyword.codeengineshort}} project.  | `CE_API_BASE_URL=https://api.us-south.codeengine.cloud.ibm.com` |
+| `CE_API_BASE_URL`  | The private {{site.data.keyword.codeengineshort}} API URL that is based on the region of the project. Use this URL for API endpoint calls to the endpoint for all components (including applications) that are located in the same region of your {{site.data.keyword.codeengineshort}} project.  | `CE_API_BASE_URL=https://api.private.us-south.codeengine.cloud.ibm.com` |
 | `CE_APP`           | The name of the application.                                          | `CE_APP=myapp` |
 | `CE_DOMAIN`        | The domain name portion of the URL of the application (and project).  | `CE_DOMAIN=us-south.codeengine.dev.appdomain.cloud` |
 | `CE_REGION`        | The region where the application resides. | `CE_REGION=us-south` |
@@ -78,7 +78,7 @@ The following table lists automatically injected environment variables into each
 
 | Environment variable | Description | Example |
 |----------------|---------------------|---------|
-| `CE_API_BASE_URL`  | The {{site.data.keyword.codeengineshort}} API URL that is based on the region of the project. Use this URL for API endpoint calls to the endpoint for all components (including jobs) that are located in the same region of your {{site.data.keyword.codeengineshort}} project.   | `CE_API_BASE_URL=https://api.us-south.codeengine.cloud.ibm.com` |
+| `CE_API_BASE_URL`  | The private {{site.data.keyword.codeengineshort}} API URL that is based on the region of the project. Use this URL for API endpoint calls to the endpoint for all components (including jobs) that are located in the same region of your {{site.data.keyword.codeengineshort}} project.   | `CE_API_BASE_URL=https://api.private.us-south.codeengine.cloud.ibm.com` |
 | `CE_DOMAIN`    | The domain name of the project.                                           | `CE_DOMAIN=us-south.codeengine.appdomain.cloud` |
 | `CE_REGION`    | The region where the job run resides. | `CE_REGION=us-south` |
 | `CE_PROJECT_ID` | The project ID of your project. | `CE_PROJECT_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f` |
