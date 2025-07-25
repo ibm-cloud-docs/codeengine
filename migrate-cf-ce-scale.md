@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-02-27"
+  years: 2022, 2025
+lastupdated: "2025-07-24"
 
 keywords: code engine, getting started, migrating, cloud foundry
 
@@ -39,7 +39,7 @@ For aspects of high availability (and disaster recovery), Cloud Foundry and {{si
 
 To keep your app available when deploying a new version on Cloud Foundry, you use special CLI command options for [rolling updates or zero-downtime deployments](https://docs.cloudfoundry.org/devguide/deploy-apps/rolling-deploy.html){: external}. With {{site.data.keyword.codeengineshort}}, the rolling updates are performed automatically. After the new app revision is ready, the traffic is moved from the old app to the new revision.
 
-Performing blue-green deployments and gradually moving traffic from the old app to the new revision [required some manual intervention](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html){: external} in Cloud Foundry. With {{site.data.keyword.codeengineshort}}, you can use the capabilities built into its underlying Kubernetes and Knative layers. The blog post, [Blue-green deployment with IBM Cloud {{site.data.keyword.codeengineshort}} and Knative](https://blog.4loeser.net/2022/03/blue-green-deployment-ibm-cloud-code-engine-knative.html){: external}, shows how the Knative CLI command to update the app so that the traffic is configured to split between revisions. Given an app named `bluegreen` and two revisions `rev-old` and `rev-new`, the following command splits the traffic 80/20 between them.
+Performing blue-green deployments and gradually moving traffic from the old app to the new revision [required some manual intervention](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html){: external} in Cloud Foundry. With {{site.data.keyword.codeengineshort}}, you can use the capabilities built into its underlying Kubernetes and Knative layers. The blog post, [Blue-green deployment with IBM Cloud {{site.data.keyword.codeengineshort}} and Knative](https://data-henrik.de/2022/03/blue-green-deployment-ibm-cloud-code-engine-knative/){: external}, shows how the Knative CLI command to update the app so that the traffic is configured to split between revisions. Given an app named `bluegreen` and two revisions `rev-old` and `rev-new`, the following command splits the traffic 80/20 between them.
 
 ```sh 
 kn service update bluegreen --traffic rev-old=80 --traffic rev-new=20
@@ -64,4 +64,3 @@ Other information
 - Find out about [{{site.data.keyword.codeengineshort}} pricing](/docs/codeengine?topic=codeengine-pricing).
 - Try other [{{site.data.keyword.codeengineshort}} tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}.
 - Explore other [{{site.data.keyword.codeengineshort}} topics](/docs/codeengine?topic=codeengine-learning-paths).
-

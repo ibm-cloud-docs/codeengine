@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-18"
+lastupdated: "2025-07-25"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july25)
+
+    * [25 July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july2525)
+
+        * CLI version 1.54.1 released
 
     * [18 July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july1825)
 
@@ -3423,6 +3427,33 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Obtaining the CNAME record for a custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cname)
 
     * [Adding a DNS record in CIS to direct traffic to your {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-domain-mappings#adding-DNS-in-CIS)
+
+
+## Working with persistent data stores
+{: #sitemap_working_with_persistent_data_stores}
+
+
+[Working with persistent data stores](/docs/codeengine?topic=codeengine-persistent-data-store#persistent-data-store)
+
+* [Before you begin](/docs/codeengine?topic=codeengine-persistent-data-store#pds-prereqs)
+
+* [Step 1: Create an HMAC secret in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-persistent-data-store#pds-create-secret)
+
+* [Step 2: Create a persistent data store](/docs/codeengine?topic=codeengine-persistent-data-store#pds-create-datastore)
+
+* [Step 3: Mount the data store into a workload](/docs/codeengine?topic=codeengine-persistent-data-store#pds-mount-workload)
+
+    * [Mounting into an application](/docs/codeengine?topic=codeengine-persistent-data-store#pds-mount-app)
+
+    * [Mounting into a job](/docs/codeengine?topic=codeengine-persistent-data-store#pds-mount-job)
+
+    * [Mounting a subpath within the bucket](/docs/codeengine?topic=codeengine-persistent-data-store#pds-mount-subpath)
+
+* [Step 4: Accessing files in the mounted data store](/docs/codeengine?topic=codeengine-persistent-data-store#pds-access-files)
+
+* [Limitations](/docs/codeengine?topic=codeengine-persistent-data-store#pds-limitations)
+
+* [Next steps](/docs/codeengine?topic=codeengine-persistent-data-store#pds-next-steps)
 
 
 ## Subscribing to event producers

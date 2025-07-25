@@ -145,6 +145,7 @@ toc:
       - toolchain-ce.md
       - terraform-ce.md
       - domainmappings.md
+      - persistentdatastore.md
       - topicgroup:
           label: Subscribing to event producers
           topics:

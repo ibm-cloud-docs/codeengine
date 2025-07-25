@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-11"
+  years: 2020, 2025
+lastupdated: "2025-07-24"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables, registry secret, registry access secret
 
@@ -22,7 +22,7 @@ Before you begin
 
 * To pull images from a private registry, you must first create a private registry. For example, to create a private Docker Hub registry, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. 
 * After you create a private registry, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. 
-* You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/security/for-developers/access-tokens/){: external}.
+* You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Create and manage access tokens](https://docs.docker.com/security/access-tokens/){: external}.
 
 ## Creating a job that references an image in a private registry with the console
 {: #create-job-private-console}
@@ -42,7 +42,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 8. For **Registry secret**, select **Create registry secret**. 
 9. From the Create registry secret page, choose your registry source. For example, **Docker Hub**.
 10. From the Create registry secret page, enter a username. For Docker Hub, it is your Docker ID.
-11. From the Create registry secret page, enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/security/for-developers/access-tokens/){: external}.
+11. From the Create registry secret page, enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Create and manage access tokens](https://docs.docker.com/security/access-tokens/){: external}.
 12. Click **Create** to add the registry secret for {{site.data.keyword.codeengineshort}}.
 13. From the Configure image page, the registry secret that was added is listed. Select the registry secret for your image.
 14. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
@@ -66,7 +66,7 @@ Before you begin
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 * Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in a private registry, you must first add access to the registry, pull the image, and then create your job configuration.
 
-1. To pull images from a private registry, you must first create a private registry. For example, to create a private Docker Hub registry, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private registry, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/security/for-developers/access-tokens/){: external}.
+1. To pull images from a private registry, you must first create a private registry. For example, to create a private Docker Hub registry, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private registry, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Create and manage access tokens](https://docs.docker.com/security/access-tokens/){: external}.
 
 2. Add access to your private registry to pull images. To add access to a private registry with the CLI, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command to create an registry secret. For example, the following command creates registry access to a Docker Hub registry called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
 
@@ -125,4 +125,3 @@ The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITO
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-

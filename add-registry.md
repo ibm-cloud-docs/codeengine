@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-11"
+lastupdated: "2025-07-24"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, registry secret, service id,registry secret, registry access secret
 
@@ -172,7 +172,7 @@ For example, to access images in other {{site.data.keyword.cloud_notm}} accounts
 ## Accessing images in a private Docker Hub account
 {: #access-private-docker-hub}
 
-To access images in a private Docker Hub account, create registry access by providing your password or an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/security/for-developers/access-tokens/){: external}.
+To access images in a private Docker Hub account, create registry access by providing your password or an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Create and manage access tokens](https://docs.docker.com/security/access-tokens/){: external}.
 
 After you decide whether to use your password directly or to create an access token, [create your registry access](#add-registry-access-ce).
 
