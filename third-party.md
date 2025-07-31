@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-11"
+lastupdated: "2025-07-31"
 
 keywords: third party, ibm cloud integrations, integrations, code engine, third-party
 
@@ -39,7 +39,7 @@ subcollection: codeengine
 | Integration | Description |
 |-----------|------------------|
 | Lithops | [Lithops](https://lithops-cloud.github.io/) is an open source framework that designed to massively scale your Python applications. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops). |
-| Ray | [Ray](https://www.ray.io/){: external} is an open technology that enables data scientists and application developers to run their code in a distributed fashion. It also provides a lean and easy interface for distributed programming with many different libraries, best suited to perform machine learning and other intensive compute tasks. See [Ray on IBM Cloud Code Engine: Boost Your Serverless Compute](https://www.ibm.com/products/blog/ray-on-ibm-cloud-code-engine){: external}. |
+| Ray | [Ray](https://www.ray.io/){: external} is an open technology that enables data scientists and application developers to run their code in a distributed fashion. It also provides a lean and easy interface for distributed programming with many different libraries, best suited to perform machine learning and other intensive compute tasks. See [Ray on IBM Cloud Code Engine: Boost Your Serverless Compute](https://www.ibm.com/new/product-blog/ray-on-ibm-cloud-code-engine){: external}. |
 | Iter8 | [Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive rollouts for Kubernetes applications. You can use Iter8 to validate your {{site.data.keyword.codeengineshort}} applications. See [Validating your application code and latency with Iter8](/docs/codeengine?topic=codeengine-slovalidationtut). |
 | Guard | [Guard](https://pkg.go.dev/knative.dev/security-guard#section-readme){: external} is a workload runtime-security solution, well-equipped to protect Serverless Services. {{site.data.keyword.codeengineshort}} users may use Guard as a security layer to protect {{site.data.keyword.codeengineshort}} applications. See [Securing your application with Guard](/docs/codeengine?topic=codeengine-getting-started-with-guard). |
 {: caption="Third-party integrations" caption-side="bottom"}

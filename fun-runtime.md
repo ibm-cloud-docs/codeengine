@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-06-27"
+lastupdated: "2025-07-31"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -53,7 +53,7 @@ The support lifecycle of managed runtimes for {{site.data.keyword.codeengineshor
 | -------------- | -------------- | -------------- |
 | Node.js 20  | 1 November 2025 | 30 April 2026 |
 | Node.js 22 | 20 October 2026 | 30 April 2027 |
-| Python 3.11 | 1 May 2027 | 30 September 2027 |
+| Python 3.11 | 31 October 2025 | 31 October 2026 |
 | Python 3.13 | 1 October 2026 | 30 April 2027 |
 {: caption="Deprecation and end of life dates" caption-side="bottom"}
 
