@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-08-11"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2130,8 +2130,8 @@ Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
 The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects by using allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
 {: shortdesc}
 
-Outbound connection rules do not affect internal cluster communication: specifying outbound connections does not prevent applications within your {{site.data.keyword.codeengineshort}} project from communicating with each other.
-{: remember}
+CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, all of which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
+{: note}
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `connectivity` commands.
