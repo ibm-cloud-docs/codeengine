@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-25"
+lastupdated: "2025-08-11"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3862,6 +3862,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Using your VPE to access a function securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-fun)
 
 [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound#connectivity-outbound)
+
+* [Private Service Connections](/docs/codeengine?topic=codeengine-connectivity-outbound#private-service-connections)
 
 * [Managing allowed destination IP address ranges by using the console](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#working-with-allowed-destination-ui)
 

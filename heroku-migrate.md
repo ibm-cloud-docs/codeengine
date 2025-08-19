@@ -41,7 +41,7 @@ If you are coming from a Heroku background, many of these features sound familia
 - Learn the general process of deploying apps in {{site.data.keyword.codeengineshort}}.
 - Deploy an application from code on your local system with {{site.data.keyword.codeengineshort}}.
 
-Watch the tutorial on YouTube. [Deploy Heroku app in IBM Cloud Code Engine](https://www.youtube.com/embed/01g1QSjYDa0){: external}.
+Watch the tutorial on YouTube. [Deploy Heroku app in IBM Cloud Code Engine](https://www.youtube.com/watch?v=01g1QSjYDa0){: external}.
 {: tip}
 
 ## Prerequisites

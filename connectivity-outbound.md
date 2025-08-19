@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-08-11"
 
 keywords: connectivity, outbound connections, outbound connectivity
 
@@ -18,8 +18,8 @@ subcollection: codeengine
 The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects by using allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
 {: shortdesc}
 
-Outbound connection rules do not affect internal cluster communication: specifying outbound connections does not prevent applications within your {{site.data.keyword.codeengineshort}} project from communicating with each other.
-{: remember}
+CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, all of which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
+{: note}
 
 Your use case can determine your outbound connection specifications. Typical use cases are as follows:
 * Specifying no rules (that is, no allowed IP addresses), if {{site.data.keyword.codeengineshort}} applications within a project are not supposed to reach any external endpoints.
@@ -29,6 +29,22 @@ Your use case can determine your outbound connection specifications. Typical use
 * Specifying a rule with an allowed destination IP address range that allows the workload within your {{site.data.keyword.codeengineshort}} project to reach only your specified range of endpoints (for example, to your on-premises data center).
 
 You can create outbound connections by using the console or the CLI.
+
+## Private Service Connections
+{: #private-service-connections}
+
+Connecting to private endpoints of a set of common IBM Cloud platform services is enabled as part the allowed outbound destinations of all {{site.data.keyword.codeengineshort}} projects. The set of enabled platform services varies by region as detailed in the following table.
+
+| Platform service | Private endpoint available in regions |
+| --- | --- |
+| Global Search ([Endpoint URL](https://cloud.ibm.com/apidocs/search#endpoint-url)) and Global Tagging ([Endpoint URL](https://cloud.ibm.com/apidocs/tagging#endpoint-url)) | `au-syd`, `br-sao`, `ca-tor`, `eu-de`, `eu-es`, `eu-gb`, `jp-osa`, `jp-tok`, `us-east`, `us-south` |
+| Global Catalog ([Endpoint URL](https://cloud.ibm.com/apidocs/resource-catalog/global-catalog#endpoint-url)) | `au-syd`, `br-sao`, `eu-de`, `jp-osa`, `us-east`, `us-south` |
+| Account Management  ([Endpoint URL](https://private.accounts.cloud.ibm.com)) | `eu-de`, `us-east`, `us-south` |
+| Usage Metering ([Endpoint URL](https://cloud.ibm.com/apidocs/usage-metering#endpoint)) | `eu-de`, `us-east`, `us-south` |
+| Enterprise Management ([Endpoint URL](https://cloud.ibm.com/apidocs/enterprise-apis/enterprise#endpoint-url)) | `eu-de`, `us-east`, `us-south` |
+| Resource Controller ([Endpoint URL](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#endpoint-url)) | `eu-de`, `us-east`, `us-south` |
+| User Management ([Endpoint URL](https://cloud.ibm.com/apidocs/user-management#endpoint-url)) | `eu-de`, `us-east`, `us-south` |
+{: caption="Platform services with enabled private endpoints per region" caption-side="bottom"}
 
 ## Managing allowed destination IP address ranges by using the console
 {: #working-with-allowed-destination-ui}
