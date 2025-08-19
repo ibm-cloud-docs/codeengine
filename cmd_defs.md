@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-08-19"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -226,7 +226,7 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 :   Add the contents of a configmap to the file system of your application container by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
 
 `--mount-data-store`, `--mount-ds`
-:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:[SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME[:SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
 
 `--mount-secret`, `--mount-sec`
 :   Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
@@ -905,7 +905,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   Add the contents of a configmap to the file system of your application container by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
 
 `--mount-data-store`, `--mount-ds`
-:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:[SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME[:SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
 
 `--mount-rm`
 :   Remove the contents of a configmap or secret from the file system of your application container by specifying the directory where the configmap or secret is mounted. Specify one mount directory per `--mount-rm` option; for example, `--mount-rm /etc/configmap-a --mount-rm /etc/secret-b`. This value is *optional*. 
@@ -3553,7 +3553,7 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 :   Add the contents of a configmap to the file system of runs of the job by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
 
 `--mount-data-store`, `--mount-ds`
-:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:[SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME[:SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
 
 `--mount-secret`, `--mount-sec`
 :   Add the contents of a secret to the file system of runs of the job by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
@@ -3933,7 +3933,7 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 :   Add the contents of a configmap to the file system of runs of the job by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
 
 `--mount-data-store`, `--mount-ds`
-:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:[SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME[:SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
 
 `--mount-rm`
 :   Remove the contents of a configmap or secret from the file system of runs of the job by specifying the directory where the configmap or secret is mounted. Specify one mount directory per `--mount-rm` option; for example, `--mount-rm /etc/configmap-a --mount-rm /etc/secret-b`. This value is *optional*. 
@@ -4512,7 +4512,7 @@ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT
 :   Add the contents of a configmap to the file system of this job run by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
 
 `--mount-data-store`, `--mount-ds`
-:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:[SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME[:SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
 
 `--mount-rm`
 :   Remove the contents of a configmap or secret from the file system of this job run by specifying the directory where the configmap or secret is mounted. Specify one mount directory per `--mount-rm` option; for example, `--mount-rm /etc/configmap-a --mount-rm /etc/secret-b`. This value is *optional*. 
@@ -4653,7 +4653,7 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
 :   Add the contents of a configmap to the file system of this job run by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
 
 `--mount-data-store`, `--mount-ds`
-:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:[SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME[:SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
 
 `--mount-secret`, `--mount-sec`
 :   Add the contents of a secret to the file system of this job run by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
