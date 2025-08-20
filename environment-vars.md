@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-07-01"
+lastupdated: "2025-08-19"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -262,9 +262,14 @@ Set and update environment variables for your function as follows.
 {: #envvar-upd-consider}
 
 Consider the following information when you update an app, job, or function that has an environment variable that references configmaps or secrets. 
-* When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
-* When you update an app, job, or function that has an environment variable that references a key in one configmap (or secret) to reference the same key in a different configmap (or secret), then the last referenced key is used.  
-* When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to add a reference to a specific key, then the specific key reference overrides the full configmap (or secret) reference. 
+
+When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
+{: note}
+
+When you update an app, job, or function that has an environment variable that references a key in one configmap (or secret) to reference the same key in a different configmap (or secret), then the last referenced key is used.  
+{: note}
+
+When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to add a reference to a specific key, then the specific key reference overrides the full configmap (or secret) reference. 
 {: note}
 
 ## Deleting environment variables

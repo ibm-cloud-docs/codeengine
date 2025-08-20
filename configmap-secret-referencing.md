@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-30"
+  years: 2020, 2025
+lastupdated: "2025-08-19"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -21,9 +21,14 @@ In {{site.data.keyword.codeengineshort}}, after you create secrets and configmap
 Working with secrets as environment variables is similar to working with configmaps as environment variables. When you work with secrets, the data is encoded. 
 
 Consider the following information when you update an app, job, or function that has an environment variable that references configmaps or secrets. 
-* When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
-* When you update an app, job, or function that has an environment variable that references a key in one configmap (or secret) to reference the same key in a different configmap (or secret), then the last referenced key is used.  
-* When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to add a reference to a specific key, then the specific key reference overrides the full configmap (or secret) reference. 
+
+When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
+{: note}
+
+When you update an app, job, or function that has an environment variable that references a key in one configmap (or secret) to reference the same key in a different configmap (or secret), then the last referenced key is used.  
+{: note}
+
+When you update an app, job, or function that has an environment variable that fully references a configmap (or secret) to add a reference to a specific key, then the specific key reference overrides the full configmap (or secret) reference. 
 {: note} 
 
 For basic information about referencing configmaps or secrets with the CLI, see [Referencing configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap#configmap-ref-cli) and [Referencing secrets with the CLI](/docs/codeengine?topic=codeengine-secret#secret-ref-cli).
@@ -811,6 +816,3 @@ Even though the `--env-from-configmap` option was used on a job to reference the
         Retry Limit:           3
     ```
     {: screen}
-
-
-

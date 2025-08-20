@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-21"
+  years: 2025
+lastupdated: "2025-08-19"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -99,25 +99,20 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
     {: pre}
 
 
-4. Verify that the {{site.data.keyword.codeengineshort}} CLI plug-in is installed. You can use the **`ibmcloud plugin show code-engine`** command or the  **`ibmcloud plugin list`** command to confirm that the plug-in is installed.
+4. Verify that the {{site.data.keyword.codeengineshort}} CLI plug-in is installed. You can use the **`ibmcloud code-engine version`** command or the  **`ibmcloud plugin list`** command to confirm that the plug-in is installed.
 
     ```txt
-    ibmcloud plugin show code-engine
+    ibmcloud code-engine version
     ```
     {: pre}
 
     Example output
 
     ```txt
-    Plugin Name                              code-engine[ce]
-    Plugin Version                           1.31.0
-    Plugin SDK Version                       0.9.0
-    Minimal IBM Cloud CLI version required   1.0.0
-    Private endpoints supported              true
+    OK
 
-    Commands:
-    code-engine,ce                    Manage Code Engine components.
-    [...]
+    version:  v1.54.2
+    commit:   e4800be63b1077563bdbaee9e656ce1f81c3e08d
     ```
     {: screen}
 
@@ -234,7 +229,3 @@ For more information about the {{site.data.keyword.codeengineshort}} CLI, see th
 For more information about working in the {{site.data.keyword.codeengineshort}} CLI environment, see [{{site.data.keyword.codeengineshort}} CLI Command Reference documentation](/docs/codeengine?topic=codeengine-cli). 
 
 For a summary of changes for each version of the CLI, see [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).  Be sure to keep your CLI up-to-date so that you can use all the available commands and their options. 
-
-
-
-
