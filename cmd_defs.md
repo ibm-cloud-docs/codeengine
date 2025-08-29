@@ -1024,7 +1024,30 @@ ibmcloud ce beta COMMAND
 ```
 {: pre}
 
-{[cli-beta-example.md]}  
+#### Example
+{: #beta-example}
+
+```txt
+ibmcloud ce beta help
+```
+{: pre}
+
+#### Example output
+{: #beta-example-output}
+
+```txt
+NAME:
+  ibmcloud code-engine beta - Beta Code Engine commands
+
+USAGE:
+  ibmcloud code-engine beta command [arguments...] [command options]
+
+COMMANDS:
+  help, h   Show help
+
+Enter 'ibmcloud code-engine beta help [command]' for more information about a command.
+```
+{: screen}  
   
   
 
