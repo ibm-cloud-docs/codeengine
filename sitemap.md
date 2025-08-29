@@ -140,6 +140,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [August 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august25)
 
+    * [28 August 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august2825)
+
+        * CLI version 1.54.3 released
+
     * [18 August 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august1825)
 
         * CLI version 1.54.2 released
