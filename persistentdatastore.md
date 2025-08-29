@@ -2,7 +2,7 @@
 
 copyright:
 years: 2025, 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-08-26"
 
 keywords: code engine, persistent data store, pds, object storage, mount bucket, s3fs, mount cos, apps, jobs
 
@@ -68,7 +68,7 @@ After you create the persistent data store, you can mount it when you create or 
 The following command creates an application named `myapp` and mounts the `my-cos-bucket-pds` data store to the `/mnt/bucket` directory inside the application container.
 
 ```bash
-ibmcloud ce application create --name myapp --image icr.io/codeengine/helloworld --mount-data-store /mnt/bucket=my-cos-bucket-pds:
+ibmcloud ce application create --name myapp --image icr.io/codeengine/helloworld --mount-data-store /mnt/bucket=my-cos-bucket-pds
 ```
 {: pre}
 
@@ -78,7 +78,7 @@ ibmcloud ce application create --name myapp --image icr.io/codeengine/helloworld
 Similarly, this command creates a job named `myjob` and mounts the same data store to the `/mnt/bucket` directory.
 
 ```bash
-ibmcloud ce job create --name myjob --image icr.io/codeengine/helloworld --mount-data-store /mnt/bucket=my-cos-bucket-pds:
+ibmcloud ce job create --name myjob --image icr.io/codeengine/helloworld --mount-data-store /mnt/bucket=my-cos-bucket-pds
 ```
 {: pre}
 

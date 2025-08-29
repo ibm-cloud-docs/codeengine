@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-08-19"
+lastupdated: "2025-08-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [August 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august25)
+
+    * [28 August 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august2825)
+
+        * CLI version 1.54.3 released
 
     * [18 August 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august1825)
 
@@ -3977,6 +3981,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce application unbind`](/docs/codeengine?topic=codeengine-cli#cli-application-unbind)
 
     * [`ibmcloud ce application update`](/docs/codeengine?topic=codeengine-cli#cli-application-update)
+
+* [Beta command](/docs/codeengine?topic=codeengine-cli#cli-beta)
+
+    * [`ibmcloud ce beta`](/docs/codeengine?topic=codeengine-cli#cli-betacmd)
 
 * [Build commands](/docs/codeengine?topic=codeengine-cli#cli-build)
 
