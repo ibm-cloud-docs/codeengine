@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-08-19"
+lastupdated: "2025-08-29"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -1009,6 +1009,25 @@ https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 ```
 {: screen}  
   
+## Beta command  
+{: #cli-beta}  
+
+Beta {{site.data.keyword.codeengineshort}} commands  
+  
+### `ibmcloud ce beta`  
+{: #cli-betacmd}  
+
+Beta {{site.data.keyword.codeengineshort}} commands  
+  
+```txt
+ibmcloud ce beta COMMAND
+```
+{: pre}
+
+{[cli-beta-example.md]}  
+  
+  
+
 ## Build commands  
 {: #cli-build}  
 
