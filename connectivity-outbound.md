@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-09-04"
 
 keywords: connectivity, outbound connections, outbound connectivity
 
@@ -39,7 +39,7 @@ Connecting to private endpoints of a set of common IBM Cloud platform services i
 | --- | --- |
 | Global Search ([Endpoint URL](https://cloud.ibm.com/apidocs/search#endpoint-url)) and Global Tagging ([Endpoint URL](https://cloud.ibm.com/apidocs/tagging#endpoint-url)) | `au-syd`, `br-sao`, `ca-tor`, `eu-de`, `eu-es`, `eu-gb`, `jp-osa`, `jp-tok`, `us-east`, `us-south` |
 | Global Catalog ([Endpoint URL](https://cloud.ibm.com/apidocs/resource-catalog/global-catalog#endpoint-url)) | `au-syd`, `br-sao`, `eu-de`, `jp-osa`, `us-east`, `us-south` |
-| Account Management  ([Endpoint URL](https://private.accounts.cloud.ibm.com)) | `eu-de`, `us-east`, `us-south` |
+| Account Management  (Endpoint URL `(https://private.accounts.cloud.ibm.com)`) | `eu-de`, `us-east`, `us-south` |
 | Usage Metering ([Endpoint URL](https://cloud.ibm.com/apidocs/usage-metering#endpoint)) | `eu-de`, `us-east`, `us-south` |
 | Enterprise Management ([Endpoint URL](https://cloud.ibm.com/apidocs/enterprise-apis/enterprise#endpoint-url)) | `eu-de`, `us-east`, `us-south` |
 | Resource Controller ([Endpoint URL](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#endpoint-url)) | `eu-de`, `us-east`, `us-south` |

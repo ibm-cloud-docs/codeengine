@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-29"
+lastupdated: "2025-09-06"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,8 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.54.5 | 2025-09-05 | - Fixed various bugs. |
+| 1.54.4 | 2025-09-04 | - Fixed various bugs. |
 | 1.54.3 | 2025-08-28 | - Fixed various bugs. |
 | 1.54.2 | 2025-08-18 | - Fixed various bugs. |
 | 1.54.1 | 2025-07-25 | - Fixed various bugs. |

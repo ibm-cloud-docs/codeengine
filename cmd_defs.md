@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-08-29"
+lastupdated: "2025-09-04"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -1012,12 +1012,22 @@ https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 ## Beta command  
 {: #cli-beta}  
 
-Beta {{site.data.keyword.codeengineshort}} commands  
+{{site.data.keyword.codeengineshort}} beta commands are not generally available. This command group provides access to potential future features for easy exploration by selected early adopters.
+{: shortdesc}
+
+You must be within the context of a [project](#cli-project) before you use `beta` commands.
+
+To see CLI help for the `beta` commands, run `ibmcloud ce beta -h`.  
   
 ### `ibmcloud ce beta`  
 {: #cli-betacmd}  
 
-Beta {{site.data.keyword.codeengineshort}} commands  
+{{site.data.keyword.codeengineshort}} beta commands are not generally available. This command group provides access to potential future features for easy exploration by selected early adopters.
+{: shortdesc}
+
+You must be within the context of a [project](#cli-project) before you use `beta` commands.
+
+To see CLI help for the `beta` commands, run `ibmcloud ce beta -h`.  
   
 ```txt
 ibmcloud ce beta COMMAND
