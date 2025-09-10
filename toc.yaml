@@ -146,6 +146,7 @@ toc:
       - terraform-ce.md
       - domainmappings.md
       - persistentdatastore.md
+      - event-notifications-events.md
       - topicgroup:
           label: Subscribing to event producers
           topics:

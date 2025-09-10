@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-06"
+lastupdated: "2025-09-10"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3474,6 +3474,23 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Limitations](/docs/codeengine?topic=codeengine-persistent-data-store#pds-limitations)
 
 * [Next steps](/docs/codeengine?topic=codeengine-persistent-data-store#pds-next-steps)
+
+
+## Enabling event notifications for {{site.data.keyword.codeengineshort}}
+{: #sitemap_enabling_event_notifications_for_}
+
+
+[Enabling event notifications for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-event-notifications-events#event-notifications-events)
+
+* [How are events received?](/docs/codeengine?topic=codeengine-event-notifications-events#event-notifications-how)
+
+* [What are some key features of {{site.data.keyword.en_short}}](/docs/codeengine?topic=codeengine-event-notifications-events#event-notifications-features)
+
+* [How are {{site.data.keyword.en_short}} notifications different from subscriptions?](/docs/codeengine?topic=codeengine-event-notifications-events#event-notifications-compare)
+
+* [Setting up a trigger in the console](/docs/codeengine?topic=codeengine-event-notifications-events&interface=ui#event-notifications-example1)
+
+* [Setting up a trigger in the CLI](/docs/codeengine?topic=codeengine-event-notifications-events&interface=cli#event-notifications-example1)
 
 
 ## Subscribing to event producers
