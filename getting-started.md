@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-18"
+lastupdated: "2025-09-15"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -47,6 +47,7 @@ For more information about terms, see [{{site.data.keyword.codeengineshort}} ter
 
 Not sure what to choose? See [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 {: tip}
+
 
 ## Deploying your first {{site.data.keyword.codeengineshort}} app
 {: #app-hello}
@@ -226,6 +227,8 @@ SHLVL=1
 You submitted source code to {{site.data.keyword.codeengineshort}} and created a container image that you then deployed in an application - all from one interface.
 
 Go to [Building a container image](/docs/codeengine?topic=codeengine-plan-build) to explore and try out more options for builds.
+
+
 
 ## Next steps for {{site.data.keyword.codeengineshort}}
 {: #nextsteps-getstart}
