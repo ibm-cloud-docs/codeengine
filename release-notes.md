@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-06"
+lastupdated: "2025-09-17"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,17 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## September 2025
 {: #codeengine-september25}
+
+### 17 September 2025
+{: #codeengine-september1725}
+{: release-note}
+
+Added a new `run_volume_mounts` type of `persistent_data_stores` for apps, jobs, and jobruns.
+:   - See [Create an app API](https://cloud.ibm.com/apidocs/codeengine/v2#create-app){: external}.
+:   - See [Update an app API](https://cloud.ibm.com/apidocs/codeengine/v2#update-app){: external}.
+:   - See [Create a job API](https://cloud.ibm.com/apidocs/codeengine/v2#create-job){: external}.
+:   - See [Update a job API](https://cloud.ibm.com/apidocs/codeengine/v2#update-job){: external}.
+:   - See [Create a job run API](https://cloud.ibm.com/apidocs/codeengine/v2#create-job-run){: external}.
 
 ### 05 September 2025
 {: #codeengine-september0525}

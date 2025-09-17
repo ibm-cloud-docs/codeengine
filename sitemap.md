@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-10"
+lastupdated: "2025-09-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -139,6 +139,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september25)
+
+    * [17 September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september1725)
+
+        * Added a new `run_volume_mounts` type of `persistent_data_stores` for apps, jobs, and jobruns.
 
     * [05 September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september0525)
 
@@ -4289,6 +4293,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [17 September 2025](/docs/codeengine?topic=codeengine-api-changelog#17-september-2025)
 
 * [03 April 2025](/docs/codeengine?topic=codeengine-api-changelog#03-april-2025)
 
