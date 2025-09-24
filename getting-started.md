@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-15"
+lastupdated: "2025-09-24"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -56,7 +56,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the `icr.io
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Let's go**.
+2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 4. Select **Application**.
 5. Enter a name for the application, for example, `myapp`. Use a name for your application that is unique within the project.
@@ -105,7 +105,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Let's go**.
+2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 4. Select **Job**.
 5. Enter a name for the job, for example, `myjob`. Use a name for your job that is unique within the project.
@@ -153,7 +153,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} function with sa
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Let's go**.
+2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a function.
 4. Select **Function**.
 5. Enter a name for the function. Use a name for your function that is unique within the project.
@@ -182,7 +182,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 {{site.data.keyword.codeengineshort}} can automatically push images to a {{site.data.keyword.registryshort}} namespace in your account. It can even create a namespace for you. To push images to a different {{site.data.keyword.registryshort}} account or to a private Docker Hub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Let's go**.
+2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 4. Select **Application**.
 5. Enter a name for the application. Use a name for your application that is unique within the project.
