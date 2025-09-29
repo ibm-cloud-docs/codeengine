@@ -3047,6 +3047,38 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Task specification](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-task-spec)
 
+[Setting up observability for fleets](/docs/codeengine?topic=codeengine-fleet-observability#fleet-observability)
+
+* [Setting up logging for fleets](/docs/codeengine?topic=codeengine-fleet-observability#fleet-log)
+
+    * [1. Make sure you have an existing Cloud Logs service instance](/docs/codeengine?topic=codeengine-fleet-observability#log-instance)
+
+    * [2. Set the permissions for the Cloud Logs instance](/docs/codeengine?topic=codeengine-fleet-observability#log-perm)
+
+    * [3. Get the private Ingress endpoint for the Cloud Logs instance](/docs/codeengine?topic=codeengine-fleet-observability#log-ingress-endpoint)
+
+    * [4. Create a virtual private endpoint gateway that connects to the logging instance](/docs/codeengine?topic=codeengine-fleet-observability#log-vpe)
+
+    * [5. Create reserved IP addresses in the VPE gateway](/docs/codeengine?topic=codeengine-fleet-observability#log-ip)
+
+    * [6. Add the logging values to the fleets default secret](/docs/codeengine?topic=codeengine-fleet-observability#log-secret)
+
+    * [7. View your fleets logs](/docs/codeengine?topic=codeengine-fleet-observability#log-view)
+
+* [Setting up monitoring for fleets](/docs/codeengine?topic=codeengine-fleet-observability#fleets-monitor)
+
+    * [1. Make sure you have an existing Clouds Monitoring instance](/docs/codeengine?topic=codeengine-fleet-observability#monitor-instance)
+
+    * [2. Get the monitoring agent key](/docs/codeengine?topic=codeengine-fleet-observability#monitor-key)
+
+    * [3. Create a virtual private endpoint gateway that connects to the monitoring instance](/docs/codeengine?topic=codeengine-fleet-observability#monitor-vpe)
+
+    * [4. Create reserved IP addresses in the VPE gateway](/docs/codeengine?topic=codeengine-fleet-observability#monitor-ip)
+
+    * [5. Add monitoring values to the fleets default secret](/docs/codeengine?topic=codeengine-fleet-observability#monitor-secret)
+
+    * [6. View your fleets data in the monitoring dashboard](/docs/codeengine?topic=codeengine-fleet-observability#monitor-view)
+
 [Canceling or deleting fleets and workers](/docs/codeengine?topic=codeengine-fleets-cancel#fleets-cancel)
 
 * [Canceling a fleet](/docs/codeengine?topic=codeengine-fleets-cancel#fleets-cancel-type)
@@ -3082,6 +3114,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Checking the status of tasks](/docs/codeengine?topic=codeengine-fleet-status#status-task-check)
 
 * [Worker node status](/docs/codeengine?topic=codeengine-fleet-status#status-workers)
+
+[Worker Image Changelog v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-v1_0)
+
+* [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
+
+    * [Worker image `v1.0.15`, released 26 September 2025](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_15)
 
 
 ## Building source code
@@ -3961,6 +3999,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Global Attributes](/docs/codeengine?topic=codeengine-monitor#global-attributes)
 
     * [More attributes](/docs/codeengine?topic=codeengine-monitor#additional-attributes)
+
+[Viewing logs and monitoring data for fleets](/docs/codeengine?topic=codeengine-fleet-observability-view#fleet-observability-view)
+
+* [Viewing fleet logs](/docs/codeengine?topic=codeengine-fleet-observability-view#log-view)
+
+    * [Logging fields](/docs/codeengine?topic=codeengine-fleet-observability-view#log-fields)
+
+* [Viewing monitoring data](/docs/codeengine?topic=codeengine-fleet-observability-view#monitor-view)
 
 [Creating custom dashboards to monitor {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-custom#monitor-custom)
 

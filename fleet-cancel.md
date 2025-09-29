@@ -10,6 +10,8 @@ subcollection: codeengine
 
 ---
 
+{{site.data.keyword.attribute-definition-list}}
+
 # Canceling or deleting fleets and workers
 {: #fleets-cancel}
 
