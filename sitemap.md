@@ -162,6 +162,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september25)
 
+    * [26 September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september2625)
+
+        * New! Support for fleets workloads in {{site.data.keyword.codeengineshort}}
+
+        * CLI version 1.55.0 released
+
+    * [24 September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september2425)
+
+        * CLI version 1.54.6 released
+
     * [17 September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september1725)
 
         * Added a new `run_volume_mounts` type of `persistent_data_stores` for apps, jobs, and jobruns.
@@ -4169,6 +4179,32 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Experimental command](/docs/codeengine?topic=codeengine-cli#cli-experimental)
 
     * [`ibmcloud ce experimental`](/docs/codeengine?topic=codeengine-cli#cli-experimentalcmd)
+
+* [Fleet commands](/docs/codeengine?topic=codeengine-cli#cli-fleet)
+
+    * [`ibmcloud ce fleet cancel`](/docs/codeengine?topic=codeengine-cli#cli-fleet-cancel)
+
+    * [`ibmcloud ce fleet create`](/docs/codeengine?topic=codeengine-cli#cli-fleet-create)
+
+    * [`ibmcloud ce fleet delete`](/docs/codeengine?topic=codeengine-cli#cli-fleet-delete)
+
+    * [`ibmcloud ce fleet get`](/docs/codeengine?topic=codeengine-cli#cli-fleet-get)
+
+    * [`ibmcloud ce fleet list`](/docs/codeengine?topic=codeengine-cli#cli-fleet-list)
+
+    * [`ibmcloud ce fleet task`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task)
+
+    * [`ibmcloud ce fleet task get`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-get)
+
+    * [`ibmcloud ce fleet task list`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-list)
+
+    * [`ibmcloud ce fleet worker`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker)
+
+    * [`ibmcloud ce fleet worker delete`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-delete)
+
+    * [`ibmcloud ce fleet worker get`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-get)
+
+    * [`ibmcloud ce fleet worker list`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-list)
 
 * [Function commands](/docs/codeengine?topic=codeengine-cli#cli-function)
 

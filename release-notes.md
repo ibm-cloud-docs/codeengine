@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-29"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,27 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## September 2025
 {: #codeengine-september25}
+
+### 26 September 2025
+{: #codeengine-september2625}
+{: release-note}
+
+New! Support for fleets workloads in {{site.data.keyword.codeengineshort}}
+:   - See [Fleets workloads](/docs/codeengine?topic=codeengine-cefleets)
+    - See [Preparing to run a fleet](/docs/codeengine?topic=codeengine-fleet-prep)
+    - See [Running a fleet](/docs/codeengine?topic=codeengine-fleet-run)
+    - See [Canceling or deleting fleets and workers](/docs/codeengine?topic=codeengine-fleets-cancel)
+    - See [Understanding the status of your fleet](/docs/codeengine?topic=codeengine-fleet-status)
+
+CLI version 1.55.0 released
+:   This CLI version adds support for the **`fleet`** command group to manage {{site.data.keyword.codeengineshort}} Fleets with the CLI. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+### 24 September 2025
+{: #codeengine-september2425}
+{: release-note}
+
+CLI version 1.54.6 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 17 September 2025
 {: #codeengine-september1725}
