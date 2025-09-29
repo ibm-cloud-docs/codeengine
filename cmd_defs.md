@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-04"
+lastupdated: "2025-09-29"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2731,6 +2731,656 @@ Enter 'ibmcloud code-engine experimental help [command]' for more information ab
   
   
 
+## Fleet commands  
+{: #cli-fleet}  
+
+Manage serverless fleets.  
+  
+### `ibmcloud ce fleet cancel`  
+{: #cli-fleet-cancel}  
+
+Cancel a serverless fleet.  
+  
+```txt
+ibmcloud ce fleet cancel --id FLEET_ID [--force] [--hard] [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-fleet-cancel} 
+
+`--id`, `--fleet-id, uuid`
+:   Required. The ID of the serverless fleet. This value is *required*. 
+
+`--force`, `-f`
+:   Force cancellation without confirmation. This value is *optional*. The default value is `false`.
+
+`--hard`
+:   Immediately cancel the serverless fleet including tasks in `running` state. If you do not specify the `hard` option, processing of tasks in `running` state continues until they reach a final state, and only then the fleet turns into `canceled` state. This value is *optional*. The default value is `false`.
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #fleet-cancel-example}
+
+```txt
+ibmcloud ce fleet cancel --force --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e
+```
+{: pre}
+
+#### Example output
+{: #fleet-cancel-example-output}
+
+```txt
+Canceling serverless fleet...
+Run 'ibmcloud ce fleet get --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to check the fleet status.
+OK
+
+Name:            fleet-0123456789
+ID:              1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e
+Status:          canceled  
+Created:         39m  
+Project region:  eu-de  
+Project name:    myproj  
+
+Tasks status:    
+  Failed:      0  
+  Canceled:    0  
+  Successful:  0  
+  Running:     0  
+  Pending:     1  
+  Total:       1  
+```
+{: screen}  
+  
+### `ibmcloud ce fleet create`  
+{: #cli-fleet-create}  
+
+Launch a serverless fleet.  
+  
+```txt
+ibmcloud ce fleet create [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--gpu GPU] [--image IMAGE] [--max-scale MAX_SCALE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mount-data-store MOUNT_DATA_STORE] [--name NAME] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--task-indexes TASK_INDEXES] [--tasks TASKS] [--tasks-from-cos-bucket TASKS_FROM_COS_BUCKET] [--tasks-from-cos-object TASKS_FROM_COS_OBJECT] [--tasks-from-local-file TASKS_FROM_LOCAL_FILE] [--tasks-state-store TASKS_STATE_STORE] [--worker-profile WORKER_PROFILE]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-fleet-create} 
+
+`--image`, `-i`
+:   The name of the container image that is used to process the tasks. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *required*. 
+
+`--tasks-state-store`, `--ts-state`
+:   Specify the COS bucket thats stores the state of the tasks of the fleet. This value is *required*. 
+
+`--argument`, `--arg`, `-a`
+:   Set command arguments needed by the command to execute in the task. This option can be specified multiple times. This value is *optional*. 
+
+`--command`, `--cmd`, `-c`
+:   Set a command to execute in the task. This option can be specified multiple times. This value is *optional*. 
+
+`--cpu`, `--cp`
+:   The amount of CPU to set for a task. This value is *optional*. The default value is `1`.
+
+`--env`, `-e`
+:   Set environment variables to be passed into the task. Must be in NAME=VALUE format. This option can be specified multiple times. This value is *optional*. 
+
+`--env-from-configmap`, `--env-cm`
+:   Set environment variables from the key-value pairs that are stored in this configmap. Provide NAME to reference the full configmap, or PREFIX=NAME to reference the full configmap where each key is prefixed with PREFIX, or NAME:KEY_A,KEY_B to reference individual keys. To specify a new name for a referenced key, use format NAME:NEW_KEY_NAME=KEY_A. This option can be specified multiple times. This value is *optional*. 
+
+`--env-from-secret`, `--env-sec`
+:   Set environment variables from the key-value pairs that are stored in this secret. Provide NAME to reference the full secret, or PREFIX=NAME to reference the full secret where each key is prefixed with PREFIX, or NAME:KEY_A,KEY_B to reference individual keys. To specify a new name for a referenced key, use format NAME:NEW_KEY_NAME=KEY_A. This option can be specified multiple times. This value is *optional*. 
+
+`--gpu`, `--gp`
+:   The number of GPUs to allocate to the resource. The format is GPU_FAMILY:NUMBER_OF_GPUS. The NUMBER_OF_GPUS will have default as 1 and it can be fraction. For example `h100:0.5` This value is *optional*. 
+
+`--max-scale`, `--maxscale`, `--max`
+:   Maximum number of task instances to run in parallel. This value is *optional*. The default value is `1`.
+
+`--maxexecutiontime`, `--met`
+:   The maximum execution time in seconds for a task to run. This value is *optional*. The default value is `0`.
+
+`--memory`, `-m`
+:   The amount of memory to set for a task. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. The default value is `2G`.
+
+`--mount-data-store`, `--mount-ds`
+:   Mount a persistent data store. The format is MOUNT_DIRECTORY=STORAGE_NAME:[SUBPATH]. The SUBPATH is optional. This option can be specified multiple times. This value is *optional*. 
+
+`--name`, `-n`
+:   The name of the fleet. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--registry-secret`, `--rs`
+:   The name of the registry secret. The registry secret is used to authenticate with a private registry to download the container image. Run `ibmcloud ce registry create` to create a registry secret. This value is *optional*. 
+
+`--retrylimit`, `-r`
+:   The number of times to rerun a task before marking it as failed. This value is *optional*. The default value is `3`.
+
+`--task-indexes`, `--ti`
+:   Specify task indexes that are to be processed, for example `0,3,6,9`, `1-5,7-8,10`. Specify no more than 1000 index entries. This option cannot be specified if `--tasks` is specified. This value is *optional*. 
+
+`--tasks`, `--ts`
+:   Specify the number of tasks that are to be processed by the fleet. This value is *optional*. The default value is `0`.
+
+`--tasks-from-cos-bucket`, `--ts-bucket`
+:   Specify a location of files inside a COS bucket. For each file, tasks are to be processed by the fleet. This value is *optional*. 
+
+`--tasks-from-cos-object`, `--ts-cos`
+:   Specify a JSONL file location that resides in a COS bucket. The file defines tasks that are to be processed by the fleet. This value is *optional*. 
+
+`--tasks-from-local-file`, `--ts-file`
+:   Specify a local JSONL file location. The file defines tasks that are to be processed by the fleet. This value is *optional*. 
+
+`--worker-profile`, `--profile`, `--prof`
+:   Provide a supported worker profile preference. This value is *optional*. 
+
+ 
+  
+#### Example
+{: #fleet-create-example}
+
+```txt
+ibmcloud ce fleet cancel create --image icr.io/codeengine/helloworld --tasks-state-store mytaskstore --tasks 1
+```
+{: pre}
+
+#### Example output
+{: #fleet-create-example-output}
+
+```txt
+Successfully created fleet with name 'fleet-0123456789' and ID '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' 
+Run 'ibmcloud ce fleet get --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to check the fleet status.
+Run 'ibmcloud ce fleet worker list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of provisioned workers.
+Run 'ibmcloud ce fleet task list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of tasks.
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce fleet delete`  
+{: #cli-fleet-delete}  
+
+Delete a serverless fleet.  
+  
+```txt
+ibmcloud ce fleet delete --id FLEET_NAME [--force] [--ignore-not-found] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-fleet-delete} 
+
+`--id`, `--fleet-id, uuid`
+:   Required. The ID of the serverless fleet. This value is *required*. 
+
+`--force`, `-f`
+:   Force deletion without confirmation. This value is *optional*. The default value is `false`.
+
+`--ignore-not-found`, `--inf`
+:   If not found, do not fail. This value is *optional*. The default value is `false`.
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--wait`, `-w`
+:   Delete the serverless fleet and wait for the fleet to be deleted. This value is *optional*. The default value is `false`.
+
+`--wait-timeout`, `--wto`
+:   The time in seconds to wait for the serverless fleet to be deleted. This value is *optional*. The default value is `180`.
+
+ 
+  
+#### Example
+{: #fleet-delete-example}
+
+```txt
+ibmcloud ce fleet delete --force --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e
+```
+{: pre}
+
+#### Example output
+{: #fleet-delete-example-output}
+
+```txt
+Deleting serverless fleet...
+OK 
+```
+{: screen}  
+  
+### `ibmcloud ce fleet get`  
+{: #cli-fleet-get}  
+
+Display details of a serverless fleet.  
+  
+```txt
+ibmcloud ce fleet get --id FLEET_NAME [--output OUTPUT] [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-fleet-get} 
+
+`--id`, `--fleet-id, uuid`
+:   Required. The ID of the serverless fleet. This value is *required*. 
+
+`--output`, `-o`
+:   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #fleet-get-example}
+
+```txt
+ibmcloud ce fleet get --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e
+```
+{: pre}
+
+#### Example output
+{: #fleet-get-example-output}
+
+```txt
+Getting fleet '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e'...
+OK
+
+Name:            fleet-0123456789  
+ID:              1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e  
+Status:          running  
+Created:         2025-09-26T10:46:02Z  
+Project region:  eu-de  
+Project name:    myproj  
+
+Tasks status:             
+  Pending:     893  
+  Running:     12  
+  Failed:      0  
+  Canceled:    0  
+  Successful:  96  
+  Total:       1001  
+
+Code:                     
+  Container image reference:  icr.io/codeengine/helloworld  
+
+Tasks specification:      
+  Task state store:  mytaskstore  
+  Indexes:           0-1000  
+
+Resources and scaling:    
+  CPU per instance:         1  
+  Memory per instance:      2G  
+  Max number of instances:  12  
+  Max retries per task:     3  
+
+Network placement:        
+  Subnet CRN 0:  crn:v1:bluemix:public:is:eu-de-1:a/abcdefabcdefabcdefabcd1234567890::subnet:1a1a-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  
+```
+{: screen}  
+  
+### `ibmcloud ce fleet list`  
+{: #cli-fleet-list}  
+
+List all serverless fleets in a project.  
+  
+```txt
+ibmcloud ce fleet list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-fleet-list} 
+
+`--output`, `-o`
+:   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--sort-by`, `-s`
+:   Specifies the column by which to sort the list. Valid values are `name`, `status` and `age`. This value is *optional*. The default value is `name`.
+
+ 
+  
+#### Example
+{: #fleet-list-example}
+
+```txt
+ibmcloud ce fleet list
+```
+{: pre}
+
+#### Example output
+{: #fleet-list-example-output}
+
+```txt
+Listing fleets...
+OK
+
+Name              ID                                    Status      Tasks finished  Tasks total  Instances  Created  
+fleet-a123456789  0a0a0a0a-2b2b-3c3c-4d4d-5e5e5e5e5e5e  successful  300             300          0          2025-09-26T12:11:28Z  
+fleet-b123456789  1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e  running     778             1001         12         2025-09-26T12:43:11Z  
+fleet-c123456789  2a2a2a2a-2b2b-3c3c-4d4d-5e5e5e5e5e5e  canceled    1               1            0          2025-09-26T10:46:02Z  
+```
+{: screen}  
+  
+### `ibmcloud ce fleet task`  
+{: #cli-fleet-task}  
+
+Manage serverless fleet tasks.  
+  
+```txt
+ibmcloud ce fleet task COMMAND [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-fleet-task} 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+
+
+  
+### `ibmcloud ce fleet task get`  
+{: #cli-fleet-task-get}  
+
+Display details of a serverless fleet task.  
+  
+```txt
+ibmcloud ce fleet task get --task-id TASK_ID --fleet-id FLEET_ID [--output OUTPUT] [--quiet]
+```
+{: pre}
+
+**Command Options**  
+
+`--fleet-id`
+:   Required. The UUID of the fleet the task belongs to. This value is *required*. 
+
+`--task-id`, `--id`
+:   Required. The UUID of the task. This value is *required*. 
+
+`--output`, `-o`
+:   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+  
+  
+#### Example
+{: #fleet-task-get-cancel-example}
+
+```txt
+ibmcloud ce fleet task get --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e --task-id 2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f
+```
+{: pre}
+
+#### Example output
+{: #fleet-task-get-example-output}
+
+```txt
+Getting serverless fleet task '2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f'...
+OK
+
+ID:            2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  
+Task index:    226  
+Created:       2025-09-26T12:45:58Z  
+Finished:      2025-09-26T12:47:03Z  
+Fleet ID:      1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e  
+Project name:  myproj  
+Project ID:    3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g7g  
+
+State information:    
+  Status:       successful  
+  Retries:      0  
+  Worker name:  fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-1 
+```
+{: screen}  
+  
+### `ibmcloud ce fleet task list`  
+{: #cli-fleet-task-list}  
+
+List all tasks of a serverless fleet.  
+  
+```txt
+ibmcloud ce fleet task list --fleet-id FLEET_ID [--output OUTPUT] [--pagination-token PAGINATION_TOKEN] [--quiet] [--sort-by SORT_BY] [--status STATUS]
+```
+{: pre}
+
+**Command Options**  
+
+`--fleet-id`, `-`
+:   Required. The UUID of the fleet the tasks belong to. This value is *required*. 
+
+`--output`, `-o`
+:   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*. 
+
+`--pagination-token`, `--pt`
+:   Show next page of tasks starting with this pagination token. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--sort-by`, `--sb`
+:   Specifies the column by which to sort the list. Valid values are `id`, `index` and `status`. This value is *optional*. The default value is `index`.
+
+`--status`, `--st`
+:   Show tasks that have the specified status. Valid value are `failed`, `canceled`, `pending`, `running`, and `successful`. This value is *optional*. 
+
+  
+  
+#### Example
+{: #fleet-task-list-cancel-example}
+
+```txt
+ibmcloud ce fleet task list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e
+```
+{: pre}
+
+#### Example output
+{: #fleet-task-list-example-output}
+
+```txt
+Listing serverless fleet tasks...
+OK
+
+Task index  ID                                    Status   Result code  Worker name  
+0           5b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  successful  0            fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-0 
+1           4b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  running                  fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-1 
+2           3b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  pending
+3           2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  running                  fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-1 
+4           1b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  successful  0            fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-0 
+```
+{: screen}  
+  
+### `ibmcloud ce fleet worker`  
+{: #cli-fleet-worker}  
+
+Manage serverless fleet workers.  
+  
+```txt
+ibmcloud ce fleet worker COMMAND [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-fleet-worker} 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+### `ibmcloud ce fleet worker delete`  
+{: #cli-fleet-worker-delete}  
+
+Delete a serverless fleet worker.  
+  
+```txt
+ibmcloud ce fleet worker delete --name WORKER_NAME --fleet-id FLEET_ID [--force] [--hard] [--ignore-not-found] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+
+`--fleet-id`, `-`
+:   Required. The ID of the fleet the worker belongs to. This value is *required*. 
+
+`--name`, `--worker-name`
+:   Required. The name of the serverless fleet worker. This value is *required*. 
+
+`--force`, `-f`
+:   Force deletion without confirmation. This value is *optional*. The default value is `false`.
+
+`--hard`
+:   Immediately delete the serverless fleet worker. If you do not specify the 'hard' option, handling of 'running' tasks processed by this worker continues until those tasks reach a final state, and only then the worker gets deleted. This value is *optional*. The default value is `false`.
+
+`--ignore-not-found`, `--inf`
+:   If not found, do not fail. This value is *optional*. The default value is `false`.
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--wait`, `-w`
+:   Delete the serverless fleet worker and wait for the worker to be deleted. This value is *optional*. The default value is `false`.
+
+`--wait-timeout`, `--wto`
+:   The time in seconds to wait for the serverless fleet worker to be deleted. This value is *optional*. The default value is `180`.
+
+  
+  
+#### Example
+{: #fleet-worker-delete-example}
+
+```txt
+ibmcloud ce fleet worker delete --force --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e --worker-name fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-42
+```
+{: pre}
+
+#### Example output
+{: #fleet-worker-delete-example-output}
+
+```txt
+Deleting serverless fleet worker...
+OK 
+```
+{: screen}  
+  
+### `ibmcloud ce fleet worker get`  
+{: #cli-fleet-worker-get}  
+
+Display details of a serverless fleet worker.  
+  
+```txt
+ibmcloud ce fleet worker get --name WORKER_NAME --fleet-id FLEET_ID [--output OUTPUT] [--quiet]
+```
+{: pre}
+
+**Command Options**  
+
+`--fleet-id`, `-`
+:   Required. The ID of the fleet the worker belongs to. This value is *required*. 
+
+`--name`, `--worker-name`
+:   Required. The name of the serverless fleet worker. This value is *required*. 
+
+`--output`, `-o`
+:   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+  
+  
+#### Example
+{: #fleet-worker-get-example}
+
+```txt
+ibmcloud ce fleet worker get --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e --worker-name fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-42
+```
+{: pre}
+
+#### Example output
+{: #fleet-worker-get-example-output}
+
+```txt
+Getting serverless fleet worker...
+OK
+
+Name:          fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-42  
+ID:            2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  
+Created:       2025-09-26T20:05:33Z  
+Status:        running  
+Version:       v1.0.15  
+Fleet ID:      1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e  
+Project name:  myproj  
+Project ID:    3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g7g  
+
+Network placement:      
+  IP address:    10.242.0.42  
+  Network zone:  eu-de-1  
+  Subnet CRN:    crn:v1:bluemix:public:is:eu-de-1:a/abcdefabcdefabcdefabcd1234567890::subnet:1a1a-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  
+
+Profile information:    
+  Profile:       cx2-2x4  
+  vCPUs:         2  
+  Memory (GiB):  4  
+```
+{: screen}  
+  
+### `ibmcloud ce fleet worker list`  
+{: #cli-fleet-worker-list}  
+
+List all workers of a serverless fleet.  
+  
+```txt
+ibmcloud ce fleet worker list --fleet-id FLEET_ID [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+
+`--fleet-id`, `--id`
+:   Required. The ID of the fleet the worker belongs to. This value is *required*. 
+
+`--output`, `-o`
+:   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--sort-by`, `-s`
+:   Specifies the column by which to sort the list. Valid values are `name` and `status`. This value is *optional*. The default value is `name`.
+
+  
+  
+#### Example
+{: #fleet-worker-list-example}
+
+```txt
+ibmcloud ce fleet worker list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e
+```
+{: pre}
+
+#### Example output
+{: #fleet-worker-list-example-output}
+
+```txt
+Listing serverless fleet workers...
+OK
+
+Name                                          ID                                    Status        Profile   IP           Zone     Version  
+fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-0  2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  running       cx2-2x4   10.242.0.42  eu-de-1  v1.0.15
+fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-1  3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g7g  initializing  cx2-8x16  10.242.0.43  eu-de-1  v1.0.15 
+```
+{: screen}  
+  
 ## Function commands  
 {: #cli-function}  
 

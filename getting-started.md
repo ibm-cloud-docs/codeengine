@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-18"
+lastupdated: "2025-09-29"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -27,9 +27,10 @@ First, learn about some [key terms](#term-summary) for {{site.data.keyword.codee
 - [Create and run a job](#first-job)
 - [Run function code](#first-function)
 - [Building your first container image from source code](#build-image-gs)
+- [Run a fleet](#first-fleet)
 
 
-## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and functions?
+## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, functions and fleets?
 {: #term-summary}
 
 Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. Afterward, you can test your knowledge and [take a quiz!](https://ibm.biz/BdfFxR){: external}
@@ -41,12 +42,30 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 | Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile or Cloud Native Buildpacks. |
 | Function | A function is a stateless code snippet that performs tasks in response to an HTTP request. |
 | Job | A job runs one or more instances of your executable code in parallel. Unlike applications, which include an HTTP Server to handle incoming requests, jobs are designed to run one time and exit. |
+| Fleet | A fleet, also caled a *serverless fleet* runs one or more instances of user code to complete a series of specified tasks. Fleets are designed to tackle large, compute-heavy work loads. Unlike jobs, fleets are single tenant, implement dynamic task queuing, and provide full control over the machine profile configuration. For more information, see [What is the difference between jobs and fleets?]()  |
 {: caption="{{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
 
 For more information about terms, see [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology).
 
 Not sure what to choose? See [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 {: tip}
+
+## How do apps, jobs, functions, and fleets compare?
+{: #ce-comp}
+
+| Characteristic | Application | Job | Function | Fleet |
+| --------- | --------- | --------- | --------- | ------ |
+| Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) | Long-running (minutes to weeks) |
+| Startup latency | Medium | Scheduled start | Low  | Low |
+| Termination | Run-continuously | Run-to-completion | Run-to-completion | Run-to-completion |
+| Invocation | On request or permanently running | Scheduled | On request, instant | Scheduled |
+| Programming Model | Container-based build and execution | Container-based build and execution | Language-specific source code files and dependency metadata | Container-based build and execution |
+| Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution | High parallel execution and queuing |
+| Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations | Based on number of tasks and concurrent instances |
+| Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out | Large, compute-intensive work loads |
+{: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, and functions" caption-side="bottom"}
+
+For more information, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 
 ## Deploying your first {{site.data.keyword.codeengineshort}} app
 {: #app-hello}
@@ -55,7 +74,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the `icr.io
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Let's go**.
+2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 4. Select **Application**.
 5. Enter a name for the application, for example, `myapp`. Use a name for your application that is unique within the project.
@@ -104,7 +123,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Let's go**.
+2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 4. Select **Job**.
 5. Enter a name for the job, for example, `myjob`. Use a name for your job that is unique within the project.
@@ -152,7 +171,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} function with sa
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Let's go**.
+2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a function.
 4. Select **Function**.
 5. Enter a name for the function. Use a name for your function that is unique within the project.
@@ -172,6 +191,22 @@ You deployed your first function to {{site.data.keyword.codeengineshort}} and te
 You can [migrate your IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate).
 {: tip}
 
+## Running your first fleet
+{: #first-fleet}
+
+Create and run your first {{site.data.keyword.codeengineshort}} fleet by using the `icr.io/codeengine/helloworld` image. 
+
+1. Make sure you have completed the [required preparation steps]() to run a fleet. 
+1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
+2. Select **Start creating**.
+3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to run a fleet.
+4. Select **Fleet**.
+5. Enter a name for the fleet. Use a name that is unique across all fleets within the project. 
+6. Specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}.
+7. Click create.
+
+
+
 ## Building your first container image from source code
 {: #build-image-gs}
 
@@ -181,7 +216,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 {{site.data.keyword.codeengineshort}} can automatically push images to a {{site.data.keyword.registryshort}} namespace in your account. It can even create a namespace for you. To push images to a different {{site.data.keyword.registryshort}} account or to a private Docker Hub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Let's go**.
+2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 4. Select **Application**.
 5. Enter a name for the application. Use a name for your application that is unique within the project.
@@ -226,6 +261,8 @@ SHLVL=1
 You submitted source code to {{site.data.keyword.codeengineshort}} and created a container image that you then deployed in an application - all from one interface.
 
 Go to [Building a container image](/docs/codeengine?topic=codeengine-plan-build) to explore and try out more options for builds.
+
+
 
 ## Next steps for {{site.data.keyword.codeengineshort}}
 {: #nextsteps-getstart}

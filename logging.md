@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-11"
+lastupdated: "2025-09-29"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 {:ui: .ph data-hd-interface='ui'}
 {:cli: .ph data-hd-interface='cli'}
 
-# Viewing logs
+# Viewing logs for apps, jobs and functions
 {: #logging}
 
 Logging can help you troubleshoot issues in {{site.data.keyword.codeenginefull}}. You can view logs by using the console or by using the CLI.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-11"
+lastupdated: "2025-09-17"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -32,10 +32,22 @@ The following table shows the service behavior changes for each version date. Sw
 
 | Version date | Version number | Summary of changes                                                                                                                                                                        |
 |---|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|`2025-07-10`| Version 2.2.0 |  As part of the introduction of `persistent_data_stores` as a Volume Mount type for apps and jobs, the `name` property of entries in `run_volume_mounts` is no longer supported.
 |`2024-05-13`| Version 2.1.0 | Environment variables defined and set by Code Engine are now split out from user-defined environment variables and are exposed as part of the `computed_env_variables` field in the API.  |
 |`2022-12-09`| Version 2.0.0 |                                                                                                                                                                                           |
 |`2021-03-31`| Version 1.0.0 |                                                                                                                                                                                           |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"}
+
+## 17 September 2025
+{: #17-september-2025}
+
+Added a new `run_volume_mounts` type of `persistent_data_stores` for apps, jobs, and jobruns.
+:   - See [Create an app API](https://cloud.ibm.com/apidocs/codeengine/v2#create-app){: external}.
+:   - See [Update an app API](https://cloud.ibm.com/apidocs/codeengine/v2#update-app){: external}.
+:   - See [Create a job API](https://cloud.ibm.com/apidocs/codeengine/v2#create-job){: external}.
+:   - See [Update a job API](https://cloud.ibm.com/apidocs/codeengine/v2#update-job){: external}.
+:   - See [Create a job run API](https://cloud.ibm.com/apidocs/codeengine/v2#create-job-run){: external}.
+
 
 ## 03 April 2025
 {: #03-april-2025}

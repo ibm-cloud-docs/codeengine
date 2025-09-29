@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-08"
+lastupdated: "2025-09-29"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -60,23 +60,6 @@ Specify a job array by either array size or by a set of array indexes:
 The `JOB_ARRAY_SIZE` environment variable is also available for user code and is, by default, set to the number of indexes.
 
 If an instance finishes with a successful return code, then the status of the associated array index changes to completed. Otherwise, {{site.data.keyword.codeengineshort}} starts a new instance for the same index, if the configured number of retries has not yet exceeded. If an instance fails, and no more retries are allowed, the associated array index changes its status to failed.
-
-## How do jobs compare to applications and functions?
-{: #batchjob-compare}
-
-| Characteristic | Application | Job | Function |
-| --------- | --------- | --------- | --------- |
-| Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) |
-| Startup latency | Medium | Scheduled start | Low  |
-| Termination | Run-continuously | Run-to-completion | Run-to-completion |
-| Invocation | On request or permanently running | Scheduled | On request, instant |
-| Programming Model | Container-based build and execution | Container-based build and execution | Language-specific source code files and dependency metadata |
-| Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution |
-| Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations |
-| Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out |
-{: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, and functions" caption-side="bottom"}
-
-For more information, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 
 ## What are the key features of working with {{site.data.keyword.codeengineshort}} batch jobs?
 {: #batchjob-features}

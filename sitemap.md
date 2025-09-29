@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-06"
+lastupdated: "2025-09-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -28,13 +28,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Getting started with {{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started#getting-started)
 
-* [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and functions?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
+* [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, functions and fleets?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
+
+* [How do apps, jobs, functions, and fleets compare?](/docs/codeengine?topic=codeengine-getting-started#ce-comp)
 
 * [Deploying your first {{site.data.keyword.codeengineshort}} app](/docs/codeengine?topic=codeengine-getting-started#app-hello)
 
 * [Running your first {{site.data.keyword.codeengineshort}} job](/docs/codeengine?topic=codeengine-getting-started#first-job)
 
 * [Running your first function](/docs/codeengine?topic=codeengine-getting-started#first-function)
+
+* [Running your first fleet](/docs/codeengine?topic=codeengine-getting-started#first-fleet)
 
 * [Building your first container image from source code](/docs/codeengine?topic=codeengine-getting-started#build-image-gs)
 
@@ -54,8 +58,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Application workloads](/docs/codeengine?topic=codeengine-ceapplications#ceapplications)
 
 * [What are application workloads?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads)
-
-* [How do apps compare to jobs and functions?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads-compare)
 
 * [What are the key features of working with {{site.data.keyword.codeengineshort}} applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-features)
 
@@ -83,8 +85,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [What are job arrays and job array statuses?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-jobarray)
 
-* [How do jobs compare to applications and functions?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-compare)
-
 * [What are the key features of working with {{site.data.keyword.codeengineshort}} batch jobs?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-features)
 
     * [Isolation](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-isolation)
@@ -111,8 +111,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Lifecycle of a function instance](/docs/codeengine?topic=codeengine-cefunctions#functions-lifecycle)
 
-* [How do functions compare to apps and jobs?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-compare)
-
 * [What are key features of working with functions?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-ce)
 
     * [Isolation](/docs/codeengine?topic=codeengine-cefunctions#cefun-isolation)
@@ -131,6 +129,30 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How can I get started with functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
 
+[Fleets workloads](/docs/codeengine?topic=codeengine-cefleets#cefleets)
+
+* [What are fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-workloads)
+
+* [How do fleets work?](/docs/codeengine?topic=codeengine-cefleets#fleet-how)
+
+* [How are fleets different from jobs?](/docs/codeengine?topic=codeengine-cefleets#fleet-v-job)
+
+* [What are the key features of working with {{site.data.keyword.codeengineshort}} fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-features)
+
+    * [Automatic scaling](/docs/codeengine?topic=codeengine-cefleets#fleet-scaling)
+
+    * [Task and instance specification](/docs/codeengine?topic=codeengine-cefleets#fleet-taskspec)
+
+    * [Task storage in COS](/docs/codeengine?topic=codeengine-cefleets#fleet-cos)
+
+    * [Isolation](/docs/codeengine?topic=codeengine-cefleets#fleet-isolation)
+
+    * [Retries](/docs/codeengine?topic=codeengine-cefleets#fleet-retries)
+
+    * [Status](/docs/codeengine?topic=codeengine-cefleets#fleet-status)
+
+* [How can I get started with fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-getstart)
+
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -139,6 +161,20 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september25)
+
+    * [26 September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september2625)
+
+        * New! Support for fleets workloads in {{site.data.keyword.codeengineshort}}
+
+        * CLI version 1.55.0 released
+
+    * [24 September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september2425)
+
+        * CLI version 1.54.6 released
+
+    * [17 September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september1725)
+
+        * Added a new `run_volume_mounts` type of `persistent_data_stores` for apps, jobs, and jobruns.
 
     * [05 September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september0525)
 
@@ -2987,6 +3023,105 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?](/docs/codeengine?topic=codeengine-fun-migrate#openapi-spec-fun-migrate)
 
 
+## Running fleets
+{: #sitemap_running_fleets}
+
+
+[Preparing to run a fleet](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep)
+
+* [1. Gather the required networking values for the secret](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-gather)
+
+* [2. (Optional) Add a public gateway to your subnets](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-pubgateway)
+
+* [3. Configure the secret](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-secret)
+
+* [4. Create a persistent data store](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-pds)
+
+[Running a fleet](/docs/codeengine?topic=codeengine-fleet-run#fleet-run)
+
+* [Before you begin](/docs/codeengine?topic=codeengine-fleet-run#fleet-run-before)
+
+* [Running a fleet with the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-run-cli)
+
+* [Running a fleet with the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-run-ui)
+
+* [Task specification](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-task-spec)
+
+[Setting up observability for fleets](/docs/codeengine?topic=codeengine-fleet-observability#fleet-observability)
+
+* [Setting up logging for fleets](/docs/codeengine?topic=codeengine-fleet-observability#fleet-log)
+
+    * [1. Make sure you have an existing Cloud Logs service instance](/docs/codeengine?topic=codeengine-fleet-observability#log-instance)
+
+    * [2. Set the permissions for the Cloud Logs instance](/docs/codeengine?topic=codeengine-fleet-observability#log-perm)
+
+    * [3. Get the private Ingress endpoint for the Cloud Logs instance](/docs/codeengine?topic=codeengine-fleet-observability#log-ingress-endpoint)
+
+    * [4. Create a virtual private endpoint gateway that connects to the logging instance](/docs/codeengine?topic=codeengine-fleet-observability#log-vpe)
+
+    * [5. Create reserved IP addresses in the VPE gateway](/docs/codeengine?topic=codeengine-fleet-observability#log-ip)
+
+    * [6. Add the logging values to the fleets default secret](/docs/codeengine?topic=codeengine-fleet-observability#log-secret)
+
+    * [7. View your fleets logs](/docs/codeengine?topic=codeengine-fleet-observability#log-view)
+
+* [Setting up monitoring for fleets](/docs/codeengine?topic=codeengine-fleet-observability#fleets-monitor)
+
+    * [1. Make sure you have an existing Clouds Monitoring instance](/docs/codeengine?topic=codeengine-fleet-observability#monitor-instance)
+
+    * [2. Get the monitoring agent key](/docs/codeengine?topic=codeengine-fleet-observability#monitor-key)
+
+    * [3. Create a virtual private endpoint gateway that connects to the monitoring instance](/docs/codeengine?topic=codeengine-fleet-observability#monitor-vpe)
+
+    * [4. Create reserved IP addresses in the VPE gateway](/docs/codeengine?topic=codeengine-fleet-observability#monitor-ip)
+
+    * [5. Add monitoring values to the fleets default secret](/docs/codeengine?topic=codeengine-fleet-observability#monitor-secret)
+
+    * [6. View your fleets data in the monitoring dashboard](/docs/codeengine?topic=codeengine-fleet-observability#monitor-view)
+
+[Canceling or deleting fleets and workers](/docs/codeengine?topic=codeengine-fleets-cancel#fleets-cancel)
+
+* [Canceling a fleet](/docs/codeengine?topic=codeengine-fleets-cancel#fleets-cancel-type)
+
+    * [Canceling a fleet in the CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=cli#fleets-cancel-cli)
+
+    * [Canceling a fleet in the UI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleets-cancel-ui)
+
+* [Deleting a fleet](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete)
+
+    * [Deleting a fleet in the CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=cli#fleet-delete-cli)
+
+    * [Deleting a fleet in the UI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-ui)
+
+* [Deleting fleet workers](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker)
+
+    * [Deleting a worker in the CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker-cli)
+
+    * [Deleting a worker in the UI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker-ui)
+
+[Understanding the status of your fleet](/docs/codeengine?topic=codeengine-fleet-status#fleet-status)
+
+* [Fleet status](/docs/codeengine?topic=codeengine-fleet-status#status-fleets)
+
+    * [Active fleet statuses](/docs/codeengine?topic=codeengine-fleet-status#status-active)
+
+    * [Final fleet statuses](/docs/codeengine?topic=codeengine-fleet-status#status-final)
+
+    * [Checking fleet status](/docs/codeengine?topic=codeengine-fleet-status#fleet-status-check)
+
+* [Task status](/docs/codeengine?topic=codeengine-fleet-status#status-tasks)
+
+    * [Checking the status of tasks](/docs/codeengine?topic=codeengine-fleet-status#status-task-check)
+
+* [Worker node status](/docs/codeengine?topic=codeengine-fleet-status#status-workers)
+
+[Worker Image Changelog v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-v1_0)
+
+* [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
+
+    * [Worker image `v1.0.15`, released 26 September 2025](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_15)
+
+
 ## Building source code
 {: #sitemap_building_source_code}
 
@@ -3476,6 +3611,23 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps](/docs/codeengine?topic=codeengine-persistent-data-store#pds-next-steps)
 
 
+## Enabling event notifications for {{site.data.keyword.codeengineshort}}
+{: #sitemap_enabling_event_notifications_for_}
+
+
+[Enabling event notifications for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-event-notifications-events#event-notifications-events)
+
+* [How are events received?](/docs/codeengine?topic=codeengine-event-notifications-events#event-notifications-how)
+
+* [What are some key features of {{site.data.keyword.en_short}}](/docs/codeengine?topic=codeengine-event-notifications-events#event-notifications-features)
+
+* [How are {{site.data.keyword.en_short}} notifications different from subscriptions?](/docs/codeengine?topic=codeengine-event-notifications-events#event-notifications-compare)
+
+* [Setting up a trigger in the console](/docs/codeengine?topic=codeengine-event-notifications-events&interface=ui#event-notifications-example1)
+
+* [Setting up a trigger in the CLI](/docs/codeengine?topic=codeengine-event-notifications-events&interface=cli#event-notifications-example1)
+
+
 ## Subscribing to event producers
 {: #sitemap_subscribing_to_event_producers}
 
@@ -3730,7 +3882,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_observability}
 
 
-[Viewing logs](/docs/codeengine?topic=codeengine-logging#logging)
+[Viewing logs for apps, jobs and functions](/docs/codeengine?topic=codeengine-logging#logging)
 
 * [Viewing logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-ui)
 
@@ -3847,6 +3999,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Global Attributes](/docs/codeengine?topic=codeengine-monitor#global-attributes)
 
     * [More attributes](/docs/codeengine?topic=codeengine-monitor#additional-attributes)
+
+[Viewing logs and monitoring data for fleets](/docs/codeengine?topic=codeengine-fleet-observability-view#fleet-observability-view)
+
+* [Viewing fleet logs](/docs/codeengine?topic=codeengine-fleet-observability-view#log-view)
+
+    * [Logging fields](/docs/codeengine?topic=codeengine-fleet-observability-view#log-fields)
+
+* [Viewing monitoring data](/docs/codeengine?topic=codeengine-fleet-observability-view#monitor-view)
 
 [Creating custom dashboards to monitor {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-custom#monitor-custom)
 
@@ -4066,6 +4226,32 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce experimental`](/docs/codeengine?topic=codeengine-cli#cli-experimentalcmd)
 
+* [Fleet commands](/docs/codeengine?topic=codeengine-cli#cli-fleet)
+
+    * [`ibmcloud ce fleet cancel`](/docs/codeengine?topic=codeengine-cli#cli-fleet-cancel)
+
+    * [`ibmcloud ce fleet create`](/docs/codeengine?topic=codeengine-cli#cli-fleet-create)
+
+    * [`ibmcloud ce fleet delete`](/docs/codeengine?topic=codeengine-cli#cli-fleet-delete)
+
+    * [`ibmcloud ce fleet get`](/docs/codeengine?topic=codeengine-cli#cli-fleet-get)
+
+    * [`ibmcloud ce fleet list`](/docs/codeengine?topic=codeengine-cli#cli-fleet-list)
+
+    * [`ibmcloud ce fleet task`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task)
+
+    * [`ibmcloud ce fleet task get`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-get)
+
+    * [`ibmcloud ce fleet task list`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-list)
+
+    * [`ibmcloud ce fleet worker`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker)
+
+    * [`ibmcloud ce fleet worker delete`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-delete)
+
+    * [`ibmcloud ce fleet worker get`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-get)
+
+    * [`ibmcloud ce fleet worker list`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-list)
+
 * [Function commands](/docs/codeengine?topic=codeengine-cli#cli-function)
 
     * [`ibmcloud ce function bind`](/docs/codeengine?topic=codeengine-cli#cli-function-bind)
@@ -4272,6 +4458,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [17 September 2025](/docs/codeengine?topic=codeengine-api-changelog#17-september-2025)
 
 * [03 April 2025](/docs/codeengine?topic=codeengine-api-changelog#03-april-2025)
 
@@ -4537,6 +4725,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Job pricing](/docs/codeengine?topic=codeengine-pricing#job-pricing)
 
 * [Function pricing](/docs/codeengine?topic=codeengine-pricing#functions-pricing)
+
+* [Fleet pricing](/docs/codeengine?topic=codeengine-pricing#fleet-pricing)
+
+    * [If you let CE automatically provision worker nodes](/docs/codeengine?topic=codeengine-pricing#fleet-pricing-auto)
+
+    * [If you choose a specific worker profile](/docs/codeengine?topic=codeengine-pricing#fleet-pricing-spec)
 
 * [Build pricing](/docs/codeengine?topic=codeengine-pricing#build-pricing)
 
