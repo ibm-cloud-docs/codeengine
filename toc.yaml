@@ -118,6 +118,7 @@ toc:
           - fleet-observability.md
           - fleet-cancel.md
           - fleet-status.md
+          - fleet-changelog.md
       - topicgroup:
           label: Building source code
           topics:
