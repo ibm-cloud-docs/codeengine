@@ -22,6 +22,7 @@ toc:
           - app-workloads.md
           - batchjob-workloads.md
           - function-workloads.md
+          - fleets-workloads.md
       - navtitle: Release notes
         topic: release-notes.md
   - navgroup:
@@ -110,6 +111,14 @@ toc:
           - fun-test-local.md
           - fun-migrate.md
       - topicgroup:
+          label: Running fleets
+          topics:
+          - fleet-prep.md
+          - fleet-run.md
+          - fleet-observability.md
+          - fleet-cancel.md
+          - fleet-status.md
+      - topicgroup:
           label: Building source code
           topics:
           - plan-build.md
@@ -168,6 +177,7 @@ toc:
           - logging.md
           - at-events.md
           - monitor.md
+          - fleet-observability-view.md
           - monitor-custom.md
       - topicgroup:
           label: Connectivity

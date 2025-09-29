@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -28,13 +28,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Getting started with {{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started#getting-started)
 
-* [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and functions?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
+* [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, functions and fleets?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
+
+* [How do apps, jobs, functions, and fleets compare?](/docs/codeengine?topic=codeengine-getting-started#ce-comp)
 
 * [Deploying your first {{site.data.keyword.codeengineshort}} app](/docs/codeengine?topic=codeengine-getting-started#app-hello)
 
 * [Running your first {{site.data.keyword.codeengineshort}} job](/docs/codeengine?topic=codeengine-getting-started#first-job)
 
 * [Running your first function](/docs/codeengine?topic=codeengine-getting-started#first-function)
+
+* [Running your first fleet](/docs/codeengine?topic=codeengine-getting-started#first-fleet)
 
 * [Building your first container image from source code](/docs/codeengine?topic=codeengine-getting-started#build-image-gs)
 
@@ -54,8 +58,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Application workloads](/docs/codeengine?topic=codeengine-ceapplications#ceapplications)
 
 * [What are application workloads?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads)
-
-* [How do apps compare to jobs and functions?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-workloads-compare)
 
 * [What are the key features of working with {{site.data.keyword.codeengineshort}} applications?](/docs/codeengine?topic=codeengine-ceapplications#ceapp-features)
 
@@ -83,8 +85,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [What are job arrays and job array statuses?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-jobarray)
 
-* [How do jobs compare to applications and functions?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-compare)
-
 * [What are the key features of working with {{site.data.keyword.codeengineshort}} batch jobs?](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-features)
 
     * [Isolation](/docs/codeengine?topic=codeengine-cebatchjobs#batchjob-isolation)
@@ -111,8 +111,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Lifecycle of a function instance](/docs/codeengine?topic=codeengine-cefunctions#functions-lifecycle)
 
-* [How do functions compare to apps and jobs?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-compare)
-
 * [What are key features of working with functions?](/docs/codeengine?topic=codeengine-cefunctions#functions-work-ce)
 
     * [Isolation](/docs/codeengine?topic=codeengine-cefunctions#cefun-isolation)
@@ -130,6 +128,30 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Packaging your source code for a function](/docs/codeengine?topic=codeengine-cefunctions#functions-packaging)
 
 * [How can I get started with functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
+
+[Fleets workloads](/docs/codeengine?topic=codeengine-cefleets#cefleets)
+
+* [What are fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-workloads)
+
+* [How do fleets work?](/docs/codeengine?topic=codeengine-cefleets#fleet-how)
+
+* [How are fleets different from jobs?](/docs/codeengine?topic=codeengine-cefleets#fleet-v-job)
+
+* [What are the key features of working with {{site.data.keyword.codeengineshort}} fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-features)
+
+    * [Automatic scaling](/docs/codeengine?topic=codeengine-cefleets#fleet-scaling)
+
+    * [Task and instance specification](/docs/codeengine?topic=codeengine-cefleets#fleet-taskspec)
+
+    * [Task storage in COS](/docs/codeengine?topic=codeengine-cefleets#fleet-cos)
+
+    * [Isolation](/docs/codeengine?topic=codeengine-cefleets#fleet-isolation)
+
+    * [Retries](/docs/codeengine?topic=codeengine-cefleets#fleet-retries)
+
+    * [Status](/docs/codeengine?topic=codeengine-cefleets#fleet-status)
+
+* [How can I get started with fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-getstart)
 
 
 ## Release notes
@@ -2991,6 +3013,67 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?](/docs/codeengine?topic=codeengine-fun-migrate#openapi-spec-fun-migrate)
 
 
+## Running fleets
+{: #sitemap_running_fleets}
+
+
+[Preparing to run a fleet](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep)
+
+* [1. Gather the required networking values for the secret](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-gather)
+
+* [2. (Optional) Add a public gateway to your subnets](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-pubgateway)
+
+* [3. Configure the secret](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-secret)
+
+* [4. Create a persistent data store](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-pds)
+
+[Running a fleet](/docs/codeengine?topic=codeengine-fleet-run#fleet-run)
+
+* [Before you begin](/docs/codeengine?topic=codeengine-fleet-run#fleet-run-before)
+
+* [Running a fleet with the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-run-cli)
+
+* [Running a fleet with the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-run-ui)
+
+* [Task specification](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-task-spec)
+
+[Canceling or deleting fleets and workers](/docs/codeengine?topic=codeengine-fleets-cancel#fleets-cancel)
+
+* [Canceling a fleet](/docs/codeengine?topic=codeengine-fleets-cancel#fleets-cancel-type)
+
+    * [Canceling a fleet in the CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=cli#fleets-cancel-cli)
+
+    * [Canceling a fleet in the UI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleets-cancel-ui)
+
+* [Deleting a fleet](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete)
+
+    * [Deleting a fleet in the CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=cli#fleet-delete-cli)
+
+    * [Deleting a fleet in the UI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-ui)
+
+* [Deleting fleet workers](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker)
+
+    * [Deleting a worker in the CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker-cli)
+
+    * [Deleting a worker in the UI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker-ui)
+
+[Understanding the status of your fleet](/docs/codeengine?topic=codeengine-fleet-status#fleet-status)
+
+* [Fleet status](/docs/codeengine?topic=codeengine-fleet-status#status-fleets)
+
+    * [Active fleet statuses](/docs/codeengine?topic=codeengine-fleet-status#status-active)
+
+    * [Final fleet statuses](/docs/codeengine?topic=codeengine-fleet-status#status-final)
+
+    * [Checking fleet status](/docs/codeengine?topic=codeengine-fleet-status#fleet-status-check)
+
+* [Task status](/docs/codeengine?topic=codeengine-fleet-status#status-tasks)
+
+    * [Checking the status of tasks](/docs/codeengine?topic=codeengine-fleet-status#status-task-check)
+
+* [Worker node status](/docs/codeengine?topic=codeengine-fleet-status#status-workers)
+
+
 ## Building source code
 {: #sitemap_building_source_code}
 
@@ -3751,7 +3834,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_observability}
 
 
-[Viewing logs](/docs/codeengine?topic=codeengine-logging#logging)
+[Viewing logs for apps, jobs and functions](/docs/codeengine?topic=codeengine-logging#logging)
 
 * [Viewing logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-ui)
 
@@ -4560,6 +4643,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Job pricing](/docs/codeengine?topic=codeengine-pricing#job-pricing)
 
 * [Function pricing](/docs/codeengine?topic=codeengine-pricing#functions-pricing)
+
+* [Fleet pricing](/docs/codeengine?topic=codeengine-pricing#fleet-pricing)
+
+    * [If you let CE automatically provision worker nodes](/docs/codeengine?topic=codeengine-pricing#fleet-pricing-auto)
+
+    * [If you choose a specific worker profile](/docs/codeengine?topic=codeengine-pricing#fleet-pricing-spec)
 
 * [Build pricing](/docs/codeengine?topic=codeengine-pricing#build-pricing)
 

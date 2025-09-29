@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-09"
+  years: 2020, 2025
+lastupdated: "2025-09-29"
 
 keywords: benefits, terminology, developers, capabilities, code engine
 
@@ -56,6 +56,8 @@ Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the fo
 | Container image registry | A container registry, or registry, is a service that stores container images. For example, {{site.data.keyword.registryfull_notm}} and Docker Hub are container registries. A container registry can be public or private. A container registry that is public does not require credentials to access. In contrast, accessing a private registry does require credentials. |
 | Function | A function is a stateless code snippet that performs tasks as it is invoked by HTTP requests. With IBM Code Engine functions, you can run your business logic in a scalable and serverless way. IBM Code Engine functions provide an optimized runtime environment to support low latency and rapid scale-out scenarios. Your function code can be written in a managed runtime that includes specific [Node.js or Python](/docs/codeengine?topic=codeengine-fun-runtime) versions. |
 | Job | A job runs one or more instances of your executable code in parallel. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. |
+| Fleet | A fleet, also called a *serverless fleet*, runs one or more instances of user code to complete a set of specified tasks. Fleets can process large, compute-intensive workloads, allow control over machine profiles, and can run on GPU resources. Fleets are single tenant, implement dynamic task queuing, and provide full control over the machine profile configuration. Additionally, fleets can connect to Virtual Private Clouds (VPCs) to securely access user data and services. 
+ |
 | Project | A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to its entities. A project provides the following items. \n - Provides a unique namespace for entity names. \n - Manages access to project resources (inbound access). \n - Manages access to backing services, registries, and repositories (outbound access). \n - Has an automatically generated certificate for Transport Layer Service (TLS). |
 | Secret | A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app, function, or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs. |
 | Service binding | Service bindings provide applications, jobs, and functions access to {{site.data.keyword.cloud_notm}} services. |
