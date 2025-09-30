@@ -3095,7 +3095,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deleting fleet workers](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker)
 
-    * [Deleting a worker in the CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker-cli)
+    * [Deleting a worker in the CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=cli#fleet-delete-worker-cli)
 
     * [Deleting a worker in the UI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker-ui)
 

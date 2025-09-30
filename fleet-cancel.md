@@ -119,6 +119,7 @@ You can delete individual or groups of workers in a fleet. The remaining workers
 
 ### Deleting a worker in the CLI
 {: #fleet-delete-worker-cli}
+{: cli}
 
 To delete a worker in a fleet, run the following command. You can specify more than one worker. When prompted, specify `y` to confirm that you want to delete the worker.
 
@@ -147,6 +148,7 @@ ibmcloud ce fleet worker delete --fleet-id FLEET_ID --worker-name WORKER_NAME_1 
 
 ### Deleting a worker in the UI
 {: #fleet-delete-worker-ui}
+{: ui}
 
 Follow the steps to delete a fleet worker in the UI.
 
