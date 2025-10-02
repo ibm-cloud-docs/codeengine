@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-10-02"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -182,7 +182,26 @@ Create and run your first {{site.data.keyword.codeengineshort}} function with sa
 Example output
 
 ```txt
-{"args":{"__ce_headers":{"Accept-Encoding":"gzip, deflate, br","User-Agent":"got (https://github.com/sindresorhus/got)","X-Request-Id":"12340a7b-11c0-4de3-f16b-a6abc27f4146"},"__ce_method":"GET","__ce_path":"/"},"env":{"HOME":"/root","PATH":"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/lib/nodejs/bin","PWD":"/nodejsAction","SHLVL":"1","_":"/usr/local/lib/nodejs/bin/node","__OW_ALLOW_CONCURRENT":"true","container":"oci"}}
+{
+  "args": {
+    "__ce_headers": {
+      "Accept-Encoding": "gzip, deflate, br",
+      "User-Agent": "got (https://github.com/sindresorhus/got)",
+      "X-Request-Id": "12340a7b-11c0-4de3-f16b-a6abc27f4146"
+    },
+    "__ce_method": "GET",
+    "__ce_path": "/"
+  },
+  "env": {
+    "HOME": "/root",
+    "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/lib/nodejs/bin",
+    "PWD": "/nodejsAction",
+    "SHLVL": "1",
+    "_": "/usr/local/lib/nodejs/bin/node",
+    "__OW_ALLOW_CONCURRENT": "true",
+    "container": "oci"
+  }
+}
 ```
 {: screen}
 
@@ -194,18 +213,48 @@ You can [migrate your IBM Cloud Functions to {{site.data.keyword.codeengineshort
 ## Running your first fleet
 {: #first-fleet}
 
-Create and run your first {{site.data.keyword.codeengineshort}} fleet by using the `icr.io/codeengine/helloworld` image. 
+Create and run your first {{site.data.keyword.codeengineshort}} fleet by using the `icr.io/codeengine/helloworld` image.
 
-1. Make sure you have completed the [required preparation steps]() to run a fleet. 
+1. Make sure you have completed the [required preparation steps]() to run a fleet.
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to run a fleet.
 4. Select **Fleet**.
-5. Enter a name for the fleet. Use a name that is unique across all fleets within the project. 
+5. Enter a name for the fleet. Use a name that is unique across all fleets within the project.
 6. Specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}.
 7. Click create.
 
+When logging is enabled, the following example is displayed in the logs. To learn about running fleets with logging enabled, see [Viewing fleet logs](/docs/codeengine?topic=codeengine-fleet-observability-view#log-view).
+{: tip}
 
+Example output from logging instance
+
+```txt
+Hello from helloworld! I'm a task of fleet: fleet-abcdef1234! Task Index: 4, Task ID: 2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f
+
+Hello World from:
+. ___  __  ____  ____
+./ __)/  \(    \(  __)
+( (__(  O )) D ( ) _)
+.\___)\__/(____/(____)
+.____  __ _   ___  __  __ _  ____
+(  __)(  ( \ / __)(  )(  ( \(  __)
+.) _) /    /( (_ \ )( /    / ) _)
+(____)\_)__) \___/(__)\_)__)(____)
+
+Some Env Vars:
+--------------
+CE_API_BASE_URL=https://api.private.eu-de.codeengine.cloud.ibm.com
+CE_CPU=1
+CE_DOMAIN=eu-de.codeengine.appdomain.cloud
+CE_FLEET_ID=1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e
+CE_FLEET_NAME=fleet-abcdef1234
+...
+z=Set env var 'SHOW' to see all variables
+```
+{: screen}
+
+You created and ran your fleet from the console. Go to the [Running a fleet](/docs/codeengine?topic=codeengine-fleet-run) to try out more options for fleets.
 
 ## Building your first container image from source code
 {: #build-image-gs}

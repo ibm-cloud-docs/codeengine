@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-10-02"
 
 keywords: billing, pricing, costs for code engine, billing for code engine, job pricing, app pricing, build pricing
 
@@ -73,8 +73,6 @@ For valid CPU and memory combinations, see [Supported memory and CPU combination
 The time that it takes to pull your code bundle or to build it from source code is included in the billable time. 
 {: note}
 
-
-
 ## Fleet pricing
 {: #fleet-pricing}
 
@@ -141,7 +139,6 @@ The approximate cost per second to use a worker node with this profile is:
 `[ 24 x (cost of 1 vCPU second) + 120 x (cost of 1 GB second) + 2 x (cost of 1 L40 GPU-second) ] x (average worker runtime in seconds)` 
 
 The total cost to run the fleet is the accumulated cost of running each worker node that deploys. For example, if `2` GPU workers are deployed, you would multiple the above formulas by `2` to approximate the total cost. Keep in mind that the number of worker nodes depends on the required instance resources and the maximum number of concurrent instances.
-
 
 ## Build pricing
 {: #build-pricing}

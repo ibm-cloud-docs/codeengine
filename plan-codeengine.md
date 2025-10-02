@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-10-02"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
@@ -23,8 +23,7 @@ A job runs one or more instances of your executable code in parallel. Unlike app
 
 A function is a stateless code snippet that performs tasks as it is invoked by HTTP requests. With IBM Code Engine functions, you can run your business logic in a scalable and serverless way. IBM Code Engine functions provide an optimized runtime environment to support low latency and rapid scale-out scenarios. Your function code can be written in a managed runtime that includes specific [Node.js or Python](/docs/codeengine?topic=codeengine-fun-runtime) versions.
 
-A fleet, also called a *serverless fleet*, runs one or more instances of user code to complete a set of specified tasks. Fleets can process large, compute-intensive workloads, allow control over machine profiles, and can run on GPU resources. Fleets are single tenant, implement dynamic task queuing, and provide full control over the machine profile configuration. Additionally, fleets can connect to Virtual Private Clouds (VPCs) to securely access user data and services. 
-
+A fleet, also called a *serverless fleet*, runs one or more instances of user code to complete a set of specified tasks. Fleets can process large, compute-intensive workloads, allow control over machine profiles, and can run on GPU resources. Fleets are single tenant, implement dynamic task queuing, and provide full control over the machine profile configuration. Additionally, fleets can connect to Virtual Private Clouds (VPCs) to securely access user data and services.
 
 | Characteristic | Application | Job | Function | Fleet |
 | --------- | --------- | --------- | --------- | ------ |
