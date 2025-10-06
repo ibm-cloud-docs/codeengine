@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-10-06"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2749,7 +2749,7 @@ ibmcloud ce fleet cancel --id FLEET_ID [--force] [--hard] [--quiet]
 #### Command Options  
  {: #cmd-options-fleet-cancel} 
 
-`--id`, `--fleet-id, uuid`
+`--id`, `--fid`, `--fleet-id`
 :   Required. The ID of the serverless fleet. This value is *required*. 
 
 `--force`, `-f`
@@ -2810,10 +2810,10 @@ ibmcloud ce fleet create [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [
  {: #cmd-options-fleet-create} 
 
 `--image`, `-i`
-:   The name of the container image that is used to process the tasks. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *required*. 
+:   Required. The name of the container image that is used to process the tasks. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *required*. 
 
 `--tasks-state-store`, `--ts-state`
-:   Specify the COS bucket thats stores the state of the tasks of the fleet. This value is *required*. 
+:   Required. Specify the COS bucket thats stores the state of the tasks of the fleet. This value is *required*. 
 
 `--argument`, `--arg`, `-a`
 :   Set command arguments needed by the command to execute in the task. This option can be specified multiple times. This value is *optional*. 
@@ -2906,14 +2906,14 @@ OK
 Delete a serverless fleet.  
   
 ```txt
-ibmcloud ce fleet delete --id FLEET_NAME [--force] [--ignore-not-found] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce fleet delete --id FLEET_ID [--force] [--ignore-not-found] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
 #### Command Options  
  {: #cmd-options-fleet-delete} 
 
-`--id`, `--fleet-id, uuid`
+`--id`, `--fid`, `--fleet-id`
 :   Required. The ID of the serverless fleet. This value is *required*. 
 
 `--force`, `-f`
@@ -2956,14 +2956,14 @@ OK
 Display details of a serverless fleet.  
   
 ```txt
-ibmcloud ce fleet get --id FLEET_NAME [--output OUTPUT] [--quiet]
+ibmcloud ce fleet get --id FLEET_ID [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
 #### Command Options  
  {: #cmd-options-fleet-get} 
 
-`--id`, `--fleet-id, uuid`
+`--id`, `--fid`, `--fleet-id`
 :   Required. The ID of the serverless fleet. This value is *required*. 
 
 `--output`, `-o`
@@ -3084,7 +3084,7 @@ ibmcloud ce fleet task COMMAND [--quiet]
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
-
+ 
 
   
 ### `ibmcloud ce fleet task get`  
@@ -3099,10 +3099,10 @@ ibmcloud ce fleet task get --task-id TASK_ID --fleet-id FLEET_ID [--output OUTPU
 
 **Command Options**  
 
-`--fleet-id`
+`--fleet-id`, `--fid`
 :   Required. The UUID of the fleet the task belongs to. This value is *required*. 
 
-`--task-id`, `--id`
+`--task-id`, `--tid`, `--id`
 :   Required. The UUID of the task. This value is *required*. 
 
 `--output`, `-o`
@@ -3155,7 +3155,7 @@ ibmcloud ce fleet task list --fleet-id FLEET_ID [--output OUTPUT] [--pagination-
 
 **Command Options**  
 
-`--fleet-id`, `-`
+`--fleet-id`, `--fid`
 :   Required. The UUID of the fleet the tasks belong to. This value is *required*. 
 
 `--output`, `-o`
@@ -3229,10 +3229,10 @@ ibmcloud ce fleet worker delete --name WORKER_NAME --fleet-id FLEET_ID [--force]
 
 **Command Options**  
 
-`--fleet-id`, `-`
+`--fleet-id`, `--fid`
 :   Required. The ID of the fleet the worker belongs to. This value is *required*. 
 
-`--name`, `--worker-name`
+`--name`, `-n`, `--worker-name`
 :   Required. The name of the serverless fleet worker. This value is *required*. 
 
 `--force`, `-f`
@@ -3284,10 +3284,10 @@ ibmcloud ce fleet worker get --name WORKER_NAME --fleet-id FLEET_ID [--output OU
 
 **Command Options**  
 
-`--fleet-id`, `-`
+`--fleet-id`, `--fid`
 :   Required. The ID of the fleet the worker belongs to. This value is *required*. 
 
-`--name`, `--worker-name`
+`--name`, `-n`, `--worker-name`
 :   Required. The name of the serverless fleet worker. This value is *required*. 
 
 `--output`, `-o`
@@ -3346,7 +3346,7 @@ ibmcloud ce fleet worker list --fleet-id FLEET_ID [--output OUTPUT] [--quiet] [-
 
 **Command Options**  
 
-`--fleet-id`, `--id`
+`--fleet-id`, `--fid`, `--id`
 :   Required. The ID of the fleet the worker belongs to. This value is *required*. 
 
 `--output`, `-o`

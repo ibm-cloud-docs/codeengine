@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-10-06"
 
 keywords: fleets, fleet logging, fleet monitoring, fleet observability, observability, logging, monitoring, Cloud Logs, Cloud Monitoring
 
@@ -17,8 +17,8 @@ subcollection: codeengine
 
 Logging and monitoring can help you troubleshoot issues in {{site.data.keyword.codeenginefull}} and can provide insight into your workload performance. Setting up logging and monitoring for fleets is done at the project level and is different from other {{site.data.keyword.codeengineshort}} features. 
 
-- [Setting up logging for fleets](#fleets-log)
-- [Setting up monitoring for fleets](#fleets-monitor)
+- [Setting up logging for fleets](#fleet-log)
+- [Setting up monitoring for fleets](#fleet-monitor)
 
 Logging and monitoring are optional, and can be set up any time after a fleet is created.
 {: note}
@@ -37,8 +37,8 @@ You must have a Cloud Logs service instance that targets the region of the Code 
 {: #log-perm}
 
 Make sure you have a service ID and an API key that assign access to the Cloud Logs instance and set the required permissions.
-1. [Create a service ID](https://cloud.ibm.com/docs/account?topic=account-serviceids&interface=ui#create_serviceid). Then assign the service ID [an access policy](https://cloud.ibm.com/docs/account?topic=account-assign-access-resources&interface=ui#access-resources-console) that targets the Cloud Logs instance in your account. Assign this access policy the **Sender** service access level. 
-2. [Create an API key for the service ID](https://cloud.ibm.com/docs/account?topic=account-serviceidapikeys&interface=ui#create_service_key). Save the API key in a secure location so you can reference it later. 
+1. [Create a service ID](/docs/account?topic=account-serviceids&interface=ui#create_serviceid). Then assign the service ID [an access policy](/docs/account?topic=account-assign-access-resources&interface=ui#access-resources-console) that targets the Cloud Logs instance in your account. Assign this access policy the **Sender** service access level. 
+2. [Create an API key for the service ID](/docs/account?topic=account-serviceidapikeys&interface=ui#create_service_key). Save the API key in a secure location so you can reference it later. 
 
 ### 3. Get the private Ingress endpoint for the Cloud Logs instance
 {: #log-ingress-endpoint}
@@ -101,10 +101,10 @@ Add the required logging values to the fleets default secret.
 ### 7. View your fleets logs
 {: #log-view}
 
-Now that logging is set up for fleets in your Code Engine project, you can view your fleet logs. See [Viewing logs and monitoring data for fleets](/docs/codeengine?topic=codeengine-#fleet-observability-view) for steps.
+Now that logging is set up for fleets in your Code Engine project, you can view your fleet logs. See [Viewing logs and monitoring data for fleets](/docs/codeengine?topic=codeengine-fleet-observability-view#log-view) for steps.
 
 ## Setting up monitoring for fleets
-{: #fleets-monitor}
+{: #fleet-monitor}
 
 Monitoring for fleets is set up at the project level. After you perform these set up steps for a project, monitoring is available for all fleets in that project.
 
@@ -167,5 +167,4 @@ For each zone in the VPE, add a reserved IP address to one subnet.
 ### 6. View your fleets data in the monitoring dashboard
 {: #monitor-view}
 
-Now that monitoring is set up for fleets in your Code Engine project, you can view your fleet monitoring data. See [Viewing logs and monitoring data for fleets](/docs/codeengine?topic=codeengine-#fleet-observability-view) for steps.
-
+Now that monitoring is set up for fleets in your Code Engine project, you can view your fleet monitoring data. See [Viewing logs and monitoring data for fleets](/docs/codeengine?topic=codeengine-fleet-observability-view#monitor-view) for steps.

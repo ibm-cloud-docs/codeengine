@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-10"
+lastupdated: "2025-10-06"
 
 keywords: code engine, event notifications
 
@@ -190,8 +190,3 @@ Complete the following steps to set up the trigger.
     --destination-id "$DESTINATION_ID"
     ```
     {: pre}
-
-A ready-to-use script for configuring a Periodic Timer for {{site.data.keyword.codeengineshort}} jobs is provided in the [Sample Github Repository](https://github.ibm.com/ibmcloud-codeengine-internship/event-notification). It also includes steps to use {{site.data.keyword.en_short}} for sending emails as a destination and steps for using event subscriptions.
-{: tip}
-
-

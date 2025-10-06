@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-10-06"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.55.1 | 2025-10-05 | - Fixed various bugs. |
 | 1.55.0 | 2025-09-26 | - Added support for the `fleet` command group. See [Fleets workloads](/docs/codeengine?topic=codeengine-cefleets) and [{{site.data.keyword.codeengineshort}} CLI reference (`fleet` command)](/docs/codeengine?topic=codeengine-cli#cli-fleet). \n - Fixed various bugs. |
 | 1.54.6 | 2025-09-24 | - Fixed various bugs. |
 | 1.54.5 | 2025-09-05 | - Fixed various bugs. |

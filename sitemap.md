@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-10-06"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -159,6 +159,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [October 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october25)
+
+    * [05 October 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october0525)
+
+        * CLI version 1.55.1 released
 
 * [September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september25)
 
@@ -3065,7 +3071,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [7. View your fleets logs](/docs/codeengine?topic=codeengine-fleet-observability#log-view)
 
-* [Setting up monitoring for fleets](/docs/codeengine?topic=codeengine-fleet-observability#fleets-monitor)
+* [Setting up monitoring for fleets](/docs/codeengine?topic=codeengine-fleet-observability#fleet-monitor)
 
     * [1. Make sure you have an existing Clouds Monitoring instance](/docs/codeengine?topic=codeengine-fleet-observability#monitor-instance)
 
