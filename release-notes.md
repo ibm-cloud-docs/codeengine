@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-10-15"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## October 2025
 {: #codeengine-october25}
+
+### 14 October 2025
+{: #codeengine-october1425}
+{: release-note}
+
+CLI version 1.55.2 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 05 October 2025
 {: #codeengine-october0525}
@@ -46,6 +56,9 @@ New! Support for fleets workloads in {{site.data.keyword.codeengineshort}}
 
 CLI version 1.55.0 released
 :   This CLI version adds support for the **`fleet`** command group to manage {{site.data.keyword.codeengineshort}} Fleets with the CLI. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 24 September 2025
 {: #codeengine-september2425}
@@ -89,12 +102,18 @@ CLI version 1.54.4 released
 CLI version 1.54.3 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ### 18 August 2025
 {: #codeengine-august1825}
 {: release-note}
 
 CLI version 1.54.2 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ## July 2025
 {: #codeengine-july25}
@@ -113,6 +132,9 @@ CLI version 1.54.1 released
 Updated the value of `CE_API_BASE_URL` environment variable from `CE_API_BASE_URL=https://api.<region>.codeengine.cloud.ibm.com/` to `CE_API_BASE_URL=https://api.private.<region>.codeengine.cloud.ibm.com/` for applications and jobs.
 :   - See [Automatically injected environment variables for apps](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app).
     - See [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 11 July 2025
 {: #codeengine-july1125}
@@ -144,6 +166,9 @@ Added support for functions runtimes Node.js 22 and Python 3.13
 CLI version 1.53.3 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ## May 2025
 {: #codeengine-may25}
 
@@ -164,6 +189,9 @@ CLI version 1.53.1 released
 CLI version 1.53.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ## April 2025
 {: #codeengine-april25}
 
@@ -173,6 +201,9 @@ CLI version 1.53.0 released
 
 CLI version 1.52.2 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 10 April 2025
 {: #codeengine-april1025}
@@ -214,6 +245,9 @@ CLI version 1.52.0 released
 CLI version 1.51.3 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ### 05 March 2025
 {: #codeengine-march0525}
 {: release-note}
@@ -235,6 +269,9 @@ Added support for `run_build_params` property for builds and build runs.
     - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 4.22.1
     - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 4.24.0
     - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 4.14.1
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 20 February 2025
 {: #codeengine-february2025}
@@ -285,6 +322,9 @@ Terraform support for {{site.data.keyword.codeengineshort}} allowed outbound des
 
 CLI version 1.50.9 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ## December 2024
 {: #codeengine-december24}

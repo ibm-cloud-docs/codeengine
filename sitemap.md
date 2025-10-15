@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-10-15"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -162,6 +162,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [October 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october25)
 
+    * [14 October 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october1425)
+
+        * CLI version 1.55.2 released
+
+        * Updated versions for buildpacks
+
     * [05 October 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october0525)
 
         * CLI version 1.55.1 released
@@ -173,6 +179,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
         * New! Support for fleets workloads in {{site.data.keyword.codeengineshort}}
 
         * CLI version 1.55.0 released
+
+        * Updated versions for buildpacks
 
     * [24 September 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september2425)
 
@@ -196,9 +204,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.54.3 released
 
+        * Updated versions for buildpacks
+
     * [18 August 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-august1825)
 
         * CLI version 1.54.2 released
+
+        * Updated versions for buildpacks
 
 * [July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july25)
 
@@ -209,6 +221,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [18 July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july1825)
 
         * Updated the value of `CE_API_BASE_URL` environment variable from `CE_API_BASE_URL=https://api.<region>.codeengine.cloud.ibm.com/` to `CE_API_BASE_URL=https://api.private.<region>.codeengine.cloud.ibm.com/` for applications and jobs.
+
+        * Updated versions for buildpacks
 
     * [11 July 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july1125)
 
@@ -228,6 +242,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.53.3 released
 
+        * Updated versions for buildpacks
+
 * [May 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may25)
 
     * [28 May 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may2825)
@@ -240,11 +256,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.53.0 released
 
+        * Updated versions for buildpacks
+
 * [April 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-april25)
 
     * [28 April 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-april2825)
 
         * CLI version 1.52.2 released
+
+        * Updated versions for buildpacks
 
     * [10 April 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-april1025)
 
@@ -266,6 +286,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.51.3 released
 
+        * Updated versions for buildpacks
+
     * [05 March 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-march0525)
 
         * CLI version 1.51.2 released
@@ -275,6 +297,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [25 February 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february2525)
 
         * Added support for `run_build_params` property for builds and build runs.
+
+        * Updated versions for buildpacks
 
     * [20 February 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february2025)
 
@@ -299,6 +323,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
         * Terraform support for {{site.data.keyword.codeengineshort}} allowed outbound destinations is available
 
         * CLI version 1.50.9 released
+
+        * Updated versions for buildpacks
 
 * [December 2024](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-december24)
 
