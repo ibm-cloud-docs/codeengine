@@ -2,7 +2,7 @@
 
 copyright:
 years: 2025, 2025
-lastupdated: "2025-08-26"
+lastupdated: "2025-10-17"
 
 keywords: code engine, persistent data store, pds, object storage, mount bucket, s3fs, mount cos, apps, jobs
 
@@ -29,8 +29,81 @@ Before you can work with persistent data stores, ensure that the following prere
 - You must create a service credential for your {{site.data.keyword.cos_short}} instance with [**HMAC credentials**](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main) enabled. The HMAC credential requires at least the **Writer** service access role to read from and write to the bucket. If you only need read access, choose the **Content Reader** service access role instead.
 - You must have a [{{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-manage-project) and it must be selected as the current context.
 
-## Step 1: Create an HMAC secret in {{site.data.keyword.codeengineshort}}
-{: #pds-create-secret}
+## Step 1: Create an HMAC secret in {{site.data.keyword.codeengineshort}} by using the console
+{: #pds-create-secret-ui}
+{: ui}
+
+To securely access your COS bucket, {{site.data.keyword.codeengineshort}} requires the HMAC credentials that are associated with your {{site.data.keyword.cos_short}} instance. You store these credentials in a secret within your {{site.data.keyword.codeengineshort}} project.
+
+Follow [Creating an HMAC secret from the console](/docs/codeengine?topic=codeengine-secret#secret-create-ui-hmac) to create a secret of format `HMAC`.
+
+Provide the corresponding values from your COS service credential when prompted.
+
+## Step 2: Create a persistent data store by using the console
+{: #pds-create-datastore-ui}
+{: ui}
+
+Now, create the persistent data store resource in {{site.data.keyword.codeengineshort}}. This resource acts as a reference to your COS bucket and links it with the HMAC secret that you created.
+
+1. Click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
+2. From the Components page, click **Persistent data stores**.
+3. From the Persistent data stores page, click **Create**.
+4. From the Create a persistent data store page, complete the following steps:
+    1. Provide a name; for example, `mysecret-hmac`.
+    2. Specify if to **Select existing** COS bucket specification or if you want to **Add manually**.
+    3. **Select a COS instance** or specify its name manually.
+    4. **Select a bucket** or specify its name manually.
+    5. Select the HMAC **Access secret** needed to authenticate to the COS instance.
+    6. Click **Create** to create the persistent data store.
+
+## Step 3: Mount the data store into a workload by using the console
+{: #pds-mount-workload-ui}
+{: ui}
+
+After you create the persistent data store, you can mount it as **Volume mount** when you create or update an application or job.
+
+### Mounting into an application
+{: #pds-mount-app-ui}
+{: ui}
+
+1. Navigate to your app.
+    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Applications** to work with your applications.
+    * From the Applications page, click the name of the application that you want to update or create a new one by clicking **Create**.
+
+2. Select the **Configuration** tab.
+3. From the **Volume mounts** tab, click **Add**.
+4. Select **Volume type** as **Persistent data stores**.
+5. Select the desired **Persistent data store**.
+6. Specify a relative **Bucket subpath (optional)** if your application should access objects in the bucket with that subpath prefix only, for example `path/in/bucket`. This is useful when you want to isolate access to a specific folder within the bucket. The subpath must be a valid prefix in your COS bucket. Only the contents under that path will be accessible from the mounted directory.
+7. Specify **Mount path**. This is the directory inside the application container where the data of the volume mount can be accessed, for example at `/mnt/bucket`.
+8. Select the desired **Access permissions**, that is **Read-write** or **Read-only**.
+9. Click **Add** to create the volume mount.
+10. Click **Deploy** to save your changes and deploy the app revision.
+
+When you update your application, your app creates a new revision and routes traffic to that instance.
+
+### Mounting into a job
+{: #pds-mount-job-ui}
+{: ui}
+
+1. Navigate to your job page.
+    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to work with your jobs and job runs.
+    * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to update or create a new one by clicking **Create**.
+
+2. Select the **Configuration** tab.
+3. From the **Volume mounts** tab, click **Add**.
+4. Select **Volume type** as **Persistent data stores**.
+5. Select the desired **Persistent data store**.
+6. Specify a relative **Bucket subpath (optional)** if your job runs should access objects in the bucket with that subpath prefix only, for example `path/in/bucket`. This is useful when you want to isolate access to a specific folder within the bucket. The subpath must be a valid prefix in your COS bucket. Only the contents under that path will be accessible from the mounted directory.
+7. Specify **Mount path**. This is the directory inside the job run container where the data of the volume mount can be accessed, for example at `/mnt/bucket`.
+8. Select the desired **Access permissions**, that is **Read-write** or **Read-only**.
+9. Click **Add** to create the volume mount.
+10. Click **Deploy** to save your changes and deploy the job.
+11. Click **Submit job**.
+
+## Step 1: Create an HMAC secret in {{site.data.keyword.codeengineshort}} by using the CLI
+{: #pds-create-secret-cli}
+{: cli}
 
 To securely access your COS bucket, {{site.data.keyword.codeengineshort}} requires the HMAC credentials that are associated with your {{site.data.keyword.cos_short}} instance. You store these credentials in a secret within your {{site.data.keyword.codeengineshort}} project.
 
@@ -43,8 +116,9 @@ ibmcloud ce secret create --name my-hmac-secret --format hmac --secret-access-ke
 
 Provide the corresponding values from your COS service credential when prompted by the **`secret create`** command.
 
-## Step 2: Create a persistent data store
-{: #pds-create-datastore}
+## Step 2: Create a persistent data store by using the CLI
+{: #pds-create-datastore-cli}
+{: cli}
 
 Now, create the persistent data store resource in {{site.data.keyword.codeengineshort}}. This resource acts as a reference to your COS bucket and links it with the HMAC secret that you created.
 
@@ -57,13 +131,15 @@ ibmcloud ce persistentdatastore create --name my-cos-bucket-pds --cos-bucket-nam
 - Replace `my-cos-bucket` with the exact name of your COS bucket.
 - Replace `my-hmac-secret` with the name of the HMAC secret.
 
-## Step 3: Mount the data store into a workload
-{: #pds-mount-workload}
+## Step 3: Mount the data store into a workload by using the CLI
+{: #pds-mount-workload-cli}
+{: cli}
 
 After you create the persistent data store, you can mount it when you create or update an application or job. Use the `--mount-data-store` option with the format `MOUNT_PATH=PDS_NAME`.
 
 ### Mounting into an application
-{: #pds-mount-app}
+{: #pds-mount-app-cli}
+{: cli}
 
 The following command creates an application named `myapp` and mounts the `my-cos-bucket-pds` data store to the `/mnt/bucket` directory inside the application container.
 
@@ -73,7 +149,8 @@ ibmcloud ce application create --name myapp --image icr.io/codeengine/helloworld
 {: pre}
 
 ### Mounting into a job
-{: #pds-mount-job}
+{: #pds-mount-job-cli}
+{: cli}
 
 Similarly, this command creates a job named `myjob` and mounts the same data store to the `/mnt/bucket` directory.
 
@@ -83,7 +160,8 @@ ibmcloud ce job create --name myjob --image icr.io/codeengine/helloworld --mount
 {: pre}
 
 ### Mounting a subpath within the bucket
-{: #pds-mount-subpath}
+{: #pds-mount-subpath-cli}
+{: cli}
 
 You can also mount a specific subpath within your COS bucket by appending the relative path to the mount definition using a colon (`:`). This is useful when you want to isolate access to a specific folder within the bucket.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-15"
+lastupdated: "2025-10-20"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## October 2025
 {: #codeengine-october25}
+
+### 17 October 2025
+{: #codeengine-october1725}
+{: release-note}
+
+Added more information about **persistent data stores** in {{site.data.keyword.codeengineshort}}
+:   See [Working with persistent data stores](/docs/codeengine?topic=codeengine-persistent-data-store).
 
 ### 14 October 2025
 {: #codeengine-october1425}

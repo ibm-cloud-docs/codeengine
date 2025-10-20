@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-15"
+lastupdated: "2025-10-20"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -161,6 +161,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [October 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october25)
+
+    * [17 October 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october1725)
+
+        * Added more information about **persistent data stores** in {{site.data.keyword.codeengineshort}}
 
     * [14 October 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october1425)
 
@@ -3624,23 +3628,33 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Before you begin](/docs/codeengine?topic=codeengine-persistent-data-store#pds-prereqs)
 
-* [Step 1: Create an HMAC secret in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-persistent-data-store#pds-create-secret)
+* [Step 1: Create an HMAC secret in {{site.data.keyword.codeengineshort}} by using the console](/docs/codeengine?topic=codeengine-persistent-data-store&interface=ui#pds-create-secret-ui)
 
-* [Step 2: Create a persistent data store](/docs/codeengine?topic=codeengine-persistent-data-store#pds-create-datastore)
+* [Step 2: Create a persistent data store by using the console](/docs/codeengine?topic=codeengine-persistent-data-store&interface=ui#pds-create-datastore-ui)
 
-* [Step 3: Mount the data store into a workload](/docs/codeengine?topic=codeengine-persistent-data-store#pds-mount-workload)
+* [Step 3: Mount the data store into a workload by using the console](/docs/codeengine?topic=codeengine-persistent-data-store&interface=ui#pds-mount-workload-ui)
 
-    * [Mounting into an application](/docs/codeengine?topic=codeengine-persistent-data-store#pds-mount-app)
+    * [Mounting into an application](/docs/codeengine?topic=codeengine-persistent-data-store&interface=ui#pds-mount-app-ui)
 
-    * [Mounting into a job](/docs/codeengine?topic=codeengine-persistent-data-store#pds-mount-job)
+    * [Mounting into a job](/docs/codeengine?topic=codeengine-persistent-data-store&interface=ui#pds-mount-job-ui)
 
-    * [Mounting a subpath within the bucket](/docs/codeengine?topic=codeengine-persistent-data-store#pds-mount-subpath)
+* [Step 1: Create an HMAC secret in {{site.data.keyword.codeengineshort}} by using the CLI](/docs/codeengine?topic=codeengine-persistent-data-store&interface=cli#pds-create-secret-cli)
 
-* [Step 4: Accessing files in the mounted data store](/docs/codeengine?topic=codeengine-persistent-data-store#pds-access-files)
+* [Step 2: Create a persistent data store by using the CLI](/docs/codeengine?topic=codeengine-persistent-data-store&interface=cli#pds-create-datastore-cli)
 
-* [Limitations](/docs/codeengine?topic=codeengine-persistent-data-store#pds-limitations)
+* [Step 3: Mount the data store into a workload by using the CLI](/docs/codeengine?topic=codeengine-persistent-data-store&interface=cli#pds-mount-workload-cli)
 
-* [Next steps](/docs/codeengine?topic=codeengine-persistent-data-store#pds-next-steps)
+    * [Mounting into an application](/docs/codeengine?topic=codeengine-persistent-data-store&interface=cli#pds-mount-app-cli)
+
+    * [Mounting into a job](/docs/codeengine?topic=codeengine-persistent-data-store&interface=cli#pds-mount-job-cli)
+
+    * [Mounting a subpath within the bucket](/docs/codeengine?topic=codeengine-persistent-data-store&interface=cli#pds-mount-subpath-cli)
+
+* [Step 4: Accessing files in the mounted data store](/docs/codeengine?topic=codeengine-persistent-data-store&interface=cli#pds-access-files)
+
+* [Limitations](/docs/codeengine?topic=codeengine-persistent-data-store&interface=cli#pds-limitations)
+
+* [Next steps](/docs/codeengine?topic=codeengine-persistent-data-store&interface=cli#pds-next-steps)
 
 
 ## Enabling event notifications for {{site.data.keyword.codeengineshort}}

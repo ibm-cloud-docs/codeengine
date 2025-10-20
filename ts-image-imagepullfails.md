@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-09-19"
+  years: 2023, 2025
+lastupdated: "2025-10-16"
 
 keywords: benefits, terminology, developers, capabilities, {{site.data.keyword.codeengineshort}} 
 
@@ -36,7 +36,7 @@ Try the following solutions to resolve your problem.
 {: tsResolve}
 
 
-1.  You are not authorized. If you do not have the permissions to access the referenced image, the application create does not complete, and an error occurs. You receive an error message that contains `Unable to pull` the image.
+1. You are not authorized. If you do not have the permissions to access the referenced image, the application create does not complete, and an error occurs. You receive an error message that contains `Unable to pull` the image.
 
     * To confirm that you can access the referenced image, verify the location of your image and confirm that you have permissions to access the image.
 
@@ -71,7 +71,7 @@ Try the following solutions to resolve your problem.
 
     In this scenario, your image exists and the registry access works, but {{site.data.keyword.codeengineshort}} finds a different image than the image it was expecting for a specific application revision. The container registry image digest does not match the expected digest of the image for an application revision.
 
-    When you deploy your application or new app revision, the latest version of your referenced container image is downloaded and deployed, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the deployment.  
+    When you deploy your application or new app revision, the latest version of your referenced container image is downloaded and deployed, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the deployment.
 
     If you create a newer version of the image with the same tag as the original image that was referenced by your application, the original image is overwritten in the container registry. However, {{site.data.keyword.codeengineshort}} cannot find this newer image because the newer image has a different digest than the digest for the application revision. The image that is associated with your specific application revision has a unique container registry digest, and {{site.data.keyword.codeengineshort}} uses this digest for the life of your application revision. 
     
@@ -87,6 +87,15 @@ Try the following solutions to resolve your problem.
 
     To use a newer image that was pushed with the same tag with your application, you must [update your application](/docs/codeengine?topic=codeengine-update-app) to create a new application revision that references the newer tagged image.
 
+5. {{site.data.keyword.codeengineshort}} cannot authenticate to your container registry. 
+
+    In this scenario, your image exists, the registry access works, and the configured registry secret is valid but {{site.data.keyword.codeengineshort}} is unable to authenticate to your container registry. You may see an error message similar to what is shown below:
+
+    ```txt
+    ErrImagePull : failed to pull and unpack image "<image name>": failed to resolve reference "<image name>": failed to authorize: failed to fetch oauth token: unexpected status from GET request to...
+    ```
+    
+    Check if you have enabled `Restrict IP address access` for your account (see [Allowing specific IP addresses](/docs/account?topic=account-ips)). If enabled, only the allowed IP addresses can authenticate to {{site.data.keyword.cloud}}, for your account. This will prevent {{site.data.keyword.codeengineshort}} from authenticating to your container registry and thus will be unable to pull your image. You will need to add the `public` and `private` IP addresses of your {{site.data.keyword.codeengineshort}} project. See [{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses) on how to identify these IP addresses.
 
 ## Next steps
 {: #image-cannot-pull-next} 
@@ -103,6 +112,3 @@ For more information about troubleshooting apps, job, and builds with considerat
 * [Troubleshooting builds - Build fails in the build and push step](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail)
 * [Troubleshooting builds - Build fails when the ephemeral storage limit is exceeded](/docs/codeengine?topic=codeengine-ts-build-ephemeral-limit)
 * [Troubleshooting builds - Build fails in the source step](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail)
-
-
-
