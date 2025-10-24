@@ -2,7 +2,7 @@
 
 copyright:
 years: 2025, 2025
-lastupdated: "2025-10-17"
+lastupdated: "2025-10-23"
 
 keywords: code engine, persistent data store, pds, object storage, mount bucket, s3fs, mount cos, apps, jobs
 
@@ -205,6 +205,8 @@ echo "Hello from Code Engine" > /mnt/bucket/new-file.txt
 
 The mount is implemented using [`s3fs`](https://github.com/s3fs-fuse/s3fs-fuse){: external}, which provides a FUSE-based file system interface to S3-compatible storage. Be aware of the following limitations:
 
+- **Number of persistent data stores:**
+  - There is a restriction allowing a maximum of two persistent data store mounts per application or job.
 - **Performance:**
   - {{site.data.keyword.cos_short}} has high latency for the time-to-first-byte, making them slower than local file systems for operations that require immediate access.
   - Operations that modify files, such as random writes or appends, require rewriting the entire object in the backend, which can be slow and inefficient as there is no random write access.
