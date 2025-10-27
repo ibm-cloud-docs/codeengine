@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-02"
+lastupdated: "2025-10-27"
 
 keywords: billing, pricing, costs for code engine, billing for code engine, job pricing, app pricing, build pricing
 
@@ -128,7 +128,7 @@ Each GPU worker incurs an additional charge for GPU seconds. You can approximate
 
 `[ (total cost of  GPU-seconds) + (Total cost of vCPU seconds) + (total cost of 1 GB second) ] x (average worker runtime in seconds)`
 
-For example, consider the worker node profile `gx3-24x120x2l40s`. The values in the worker node can be used to approximate the cost to use the worker. The profile is composed of these parts:
+For example, consider the worker node profile `gx3-24x120x2l40s`. You can use the values in the worker node profile to approximate the cost of using the worker. The profile is composed of these parts:
 - The first value `gx3` is the worker node category.
 - The second value, `24` is the vCPU 
 - The third value `120` is the GB of memory
