@@ -3,7 +3,7 @@
 copyright:
   years: 2025
 
-lastupdated: "2025-10-24"
+lastupdated: "2025-11-02"
 
 
 keywords: change log, version history, vsi image, serverless fleets
@@ -26,6 +26,21 @@ View information of version changes for major, minor, and patch updates that are
 ## Version v1.0
 {: #fleets-worker-changelog-contents-v1_0}
 
+
+
+### Worker image `v1.0.49`, released 26 October 2025
+{: #fleets-worker-boms-v1_0_49}
+
+The following table shows the components included in the {{site.data.keyword.codeengineshort}} fleet worker image v1.0.49.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|UBUNTU_24_04| Kernel: 6.8.0-1039<br/>podman: 4.9.3<br/>s3fs: 1.93|Resolves the following CVEs: <br/>[CVE-2025-40778](https://nvd.nist.gov/vuln/detail/CVE-2025-40778){: external}, [CVE-2025-40780](https://nvd.nist.gov/vuln/detail/CVE-2025-40780){: external}, [CVE-2025-8677](https://nvd.nist.gov/vuln/detail/CVE-2025-8677){: external}|
+| Nvidia CUDA | Driver: 580.95.05<br/> Toolkit: 12.6.3<br/> NVIDIA Fabric Manager: 580.95.05||
+
+{: caption="Worker image v1.0.49" caption-side="bottom"}
+{: #fleets-worker-boms-v1_0_49-component-table}
 
 
 ### Worker image `v1.0.42`, released 20 October 2025
