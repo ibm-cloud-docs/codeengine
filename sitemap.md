@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-02"
+lastupdated: "2025-11-05"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -160,6 +160,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [November 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-november25)
+
+    * [04 November 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-november0425)
+
+        * Updated SDK versions by adding a new `run_volume_mounts` type of `persistent_data_stores` for apps, jobs, and jobruns.
+
 * [October 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october25)
 
     * [17 October 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october1725)
@@ -300,7 +306,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [25 February 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february2525)
 
-        * Added support for `run_build_params` property for builds and build runs.
+        * Updated SDK versions by adding support for `run_build_params` property for builds and build runs.
 
         * Updated versions for buildpacks
 
@@ -3154,6 +3160,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Worker Image Changelog v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-v1_0)
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
+
+    * [Worker image `v1.0.55`, released 03 November 2025](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_55)
 
     * [Worker image `v1.0.49`, released 26 October 2025](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_49)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-20"
+lastupdated: "2025-11-05"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,19 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month.
 {: shortdesc}
+
+## November 2025
+{: #codeengine-november25}
+
+### 04 November 2025
+{: #codeengine-november0425}
+{: release-note}
+
+Updated SDK versions by adding a new `run_volume_mounts` type of `persistent_data_stores` for apps, jobs, and jobruns.
+:   - See [Go](https://github.com/IBM/code-engine-go-sdk){: external} version 4.32.0
+    - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 4.29.1
+    - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 4.33.1
+    - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 4.21.1
 
 ## October 2025
 {: #codeengine-october25}
@@ -271,7 +284,7 @@ CLI version 1.51.2 released
 {: #codeengine-february2525}
 {: release-note}
 
-Added support for `run_build_params` property for builds and build runs.
+Updated SDK versions by adding support for `run_build_params` property for builds and build runs.
 :   - See [Go](https://github.com/IBM/code-engine-go-sdk){: external} version 4.23.1
     - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 4.22.1
     - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 4.24.0
