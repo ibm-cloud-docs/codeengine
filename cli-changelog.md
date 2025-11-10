@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-15"
+lastupdated: "2025-11-10"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -19,7 +19,8 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 {: shortdesc}
 
 | Version | Release date | Changes |
-| ----- | ------- | -------------- |
+| ------ | ---------- | --------------------- |
+| 1.56.0 | 2025-11-07 | - Added support for `private_path_service_gateway` format in `connectivity outbound` commands. See [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli) and [{{site.data.keyword.codeengineshort}} CLI reference (`connectivity` command)](/docs/codeengine?topic=codeengine-cli#cli-connectivity). \n - Fixed various bugs. |
 | 1.55.2 | 2025-10-14 | - Fixed various bugs. |
 | 1.55.1 | 2025-10-05 | - Fixed various bugs. |
 | 1.55.0 | 2025-09-26 | - Added support for the `fleet` command group. See [Fleets workloads](/docs/codeengine?topic=codeengine-cefleets) and [{{site.data.keyword.codeengineshort}} CLI reference (`fleet` command)](/docs/codeengine?topic=codeengine-cli#cli-fleet). \n - Fixed various bugs. |

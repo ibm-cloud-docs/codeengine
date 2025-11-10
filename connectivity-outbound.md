@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-04"
+lastupdated: "2025-11-10"
 
 keywords: connectivity, outbound connections, outbound connectivity
 
@@ -15,7 +15,9 @@ subcollection: codeengine
 # Working with outbound connectivity in {{site.data.keyword.codeengineshort}}
 {: #connectivity-outbound}
 
-The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects by using allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
+The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects.
+* Use allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
+* Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} CLI. Private Path allows connections between an IBM Cloud service like {{site.data.keyword.codeengineshort}} and your VPC without compromising security or putting your VPC at risk. See [Enabling an IBM Cloud service to connect to a provider's VPC](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-case-4).
 {: shortdesc}
 
 CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, all of which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
@@ -33,7 +35,7 @@ You can create outbound connections by using the console or the CLI.
 ## Private Service Connections
 {: #private-service-connections}
 
-Connecting to private endpoints of a set of common IBM Cloud platform services is enabled as part the allowed outbound destinations of all {{site.data.keyword.codeengineshort}} projects. The set of enabled platform services varies by region as detailed in the following table.
+Connecting to private endpoints of a set of common IBM Cloud platform services is enabled as part of the allowed outbound destinations of all {{site.data.keyword.codeengineshort}} projects. The set of enabled platform services varies by region as detailed in the following table.
 
 | Platform service | Private endpoint available in regions |
 | --- | --- |
@@ -100,22 +102,23 @@ Deleting allowed destination IP address ranges blocks outbound traffic for {{sit
 2. Go to the row with the allowed destination IP address range that you want to remove and click the delete (trash can) icon.
 3. Confirm the deletion when prompted.
 
-## Managing allowed destination IP address ranges by using the CLI
+## Managing allowed outbound destinations by using the CLI
 {: #working-with-allowed-destination-cli}
 {: cli}
 
-To work with allowed destination IP address ranges by using CLI commands, log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external} and [select the {{site.data.keyword.codeengineshort}} account and resource group](/docs/codeengine?topic=codeengine-install-cli).
-
-For {{site.data.keyword.codeengineshort}} connectivity CLI commands, you can specify
-the `--cidr-name` and `--cidr` values. Follow these CIDR guidelines:
-* Do not use an IP range from the [reserved IP ranges](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#vrf-overview).
-* Do not use duplicate `--cidr-name` and `--cidr` values.
-* Do not use an unsupported CIDR name.
-* Do not use an unsupported IP address range. Follow CIDR notation.
+To work with allowed outbound destinations by using CLI commands, log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external} and [select the {{site.data.keyword.codeengineshort}} account and resource group](/docs/codeengine?topic=codeengine-install-cli).
 
 ### Adding an allowed destination IP address range for outbound connectivity
 {: #add-allowed-destination-cli}
 {: cli}
+
+For {{site.data.keyword.codeengineshort}} connectivity outbound CLI commands, you can specify
+the `--name` and `--cidr` values to configure allowed destination IP address ranges. 
+Follow these CIDR guidelines:
+* Do not use an IP range from the [reserved IP ranges](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#vrf-overview).
+* Do not use duplicate `--name` and `--cidr` values.
+* Do not use an unsupported CIDR name.
+* Do not use an unsupported IP address range. Follow CIDR notation.
 
 You can create allowed destination IP address ranges to limit where your workload can connect to over an external network.
 
@@ -126,32 +129,71 @@ You can create allowed destination IP address ranges to limit where your workloa
     ```
     {: pre}
 
-2. Create an allowed destination IP address range by specifying the `--cidr-name` and `--cidr` options. Provide a valid name and IP address. Refer to these examples:
+2. Create an allowed destination IP address range by specifying the `--name` and `--cidr` options. Provide a valid name and IP address. Refer to these examples:
 
     ```txt
-    ibmcloud ce connectivity outbound create --cidr-name mycidr1 --cidr 192.68.5.0/24
+    ibmcloud ce connectivity outbound create --name mycidr1 --cidr 192.68.5.0/24
 
-    ibmcloud ce connectivity outbound create --cidr-name mycidr2-allow-all --cidr 0.0.0.0/0
+    ibmcloud ce connectivity outbound create --name mycidr2-allow-all --cidr 0.0.0.0/0
 
-    ibmcloud ce connectivity outbound create --cidr-name mycidr2-allow-all --cidr 0.0.0.0/0 --force
+    ibmcloud ce connectivity outbound create --name mycidr2-allow-all --cidr 0.0.0.0/0 --force
     ```
     {: pre}
 
-### Showing existing allowed destination IP address ranges for outbound connectivity
+### Adding a private path connection for outbound connectivity
+{: #add-allowed-destination-pps-cli}
+{: cli}
+
+For {{site.data.keyword.codeengineshort}} connectivity outbound CLI commands, you can specify
+the `--name`, `--format`, and `--pps-crn` values to establish a Private Path connections between your {{site.data.keyword.codeengineshort}} project and your VPC.
+
+This diagram illustrates how to establish a Private Path service with connections to the VPE gateway of a {{site.data.keyword.codeengineshort}} application and your VPC. First, the {{site.data.keyword.codeengineshort}} application connects to the VPE gateway within the {{site.data.keyword.codeengineshort}}'s VPC. Then, the VPE gateway connects to the Private Path NLB in the provider's VPC. In turn, the Private Path NLB connects to the provider's application. The provider's application then responds to the request. This Private Path service activity is completely contained in a single region (e.g. `us-south`) in an {{site.data.keyword.cloud_notm}} private network.
+
+![Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network.](images/private_path_detailed_4.svg "Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network."){: caption="Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network." caption-side="bottom"}
+
+Once the connection to VPC is created, the Private Path service owner will receive a connection request. The owner can review, permit or deny this connection request. Use the consumer `Code Engine account ID` and `VPE gateway creation timestamp` details displayed in `ibmcloud ce connectivity outbound get --name OUTBOUND_DESTINATION_NAME` command to identify the respective connection request within the Private Path service.
+{: note}
+
+1. Select your {{site.data.keyword.codeengineshort}} project. For example:
+
+    ```txt
+    ibmcloud ce project select --name myproject
+    ```
+    {: pre}
+
+2. Create a private path connection for outbound connectivity by specifying the `--name`, `--format`, and `--pps-crn` options. Provide a valid name, format and CRN. Refer to this example:
+
+    ```txt
+    ibmcloud ce connectivity outbound create --name my-pps-connection --format pps --pps-crn crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::private-path-service-gateway:r010-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f
+    ```
+    {: pre}
+
+### Showing existing allowed destinations for outbound connectivity
 {: #show-allowed-destination-cli}
 {: cli}
 
-To show a specific allowed destination IP address range, specify the CIDR name. For example:
+To show a specific allowed outbound destination, specify the name. For example:
 
- ```txt
-ibmcloud ce connectivity outbound get --cidr-name mycidr
+```txt
+ibmcloud ce connectivity outbound get --name my-allowed-destination
 ```
 {: pre}
 
-To show all allowed destination IP address ranges, run:
+To show all allowed outbound destinations, run:
 
 ```txt
 ibmcloud ce connectivity outbound list
+```
+{: pre}
+
+To show selected formats of allowed outbound destinations, run for example:
+
+```txt
+ibmcloud ce connectivity outbound list --format cidr,pps
+
+ibmcloud ce connectivity outbound list --format cidr
+
+ibmcloud ce connectivity outbound list --format pps
 ```
 {: pre}
 
@@ -161,15 +203,15 @@ ibmcloud ce connectivity outbound list
 
 You can change allowed destination IP address ranges to disallow your workload to connect to unintended endpoints (for example, to connect to the public internet).
 
-Update an allowed destination IP address range by specifying the `--cidr-name` and `--cidr` options. Provide a valid name and IP address. Refer to these examples:
+Update an allowed destination IP address range by specifying the `--name` and `--cidr` options. Provide a valid name and IP address. Refer to these examples:
 
 ```txt
-ibmcloud ce connectivity outbound update --cidr-name mycidr1 --cidr 192.68.5.0/24
+ibmcloud ce connectivity outbound update --name mycidr1 --cidr 192.68.5.0/24
 
-ibmcloud ce connectivity outbound update --cidr-name mycidr2-allow-all --cidr 0.0.0.0/0
+ibmcloud ce connectivity outbound update --name mycidr2-allow-all --cidr 0.0.0.0/0
 Are you sure you want to update an allowed destination IP address range with '0.0.0.0/0'?, It will remove all other entries [y/N]>
 
-ibmcloud ce connectivity outbound update --cidr-name mycidr2-allow-all --cidr 0.0.0.0/0 --force
+ibmcloud ce connectivity outbound update --name mycidr2-allow-all --cidr 0.0.0.0/0 --force
 ```
 {: pre}
 
@@ -182,25 +224,25 @@ When you update the outbound connectivity rules, note:
 
 * After you restrict outbound connections from your {{site.data.keyword.codeengineshort}} project, you can see unintended side effects such as failing build runs because no external requests can be made.
 
-### Deleting an allowed destination IP address range for outbound connectivity
+### Deleting an allowed outbound destination for outbound connectivity
 {: #delete-allowed-destination-cli}
 {: cli}
 
-You can delete previously defined allowed destination IP address ranges, if you no longer want them defined for outbound connectivity.
+You can delete previously defined allowed outbound destinations, if you no longer want them defined for outbound connectivity.
 
 Deleting allowed destination IP address ranges blocks outbound traffic for {{site.data.keyword.codeengineshort}} applications, function, and jobs within a project.
 {: remember}
 
-To delete an allowed destination IP address range with confirmation, specify the CIDR name. For example:
+To delete an allowed outbound destination with confirmation, specify the name. For example:
 
 ```txt
-ibmcloud ce connectivity outbound delete --cidr-name mycidr
+ibmcloud ce connectivity outbound delete --name my-allowed-destination
 ```
 {: pre}
 
-To delete an allowed destination IP address range forcefully (that is, without confirmation), run:
+To delete an allowed outbound destination forcefully (that is, without confirmation), run:
 
 ```txt
-ibmcloud ce connectivity outbound delete --cidr-name mycidr --force
+ibmcloud ce connectivity outbound delete --name my-allowed-destination --force
 ```
 {: pre}

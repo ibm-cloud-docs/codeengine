@@ -162,9 +162,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [November 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-november25)
 
+    * [07 November 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-november0725)
+
+        * CLI version 1.56.0 released
+
     * [04 November 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-november0425)
 
         * Updated SDK versions by adding a new `run_volume_mounts` type of `persistent_data_stores` for apps, jobs, and jobruns.
+
+        * Updated versions for buildpacks
 
 * [October 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october25)
 
@@ -4113,15 +4119,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Deleting an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#delete-allowed-destination-ui)
 
-* [Managing allowed destination IP address ranges by using the CLI](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#working-with-allowed-destination-cli)
+* [Managing allowed outbound destinations by using the CLI](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#working-with-allowed-destination-cli)
 
     * [Adding an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#add-allowed-destination-cli)
 
-    * [Showing existing allowed destination IP address ranges for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#show-allowed-destination-cli)
+    * [Adding a private path connection for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#add-allowed-destination-pps-cli)
+
+    * [Showing existing allowed destinations for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#show-allowed-destination-cli)
 
     * [Updating an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#update-allowed-destination-cli)
 
-    * [Deleting an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#delete-allowed-destination-cli)
+    * [Deleting an allowed outbound destination for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#delete-allowed-destination-cli)
 
 
 ## Enhancing security for Code Engine

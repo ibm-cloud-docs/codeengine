@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-11-10"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2179,7 +2179,9 @@ Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
 ## Connectivity commands  
 {: #cli-connectivity}  
 
-The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects by using allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
+The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects.
+* Use allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
+* Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} CLI. Private Path allows connections between an IBM Cloud service like {{site.data.keyword.codeengineshort}} and your VPC without compromising security or putting your VPC at risk. See [Enabling an IBM Cloud service to connect to a provider's VPC](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-case-4).
 {: shortdesc}
 
 CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, all of which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
@@ -2188,7 +2190,7 @@ CIDR range specifications do not affect project-internal communication, private 
 
 You must be within the context of a [project](#cli-project) before you use `connectivity` commands.
 
-For more information about working with outbound connectivity commands, see [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli).
+For more information about working with outbound connectivity commands, see [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound).
 
 You can use either `connectivity` or `conn` in your `connectivity` commands. To see CLI help for the `connectivity` commands, run `ibmcloud ce connectivity -h`.  
   
@@ -2205,23 +2207,29 @@ ibmcloud ce connectivity outbound COMMAND
 ### `ibmcloud ce connectivity outbound create`  
 {: #cli-connectivity-outbound-create}  
 
-Create an allowed destination IP address range.  
+Create an allowed outbound destination.  
   
 ```txt
-ibmcloud ce connectivity outbound create --cidr-name OUTBOUND_DESTINATION_NAME --cidr CIDR_IP_ADDRESS [--force] [--quiet]
+ibmcloud ce connectivity outbound create --name OUTBOUND_DESTINATION_NAME (--cidr CIDR_IP_ADDRESS | --pps-crn PPS_CRN) [--force] [--format FORMAT] [--quiet]
 ```
 {: pre}
 
 **Command Options**  
 
-`--cidr`, `-c`
-:   Required. Provide a valid IP address range in CIDR format (for example 1.2.3.0/24). This value is *required*. 
+`--n`, `--cidr-name`, `--name`
+:   Required. Name of the allowed outbound destination. This value is *required*. 
 
-`--cidr-name`
-:   Required. Name of the allowed destination IP address range. This value is *required*. 
+`--cidr`, `-c`
+:   Provide a valid IP address range in CIDR format (for example 1.2.3.0/24). This value is *optional*. 
 
 `--force`, `-f`
 :   Force creation without confirmation. This value is *optional*. The default value is `false`.
+
+`--format`, `--fo`
+:   Format of the allowed outbound destination. Valid values are [`cidr`, `cidr_block`, `pps`, `private_path_gateway_service`]. If not specified, the default is `cidr`. This value is *optional*. The default value is `cidr_block`.
+
+`--pps-crn`, `--private-path-service-crn`
+:   Provide the CRN of the target private path service to connect to. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -2232,7 +2240,7 @@ ibmcloud ce connectivity outbound create --cidr-name OUTBOUND_DESTINATION_NAME -
 {: #connectivity-outbound-create-example}
 
 ```txt
-ibmcloud ce connectivity outbound create --cidr-name allow-to-subnet-a --cidr 5.6.7.8/29
+ibmcloud ce connectivity outbound create --name allow-to-subnet-a --cidr 5.6.7.8/29
 ```
 {: pre}
 
@@ -2243,22 +2251,41 @@ ibmcloud ce connectivity outbound create --cidr-name allow-to-subnet-a --cidr 5.
 Creating allowed destination IP address range 'allow-to-subnet-a'...
 OK
 ```
+{: screen}
+
+#### Example to create a private path outbound connection
+{: #connectivity-outbound-create-pps-example}
+
+```txt
+ibmcloud ce connectivity outbound create --name my-pps-connection --format pps --pps-crn crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::private-path-service-gateway:r010-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f
+```
+{: pre}
+
+#### Example output to create a private path outbound connection
+{: #connectivity-outbound-create-pps-example-output}
+
+```txt
+Creating allowed outbound destination 'my-pps-connection'...
+Successfully created allowed outbound destination 'my-pps-connection'. Current status is 'deploying' 
+Run 'ibmcloud ce connectivity outbound get --name my-pps-connection' to see more details.
+OK
+```
 {: screen}  
   
 ### `ibmcloud ce connectivity outbound delete`  
 {: #cli-connectivity-outbound-delete}  
 
-Delete an allowed destination IP address range.  
+Delete an allowed outbound destination.  
   
 ```txt
-ibmcloud ce connectivity outbound delete --cidr-name OUTBOUND_DESTINATION_NAME [--force] [--ignore-not-found] [--quiet]
+ibmcloud ce connectivity outbound delete --name OUTBOUND_DESTINATION_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
 **Command Options**  
 
-`--cidr-name`
-:   Required. Name of the allowed destination IP address range. This value is *required*. 
+`--n`, `--cidr-name`, `--name`
+:   Required. Name of the allowed outbound destination. This value is *required*. 
 
 `--force`, `-f`
 :   Force deletion without confirmation. This value is *optional*. The default value is `false`.
@@ -2275,7 +2302,7 @@ ibmcloud ce connectivity outbound delete --cidr-name OUTBOUND_DESTINATION_NAME [
 {: #connectivity-outbound-delete-example}
 
 ```txt
-ibmcloud ce connectivity outbound delete --cidr-name allow-to-subnet-a
+ibmcloud ce connectivity outbound delete --name allow-to-subnet-a
 ```
 {: pre}
 
@@ -2283,8 +2310,8 @@ ibmcloud ce connectivity outbound delete --cidr-name allow-to-subnet-a
 {: #connectivity-outbound-delete-example-output}
 
 ```txt
-Are you sure you want to delete an allowed destination IP address range 'allow-to-subnet-a'? [y/N]> y
-Deleting allowed destination IP address range 'allow-to-subnet-a'...
+Are you sure you want to delete allowed outbound destination 'allow-to-subnet-a'? [y/N]> y
+Deleting allowed outbound destination 'allow-to-subnet-a'...
 OK
 ```
 {: screen}  
@@ -2292,17 +2319,20 @@ OK
 ### `ibmcloud ce connectivity outbound get`  
 {: #cli-connectivity-outbound-get}  
 
-Get an allowed destination IP address range.  
+Display the details of an allowed outbound destination.  
   
 ```txt
-ibmcloud ce connectivity outbound get --cidr-name OUTBOUND_DESTINATION_NAME [--quiet]
+ibmcloud ce connectivity outbound get --name OUTBOUND_DESTINATION_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
 **Command Options**  
 
-`--cidr-name`
-:   Required. Name of the allowed destination IP address range. This value is *required*. 
+`--n`, `--cidr-name`, `--name`
+:   Required. Name of the allowed outbound destination. This value is *required*. 
+
+`--output`, `-o`
+:   Output format. Valid values are 'json', 'yaml', 'jsonpath=JSONPATH_EXPRESSION', and 'jsonpath-as-json=JSONPATH_EXPRESSION'. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -2313,7 +2343,7 @@ ibmcloud ce connectivity outbound get --cidr-name OUTBOUND_DESTINATION_NAME [--q
 {: #connectivity-outbound-get-example}
 
 ```txt
-ibmcloud ce connectivity outbound get --cidr-name allow-to-subnet-a
+ibmcloud ce connectivity outbound get --name allow-to-subnet-a
 ```
 {: pre}
 
@@ -2321,36 +2351,72 @@ ibmcloud ce connectivity outbound get --cidr-name allow-to-subnet-a
 {: #connectivity-outbound-get-example-output}
 
 ```txt
-Getting allowed destination IP address range 'allow-to-subnet-a'...
+Getting allowed outbound destination 'allow-to-subnet-a'...
 OK
 
-Project Name:      project123
-Name:              allow-to-subnet-a
+Project name:  myproj
+Name:          allow-to-subnet-a
+Format:        cidr_block  
+
 IP address range:  5.6.7.8/29
-Type:              cidr_block
+```
+{: screen}
+
+#### Example to get a private path outbound connection
+{: #connectivity-outbound-get-pps-example}
+
+```txt
+ibmcloud ce connectivity outbound get --name my-pps-connection
+```
+{: pre}
+
+#### Example output to get a private path outbound connection
+{: #connectivity-outbound-get-pps-example-output}
+
+```txt
+Getting allowed outbound destination 'my-pps-connection'...
+OK
+
+Project name:  myproj
+Name:          my-pps-connection
+Format:        private_path_service_gateway  
+
+Private path service:    
+  CRN:        crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::private-path-service-gateway:r010-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f
+  Status:     ready  
+  Name:       my-private-path--is-vpc-pps  
+  Endpoints:    
+    api.ce-1a2b3c4d5e6f.intra  
+
+VPE gateway:             
+  Name:          code-engine-prod-eu-de-1234ab
+  IP addresses:    
+    192.168.12.48
+    192.168.24.60
+    192.168.36.72
 ```
 {: screen}  
   
 ### `ibmcloud ce connectivity outbound list`  
 {: #cli-connectivity-outbound-list}  
 
-List allowed destination IP address ranges.  
+List all allowed outbound destinations.  
   
 ```txt
-ibmcloud ce connectivity outbound list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+ibmcloud ce connectivity outbound list [--format FORMAT] [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
 **Command Options**  
+
+`--format`
+:   Limit the display of allowed outbound destinations to specified format. Provide one or more formats in a comma-delimited list. Valid values are [`cidr`, `cidr_block`, `pps`, `private_path_gateway_service`]. This value is *optional*. If not set, allowed outbound destinations of all formats will be rendered.
 
 `--output`, `-o`
 :   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
-
-`--sort-by`, `-s`
-:   Specifies the column by which to sort the list. Valid values are `name` and `type`. This value is *optional*. The default value is `name`.
 
   
   
@@ -2366,19 +2432,28 @@ ibmcloud ce connectivity outbound list
 {: #connectivity-outbound-list-example-output}
 
 ```txt
-Name               Type        IP Address
-allow-to-subnet-a  cidr_block  5.6.7.8/29
-allow-to-subnet-b  cidr_block  11.12.13.0/24
+Listing allowed outbound destinations...
+OK
+
+CIDR ranges:                 
+  Name               IP address range  
+  allow-to-subnet-a  5.6.7.8/29
+  allow-to-subnet-b  11.12.13.0/24
+
+Private path connections:    
+  Name               Status  Service endpoints  
+  broken-connection  failed    
+  my-pps-connection  ready   api.ce-1a2b3c4d5e6f.intra
 ```
 {: screen}  
   
 ### `ibmcloud ce connectivity outbound update`  
 {: #cli-connectivity-outbound-update}  
 
-Update an allowed destination IP address range.  
+Update an allowed outbound destination IP address range.  
   
 ```txt
-ibmcloud ce connectivity outbound update --cidr-name OUTBOUND_DESTINATION_NAME [--force] [--quiet]
+ibmcloud ce connectivity outbound update --name OUTBOUND_DESTINATION_NAME --cidr CIDR_IP_ADDRESS [--force] [--quiet]
 ```
 {: pre}
 
@@ -2387,8 +2462,8 @@ ibmcloud ce connectivity outbound update --cidr-name OUTBOUND_DESTINATION_NAME [
 `--cidr`, `-c`
 :   Required. Provide a valid IP address range in CIDR format (for example 1.2.3.0/24). This value is *required*. 
 
-`--cidr-name`
-:   Required. Name of the allowed destination IP address range. This value is *required*. 
+`--n`, `--cidr-name`, `--name`
+:   Required. Name of the allowed outbound destination. This value is *required*. 
 
 `--force`, `-f`
 :   Force update without confirmation. This value is *optional*. The default value is `false`.
@@ -2402,7 +2477,7 @@ ibmcloud ce connectivity outbound update --cidr-name OUTBOUND_DESTINATION_NAME [
 {: #connectivity-outbound-update-example}
 
 ```txt
-ibmcloud ce connectivity outbound update --cidr-name allow-to-subnet-a --cidr 5.6.7.0/27
+ibmcloud ce connectivity outbound update --name allow-to-subnet-a --cidr 5.6.7.0/27
 ```
 {: pre}
 
