@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-01"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3087,13 +3087,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Preparing to run a fleet](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep)
 
-* [1. Gather the required networking values for the secret](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-gather)
+* [1. Gather the required subnet information for network placement](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-gather)
 
-* [2. (Optional) Add a public gateway to your subnets](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-pubgateway)
+* [2. (Optional) Gather security group information for each subnet](/docs/codeengine?topic=codeengine-fleet-prep#2-optional-gather-security-group-information-for-each-subnet)
 
-* [3. Configure the secret](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-secret)
+* [3.  Add security groups to VPE gateways](/docs/codeengine?topic=codeengine-fleet-prep#3--add-security-groups-to-vpe-gateways)
 
-* [4. Create a persistent data store](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-pds)
+* [4. (Optional) Add a public gateway to your subnets](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-pubgateway)
+
+* [5. Configure the secret](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-secret)
+
+* [6. Create a persistent data store](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-pds)
 
 [Running a fleet](/docs/codeengine?topic=codeengine-fleet-run#fleet-run)
 
@@ -3176,6 +3180,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Worker Image Changelog v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-v1_0)
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
+
+    * [Worker image `v1.0.88`, released 01 December 2025](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_88)
 
     * [Worker image `v1.0.73`, released 17 November 2025](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_73)
 
@@ -3978,6 +3984,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-build-cli)
 
+[Viewing logs and monitoring data for fleets](/docs/codeengine?topic=codeengine-fleet-observability-view#fleet-observability-view)
+
+* [Viewing fleet logs](/docs/codeengine?topic=codeengine-fleet-observability-view#log-view)
+
+    * [Logging fields](/docs/codeengine?topic=codeengine-fleet-observability-view#log-fields)
+
+* [Viewing monitoring data](/docs/codeengine?topic=codeengine-fleet-observability-view#monitor-view)
+
 [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events#at_events)
 
 * [List of events from {{site.data.keyword.cloud_notm}} console and CLI actions](/docs/codeengine?topic=codeengine-at_events#list-events-cli-console)
@@ -4077,14 +4091,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Global Attributes](/docs/codeengine?topic=codeengine-monitor#global-attributes)
 
     * [More attributes](/docs/codeengine?topic=codeengine-monitor#additional-attributes)
-
-[Viewing logs and monitoring data for fleets](/docs/codeengine?topic=codeengine-fleet-observability-view#fleet-observability-view)
-
-* [Viewing fleet logs](/docs/codeengine?topic=codeengine-fleet-observability-view#log-view)
-
-    * [Logging fields](/docs/codeengine?topic=codeengine-fleet-observability-view#log-fields)
-
-* [Viewing monitoring data](/docs/codeengine?topic=codeengine-fleet-observability-view#monitor-view)
 
 [Creating custom dashboards to monitor {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-custom#monitor-custom)
 

@@ -176,9 +176,9 @@ toc:
           label: Observability
           topics:
           - logging.md
+          - fleet-observability-view.md
           - at-events.md
           - monitor.md
-          - fleet-observability-view.md
           - monitor-custom.md
       - topicgroup:
           label: Connectivity

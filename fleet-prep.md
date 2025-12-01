@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-11-24"
 
 keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
@@ -15,18 +15,16 @@ subcollection: codeengine
 # Preparing to run a fleet
 {: #fleet-prep}
 
-Before you can use Code Engine fleets, you must prepare a secret with required values for network placement. These values are required as they determine which VPC subnets your fleet workers are deployed on. Then, you must create a required persistent data store. You only have to complete these steps once for each project that you want to run fleets in. 
+Before you can use {{site.data.keyword.codeengineshort}} fleets, you must prepare a secret with required values for network placement. These values are required as they determine which VPC subnets your fleet workers are deployed on. Then, you must create a required persistent data store. You only have to complete these steps once for each project that you want to run fleets in. 
 {: shortdesc}
 
-Want to configure logging and monitoring for fleets? After you complete the steps on this page, see [Setting up observability for fleets]().
+Want to configure logging and monitoring for fleets? After you complete the steps on this page, see [Setting up observability for fleets](/docs/codeengine?topic=codeengine-fleet-observability&interface=ui).
 {: tip}
 
-## 1. Gather the required networking values for the secret
+## 1. Gather the required subnet information for network placement
 {: #fleet-prep-gather}
 
-Follow the steps to gather the networking values for the secret. For a complete list of secret values, see [this table](#fleet-prep-secret).
-
-1. Run the commands to get the CRN of up to three subnets that you want your fleet workers to attach to. In the output, find the  **CRN**, which has a format similar to the following: `crn:v1:bluemix:public:is:us-east-2:a/1af204bc1def56171eed1a8100b1cc121::subnet:1345-16e10cc-ba18-19ee-de1b0-1213aa1a41a0156`.
+Run the commands to get the CRN of up to three subnets that you want your fleet workers to attach to. These subnets must reside in the same region as the {{site.data.keyword.codeengineshort}} project you want to run your fleets in. In the output, find the  **CRN**, which has a format similar to the following: `crn:v1:bluemix:public:is:us-east-2:a/1af204bc1def56171eed1a8100b1cc121::subnet:1345-16e10cc-ba18-19ee-de1b0-1213aa1a41a0156`. These CRNs are referenced later in the required secret. 
 
     To list all subnets.
    
@@ -42,7 +40,9 @@ Follow the steps to gather the networking values for the secret. For a complete 
     ```
     {: pre}
 
-3. For each subnet in the previous step, run the commands to get the CRN of up to three security groups you want to apply to the fleet workers attached to the subnet. In the output, find the **CRN**, which has the following format: `crn:v1:bluemix:public:is:us-east-2:a/1af204bc1def56171eed1a8100b1cc121::subnet:1345-16e10cc-ba18-19ee-de1b0-1213aa1a41a0156`.
+## 2. (Optional) Gather security group information for each subnet
+
+If you want to apply existing custom security groups to the subnets attached to your fleet workers, run the commands to get the CRN of all security groups for each subnet you found in the previous step. In the output for each subnet, find the **CRN**, which has the following format: `crn:v1:bluemix:public:is:us-east-2:a/1af204bc1def56171eed1a8100b1cc121::subnet:1345-16e10cc-ba18-19ee-de1b0-1213aa1a41a0156`. These CRNs are referenced later in the secret. If you do not specify a security group, the subnet's default security group is used.
 
     To list all security groups 
 
@@ -57,8 +57,22 @@ Follow the steps to gather the networking values for the secret. For a complete 
     ibmcloud is sg <securitygroup_id>
     ```
     {: pre}
+    
+## 3.  Add security groups to VPE gateways
 
-## 2. (Optional) Add a public gateway to your subnets
+If the subnets specified for network placement also have attached VPE gateways for {{site.data.keyword.cos_full_notm}} or {{site.data.keyword.registrylong_notm}}, then you must attach the security groups found in the previous step to those VPE gateways. This is required for fleet workers to have access to the VPE gateway. 
+
+1. For each subnet found in previous steps, check if the subnet has VPE gateways attached.
+  1. Navigate to your [list of subnets](https://cloud.ibm.com/infrastructure/network/subnets){: external} and find the subnets you want to use for network placement.
+  2. For each subnet used in network placement, click on the subnet name to open the details page. 
+  3. Click **Attached resources** and find the **Attached virtual endpoint gateways** section.
+2. For each VPE gateway that lists **Cloud Object Storage** or **Container Registry** under **Service details**, add the security groups.
+   1. Click on the VPE gateway name to open the gateway details page.
+   2. Click **Attached resources** and find the **Security groups** section.
+   3. Click **Attach** and follow the prompts to attach the security groups used in network placement for fleets. 
+
+
+## 4. (Optional) Add a public gateway to your subnets
 {: #fleet-prep-pubgateway}
 
 If you want to run images from a public container registry, you must attach a public gateway to the subnets you specify in the default secret.
@@ -69,12 +83,12 @@ If you want to run images from a public container registry, you must attach a pu
 4. Repeat this step for each subnet you want to specify in the default secret.
 
 
-## 3. Configure the secret
+## 5. Configure the secret
 {: #fleet-prep-secret}
 
 Configure the required secret. 
 
-1. In the UI, go to the [Code Engine console](https://cloud.ibm.com/codeengine/overview).
+1. In the UI, go to the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview).
 2. Click **Serverless projects** to navigate to your project dashboard. Select the relevant project, or create a new one. 
 3. Click **Secrets and configmaps**, then click **Create**.
 4. Select **Generic secret**, then click **Next**.
@@ -92,7 +106,10 @@ Configure the required secret.
 {: caption="Key value pairs for required secret." caption-side="bottom"}
 
 
-## 4. Create a persistent data store
+## 6. Create a persistent data store
 {: #fleet-prep-pds}
 
-A persistent data store is required to run fleets. Follow the steps in [Working with persistent data stores](/docs/codeengine?topic=codeengine-persistent-data-store).
+A persistent data store is required to run fleets. Follow the steps in [Working with persistent data stores](/docs/codeengine?topic=codeengine-persistent-data-store). 
+
+Make sure to follow all of the pre-requisite steps for creating a {{site.data.keyword.cos_full_notm}} bucket and service credentials, as well as the step to create an HMAC secret. 
+{: important}

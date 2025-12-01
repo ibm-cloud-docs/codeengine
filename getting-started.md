@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-02"
+lastupdated: "2025-11-24"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -215,7 +215,7 @@ You can [migrate your IBM Cloud Functions to {{site.data.keyword.codeengineshort
 
 Create and run your first {{site.data.keyword.codeengineshort}} fleet by using the `icr.io/codeengine/helloworld` image.
 
-1. Make sure you have completed the [required preparation steps]() to run a fleet.
+1. Make sure you have completed the [required preparation steps](/docs/codeengine?topic=codeengine-fleet-prep) to run a fleet.
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating**.
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to run a fleet.

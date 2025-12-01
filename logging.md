@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-11-24"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -21,6 +21,9 @@ subcollection: codeengine
 Logging can help you troubleshoot issues in {{site.data.keyword.codeenginefull}}. You can view logs by using the console or by using the CLI.
 {: shortdesc}
 
+Interested in logging for fleets? See [Setting up observability for fleets](/docs/codeengine?topic=codeengine-fleet-observability&interface=ui) and [Viewing logs and monitoring data for fleets](/docs/codeengine?topic=codeengine-fleet-observability-view&interface=ui).
+{: note}
+
 ## Viewing logs from the console
 {: #view-logs-ui}
 {: ui}
@@ -28,16 +31,16 @@ Logging can help you troubleshoot issues in {{site.data.keyword.codeenginefull}}
 When you work with {{site.data.keyword.codeengineshort}} apps, jobs, functions, or builds in the console with logging enabled, logs are forwarded to an {{site.data.keyword.logs_full_notm}} service where they are indexed, enabling full-text search through all generated messages and convenient querying based on specific fields.
 {: shortdesc}
 
-To view logs for your app, job, or build in the {{site.data.keyword.codeengineshort}} console, you must create an {{site.data.keyword.logs_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} component. From your {{site.data.keyword.codeengineshort}} app, job, function, or build page in the console, you can add logging capabilities.
+The {{site.data.keyword.logs_full_notm}} instance that receives platform logs does not have to be in the same region as your Code Engine project, and you are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} component. You can add logging capabilities at any time from your {{site.data.keyword.codeengineshort}} app, job, function, or build page in the console.
 
-You need to enable logging for {{site.data.keyword.codeengineshort}} only one time per region, per account.
+To generate logs for any platform service, you only need to enable logging one time per region, per account.
 {: note}
 
 ### Considerations for viewing logs from the console
 {: #view-logs-considerations}
 {: ui}
 
-When you want to use logging from the console, you must first configure {{site.data.keyword.logs_full_notm}} platform logs to receive {{site.data.keyword.codeengineshort}} logging data. To check for active {{site.data.keyword.logs_full_notm}} instances, see the [Observability dashboard](https://cloud.ibm.com/observe/logging).
+When you want to use logging from the console, you must first configure {{site.data.keyword.logs_full_notm}} platform logs to receive {{site.data.keyword.codeengineshort}} logging data with [IBM Cloud Logs Routing](/docs/logs-router?topic=logs-router-getting-started).  To check for active {{site.data.keyword.logs_full_notm}} instances, see the [Observability dashboard](https://cloud.ibm.com/observe/logging).
 
 Review the {{site.data.keyword.logs_full_notm}} [service plan](/docs/cloud-logs?topic=cloud-logs-service_plans) information as you consider retention, search, and log analysis needs.
 
