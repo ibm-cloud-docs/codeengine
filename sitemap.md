@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-01"
+lastupdated: "2025-12-04"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -159,6 +159,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [November 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-november25)
+
+    * [04 December 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-december0425)
+
+        * Added support for outbound connectivity to {{site.data.keyword.cloud_notm}} VPC Private Path services.
+
+        * CLI version 1.58.0 released
 
 * [November 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-november25)
 
@@ -3095,7 +3103,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [4. (Optional) Add a public gateway to your subnets](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-pubgateway)
 
-* [5. Configure the secret](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-secret)
+* [5. Configure a subnet pool](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-subnetpool)
 
 * [6. Create a persistent data store](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-pds)
 
@@ -3103,11 +3111,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Before you begin](/docs/codeengine?topic=codeengine-fleet-run#fleet-run-before)
 
-* [Running a fleet with the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-run-cli)
+* [Running a fleet by using the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-run-cli)
 
-* [Running a fleet with the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-run-ui)
+* [Running a fleet by using the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-run-ui)
 
 * [Task specification](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-task-spec)
+
+* [Deleting a fleet by using the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-delete-cli)
+
+* [Deleting a fleet by using the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-delete-ui)
 
 [Setting up observability for fleets](/docs/codeengine?topic=codeengine-fleet-observability#fleet-observability)
 
@@ -4129,13 +4141,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Private Service Connections](/docs/codeengine?topic=codeengine-connectivity-outbound#private-service-connections)
 
-* [Managing allowed destination IP address ranges by using the console](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#working-with-allowed-destination-ui)
+* [Managing allowed outbound destinations by using the console](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#working-with-allowed-destination-ui)
 
     * [Adding an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#add-allowed-destination-ui)
 
+    * [Adding a private path connection for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#add-allowed-destination-pps-ui)
+
     * [Updating an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#update-allowed-destination-ui)
 
-    * [Deleting an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#delete-allowed-destination-ui)
+    * [Deleting an allowed outbound destination for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#delete-allowed-destination-ui)
 
 * [Managing allowed outbound destinations by using the CLI](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#working-with-allowed-destination-cli)
 
@@ -4148,6 +4162,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Updating an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#update-allowed-destination-cli)
 
     * [Deleting an allowed outbound destination for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#delete-allowed-destination-cli)
+
+[Working with subnet pool connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-subnetpool#connectivity-subnetpool)
+
+* [Managing subnet pools by using the CLI](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#working-with-subnetpools-cli)
+
+    * [Adding a subnet pool](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#add-subnetpool-cli)
+
+    * [Showing existing subnet pools](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#show-subnetpools-cli)
+
+    * [Deleting a subnet pool](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#delete-subnetpool-cli)
 
 
 ## Enhancing security for Code Engine
@@ -4295,6 +4319,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce connectivity outbound list`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound-list)
 
     * [`ibmcloud ce connectivity outbound update`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound-update)
+
+    * [`ibmcloud ce connectivity subnetpool`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-subnetpool)
+
+    * [`ibmcloud ce connectivity subnetpool create`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-subnetpool-create)
+
+    * [`ibmcloud ce connectivity subnetpool delete`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-subnetpool-delete)
+
+    * [`ibmcloud ce connectivity subnetpool get`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-subnetpool-get)
+
+    * [`ibmcloud ce connectivity subnetpool list`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-subnetpool-list)
 
 * [Domainmapping commands](/docs/codeengine?topic=codeengine-cli#cli-domainmapping)
 

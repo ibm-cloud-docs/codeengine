@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-10"
+lastupdated: "2025-12-04"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2179,25 +2179,32 @@ Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
 ## Connectivity commands  
 {: #cli-connectivity}  
 
-The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects.
-* Use allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
-* Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} CLI. Private Path allows connections between an IBM Cloud service like {{site.data.keyword.codeengineshort}} and your VPC without compromising security or putting your VPC at risk. See [Enabling an IBM Cloud service to connect to a provider's VPC](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-case-4).
-{: shortdesc}
-
-CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, all of which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
-{: note}
+The {{site.data.keyword.codeenginefull}} connectivity feature supports to configure various network connectivity aspects of the workloads in your {{site.data.keyword.codeengineshort}} project.
+* Define reachable endpoints by specifying allowed destination IP address ranges for outbound connections
+* Connect to {{site.data.keyword.cloud_notm}} VPC Private Path services.
+* Define VPC subnet pool references including security groups to configure the network placement of your {{site.data.keyword.codeengineshort}} fleet workers.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `connectivity` commands.
-
-For more information about working with outbound connectivity commands, see [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound).
 
 You can use either `connectivity` or `conn` in your `connectivity` commands. To see CLI help for the `connectivity` commands, run `ibmcloud ce connectivity -h`.  
   
 ### `ibmcloud ce connectivity outbound`  
 {: #cli-connectivity-outbound}  
 
-Manage outbound connectivity commands  
+The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects.
+* Use allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
+* Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} console or CLI. Private Path allows connections between an IBM Cloud service like {{site.data.keyword.codeengineshort}} and your VPC without compromising security or putting your VPC at risk. See [Enabling an IBM Cloud service to connect to a provider's VPC](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-case-4).
+{: shortdesc}
+
+CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, all of which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
+{: note}
+
+You must be within the context of a [project](#cli-project) before you use `connectivity outbound` commands.
+
+For more information about working with outbound connectivity commands, see [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound).
+
+You can use either `connectivity outbound` or `conn outbound` in your `connectivity outbound` commands. To see CLI help for the `connectivity outbound` commands, run `ibmcloud ce connectivity outbound -h`.  
   
 ```txt
 ibmcloud ce connectivity outbound COMMAND
@@ -2410,7 +2417,7 @@ ibmcloud ce connectivity outbound list [--format FORMAT] [--output OUTPUT] [--qu
 **Command Options**  
 
 `--format`
-:   Limit the display of allowed outbound destinations to specified format. Provide one or more formats in a comma-delimited list. Valid values are [`cidr`, `cidr_block`, `pps`, `private_path_gateway_service`]. This value is *optional*. If not set, allowed outbound destinations of all formats will be rendered.
+:   Limit the display of allowed outbound destinations to specified format. Provide one or more formats in a comma-delimited list. Valid values are [`cidr`, `cidr_block`, `pps`, `private_path_gateway_service`]. This value is *optional*. The default value is `cidr_block,private_path_service_gateway`.
 
 `--output`, `-o`
 :   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*. 
@@ -2487,6 +2494,228 @@ ibmcloud ce connectivity outbound update --name allow-to-subnet-a --cidr 5.6.7.0
 ```txt
 Updating allowed destination IP address range 'allow-to-subnet-a'...
 OK
+```
+{: screen}  
+  
+### `ibmcloud ce connectivity subnetpool`  
+{: #cli-connectivity-subnetpool}  
+
+The {{site.data.keyword.codeenginefull}} subnet pool connections feature supports to manage VPC subnet pool references, including security groups. 
+You create a subnet pool to specify the VPC subnets and availability zones where your workload will be processed.
+For example, you can create a subnet pool with a single subnet in zone `eu-de-1` or a subnet pool with multiple subnets to span all 3 zones in `eu-de`.
+In addition, you can specify the security group that your workload should be attached to.
+A subnet pool can be referenced when creating a fleet to specify into which network zone the {{site.data.keyword.codeengineshort}} fleet workers get deployed.
+{: shortdesc}
+
+{{site.data.keyword.vpc_full}} (VPC) is a virtual network that is linked to your customer account. It gives you cloud security, with the ability to scale dynamically, by providing fine-grained control over your virtual infrastructure and your network traffic segmentation.
+Subnets in your VPC offer private connectivity.
+Subnets in your VPC can connect to the public internet through an optional public gateway.
+You can keep your VPC and workloads secure by controlling network traffic using security groups.
+See [About networking](/docs/vpc?topic=vpc-about-networking-for-vpc) and [Security in your VPC](/docs/vpc?topic=vpc-security-in-your-vpc) for further reading.
+
+You must be within the context of a [project](#cli-project) before you use `connectivity subnetpool` commands.
+
+For more information about working with subnetpool connectivity commands, see [Working with subnetpool connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-subnetpool).
+
+You can use either `connectivity` or `conn` in your `connectivity subnetpool` commands. To see CLI help for the `connectivity subnetpool` commands, run `ibmcloud ce connectivity subnetpool -h`.  
+  
+```txt
+ibmcloud ce connectivity subnetpool COMMAND
+```
+{: pre}
+
+### `ibmcloud ce connectivity subnetpool create`  
+{: #cli-connectivity-subnetpool-create}  
+
+Create a subnet pool.  
+  
+```txt
+ibmcloud ce connectivity subnetpool create [--name NAME] [--quiet] [--security-group-crn SECURITY_GROUP_CRN] [--subnet-crn SUBNET_CRN]
+```
+{: pre}
+
+**Command Options**  
+
+`--name`, `-n`
+:   Required. Name of the subnet pool. Use a name that is unique within the project. This value is *required*. 
+
+`--subnet-crn`, `--crn`
+:   Provide a valid subnet crn for the pool. Must be in S1=crn:v1:example format This value is *required*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--security-group-crn`, `--sg-crn`
+:   Provide a valid security group crn for the pool. This value is *optional*. 
+
+  
+  
+#### Example
+{: #connectivity-subnetpool-create-example}
+
+```txt
+ibmcloud ce connectivity subnetpool create --name my-other-pool \
+  --subnet-crn S1=crn:v1:bluemix:public:is:eu-de-3:a/abcdefabcdefabcdefabcd1234567890::subnet:1a1a-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f21 \
+  --security-group-crn S1=crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::security-group:2b2b-3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g7g \
+  --subnet-crn IDx=crn:v1:bluemix:public:is:eu-de-3:a/abcdefabcdefabcdefabcd1234567890::subnet:1a1a-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f22 \
+  --security-group-crn IDx=crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::security-group:2b2b-3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g7g \
+  --security-group-crn IDx=crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::security-group:2b2b-3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g8h
+```
+{: pre}
+
+#### Example output
+{: #connectivity-subnetpool-create-example-output}
+
+```txt
+OK
+Successfully created subnet pool with name 'my-other-pool' and ID 'a23ff1d1-b845-4629-86d1-a4126155ad02'
+```
+{: screen}  
+  
+### `ibmcloud ce connectivity subnetpool delete`  
+{: #cli-connectivity-subnetpool-delete}  
+
+Delete a subnet pool.  
+  
+```txt
+ibmcloud ce connectivity subnetpool delete (--name SUBNET_POOL_NAME || --id SUBNET_POOL_ID) [--force] [--ignore-not-found] [--quiet]
+```
+{: pre}
+
+**Command Options**  
+
+`--force`, `-f`
+:   Force deletion without confirmation. This value is *optional*. The default value is `false`.
+
+`--id`
+:   ID of the subnet pool. This value is *optional*. 
+
+`--ignore-not-found`, `--inf`
+:   If not found, do not fail. This value is *optional*. The default value is `false`.
+
+`--name`, `-n`
+:   Name of the subnet pool. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+  
+  
+#### Example
+{: #connectivity-subnetpool-delete-example}
+
+```txt
+ibmcloud ce connectivity subnetpool delete --name my-subnet-pool
+```
+{: pre}
+
+#### Example output
+{: #connectivity-subnetpool-delete-example-output}
+
+```txt
+Are you sure you want to delete subnet pool '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e'? [y/N]> y
+Deleting subnet pool with name 'my-subnet-pool' and ID '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' 
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce connectivity subnetpool get`  
+{: #cli-connectivity-subnetpool-get}  
+
+Display details of a subnet pool.  
+  
+```txt
+ibmcloud ce connectivity subnetpool get (--id SUBNET_POOL_ID || --name SUBNET_POOL_NAME) [--output OUTPUT] [--quiet]
+```
+{: pre}
+
+**Command Options**  
+
+`--id`
+:   ID of the subnet pool. This value is *optional*. 
+
+`--name`, `-n`
+:   Name of the subnet pool. This value is *optional*. 
+
+`--output`, `-o`
+:   Output format. Valid values are 'json', 'yaml', 'jsonpath=JSONPATH_EXPRESSION', and 'jsonpath-as-json=JSONPATH_EXPRESSION'. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+  
+  
+#### Example
+{: #connectivity-subnetpool-get-example}
+
+```txt
+ibmcloud ce connectivity subnetpool get --name my-subnet-pool
+```
+{: pre}
+
+#### Example output
+{: #connectivity-subnetpool-get-example-output}
+
+```txt
+Getting subnet pool 'my-subnet-pool'...
+OK
+
+Name:          my-subnet-pool  
+ID:            1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e  
+Project name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
+Age:           114d  
+
+Network placement:    
+  Number of subnets:   1  
+                       
+  Subnet CRN:          crn:v1:bluemix:public:is:eu-de-3:a/abcdefabcdefabcdefabcd1234567890::subnet:1a1a-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  
+  Security Group CRN:  crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::security-group:2b2b-3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g7g
+```
+{: screen}  
+  
+### `ibmcloud ce connectivity subnetpool list`  
+{: #cli-connectivity-subnetpool-list}  
+
+List all subnet pools in a project.  
+  
+```txt
+ibmcloud ce connectivity subnetpool list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+
+`--output`, `-o`
+:   Output format. Valid values are 'json', 'yaml', 'jsonpath=JSONPATH_EXPRESSION', and 'jsonpath-as-json=JSONPATH_EXPRESSION'. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--sort-by`, `-s`
+:   Specifies the column by which to sort the list. Valid values are 'name' and 'age'. This value is *optional*. The default value is `name`.
+
+  
+  
+#### Example
+{: #connectivity-subnetpool-list-example}
+
+```txt
+ibmcloud ce connectivity subnetpool list
+```
+{: pre}
+
+#### Example output
+{: #connectivity-subnetpool-list-example-output}
+
+```txt
+Listing all subnet pools in a project...
+OK
+
+Name                          ID                                    Subnets  Region  Age  
+auto-network-pool-gg55edn1xe  hgfedcba-dcba-abcd-abcd-1a2b3c4d5e6f  1        eu-de   93d  
+my-other-pool                 abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f  3        eu-de   25h  
+my-subnet-pool                1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e  1        eu-de   114d 
 ```
 {: screen}  
   
@@ -2877,7 +3106,7 @@ Tasks status:
 Launch a serverless fleet.  
   
 ```txt
-ibmcloud ce fleet create [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--gpu GPU] [--image IMAGE] [--max-scale MAX_SCALE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mount-data-store MOUNT_DATA_STORE] [--name NAME] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--task-indexes TASK_INDEXES] [--tasks TASKS] [--tasks-from-cos-bucket TASKS_FROM_COS_BUCKET] [--tasks-from-cos-object TASKS_FROM_COS_OBJECT] [--tasks-from-local-file TASKS_FROM_LOCAL_FILE] [--tasks-state-store TASKS_STATE_STORE] [--worker-profile WORKER_PROFILE]
+ibmcloud ce fleet create [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--gpu GPU] [--image IMAGE] [--max-scale MAX_SCALE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mount-data-store MOUNT_DATA_STORE] [--name NAME] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--subnetpool-id SUBNETPOOL_ID] [--subnetpool-name SUBNETPOOL_NAME] [--task-indexes TASK_INDEXES] [--tasks TASKS] [--tasks-from-cos-bucket TASKS_FROM_COS_BUCKET] [--tasks-from-cos-object TASKS_FROM_COS_OBJECT] [--tasks-from-local-file TASKS_FROM_LOCAL_FILE] [--tasks-state-store TASKS_STATE_STORE] [--worker-profile WORKER_PROFILE]
 ```
 {: pre}
 
@@ -2888,7 +3117,7 @@ ibmcloud ce fleet create [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [
 :   Required. The name of the container image that is used to process the tasks. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *required*. 
 
 `--tasks-state-store`, `--ts-state`
-:   Required. Specify the COS bucket thats stores the state of the tasks of the fleet. This value is *required*. 
+:   Required. Specify the persistent data store that stores the state of the tasks of the fleet. This value is *required*. 
 
 `--argument`, `--arg`, `-a`
 :   Set command arguments needed by the command to execute in the task. This option can be specified multiple times. This value is *optional*. 
@@ -2935,6 +3164,12 @@ ibmcloud ce fleet create [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [
 `--retrylimit`, `-r`
 :   The number of times to rerun a task before marking it as failed. This value is *optional*. The default value is `3`.
 
+`--subnetpool-id`, `--spi`
+:   The ID of the subnet pool to use for the fleet network placement. This value is *optional*. 
+
+`--subnetpool-name`, `--spn`
+:   The name of the subnet pool to use for the fleet network placement. This value is *optional*. 
+
 `--task-indexes`, `--ti`
 :   Specify task indexes that are to be processed, for example `0,3,6,9`, `1-5,7-8,10`. Specify no more than 1000 index entries. This option cannot be specified if `--tasks` is specified. This value is *optional*. 
 
@@ -2959,7 +3194,7 @@ ibmcloud ce fleet create [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [
 {: #fleet-create-example}
 
 ```txt
-ibmcloud ce fleet cancel create --image icr.io/codeengine/helloworld --tasks-state-store mytaskstore --tasks 1
+ibmcloud ce fleet create --image icr.io/codeengine/helloworld --tasks-state-store mytaskstore --tasks 1
 ```
 {: pre}
 
@@ -3160,7 +3395,6 @@ ibmcloud ce fleet task COMMAND [--quiet]
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
  
-
   
 ### `ibmcloud ce fleet task get`  
 {: #cli-fleet-task-get}  

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-10"
+lastupdated: "2025-12-04"
 
-keywords: connectivity, outbound connections, outbound connectivity
+keywords: connectivity, outbound connections, outbound connectivity, private path
 
 subcollection: codeengine
 
@@ -17,17 +17,16 @@ subcollection: codeengine
 
 The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects.
 * Use allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
-* Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} CLI. Private Path allows connections between an IBM Cloud service like {{site.data.keyword.codeengineshort}} and your VPC without compromising security or putting your VPC at risk. See [Enabling an IBM Cloud service to connect to a provider's VPC](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-case-4).
+* Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} console or CLI. Private Path allows connections between an IBM Cloud service like {{site.data.keyword.codeengineshort}} and your VPC without compromising security or putting your VPC at risk. See [Enabling an IBM Cloud service to connect to a provider's VPC](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-case-4).
 {: shortdesc}
 
 CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, all of which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
 {: note}
 
 Your use case can determine your outbound connection specifications. Typical use cases are as follows:
+
 * Specifying no rules (that is, no allowed IP addresses), if {{site.data.keyword.codeengineshort}} applications within a project are not supposed to reach any external endpoints.
-
 * Specifying a single allowed destination IP address range (`0.0.0.0/0`) to allow all possible endpoints. By default, there is a rule, named **allow-all**, set with an IP range of 0.0.0.0/0.
-
 * Specifying a rule with an allowed destination IP address range that allows the workload within your {{site.data.keyword.codeengineshort}} project to reach only your specified range of endpoints (for example, to your on-premises data center).
 
 You can create outbound connections by using the console or the CLI.
@@ -48,7 +47,7 @@ Connecting to private endpoints of a set of common IBM Cloud platform services i
 | User Management ([Endpoint URL](https://cloud.ibm.com/apidocs/user-management#endpoint-url)) | `eu-de`, `us-east`, `us-south` |
 {: caption="Platform services with enabled private endpoints per region" caption-side="bottom"}
 
-## Managing allowed destination IP address ranges by using the console
+## Managing allowed outbound destinations by using the console
 {: #working-with-allowed-destination-ui}
 {: ui}
 
@@ -60,10 +59,31 @@ You can create allowed destination IP address ranges to limit where your workloa
 
 1. Go to the Connectivity page:
     1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
-    2. Click **Project settings** > **Connectivity** to see a list of existing allowed destination IP address ranges.
+    2. Click **Project settings** > **Connectivity** > **CIDR ranges** tab to see a list of existing allowed destination IP address ranges.
 2. Click **Add** to create an allowed destination IP address range.
 3. Provide a name.
 4. Provide an IP address range in CIDR notation.
+5. Confirm your configuration.
+
+### Adding a private path connection for outbound connectivity
+{: #add-allowed-destination-pps-ui}
+{: ui}
+
+You can establish a Private Path connection between your {{site.data.keyword.codeengineshort}} project and your VPC.
+
+This diagram illustrates how to establish a Private Path service with connections to the VPE gateway of a {{site.data.keyword.codeengineshort}} application and your VPC. First, the {{site.data.keyword.codeengineshort}} application connects to the VPE gateway within the {{site.data.keyword.codeengineshort}}'s VPC. Then, the VPE gateway connects to the Private Path NLB in the provider's VPC. In turn, the Private Path NLB connects to the provider's application. The provider's application then responds to the request. This Private Path service activity is completely contained in a single region (e.g. `us-south`) in an {{site.data.keyword.cloud_notm}} private network.
+
+![Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network.](images/private_path_detailed_4.svg "Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network."){: caption="Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network." caption-side="bottom"}
+
+Once the connection to VPC is created, the Private Path service owner will receive a connection request. The owner can review, permit or deny this connection request. Use the consumer `Code Engine account ID` and `VPE gateway creation timestamp` displayed in the private path connection details view to identify the respective connection request within the Private Path service.
+{: note}
+
+1. Go to the Connectivity page:
+    1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
+    2. Click **Project settings** > **Connectivity** > **Private Path connections** tab to see a list of existing private path connections.
+2. Click **Add** to create a private path connection.
+3. Provide a name.
+4. Provide the Private Path service instance CRN to connect to.
 5. Confirm your configuration.
 
 ### Updating an allowed destination IP address range for outbound connectivity
@@ -74,7 +94,7 @@ You can change allowed destination IP address ranges to disallow your workload t
 
 1. Go to the Connectivity page:
     1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
-    2. Click **Project settings** > **Connectivity** to see a list of existing allowed destination IP address ranges.
+    2. Click **Project settings** > **Connectivity** > **CIDR ranges** tab to see a list of existing allowed destination IP address ranges.
 2. Click the row with the allowed destination IP address range that you want to edit.
 3. Provide the updated IP address range and save your changes.
 
@@ -87,19 +107,19 @@ When you update the outbound connectivity rules, note:
 
 * After you restrict outbound connections from your {{site.data.keyword.codeengineshort}} project, you can see unintended side effects such as failing build runs because no external requests can be made.
 
-### Deleting an allowed destination IP address range for outbound connectivity
+### Deleting an allowed outbound destination for outbound connectivity
 {: #delete-allowed-destination-ui}
 {: ui}
 
-You can delete previously defined allowed destination IP address ranges, if you no longer want them defined for outbound connectivity.
+You can delete previously defined allowed outbound destinations, if you no longer want them defined for outbound connectivity.
 
 Deleting allowed destination IP address ranges blocks outbound traffic for {{site.data.keyword.codeengineshort}} applications, function, and jobs within a project.
 {: remember}
 
 1. Go to the Connectivity page:
     1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
-    2. Click **Project settings** > **Connectivity** to see a list of existing allowed destination IP address ranges.
-2. Go to the row with the allowed destination IP address range that you want to remove and click the delete (trash can) icon.
+    2. Click **Project settings** > **Connectivity** > **CIDR ranges** tab to see a list of existing allowed destination IP address ranges, or **Private Path connections** tab to see a list of existing private path connections.
+2. Go to the row with the allowed outbound destination that you want to remove and click the delete (trash can) icon.
 3. Confirm the deletion when prompted.
 
 ## Managing allowed outbound destinations by using the CLI

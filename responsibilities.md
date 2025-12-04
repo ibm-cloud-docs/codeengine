@@ -2,11 +2,11 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-11"
+lastupdated: "2025-12-02"
 
 subcollection: codeengine
 
-keywords: code engine, responsibilities, compliance, management, app, data, job, disaster recovery
+keywords: code engine, responsibilities, compliance, management, data, disaster recovery, app, build, fleet, function, job
 
 ---
 
@@ -74,13 +74,14 @@ You and IBM share responsibilities for controlling access to your {{site.data.ke
 ### Security and regulation compliance
 {: #security-compliance}
 
-IBM is responsible for the security and compliance of {{site.data.keyword.codeengineshort}}. You are responsible for the security and compliance of any {{site.data.keyword.codeengineshort}} entities that run in the {{site.data.keyword.codeengineshort}} environment and your associated data.
+IBM is responsible for the security and compliance of {{site.data.keyword.codeengineshort}}. You are responsible for the security and compliance of any {{site.data.keyword.codeengineshort}} entities that run in the {{site.data.keyword.codeengineshort}} environment, the data you own, and resources of dependent {{site.data.keyword.cloud_notm}} services (for example ICR, COS, VPC, ...).
 {: shortdesc}
 
 | Task | IBM responsibilities | Your responsibilities |
 | ------ | ----------------------- | ---------------------- |
 | General | - Maintain controls commensurate to various industry compliance standards. \n - Monitor, isolate, and recover user projects. \n - Provide highly available replicas of your projects and entities. \n - Monitor and report the health of the project and entities in the various interfaces. \n - Automatically apply security patch updates for infrastructure. \n - Enable certain security settings, such as encrypted disks. \n - Disable certain insecure actions, such as not permitting users to SSH into the host. \n - Encrypt communication with TLS. \n - Continuously monitor {{site.data.keyword.codeengineshort}} projects and entities to detect vulnerability and security compliance issues. \n - Provide options for network connectivity. \n - Integrate {{site.data.keyword.codeengineshort}} with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). | - Set up and maintain security and regulation compliance for your {{site.data.keyword.codeengineshort}} entities and data. \n - As part of your incident and operations management responsibilities for {{site.data.keyword.codeengineshort}} entities and data, apply any security updates. \n - Do not include sensitive or private information in {{site.data.keyword.codeengineshort}} resource metadata, including configuration values. \n - If you require web application firewall (WAF) rules, configure your own {{site.data.keyword.cis_full_notm}} (CIS) instance or a third-party gateway service with a custom domain in front of your {{site.data.keyword.codeengineshort}} endpoints and enable WAF in this instance. |
 | Building from source | - Continuously update the build tools, including BuildKit, and Paketo buildpacks to the latest version. | - Resubmit builds to pick up fixes in the base image of your Dockerfile-based builds and to pick up operating system and runtime environment fixes in your Buildpacks-based builds. |
+| Fleets | - Upon fleet startup, automatically apply security patch updates for the fleet workers using the [worker image provided by IBM](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0). \n - Provide updated worker images as software patches become available. Running fleet workers are not updated while they exist. \n - Provision and scale fleet workers. \n - Connect the fleet workers to the VPC subnet specified by you. \n - Queue tasks in the persistent data store specified as task state store. \n - Provision agents on fleet workers to allow integrating with {{site.data.keyword.logs_full_notm}} and {{site.data.keyword.mon_full_notm}}. | - Onboard fleet workers to any inventory management systems as required by your security and compliance policy. \n - Consume fleet worker security updates for running fleets by refreshing fleet workers (deleting specific fleet workers, or canceling and starting a new fleet). \n - Provide security patches and update the container image you use for your fleets. \n - Perform network security and infrastructure monitoring as required by your security and compliance policy. \n - Secure any COS bucket specified in persistent data stores and used as task state store or data store. |
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Responsibilities for security and regulation compliance" caption-side="bottom"}
 

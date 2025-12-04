@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-12-04"
 
 keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
@@ -21,16 +21,16 @@ Follow these steps to run a fleet with the CLI or with the console. Note that fl
 ## Before you begin
 {: #fleet-run-before}
 
-To successfully run a fleet, make sure you have followed the steps in [Preparing to run your fleet](/docs/codeengine?topic=codeengine-fleet-prep). You also have the option to use Code Engine to [build the image](/docs/codeengine?topic=codeengine-plan-build) you reference when you create your fleet. 
+To successfully run a fleet, make sure you have followed the steps in [Preparing to run your fleet](/docs/codeengine?topic=codeengine-fleet-prep). You also have the option to use Code Engine to [build the image](/docs/codeengine?topic=codeengine-plan-build) you reference when you create your fleet.
 
-## Running a fleet with the CLI
+## Running a fleet by using the CLI
 {: #fleet-run-cli}
 {: cli}
 
-Use the following example command to run a fleet. This command allows additional options. For a complete list of all available command options, see the [CLI docs]().
+Use the following example command to run a fleet. This command allows additional options. For a complete list of all available command options, see the [CLI docs](/docs/codeengine?topic=codeengine-cli#cli-fleet-create).
 
 ```txt
-ibmcloud code-engine fleet run --name my-fleet --image icr.io/codeengine/hello --tasks 1
+ibmcloud ce fleet run --name my-fleet --image icr.io/codeengine/helloworld --subnetpool-name my-pool --tasks-state-store mytaskstore --tasks 1
 ```
 {: pre}
 
@@ -38,7 +38,13 @@ ibmcloud code-engine fleet run --name my-fleet --image icr.io/codeengine/hello -
 :   The name of the fleet. This value must be unique across all fleets within the same project. If no fleet name is specified, a random one is generated. 
 
 `--image`
-:   The container image to use for the fleet. 
+:   The name of the container image that is used to process the tasks. This value is _required_.
+
+`--subnetpool-name`
+:   The name of the subnet pool to use for the fleet network placement.
+
+`--tasks-state-store`
+:   Specify the persistent data store that stores the state of the tasks of the fleet. This value is _required_.
 
 `--tasks`
 :   The number of tasks to run. 
@@ -46,14 +52,15 @@ ibmcloud code-engine fleet run --name my-fleet --image icr.io/codeengine/hello -
 Example output.
 
 ```sh
-Preparing your tasks: Please wait…
-Launching fleet `my-fleet`…
-Current fleet status `Launching`…
+Successfully created fleet with name 'my-fleet' and ID '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' 
+Run 'ibmcloud ce fleet get --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to check the fleet status.
+Run 'ibmcloud ce fleet worker list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of provisioned workers.
+Run 'ibmcloud ce fleet task list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of tasks.
 OK
 ```
 {: screen}
 
-## Running a fleet with the console
+## Running a fleet by using the console
 {: #fleet-run-ui}
 {: ui}
 
@@ -72,24 +79,51 @@ Follow these steps to run a fleet in the Code Engine console.
 11. In the Environmental variables and Volume mounts sections, add optional key-value pairs, configmaps, or additional files that can be used by your running code. 
 12. Click create. 
 
-
-
 ## Task specification
 {: #fleet-task-spec}
 
 Fleets always have at least one task, but can have a much larger number. You can specify the number of tasks to complete, the number of tasks and instances to run at a time, and the order in which tasks are completed. When you run your fleet, worker nodes automatically scale up based on the number of tasks to be completed.
 
 You can specify tasks in the following ways. 
+
 - **Number of tasks**: To run a specific number of tasks, you can specify any positive integer. In the CLI, use the `--tasks` option. In the UI, select **Number of tasks** and enter the number you want to run. 
 - **Task index**: To specify a range of tasks, you can specify a task index that includes a comma separated list of ranges and positive integers, such as `2-5,7-8,10`. In the CLI, use the `--task-indexes` option. In the UI, select **Task indexes** and enter the range. 
 - **Task file**: To have different tasks run with different commands or arguments, you can create a task specification file that overrides the image definition. This file should be formatted in JSON. In the CLI, specify the file with the `OPTION` option. In the UI, select **Tasks from file** and specify the file name. See an example of lines that can be added to a task specification file below. 
 
 Example lines in a task specification file.
 
-```sh
+```json
 { "cmds": ["my", "multipart", "command"], "args": ["arg1", "arg2"]}
 { "cmds": ["other", "cmd"], "args": ["arg"]}
 { "args": ["argA", "argB", "argC"]}
 { "cmds": ["just", "another", "command"]}
 ```
 {: screen}
+
+
+## Deleting a fleet by using the CLI
+{: #fleet-delete-cli}
+{: cli}
+
+A fleet is not deleted automatically when it reaches its final state. Since there is a quota limit of 1000 fleets per project (see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)), delete the fleet using the CLI when you do not need it anymore.
+
+Use the following example command to delete a fleet. This command allows additional options. For a complete list of all available command options, see the [CLI docs](/docs/codeengine?topic=codeengine-cli#cli-fleet-delete).
+
+```txt
+ibmcloud ce fleet delete --force --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e
+```
+{: pre}
+
+## Deleting a fleet by using the console
+{: #fleet-delete-ui}
+{: ui}
+
+A fleet is not deleted automatically when it reaches its final state. Since there is a quota limit of 1000 fleets per project (see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)), delete the fleet using the CLI when you do not need it anymore.
+
+Follow these steps to delete a fleet in the console.
+
+1. Go to the Fleets page:
+    1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
+    2. Click **Fleets** to see a list of existing fleets.
+2. Go to the row with the fleet that you want to remove and click the delete (trash can) icon.
+3. Confirm the deletion when prompted.

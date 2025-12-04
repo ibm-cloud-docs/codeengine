@@ -186,6 +186,7 @@ toc:
           - serviceendpt.md
           - virtualprivateendpt.md
           - connectivity-outbound.md
+          - connectivity-subnetpool.md
       - topicgroup:
           label: Enhancing security for Code Engine
           topics:
