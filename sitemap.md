@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-08"
+lastupdated: "2025-12-09"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -160,7 +160,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
-* [November 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-november25)
+* [December 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-december25)
 
     * [04 December 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-december0425)
 
