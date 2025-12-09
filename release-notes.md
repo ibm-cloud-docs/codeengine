@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-09"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -20,8 +20,8 @@ content-type: release-note
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month.
 {: shortdesc}
 
-## November 2025
-{: #codeengine-november25}
+## December 2025
+{: #codeengine-december25}
 
 ### 04 December 2025
 {: #codeengine-december0425}
