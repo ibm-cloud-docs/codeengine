@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-07-01"
+lastupdated: "2025-12-12"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -57,7 +57,7 @@ You can invoke your function by clicking **Test function** and then **Send reque
 ## Creating function workloads with repository source code with the CLI
 {: #fun-create-repo-cli}
 
-Use the **`function create`** command to both build a code bundle from your Git repository source, and create your function to reference this built code bundle. For a complete listing of options, see the [**`ibmcloud ce function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command. 
+Use the **`function create`** command to both build a code bundle from your Git repository source, and create your function to reference this built code bundle. For a complete listing of options, see the [**`ibmcloud ce function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command.
 
 
 Before you begin
@@ -66,10 +66,10 @@ Before you begin
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 
-The following example **`function create`** command creates the `myfun` function, which references code that is located in `https://github.com/IBM/CodeEngine`. This command automatically builds the code bundle and uploads it to an {{site.data.keyword.registrylong}} namespace in your account. The function references this built code bundle. By specifying the `--build-context-dir` option, the build uses the source in the `helloworld-samples/function-nodejs` directory.   
+The following example **`function create`** command creates the `myfun` function, which references code that is located in `https://github.com/IBM/CodeEngine`. This command automatically builds the code bundle and uploads it to an {{site.data.keyword.registrylong}} namespace in your account. The function references this built code bundle. By specifying the `--build-context-dir` option, the build uses the source in the `helloworld-samples/function-codebundle-nodejs` directory.
 
 ```txt
-ibmcloud ce function create --name myfun --runtime nodejs --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-nodejs
+ibmcloud ce function create --name myfun --runtime nodejs --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-codebundle-nodejs
 ```
 {: pre}
 
@@ -119,35 +119,49 @@ OK
 
 Name:          myfun  
 Project Name:  sample  
-Project ID:    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f  
+Project ID:    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Age:           27m  
 Created:       2023-06-27T21:07:26Z  
-URL:           https://myfun.13c66hbi3rhz.us-south.codeengine.test.appdomain.cloud  
-Status:        Ready  
+Visibility:    public  
+URL:           https://myfun.13c66hbi3rhz.us-south.codeengine.appdomain.cloud  
+Internal URL:  http://myfun.13c66hbi3rhz.function.cluster.local  
 
 Resources:    
-  CPU:                 0.25  
-  Memory:              500M  
-  Max Execution Time:  60 seconds  
+  CPU:               0.25  
+  Memory:            500M  
+  Timeout:           60 seconds  
+  Scale Down Delay:  1 seconds  
+  Trusted profiles:  disabled  
+
+Environment Variables:    
+  Type     Name             Value  
+  Literal  CE_API_BASE_URL  https://api.us-south.codeengine.cloud.ibm.com  
+  Literal  CE_DOMAIN        us-south.codeengine.appdomain.cloud  
+  Literal  CE_FUNCTION      myfun  
+  Literal  CE_REGION        us-south  
+  Literal  CE_SUBDOMAIN     13c66hbi3rhz  
+  Literal  CE_PROJECT_ID    abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 
 Build Information:    
   Build Run Name:     myfun-run-230111-111212718  
   Build Type:         git  
-  Build Strategy:     codebundle-nodejs-20  
+  Build Strategy:     codebundle-nodejs-22 
   Timeout:            600  
   Source:             https://github.com/IBM/CodeEngine  
-  Context Directory:  /helloworld-samples/function-nodejs    
+  Context Directory:  /helloworld-samples/function-codebundle-nodejs    
                       
-  Build Run Summary:  Succeeded  
   Build Run Status:   Succeeded  
   Build Run Reason:   All Steps have completed executing  
   Run 'ibmcloud ce buildrun get -n myfun-run-230111-111212718' for details.  
 
 Function Code:    
-  Runtime:        nodejs-20 (managed)  
+  Runtime:        nodejs-22
   Bundle Secret:  ce-auto-icr-us-south  
   Code Bundle:    cr://icr.io/ce--abcde-glxo4kabcde/function-myfun:230111-1532-vwo4o 
-  Main:           main() 
+  Main:           main 
+
+Status:  Ready  
+URL:     https://myfun.13c66hbi3rhz.us-south.codeengine.appdomain.cloud 
 ```
 {: screen}
 
