@@ -27,6 +27,11 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 {: #codeengine-december1225}
 {: release-note}
 
+Added support for the subnet pool connectivity to manage VPC network placement for {{site.data.keyword.codeengineshort}} fleets.
+:   See [Working with subnet pool connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-subnetpool)
+:   See [Preparing to run a fleet](/docs/codeengine?topic=codeengine-fleet-prep)
+:   See [Running a fleet](/docs/codeengine?topic=codeengine-fleet-run)
+
 CLI version 1.58.1 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 

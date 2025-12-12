@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-12"
 
 keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
@@ -75,8 +75,11 @@ Follow these steps to run a fleet in the Code Engine console.
 7. Follow the prompts to configure your fleet. 
 8. In the Tasks section, configure the task specification method for the fleet. For more information, see [Task specification](#fleet-task-spec).
 9. In the Resources and scaling section, configure your instance resources and specify how your instances scale up or down. 
-10. In the Network placement section, review the subnets that your worker nodes deploy on. 
-11. In the Environmental variables and Volume mounts sections, add optional key-value pairs, configmaps, or additional files that can be used by your running code. 
+10. In the Network placement section, click **Select subnet pools**.
+    1. Create a new subnet pool to specify the network placement of the workers of this fleet. See [Working with subnet pool connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-subnetpool) for more information.
+    2. Or select one or more existing subnet pools to specify the network placement of the workers of this fleet.
+    3. Click **Apply** to confirm your selection.
+11. In the **Environment variables** and **Volume mounts** sections, add optional key-value pairs, configmaps, or additional files that can be used by your running code. 
 12. Click create. 
 
 ## Task specification

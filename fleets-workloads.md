@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-12-12"
 
 keywords: fleets in code engine, running fleets with code engine, creating fleets with code engine, images for fleets in code engine, fleets, serverless fleets, fleets workloads, fleet run, environment variables, fleet workloads
 
@@ -18,18 +18,15 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull}} is a fully managed, serverless platform that runs your containerized workloads, including fleet workloads. Learn about running fleets in {{site.data.keyword.codeengineshort}}.
 {: shortdesc}
 
-
 ## What are fleets?
 {: #fleet-workloads}
 
 A fleet, also called a **serverless fleet**, is a Code Engine compute component that runs one or more instances of user code in parallel to complete a large queue of compute-intensive tasks. Fleets can connect to Virtual Private Clouds to securely interoperate with user data and services. Unlike batch jobs, fleets provide dynamic task queuing and single-tenant isolation, and are compatible with both vCPU and GPUs. 
 
-
 ## How do fleets work?
 {: #fleet-how}
 
 Fleets have three principal elements: tasks, instances, and worker nodes. A single task is completed by a single instance of user code, which runs on a worker node. Each worker node can run several tasks concurrently, allowing many tasks to be completed in parallel. When a task is complete, a new instance spins up on the worker node to complete the next available task in the queue. This process repeats on each worker node until all tasks are completed, at which point worker nodes are automatically deprovisioned.  
- 
 
 ## How are fleets different from jobs?
 {: #fleet-v-job}
@@ -42,7 +39,7 @@ Unlike batch jobs, which are primarily intended for small to medium sized tasks,
 | Task size | Large tasks | Small-to-medium sized tasks |
 | Implementation | Dynamic queue | Static array  |
 | Machine configuration |  Full control over machine profile | No control over machine profile |
-| VPC connection | Natively connects to existing VPC | | Requires private path |
+| VPC connection | Natively connects to existing VPC | Requires private path |
 {: caption="Comparing {{site.data.keyword.codeengineshort}} Fleets and jobs " caption-side="bottom"}
 
 
@@ -68,7 +65,6 @@ Automatic scaling is not available for GPUs. To deploy GPUs for a fleet, you mus
 
 When deploying a fleet, users can specify the number of tasks to complete, the number of instances to run at a time, the order in which tasks are completed. Fleets can work on many tasks in parallel by starting multiple instances concurrently. All instances are created with the same amount of vCPU and memory as per the fleet’s specification. Additionally users can create a task specification file to provide specific commands and arguments for each task or to create custom task indexes.
 
-
 ### Task storage in COS
 {: #fleet-cos}
 
@@ -85,9 +81,9 @@ Unlike batch jobs, fleets provide single-tenant isolation. Your fleet workers ar
 Each fleet instance runs to completion. However, in the event of an error, {{site.data.keyword.codeengineshort}} restarts the instance. You can limit the maximum number of retries to avoid restarting failed instances.
 
 ### Status
-{: #fleet-status}
+{: #fleet-status-summary}
 
-A fleet is in the `Running` status when at least one worker node is provisioned. When the fleet has is no longer running, it is in the `Succeeded` status if all tasks completed successfully, or `Failed` if one or more tasks failed. You can also cancel a fleet.
+A fleet is in the `Running` status when at least one worker node is provisioned. When the fleet is no longer running, it is in the `Succeeded` status if all tasks completed successfully, or `Failed` if one or more tasks failed. You can also cancel a fleet.
 
 For more information, see [Understanding the status of your fleet](/docs/codeengine?topic=codeengine-fleet-status).
 

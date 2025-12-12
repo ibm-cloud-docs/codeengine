@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-12"
 
 keywords: connectivity, subnet pool, fleet
 
@@ -28,7 +28,39 @@ Subnets in your VPC can connect to the public internet through an optional publi
 You can keep your VPC and workloads secure by controlling network traffic using security groups.
 See [About networking](/docs/vpc?topic=vpc-about-networking-for-vpc) and [Security in your VPC](/docs/vpc?topic=vpc-security-in-your-vpc) for further reading.
 
-You can manage subnet pools by using the CLI.
+You can manage subnet pools by using the console or the CLI.
+
+## Managing subnet pools by using the console
+{: #working-with-subnetpools-ui}
+{: ui}
+
+### Adding a subnet pool
+{: #add-subnetpool-ui}
+{: ui}
+
+1. Go to the Connectivity page:
+    1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
+    2. Click **Project settings** > **Connectivity** and navigate to the **Subnet pools for network placement** section to see a list of existing subnet pools.
+2. Click **Create** to create a subnet pool.
+3. Provide a name.
+4. Select **Specify by name**.
+    1. Select the VPC.
+    2. Select the VPC subnet you want to specify for network placement
+    3. Optional: Select one or more VPC security group to attach to the subnet. If you do not specify any security group, the default security group of the VPC is used.
+    4. Click **Add to subnet pool** to add the subnet CRN and optionally its security group CRN to the subnet pool. Repeat this step if the subnet pool should allow network placement to multiple subnets.
+5. Confirm your configuration by clicking **Create**.
+
+### Adding a subnet pool by CRN
+{: #add-subnetpool-crn-ui}
+{: ui}
+
+1. Go to the Connectivity page:
+    1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
+    2. Click **Project settings** > **Connectivity** and navigate to the **Subnet pools for network placement** section to see a list of existing subnet pools.
+2. Click **Create subnet pool** to create a subnet pool.
+3. Provide a name.
+4. Select **Specify by CRN** and provide a VPC subnet CRN. Optionally, provide a VPC security group CRN. Click **Add security group** if you want to attach more than one security group to the subnet. If you do not specify any security group, the default security group of the VPC is used. Click **Add to subnet pool** to add the subnet CRN and optionally its security group CRN to the subnet pool. Repeat this step if the subnet pool should allow network placement to multiple subnets.
+5. Confirm your configuration by clicking **Create**.
 
 
 

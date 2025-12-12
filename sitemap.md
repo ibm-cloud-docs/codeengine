@@ -149,7 +149,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Retries](/docs/codeengine?topic=codeengine-cefleets#fleet-retries)
 
-    * [Status](/docs/codeengine?topic=codeengine-cefleets#fleet-status)
+    * [Status](/docs/codeengine?topic=codeengine-cefleets#fleet-status-summary)
 
 * [How can I get started with fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-getstart)
 
@@ -163,6 +163,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [December 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-december25)
 
     * [12 December 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-december1225)
+
+        * Added support for the subnet pool connectivity to manage VPC network placement for {{site.data.keyword.codeengineshort}} fleets.
 
         * CLI version 1.58.1 released
 
@@ -3101,9 +3103,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [1. Gather the required subnet information for network placement](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-gather)
 
-* [2. (Optional) Gather security group information for each subnet](/docs/codeengine?topic=codeengine-fleet-prep#2-optional-gather-security-group-information-for-each-subnet)
+* [2. (Optional) Gather security group information for each subnet](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-gather-sg)
 
-* [3.  Add security groups to VPE gateways](/docs/codeengine?topic=codeengine-fleet-prep#3--add-security-groups-to-vpe-gateways)
+* [3. Add security groups to VPE gateways](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-gather-vpegw)
 
 * [4. (Optional) Add a public gateway to your subnets](/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-pubgateway)
 
@@ -4170,6 +4172,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting an allowed outbound destination for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#delete-allowed-destination-cli)
 
 [Working with subnet pool connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-subnetpool#connectivity-subnetpool)
+
+* [Managing subnet pools by using the console](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=ui#working-with-subnetpools-ui)
+
+    * [Adding a subnet pool](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=ui#add-subnetpool-ui)
+
+    * [Adding a subnet pool by CRN](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=ui#add-subnetpool-crn-ui)
 
 * [Managing subnet pools by using the CLI](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#working-with-subnetpools-cli)
 

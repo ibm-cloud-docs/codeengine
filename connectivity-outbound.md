@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-12"
 
 keywords: connectivity, outbound connections, outbound connectivity, private path
 
@@ -83,7 +83,9 @@ Once the connection to VPC is created, the Private Path service owner will recei
     2. Click **Project settings** > **Connectivity** > **Private Path connections** tab to see a list of existing private path connections.
 2. Click **Add** to create a private path connection.
 3. Provide a name.
-4. Provide the Private Path service instance CRN to connect to.
+4. You specify the Private Path service instance to connect to by name or by CRN.
+   1. By **Name**, select the Private Path service instance from the drop-down list.
+   2. By **CRN**, provide the Private Path service instance CRN.
 5. Confirm your configuration.
 
 ### Updating an allowed destination IP address range for outbound connectivity
