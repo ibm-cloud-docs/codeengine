@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-12"
+lastupdated: "2025-12-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -150,6 +150,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Retries](/docs/codeengine?topic=codeengine-cefleets#fleet-retries)
 
     * [Status](/docs/codeengine?topic=codeengine-cefleets#fleet-status-summary)
+
+    * [Worker profile](/docs/codeengine?topic=codeengine-cefleets#fleet-profile)
 
 * [How can I get started with fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-getstart)
 
