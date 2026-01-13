@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-12"
+  years: 2026
+lastupdated: "2026-01-09"
 
 keywords: connectivity, subnet pool, fleet
 
@@ -62,7 +62,20 @@ You can manage subnet pools by using the console or the CLI.
 4. Select **Specify by CRN** and provide a VPC subnet CRN. Optionally, provide a VPC security group CRN. Click **Add security group** if you want to attach more than one security group to the subnet. If you do not specify any security group, the default security group of the VPC is used. Click **Add to subnet pool** to add the subnet CRN and optionally its security group CRN to the subnet pool. Repeat this step if the subnet pool should allow network placement to multiple subnets.
 5. Confirm your configuration by clicking **Create**.
 
+### Deleting a subnet pool
+{: #delete-subnetpool-ui}
+{: ui}
 
+You can delete previously defined subnet pools if you no longer use them.
+
+To run a fleet, you need at least one subnet pool configured within a project.
+{: remember}
+
+1. Go to the Connectivity page:
+    1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
+    2. Click **Project settings** > **Connectivity** and navigate to the **Subnet pools** section to see a list of existing subnet pools.
+2. Go to the row with the subnet pool that you want to remove and click the three dots row actions icon. Click **Delete**.
+3. Confirm the deletion when prompted.
 
 ## Managing subnet pools by using the CLI
 {: #working-with-subnetpools-cli}

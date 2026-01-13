@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-10-27"
+  years: 2025, 2026
+lastupdated: "2026-01-09"
 
 keywords: fleets, fleet logging, fleet monitoring, fleet observability, observability, logging, monitoring, Cloud Logs, Cloud Monitoring
 
@@ -86,6 +86,9 @@ Add the required logging values to the fleets default secret.
 1. In the console, go to the [Code Engine projects page](https://cloud.ibm.com/containers/serverless/projects){: external} and select the project that your fleets run in.
 2. Click **Secrets and configmaps**.
 3. Click on the `codeengine-fleet-defaults` secret.
+   1. If it was not created before: click **Create**.
+   2. Select **Generic secret**, then click **Next**.
+   3. Name the secret `codeengine-fleet-defaults`. You must use this exact name and formatting.
 4. Add the key-value pairs listed in the table below. Note that the `logging_sender_api_key` and `logging_ingress_endpoint` were saved in earlier steps.
 
 | Key | Value |
@@ -156,6 +159,9 @@ For each zone in the VPE, add a reserved IP address to one subnet.
 1. In the console, go to the [Code Engine projects page](https://cloud.ibm.com/containers/serverless/projects){: external} and select the project that your fleets run in.
 2. Click **Secrets and configmaps**.
 3. Click on the `codeengine-fleet-defaults` secret.
+   1. If it was not created before: click **Create**.
+   2. Select **Generic secret**, then click **Next**.
+   3. Name the secret `codeengine-fleet-defaults`. You must use this exact name and formatting.
 4. Add the key-value pairs listed in the table below. Note that the `monitoring_ingestion_key` was saved in an earlier step.
 
 | Key | Value |

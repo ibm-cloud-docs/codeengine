@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2025
+  years: 2026
 
-lastupdated: "2025-12-17"
+lastupdated: "2026-01-12"
 
 
 keywords: change log, version history, vsi image, serverless fleets
@@ -26,6 +26,21 @@ View information of version changes for major, minor, and patch updates that are
 ## Version v1.0
 {: #fleets-worker-changelog-contents-v1_0}
 
+
+
+### Worker image `v1.0.132`, released 12 January 2026
+{: #fleets-worker-boms-v1_0_132}
+
+The following table shows the components included in the {{site.data.keyword.codeengineshort}} fleet worker image v1.0.132.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|UBUNTU_24_04| Kernel: 6.8.0-1042<br/>podman: 4.9.3<br/>s3fs: 1.93|Resolves the following CVEs: <br/>[CVE-2025-13601](https://nvd.nist.gov/vuln/detail/CVE-2025-13601){: external}, [CVE-2025-14087](https://nvd.nist.gov/vuln/detail/CVE-2025-14087){: external}, [CVE-2025-3360](https://nvd.nist.gov/vuln/detail/CVE-2025-3360){: external}, [CVE-2025-6052](https://nvd.nist.gov/vuln/detail/CVE-2025-6052){: external}, [CVE-2025-64505](https://nvd.nist.gov/vuln/detail/CVE-2025-64505){: external}, [CVE-2025-64506](https://nvd.nist.gov/vuln/detail/CVE-2025-64506){: external}, [CVE-2025-64720](https://nvd.nist.gov/vuln/detail/CVE-2025-64720){: external}, [CVE-2025-65018](https://nvd.nist.gov/vuln/detail/CVE-2025-65018){: external}, [CVE-2025-66418](https://nvd.nist.gov/vuln/detail/CVE-2025-66418){: external}, [CVE-2025-66471](https://nvd.nist.gov/vuln/detail/CVE-2025-66471){: external}, [CVE-2025-68973](https://nvd.nist.gov/vuln/detail/CVE-2025-68973){: external}, [CVE-2025-69277](https://nvd.nist.gov/vuln/detail/CVE-2025-69277){: external}, [CVE-2025-6966](https://nvd.nist.gov/vuln/detail/CVE-2025-6966){: external}, [CVE-2025-7039](https://nvd.nist.gov/vuln/detail/CVE-2025-7039){: external}, [CVE-2025-7424](https://nvd.nist.gov/vuln/detail/CVE-2025-7424){: external}|
+| Nvidia CUDA | Driver: 580.105.08<br/> Toolkit: 12.6.3<br/> NVIDIA Fabric Manager: 580.105.08||
+
+{: caption="Worker image v1.0.132" caption-side="bottom"}
+{: #fleets-worker-boms-v1_0_132-component-table}
 
 
 ### Worker image `v1.0.94`, released 10 December 2025

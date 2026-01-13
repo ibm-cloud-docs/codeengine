@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-12-12"
+  years: 2020, 2026
+lastupdated: "2026-01-13"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ------ | ---------- | --------------------- |
+| 1.59.0 | 2026-01-12 | - Enhanced API integration. \n - Fixed various bugs. |
 | 1.58.1 | 2025-12-12 | - Fixed various bugs. |
 | 1.58.0 | 2025-12-04 | - Added support for the `connectivity subnetpool` command group. Use these CLI commands to manage VPC subnet pool references, including security groups. These references can be used to specify the network placement of your {{site.data.keyword.codeengineshort}} fleet workers. See [Working with subnet pool connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-subnetpool) and [{{site.data.keyword.codeengineshort}} CLI reference (`connectivity subnetpool` command)](/docs/codeengine?topic=codeengine-cli#cli-connectivity-subnetpool). \n - Fixed various bugs. |
 | 1.57.0 | 2025-11-21 | - Removed `experimental fleet` and `beta fleet` command groups. \n - Fixed various bugs. |

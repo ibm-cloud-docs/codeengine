@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-17"
+  years: 2026
+lastupdated: "2026-01-13"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -161,6 +161,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [January 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january26)
+
+    * [12 January 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january1226)
+
+        * CLI version 1.59.0 released
+
+        * Updated versions for buildpacks
 
 * [December 2025](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-december25)
 
@@ -3201,6 +3209,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
 
+    * [Worker image `v1.0.132`, released 12 January 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_132)
+
     * [Worker image `v1.0.94`, released 10 December 2025](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_94)
 
     * [Worker image `v1.0.88`, released 01 December 2025](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_88)
@@ -4180,6 +4190,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Adding a subnet pool](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=ui#add-subnetpool-ui)
 
     * [Adding a subnet pool by CRN](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=ui#add-subnetpool-crn-ui)
+
+    * [Deleting a subnet pool](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=ui#delete-subnetpool-ui)
 
 * [Managing subnet pools by using the CLI](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#working-with-subnetpools-cli)
 
