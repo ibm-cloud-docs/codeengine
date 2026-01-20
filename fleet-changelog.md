@@ -3,7 +3,7 @@
 copyright:
   years: 2026
 
-lastupdated: "2026-01-12"
+lastupdated: "2026-01-19"
 
 
 keywords: change log, version history, vsi image, serverless fleets
@@ -20,12 +20,30 @@ subcollection: codeengine
 {: #fleets-worker-changelog-v1_0}
 
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.codeengineshort}} fleet workers that run this version. When a new version of the worker image becomes available, fleet workers will automatically use the latest available version of this image. 
+{: shortdesc}
+
+For more information about Nvidia CUDA drivers including lifecycle and compatibility modes, see [NVIDIA Data Center Drivers](https://docs.nvidia.com/datacenter/tesla/drivers/introduction.html) and [NVIDIA Data Center Driver Release Notes](https://docs.nvidia.com/datacenter/tesla/index.html#r580-driver-release-notes).
 
 
 
 ## Version v1.0
 {: #fleets-worker-changelog-contents-v1_0}
 
+
+
+### Worker image `v1.0.140`, released 19 January 2026
+{: #fleets-worker-boms-v1_0_140}
+
+The following table shows the components included in the {{site.data.keyword.codeengineshort}} fleet worker image v1.0.140.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|UBUNTU_24_04| Kernel: 6.8.0-1042<br/>podman: 4.9.3<br/>s3fs: 1.93|Resolves the following CVEs: <br/>[CVE-2016-9843](https://nvd.nist.gov/vuln/detail/CVE-2016-9843){: external}, [CVE-2025-13151](https://nvd.nist.gov/vuln/detail/CVE-2025-13151){: external}, [CVE-2025-13836](https://nvd.nist.gov/vuln/detail/CVE-2025-13836){: external}, [CVE-2025-66293](https://nvd.nist.gov/vuln/detail/CVE-2025-66293){: external}, [CVE-2026-21441](https://nvd.nist.gov/vuln/detail/CVE-2026-21441){: external}, [CVE-2026-22695](https://nvd.nist.gov/vuln/detail/CVE-2026-22695){: external}, [CVE-2026-22801](https://nvd.nist.gov/vuln/detail/CVE-2026-22801){: external}|
+| Nvidia CUDA | Driver: 580.126.09<br/> Toolkit: 12.6.3<br/> NVIDIA Fabric Manager: 580.126.09||
+
+{: caption="Worker image v1.0.140" caption-side="bottom"}
+{: #fleets-worker-boms-v1_0_140-component-table}
 
 
 ### Worker image `v1.0.132`, released 12 January 2026
