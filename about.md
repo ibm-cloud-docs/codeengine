@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-02"
+  years: 2020, 2026
+lastupdated: "2026-01-23"
 
 keywords: benefits, terminology, developers, capabilities, code engine
 
@@ -44,7 +44,7 @@ Review the capabilities that {{site.data.keyword.codeengineshort}} provides to r
 ## {{site.data.keyword.codeengineshort}} terminology
 {: #terminology}
 
-Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the following key terms. Afterward, you can test your knowledge and [take a quiz!](https://ibm.biz/BdfFxR){: external}
+Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the following key terms.
 
 | Term | Description |
 | --------- | ------------------- |

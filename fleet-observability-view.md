@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-11-24"
+  years: 2022, 2026
+lastupdated: "2026-01-21"
 
 keywords: fleets observability, viewing logs for fleets, viewing, viewing logs, monitoring for fleets, monitoring data
 
@@ -18,9 +18,6 @@ subcollection: codeengine
 
 Logging and monitoring can help you troubleshoot issues in {{site.data.keyword.codeenginefull}} and can provide insight into your workload performance. Follow these steps to view logs and monitoring data for fleets.
 {: shortdesc}
-
-- [Viewing fleet logs](#log-view)
-- [Viewing monitoring data](#monitor-view)
 
 ## Viewing fleet logs
 {: #log-view}
@@ -46,28 +43,27 @@ You can save this logging view and filter settings for other workloads.
 ### Logging fields
 {: #log-fields}
 
-
-| Field name | Description | Set by? | Example value |
-|---------|-----------|------------------|------------------|
-| `applicationName` | Predefined ICL field that indicates which service instance emitted the log line. | `iclr-agent`, or `fleet-logging` | `ibm-platform-logs` |
-| `subsystemName` | Predefined ICL field that indicates the log line is a platform log line. | `iclr-agent`, or `fleet-logging` | `codeengine:<project-guid>` |
-| `app` | The cloud service that emitted the platform log line. For Code Engine, this will always be `codeengine`. | `iclr-agent`, or `fleet-logging` | `codeengine` |
-| `tag` | Field set by fluentbit and derived from the input ID set in the fluentbit config. | `iclr-agent`, or `fleet-logging` | `platform.<id>.codeengine` |
-| `originator` | Where the log line originated. This can indicate either Code Engine or the user. | `iclr-agent`, or `fleet-logging` | Possible values: `codeengine` or `user` |
-| `codeengine.region` | The region of the Code Engine project. | system component, `iclr-agent`, `fleet-logging` | `eu-de` |
-| `codeengine.project` | The name of the Code Engine project. | system component, `iclr-agent`, or `fleet-logging` | User defined string |
-| `codeengine.projectGuid` | The GUID of the Code Engine project. | system component,`iclr-agent`, or `fleet-logging`| `edf5a781-9673-4c73-b2e2-cd4e04f673b4` |
-| `codeengine.componentType` | The Code Engine component that relates to the log line. | System component, `iclr-agent`, or `fleet-logging` | Possible values: `app`, `job`, `job_run`, `fleet`, `function`, `build`, `build_run`, `container` |
-| `codeengine.component` | The user defined component name that relates to this log line. | System component, `iclr-agent`, or `fleet-logging` | User defined string |
-| `codeengine.subcomponentType` | The Code Engine subcomponent that relates to this log line. | System component, `iclr-agent`, or `fleet-logging`| Possible values: `app_revision`, `job_run`, `fleet_worker`, `fleet_instance`, `function`, `build_run`, `container` |
-| `codeengine.subcomponent` | The user defined component name that is related to this log line. | System component, `iclr-agent`, or `fleet-logging`  |  User defined string |
-| `codeengine.instanceId` | Optional. The pod name (for apps, jobs, and builds) or container instance ID (for functions and fleets). | `iclr-agent`, or `fleet-logging` | `my-app-0001-pod-abcde` |
-| `codeengine.*` | Optional. Meta information useful for the user to create dashboards or alerts.| System component | `durationSeconds` | 
-| `resourceGroupId` | Predefined ICL field. The resource group CRN for the Code Engine project. |  System component, `iclr-agent`, or `fleet-logging` | `crn:v1:bluemix:public:resource-controller::a/1010101ea01db1010101ebe1b0e10101d::resource-group:c1d01d010ec10101b0a10a1010101b010` |
-| `messageKey` | A unique, human-readable identifier that you can use to filter logs and troubleshoot problems.  | System component |  `codengine.job-run-completed` |
-| `logSourceCRN` | Predefined ICL field. The CRN of the Code Engine project. This field is only specified in multi-tenant log lines. | System component |  `<code engine project CRN>` |
-| `message.message` | The human-readable log message. | System component or `iclr-agent` | String defined by system component or user | 
-| `message.serviceName` |The name of the service that emitted that log line. | System component, `iclr-agent`, or `fleet-logging` | `codeengine` |
+| Field name | Description | Example value |
+| ---------- | ----------- | ------------- |
+| `applicationName` | Predefined ICL field that indicates which service instance emitted the log line. | `ibm-platform-logs` |
+| `subsystemName` | Predefined ICL field that indicates the log line is a platform log line. | `codeengine:<project-guid>` |
+| `app` | The cloud service that emitted the platform log line. For Code Engine, this will always be `codeengine`. | `codeengine` |
+| `tag` | Field set by fluentbit and derived from the input ID set in the fluentbit config. | `platform.<id>.codeengine` |
+| `originator` | Where the log line originated. This can indicate either Code Engine or the user. | Possible values: `codeengine` or `user` |
+| `codeengine.region` | The region of the Code Engine project. | `eu-de` |
+| `codeengine.project` | The name of the Code Engine project. | User defined string |
+| `codeengine.projectGuid` | The GUID of the Code Engine project. | `edf5a781-9673-4c73-b2e2-cd4e04f673b4` |
+| `codeengine.componentType` | The Code Engine component that relates to the log line. | Possible values: `app`, `job`, `job_run`, `fleet`, `function`, `build`, `build_run`, `container` |
+| `codeengine.component` | The user defined component name that relates to this log line. | User defined string |
+| `codeengine.subcomponentType` | The Code Engine subcomponent that relates to this log line. | Possible values: `app_revision`, `job_run`, `fleet_worker`, `fleet_instance`, `function`, `build_run`, `container` |
+| `codeengine.subcomponent` | The user defined component name that is related to this log line. | User defined string |
+| `codeengine.instanceId` | Optional. The pod name (for apps, jobs, and builds) or container instance ID (for functions and fleets). | `my-app-0001-pod-abcde` |
+| `codeengine.*` | Optional. Meta information useful for the user to create dashboards or alerts. | `durationSeconds` |
+| `resourceGroupId` | Predefined ICL field. The resource group CRN for the Code Engine project. | `crn:v1:bluemix:public:resource-controller::a/1010101ea01db1010101ebe1b0e10101d::resource-group:c1d01d010ec10101b0a10a1010101b010` |
+| `messageKey` | A unique, human-readable identifier that you can use to filter logs and troubleshoot problems. | `codengine.job-run-completed` |
+| `logSourceCRN` | Predefined ICL field. The CRN of the Code Engine project. This field is only specified in multi-tenant log lines. | `<code engine project CRN>` |
+| `message.message` | The human-readable log message. | String defined by system component or user |
+| `message.serviceName` | The name of the service that emitted that log line. | `codeengine` |
 {: caption="Fleets logging fields." caption-side="bottom"}
 
 ## Viewing monitoring data
@@ -76,12 +72,9 @@ You can save this logging view and filter settings for other workloads.
 Follow the steps to view your fleet monitoring data.
 
 1. Navigate to the [Monitoring instances page](https://cloud.ibm.com/observability/monitoring){: external} in the console.
-   
-3. Find the monitoring instance for the Code Engine project that your fleet runs in and click **Dashboard**.
-   
-5. In the monitoring dashboard, click **Dashboards** > **Host Infrastructure** > **Host Resource Usage** to view the monitoring data.
-   
-7. Optional. Customize the monitoring dashboard to tailor it to your fleets data.
+2. Find the monitoring instance for the Code Engine project that your fleet runs in and click **Dashboard**.
+3. In the monitoring dashboard, click **Dashboards** > **Host Infrastructure** > **Host Resource Usage** to view the monitoring data.
+4. Optional. Customize the monitoring dashboard to tailor it to your fleets data.
     1. Click **Copy to My Dashboards**.
     2. Add a name for the custom dashboard.
     3. Click the pencil icon to customize the settings,

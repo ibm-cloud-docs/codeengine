@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-24"
+  years: 2020, 2026
+lastupdated: "2026-01-23"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -33,7 +33,7 @@ First, learn about some [key terms](#term-summary) for {{site.data.keyword.codee
 ## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, functions and fleets?
 {: #term-summary}
 
-Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. Afterward, you can test your knowledge and [take a quiz!](https://ibm.biz/BdfFxR){: external}
+Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}.
 
 | Term | Description |
 | --------- | ------------------- |

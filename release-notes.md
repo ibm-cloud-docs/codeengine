@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-01-23"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,14 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## January 2026
 {: #codeengine-january26}
+
+### 22 January 2026
+{: #codeengine-january2226}
+{: release-note}
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+:   Note: The default Node.js version is changing from `22` to `24`. You can continue to build your projects with Node.js 22 by adding a file called `.buildenv` to your source directory with the following content: `BP_NODE_VERSION=22`.
 
 ### 12 January 2026
 {: #codeengine-january1226}
