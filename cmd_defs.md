@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-04"
+  years: 2026
+lastupdated: "2026-01-26"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -3194,7 +3194,7 @@ ibmcloud ce fleet create [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [
 {: #fleet-create-example}
 
 ```txt
-ibmcloud ce fleet create --image icr.io/codeengine/helloworld --tasks-state-store mytaskstore --tasks 1
+ibmcloud ce fleet create --image icr.io/codeengine/helloworld --subnetpool-name my-pool --tasks-state-store mytaskstore --tasks 1
 ```
 {: pre}
 
@@ -3328,7 +3328,16 @@ Resources and scaling:
   Max retries per task:     3  
 
 Network placement:        
-  Subnet CRN 0:  crn:v1:bluemix:public:is:eu-de-1:a/abcdefabcdefabcdefabcd1234567890::subnet:1a1a-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  
+  Subnet pools:    
+    Name:                my-pool-
+    Number of subnets:   1  
+                         
+    Subnet CRN:          crn:v1:bluemix:public:is:eu-de-1:a/abcdefabcdefabcdefabcd1234567890::subnet:1a1a-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f   
+    Security Group CRN:  crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::security-group:2b2b-3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g7g  
+
+Environment Variables:    
+  Type     Name   Value  
+  Literal  FOO    bar
 ```
 {: screen}  
   

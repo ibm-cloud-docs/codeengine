@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-23"
+lastupdated: "2026-01-26"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -163,6 +163,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [January 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january26)
+
+    * [26 January 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january2626)
+
+        * CLI version 1.60.0 released
 
     * [22 January 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january2226)
 
@@ -3213,6 +3217,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
 
+    * [Worker image `v1.0.147`, released 26 January 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_147)
+
     * [Worker image `v1.0.140`, released 19 January 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_140)
 
     * [Worker image `v1.0.132`, released 12 January 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_132)
@@ -4200,6 +4206,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting a subnet pool](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=ui#delete-subnetpool-ui)
 
 * [Managing subnet pools by using the CLI](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#working-with-subnetpools-cli)
+
+    * [Gather subnet information for network placement](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#working-with-subnetpools-gather-subnet-cli)
+
+    * [Gather security group information for each subnet (optional)](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#working-with-subnetpools-gather-security-group-cli)
 
     * [Adding a subnet pool](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#add-subnetpool-cli)
 

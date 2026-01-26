@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-12-12"
+  years: 2025, 2026
+lastupdated: "2026-01-26"
 
 keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
@@ -28,7 +28,7 @@ Want to configure logging and monitoring for fleets? After you complete the step
 ## 1. Gather the required subnet information for network placement
 {: #fleet-prep-gather}
 
-This step is required if you want to specify a subnet pool for network placement by providing the **CRN** of one or more VPC subnets. If you want to select the VPC subnet using the console, proceed with step [3. Add security groups to VPE gateways](#fleet-prep-gather-vpegw)
+This step is required if you want to specify a subnet pool for network placement by providing the **CRN** of one or more VPC subnets.
 {: note}
 
 Run the commands to get the CRN of up to three subnets that you want your fleet workers to attach to. These subnets must reside in the same region as the {{site.data.keyword.codeengineshort}} project you want to run your fleets in. In the output, find the  **CRN**, which has a format similar to the following: `crn:v1:bluemix:public:is:us-east-2:a/1af204bc1def56171eed1a8100b1cc121::subnet:1345-16e10cc-ba18-19ee-de1b0-1213aa1a41a0156`. These CRNs are referenced later in the subnet pool.
@@ -49,9 +49,6 @@ ibmcloud is subnet <subnet_id>
 
 ## 2. (Optional) Gather security group information for each subnet
 {: #fleet-prep-gather-sg}
-
-This step is required if you want to specify a subnet pool for network placement by providing the CRN of one or more VPC subnets and security groups. If you want to select the VPC subnet and security group using the console, proceed with step [3. Add security groups to VPE gateways](#fleet-prep-gather-vpegw)
-{: note}
 
 If you want to apply existing custom security groups to the subnets attached to your fleet workers, run the commands to get the CRN of all security groups for each subnet you found in the previous step. In the output for each security group, find the **CRN**, which has the following format: `crn:v1:bluemix:public:is:us-east:a/1af204bc1def56171eed1a8100b1cc121::security-group:6789-16e10cc-ba18-19ee-de1b0-1213aa1a41a0156`. These CRNs are referenced later in the subnet pool. If you do not specify a security group, the default security group of the VPC is used.
 
