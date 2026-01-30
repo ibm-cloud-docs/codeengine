@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-09-29"
+  years: 2025, 2026
+lastupdated: "2026-01-27"
 
 keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
@@ -32,7 +32,7 @@ These statuses indicate that the fleet is already running. Depending on their pr
 | -----------  | ----------- | ---------------------- |
 | Deploying |  The fleet is initiated. Instances are pending and now worker nodes are provisioned | `Pending` |
 | Running |  At least one instance is running and at least one worker node is provisioned. |`Pending` \n `Running` \n `Succeeded` \n `Failed` \n `Canceled`|
-| Cancelling | A user has initiated a soft-stop cancellation on the fleet and some instances are still running. Instances and tasks on the fleet that were already running continue to run until finished. Instances and tasks that were pending are cancelled and will not run. | `Running` \n `Succeeded` \n `Failed` \n `Canceled` |
+| Canceling | A user has initiated a soft-stop cancellation on the fleet and some instances are still running. Instances and tasks on the fleet that were already running continue to run until finished. Instances and tasks that were pending are cancelled and will not run. | `Running` \n `Succeeded` \n `Failed` \n `Canceled` |
 {: caption="Description of active fleet statuses" caption-side="bottom"}
 
 ### Final fleet statuses
@@ -69,7 +69,7 @@ fleet-123456ab-1     running      1            1                       1        
 ## Task status 
 {: #status-tasks}
 
-The taks status indicates the health of individual tasks running on the fleet. Each task runs on a single instance. 
+The task status indicates the health of individual tasks running on the fleet. Each task runs on a single instance. 
 
 | Task status | Description |
 | ----------- | ----------- |

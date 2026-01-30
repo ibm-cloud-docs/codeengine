@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2025-07-01"
+lastupdated: "2026-01-27"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -333,7 +333,7 @@ module.exports.main = main;
 #### Contents of `args` parameter if a caller provides request data by header data
 {: #fun-args-heder-data}
 
-A function receives request header data as key-value pairs in the `__ce_headers` parameter. The key-value pair is converted into a canonical format, regardless of which format that the key is set on the external data interface. For instance, both `mykey` or `MYKEY` are converted to `Mykey`:
+A function receives request header data as key-value pairs in the `__ce_headers` parameter. The key-value pair is converted into a canonical format, regardless of which format that the key is set on the external data interface. For example, both `mykey` or `MYKEY` are converted to `Mykey`:
 
 | `args` field         | Is this set?          | Description |
 |--------------------|-------------------|-------------|

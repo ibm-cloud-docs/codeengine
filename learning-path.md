@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-17"
+  years: 2026
+lastupdated: "2026-01-27"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -184,7 +184,7 @@ Functions use a *managed runtime*. Find out more at [Runtimes](/docs/codeengine?
 - Want to define environment variables for your function? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
 - Does your function take advantage of configmaps or secrets? Take a look at [Working with secrets](/docs/codeengine?topic=codeengine-secret) or [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
 
-### Areyou ready to deploy?
+### Are you ready to deploy?
 {: #lp-run-fun-ready-to-deploy}
 
 - [Creating Function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode).
@@ -199,7 +199,7 @@ Functions use a *managed runtime*. Find out more at [Runtimes](/docs/codeengine?
 ## Log and monitor your workloads
 {: #lp-log-mon}
 
-Logging can help you troubleshoot your applications, jobs and functions. See [Viewing logs](/docs/codeengine?topic=codeengine-logging).
+Logging can help you troubleshoot your applications, jobs, and functions. See [Viewing logs](/docs/codeengine?topic=codeengine-logging).
 
 You can also [view, manage, and audit](/docs/codeengine?topic=codeengine-at_events) user-initiated activities that occur in your {{site.data.keyword.codeengineshort}} project.
 

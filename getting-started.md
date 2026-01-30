@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-23"
+lastupdated: "2026-01-27"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -42,7 +42,7 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 | Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile or Cloud Native Buildpacks. |
 | Function | A function is a stateless code snippet that performs tasks in response to an HTTP request. |
 | Job | A job runs one or more instances of your executable code in parallel. Unlike applications, which include an HTTP Server to handle incoming requests, jobs are designed to run one time and exit. |
-| Fleet | A fleet, also caled a *serverless fleet* runs one or more instances of user code to complete a series of specified tasks. Fleets are designed to tackle large, compute-heavy work loads. Unlike jobs, fleets are single tenant, implement dynamic task queuing, and provide full control over the machine profile configuration. For more information, see [What is the difference between jobs and fleets?]()  |
+| Fleet | A fleet, also called a *serverless fleet* runs one or more instances of user code to complete a series of specified tasks. Fleets are designed to tackle large, compute-heavy work loads. Unlike jobs, fleets are single tenant, implement dynamic task queuing, and provide full control over the machine profile configuration. For more information, see [What is the difference between jobs and fleets?]()  |
 {: caption="{{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
 
 For more information about terms, see [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology).

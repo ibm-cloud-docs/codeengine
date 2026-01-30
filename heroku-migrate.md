@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-08-05"
+  years: 2022, 2026
+lastupdated: "2026-01-27"
 
 keywords: migrate, migration, heroku, terms, code engine
 
@@ -210,7 +210,7 @@ Hi, my name is JJ Asghar and I'm a developer advocate for IBM Cloud. Recently, y
 
 So first thing first, if you haven't seen it this is the actual line inside the official blog from Heroku, starting on November 28, 2022, we plan to stop free - offering the free product plans and plan on shutting down the free dynos and data services. We'll be sending out a series of email communications to affected users. This is challenging for a lot of beginner beginner web applications. I know for a fact personally I used Heroku when I first started back in the day so this is a pretty large hit for a lot of people and I want to show you how easy it is to convert from Heroku to Code Engine.
 
-So first thing first, let's actually see a nice little application I've created. If I go ahead and bring up my application here, we have a nice little flask app. If you don't know what python is or flask is, it's a it's a format for python to be able to run an application on a standard port. So let's say we have this application; it says “Hello World!”. I've already deployed it and we can check out right here We have our amazing production app at heroku.com. It says “hello world” and we want to go ahead and change it. We wanted to update it so I'm going to go ahead and quickly update it to “Hello Moving from Heroku to Code Engine”.
+So first thing first, let's actually see a nice little application I've created. If I go ahead and start my application here, we have a nice little flask app. If you don't know what python is or flask is, it's a it's a format for python to be able to run an application on a standard port. So let's say we have this application; it says “Hello World!”. I've already deployed it and we can check out right here We have our amazing production app at heroku.com. It says “hello world” and we want to go ahead and change it. We wanted to update it so I'm going to go ahead and quickly update it to “Hello Moving from Heroku to Code Engine”.
 
 Let’s go ahead and come out of it. `git add .` `git commit -m “update hello line”`. Then I'm going to go ahead and push and just like you would normally do to push code to Heroku. I want to show you that this is the exact same process inside of Code Engine. What we'll do is, we'll create a new … we'll log in to IBM Cloud first and then from there we'll create a new project and then we'll go ahead and deploy it to see that it works.
 

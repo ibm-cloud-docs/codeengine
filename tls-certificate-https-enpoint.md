@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-18"
+  years: 2026
+lastupdated: "2026-01-27"
 
 keywords: tls certificate, code engine http endpoint
 
@@ -44,6 +44,6 @@ If you want to build your own truststore, trust ISRG Root X1, which you can down
 ### Need more control?
 {: #ce-certificates-lets-encrypt-more-control}
 
-Let's Encrypt is a public certificate authority that anybody can use to sign certificates of its own domains. Therefore, trusting ISRG Root X1 means to trust all of these domains.
+Let's Encrypt is a public certificate authority that anybody can use to sign certificates of its own domains. Therefore, trusting ISRG Root X1 means to trust all these domains.
 
 If you need to trust only your own application, then use custom domain mappings, which give you full control over when you issue and renew the certificate of your own domain. You can set up your client application to trust only the leaf certificate for your domain. You need a process for certificate renewals so that you can switch to a new certificate in the domain mapping’s TLS secret and in your client without communication issues. Typically, you first issue the new certificate. Next, you add it to the client’s truststore. After you update the TLS secret in your {{site.data.keyword.codeengineshort}} project to the new certificate and key, you can remove the old certificate from the client’s truststore.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-04-29"
+  years: 2020, 2026
+lastupdated: "2026-01-27"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -136,7 +136,7 @@ A deployment with a service endpoint on the private network gets an endpoint tha
         ```
         {: screen}
 
-3. Call the application from within the {{site.data.keyword.cloud_notm}} private network (for instance, by calling the application from the [{{site.data.keyword.cloud_notm}} Shell](/docs/cloud-shell?topic=cloud-shell-getting-started)).
+3. Call the application from within the {{site.data.keyword.cloud_notm}} private network (for example, by calling the application from the [{{site.data.keyword.cloud_notm}} Shell](/docs/cloud-shell?topic=cloud-shell-getting-started)).
 
     The `myapp` application is a simple Hello World application. When you execute the `myapp` application using cURL, `Hello World` is returned. For example, from the {{site.data.keyword.cloud_notm}} Shell, run:
 

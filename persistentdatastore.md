@@ -1,8 +1,8 @@
 ---
 
 copyright:
-years: 2025, 2025
-lastupdated: "2025-10-23"
+years: 2025, 2026
+lastupdated: "2026-01-27"
 
 keywords: code engine, persistent data store, pds, object storage, mount bucket, s3fs, mount cos, apps, jobs
 
@@ -73,10 +73,10 @@ After you create the persistent data store, you can mount it as **Volume mount**
 2. Select the **Configuration** tab.
 3. From the **Volume mounts** tab, click **Add**.
 4. Select **Volume type** as **Persistent data stores**.
-5. Select the desired **Persistent data store**.
+5. Select a **Persistent data store**.
 6. Specify a relative **Bucket subpath (optional)** if your application should access objects in the bucket with that subpath prefix only, for example `path/in/bucket`. This is useful when you want to isolate access to a specific folder within the bucket. The subpath must be a valid prefix in your COS bucket. Only the contents under that path will be accessible from the mounted directory.
 7. Specify **Mount path**. This is the directory inside the application container where the data of the volume mount can be accessed, for example at `/mnt/bucket`.
-8. Select the desired **Access permissions**, that is **Read-write** or **Read-only**.
+8. Select a value for **Access permissions**, that is **Read-write** or **Read-only**.
 9. Click **Add** to create the volume mount.
 10. Click **Deploy** to save your changes and deploy the app revision.
 
@@ -93,10 +93,10 @@ When you update your application, your app creates a new revision and routes tra
 2. Select the **Configuration** tab.
 3. From the **Volume mounts** tab, click **Add**.
 4. Select **Volume type** as **Persistent data stores**.
-5. Select the desired **Persistent data store**.
+5. Select a **Persistent data store**.
 6. Specify a relative **Bucket subpath (optional)** if your job runs should access objects in the bucket with that subpath prefix only, for example `path/in/bucket`. This is useful when you want to isolate access to a specific folder within the bucket. The subpath must be a valid prefix in your COS bucket. Only the contents under that path will be accessible from the mounted directory.
 7. Specify **Mount path**. This is the directory inside the job run container where the data of the volume mount can be accessed, for example at `/mnt/bucket`.
-8. Select the desired **Access permissions**, that is **Read-write** or **Read-only**.
+8. Select a value for **Access permissions**, that is **Read-write** or **Read-only**.
 9. Click **Add** to create the volume mount.
 10. Click **Deploy** to save your changes and deploy the job.
 11. Click **Submit job**.
@@ -213,11 +213,11 @@ The mount is implemented using [`s3fs`](https://github.com/s3fs-fuse/s3fs-fuse){
   - Metadata operations, like listing directories, can have poor performance.
 - **Consistency:**
   - {{site.data.keyword.cos_full_notm}} provides strong read-after-write consistency for new objects, but eventual consistency for object overwrites and deletes. This means that after an update or deletion, read operations might temporarily return stale data.
-  - Changes made to the bucket from outside the mount (e.g., directly via the COS API or another client) are not immediately detected and might not be visible for some time.
+  - Changes made to the bucket from outside the mount (for example, directly via the COS API or another client) are not immediately detected and might not be visible for some time.
 - **File System Semantics:**
   - Standard POSIX file system features are not fully supported. Specifically, there are **no atomic renames** of files or directories and **no hard links**.
 - **Concurrency:**
-  - There is no coordination between multiple clients (e.g., multiple app instances) mounting the same bucket. Concurrent writes to the same file from different instances can lead to data loss or corruption.
+  - There is no coordination between multiple clients (for example, multiple app instances) mounting the same bucket. Concurrent writes to the same file from different instances can lead to data loss or corruption.
 - **Event Subscriptions:**
   - If you have configured an event subscription for your {{site.data.keyword.cos_short}} bucket, be aware that file create operations performed through the mount may generate multiple update events. This can result in your Code Engine app or job being triggered more than once for a single file operation, which may affect downstream processing or event-driven workflows.
 Due to these limitations, this feature is not suitable for all workloads. It is best suited for workloads that primarily read large files, such as in deep learning or data analytics, where good throughput can be achieved. It is not recommended for workloads that require low latency, frequent small writes, or transactional file operations.

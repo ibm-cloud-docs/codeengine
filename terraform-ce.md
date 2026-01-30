@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-01-10"
+  years: 2023, 2026
+lastupdated: "2026-01-27"
 
 
 subcollection: codeengine
@@ -14,7 +14,7 @@ subcollection: codeengine
 # Setting up Terraform for {{site.data.keyword.codeengineshort}}
 {: #terraform-setup-ce}
 
-Terraform on {{site.data.keyword.cloud}} enables predictable and consistent creation of {{site.data.keyword.cloud_notm}} services so that you can rapidly build complex, multi-tier cloud environments following Infrastructure as Code (IaC) principles. Similar to using the {{site.data.keyword.cloud_notm}} CLI or API and SDKs, you can automate the creation, update, and deletion of your {{site.data.keyword.codeengineshort}} workloads by using HashiCorp Configuration Language (HCL).
+Terraform on {{site.data.keyword.cloud}} enables predictable and consistent creation of {{site.data.keyword.cloud_notm}} services so that you can rapidly build complex, multitiered cloud environments following Infrastructure as Code (IaC) principles. Similar to using the {{site.data.keyword.cloud_notm}} CLI or API and SDKs, you can automate the creation, update, and deletion of your {{site.data.keyword.codeengineshort}} workloads by using HashiCorp Configuration Language (HCL).
 {: shortdesc}
 
 

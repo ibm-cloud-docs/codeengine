@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-01-21"
+lastupdated: "2026-01-27"
 
 keywords: fleets observability, viewing logs for fleets, viewing, viewing logs, monitoring for fleets, monitoring data
 
@@ -26,11 +26,11 @@ Follow the steps to view logs for fleets.
 
 1. Navigate to the [IBM Cloud logging dashboard](https://cloud.ibm.com/observability/logging){: external}.
 
-2. Find the **Instances** page and click on the logging instance for the Code Engine project that your fleets run in. Then click **Dashboard** to view the instance logs. 
+2. Find the **Instances** page and click the logging instance for the Code Engine project that your fleets run in. Then click **Dashboard** to view the instance logs. 
 
 3. In the left hand navigation menu, click **Explore logs** > **Logs**.
 
-4. To adjust the logging timeframe, click **Last 15 minutes**, then select the timeframe you want to view. 
+4. To adjust the logging time frame, click **Last 15 minutes**, then select the time frame you want to view. 
 
 You can change the display view for logs by clicking **Columns** and choosing the column headers you want to view.
 {: tip}

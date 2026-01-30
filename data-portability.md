@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2025-06-11"
+lastupdated: "2026-01-27"
 
 keywords: code engine, data portability
 
@@ -67,7 +67,7 @@ Configuration data for the following {{site.data.keyword.codeengineshort}} entit
 ### Tools required for exporting data
 {: #ools}
 
-For exporting {{site.data.keyword.codeengineshort}} data, you need to download and install the following commandline tools:
+For exporting {{site.data.keyword.codeengineshort}} data, you need to download and install the following command-line tools:
 
 - The {{site.data.keyword.cloud_notm}} CLI client
     - Visit the {{site.data.keyword.cloud_notm}} CLI [Getting started page](/docs/cli?topic=cli-getting-started) to install the CLI client for your operating system.
@@ -189,7 +189,7 @@ kubectl get build <build-name> -o json >project-name-build-name_build-configurat
 ### Exporting `build run` configuration
 {: #exporting-buid-run}
 
-To export the configuration of all buildruns in your project, run the following `kubectl` command:
+To export the configuration of all build runs in your project, run the following `kubectl` command:
 
 ```text
 kubectl get buildrun -o json >project-name_buildrun-configurations.json

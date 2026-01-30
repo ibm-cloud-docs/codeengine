@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-12"
+  years: 2026
+lastupdated: "2026-01-27"
 
 keywords: connectivity, outbound connections, outbound connectivity, private path
 
@@ -20,7 +20,7 @@ The {{site.data.keyword.codeenginefull}} outbound connections feature supports d
 * Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} console or CLI. Private Path allows connections between an IBM Cloud service like {{site.data.keyword.codeengineshort}} and your VPC without compromising security or putting your VPC at risk. See [Enabling an IBM Cloud service to connect to a provider's VPC](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-case-4).
 {: shortdesc}
 
-CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, all of which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
+CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
 {: note}
 
 Your use case can determine your outbound connection specifications. Typical use cases are as follows:
@@ -71,11 +71,11 @@ You can create allowed destination IP address ranges to limit where your workloa
 
 You can establish a Private Path connection between your {{site.data.keyword.codeengineshort}} project and your VPC.
 
-This diagram illustrates how to establish a Private Path service with connections to the VPE gateway of a {{site.data.keyword.codeengineshort}} application and your VPC. First, the {{site.data.keyword.codeengineshort}} application connects to the VPE gateway within the {{site.data.keyword.codeengineshort}}'s VPC. Then, the VPE gateway connects to the Private Path NLB in the provider's VPC. In turn, the Private Path NLB connects to the provider's application. The provider's application then responds to the request. This Private Path service activity is completely contained in a single region (e.g. `us-south`) in an {{site.data.keyword.cloud_notm}} private network.
+This diagram illustrates how to establish a Private Path service with connections to the VPE gateway of a {{site.data.keyword.codeengineshort}} application and your VPC. First, the {{site.data.keyword.codeengineshort}} application connects to the VPE gateway within the {{site.data.keyword.codeengineshort}}'s VPC. Then, the VPE gateway connects to the Private Path NLB in the provider's VPC. In turn, the Private Path NLB connects to the provider's application. The provider's application then responds to the request. This Private Path service activity is completely contained in a single region (for example, `us-south`) in an {{site.data.keyword.cloud_notm}} private network.
 
 ![Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network.](images/private_path_detailed_4.svg "Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network."){: caption="Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network." caption-side="bottom"}
 
-Once the connection to VPC is created, the Private Path service owner will receive a connection request. The owner can review, permit or deny this connection request. Use the consumer `Code Engine account ID` and `VPE gateway creation timestamp` displayed in the private path connection details view to identify the respective connection request within the Private Path service.
+Once the connection to VPC is created, the Private Path service owner will receive a connection request. The owner can review, permit or deny this connection request. Use the consumer `Code Engine account ID` and `VPE gateway creation timestamp` displayed in the private path connection details view to identify the connection request within the Private Path service.
 {: note}
 
 1. Go to the Connectivity page:
@@ -169,11 +169,11 @@ You can create allowed destination IP address ranges to limit where your workloa
 For {{site.data.keyword.codeengineshort}} connectivity outbound CLI commands, you can specify
 the `--name`, `--format`, and `--pps-crn` values to establish a Private Path connections between your {{site.data.keyword.codeengineshort}} project and your VPC.
 
-This diagram illustrates how to establish a Private Path service with connections to the VPE gateway of a {{site.data.keyword.codeengineshort}} application and your VPC. First, the {{site.data.keyword.codeengineshort}} application connects to the VPE gateway within the {{site.data.keyword.codeengineshort}}'s VPC. Then, the VPE gateway connects to the Private Path NLB in the provider's VPC. In turn, the Private Path NLB connects to the provider's application. The provider's application then responds to the request. This Private Path service activity is completely contained in a single region (e.g. `us-south`) in an {{site.data.keyword.cloud_notm}} private network.
+This diagram illustrates how to establish a Private Path service with connections to the VPE gateway of a {{site.data.keyword.codeengineshort}} application and your VPC. First, the {{site.data.keyword.codeengineshort}} application connects to the VPE gateway within the {{site.data.keyword.codeengineshort}}'s VPC. Then, the VPE gateway connects to the Private Path NLB in the provider's VPC. In turn, the Private Path NLB connects to the provider's application. The provider's application then responds to the request. This Private Path service activity is completely contained in a single region (for example, `us-south`) in an {{site.data.keyword.cloud_notm}} private network.
 
 ![Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network.](images/private_path_detailed_4.svg "Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network."){: caption="Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network." caption-side="bottom"}
 
-Once the connection to VPC is created, the Private Path service owner will receive a connection request. The owner can review, permit or deny this connection request. Use the consumer `Code Engine account ID` and `VPE gateway creation timestamp` details displayed in `ibmcloud ce connectivity outbound get --name OUTBOUND_DESTINATION_NAME` command to identify the respective connection request within the Private Path service.
+Once the connection to VPC is created, the Private Path service owner will receive a connection request. The owner can review, permit or deny this connection request. Use the consumer `Code Engine account ID` and `VPE gateway creation timestamp` details displayed in `ibmcloud ce connectivity outbound get --name OUTBOUND_DESTINATION_NAME` command to identify the connection request within the Private Path service.
 {: note}
 
 1. Select your {{site.data.keyword.codeengineshort}} project. For example:

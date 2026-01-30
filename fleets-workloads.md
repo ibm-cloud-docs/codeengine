@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-12-19"
+  years: 2025, 2026
+lastupdated: "2026-01-27"
 
 keywords: fleets in code engine, running fleets with code engine, creating fleets with code engine, images for fleets in code engine, fleets, serverless fleets, fleets workloads, fleet run, environment variables, fleet workloads
 
@@ -21,7 +21,7 @@ subcollection: codeengine
 ## What are fleets?
 {: #fleet-workloads}
 
-A fleet, also called a **serverless fleet**, is a Code Engine compute component that runs one or more instances of user code in parallel to complete a large queue of compute-intensive tasks. Fleets can connect to Virtual Private Clouds to securely interoperate with user data and services. Unlike batch jobs, fleets provide dynamic task queuing and single-tenant isolation, and are compatible with both vCPU and GPUs.
+A fleet, also called a **serverless fleet**, is a Code Engine compute component that runs one or more instances of user code in parallel to complete a large queue of compute-intensive tasks. Fleets can connect to Virtual Private Clouds to securely exchange user data when connecting to other services. Unlike batch jobs, fleets provide dynamic task queuing and single-tenant isolation, and are compatible with both vCPU and GPUs.
 
 ## How do fleets work?
 {: #fleet-how}
@@ -62,7 +62,7 @@ Automatic scaling is not available for GPUs. To deploy GPUs for a fleet, you mus
 ### Task and instance specification
 {: #fleet-taskspec}
 
-When deploying a fleet, users can specify the number of tasks to complete, the number of instances to run at a time, the order in which tasks are completed. Fleets can work on many tasks in parallel by starting multiple instances concurrently. All instances are created with the same amount of vCPU and memory as per the fleet’s specification. Additionally users can create a task specification file to provide specific commands and arguments for each task or to create custom task indexes.
+When deploying a fleet, users can specify the number of tasks to complete, the number of instances to run at a time, the order in which tasks are completed. Fleets can work on many tasks in parallel by starting multiple instances concurrently. All instances are created with the same amount of vCPU and memory as in the fleet’s specification. Additionally users can create a task specification file to provide specific commands and arguments for each task or to create custom task indexes.
 
 ### Task storage in COS
 {: #fleet-cos}
@@ -77,7 +77,7 @@ Unlike batch jobs, fleets provide single-tenant isolation. Your fleet workers ar
 ### Retries
 {: #fleet-retries}
 
-Each fleet instance runs to completion. However, in the event of an error, {{site.data.keyword.codeengineshort}} restarts the instance. You can limit the maximum number of retries to avoid restarting failed instances.
+Each fleet instance runs to completion. However, in case of an error, {{site.data.keyword.codeengineshort}} restarts the instance. You can limit the maximum number of retries to avoid restarting failed instances.
 
 ### Status
 {: #fleet-status-summary}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-05-24"
+  years: 2020, 2026
+lastupdated: "2026-01-27"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project, integrating service with function in code engine
 
@@ -101,7 +101,7 @@ For example, if your {{site.data.keyword.codeengineshort}} project is in the `De
 When the resources that you want to bind to are in a different resource group, configure your {{site.data.keyword.codeengineshort}} project with the CLI so that it can access resources in the different resource group. Use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command and specify the `--binding-resource-group` option to configure a {{site.data.keyword.codeengineshort}} project for service binding access for all service instances in a resource group. This command tells your {{site.data.keyword.codeengineshort}} project which resource group that it can bind to. You can update your project to bind services to a different resource group only with the CLI.
 
 
-The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the desired project.  Use the [**`ibmcloud ce project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command to display details of the project that is currently targeted. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
+The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the project that you want.  Use the [**`ibmcloud ce project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command to display details of the project that is currently targeted. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
 {: note}
 
 
@@ -193,7 +193,7 @@ Now that you have a custom service ID for service bindings, you must configure y
 
 To configure a {{site.data.keyword.codeengineshort}} project for service binding to use a custom service ID that you manage, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) CLI command and specify the `--binding-service-id` option. You can update your project to use a custom service ID only with the CLI.
 
-The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the desired project.  Use the [**`ibmcloud ce project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command to display details of the project that is currently targeted. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
+The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the project that you want.  Use the [**`ibmcloud ce project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command to display details of the project that is currently targeted. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
 {: note}
 
 

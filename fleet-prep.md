@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-01-26"
+lastupdated: "2026-01-27"
 
 keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
@@ -73,10 +73,10 @@ If the subnets specified for network placement also have attached VPE gateways f
 
 1. For each subnet found in previous steps, check if the subnet has VPE gateways attached.
    1. Navigate to your [list of subnets](https://cloud.ibm.com/infrastructure/network/subnets){: external} and find the subnets you want to use for network placement.
-   2. For each subnet used in network placement, click on the subnet name to open the details page. 
+   2. For each subnet used in network placement, click the subnet name to open the details page. 
    3. Click **Attached resources** and find the **Attached virtual endpoint gateways** section.
 2. For each VPE gateway that lists **Cloud Object Storage** or **Container Registry** under **Service details**, add the security groups.
-   1. Click on the VPE gateway name to open the gateway details page.
+   1. Click the VPE gateway name to open the gateway details page.
    2. Click **Attached resources** and find the **Security groups** section.
    3. Click **Attach** and follow the prompts to attach the security groups used in network placement for fleets. 
 
@@ -100,7 +100,7 @@ Configure at least one subnet pool. You can prepare this following the steps in 
 
 A persistent data store is required to store the state of the tasks of a fleet. Follow the steps in [Working with persistent data stores](/docs/codeengine?topic=codeengine-persistent-data-store).
 
-Make sure to follow all of the pre-requisite steps for creating a {{site.data.keyword.cos_full_notm}} bucket and service credentials, as well as the step to create an HMAC secret.
+Make sure to follow all the prerequisite steps for creating an {{site.data.keyword.cos_full_notm}} bucket and service credentials, as well as the step to create an HMAC secret.
 {: important}
 
 To load input data from or write output data to COS buckets, it is recommended to create separate persistent data stores and mount these into the task instance containers at fleet creation time. Be mindful of the [Limitations](/docs/codeengine?topic=codeengine-persistent-data-store#pds-limitations) when writing files to persistent data stores:

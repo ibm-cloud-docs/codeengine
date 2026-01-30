@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-07-18"
+  years: 2020, 2026
+lastupdated: "2026-01-27"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, application workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -87,7 +87,7 @@ The following table lists automatically injected environment variables into each
 | `CE_SUBDOMAIN` | The subdomain associated with the project in which your job is running. If you are familiar with Kubernetes, `CE_SUBDOMAIN` maps to the Kubernetes namespace that is associated with your project.                       | `CE_SUBDOMAIN=01234567-abcd` |
 | `HOME`         | Your home directory that is running the job.                              | `HOME=/root` |
 | `HOSTNAME`     | The name of instance that your application is deployed to.                        | `HOSTNAME=myjob-jobrun-6bgmg-0-0` |
-| `JOB_ARRAY_SIZE` | The number of job instances to run in parallel. The value is specified directly as the job run array size, or computed by counting the specified indices.  | `JOB_ARRAY_SIZE=10` |
+| `JOB_ARRAY_SIZE` | The number of job instances to run in parallel. The value is specified directly as the job run array size, or computed by counting the specified indexes.  | `JOB_ARRAY_SIZE=10` |
 | `JOB_INDEX`    | The index of a specific job run instance.                                 | `JOB_INDEX=1` |
 | `JOB_INDEX_RETRY_COUNT` |  The current retry count of the job instance.                    | `JOB_INDEX_RETRY_COUNT=0` |
 | `JOB_MODE`    | The mode for runs of a job. In `task` mode, jobs run for a maximum time and failed instances are retried per the job retries limit. In `daemon` mode, jobs run without a maximum time and failed instances are restarted indefinitely.  | `JOB_MODE=task` |
@@ -96,6 +96,6 @@ The following table lists automatically injected environment variables into each
 | `PWD`          | The current working directory.                                            | `PWD=/` |
 {: caption="Automatically injected environment variables when deploying {{site.data.keyword.codeengineshort}} jobs"}
 
-Note that each job run instance gets its own index from the array of indices that were specified when the job was created. {{site.data.keyword.codeengineshort}} automatically assigns indices starting from 0 to (array size - 1). The `JOB_INDEX` environment variable contains the index value.
+Note that each job run instance gets its own index from the array of indexes that were specified when the job was created. {{site.data.keyword.codeengineshort}} automatically assigns indexes starting from 0 to (array size - 1). The `JOB_INDEX` environment variable contains the index value.
 
 While the job itself doesn't have a URL associated with it, the `CE_DOMAIN` and `CE_SUBDOMAIN` values might be useful if you need to reference an application that is running in the same project. The full external URL of this application is `appName.CE_SUBDOMAIN.CE_DOMAIN`. To reference the private URL of an application, use `appName.CE_SUBDOMAIN`.

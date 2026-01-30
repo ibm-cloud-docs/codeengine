@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-12-12"
+  years: 2020, 2026
+lastupdated: "2026-01-27"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project, integrating service with function in code engine
 
@@ -86,7 +86,7 @@ Suppose you want to create a service binding to bind a service instance to an ap
 7. Click **Add** to create the service binding.
 8. Now that your service binding to your application or job is created from the console, you can view a list of all defined service bindings between service instances and {{site.data.keyword.codeengineshort}} applications and jobs from the Service bindings page.
 
-Alternatively, you can also create and manage service bindings to specific applications and jobs from the specific {{site.data.keyword.codeengineshort}} application or job page in the console. To work with service bindings within the context of your aapplicationpp or job, go to the **Service bindings** tab for your specific application or job.
+Alternatively, you can also create and manage service bindings to specific applications and jobs from the specific {{site.data.keyword.codeengineshort}} application or job page in the console. To work with service bindings within the context of your application or job, go to the **Service bindings** tab for your specific application or job.
 {: important}
 
 ### Binding a service instance with an existing service access secret

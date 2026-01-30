@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-17"
+  years: 2020, 2026
+lastupdated: "2026-01-27"
 
 keywords: project, projects in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine, binding in code engine, service binding in code engine, project settings, project integrations, configuring project-wide settings, service binding operations, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, operator secret, ibmcloud-operator-secret, service bind, access, bind, bound, registries, container registry, image registry, apikey, API key, images, registry access, registry secret, service id, registry secret, registry access
 
@@ -167,7 +167,7 @@ The user of this Integrations page must have the following {{site.data.keyword.i
     * **Resource group access:** `Viewer`
     * **Roles and actions:** `Operator` platform access and `Writer` service access
 
-For {{site.data.keyword.codeengineshort}} to automatically generate a service ID for accessing images in {{site.data.keyword.registryshort_notm}} in a specific location, {{site.data.keyword.codeengineshort}} sets up this service ID with the `Administrator` role for the IAM Identity service that is scoped to this service ID. Additionally, {{site.data.keyword.codeengineshort}} grants the `Manager` role for the {{site.data.keyword.registrylong_notm}} service that is scoped to the specified location (region). These roles and permissions are required so that {{site.data.keyword.codeengineshort}}  can use this service ID to access {{site.data.keyword.registryshort_notm}} on behalf of the user of the respective {{site.data.keyword.codeengineshort}} project.
+For {{site.data.keyword.codeengineshort}} to automatically generate a service ID for accessing images in {{site.data.keyword.registryshort_notm}} in a specific location, {{site.data.keyword.codeengineshort}} sets up this service ID with the `Administrator` role for the IAM Identity service that is scoped to this service ID. Additionally, {{site.data.keyword.codeengineshort}} grants the `Manager` role for the {{site.data.keyword.registrylong_notm}} service that is scoped to the specified location (region). These roles and permissions are required so that {{site.data.keyword.codeengineshort}} can use this service ID to access {{site.data.keyword.registryshort_notm}} on behalf of the user of the {{site.data.keyword.codeengineshort}} project.
 
 When {{site.data.keyword.codeengineshort}} configures this service ID with the `Administrator` platform access and `Manager` service access to {{site.data.keyword.registrylong_notm}}, the access is scoped to only this service ID.
 {: important}

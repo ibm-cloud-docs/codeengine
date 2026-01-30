@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-12-12"
+  years: 2023, 2026
+lastupdated: "2026-01-27"
 
 keywords: code engine, function, testing funtions, local testing for functions, function code wrapper
 
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     # open file, read JSON config
     with open(str(sys.argv[1])) as confFile:
         params=json.load(confFile)
-    # invoke the CE function and print the result
+    # invoke the Code Engine function and print the result
     print(main(params))
 ```
 {: pre}
@@ -61,11 +61,7 @@ var func=require('./func/main.js')
 const fs = require("fs");
 const data = fs.readFileSync(process.argv[2]);
 
-// invoke the CE function and log the result
+// invoke the Code Engine function and log the result
 console.log(func.main(JSON.parse(data)));
 ```
 {: pre}
-
-
-
-

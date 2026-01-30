@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-06"
+lastupdated: "2026-01-27"
 
 keywords: code engine, event notifications
 
@@ -33,11 +33,11 @@ When configured as a **Destination**, your {{site.data.keyword.codeengineshort}}
 
 Review the following features for using {{site.data.keyword.en_short}} with {{site.data.keyword.codeengineshort}}
 
-- You can enable or disable `pingSource` which allows you to control scheduled event sources, like timers, by enabling or disabling them as needed. This is not possible when using Event Subscriptions.
+- You can enable or disable `pingSource` which allows you to control scheduled event sources, like timers, by enabling or disabling them as needed. This is impossible when using Event Subscriptions.
 
 - You can control the number of retries and dead letter queues. When calling {{site.data.keyword.codeengineshort}}, issues such as network errors or application glitches can cause the requests to fail. A retry is used to provide resiliency to external requests. To learn more, checkout Number of retries.
 
-- You're not limited to periodic timers. {{site.data.keyword.en_short}} supports various event sources such as HTTP events, cloud service events (e.g., object uploads), functions, and {{site.data.keyword.codeengineshort}} job outputs. This modularity enables the creation of flexible workflows that can respond to real-time events instead of just scheduled triggers. By combining multiple event sources, you can design complex, dynamic systems with ease.
+- You're not limited to periodic timers. {{site.data.keyword.en_short}} supports various event sources such as HTTP events, cloud service events (for example, object uploads), functions, and {{site.data.keyword.codeengineshort}} job outputs. This modularity enables the creation of flexible workflows that can respond to real-time events instead of just scheduled triggers. By combining multiple event sources, you can design complex, dynamic systems with ease.
 
 - You can create complex workflows. For example, a job can be triggered by a timer, then when the job completes, it can send an event back into {{site.data.keyword.en_short}} as a source for other services. One scenario for this type of workflow would be having the event trigger an email notification or initiate another workflow.
 
@@ -184,7 +184,7 @@ Complete the following steps to set up the trigger.
     ```sh
     ibmcloud event-notifications subscription create \
     --name "$SUBSCRIPTION_NAME" \
-    --description "Triggers CE job from topic" \
+    --description "Triggers Code Engine job from topic" \
     --service-instance-id "$EVENT_NOTIFICATIONS_CRN" \
     --topic-id "$TOPIC_ID" \
     --destination-id "$DESTINATION_ID"

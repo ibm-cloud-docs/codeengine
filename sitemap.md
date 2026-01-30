@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-26"
+lastupdated: "2026-01-30"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -163,6 +163,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [January 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january26)
+
+    * [30 January 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january3026)
+
+        * CLI version 1.60.1 released
 
     * [26 January 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-january2626)
 
@@ -4892,7 +4896,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Fleet pricing](/docs/codeengine?topic=codeengine-pricing#fleet-pricing)
 
-    * [If you let CE automatically provision worker nodes](/docs/codeengine?topic=codeengine-pricing#fleet-pricing-auto)
+    * [If you let {{site.data.keyword.codeengineshort}} automatically provision worker nodes](/docs/codeengine?topic=codeengine-pricing#fleet-pricing-auto)
 
     * [If you choose a specific worker profile](/docs/codeengine?topic=codeengine-pricing#fleet-pricing-spec)
 
@@ -5037,7 +5041,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Do you want to customize your function?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun-customize)
 
-    * [Areyou ready to deploy?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun-ready-to-deploy)
+    * [Are you ready to deploy?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun-ready-to-deploy)
 
     * [Do you want to add more customizations?](/docs/codeengine?topic=codeengine-learning-paths#lp-run-fun-add-customizations)
 

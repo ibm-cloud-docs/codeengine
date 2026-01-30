@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-09-29"
+  years: 2025, 2026
+lastupdated: "2026-01-27"
 
 keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
@@ -43,10 +43,10 @@ ibmcloud ce fleet cancel --fleet-id FLEET_ID [--hard] [--force]
 :   The ID of the fleet.
 
 `--hard`
-:   Implement a hard stop cancelation to immediately delete all instances. Any tasks that are already running or in a `pending` status are changed to the `canceled` status. No new instances are started and instances and worker nodes are deprovisioned immediately. 
+:   Implement a hard stop cancellation to immediately delete all instances. Any tasks that are already running or in a `pending` status are changed to the `canceled` status. No new instances are started and instances and worker nodes are deprovisioned immediately. 
 
 `--force`
-:   Force the cancelation without a confirmation prompt. 
+:   Force the cancellation without a confirmation prompt. 
 
 
 ### Canceling a fleet in the UI
@@ -59,13 +59,13 @@ Follow the steps to cancel a fleet in the UI.
 2. Click **Actions**.
 3. Click **Cancel**. 
 4. Follow the prompt to cancel the fleet. If you want to implement a hard stop to cancel all tasks immediately and delete all instances and workers, select the option to do so. 
-5. Click **Confirm cancelation**.
+5. Click **Confirm cancellation**.
 
 
 ## Deleting a fleet
 {: #fleet-delete}
 
-When you delete a fleet, all of the fleet's tasks, instances, and workers are deleted immediately. 
+When you delete a fleet, all the fleet's tasks, instances, and workers are deleted immediately. 
 
 ### Deleting a fleet in the CLI
 {: #fleet-delete-cli}
@@ -82,7 +82,7 @@ ibmcloud ce fleet delete --fleet_id FLEET_ID [--force] [--ignore-not-found] [--w
 :   The ID of the fleet.
 
 `--force`
-:   Force the cancelation without a confirmation prompt. 
+:   Force the cancellation without a confirmation prompt. 
 
 `--ignore-not-found`
 :   Do not fail if the specified fleet is not found.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-01-09"
+lastupdated: "2026-01-27"
 
 keywords: fleets, fleet logging, fleet monitoring, fleet observability, observability, logging, monitoring, Cloud Logs, Cloud Monitoring
 
@@ -45,7 +45,7 @@ Make sure you have a service ID and an API key that assign access to the Cloud L
 
 Get the private Ingress endpoint for the Cloud Logs instance. 
 
-1. Navigate to the [Logging instances page](https://cloud.ibm.com/observability/logging/51e1fabe-63dc-4a45-a161-83ddb2969a29/overview){: external} in the UI and click on the relevant instance.
+1. Navigate to the [Logging instances page](https://cloud.ibm.com/observability/logging/51e1fabe-63dc-4a45-a161-83ddb2969a29/overview){: external} in the UI and click the relevant instance.
 2. Click **Endpoints**.
 3. Find the private Ingress endpoint. Save this value in a secure location so you can reference it later.
 
@@ -71,7 +71,7 @@ Create a virtual private endpoint gateway that connects to the logging instance.
 For each zone in the VPE, add a reserved IP address to one subnet. 
 
 1. Navigate to the [VPE gateways page](https://cloud.ibm.com/infrastructure/network/endpointGateways){: external} in the console.
-2. Click on the VPE you created in the previous step.
+2. Click the VPE you created in the previous step.
 3. Click **Manage attached resources**.
 4. Click **Reserve or bind IP**.
 5. Follow the prompts to reserve an IP address for a subnet in one of the VPE zones.
@@ -85,7 +85,7 @@ Add the required logging values to the fleets default secret.
 
 1. In the console, go to the [Code Engine projects page](https://cloud.ibm.com/containers/serverless/projects){: external} and select the project that your fleets run in.
 2. Click **Secrets and configmaps**.
-3. Click on the `codeengine-fleet-defaults` secret.
+3. Click the `codeengine-fleet-defaults` secret.
    1. If it was not created before: click **Create**.
    2. Select **Generic secret**, then click **Next**.
    3. Name the secret `codeengine-fleet-defaults`. You must use this exact name and formatting.
@@ -121,7 +121,7 @@ You must have a Cloud Monitoring instance in the same region of the Code Engine 
 
 Find the agent key for the monitoring instance. 
 
-1. Navigate to the [Monitoring instances](https://cloud.ibm.com/observability/monitoring){: external} page in the UI and click on the relevant instance. On the instance details page, click **Actions** > **Manage key**, then click the option to view all keys in the dashboard. 
+1. Navigate to the [Monitoring instances](https://cloud.ibm.com/observability/monitoring){: external} page in the UI and click the relevant instance. On the instance details page, click **Actions** > **Manage key**, then click the option to view all keys in the dashboard. 
 2. Click the agent key, which may have a format similar to `ab1c2345-****-678d9efgh012`. Then click the option to copy the full agent key. 
 3. Save the agent key in a secure location where you can access it later. 
 
@@ -147,7 +147,7 @@ Create a virtual private endpoint gateway that connects to the monitoring instan
 For each zone in the VPE, add a reserved IP address to one subnet. 
 
 1. Navigate to the [VPE gateways page](https://cloud.ibm.com/infrastructure/network/endpointGateways){: external} in the console.
-2. Click on the VPE you created in the previous step.
+2. Click the VPE you created in the previous step.
 3. Click **Manage attached resources**.
 4. Click **Reserve or bind IP**.
 5. Follow the prompts to reserve an IP address for a subnet in one of the VPE zones.
@@ -158,7 +158,7 @@ For each zone in the VPE, add a reserved IP address to one subnet.
 
 1. In the console, go to the [Code Engine projects page](https://cloud.ibm.com/containers/serverless/projects){: external} and select the project that your fleets run in.
 2. Click **Secrets and configmaps**.
-3. Click on the `codeengine-fleet-defaults` secret.
+3. Click the `codeengine-fleet-defaults` secret.
    1. If it was not created before: click **Create**.
    2. Select **Generic secret**, then click **Next**.
    3. Name the secret `codeengine-fleet-defaults`. You must use this exact name and formatting.

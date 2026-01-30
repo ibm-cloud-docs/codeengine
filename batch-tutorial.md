@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-06-11"
+  years: 2020, 2026
+lastupdated: "2026-01-27"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -84,7 +84,7 @@ If any of the instances of your job failed to run, you can take the following ac
 
 1. Click **Rerun failed indexes** to run the job again for indexes that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indexes**. The **Array indexes** section automatically lists the indexes of the failed job run instances.
 
-For troubleshotting common job run index errors, see [Understanding why job run indexes can fail](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-failure-messages).
+For troubleshooting common job run index errors, see [Understanding why job run indexes can fail](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-failure-messages).
 {: tip}
 
 2. Click **Submit job** to submit the job for the failed indexes.

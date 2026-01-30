@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-26"
+lastupdated: "2026-01-29"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -1444,7 +1444,7 @@ ibmcloud ce buildrun cancel --name mybuildrun
 {: #buildrun-cancel-example-output}
 
 ```txt
-Cancelling build run 'mybuildrun'...
+Canceling build run 'mybuildrun'...
 OK
 ```
 {: screen}  
@@ -2197,7 +2197,7 @@ The {{site.data.keyword.codeenginefull}} outbound connections feature supports d
 * Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} console or CLI. Private Path allows connections between an IBM Cloud service like {{site.data.keyword.codeengineshort}} and your VPC without compromising security or putting your VPC at risk. See [Enabling an IBM Cloud service to connect to a provider's VPC](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-case-4).
 {: shortdesc}
 
-CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, all of which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
+CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
 {: note}
 
 You must be within the context of a [project](#cli-project) before you use `connectivity outbound` commands.
@@ -3138,7 +3138,7 @@ ibmcloud ce fleet create [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [
 :   Set environment variables from the key-value pairs that are stored in this secret. Provide NAME to reference the full secret, or PREFIX=NAME to reference the full secret where each key is prefixed with PREFIX, or NAME:KEY_A,KEY_B to reference individual keys. To specify a new name for a referenced key, use format NAME:NEW_KEY_NAME=KEY_A. This option can be specified multiple times. This value is *optional*. 
 
 `--gpu`, `--gp`
-:   The number of GPUs to allocate to the resource. The format is GPU_FAMILY:NUMBER_OF_GPUS. The NUMBER_OF_GPUS will have default as 1 and it can be fraction. For example `h100:0.5` This value is *optional*. 
+:   The number of GPUs to allocate to the resource. The format is GPU_FAMILY:NUMBER_OF_GPUS. The NUMBER_OF_GPUS will have default as 1 and it can be fraction. For example, `h100:0.5` This value is *optional*. 
 
 `--max-scale`, `--maxscale`, `--max`
 :   Maximum number of task instances to run in parallel. This value is *optional*. The default value is `1`.
@@ -4478,7 +4478,7 @@ OK
 Create a job.  
   
 ```txt
-ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--array-indexes ARRAY_INDEXES] [--array-size ARRAY_SIZE] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -4496,11 +4496,11 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 `--argument`, `--arg`, `-a`
 :   Set arguments for runs of the job. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is *optional*. 
 
-`--array-indices`, `--ai`
-:   Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `0,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--array-size` option is not specified. This value is *optional*. The default value is `0`.
+`--array-indexes`, `--array-indices`, `--ai`
+:   Specifies the array indexes that are used for runs of the job, for example `0,3,6,9`, `1-5,7-8,10`. The result set of indexes is limited to 1000 entries. This option can only be specified if `array-size` is not specified. This value is *optional*. The default value is `0`.
 
 `--array-size`, `--as`, `--instances`, `--is`
-:   Specifies the number of instances that are used for runs of the job. When you use this option, the system converts to array indices. For example, if you specify `instances` of `5`, the system converts to `array-indices` of `0 - 4`. This option can only be specified if the `--array-indices` option is not specified. This value is *optional*. The default value is `1`.
+:   Specifies the number of instances that are used for runs of the job. When you use this option, the system converts to array indexes. For example, if you specify `instances` of `5`, the system converts to `array-indexes` of `0 - 4`. This option can only be specified if the `--array-indexes` option is not specified. This value is *optional*. The default value is `1`.
 
 `--build-commit`, `--commit`, `--bcm`, `--cm`, `--revision`
 :   The commit, tag, or branch in the source repository to pull. The build commit option is allowed only if the `--build-source` option is set to the URL of a Git repository. This value is *optional*. 
@@ -4839,7 +4839,7 @@ OK
 Update a job.  
   
 ```txt
-ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indexes ARRAY_INDEXES] [--array-size ARRAY_SIZE] [--build-clear] [--build-commit BUILD_COMMIT] [--build-commit-clear] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-git-repo-secret-clear] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -4855,11 +4855,11 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 `--arguments-clear`, `--ac`
 :   Clear job arguments. This value is *optional*. The default value is `false`.
 
-`--array-indices`, `--ai`
-:   Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `0,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--array-size` option is not specified. This value is *optional*. 
+`--array-indexes`, `--array-indices`, `--ai`
+:   Specifies the array indexes that are used for runs of the job, for example `0,3,6,9`, `1-5,7-8,10`. The result set of indexes is limited to 1000 entries. This option can only be specified if `array-size` is not specified. This value is *optional*. 
 
 `--array-size`, `--as`, `--instances`, `--is`
-:   Specifies the number of instances that are used for runs of the job. When you use this option, the system converts to array indices. For example, if you specify `instances` of `5`, the system converts to `array-indices` of `0 - 4`. This option can only be specified if the `--array-indices` option is not specified. This value is *optional*. The default value is `0`.
+:   Specifies the number of instances that are used for runs of the job. When you use this option, the system converts to array indexes. For example, if you specify `instances` of `5`, the system converts to `array-indexes` of `0 - 4`. This option can only be specified if the `--array-indexes` option is not specified. This value is *optional*. The default value is `0`.
 
 `--build-clear`, `--bc`
 :   Remove the association of a build from this job. The build clear option is allowed only if your job currently has an associated build. This value is *optional*. The default value is `false`.
@@ -5451,7 +5451,7 @@ OK
 Resubmit a job run based on the configuration of a previous job run.  
   
 ```txt
-ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--name NAME] [--no-wait] [--output OUTPUT] [--quiet] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indexes ARRAY_INDEXES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--name NAME] [--no-wait] [--output OUTPUT] [--quiet] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -5467,14 +5467,14 @@ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT
 `--arguments-clear`, `--ac`
 :   Clear job run arguments. This value is *optional*. The default value is `false`.
 
-`--array-indices`, `--ai`
-:   Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `0,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--array-size` option is not specified. This value is *optional*. 
+`--array-indexes`, `--array-indices`, `--ai`
+:   Specifies the indexes of the instances that are used for this job run, for example `0,3,6,9`, `1-5,7-8,10`. The result set of indexes is limited to 1000 entries. This option can only be specified if `array-size` is not specified. This value is *optional*. 
 
 `--array-size`, `--as`, `--instances`, `--is`
-:   Specifies the number of instances that are used for this job run. When you use this option, the system converts to array indices. For example, if you specify `instances` of `5`, the system converts to `array-indices` of `0 - 4`. This option can only be specified if the `--array-indices` option is not specified. This value is *optional*. The default value is `0`.
+:   Specifies the number of instances that are used for this job run. When you use this option, the system converts to array indexes. For example, if you specify `instances` of `5`, the system converts to `array-indexes` of `0 - 4`. This option can only be specified if the `--array-indexes` option is not specified. This value is *optional*. The default value is `0`.
 
 `--array-size-var-override`, `--array-size-variable-override`, `--asvo`
-:   Specifies a custom value for the `JOB_ARRAY_SIZE` environment variable. By default, the `JOB_ARRAY_SIZE` environment variable is set to either the `array-size` value or the number of indices specified by `array-indices`. The value of the `JOB_ARRAY_SIZE` environment variable does not affect the configured array size. Use this option to enforce a constant array size value for job rerun scenarios, where only some job instances are submitted or resubmitted. This value is *optional*. 
+:   Specifies a custom value for the `JOB_ARRAY_SIZE` environment variable. By default, the `JOB_ARRAY_SIZE` environment variable is set to either the `array-size` value or the number of indexes specified by `array-indexes`. The value of the `JOB_ARRAY_SIZE` environment variable does not affect the configured array size. Use this option to enforce a constant array size value for job rerun scenarios, where only some job instances are submitted or resubmitted. This value is *optional*. 
 
 `--command`, `--cmd`, `-c`
 :   Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
@@ -5604,7 +5604,7 @@ OK
 Submit a job run based on a job.  
   
 ```txt
-ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indexes ARRAY_INDEXES] [--array-size ARRAY_SIZE] [--array-size-var-override ARRAY_SIZE_VAR_OVERRIDE] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mode MODE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-data-store MOUNT_DATA_STORE] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--trusted-profiles-enabled] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -5614,14 +5614,14 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
 `--argument`, `--arg`, `-a`
 :   Set arguments for this job run. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is *optional*. 
 
-`--array-indices`, `--ai`
-:   Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `0,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--array-size` option is not specified. This value is *optional*. The default value is `0`.
+`--array-indexes`, `--array-indices`, `--ai`
+:   Specifies the indexes of the instances that are used for this job run, for example `0,3,6,9`, `1-5,7-8,10`. The result set of indexes is limited to 1000 entries. This option can only be specified if `array-size` is not specified. This value is *optional*. The default value is `0`.
 
 `--array-size`, `--as`, `--instances`, `--is`
-:   Specifies the number of instances that are used for this job run. When you use this option, the system converts to array indices. For example, if you specify `instances` of `5`, the system converts to `array-indices` of `0 - 4`. This option can only be specified if the `--array-indices` option is not specified. This value is *optional*. The default value is `1`.
+:   Specifies the number of instances that are used for this job run. When you use this option, the system converts to array indexes. For example, if you specify `instances` of `5`, the system converts to `array-indexes` of `0 - 4`. This option can only be specified if the `--array-indexes` option is not specified. This value is *optional*. The default value is `1`.
 
 `--array-size-var-override`, `--array-size-variable-override`, `--asvo`
-:   Specifies a custom value for the `JOB_ARRAY_SIZE` environment variable. By default, the `JOB_ARRAY_SIZE` environment variable is set to either the `array-size` value or the number of indices specified by `array-indices`. The value of the `JOB_ARRAY_SIZE` environment variable does not affect the configured array size. Use this option to enforce a constant array size value for job rerun scenarios, where only some job instances are submitted or resubmitted. This value is *optional*. 
+:   Specifies a custom value for the `JOB_ARRAY_SIZE` environment variable. By default, the `JOB_ARRAY_SIZE` environment variable is set to either the `array-size` value or the number of indexes specified by `array-indexes`. The value of the `JOB_ARRAY_SIZE` environment variable does not affect the configured array size. Use this option to enforce a constant array size value for job rerun scenarios, where only some job instances are submitted or resubmitted. This value is *optional*. 
 
 `--command`, `--cmd`, `-c`
 :   Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 

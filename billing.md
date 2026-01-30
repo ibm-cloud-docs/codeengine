@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-10-27"
+  years: 2026
+lastupdated: "2026-01-27"
 
 keywords: billing, pricing, costs for code engine, billing for code engine, job pricing, app pricing, build pricing
 
@@ -78,12 +78,12 @@ The time that it takes to pull your code bundle or to build it from source code 
 
 When you run a fleet, charges apply only for the CPU, memory resources, and potentially GPU resources, that are consumed while the fleet runs.
 
-For each fleet you run, you can choose to allow Code Engine to deploy worker nodes to meet the fleet resource requirements, or you can choose to deploy a specific worker node profile that you specify.  Review the cost considerations for both options below. 
+For each fleet you run, you can choose to allow {{site.data.keyword.codeengineshort}} to deploy worker nodes to meet the fleet resource requirements, or you can choose to deploy a specific worker node profile that you specify.  Review the cost considerations for both options below. 
 
-### If you let CE automatically provision worker nodes
+### If you let {{site.data.keyword.codeengineshort}} automatically provision worker nodes
 {: #fleet-pricing-auto}
 
-When you run your fleet, you specify the amount of resources required to run an instance of your code to complete a task, and the maximum number of instances to run concurrently. Code Engine deploys worker nodes of potentially various profiles to meet these resource requirements most efficiently. In this scenario, the cost is based on the worker nodes deployed, but can be approximated using the instance resource requirements you specify, the number of tasks, and the average instance runtime. The formula to approximate the cost of a fleet based on these values is:
+When you run your fleet, you specify the amount of resources required to run an instance of your code to complete a task, and the maximum number of instances to run concurrently. {{site.data.keyword.codeengineshort}} deploys worker nodes of potentially various profiles to meet these resource requirements most efficiently. In this scenario, the cost is based on the worker nodes deployed, but can be approximated using the instance resource requirements you specify, the number of tasks, and the average instance runtime. The formula to approximate the cost of a fleet based on these values is:
 
 `[ (total cost of vCPU seconds) + (total cost of GB seconds) ] x (# of tasks) x (average runtime of each task in seconds)`  
 
@@ -93,7 +93,7 @@ For example, if an instance of your code requires 2 vCPU and 4 GB, you run 100 t
 
 The total cost to run the fleet is the accumulation of costs for each worker node utilized during the runtime of the fleet.  Additionally, unsuccessful instances can have their runtimes increased by retries, which can add to the fleet cost. You can configure retry settings when you create the fleet. 
 
-Code Engine does not automatically deploy GPUs for fleets. To deploy GPUs for your fleet, you must choose to deploy a specific worker profile or GPU family. 
+{{site.data.keyword.codeengineshort}} does not automatically deploy GPUs for fleets. To deploy GPUs for your fleet, you must choose to deploy a specific worker profile or GPU family. 
 {: note}
 
  
