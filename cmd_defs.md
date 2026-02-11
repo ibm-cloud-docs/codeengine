@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-29"
+lastupdated: "2026-02-10"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2193,12 +2193,9 @@ You can use either `connectivity` or `conn` in your `connectivity` commands. To 
 {: #cli-connectivity-outbound}  
 
 The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects.
-* Use allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
-* Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} console or CLI. Private Path allows connections between an IBM Cloud service like {{site.data.keyword.codeengineshort}} and your VPC without compromising security or putting your VPC at risk. See [Enabling an IBM Cloud service to connect to a provider's VPC](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-case-4).
+* Use allowed destination IP address ranges for outbound connections in CIDR notation. 
+* Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} console or CLI. 
 {: shortdesc}
-
-CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
-{: note}
 
 You must be within the context of a [project](#cli-project) before you use `connectivity outbound` commands.
 
@@ -2217,7 +2214,7 @@ ibmcloud ce connectivity outbound COMMAND
 Create an allowed outbound destination.  
   
 ```txt
-ibmcloud ce connectivity outbound create --name OUTBOUND_DESTINATION_NAME (--cidr CIDR_IP_ADDRESS | --pps-crn PPS_CRN) [--force] [--format FORMAT] [--quiet]
+ibmcloud ce connectivity outbound create --name OUTBOUND_DESTINATION_NAME (--cidr CIDR_IP_ADDRESS | --pps-crn PPS_CRN) [--force] [--format FORMAT] [--pps-isolation-policy PPS_ISOLATION_POLICY] [--quiet]
 ```
 {: pre}
 
@@ -2237,6 +2234,9 @@ ibmcloud ce connectivity outbound create --name OUTBOUND_DESTINATION_NAME (--cid
 
 `--pps-crn`, `--private-path-service-crn`
 :   Provide the CRN of the target private path service to connect to. This value is *optional*. 
+
+`--pps-isolation-policy`, `--pip`
+:   The isolation policy of the Private Path connection. Valid values are [`dedicated`, `shared`]. If not specified, the default is `shared`. This value is *optional*. The default value is `shared`.
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -2457,23 +2457,26 @@ Private path connections:
 ### `ibmcloud ce connectivity outbound update`  
 {: #cli-connectivity-outbound-update}  
 
-Update an allowed outbound destination IP address range.  
+Update an allowed outbound destination.  
   
 ```txt
-ibmcloud ce connectivity outbound update --name OUTBOUND_DESTINATION_NAME --cidr CIDR_IP_ADDRESS [--force] [--quiet]
+ibmcloud ce connectivity outbound update --name OUTBOUND_DESTINATION_NAME (--cidr CIDR_IP_ADDRESS | --pps-isolation-policy PPS_ISOLATION_POLICY) [--force] [--quiet]
 ```
 {: pre}
 
 **Command Options**  
 
-`--cidr`, `-c`
-:   Required. Provide a valid IP address range in CIDR format (for example 1.2.3.0/24). This value is *required*. 
-
 `--n`, `--cidr-name`, `--name`
 :   Required. Name of the allowed outbound destination. This value is *required*. 
 
+`--cidr`, `-c`
+:   Provide a valid IP address range in CIDR format (for example 1.2.3.0/24). This value is *optional*. 
+
 `--force`, `-f`
 :   Force update without confirmation. This value is *optional*. The default value is `false`.
+
+`--pps-isolation-policy`, `--pip`
+:   The isolation policy of the Private Path connection. Valid values are [`dedicated`, `shared`]. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -3489,7 +3492,7 @@ ibmcloud ce fleet task list --fleet-id FLEET_ID [--output OUTPUT] [--pagination-
 :   Specifies the column by which to sort the list. Valid values are `id`, `index` and `status`. This value is *optional*. The default value is `index`.
 
 `--status`, `--st`
-:   Show tasks that have the specified status. Valid value are `failed`, `canceled`, `pending`, `running`, and `successful`. This value is *optional*. 
+:   Show tasks that have the specified status. Valid values are `canceled`, `failed`, `pending`, `running`, and `succeeded`. This value is *optional*. 
 
   
   

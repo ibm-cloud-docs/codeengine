@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-12-12"
+  years: 2025, 2026
+lastupdated: "2026-02-10"
 
 keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
@@ -85,21 +85,21 @@ Follow these steps to run a fleet in the Code Engine console.
 ## Task specification
 {: #fleet-task-spec}
 
-Fleets always have at least one task, but can have a much larger number. You can specify the number of tasks to complete, the number of tasks and instances to run at a time, and the order in which tasks are completed. When you run your fleet, worker nodes automatically scale up based on the number of tasks to be completed.
+Fleets always have at least one task, but can have a much larger number. You can specify the number of tasks to complete, the number of task instances to run at a time, and the order in which tasks are completed. When you run your fleet, worker nodes automatically scale up based on the number of tasks to be completed.
 
-You can specify tasks in the following ways. 
+You can specify tasks in the following ways: 
 
 - **Number of tasks**: To run a specific number of tasks, you can specify any positive integer. In the CLI, use the `--tasks` option. In the UI, select **Number of tasks** and enter the number you want to run. 
 - **Task index**: To specify a range of tasks, you can specify a task index that includes a comma separated list of ranges and positive integers, such as `2-5,7-8,10`. In the CLI, use the `--task-indexes` option. In the UI, select **Task indexes** and enter the range. 
-- **Task file**: To have different tasks run with different commands or arguments, you can create a task specification file that overrides the image definition. This file should be formatted in JSON. In the CLI, specify the file with the `OPTION` option. In the UI, select **Tasks from file** and specify the file name. See an example of lines that can be added to a task specification file below. 
+- **Task file**: To have different tasks run with different commands or arguments, you can create a task specification file that overrides the image definition. The optional `idx` field can be used to specify a custom task index. This file needs to be formatted as JSONL. In the CLI, specify the file with the `--tasks-from-local-file` or `--tasks-from-cos-object` option. In the UI, select **Tasks from file** and specify the file name. See an example of lines that can be added to a task specification file below. 
 
 Example lines in a task specification file.
 
 ```json
-{ "cmds": ["my", "multipart", "command"], "args": ["arg1", "arg2"]}
-{ "cmds": ["other", "cmd"], "args": ["arg"]}
-{ "args": ["argA", "argB", "argC"]}
-{ "cmds": ["just", "another", "command"]}
+{ "cmds": ["my", "multipart", "command"], "args": ["arg1", "arg2"] }
+{ "cmds": ["other", "cmd"], "args": ["arg"], "idx": "foo" }
+{ "args": ["argA", "argB", "argC"], "idx": "bar" }
+{ "cmds": ["just", "another", "command"], "idx": "1234" }
 ```
 {: screen}
 

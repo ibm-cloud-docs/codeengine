@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-02-10"
 
 keywords: connectivity, outbound connections, outbound connectivity, private path
 
@@ -16,9 +16,16 @@ subcollection: codeengine
 {: #connectivity-outbound}
 
 The {{site.data.keyword.codeenginefull}} outbound connections feature supports defining reachable endpoints for your {{site.data.keyword.codeengineshort}} projects.
-* Use allowed destination IP address ranges for outbound connections in CIDR notation. The allowed destinations ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
-* Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} console or CLI. Private Path allows connections between an IBM Cloud service like {{site.data.keyword.codeengineshort}} and your VPC without compromising security or putting your VPC at risk. See [Enabling an IBM Cloud service to connect to a provider's VPC](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-case-4).
+* Use allowed destination IP address ranges for outbound connections in CIDR notation. 
+* Connect your {{site.data.keyword.codeengineshort}} project with {{site.data.keyword.cloud_notm}} VPC [Private Path services](/docs/vpc?topic=vpc-private-path-service-about) by using the {{site.data.keyword.codeengineshort}} console or CLI. 
 {: shortdesc}
+
+You can create outbound connections by using the console or the CLI.
+
+## Allowed destination IP address ranges for outbound connections
+{: #cidr-ranges-outbound}
+
+The allowed destination IP address ranges ensure that outbound traffic is restricted to addresses you define as safe. Therefore, you prevent unwanted access to the internet, and enhance compliance and security.
 
 CIDR range specifications do not affect project-internal communication, private path connections, or private service connections, which are always allowed destinations. In consequence, restricting outbound traffic based on CIDR ranges does not prevent applications within your Code Engine project from communicating with each other, or communicating with a connected private path service, or with a private endpoint of an IBM Cloud Service API.
 {: note}
@@ -29,7 +36,22 @@ Your use case can determine your outbound connection specifications. Typical use
 * Specifying a single allowed destination IP address range (`0.0.0.0/0`) to allow all possible endpoints. By default, there is a rule, named **allow-all**, set with an IP range of 0.0.0.0/0.
 * Specifying a rule with an allowed destination IP address range that allows the workload within your {{site.data.keyword.codeengineshort}} project to reach only your specified range of endpoints (for example, to your on-premises data center).
 
-You can create outbound connections by using the console or the CLI.
+## Private Path Connections
+{: #private-path-connections}
+
+Private Path allows connections between an IBM Cloud service like {{site.data.keyword.codeengineshort}} and your VPC without compromising security or putting your VPC at risk. See [Enabling an IBM Cloud service to connect to a provider's VPC](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-case-4).
+
+This diagram illustrates how to establish a Private Path service with connections to the VPE gateway of a {{site.data.keyword.codeengineshort}} application and your VPC. First, the {{site.data.keyword.codeengineshort}} application connects to the VPE gateway within the {{site.data.keyword.codeengineshort}}'s VPC. Then, the VPE gateway connects to the Private Path NLB in the provider's VPC. In turn, the Private Path NLB connects to the provider's application. The provider's application then responds to the request. This Private Path service activity is completely contained in a single region (for example, `us-south`) in an {{site.data.keyword.cloud_notm}} private network.
+
+![Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network.](images/private_path_detailed_4.svg "Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network."){: caption="Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network." caption-side="bottom"}
+
+The diagram below shows additional examples how Private Path can help to connect your {{site.data.keyword.codeengineshort}} project with:
+
+* a VSI in a VPC,
+* an OpenShift cluster hosted in a VPC,
+* on‑premises environments or any other external network (see also how to [connect cloud services to on-premises environments with Private Path](/docs/pattern-saas-to-onprem-private-path?topic=pattern-saas-to-onprem-private-path-overview))
+
+![Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to various targets in your VPC or other external networks.](images/code-engine-private-path---component-diagram.all-integrations.png "Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to various targets in your VPC or other external networks"){: caption="Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to various targets in your VPC or other external networks" caption-side="bottom"}
 
 ## Private Service Connections
 {: #private-service-connections}
@@ -71,13 +93,6 @@ You can create allowed destination IP address ranges to limit where your workloa
 
 You can establish a Private Path connection between your {{site.data.keyword.codeengineshort}} project and your VPC.
 
-This diagram illustrates how to establish a Private Path service with connections to the VPE gateway of a {{site.data.keyword.codeengineshort}} application and your VPC. First, the {{site.data.keyword.codeengineshort}} application connects to the VPE gateway within the {{site.data.keyword.codeengineshort}}'s VPC. Then, the VPE gateway connects to the Private Path NLB in the provider's VPC. In turn, the Private Path NLB connects to the provider's application. The provider's application then responds to the request. This Private Path service activity is completely contained in a single region (for example, `us-south`) in an {{site.data.keyword.cloud_notm}} private network.
-
-![Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network.](images/private_path_detailed_4.svg "Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network."){: caption="Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network." caption-side="bottom"}
-
-Once the connection to VPC is created, the Private Path service owner will receive a connection request. The owner can review, permit or deny this connection request. Use the consumer `Code Engine account ID` and `VPE gateway creation timestamp` displayed in the private path connection details view to identify the connection request within the Private Path service.
-{: note}
-
 1. Go to the Connectivity page:
     1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
     2. Click **Project settings** > **Connectivity** > **Private Path connections** tab to see a list of existing private path connections.
@@ -87,6 +102,9 @@ Once the connection to VPC is created, the Private Path service owner will recei
    1. By **Name**, select the Private Path service instance from the drop-down list.
    2. By **CRN**, provide the Private Path service instance CRN.
 5. Confirm your configuration.
+
+Once the connection to VPC is created, the Private Path service owner will receive a connection request. The owner can review, permit or deny this connection request. Use the consumer `Code Engine account ID` and `VPE gateway creation timestamp` displayed in the private path connection details view to identify the connection request within the Private Path service.
+{: note}
 
 ### Updating an allowed destination IP address range for outbound connectivity
 {: #update-allowed-destination-ui}
@@ -135,8 +153,9 @@ To work with allowed outbound destinations by using CLI commands, log in to your
 {: cli}
 
 For {{site.data.keyword.codeengineshort}} connectivity outbound CLI commands, you can specify
-the `--name` and `--cidr` values to configure allowed destination IP address ranges. 
+the `--name` and `--cidr` values to configure allowed destination IP address ranges.
 Follow these CIDR guidelines:
+
 * Do not use an IP range from the [reserved IP ranges](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#vrf-overview).
 * Do not use duplicate `--name` and `--cidr` values.
 * Do not use an unsupported CIDR name.
@@ -169,13 +188,6 @@ You can create allowed destination IP address ranges to limit where your workloa
 For {{site.data.keyword.codeengineshort}} connectivity outbound CLI commands, you can specify
 the `--name`, `--format`, and `--pps-crn` values to establish a Private Path connections between your {{site.data.keyword.codeengineshort}} project and your VPC.
 
-This diagram illustrates how to establish a Private Path service with connections to the VPE gateway of a {{site.data.keyword.codeengineshort}} application and your VPC. First, the {{site.data.keyword.codeengineshort}} application connects to the VPE gateway within the {{site.data.keyword.codeengineshort}}'s VPC. Then, the VPE gateway connects to the Private Path NLB in the provider's VPC. In turn, the Private Path NLB connects to the provider's application. The provider's application then responds to the request. This Private Path service activity is completely contained in a single region (for example, `us-south`) in an {{site.data.keyword.cloud_notm}} private network.
-
-![Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network.](images/private_path_detailed_4.svg "Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network."){: caption="Use Private Path to connect your {{site.data.keyword.codeengineshort}} project to your VPC over private network." caption-side="bottom"}
-
-Once the connection to VPC is created, the Private Path service owner will receive a connection request. The owner can review, permit or deny this connection request. Use the consumer `Code Engine account ID` and `VPE gateway creation timestamp` details displayed in `ibmcloud ce connectivity outbound get --name OUTBOUND_DESTINATION_NAME` command to identify the connection request within the Private Path service.
-{: note}
-
 1. Select your {{site.data.keyword.codeengineshort}} project. For example:
 
     ```txt
@@ -189,6 +201,9 @@ Once the connection to VPC is created, the Private Path service owner will recei
     ibmcloud ce connectivity outbound create --name my-pps-connection --format pps --pps-crn crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::private-path-service-gateway:r010-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f
     ```
     {: pre}
+
+Once the connection to VPC is created, the Private Path service owner will receive a connection request. The owner can review, permit or deny this connection request. Use the consumer `Code Engine account ID` and `VPE gateway creation timestamp` displayed in the private path connection details view to identify the connection request within the Private Path service.
+{: note}
 
 ### Showing existing allowed destinations for outbound connectivity
 {: #show-allowed-destination-cli}
@@ -245,6 +260,26 @@ When you update the outbound connectivity rules, note:
 * Even after you restrict outbound connectivity rules, it can take some time for your workload to pick up the rules. For example, if the HTTP client that is used in your code establishes a connection before you update the outbound connectivity rule, it can open a connection to that endpoint. To make sure that your outbound connectivity rules are applied immediately, reset all connections. You can reset by redeploying your workloads or by handling such situations in your code.
 
 * After you restrict outbound connections from your {{site.data.keyword.codeengineshort}} project, you can see unintended side effects such as failing build runs because no external requests can be made.
+
+### Updating a private path connection for outbound connectivity
+{: #update-allowed-destination-pps-cli}
+{: cli}
+
+You can change a Private Path connection between your {{site.data.keyword.codeengineshort}} project and your VPC to be `dedicated` or `shared`.
+
+* A Private Path connection can be `shared` and thus reused between the {{site.data.keyword.codeengineshort}} projects that reside in the same IBM Cloud account as the target VPC, or accounts within the same Enterprise Account Family.
+* To restrict usage of a Private Path connection to exactly one {{site.data.keyword.codeengineshort}} project, set its `--isolation-policy` to `dedicated`.
+* A `dedicated` Private Path connection can always be changed to `shared`.
+* A `shared` Private Path connection can only be changed to `dedicated` if it is not used by more than one {{site.data.keyword.codeengineshort}} project.
+
+To update a Private Path connection, specify the `--name` and `--isolation-policy` options. Refer to these examples:
+
+```txt
+ibmcloud ce connectivity outbound update --name my-pps-connection --isolation-policy dedicated
+
+ibmcloud ce connectivity outbound update --name my-pps-connection --isolation-policy shared
+```
+{: pre}
 
 ### Deleting an allowed outbound destination for outbound connectivity
 {: #delete-allowed-destination-cli}

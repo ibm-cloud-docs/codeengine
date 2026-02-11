@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-30"
+lastupdated: "2026-02-10"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ------ | ---------- | --------------------- |
+| 1.61.0 | 2026-02-10 | - Added support to specify the isolation policy of the Private Path connection in the `connectivity outbound create` and `connectivity outbound update` commands. See [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli) and [{{site.data.keyword.codeengineshort}} CLI reference (`connectivity` command)](/docs/codeengine?topic=codeengine-cli#cli-connectivity). \n - Added support for the `idx` field to specify a custom task index in JSONL files for the `fleet create` command. See [Task specification](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-task-spec). \n - Fixed various bugs. |
 | 1.60.1 | 2026-01-30 | - Fixed various bugs. |
 | 1.60.0 | 2026-01-26 | - The `fleet create` command now requires to provide the `--subnetpool-id` or `--subnetpool-name` option to specify the network placement of the fleet workers. It does not use the `codeengine-fleet-defaults` secret anymore to obtain the subnet CRN and security group CRN values. See [Working with subnet pool connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-subnetpool) and [{{site.data.keyword.codeengineshort}} CLI reference (`connectivity subnetpool` command)](/docs/codeengine?topic=codeengine-cli#cli-connectivity-subnetpool). \n - Fixed various bugs. |
 | 1.59.0 | 2026-01-12 | - Enhanced API integration. \n - Fixed various bugs. |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-02-11"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -163,6 +163,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [February 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february26)
+
+    * [10 February 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february1026)
+
+        * CLI version 1.61.0 released
+
+        * Updated versions for buildpacks
 
     * [06 February 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february0626)
 
@@ -3227,6 +3233,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
 
+    * [Worker image `v1.0.157`, released 09 February 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_157)
+
     * [Worker image `v1.0.154`, released 02 February 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_154)
 
     * [Worker image `v1.0.147`, released 26 January 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_147)
@@ -4183,6 +4191,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound#connectivity-outbound)
 
+* [Allowed destination IP address ranges for outbound connections](/docs/codeengine?topic=codeengine-connectivity-outbound#cidr-ranges-outbound)
+
+* [Private Path Connections](/docs/codeengine?topic=codeengine-connectivity-outbound#private-path-connections)
+
 * [Private Service Connections](/docs/codeengine?topic=codeengine-connectivity-outbound#private-service-connections)
 
 * [Managing allowed outbound destinations by using the console](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#working-with-allowed-destination-ui)
@@ -4204,6 +4216,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Showing existing allowed destinations for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#show-allowed-destination-cli)
 
     * [Updating an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#update-allowed-destination-cli)
+
+    * [Updating a private path connection for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#update-allowed-destination-pps-cli)
 
     * [Deleting an allowed outbound destination for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli#delete-allowed-destination-cli)
 
