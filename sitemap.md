@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-16"
+lastupdated: "2026-02-27"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -4206,6 +4206,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Adding a private path connection for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#add-allowed-destination-pps-ui)
 
     * [Updating an allowed destination IP address range for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#update-allowed-destination-ui)
+
+    * [Updating a private path connection for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#update-allowed-destination-pps-ui)
 
     * [Deleting an allowed outbound destination for outbound connectivity](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=ui#delete-allowed-destination-ui)
 
