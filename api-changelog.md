@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-09-17"
+  years: 2022, 2026
+lastupdated: "2026-02-27"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -37,6 +37,32 @@ The following table shows the service behavior changes for each version date. Sw
 |`2022-12-09`| Version 2.0.0 |                                                                                                                                                                                           |
 |`2021-03-31`| Version 1.0.0 |                                                                                                                                                                                           |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"}
+
+## 27 February 2026
+{: #27-february-2026}
+
+Added support for fleets in the API.
+:   - See [Create a fleet API](/apidocs/codeengine/v2#create-fleet){: external}.
+:   - See [List fleets API](/apidocs/codeengine/v2#list-fleets){: external}.
+:   - See [Get a fleet API](/apidocs/codeengine/v2#get-fleet){: external}.
+:   - See [Cancel a fleet API](/apidocs/codeengine/v2#cancel-fleet){: external}.
+:   - See [Delete a fleet API](/apidocs/codeengine/v2#delete-fleet){: external}.
+:   - See [List tasks API](/apidocs/codeengine/v2#list-fleet-tasks){: external}.
+:   - See [Get a task API](/apidocs/codeengine/v2#get-fleet-task){: external}.
+:   - See [List workers API](/apidocs/codeengine/v2#list-fleet-workers){: external}.
+:   - See [Get a worker API](/apidocs/codeengine/v2#get-fleet-worker){: external}.
+
+Added support for subnet pools in the API.
+:   - See [Create a subnet pool](/apidocs/codeengine/v2#create-subnet-pool){: external}.
+:   - See [List subnet pools](/apidocs/codeengine/v2#list-subnet-pools){: external}.
+:   - See [Get a subnet pool](/apidocs/codeengine/v2#get-subnet-pool){: external}.
+:   - See [Delete a subnet pool](/apidocs/codeengine/v2#delete-subnet-pool){: external}.
+
+Added support for type `private_path_service_gateway` for allowed outbound destinations in the API.
+:   - See [Create an allowed outbound destination API](/apidocs/codeengine/v2#create-allowed-outbound-destination){: external}.
+:   - See [Get an allowed outbound destination API](/apidocs/codeengine/v2#get-allowed-outbound-destination){: external}.
+:   - See [List allowed outbound destinations API](/apidocs/codeengine/v2#list-allowed-outbound-destination){: external}.
+:   - See [Update an allowed outbound destination API](/apidocs/codeengine/v2#update-allowed-outbound-destination){: external}.
 
 ## 17 September 2025
 {: #17-september-2025}

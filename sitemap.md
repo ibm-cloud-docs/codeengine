@@ -164,6 +164,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [February 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february26)
 
+    * [27 February 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february2726)
+
+        * Added support for fleets, subnet pools, and support for type `private_path_service_gateway` for allowed outbound destinations in the {{site.data.keyword.codeengineshort}} V2 API
+
+        * CLI version 1.62.0 released
+
+        * Added support to specify the isolation policy of the Private Path connection.
+
     * [10 February 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february1026)
 
         * CLI version 1.61.0 released
@@ -4446,6 +4454,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce fleet worker list`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-list)
 
+    * [`ibmcloud ce fleet worker profiles`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-profiles)
+
 * [Function commands](/docs/codeengine?topic=codeengine-cli#cli-function)
 
     * [`ibmcloud ce function bind`](/docs/codeengine?topic=codeengine-cli#cli-function-bind)
@@ -4652,6 +4662,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [27 February 2026](/docs/codeengine?topic=codeengine-api-changelog#27-february-2026)
 
 * [17 September 2025](/docs/codeengine?topic=codeengine-api-changelog#17-september-2025)
 
