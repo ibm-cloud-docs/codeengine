@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-02-27"
 
 keywords: fleets in code engine, running fleets with code engine, creating fleets with code engine, images for fleets in code engine, fleets, serverless fleets, fleets workloads, fleet run, environment variables, fleet workloads
 
@@ -238,10 +238,10 @@ You can optionally choose the profile for your fleet worker. If you do not speci
 {: class="simple-tab-table"}
 {: #flex}
 
-Some profiles may not be available in all VPC network zones. You can use the following CLI command to list the profiles in a region.
+Some profiles may not be available in all VPC network zones. You can use the following CLI command to list worker profiles supported by {{site.data.keyword.codeengineshort}} serverless fleets in a region.
 
 ```txt
-ibmcloud is instance-profiles
+ibmcloud ce fleet worker profiles
 ```
 {: pre}
 

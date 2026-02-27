@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-10"
+lastupdated: "2026-02-27"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -3470,7 +3470,7 @@ State information:
 List all tasks of a serverless fleet.  
   
 ```txt
-ibmcloud ce fleet task list --fleet-id FLEET_ID [--output OUTPUT] [--pagination-token PAGINATION_TOKEN] [--quiet] [--sort-by SORT_BY] [--status STATUS]
+ibmcloud ce fleet task list --fleet-id FLEET_ID [--output OUTPUT] [--pagination-token PAGINATION_TOKEN] [--quiet] [--show-all-columns] [--sort-by SORT_BY] [--status STATUS]
 ```
 {: pre}
 
@@ -3487,6 +3487,9 @@ ibmcloud ce fleet task list --fleet-id FLEET_ID [--output OUTPUT] [--pagination-
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--show-all-columns`, `--sac`
+:   Display additional columns `Created` and `Finished`. This value is *optional*. The default value is `false`.
 
 `--sort-by`, `--sb`
 :   Specifies the column by which to sort the list. Valid values are `id`, `index` and `status`. This value is *optional*. The default value is `index`.
@@ -3699,6 +3702,59 @@ OK
 Name                                          ID                                    Status        Profile   IP           Zone     Version  
 fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-0  2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  running       cx2-2x4   10.242.0.42  eu-de-1  v1.0.15
 fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-1  3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g7g  initializing  cx2-8x16  10.242.0.43  eu-de-1  v1.0.15 
+```
+{: screen}  
+  
+### `ibmcloud ce fleet worker profiles`  
+{: #cli-fleet-worker-profiles}  
+
+List worker profiles supported for serverless fleets.  
+  
+```txt
+ibmcloud ce fleet worker profiles [--output OUTPUT] [--profile-family PROFILE_FAMILY] [--quiet] [--region REGION] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+
+`--output`, `-o`
+:   Output format. Valid values are 'json', 'yaml', 'jsonpath=JSONPATH_EXPRESSION', and 'jsonpath-as-json=JSONPATH_EXPRESSION'. This value is *optional*. 
+
+`--profile-family`, `--pf`
+:   Show profiles that belong to the specified worker profile family. Valid values are [`b`, `balanced`, `c`, `compute`, `m`, `memory`, `g`, `gpu`, `f`, `flex`]. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--region`, `-r`
+:   Display worker profiles supported in specified region. This value is *optional*. 
+
+`--sort-by`, `-s`
+:   Specifies the column by which to sort the list. Valid values are `name`, `cpu`, `disk`, and `memory`. This value is *optional*. The default value is `name`.
+
+  
+  
+#### Example
+{: #fleet-worker-profiles-example}
+
+```txt
+ibmcloud ce fleet worker profiles --profile-family --region br-sao
+```
+{: pre}
+
+#### Example output
+{: #fleet-worker-profiles-example-output}
+
+```txt
+Listing fleet worker profiles...
+OK
+
+Name                 CPU  Memory  Disk  GPU family  Region  
+gx2-8x64x1v100       8    64Gi    0     v100        br-sao  
+gx2-32x256x2v100     32   256Gi   0     v100        br-sao  
+gx3-48x240x2l40s     48   240Gi   0     l40s        br-sao  
+gx3-64x320x4l4       64   320Gi   0     l4          br-sao  
+gx3d-160x1792x8h100  160  1792Gi  60Ti  h100        br-sao  
 ```
 {: screen}  
   

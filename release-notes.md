@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-27"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,19 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## February 2026
 {: #codeengine-february26}
+
+### 27 February 2026
+{: #codeengine-february2726}
+{: release-note}
+
+Added support for fleets, subnet pools, and support for type `private_path_service_gateway` for allowed outbound destinations in the {{site.data.keyword.codeengineshort}} V2 API
+:   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
+
+CLI version 1.62.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Added support to specify the isolation policy of the Private Path connection.
+:   See [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound)
 
 ### 10 February 2026
 {: #codeengine-february1026}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-10"
+lastupdated: "2026-02-27"
 
 keywords: connectivity, outbound connections, outbound connectivity, private path
 
@@ -101,7 +101,10 @@ You can establish a Private Path connection between your {{site.data.keyword.cod
 4. You specify the Private Path service instance to connect to by name or by CRN.
    1. By **Name**, select the Private Path service instance from the drop-down list.
    2. By **CRN**, provide the Private Path service instance CRN.
-5. Confirm your configuration.
+5. Select the isolation policy:
+   1. **Shared** - Allows the Private Path connection to be reused between {{site.data.keyword.codeengineshort}} projects that reside in the same IBM Cloud account as the target VPC, or accounts within the same Enterprise Account Family.
+   2. **Dedicated** - Restricts usage of this Private Path connection to exactly one {{site.data.keyword.codeengineshort}} project.
+6. Confirm your configuration.
 
 Once the connection to VPC is created, the Private Path service owner will receive a connection request. The owner can review, permit or deny this connection request. Use the consumer `Code Engine account ID` and `VPE gateway creation timestamp` displayed in the private path connection details view to identify the connection request within the Private Path service.
 {: note}
@@ -127,6 +130,25 @@ When you update the outbound connectivity rules, note:
 
 * After you restrict outbound connections from your {{site.data.keyword.codeengineshort}} project, you can see unintended side effects such as failing build runs because no external requests can be made.
 
+### Updating a private path connection for outbound connectivity
+{: #update-allowed-destination-pps-ui}
+{: ui}
+
+You can change a Private Path connection between your {{site.data.keyword.codeengineshort}} project and your VPC to be `dedicated` or `shared`.
+
+* A Private Path connection can be `shared` and thus reused between {{site.data.keyword.codeengineshort}} projects that reside in the same IBM Cloud account as the target VPC, or accounts within the same Enterprise Account Family.
+* To restrict usage of a Private Path connection to exactly one {{site.data.keyword.codeengineshort}} project, set its isolation policy to `dedicated`.
+* A `dedicated` Private Path connection can always be changed to `shared`.
+* A `shared` Private Path connection can only be changed to `dedicated` if it is not used by more than one {{site.data.keyword.codeengineshort}} project.
+
+To update the isolation policy of a Private Path connection:
+
+1. Go to the Connectivity page:
+    1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
+    2. Click **Project settings** > **Connectivity** > **Private Path connections** tab to see a list of existing private path connections.
+2. Go to the row with the private path connection that you want to update and click the three dots row actions icon and select **Change isolation policy** option.
+3. In the dialog click **Change** to confirm your changes.
+
 ### Deleting an allowed outbound destination for outbound connectivity
 {: #delete-allowed-destination-ui}
 {: ui}
@@ -139,7 +161,7 @@ Deleting allowed destination IP address ranges blocks outbound traffic for {{sit
 1. Go to the Connectivity page:
     1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
     2. Click **Project settings** > **Connectivity** > **CIDR ranges** tab to see a list of existing allowed destination IP address ranges, or **Private Path connections** tab to see a list of existing private path connections.
-2. Go to the row with the allowed outbound destination that you want to remove and click the delete (trash can) icon.
+2. Go to the row with the allowed outbound destination that you want to remove click the three dots row actions icon and select **Delete** option.
 3. Confirm the deletion when prompted.
 
 ## Managing allowed outbound destinations by using the CLI
@@ -186,7 +208,7 @@ You can create allowed destination IP address ranges to limit where your workloa
 {: cli}
 
 For {{site.data.keyword.codeengineshort}} connectivity outbound CLI commands, you can specify
-the `--name`, `--format`, and `--pps-crn` values to establish a Private Path connections between your {{site.data.keyword.codeengineshort}} project and your VPC.
+the `--name`, `--format`, `--pps-crn`, and optionally `--isolation-policy` values to establish a Private Path connections between your {{site.data.keyword.codeengineshort}} project and your VPC.
 
 1. Select your {{site.data.keyword.codeengineshort}} project. For example:
 
@@ -195,10 +217,12 @@ the `--name`, `--format`, and `--pps-crn` values to establish a Private Path con
     ```
     {: pre}
 
-2. Create a private path connection for outbound connectivity by specifying the `--name`, `--format`, and `--pps-crn` options. Provide a valid name, format and CRN. Refer to this example:
+2. Create a private path connection for outbound connectivity by specifying the `--name`, `--format`, and `--pps-crn`. Provide a valid name, format and CRN. Provide `shared` or `dedicated` if specifying `--isolation-policy`. Refer to these examples:
 
     ```txt
     ibmcloud ce connectivity outbound create --name my-pps-connection --format pps --pps-crn crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::private-path-service-gateway:r010-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f
+    
+    ibmcloud ce connectivity outbound create --name my-pps-connection-2 --format pps --pps-crn crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::private-path-service-gateway:r010-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f5e --isolation-policy dedicated
     ```
     {: pre}
 
