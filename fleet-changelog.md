@@ -3,7 +3,7 @@
 copyright:
   years: 2026
 
-lastupdated: "2026-03-05"
+lastupdated: "2026-03-10"
 
 
 keywords: change log, version history, vsi image, serverless fleets
@@ -31,6 +31,20 @@ For more information about Nvidia CUDA drivers including lifecycle and compatibi
 
 
 
+### Worker image `v1.0.171`, released 09 March 2026
+{: #fleets-worker-boms-v1_0_171}
+
+The following table shows the components included in the {{site.data.keyword.codeengineshort}} fleet worker image v1.0.171.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+| UBUNTU_24_04 | Kernel: 6.8.0-1045 <br/> podman: 4.9.3 <br/> s3fs: 1.93 | Resolves the following CVEs: <br/> [CVE-2026-2781](https://nvd.nist.gov/vuln/detail/CVE-2026-2781){: external} |
+| Nvidia CUDA | Driver: 580.126.20 <br/> Toolkit: 12.6.3 <br/> NVIDIA Fabric Manager: 580.126.20 | |
+{: caption="Worker image v1.0.171" caption-side="bottom"}
+{: #fleets-worker-boms-v1_0_171-component-table}
+
+
 ### Worker image `v1.0.164`, released 02 March 2026
 {: #fleets-worker-boms-v1_0_164}
 
@@ -43,20 +57,6 @@ The following table shows the components included in the {{site.data.keyword.cod
 | Nvidia CUDA | Driver: 580.126.20 <br/> Toolkit: 12.6.3 <br/> NVIDIA Fabric Manager: 580.126.20 | |
 {: caption="Worker image v1.0.164" caption-side="bottom"}
 {: #fleets-worker-boms-v1_0_164-component-table}
-
-
-### Worker image `v1.0.158`, released 23 February 2026
-{: #fleets-worker-boms-v1_0_158}
-
-The following table shows the components included in the {{site.data.keyword.codeengineshort}} fleet worker image v1.0.158.
-{: shortdesc}
-
-| Component | Version | Description |
-| ---- | ---- | ---- |
-| UBUNTU_24_04 | Kernel: 6.8.0-1043 <br/> podman: 4.9.3 <br/> s3fs: 1.93 | Resolves the following CVEs: <br/> N/A |
-| Nvidia CUDA | Driver: 580.126.16 <br/> Toolkit: 12.6.3 <br/> NVIDIA Fabric Manager: 580.126.16 | |
-{: caption="Worker image v1.0.158" caption-side="bottom"}
-{: #fleets-worker-boms-v1_0_158-component-table}
 
 
 ### Worker image `v1.0.158`, released 16 February 2026

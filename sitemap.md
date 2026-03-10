@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-05"
+lastupdated: "2026-03-09"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3241,9 +3241,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
 
-    * [Worker image `v1.0.164`, released 02 March 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_164)
+    * [Worker image `v1.0.171`, released 09 March 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_171)
 
-    * [Worker image `v1.0.158`, released 23 February 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_158)
+    * [Worker image `v1.0.164`, released 02 March 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_164)
 
     * [Worker image `v1.0.158`, released 16 February 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_158)
 
@@ -4044,23 +4044,35 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_observability}
 
 
-[Viewing logs for apps, jobs and functions](/docs/codeengine?topic=codeengine-logging#logging)
+[Writing and viewing logs for apps, jobs, and functions](/docs/codeengine?topic=codeengine-logging#logging)
 
-* [Viewing logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-ui)
+* [Writing logs](/docs/codeengine?topic=codeengine-logging#writing-logs)
 
-    * [Considerations for viewing logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-logs-considerations)
+    * [Considerations for writing logs](/docs/codeengine?topic=codeengine-logging#writing-logs-considerations)
 
-    * [Viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui)
+    * [Log formats](/docs/codeengine?topic=codeengine-logging#writing-logs-format)
 
-    * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-build-ui)
+    * [Unstructured logs](/docs/codeengine?topic=codeengine-logging#writing-logs-format-unstructured)
 
-* [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-logs-cli)
+    * [Structured logs](/docs/codeengine?topic=codeengine-logging#writing-logs-format-structured)
 
-    * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-applog-cli)
+    * [Logging fields](/docs/codeengine?topic=codeengine-logging#logging-fields)
 
-    * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-joblog-cli)
+* [Viewing logs from the console](/docs/codeengine?topic=codeengine-logging#view-logs-ui)
 
-    * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-logging&interface=cli#view-build-cli)
+    * [Considerations for viewing logs from the console](/docs/codeengine?topic=codeengine-logging#view-logs-considerations)
+
+    * [Viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-logging#view-appjobfunctionlogs-ui)
+
+    * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-logging#view-build-ui)
+
+* [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-logging#view-logs-cli)
+
+    * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-logging#view-applog-cli)
+
+    * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-logging#view-joblog-cli)
+
+    * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-logging#view-build-cli)
 
 [Viewing logs and monitoring data for fleets](/docs/codeengine?topic=codeengine-fleet-observability-view#fleet-observability-view)
 
@@ -4813,13 +4825,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Understanding high availability and disaster recovery for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-ha-dr#ha-dr)
 
-* [{{site.data.keyword.codeengineshort}} regions](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-regions)
-
 * [Availability of {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-availability)
+
+* [{{site.data.keyword.codeengineshort}} regions](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-regions)
 
 * [Disaster Recovery for {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-disaster)
 
-* [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
+    * [How IBM helps ensure disaster recovery](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-ibm-how)
+
+    * [Planning for disaster recovery](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-planning)
 
 
 ## Understanding data portability for {{site.data.keyword.codeengineshort}}
