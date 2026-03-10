@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-09"
+lastupdated: "2026-03-10"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, function logs for code engine, logs
 
@@ -54,7 +54,7 @@ In the following sections, you learn more about how the log levels are parsed fo
 
 To take advantage of {{site.data.keyword.logs_full_notm}} search and formatting features, change your log formatting as follows.
 
-* If your log lines span multiple lines, change how you format and output your logs so that they're in a single line. Use the JSONL format (see [Log formats](/docs/codeengine?topic=codeengine-tmp-logging#tmp-writing-logs-format)) for your logs with {{site.data.keyword.logs_full_notm}}.
+* If your log lines span multiple lines, change how you format and output your logs so that they're in a single line. Use the JSONL format (see [Log formats](/docs/codeengine?topic=codeengine-logging#writing-logs-format)) for your logs with {{site.data.keyword.logs_full_notm}}.
 * Your logs must conform to [limits for {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-limits).
 
 ### Log formats
@@ -190,7 +190,7 @@ console.log("Starting billing workflow...\\nStep 1: Validating input...\\nStep 2
 #### Logging errors
 {: #writing-logs-format-unstructured-errors}
 
-If your workload emits multi‑line error stack traces, use the structured JSON log format instead of unstructured console output. Structured logs preserve multi‑line fields reliably and ensure that stack traces are grouped into a single log record, which is covered in the section [Structured logs](/docs/codeengine?topic=codeengine-tmp-logging#tmp-writing-logs-format-structured).
+If your workload emits multi‑line error stack traces, use the structured JSON log format instead of unstructured console output. Structured logs preserve multi‑line fields reliably and ensure that stack traces are grouped into a single log record, which is covered in the section [Structured logs](/docs/codeengine?topic=codeengine-logging#writing-logs-format-structured).
 
 For example, the following log message is classified as **Error** because the keyword "`error`" appears in the log message. However, the stack trace that is provided by the `err` object is rendered in multiple log lines.
 
