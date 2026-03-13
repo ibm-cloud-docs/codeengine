@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-02-27"
+lastupdated: "2026-03-13"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,16 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month.
 {: shortdesc}
+
+## March 2026
+{: #codeengine-march26}
+
+### 11 March 2026
+{: #codeengine-march1126}
+{: release-note}
+
+CLI version 1.62.1 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ## February 2026
 {: #codeengine-february26}
@@ -360,7 +370,7 @@ CLI version 1.52.1 released
 Added support for Trusted Profiles. See [Working with trusted profiles in Code Engine to access IBM Cloud services](/docs/codeengine?topic=codeengine-trusted-profiles).
 
 Updated API and SDKs. See [API change log](/docs/codeengine?topic=codeengine-api-changelog) for details.
-:   - Added the `run_compute_resource_token_enabled` property for app create, app update, job create, job update, function create, and function update. Use this property to enable or disable Trusted Profiles support for the selected resource. 
+:   - Added the `run_compute_resource_token_enabled` property for app create, app update, job create, job update, function create, and function update. Use this property to enable or disable Trusted Profiles support for the selected resource.
     - Added support for `hmac_auth` secret `format`.
     - Replaced nodejs-18 runtime with nodejs-20.
 

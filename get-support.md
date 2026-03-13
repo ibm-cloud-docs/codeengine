@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-05-07"
+  years: 2020, 2026
+lastupdated: "2026-03-10"
 
 keywords: getting support for code engine, help for code engine, support for code engine, errors in code engine, slack for code engine, getting support
 
@@ -21,7 +21,6 @@ If you have problems or questions about {{site.data.keyword.codeengineshort}}, y
 * Ask a question in the AI assistant from the console or the {{site.data.keyword.cloud_notm}} CLI.
 * Review the [FAQs](/docs/codeengine?topic=codeengine-faqs) in the product documentation.
 * Review the [troubleshooting documentation](/docs/codeengine?topic=codeengine-troubleshooting_over) to troubleshoot and resolve common issues.
-* Engage our team through Slack. You can join the discussion in the [#code-engine channel](https://ibm-cloud-success.slack.com/archives/C014051FRCG){: external}.
 * Review forums such as Stack Overflow to see whether other users ran into the same issue. If you have technical questions, [post your question on Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud-code-engine){: external} and tag your question with `ibm-cloud-code-engine`.
 * Get help from the open source community by searching for information on the internet or by asking questions in forums and on websites that support these tools.
 * You can also contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support).

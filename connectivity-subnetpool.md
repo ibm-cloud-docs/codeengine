@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-26"
+lastupdated: "2026-03-11"
 
 keywords: connectivity, subnet pool, fleet
 
@@ -147,7 +147,7 @@ Follow these guidelines:
 2. Create a subnet pool by specifying the `--name`, `--subnet-crn`, and optionally `--security-group-crn` options. The `--subnet-crn` and `--security-group-crn` options can be specified multiple times. To correlate `--security-group-crn` values with their `--subnet-crn` value, use an arbitrary identifier as key. Refer to this example, which uses keys `S1` and `IDx`:
 
     ```txt
-    ibmcloud ce connectivity outbound subnetpool create --name my-other-pool \
+    ibmcloud ce connectivity subnetpool create --name my-other-pool \
         --subnet-crn S1=crn:v1:bluemix:public:is:eu-de-3:a/abcdefabcdefabcdefabcd1234567890::subnet:1a1a-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f21 \
         --security-group-crn S1=crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::security-group:2b2b-3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g7g \
         --subnet-crn IDx=crn:v1:bluemix:public:is:eu-de-3:a/abcdefabcdefabcdefabcd1234567890::subnet:1a1a-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f22 \

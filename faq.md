@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-02-28"
+  years: 2020, 2026
+lastupdated: "2026-03-13"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -77,6 +77,17 @@ The result of a Docker build that you run on your local system is the same conta
 2. You can use the resources that are provided by {{site.data.keyword.codeengineshort}}. For example, you can take advantage of the speed of {{site.data.keyword.cloud_notm}} to push and pull container registry images for you.
 3. You can build your container image by using the [Buildpacks build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) instead of Dockerfile, which detects your sources for various languages and automatically builds a container out of it.
 4. If you have an image that was built with a non-Intel based processor, {{site.data.keyword.codeengineshort}} can rebuild it for you.
+
+## Why do container images built with Buildpacks in {{site.data.keyword.codeengineshort}} show many vulnerabilities?
+{: #cebuild-vulns}
+{: faq}
+{: support}
+
+Images that are built with the Buildpacks build strategy use an Ubuntu base image. While this base image is actively maintained, some Ubuntu packages only receive security fixes under the Ubuntu Pro subscription model. As a result, your image contains packages for which Canonical publishes vulnerability notices, but provides patches only to Ubuntu Pro subscribers. Because {{site.data.keyword.codeengineshort}} uses the publicly available version, these updates cannot be applied automatically. In vulnerability reports, you can identify those by checking the version a package would need to be updated to. If this version number contains `esm`, then it is an Ubuntu Pro only fix.
+
+Note that the base image contains several packages that are needed by some runtimes. These packages are installed because Buildpacks cannot reliably determine during the build which system libraries your application might require at runtime. Although some packages may not be needed for your specific app, they are included to ensure that a wide variety of workloads run successfully.
+
+If you want full control over the base image, including which Ubuntu packages are present and when they are updated, consider switching from the Buildpacks build strategy to providing your own Dockerfile. With a Dockerfile-based build, you can choose a minimal base image, update packages exactly as you prefer, and reduce the number of components that appear in vulnerability scans.
 
 ## Why do images that are built with non-Intel processors not work with {{site.data.keyword.codeengineshort}}?
 {: #buildimage-nonintel}

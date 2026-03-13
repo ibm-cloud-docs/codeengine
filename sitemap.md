@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-09"
+lastupdated: "2026-03-13"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -161,6 +161,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [March 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-march26)
+
+    * [11 March 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-march1126)
+
+        * CLI version 1.62.1 released
 
 * [February 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-february26)
 
@@ -5037,6 +5043,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Do I need a Docker Hub account to use {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerhub-options)
 
 * [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
+
+* [Why do container images built with Buildpacks in {{site.data.keyword.codeengineshort}} show many vulnerabilities?](/docs/codeengine?topic=codeengine-faqs#cebuild-vulns)
 
 * [Why do images that are built with non-Intel processors not work with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#buildimage-nonintel)
 
