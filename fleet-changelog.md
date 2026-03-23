@@ -3,7 +3,7 @@
 copyright:
   years: 2026
 
-lastupdated: "2026-03-18"
+lastupdated: "2026-03-23"
 
 
 keywords: change log, version history, vsi image, serverless fleets
@@ -29,6 +29,20 @@ For more information about Nvidia CUDA drivers including lifecycle and compatibi
 ## Version v1.0
 {: #fleets-worker-changelog-contents-v1_0}
 
+
+
+### Worker image `v1.0.182`, released 23 March 2026
+{: #fleets-worker-boms-v1_0_182}
+
+The following table shows the components included in the {{site.data.keyword.codeengineshort}} fleet worker image v1.0.182.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+| UBUNTU_24_04 | Kernel: 6.8.0-1049 <br/> podman: 4.9.3 <br/> s3fs: 1.93 | Resolves the following CVEs: <br/> [CVE-2025-61984](https://nvd.nist.gov/vuln/detail/CVE-2025-61984){: external}, [CVE-2025-61985](https://nvd.nist.gov/vuln/detail/CVE-2025-61985){: external}, [CVE-2026-23865](https://nvd.nist.gov/vuln/detail/CVE-2026-23865){: external}, [CVE-2026-25749](https://nvd.nist.gov/vuln/detail/CVE-2026-25749){: external}, [CVE-2026-26007](https://nvd.nist.gov/vuln/detail/CVE-2026-26007){: external}, [CVE-2026-26269](https://nvd.nist.gov/vuln/detail/CVE-2026-26269){: external}, [CVE-2026-28417](https://nvd.nist.gov/vuln/detail/CVE-2026-28417){: external}, [CVE-2026-28418](https://nvd.nist.gov/vuln/detail/CVE-2026-28418){: external}, [CVE-2026-28419](https://nvd.nist.gov/vuln/detail/CVE-2026-28419){: external}, [CVE-2026-28420](https://nvd.nist.gov/vuln/detail/CVE-2026-28420){: external}, [CVE-2026-28421](https://nvd.nist.gov/vuln/detail/CVE-2026-28421){: external}, [CVE-2026-28422](https://nvd.nist.gov/vuln/detail/CVE-2026-28422){: external}, [CVE-2026-3497](https://nvd.nist.gov/vuln/detail/CVE-2026-3497){: external}, [CVE-2026-3731](https://nvd.nist.gov/vuln/detail/CVE-2026-3731){: external}, [CVE-2026-3888](https://nvd.nist.gov/vuln/detail/CVE-2026-3888){: external} |
+| Nvidia CUDA | Driver: 580.126.20 <br/> Toolkit: 12.6.3 <br/> NVIDIA Fabric Manager: 580.126.20 | |
+{: caption="Worker image v1.0.182" caption-side="bottom"}
+{: #fleets-worker-boms-v1_0_182-component-table}
 
 
 ### Worker image `v1.0.177`, released 16 March 2026
