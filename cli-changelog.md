@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-13"
+lastupdated: "2026-04-09"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ------ | ---------- | --------------------- |
+| 1.62.2 | 2026-04-09 | - Fixed various bugs. |
 | 1.62.1 | 2026-03-11 | - Fixed various bugs. |
 | 1.62.0 | 2026-02-27 | - Added the `fleet worker profiles` command to list worker profiles supported by serverless fleets. See [What are the key features of working with {{site.data.keyword.codeengineshort}} fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-profile) and [{{site.data.keyword.codeengineshort}} CLI reference (`fleet worker profiles` command)](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-profiles). \n - Added the `--show-all-columns` option to the **`fleet task list`** command. Use this option to display additional columns with `Created` and `Finished` timestamp for each task. See [{{site.data.keyword.codeengineshort}} CLI reference (`fleet task list` command)](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-list). \n - Fixed various bugs. |
 | 1.61.0 | 2026-02-10 | - Added support to specify the isolation policy of the Private Path connection in the `connectivity outbound create` and `connectivity outbound update` commands. See [Working with outbound connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-outbound&interface=cli) and [{{site.data.keyword.codeengineshort}} CLI reference (`connectivity` command)](/docs/codeengine?topic=codeengine-cli#cli-connectivity). \n - Added support for the `idx` field to specify a custom task index in JSONL files for the `fleet create` command. See [Task specification](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-task-spec). \n - Fixed various bugs. |
