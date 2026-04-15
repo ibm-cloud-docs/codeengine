@@ -3,7 +3,7 @@
 copyright:
   years: 2026
 
-lastupdated: "2026-04-06"
+lastupdated: "2026-04-13"
 
 
 keywords: change log, version history, vsi image, serverless fleets
@@ -29,6 +29,20 @@ For more information about Nvidia CUDA drivers including lifecycle and compatibi
 ## Version v1.0
 {: #fleets-worker-changelog-contents-v1_0}
 
+
+
+### Worker image `v1.0.192`, released 13 April 2026
+{: #fleets-worker-boms-v1_0_192}
+
+The following table shows the components included in the {{site.data.keyword.codeengineshort}} fleet worker image v1.0.192.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+| UBUNTU_24_04 | Kernel: 6.8.0-1050 <br/> podman: 4.9.3 <br/> s3fs: 1.93 | Resolves the following CVEs: <br/> [CVE-2025-5918](https://nvd.nist.gov/vuln/detail/CVE-2025-5918){: external}, [CVE-2025-60753](https://nvd.nist.gov/vuln/detail/CVE-2025-60753){: external}, [CVE-2026-28387](https://nvd.nist.gov/vuln/detail/CVE-2026-28387){: external}, [CVE-2026-28388](https://nvd.nist.gov/vuln/detail/CVE-2026-28388){: external}, [CVE-2026-28389](https://nvd.nist.gov/vuln/detail/CVE-2026-28389){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}, [CVE-2026-30922](https://nvd.nist.gov/vuln/detail/CVE-2026-30922){: external}, [CVE-2026-31789](https://nvd.nist.gov/vuln/detail/CVE-2026-31789){: external}, [CVE-2026-31790](https://nvd.nist.gov/vuln/detail/CVE-2026-31790){: external}, [CVE-2026-32597](https://nvd.nist.gov/vuln/detail/CVE-2026-32597){: external}, [CVE-2026-4111](https://nvd.nist.gov/vuln/detail/CVE-2026-4111){: external} |
+| Nvidia CUDA | Driver: 580.126.20 <br/> Toolkit: 12.6.3 <br/> NVIDIA Fabric Manager: 580.126.20 | |
+{: caption="Worker image v1.0.192" caption-side="bottom"}
+{: #fleets-worker-boms-v1_0_192-component-table}
 
 
 ### Worker image `v1.0.188`, released 06 April 2026

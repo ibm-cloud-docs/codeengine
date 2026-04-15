@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-04-14"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, function logs for code engine, logs
 
@@ -486,21 +486,34 @@ Function workloads handle multi-line logs, but each newline character results in
 ### Logging fields
 {: #logging-fields}
 
+
 | Field name | Description | Example value |
 | ---------- | ----------- | ------------- |
 | `app` | The IBM Cloud service that emitted the platform log line. For {{site.data.keyword.codeengineshort}}, this will always be `codeengine`. | `codeengine` |
 | `tag` | Field set by fluentbit and derived from the input ID set in the fluentbit config. | `platform.<id>.codeengine` |
 | `stream` | The output stream that received the log record. | Possible values: `stdout` or `stderr` |
-| `label.Namespace` | The subdomain name of the {{site.data.keyword.codeengineshort}} project. | `edf5a781` |
-| `label.Project` | The name of the {{site.data.keyword.codeengineshort}} project. | User defined string |
-| `label.Stream` | The output stream that received the log record. | Possible values: `stdout` or `stderr` |
+| `originator` | Indicates whether a {{site.data.keyword.codeengineshort}} system component or user workload emitted the log line. | `system` or `user` |
+| `resourceGroupId` | Resource group CRN for the {{site.data.keyword.codeengineshort}} project. | `<resource group CRN>` |
+| `messageKey` | Optional unique, human-readable identifier for filtering logs and troubleshooting. | User-defined string |
+| `codeengine.region` | Region of the {{site.data.keyword.codeengineshort}} project. | `us-south` |
+| `codeengine.project` | Name of the {{site.data.keyword.codeengineshort}} project. | User-defined string |
+| `codeengine.projectGuid` | GUID of the {{site.data.keyword.codeengineshort}} project. | `<project GUID>` |
+| `codeengine.projectSubdomain` | Namespace of the {{site.data.keyword.codeengineshort}} project. | `edf5a781` |
+| `codeengine.componentType` | Component type that emitted the log line. | Possible values: `app`, `job`, `job_run`, `fleet`, `function`, `build`, `build_run`, `container` |
+| `codeengine.component` | Component name that emitted the log line. | User-defined string |
+| `codeengine.subcomponentType` | Subcomponent type that emitted the log line. | Possible values: `app_revision`, `job_run`, `fleet_instance`, `function`, `build_run`, `container` |
+| `codeengine.subcomponent` | Subcomponent name that emitted the log line. | User-defined string |
+| `codeengine.instanceId` | Pod name (for apps, jobs, and builds) or container instance ID (for functions and fleets). | `my-app-0001-pod-abcde` |
+| `label.Namespace` | **Deprecated.** The subdomain name of the {{site.data.keyword.codeengineshort}} project. Use `codeengine.projectSubdomain`instead. This field will be removed after 15 June 2026. | `edf5a781` |
+| `label.Project` | **Deprecated.** The name of the {{site.data.keyword.codeengineshort}} project. Use `codeengine.project` instead. This field will be removed after 15 June 2026. | User-defined string |
+| `label.Stream` | **Deprecated.** The output stream that received the log record. Use `stream` instead. This field will be removed after 15 June 2026. | Possible values: `stdout` or `stderr` |
 | `level` | Optional. Defines the severity of the log message. This value is only set, if the log level could be extracted from an unstructured log message. Values are case-insensitive. | Possible values: `fatal`, `error`, `warn`, `info`, `debug`, `trace` |
-| `logtag` | Optional. Indicates whether the received log line is a partial or full log line. This field is not set for function workloads. | Possible values: `F` or `P` |
+| `logtag` | **Deprecated.** Optional. Indicates whether the received log line is a partial or full log line. This field is not set for function workloads. This field will be removed after 15 June 2026 with no replacement. | Possible values: `F` or `P` |
 | `message.message` | The human-readable log message. | String defined by system component or user |
 | `message.logSourceCRN` | The CRN of the {{site.data.keyword.codeengineshort}} project. | `<code engine project CRN>` |
-| `message.saveServiceCopy` | Defines whether the platform log line should be copied into {{site.data.keyword.codeenginefull}}’s system logs, too. | `false` |
-| `message.serviceName` | The name of the IBM Cloud service that emitted that log line. | `codeengine` |
-| `message._app` | The instance name (for apps, jobs, and builds) or component name (for functions). | `my-app-0001-pod-abcde` |
+| `message.saveServiceCopy` | **Deprecated.** Defines whether the platform log line should be copied into {{site.data.keyword.codeenginefull}}'s system logs, too. This field will be removed after 15 June 2026 with no replacement. | `false` |
+| `message.serviceName` | **Deprecated.** The name of the IBM Cloud service that emitted that log line. Use `app` instead. This field will be removed after 15 June 2026. | `codeengine` |
+| `message._app` | **Deprecated.** The instance name (for apps, jobs, and builds) or component name (for functions). Use `codeengine.instanceId`, `codeengine.component`, or both instead. This field will be removed after 15 June 2026. | `my-app-0001-pod-abcde` |
 | `message.*` | Optional. Meta information useful for the user to create dashboards or alerts. | `durationSeconds` |
 {: caption="{{site.data.keyword.codeengineshort}} logging fields." caption-side="bottom"}
 
@@ -537,16 +550,16 @@ The logging capabilities offered through the CLI are limited and should be consi
 
 You can modify and scope the filter to display log data at a specific level or a more granular level to a specific application revision, job run, or build run from the {{site.data.keyword.logs_full_notm}} page, based on your needs.
 
-* If `message.serviceName:"codeengine"` is set, then only {{site.data.keyword.codeengineshort}} logs are displayed.
-* If `label.Project:'<project_name>'` is set, then only logs from a specific project are displayed.
-* If `message._app:'<your_component_name>'` is set, then only logs from the specified component (application, job, or build) are displayed. If your {{site.data.keyword.codeengineshort}} components share the same name, the filter includes logs from these components. For example,
+* If `app:"codeengine"` is set, then only {{site.data.keyword.codeengineshort}} logs are displayed.
+* If `codeengine.project:'<project_name>'` is set, then only logs from a specific project are displayed.
+* If `codeengine.component:'<your_component_name>'` is set, then only logs from the specified component (application, job, or build) are displayed. If your {{site.data.keyword.codeengineshort}} components share the same name, the filter includes logs from these components. For example,
 
-    * The filter `message.serviceName:"codeengine" AND message._app:"myapp"` scopes the logs to the `myapp` application level.
-    * The filter `message.serviceName:"codeengine" AND message._app:"myapp\-00002"` scopes the logs to the `myapp-0002` application revision level.
-    * The filter `message.serviceName:"codeengine" AND message._app:"myjob"` scopes the logs to the specific `myjob` job level.
-    * The filter `message.serviceName:"codeengine" AND message._app:"myjob\-jobrun\-t6m7l"` scopes the logs to the specific `myjob-jobrun-t6m7l` job run level.
-    * The filter `message.serviceName:"codeengine" AND message._app:"mybuild"` scopes the logs to the specific `mybuild` build level.
-    * The filter `message.serviceName:"codeengine" AND message._app:"mybuild\-run\-121212"` scopes the logs to the specific `mybuild-run-121212` build run level.
+    * The filter `app:"codeengine" AND codeengine.component:"myapp"` scopes the logs to the `myapp` application level.
+    * The filter `app:"codeengine" AND codeengine.subcomponent:"myapp\-00002"` scopes the logs to the `myapp-0002` application revision level.
+    * The filter `app:"codeengine" AND codeengine.component:"myjob"` scopes the logs to the specific `myjob` job level.
+    * The filter `app:"codeengine" AND codeengine.subcomponent:"myjob\-jobrun\-t6m7l"` scopes the logs to the specific `myjob-jobrun-t6m7l` job run level.
+    * The filter `app:"codeengine" AND codeengine.component:"mybuild"` scopes the logs to the specific `mybuild` build level.
+    * The filter `app:"codeengine" AND codeengine.subcomponent:"mybuild\-run\-121212"` scopes the logs to the specific `mybuild-run-121212` build run level.
 
 For more information about configuring and starting logging in the console, see [viewing app, job, or function logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui).
 
