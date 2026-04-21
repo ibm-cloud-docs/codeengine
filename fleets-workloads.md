@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-27"
+lastupdated: "2026-04-20"
 
 keywords: fleets in code engine, running fleets with code engine, creating fleets with code engine, images for fleets in code engine, fleets, serverless fleets, fleets workloads, fleet run, environment variables, fleet workloads
 
@@ -198,6 +198,7 @@ You can optionally choose the profile for your fleet worker. If you do not speci
 | gx3d-24x120x1a100p |
 | gx3d-48x240x2a100p |
 | gx3d-160x1792x8h100 |
+| gx3d-160x1792x8h200 |
 {: caption="GPU" caption-side="bottom"}
 {: tab-title="GPU"}
 {: tab-group="profiles-tab-group"}
