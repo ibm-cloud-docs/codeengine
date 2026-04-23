@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-04-23"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ------ | ---------- | --------------------- |
+| 1.62.3 | 2026-04-24 | - Upgraded to Go 1.26. \n - Fixed various bugs. |
 | 1.62.2 | 2026-04-09 | - Fixed various bugs. |
 | 1.62.1 | 2026-03-11 | - Fixed various bugs. |
 | 1.62.0 | 2026-02-27 | - Added the `fleet worker profiles` command to list worker profiles supported by serverless fleets. See [What are the key features of working with {{site.data.keyword.codeengineshort}} fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-profile) and [{{site.data.keyword.codeengineshort}} CLI reference (`fleet worker profiles` command)](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-profiles). \n - Added the `--show-all-columns` option to the **`fleet task list`** command. Use this option to display additional columns with `Created` and `Finished` timestamp for each task. See [{{site.data.keyword.codeengineshort}} CLI reference (`fleet task list` command)](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-list). \n - Fixed various bugs. |
