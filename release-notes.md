@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-04-30"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -22,6 +22,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 ## April 2026
 {: #codeengine-april26}
+
+### 30 April 2026
+{: #codeengine-april3026}
+{: release-note}
+
+Added support for functions runtime Node.js 24
+:   See [Function runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
 
 ### 24 April 2026
 {: #codeengine-april2426}
