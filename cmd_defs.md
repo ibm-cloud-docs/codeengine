@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-27"
+lastupdated: "2026-04-30"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -3109,7 +3109,7 @@ Tasks status:
 Launch a serverless fleet.  
   
 ```txt
-ibmcloud ce fleet create [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--gpu GPU] [--image IMAGE] [--max-scale MAX_SCALE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mount-data-store MOUNT_DATA_STORE] [--name NAME] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--subnetpool-id SUBNETPOOL_ID] [--subnetpool-name SUBNETPOOL_NAME] [--task-indexes TASK_INDEXES] [--tasks TASKS] [--tasks-from-cos-bucket TASKS_FROM_COS_BUCKET] [--tasks-from-cos-object TASKS_FROM_COS_OBJECT] [--tasks-from-local-file TASKS_FROM_LOCAL_FILE] [--tasks-state-store TASKS_STATE_STORE] [--worker-profile WORKER_PROFILE]
+ibmcloud ce fleet create --image IMAGE_REF --tasks-state-store TASKS_STATE_STORE (--subnetpool-name SUBNETPOOL_NAME | --subnetpool-id SUBNETPOOL_ID) (--tasks TASKS | --tasks-from-local-file TASKS_FROM_LOCAL_FILE | --tasks-from-cos-object TASKS_FROM_COS_OBJECT | --tasks-from-cos-bucket TASKS_FROM_COS_BUCKET) [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--gpu GPU] [--max-scale MAX_SCALE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mount-data-store MOUNT_DATA_STORE] [--name NAME] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--task-indexes TASK_INDEXES] [--worker-profile WORKER_PROFILE]
 ```
 {: pre}
 
@@ -3177,7 +3177,7 @@ ibmcloud ce fleet create [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [
 :   Specify task indexes that are to be processed, for example `0,3,6,9`, `1-5,7-8,10`. Specify no more than 1000 index entries. This option cannot be specified if `--tasks` is specified. This value is *optional*. 
 
 `--tasks`, `--ts`
-:   Specify the number of tasks that are to be processed by the fleet. This value is *optional*. The default value is `0`.
+:   Specify the number of tasks that are to be processed by the fleet. If no task specification option is provided, this option is used with a default value of `1`. This value is *optional*.
 
 `--tasks-from-cos-bucket`, `--ts-bucket`
 :   Specify a location of files inside a COS bucket. For each file, tasks are to be processed by the fleet. This value is *optional*. 
@@ -4174,11 +4174,12 @@ ibmcloud ce fn runtimes
 {: #function-runtimes-example-output}
 
 ```txt
-Name         ID           Family  Default  
-Python 3.11  python-3.11  python  true  
-Node.js 20   nodejs-20    nodejs  true  
-Node.js 22   nodejs-22    nodejs  false  
-Python 3.13  python-3.13  python  false  
+Name         ID           Family  Default
+Python 3.11  python-3.11  python  true
+Node.js 20   nodejs-20    nodejs  false
+Node.js 22   nodejs-22    nodejs  true
+Node.js 24   nodejs-24    nodejs  false
+Python 3.13  python-3.13  python  false
 ```
 {: screen}
   
