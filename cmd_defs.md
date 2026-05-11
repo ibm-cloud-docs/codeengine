@@ -2,11 +2,13 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-01"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
 subcollection: codeengine
+
+content-type: cli-docs
 
 ---
 
