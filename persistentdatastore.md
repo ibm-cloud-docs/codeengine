@@ -2,7 +2,7 @@
 
 copyright:
 years: 2025, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-05-19"
 
 keywords: code engine, persistent data store, pds, object storage, mount bucket, s3fs, mount cos, apps, jobs
 
@@ -20,13 +20,14 @@ You can mount an {{site.data.keyword.cos_full_notm}}(COS) bucket to your {{site.
 A persistent data store in {{site.data.keyword.codeengineshort}} is a reference to an existing data store that {{site.data.keyword.codeengineshort}} does not manage. Currently, {{site.data.keyword.cos_full_notm}} is the only supported data store type. By creating a reference to your COS bucket, you can mount it directly into your application or job container's file system.
 
 ## Before you begin
-{: #pds-prereqs}
+{: #pds-prereqs-ui}
+{: ui}
 
 Before you can work with persistent data stores, ensure that the following prerequisites are met.
 
 - You must have an [{{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-provision).
-- You must have a bucket available in your {{site.data.keyword.cos_short}} instance.
 - You must create a service credential for your {{site.data.keyword.cos_short}} instance with [**HMAC credentials**](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main) enabled. The HMAC credential requires at least the **Writer** service access role to read from and write to the bucket. If you only need read access, choose the **Content Reader** service access role instead.
+- You must have a bucket available in your {{site.data.keyword.cos_short}} instance. For more information, see [Create a new bucket](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 - You must have a [{{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-manage-project) and it must be selected as the current context.
 
 ## Step 1: Create an HMAC secret in {{site.data.keyword.codeengineshort}} by using the console
@@ -100,6 +101,23 @@ When you update your application, your app creates a new revision and routes tra
 9. Click **Add** to create the volume mount.
 10. Click **Deploy** to save your changes and deploy the job.
 11. Click **Submit job**.
+
+## Before you begin
+{: #pds-prereqs-cli}
+{: cli}
+
+Before you can work with persistent data stores, ensure that the following prerequisites are met.
+
+- You must have an [{{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-provision).
+- You must create a service credential for your {{site.data.keyword.cos_short}} instance with [**HMAC credentials**](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main) enabled. The HMAC credential requires at least the **Writer** service access role to read from and write to the bucket. If you only need read access, choose the **Content Reader** service access role instead.
+- You must install the IBM Cloud Object Storage plugin by running the following command:
+  ```txt
+  ibmcloud plugin install cloud-object-storage
+  ```
+  {: pre}
+
+- You must have a bucket available in your {{site.data.keyword.cos_short}} instance. For more information, see [Create a new bucket](/docs/cloud-object-storage?topic=cloud-object-storage-ic-cos-cli#create-a-new-bucket).
+- You must have a [{{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-manage-project) and it must be selected as the current context.
 
 ## Step 1: Create an HMAC secret in {{site.data.keyword.codeengineshort}} by using the CLI
 {: #pds-create-secret-cli}

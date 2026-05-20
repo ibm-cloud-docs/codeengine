@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-11"
+lastupdated: "2026-05-19"
 
 keywords: connectivity, subnet pool, fleet
 
@@ -15,11 +15,11 @@ subcollection: codeengine
 # Working with subnet pool connectivity in {{site.data.keyword.codeengineshort}}
 {: #connectivity-subnetpool}
 
-The {{site.data.keyword.codeenginefull}} subnet pool connections feature supports to manage VPC subnet pool references, including security groups. 
-You create a subnet pool to specify the VPC subnets and availability zones where your workload will be processed.
-For example, you can create a subnet pool with a single subnet in zone `eu-de-1` or a subnet pool with multiple subnets to span all 3 zones in `eu-de`.
+The {{site.data.keyword.codeenginefull}} subnet pool connections feature supports managing VPC subnet pool references, including security groups. 
+Fleets are always connected to a VPC, and a subnet pool can be referenced when creating a fleet to specify into which network zone the {{site.data.keyword.codeengineshort}} fleet workers get deployed.
+You create a subnet pool to specify the VPC subnets and availability zones where your workload will be processed. 
+For example, you can create a subnet pool with a single subnet in zone `eu-de-1` or a subnet pool with multiple subnets to span all 3 zones in `eu-de`. 
 In addition, you can specify the security group that your workload should be attached to.
-A subnet pool can be referenced when creating a fleet to specify into which network zone the {{site.data.keyword.codeengineshort}} fleet workers get deployed.
 {: shortdesc}
 
 {{site.data.keyword.vpc_full}} (VPC) is a virtual network that is linked to your customer account. It gives you cloud security, with the ability to scale dynamically, by providing fine-grained control over your virtual infrastructure and your network traffic segmentation.
@@ -81,7 +81,26 @@ To run a fleet, you need at least one subnet pool configured within a project.
 {: #working-with-subnetpools-cli}
 {: cli}
 
-To work with subnet pools by using CLI commands, log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external} and [select the {{site.data.keyword.codeengineshort}} account and resource group](/docs/codeengine?topic=codeengine-install-cli).
+### Before you begin
+{: #working-with-subnetpools-prereqs-cli}
+{: cli}
+
+Before you can work with subnet pools using CLI commands, you must:
+
+1. Log in into [{{site.data.keyword.cloud_notm}} and target a region, account and resource group. Then select your {{site.data.keyword.codeengineshort}} project. See [Getting started with the Code Engine CLI](/docs/codeengine?topic=codeengine-cecli-getstart).
+    ```txt
+    ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
+    ibmcloud ce project select -n PROJECT_NAME
+    ```
+    {: pre}
+
+2. Install the VPC infrastructure plugin by running the following command:
+   ```txt
+   ibmcloud plugin install vpc-infrastructure
+   ```
+   {: pre}
+
+For more information about VPC CLI commands, see the [VPC CLI reference page](/docs/vpc?topic=vpc-vpc-reference).
 
 ### Gather subnet information for network placement
 {: #working-with-subnetpools-gather-subnet-cli}

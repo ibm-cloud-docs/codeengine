@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-11"
+lastupdated: "2026-05-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3261,6 +3261,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
 
+    * [Worker image `v1.0.227`, released 18 May 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_227)
+
     * [Worker image `v1.0.214`, released 11 May 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_214)
 
     * [Worker image `v1.0.203`, released 27 April 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_203)
@@ -3776,7 +3778,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Working with persistent data stores](/docs/codeengine?topic=codeengine-persistent-data-store#persistent-data-store)
 
-* [Before you begin](/docs/codeengine?topic=codeengine-persistent-data-store#pds-prereqs)
+* [Before you begin](/docs/codeengine?topic=codeengine-persistent-data-store&interface=ui#pds-prereqs-ui)
 
 * [Step 1: Create an HMAC secret in {{site.data.keyword.codeengineshort}} by using the console](/docs/codeengine?topic=codeengine-persistent-data-store&interface=ui#pds-create-secret-ui)
 
@@ -3787,6 +3789,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Mounting into an application](/docs/codeengine?topic=codeengine-persistent-data-store&interface=ui#pds-mount-app-ui)
 
     * [Mounting into a job](/docs/codeengine?topic=codeengine-persistent-data-store&interface=ui#pds-mount-job-ui)
+
+* [Before you begin](/docs/codeengine?topic=codeengine-persistent-data-store&interface=cli#pds-prereqs-cli)
 
 * [Step 1: Create an HMAC secret in {{site.data.keyword.codeengineshort}} by using the CLI](/docs/codeengine?topic=codeengine-persistent-data-store&interface=cli#pds-create-secret-cli)
 
@@ -4294,6 +4298,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting a subnet pool](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=ui#delete-subnetpool-ui)
 
 * [Managing subnet pools by using the CLI](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#working-with-subnetpools-cli)
+
+    * [Before you begin](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#working-with-subnetpools-prereqs-cli)
 
     * [Gather subnet information for network placement](/docs/codeengine?topic=codeengine-connectivity-subnetpool&interface=cli#working-with-subnetpools-gather-subnet-cli)
 

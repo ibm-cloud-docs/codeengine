@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-05-19"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2505,11 +2505,11 @@ OK
 ### `ibmcloud ce connectivity subnetpool`  
 {: #cli-connectivity-subnetpool}  
 
-The {{site.data.keyword.codeenginefull}} subnet pool connections feature supports to manage VPC subnet pool references, including security groups. 
-You create a subnet pool to specify the VPC subnets and availability zones where your workload will be processed.
-For example, you can create a subnet pool with a single subnet in zone `eu-de-1` or a subnet pool with multiple subnets to span all 3 zones in `eu-de`.
+The {{site.data.keyword.codeenginefull}} subnet pool connections feature supports managing VPC subnet pool references, including security groups. 
+Fleets are always connected to a VPC, and a subnet pool can be referenced when creating a fleet to specify into which network zone the {{site.data.keyword.codeengineshort}} fleet workers get deployed.
+You create a subnet pool to specify the VPC subnets and availability zones where your workload will be processed. 
+For example, you can create a subnet pool with a single subnet in zone `eu-de-1` or a subnet pool with multiple subnets to span all 3 zones in `eu-de`. 
 In addition, you can specify the security group that your workload should be attached to.
-A subnet pool can be referenced when creating a fleet to specify into which network zone the {{site.data.keyword.codeengineshort}} fleet workers get deployed.
 {: shortdesc}
 
 {{site.data.keyword.vpc_full}} (VPC) is a virtual network that is linked to your customer account. It gives you cloud security, with the ability to scale dynamically, by providing fine-grained control over your virtual infrastructure and your network traffic segmentation.
