@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-01-09"
+  years: 2020, 2026
+lastupdated: "2026-05-22"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -81,16 +81,37 @@ Example output
 Getting project 'myproject'...
 OK
 
-Name:                       myproject
-ID:                         01234567-abcd-abcd-abcd-abcdabcd1111
-Status:                     active
-Selected:                   true
-Region:                     us-south
-Resource Group:             default
-Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
-Age:                        52d
-Created:                    Fri, 15 Jan 2021 13:32:30 -0500
-Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
+Name:                                      myproject
+ID:                                        01234567-abcd-abcd-abcd-abcdabcd1111  
+CRN:                                       crn:v1:bluemix:public:codeengine:au-syd:a/1a2b3c4d5e6f7g1a2b3c4d5e6f7g1234:01234567-abcd-abcd-abcd-abcdabcd1111::  
+Status:                                    active
+Enabled:                                   true
+Application Private Visibility Supported:  true
+Selected:                                  true
+Region:                                    us-south
+Resource Group:                            default
+Service Binding Service ID:                ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+Age:                                       52d
+Created:                                   Mon, 30 Jun 2025 18:16:12 +0200
+Updated:                                   Mon, 30 Jun 2025 18:16:58 +0200
+
+Connectivity:    
+  Outbound - Source IP addresses:                             
+    Public internet  
+    159.23.99.151  
+    130.198.13.241  
+    135.90.137.31  
+    
+    IBM Cloud private network  
+    10.223.236.11  
+    10.223.242.142  
+    10.12.3.244  
+
+  Inbound - Context-based restrictions for the data plane:    
+    Enforcement status:         none  
+    Public internet:            allowed  
+    IBM Cloud private network:  allowed  
+    Last applied:               Wed, 20 May 2026 15:52:02 +0200  
 
 Quotas:
     Category                                  Used       Limit
@@ -100,13 +121,19 @@ Quotas:
     Builds                                    4          100
     Configmaps                                7          100
     CPU                                       6.15       64
+    Custom domain mappings                    4          80
     Ephemeral storage                         5415750Ki  256G
+    Functions                                 2          20
     Instances (active)                        6          250
     Instances (total)                         9          2500
     Job runs                                  4          100
     Jobs                                      3          100
     Memory                                    26400M     256G
+    Persistent data stores                    2          10
+    Private path connections                  1          3
     Secrets                                   21         100
+    Serverless fleets                         42         1000
+    Subnet pools                              3          20
     Subscriptions (cron)                      1          100
     Subscriptions (IBM Cloud Object Storage)  0          100
 ```
@@ -428,4 +455,3 @@ Deleting project 'myproject3'...
 OK
 ```
 {: screen}
-

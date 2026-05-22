@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-05-22"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -1134,7 +1134,7 @@ ibmcloud ce build create --name BUILD_NAME [--build-type BUILD_TYPE] [--commit C
 :   The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. The source option is required if the `--build-type` option is `git` and not allowed if the `--build-type` option is `local`. This value is *optional*. 
 
 `--strategy`, `--str`
-:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-20`, use `codebundle-nodejs-20` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. This value is *optional*. The default value is `dockerfile`.
+:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-24`, use `codebundle-nodejs-24` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. This value is *optional*. The default value is `dockerfile`.
 
 `--timeout`, `--to`
 :   The amount of time, in seconds, that can pass before the build must succeed or fail. This value is *optional*. The default value is `600`.
@@ -1376,7 +1376,7 @@ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--commit-clear] [-
 :   The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is *optional*. 
 
 `--strategy`, `--str`
-:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-20`, use `codebundle-nodejs-20` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. This value is *optional*. 
+:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-24`, use `codebundle-nodejs-24` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. This value is *optional*. 
 
 `--timeout`, `--to`
 :   The amount of time, in seconds, that can pass before the build must succeed or fail. This value is *optional*. The default value is `600`.
@@ -1837,7 +1837,7 @@ ibmcloud ce buildrun submit (--build BUILD_NAME [--name NAME]) | (--name NAME [-
 :   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. If the `--build` option is set, the source option is required if the `--build-type` option on the related build is `local` and **not** allowed if the `--build-type` option on the related build is `git`. If the `--build` option is not set, the source option is optional. This value is *optional*. The default value is `.`.
 
 `--strategy`, `--str`
-:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-20`, use `codebundle-nodejs-20` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. The build strategy option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
+:   The strategy to use for building the image. For applications and jobs, valid values are `dockerfile` and `buildpacks`. For functions, valid values have the format `codebundle-[RUNTIME-ID]`. For example, if you want to build a code bundle for your function with the runtime ID `nodejs-24`, use `codebundle-nodejs-24` as the build strategy. You can find the ID of any supported functions runtime by running the `ibmcloud ce fn runtimes` command. The build strategy option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
 
 `--timeout`, `--to`
 :   The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is *optional*. The default value is `600`.
@@ -3179,7 +3179,7 @@ ibmcloud ce fleet create --image IMAGE_REF --tasks-state-store TASKS_STATE_STORE
 :   Specify task indexes that are to be processed, for example `0,3,6,9`, `1-5,7-8,10`. Specify no more than 1000 index entries. This option cannot be specified if `--tasks` is specified. This value is *optional*. 
 
 `--tasks`, `--ts`
-:   Specify the number of tasks that are to be processed by the fleet. If no task specification option is provided, this option is used with a default value of `1`. This value is *optional*.
+:   Specify the number of tasks that are to be processed by the fleet. If no task specification option is provided, this option is used with a default value of `1`.
 
 `--tasks-from-cos-bucket`, `--ts-bucket`
 :   Specify a location of files inside a COS bucket. For each file, tasks are to be processed by the fleet. This value is *optional*. 
@@ -6224,35 +6224,62 @@ ibmcloud ce project get --name myproject
 Getting project 'myproject'...
 OK
 
-Name:                       myproject
-ID:                         abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
-Status:                     active
-Selected:                   true
-Tags:                       tag1, tag2
-Region:                     us-south
-Resource Group:             default
-Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
-Age:                        52d
-Created:                    Fri, 15 Jan 2021 13:32:30 -0500
-Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
+Name:                                      myproject
+ID:                                        abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
+CRN:                                       crn:v1:bluemix:public:codeengine:au-syd:a/1a2b3c4d5e6f7g1a2b3c4d5e6f7g1234:abcdabcd-abcd-abcd-abcd-f1de4aab5d5d::
+Status:                                    active
+Enabled:                                   true
+Application Private Visibility Supported:  true
+Selected:                                  true
+Tags:                                      tag1, tag2
+Region:                                    us-south
+Resource Group:                            default
+Service Binding Service ID:                ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+Age:                                       52d
+Created:                                   Mon, 30 Jun 2025 18:16:12 +0200
+Updated:                                   Mon, 30 Jun 2025 18:16:58 +0200
+
+Connectivity:    
+  Outbound - Source IP addresses:                             
+    Public internet  
+    159.23.99.151  
+    130.198.13.241  
+    135.90.137.31  
+    
+    IBM Cloud private network  
+    10.223.236.11  
+    10.223.242.142  
+    10.12.3.244  
+
+  Inbound - Context-based restrictions for the data plane:    
+    Enforcement status:         none  
+    Public internet:            allowed  
+    IBM Cloud private network:  allowed  
+    Last applied:               Wed, 20 May 2026 15:52:02 +0200  
 
 Quotas:
-    Category                                  Used      Limit
-    App revisions                             1         100
-    Apps                                      1         100
-    Build runs                                0         100
-    Builds                                    0         100
-    Configmaps                                2         100
-    CPU                                       1.025     64
-    Ephemeral storage                         902625Ki  256G
-    Instances (active)                        1         250
-    Instances (total)                         2         2500
-    Job runs                                  1         100
-    Jobs                                      1         100
-    Memory                                    4400M     256G
-    Secrets                                   5         100
-    Subscriptions (cron)                      0         100
-    Subscriptions (IBM Cloud Object Storage)  0         100
+    Category                                  Used       Limit
+    App revisions                             33         100
+    Apps                                      10         100
+    Build runs                                4          100
+    Builds                                    4          100
+    Configmaps                                7          100
+    CPU                                       6.15       64
+    Custom domain mappings                    4          80
+    Ephemeral storage                         5415750Ki  256G
+    Functions                                 2          20
+    Instances (active)                        6          250
+    Instances (total)                         9          2500
+    Job runs                                  4          100
+    Jobs                                      3          100
+    Memory                                    26400M     256G
+    Persistent data stores                    2          10
+    Private path connections                  1          3
+    Secrets                                   21         100
+    Serverless fleets                         42         1000
+    Subnet pools                              3          20
+    Subscriptions (cron)                      1          100
+    Subscriptions (IBM Cloud Object Storage)  0          100
 ```
 {: screen}  
   
