@@ -119,9 +119,9 @@ You can use the IBM Cloud CLI to create context-based restrictions for your {{si
 
   ```txt
   ibmcloud cbr rule-create --description "Block public inbound entirely" \
-    --service-name codeengine \
-    --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane \
-    --context-attributes endpointType=private
+  	--service-name codeengine \
+  	--api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane \
+  	--context-attributes endpointType=private
   ```
   {: pre}
 
@@ -133,10 +133,10 @@ You can use the IBM Cloud CLI to create context-based restrictions for your {{si
 
   ```txt
   ibmcloud cbr rule-create --description "Block public and restrict private by IP" \
-    --service-name codeengine \
-    --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane \
-    --context-attributes endpointType=private \
-    --zone-id <zone-id>
+  	--service-name codeengine \
+  	--api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane \
+  	--context-attributes endpointType=private \
+  	--zone-id <zone-id>
   ```
   {: pre}
 
@@ -148,8 +148,8 @@ You can use the IBM Cloud CLI to create context-based restrictions for your {{si
 
   ```txt
   ibmcloud cbr rule-create --description "Isolate workloads entirely" \
-    --service-name codeengine \
-    --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane
+  	--service-name codeengine \
+  	--api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane
   ```
   {: pre}
 
