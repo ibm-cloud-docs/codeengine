@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-25"
+lastupdated: "2026-05-26"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -4371,7 +4371,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Restricting inbound traffic to Code Engine resources](/docs/codeengine?topic=codeengine-cbr-inbound#cbr-inbound)
 
-* [Creating a context-based restriction for your {{site.data.keyword.codeengineshort}} resources](/docs/codeengine?topic=codeengine-cbr-inbound#add-cbr-ui)
+* [Creating a context-based restriction for your {{site.data.keyword.codeengineshort}} resources](/docs/codeengine?topic=codeengine-cbr-inbound#create-cbr)
+
+    * [Adding a context-based restriction using the UI](/docs/codeengine?topic=codeengine-cbr-inbound#add-cbr-ui)
+
+    * [Adding a context-based restriction using the CLI](/docs/codeengine?topic=codeengine-cbr-inbound#add-cbr-cli)
 
 * [Testing your context-based restriction rule for private inbound connectivity](/docs/codeengine?topic=codeengine-cbr-inbound#test-cbr)
 
