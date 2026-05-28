@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-05-28"
 
 keywords: connectivity, inbound connections, inbound connectivity, private, public, context-based restrictions, cbr, network restrictions
 
@@ -20,7 +20,7 @@ You can use {{site.data.keyword.cloud}} context-based restrictions (CBR) to cont
 
 Context-based restrictions for {{site.data.keyword.codeengineshort}} applications and functions support the following use-cases:
 
-- **Block public inbound entirely**: Restrict your applications and functions to be accessible only through their private endpoint via CBR. This approach eliminates the need to configure [application endpoint visibility](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility) settings, as public access is blocked at the network level. Your workloads remain accessible from private networks (such as VPCs) and from other {{site.data.keyword.codeengineshort}} components within the same project.
+- **Block public inbound entirely**: Restrict your applications and functions to be accessible only through their private endpoint via CBR. This approach eliminates the need to configure [application endpoint visibility](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility) settings, as public access is blocked at the network level. Your workloads remain accessible from private networks (such as VPCs), and from other {{site.data.keyword.codeengineshort}} components within the same project.
 
 - **Block public and restrict private by IP**: Achieve maximum control over inbound traffic by blocking all public internet access and restricting private endpoint access to specific IP addresses or network zones. This combines the capability of IP-based restrictions for private endpoints with the ability to block public endpoints entirely at the network level.
 
@@ -45,8 +45,9 @@ You can create context-based restrictions for your {{site.data.keyword.codeengin
 IPv6 restrictions are not supported for {{site.data.keyword.codeengineshort}}.
 {: note}
 
-### Adding a context-based restriction using the UI
+### Adding a context-based restriction using the console
 {: #add-cbr-ui}
+{: ui}
 
 To create a context-based restriction, see [Creating context-based restrictions](/docs/account?topic=account-context-restrictions-create). The following steps are specific to creating one for {{site.data.keyword.codeengineshort}} resources.
 
@@ -108,6 +109,7 @@ To create a context-based restriction, see [Creating context-based restrictions]
 
 ### Adding a context-based restriction using the CLI
 {: #add-cbr-cli}
+{: cli}
 
 You can use the IBM Cloud CLI to create context-based restrictions for your {{site.data.keyword.codeengineshort}} resources. Before you begin, make sure you have the [IBM Cloud CLI installed](/docs/cli?topic=cli-install-ibmcloud-cli) and the context-based restrictions plug-in installed by running `ibmcloud plugin install cbr`.
 
@@ -119,24 +121,24 @@ You can use the IBM Cloud CLI to create context-based restrictions for your {{si
 
   ```txt
   ibmcloud cbr rule-create --description "Block public inbound entirely" \
-  	--service-name codeengine \
-  	--api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane \
-  	--context-attributes endpointType=private
+  --service-name codeengine \
+  --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane \
+  --context-attributes endpointType=private
   ```
   {: pre}
 
 - **Use-case B: Block public and restrict private by IP**
 
-  Use this use-case to achieve maximum control by blocking all public internet access and restricting private endpoint access to specific IP addresses or network zones. Check `ibmcloud cbr zones` for available zone IDs.
+  Use this use-case to achieve maximum control by blocking all public internet access and restricting private endpoint access to specific IP addresses or network zones. To find available zone IDs, run ibmcloud cbr zones.
 
   Create a rule that restricts private access to specific zones and blocks public access:
 
   ```txt
   ibmcloud cbr rule-create --description "Block public and restrict private by IP" \
-  	--service-name codeengine \
-  	--api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane \
-  	--context-attributes endpointType=private \
-  	--zone-id <zone-id>
+  --service-name codeengine \
+  --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane \
+  --context-attributes endpointType=private \
+  --zone-id <zone-id>
   ```
   {: pre}
 
@@ -148,15 +150,15 @@ You can use the IBM Cloud CLI to create context-based restrictions for your {{si
 
   ```txt
   ibmcloud cbr rule-create --description "Isolate workloads entirely" \
-  	--service-name codeengine \
-  	--api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane
+  --service-name codeengine \
+  --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane
   ```
   {: pre}
 
-Context-based restriction rule cover the entire account, project, resource group, or location (region). Use `--resource-attributes` to specify the level at which the rule applies, e.g. `--resource-attributes "projectId=<your-project-id>"` to apply at project level.
+Context-based restriction rules cover the entire account, project, resource group, or location (region). Use `--resource-attributes` to specify the level at which the rule applies, e.g. `--resource-attributes "projectId=<your-project-id>"` to apply at project level.
 {: note}
 
-## Testing your context-based restriction rule for private inbound connectivity
+## Testing your context-based restriction rule for inbound connectivity
 {: #test-cbr}
 
 After you create the context-based restriction rule, you can test it using your application or function:
@@ -165,5 +167,5 @@ After you create the context-based restriction rule, you can test it using your 
 
 - **If you restricted private endpoints by IP**: Access through private endpoints is only granted to allowlisted network zones or IP addresses. If a request comes from a source that is not allowlisted, you see an `RBAC Access Denied` error message. For example, if you allowed only `9.9.9.9/32`, then your application or function is accessible only from that IP range through the private endpoint. Anything outside of that range encounters the error message.
 
-If you selected a network zone that points to a VPC (virtual private cloud), you must also create a VPE (virtual private endpoint) gateway to allow the VPC to access private workloads. After you create the gateway, you can experience a temporary delay due to PDNS resolution. You can see `RBAC Access Denied` error messages initially, but you will be granted access after a bit of time.
+If you selected a network zone that points to a VPC (virtual private cloud), you must also create a VPE (virtual private endpoint) gateway to allow the VPC to access private workloads. After you create the gateway, you might experience a temporary delay due to PDNS resolution. You can see `RBAC Access Denied` error messages initially, but you will be granted access after a bit of time.
 {: tip}

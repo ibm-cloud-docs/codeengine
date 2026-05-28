@@ -27,6 +27,9 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 {: #codeengine-may2826}
 {: release-note}
 
+Added support to restrict public inbound connectivity using context-based restrictions
+:   See [Restricting inbound traffic to applications and functions using context-based restrictions](/docs/codeengine?topic=codeengine-cbr-inbound).
+
 CLI version 1.62.5 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
