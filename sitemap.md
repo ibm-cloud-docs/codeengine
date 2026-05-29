@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-25"
+lastupdated: "2026-05-28"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -163,6 +163,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [May 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may26)
+
+    * [28 May 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may2826)
+
+        * Added support to restrict public inbound connectivity using context-based restrictions
+
+        * CLI version 1.62.5 released
 
     * [22 May 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may2226)
 
@@ -4371,9 +4377,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Restricting inbound traffic to Code Engine resources](/docs/codeengine?topic=codeengine-cbr-inbound#cbr-inbound)
 
-* [Creating a context-based restriction for your {{site.data.keyword.codeengineshort}} resources](/docs/codeengine?topic=codeengine-cbr-inbound#add-cbr-ui)
+* [Creating a context-based restriction for your {{site.data.keyword.codeengineshort}} resources](/docs/codeengine?topic=codeengine-cbr-inbound#create-cbr)
 
-* [Testing your context-based restriction rule for private inbound connectivity](/docs/codeengine?topic=codeengine-cbr-inbound#test-cbr)
+    * [Adding a context-based restriction using the console](/docs/codeengine?topic=codeengine-cbr-inbound&interface=ui#add-cbr-ui)
+
+    * [Adding a context-based restriction using the CLI](/docs/codeengine?topic=codeengine-cbr-inbound&interface=cli#add-cbr-cli)
+
+* [Testing your context-based restriction rule for inbound connectivity](/docs/codeengine?topic=codeengine-cbr-inbound&interface=cli#test-cbr)
 
 [{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses#network-addresses)
 
