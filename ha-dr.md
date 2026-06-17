@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-09"
+lastupdated: "2026-06-16"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine, backing up code engine, availability of code engine, code engine regions, backing up your Code Engine instance
 
@@ -47,16 +47,17 @@ The following table lists the regions where {{site.data.keyword.codeengineshort}
 
 | Geography | Region | High availability |
 |-------|-------|-------|
-| Asia Pacific | Australia (`au-syd`) | MZR |
-| Asia Pacific | Osaka (`jp-osa`) | MZR |
-| Asia Pacific | Tokyo (`jp-tok`) | MZR |
-| Europe | Frankfurt (`eu-de`) | MZR |
-| Europe | Madrid (`eu-es`) | MZR | 
-| Europe | London (`eu-gb`) | MZR | 
-| North America | Dallas (`us-south`) | MZR |
-| North America | Toronto (`ca-tor`) | MZR |
-| North America | Washington (`us-east`) | MZR |
-| South America | Brazil Sao Paulo (`br-sao`) | MZR |
+| Asia Pacific | Australia, Sydney (`au-syd`) | MZR |
+| Asia Pacific | India, Chennai (`in-che`) | MZR |
+| Asia Pacific | Japan, Osaka (`jp-osa`) | MZR |
+| Asia Pacific | Japan, Tokyo (`jp-tok`) | MZR |
+| Europe | Germany, Frankfurt (`eu-de`) | MZR |
+| Europe | Spain, Madrid (`eu-es`) | MZR | 
+| Europe | UK, London (`eu-gb`) | MZR | 
+| North America | Canada, Toronto (`ca-tor`) | MZR |
+| North America | USA, Dallas (`us-south`) | MZR |
+| North America | USA, Washington (`us-east`) | MZR |
+| South America | Brazil, Sao Paulo (`br-sao`) | MZR |
 {: caption="Highly available {{site.data.keyword.codeengineshort}} regions" caption-side="bottom"}
 
 A geography is a geographic area that contains one or more regions. Each region contains [multiple availability zones](https://www.ibm.com/solutions/cloud-data-centers) to meet local access, low latency, and security requirements. Each [multizone region (MZR)](/docs/overview?topic=overview-locations#table-mzr) consists of 3 or more independent zones, ensuring that single failure events impact only one zone.

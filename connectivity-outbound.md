@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-27"
+lastupdated: "2026-06-16"
 
 keywords: connectivity, outbound connections, outbound connectivity, private path
 
@@ -60,7 +60,7 @@ Connecting to private endpoints of a set of common IBM Cloud platform services i
 
 | Platform service | Private endpoint available in regions |
 | --- | --- |
-| Global Search ([Endpoint URL](https://cloud.ibm.com/apidocs/search#endpoint-url)) and Global Tagging ([Endpoint URL](https://cloud.ibm.com/apidocs/tagging#endpoint-url)) | `au-syd`, `br-sao`, `ca-tor`, `eu-de`, `eu-es`, `eu-gb`, `jp-osa`, `jp-tok`, `us-east`, `us-south` |
+| Global Search ([Endpoint URL](https://cloud.ibm.com/apidocs/search#endpoint-url)) and Global Tagging ([Endpoint URL](https://cloud.ibm.com/apidocs/tagging#endpoint-url)) | `au-syd`, `br-sao`, `ca-tor`, `eu-de`, `eu-es`, `eu-gb`, `in-che`, `jp-osa`, `jp-tok`, `us-east`, `us-south` |
 | Global Catalog ([Endpoint URL](https://cloud.ibm.com/apidocs/resource-catalog/global-catalog#endpoint-url)) | `au-syd`, `br-sao`, `eu-de`, `jp-osa`, `us-east`, `us-south` |
 | Account Management  (Endpoint URL `(https://private.accounts.cloud.ibm.com)`) | `eu-de`, `us-east`, `us-south` |
 | Usage Metering ([Endpoint URL](https://cloud.ibm.com/apidocs/usage-metering#endpoint)) | `eu-de`, `us-east`, `us-south` |

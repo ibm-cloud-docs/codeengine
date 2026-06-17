@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-02-09"
+  years: 2026
+lastupdated: "2026-06-16"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -23,6 +23,7 @@ subcollection: codeengine
 - Americas: US East (`us-east`) region
 - Americas: US South (`us-south`) region
 - Asia Pacific: Sydney, Australia  (`au-syd`) region
+- Asia Pacific: Chennai, India  (`in-che`) region
 - Asia Pacific: Osaka, Japan  (`jp-osa`) region
 - Asia Pacific: Tokyo, Japan  (`jp-tok`) region
 - Europe: Germany (`eu-de`) region
@@ -56,6 +57,7 @@ Use the following endpoints to access and manage project resources.
 | Americas: US East | `api.us-east.codeengine.cloud.ibm.com` | `api.private.us-east.codeengine.cloud.ibm.com` |
 | Americas: US South | `api.us-south.codeengine.cloud.ibm.com` | `api.private.us-south.codeengine.cloud.ibm.com` |
 | Asia Pacific: Sydney, Australia | `api.au-syd.codeengine.cloud.ibm.com` | `api.private.au-syd.codeengine.cloud.ibm.com` |
+| Asia Pacific: Chennai, India | `api.in-che.codeengine.cloud.ibm.com` | `api.private.in-che.codeengine.cloud.ibm.com` |
 | Asia Pacific: Osaka, Japan | `api.jp-osa.codeengine.cloud.ibm.com` | `api.private.jp-osa.codeengine.cloud.ibm.com` |
 | Asia Pacific: Tokyo, Japan | `api.jp-tok.codeengine.cloud.ibm.com` | `api.private.jp-tok.codeengine.cloud.ibm.com` |
 | Europe: Germany | `api.eu-de.codeengine.cloud.ibm.com` | `api.private.eu-de.codeengine.cloud.ibm.com` |
@@ -80,11 +82,10 @@ The default URL for applications is of the format `https://<appname>.<uuid>.<reg
 | Americas: US East | `app.uuid.us-east.codeengine.appdomain.cloud` | `app.uuid.private.us-east.codeengine.appdomain.cloud` |
 | Americas: US South| `app.uuid.us-south.codeengine.appdomain.cloud` | `app.uuid.private.us-south.codeengine.appdomain.cloud` |
 | Asia Pacific: Sydney, Australia  | `app.uuid.au-syd.codeengine.appdomain.cloud` | `app.uuid.private.au-syd.codeengine.appdomain.cloud` |
+| Asia Pacific: Chennai, India | `app.uuid.in-che.codeengine.appdomain.cloud` | `app.uuid.private.in-che.codeengine.appdomain.cloud` |
 | Asia Pacific: Osaka, Japan | `app.uuid.jp-osa.codeengine.appdomain.cloud` | `app.uuid.private.jp-osa.codeengine.appdomain.cloud` |
 | Asia Pacific: Tokyo, Japan | `app.uuid.jp-tok.codeengine.appdomain.cloud` | `app.uuid.private.jp-tok.codeengine.appdomain.cloud` |
 | Europe: Germany | `app.uuid.eu-de.codeengine.appdomain.cloud` | `app.uuid.private.eu-de.codeengine.appdomain.cloud` |
 | Europe: Great Britain | `app.uuid.eu-gb.codeengine.appdomain.cloud` | `app.uuid.private.eu-gb.codeengine.appdomain.cloud` |
 | Europe: Spain | `app.uuid.eu-es.codeengine.appdomain.cloud` | `app.uuid.private.eu-es.codeengine.appdomain.cloud` |
 {: caption="{{site.data.keyword.codeengineshort}} endpoints for apps" caption-side="bottom"}
-
-

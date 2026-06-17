@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-06-16"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,16 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month.
 {: shortdesc}
+
+## June 2026
+{: #codeengine-june26}
+
+### 16 June 2026
+{: #codeengine-jun1626}
+{: release-note}
+
+New region!
+:   {{site.data.keyword.codeengineshort}} is supported in a new region: Asia Pacific Chennai, India (`in-che`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 
 ## May 2026
 {: #codeengine-may26}
