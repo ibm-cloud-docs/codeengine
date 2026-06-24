@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-06-23"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ------ | ---------- | --------------------- |
+| 1.62.6 | 2026-06-23 | - Fixed various bugs. |
 | 1.62.5 | 2026-05-28 | - Updated the output of the **`project get`** command to display inbound connectivity status information. \n - Fixed various bugs. |
 | 1.62.4 | 2026-05-22 | - Updated the output of the **`project get`** command to display the resource quota for fleets, persistent data stores, and subnet pools of a project. \n - Fixed various bugs. |
 | 1.62.3 | 2026-04-24 | - Upgraded to Go 1.26. \n - Fixed various bugs. |

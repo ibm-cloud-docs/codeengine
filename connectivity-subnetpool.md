@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-06-23"
 
 keywords: connectivity, subnet pool, fleet
 
@@ -43,11 +43,13 @@ You can manage subnet pools by using the console or the CLI.
     2. Click **Project settings** > **Connectivity** and navigate to the **Subnet pools for network placement** section to see a list of existing subnet pools.
 2. Click **Create** to create a subnet pool.
 3. Provide a name.
-4. Select **Specify by name**.
-    1. Select the VPC.
-    2. Select the VPC subnet you want to specify for network placement
-    3. Optional: Select one or more VPC security group to attach to the subnet. If you do not specify any security group, the default security group of the VPC is used.
-    4. Click **Add to subnet pool** to add the subnet CRN and optionally its security group CRN to the subnet pool. Repeat this step if the subnet pool should allow network placement to multiple subnets.
+4. Select **Specify by name**. You can either create a new VPC or select an existing VPC:
+    - **To create a new VPC**: Click **Create** to create a new VPC. After the VPC is created, the newly created subnets for this VPC are automatically added to the subnet pool with the custom security group that was created along with the VPC applied. You can either proceed to step 5 to confirm the subnet pool creation, or update the automatically applied selection (for example, remove a subnet and add it with a different security group).
+    - **To use an existing VPC**:
+        1. Select the VPC.
+        2. Select the VPC subnet you want to specify for network placement
+        3. Optional: Select one or more VPC security group to attach to the subnet. If you do not specify any security group, the default security group of the VPC is used.
+        4. Click **Add to subnet pool** to add the subnet CRN and optionally its security group CRN to the subnet pool. Repeat this step if the subnet pool should allow network placement to multiple subnets.
 5. Confirm your configuration by clicking **Create**.
 
 ### Adding a subnet pool by CRN
