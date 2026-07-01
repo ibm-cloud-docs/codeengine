@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -85,7 +85,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
     Example output
 
     ```txt
-    Retrieving all resource groups under account <account_name> as email@ibm.com...
+    Retrieving all resource groups under account <account_id> as email@ibm.com...
     OK
     Name      ID                                 Default Group   State   
     default   a8a12accd63b437bbd6d58fb8b462ca7   true            ACTIVE
@@ -233,4 +233,3 @@ While you use the {{site.data.keyword.cloud-shell_short}}, keep in mind the foll
 - {{site.data.keyword.cloud-shell_short}} has a usage quota that limits you to 50 hours within a week.
 
 To launch and use the {{site.data.keyword.cloud-shell_notm}}, in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu bar, click the {{site.data.keyword.cloud-shell_short}} icon ![{{site.data.keyword.cloud-shell_notm}} icon](../icons/terminal-cloud-shell.svg).  A session starts and automatically logs you in to the {{site.data.keyword.cloud_notm}} CLI with your current account credentials.
-

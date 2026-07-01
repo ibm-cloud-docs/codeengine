@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-07-01"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -43,9 +43,9 @@ Create a {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengi
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} Overview page.
-2. Select **Let's go**.
-3. Select **Job**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
+2. Select **Start creating**.
+3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
+4. Select **Job**.
 5. Enter a name for the job and specify `icr.io/codeengine/helloworld` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/helloworld){: external}.
 6. Click **Create**.
 
@@ -58,9 +58,10 @@ After you create your job and specify your workload configuration information, y
 
 Note that when you run your job, the latest version of your referenced container image is downloaded and deployed, unless you specified a tag for the image. If a tag is specified for the image, then the tagged image is used for the job.
 
-1. Navigate to your job page:
-    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to work with your jobs and job runs.
-    * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to run.
+1. Navigate to your job page.
+    1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. 
+    2. Click **Jobs**, then click the **Jobs** tab.
+    3. Click the name of the job that you want to run.
 
 2. From your job page, click **Submit job** to submit a job that is based on the current configuration.
 3. From the "Submit job" pane, accept all the default values, and click **Submit job** again to run your job.
@@ -102,8 +103,9 @@ You can manage your job by fine tuning your job configuration, which includes up
 When the job is in a ready state, you can update the job. Let's update the job that you created previously to change the greeting and environment variables output by updating an environment variable. When a request is sent to the `icr.io/codeengine/helloworld` sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/helloworld){: external}.
 
 1. Navigate to your job page.
-    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to work with your jobs and job runs.
-    * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to update.
+    1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. 
+    2. Click **Jobs**, then click the **Jobs** tab.
+    3. Click the name of the job that you want to update.
 
 2. From the **Configuration > Environment variables** tab, click **Add environment variable**. Add a literal environment variable with the name of `TARGET` with a value of `Sunshine`. The `icr.io/codeengine/helloworld` outputs the message, `Hello <value_of_TARGET>!>`.
 3. Click **Add** to add your environment variable.
@@ -131,7 +133,7 @@ When the job is in a ready state, you can update the job. Let's update the job t
 
     - If you are starting with source code that resides in a Git repository, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and creating (or updating) the job with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create (or update) your job and run the job.  
 
-    - If you are starting with source code that resides on a local workstation, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and creating the job with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build)) with {{site.data.keyword.codeengineshort}} before you create (or update) your job and run the job.
+    - If you are starting with source code that resides on a local workstation, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and creating the job with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create (or update) your job and run the job.
 
     For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the job. Then, after the image is matured, you can update the job to reference the specific image that you want. You can repeat this process as needed.
 

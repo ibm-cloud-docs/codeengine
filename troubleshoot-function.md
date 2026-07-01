@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-15"
+  years: 2023, 2026
+lastupdated: "2026-07-01"
 
 keywords: troubleshooting for code engine, troubleshooting functions in code engine, function in code engine, function
 
@@ -38,7 +38,7 @@ For more information about {{site.data.keyword.codeengineshort}} limits, see [Li
 With the CLI, you can use the [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to display information about limits and current usage. For example:
 
 ```txt
-ibmcloud ce project create --name myproject
+ibmcloud ce project get --name myproject
 ```
 {: pre}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-01-30"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -31,7 +31,7 @@ For more information about limits for jobs including memory and CPU, see [Limits
 With the CLI, you can use the [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to display information about limits and current usage. For example:
 
 ```txt
-ibmcloud ce project create --name myproject
+ibmcloud ce project get --name myproject
 ```
 {: pre}
 
@@ -361,11 +361,11 @@ You can display system events of all the instances of a job run or display syste
 
 When job run indexes fail in the console, you can look up the errors and reasoning to help troubleshoot problems, rectify the issues, and then rerun the job run indexes.
 
-To work with your jobs and job runs, from the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console, click the name of your project in the project list, and then click **Jobs**. From the **Jobs** tab, select a job. Click **Submit job**, and in the "Submit job" pane, click the **Submit job** button to see the job run instances. Incomplete job runs show as `Failed (<error>)` in the **Status** column. The following table explains the common job run index errors and actions to take:
+To work with your jobs and job runs, from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project in the project list, and then click **Jobs**. In the **Job runs** tab, see the job run instances. Incomplete job runs show as `Failed (<error>)` in the **Status** column. The following table explains the common job run index errors and actions to take:
 
 | Error | Explanation | Suggested user action |
 |-------|-------|-------|
-| `ContainerExitedCode` | A user error, which includes an exit code that is provided by the user workload. | Determine the reason for the exit code within your application and debug it. |
+| `ContainerExitedCode` | An error which includes an exit code that is provided by the user workload. | Determine the reason for the exit code within your application and debug it. |
 | `ExceededEphemeralStorage` | The instance allocated more ephemeral storage within its container than is allowed. | Increase your resource's ephemeral storage. |
 | `ExecutableNotFound` | Unable to find the specified executable file within the container. The container cannot start without it. | Verify that the entry point that is specified within your container image is correct, and that the executable exists within the image. |
 | `MaxExecutionTimeExceeded` | The job run did not complete within the maximum execution time. If multiple instances were running, all instances that did not yet complete show this error. | Increase the job run timeout value. |

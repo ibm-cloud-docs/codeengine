@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-02-07"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -28,10 +28,10 @@ Deploy an application with an image from a public registry that does not require
 This example references the public `icr.io/codeengine/helloworld` image in [{{site.data.keyword.registrylong}}](/docs/codeengine?topic=codeengine-deploy-app-crimage). Alternatively, you can also reference an image in a public Docker Hub or an [image in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Let's go**.
-3. Select **Application**.
-4. Enter a name for the application. Use a name for your application that is unique within the project.
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app.
+2. Select **Start creating**.
+3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app.
+4. Select **Application**.
+5. Enter a name for the application. Use a name for your application that is unique within the project.
 6. Specify a container image for your app, for example, `icr.io/codeengine/helloworld`. If you have your own source code that you want to turn into a container image for the app, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build). For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/helloworld){: external}.
 7. Modify any default values for endpoint or runtime settings. For more information about these options, see [Options for endpoint visibility of apps](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy) and [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy).
 8. Click **Create**.

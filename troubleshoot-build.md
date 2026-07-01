@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-15"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -38,7 +38,7 @@ For more information about limits for builds including memory and CPU, see [Limi
 With the CLI, you can use the [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to display information about limits and current usage. For example:
 
 ```txt
-ibmcloud ce project create --name myproject
+ibmcloud ce project get --name myproject
 ```
 {: pre}
 

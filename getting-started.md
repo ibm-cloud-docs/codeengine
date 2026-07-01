@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-07-01"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -63,7 +63,7 @@ Not sure what to choose? See [Planning for {{site.data.keyword.codeengineshort}}
 | Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution | High parallel execution and queuing |
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations | Based on number of tasks and concurrent instances |
 | Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out | Large, compute-intensive work loads |
-{: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, and functions" caption-side="bottom"}
+{: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, functions, and fleets" caption-side="bottom"}
 
 For more information, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 
@@ -78,7 +78,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the `icr.io
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 4. Select **Application**.
 5. Enter a name for the application, for example, `myapp`. Use a name for your application that is unique within the project.
-6. Select to run a **Container image** and specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/helloworld){: external}.
+6. Select to **Use an existing container image** and specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/helloworld){: external}.
 7. Click **Create**.
 8. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.
 
@@ -269,11 +269,10 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 4. Select **Application**.
 5. Enter a name for the application. Use a name for your application that is unique within the project.
-6. Select to run a **Container image** and specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/helloworld){: external}.
-7. Select **Source code**.
-8. Click **Specify build details**.
-9. Accept the default for each page, clicking **Next** and then **Done**.
-16. Click **Create**.
+6. Select **Build container image from source code**.
+7. Click **Specify build details**.
+8. Accept the default for each page, clicking **Next** and then **Done**.
+9.  Click **Create**.
 
 After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.
 

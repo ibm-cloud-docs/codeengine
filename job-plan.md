@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-01-30"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -144,6 +144,7 @@ Now that you are familiar with key concepts of working with {{site.data.keyword.
 * [Creating a job from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-create-job-crimage).
 * [Creating a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private).
 * [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code).
+* [Creating a job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code).
 * [Running a job](/docs/codeengine?topic=codeengine-job-local-source-code).
 
 

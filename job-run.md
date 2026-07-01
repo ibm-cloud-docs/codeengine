@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-02-05"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -32,15 +32,16 @@ Job runs that complete are automatically deleted after one week.
 
 When you create a job, you can run it immediately. However, you can submit and resubmit a job at any time. You can also submit or resubmit a job that you previously created.
 
-1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select Projects from the navigation menu.  Select a project as the current context.
-3. From the Overview page, select Jobs from the Summary section or select Jobs from the navigation menu.
-4. Click the **Jobs** tab, and click the name of the job that you want to run.
-5. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
-6. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page.
-7. If any of the instances of your job fail to run, troubleshoot the error, and then click **Rerun failed indexes** to run the job again for indexes that failed. From the "Submit job" pane, review and optionally change the configuration values. The **Array indexes** section automatically lists the indexes of the failed job run instances. After you review and optionally change configuration values, click **Submit job** to run your job.
+1. Navigate to your job page.
+    1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project.
+    2. Click **Jobs**, then click the **Jobs** tab.
+    3. Click the name of the job that you want to run.
 
-For troubleshotting common job run index errors, see [Understanding why job run indexes can fail](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-failure-messages).
+2. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
+3. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page.
+4. If any of the instances of your job fail to run, troubleshoot the error, and then click **Rerun failed indexes** to run the job again for indexes that failed. From the "Submit job" pane, review and optionally change the configuration values. The **Array indexes** section automatically lists the indexes of the failed job run instances. After you review and optionally change configuration values, click **Submit job** to run your job.
+
+For troubleshooting common job run index errors, see [Understanding why job run indexes can fail](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-failure-messages).
 {: tip}
 
 You can also rerun existing job runs. To run a specific job run again, click the **Job runs** tab, and then click the name of the job run that you want to work with. Click **Rerun** to run this job run again.
@@ -267,7 +268,7 @@ Job runs that are submitted (or resubmitted) with the CLI that do not reference 
 
     - If you are starting with source code that resides in a Git repository, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and creating (or updating) the job with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create (or update) your job and run the job.  
 
-    - If you are starting with source code that resides on a local workstation, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and creating the job with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build)) with {{site.data.keyword.codeengineshort}} before you create (or update) your job and run the job.
+    - If you are starting with source code that resides on a local workstation, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and creating the job with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create (or update) your job and run the job.
 
     For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the job. Then, after the image is matured, you can update the job to reference the specific image that you want. You can repeat this process as needed.
 

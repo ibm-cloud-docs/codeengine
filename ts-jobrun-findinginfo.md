@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-15"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -134,7 +134,7 @@ If you cannot find information about your job runs, determine whether one of the
 
 2. {{site.data.keyword.codeengineshort}} keeps job runs that you trigger in the system until you delete them. However, {{site.data.keyword.codeengineshort}}  automatically deletes job runs after some time, depending on system resources, to free up resources that are associated with instances of a job run.
 
-3. If your job is triggered by an event subscription, such as Cron or {{site.data.keyword.cos_full_notm}}, then the associated job runs are deleted after after 10 minutes. See [Where is my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-deleted).
+3. If your job is triggered by an event subscription, such as Cron or {{site.data.keyword.cos_full_notm}}, then the associated job runs are deleted after 10 minutes. See [Where is my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-deleted).
 
 
 

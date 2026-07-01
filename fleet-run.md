@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-10"
+lastupdated: "2026-07-01"
 
 keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
@@ -67,14 +67,14 @@ OK
 Follow these steps to run a fleet in the Code Engine console. 
 
 1. Open the [Code Engine](https://cloud.ibm.com/containers/serverless/overview){: external} console.
-2. Click **Start Creating**. 
-3. Select a project from the list of available projects. You can also create a new one. You must have a selected project to run a fleet.
+2. Click **Start creating**.
+3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to run a fleet.
 4. Select the option to create a fleet. 
 5. Specify a name for the fleet. Make sure the name is unique across all fleets within the project.
 6. Specify a container image for your fleet, for example, `icr.io/codeengine/helloworld`. If you have your own source code that you want to turn into a container image, see Planning your build. For more information about the code that is used for this example, see helloworld.
 7. Follow the prompts to configure your fleet. 
 8. In the Tasks section, configure the task specification method for the fleet. For more information, see [Task specification](#fleet-task-spec).
-9. In the Resources and scaling section, configure your instance resources and specify how your instances scale up or down. 
+9. In the Resources and scaling section, configure your instance resources and specify how your instances scale up or down.
 10. In the Network placement section, click **Select subnet pools**.
     1. Create a new subnet pool to specify the network placement of the workers of this fleet. See [Working with subnet pool connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-subnetpool) for more information.
     2. Or select one or more existing subnet pools to specify the network placement of the workers of this fleet.

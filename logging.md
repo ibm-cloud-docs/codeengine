@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-04-14"
+lastupdated: "2026-07-01"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, function logs for code engine, logs
 
@@ -538,7 +538,7 @@ Review the {{site.data.keyword.logs_full_notm}} [service plan](/docs/cloud-logs?
 When you view log data for {{site.data.keyword.codeengineshort}} applications, runs of your job, or runs of your build, delays can occur before the data is available in {{site.data.keyword.logs_full_notm}}. For example, it might take around 5 to 10 minutes for your log data to show in {{site.data.keyword.logs_full_notm}}, especially if you are using the `Store and search` data pipeline.
 {: important}
 
-Review the documentation on [Data Pipelines](/docs/cloud-logs?topic=cloud-logs-tco-data-pipelines) to learn about options to balance log latency and cost for your {{site.data.keyword.logs_full_notm}} instances.
+Review the documentation on [Configuring the TCO Optimizer](/docs/cloud-logs?topic=cloud-logs-tco-optimizer) to learn about options to balance log latency and cost for your {{site.data.keyword.logs_full_notm}} instances.
 {: important}
 
 When you use logging with the CLI, you do not need to configure {{site.data.keyword.logs_full_notm}} platform logs, as the {{site.data.keyword.codeengineshort}} CLI logging fetches its data differently.

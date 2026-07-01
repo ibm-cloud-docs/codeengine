@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-09-29"
+  years: 2023, 2026
+lastupdated: "2026-07-01"
 
 keywords: code engine, function, create function, code engine function, create code engine function, migrate function
 
@@ -77,7 +77,7 @@ In addition, {{site.data.keyword.codeengineshort}} includes [Function limits](/d
 | Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution | High parallel execution and queuing |
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations | Based on number of tasks and concurrent instances |
 | Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out | Large, compute-intensive work loads |
-{: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, and functions" caption-side="bottom"}
+{: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, functions, and fleets" caption-side="bottom"}
 
 ## Migrating IBM Cloud Functions Actions to {{site.data.keyword.codeengineshort}} Functions FAQ
 {: #fun-migrate-faqs}

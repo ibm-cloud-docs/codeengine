@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-02-05"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -40,10 +40,10 @@ This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https:
 
 1. Create your job
     1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-    2. Select **Let's go**.
-    3. Select **Job**.
-    4. Enter a name for the job; for example, `myjob`.
-    5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
+    2. Select **Start creating**.
+    3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
+    4. Select **Job**.
+    5. Enter a name for the job; for example, `myjob`.
     6. Choose the code to run. You can create your job from an image in a [public registry](/docs/codeengine?topic=codeengine-create-job), [private registry](/docs/codeengine?topic=codeengine-create-job-private), or in [{{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-create-job-crimage). You can also create your job from [repository](/docs/codeengine?topic=codeengine-run-job-source-code) or [local](/docs/codeengine?topic=codeengine-job-local-source-code) source code. For this example, use the {{site.data.keyword.codeengineshort}} sample image, `icr.io/codeengine/helloworld`.
     7. In the **Resources & scaling** section, specify `daemon` for the mode in the **Resiliency settings**. When you specify `daemon` mode, job runs for this job can run indefinitely, and they do not time out. There is no retry limit for these job runs. Any job runs for these jobs are automatically restarted without limit.
     8. Click **Create** to create the job.
@@ -54,7 +54,7 @@ This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https:
     1. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
     2. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. If any of the instances of your job failed to run, these instances are automatically retried indefinitely.
 
-      For troubleshotting common job run index errors, see [Understanding why job run indexes can fail](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-failure-messages).
+      For troubleshooting common job run index errors, see [Understanding why job run indexes can fail](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-failure-messages).
       {: tip}
 
 4. (optional) View logs of the job run. From the console, you can [view job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) for your job runs. Notice in the log output for the `helloworld` sample, that the `JOB_MODE` environment variable displays the mode of the job.

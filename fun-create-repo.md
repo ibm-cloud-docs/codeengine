@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-12-12"
+  years: 2023, 2026
+lastupdated: "2026-07-01"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -34,10 +34,10 @@ Create a function with source code from the console.
 {: shortdesc} 
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Let's go**.
-3. Select **Function**.
-4. Enter a name for the function; for example, `myfunction`. Use a name for your function that is unique within the project. 
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must select a project to create a function. 
+2. Select **Start creating**.
+3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must select a project to create a function.
+4. Select **Function**.
+5. Enter a name for the function; for example, `myfunction`. Use a name for your function that is unique within the project.
 6. Select a **Runtime image** for your function code. For more information, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
 7. Select to **Build code bundle from source code**. When you select this option, your function is created from source code and stored in container registry.
 8. Select a source repository, for example `https://github.com/IBM/CodeEngine`. If you choose to use the sample source, you do not need require credentials so you can select `None` for the **Code repo access**. You can optionally provide a branch name. If you do not provide a branch name and you leave the field empty, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository. Click **Next**.  

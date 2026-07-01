@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-09-04"
+  years: 2026
+lastupdated: "2026-07-01"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -63,7 +63,7 @@ For example, deploy the `codeengine/helloworld` app.
 2. Click **Applications** and then click **Create** to create a new application.
 3. Configure your app with the following settings.
     1. Name your application `global-app`.
-    2. Select **Container image** to reference a container image for your app.
+    2. Select **Use an existing container image** to reference a container image for your app.
     3. Enter `icr.io/codeengine/helloworld` for your image reference.
     4. In the **Resources & scaling** section, set your minimum number of instances to 1. By setting your minimum number of instances to 1, you can enable health checks from your CIS instance to monitor the availability of pools so that traffic can be routed to the healthy ones.
     5. Leave the rest of the options at the default settings and click **Create**.
