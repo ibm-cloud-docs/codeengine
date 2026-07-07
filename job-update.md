@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-06-11"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -48,15 +48,16 @@ When you run your updated job, the latest version of your referenced container i
 When a job is in ready state, you can update the job. Let's update the `myjob` job that you created previously to change the greeting and environment variables output by updating an environment variable. When a request is sent to this `icr.io/codeengine/helloworld` sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/helloworld){: external}.
 
 1. Navigate to your job page.
-    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to work with your jobs and job runs.
-    * From the Jobs page, click the **Jobs** tab, and click the name of the job that you want to update.
+    1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. 
+    2. Click **Jobs**, then click the **Jobs** tab.
+    3. Click the name of the job that you want to update.
 
 2. From the **Configuration > Environment variables** tab, click **Add environment variable**. Add a literal environment variable with the name of `TARGET` with a value of `Sunshine`. The `icr.io/codeengine/helloworld` outputs the message, `Hello <value_of_TARGET>!>`.
 3. Click **Add** to add your environment variable.
 4. Click **Deploy**.
 5. Click **Submit job**.
 6. From the Submit job pane, this time change the CPU value to one of the valid CPU choices for the specified memory. Notice that you must use [valid memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). Click **Submit job** again to run this job. The system displays the status of your job on the Job details page. Notice the updated CPU value in the `Configuration` section of the job details.
-19. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) for this job, the output of the updated job is `Hello Sunshine!`.
+7. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-logging&interface=ui#view-appjobfunctionlogs-ui) for this job, the output of the updated job is `Hello Sunshine!`.
 
 ## Updating a job with the CLI
 {: #update-job-cli}

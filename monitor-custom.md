@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2026
+lastupdated: "2026-07-01"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode, custom dashboards
 
@@ -40,14 +40,14 @@ Before you can create a custom dashboard in {{site.data.keyword.mon_short}}, you
 4. Access your {{site.data.keyword.mon_full_notm}} metrics.
     1. From the {{site.data.keyword.cloud_notm}} navigation menu, select **Observability**.
     2. Select **Monitoring**.
-    3. Click **Open dashboard** to open the dashboard for your monitoring instance. 
-    4. From the navigation menu, select **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Project Overview**. If you don't see the {{site.data.keyword.codeengineshort}} dashboard in the menu, you can start monitoring from your {{site.data.keyword.codeengineshort}} application or job by selecting **Launch Monitoring**.
+    3. Click **Dashboard** in the **View** column of your monitoring instance to open the dashboard for your monitoring instance.
+    4. From the navigation menu, select **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Project Overview**. If you don't see the {{site.data.keyword.codeengineshort}} dashboard in the menu, you can start monitoring from your {{site.data.keyword.codeengineshort}} application or job by selecting **Add Monitoring**.
 
-5. Click **Create Custom Dashboard** to make a copy of the `IBM {{site.data.keyword.codeengineshort}} Project Overview` dashboard. Enter a name for your custom dashboard and click **Create and open**. For example, name your dashboard `My custom IBM Code Engine Project Overview`.
+5. Click **Copy to my Dashboards** to make a copy of the `IBM {{site.data.keyword.codeengineshort}} Project Overview` dashboard. Enter a name for your custom dashboard and click **Create and open**. For example, name your dashboard `My custom IBM Code Engine Project Overview`.
 
 6. Customize your dashboard by adding or removing dashboard panels. For examples of how you might want to customize your dashboard for monitoring {{site.data.keyword.codeengineshort}} application and job run workloads, see [Scenario 1](/docs/codeengine?topic=codeengine-monitor-custom#custom-monitor-scenario1) and [Scenario 2](/docs/codeengine?topic=codeengine-monitor-custom#custom-monitor-scenario2). For more information about working with {{site.data.keyword.mon_full_notm}} dashboards, see [Working with dashboards](/docs/monitoring?topic=monitoring-dashboards).
 
-    Whenever you change the layout of your dashboard, be sure to click **Save Layout** to save your changes. You must save the layout changes or cancel before you continue to customize to your dashboard.
+    Whenever you change the layout of your dashboard, be sure to click **Save Layout** to save your changes. You must save the layout changes or cancel before you continue to customize your dashboard.
     {: tip}
 
 7. Save the custom dashboard. The custom dashboard is available in the dashboard navigation menu, **Dashboards->My Dashboards**.
@@ -55,21 +55,21 @@ Before you can create a custom dashboard in {{site.data.keyword.mon_short}}, you
 ### Scenario 1: Focusing on {{site.data.keyword.codeengineshort}} application instances and job runs
 {: #custom-monitor-scenario1}
 
-Suppose you want to narrow the scope of monitoring {{site.data.keyword.codeengineshort}} workloads to focus on instances of your running applications and job runs. It can be useful to monitor this information because if your application scales to zero or your job or build isn't running, then you're not consuming resources. This scenario takes the `My custom IBM Code Engine Project Overview` dashboard that you previously created from the existing `IBM {{site.data.keyword.codeengineshort}} Project Overview` dashboard and simplifies the custom dashboard by modifying and removing panels.
+Suppose you want to narrow the scope of monitoring {{site.data.keyword.codeengineshort}} workloads to focus on instances of your running applications and job runs. It can be useful to monitor this information because if your application scales to zero or your job or build isn't running, then you're not consuming resources. This scenario takes the `My custom IBM Code Engine Project Overview` dashboard that you previously created from the existing `IBM {{site.data.keyword.codeengineshort}} Project Overview` dashboard and simplifies the custom dashboard by modifying and removing panels. For this scenario, a job and an application must be defined in your project.
 
 1. Open your custom dashboard. This scenario assumes that you are starting with a copy of the `IBM {{site.data.keyword.codeengineshort}} Project Overview` dashboard. The custom dashboard is available in the dashboard navigation menu, **Dashboards->My Dashboards**.
 
 2. Modify the `Total number of Applications` number panel and modify the query to display the actual number of instances by using the [`ibm_codeengine_application_actual_instances`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_actual_instances) metric.
 
     1. Click the pencil icon to edit the panel. 
-    2. From the Query tab, click the `ibm_codeengine_application_service_count` metric to modify the metric. Type `ibm_codeengine_` for a list of {{site.data.keyword.codeengineshort}} metrics. For this example, select the `ibm_codeengine_application_actual_instances` metric and specify a `Maximum` time aggregation and a `Maximum` group rollup. 
+    2. From the Query tab, click the `ibm_codeengine_application_service_count` metric to modify the metric. Type `ibm_codeengine_` for a list of {{site.data.keyword.codeengineshort}} metrics that apply to your project. For this example, select the `ibm_codeengine_application_actual_instances` metric and specify a `Maximum` time aggregation and a `Maximum` group rollup.
     3. From the Panel tab, rename this panel to `Total number of Application Instances`.  
     4. Click **Save** to save the changes for this panel.
 
 3. Modify the `Total number of Application revisions` number panel and change the query to display the number of job runs by using the [`ibm_codeengine_jobruns`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns) metric. 
 
     1. Click the pencil icon to edit the panel. 
-    2. From the Query tab, click the `ibm_codeengine_application_revision_count` metric to modify the metric. Type `ibm_codeengine_` for a list of {{site.data.keyword.codeengineshort}} metrics. For this example, select the `ibm_codeengine_jobruns` metric and specify a `Maximum` time aggregation and a `Maximum` group rollup. 
+    2. From the Query tab, click the `ibm_codeengine_application_revision_count` metric to modify the metric. Type `ibm_codeengine_` for a list of {{site.data.keyword.codeengineshort}} metrics that apply to your project. For this example, select the `ibm_codeengine_jobruns` metric and specify a `Maximum` time aggregation and a `Maximum` group rollup.
     3. From the Panel tab, rename this panel to `Total number of Job Runs`.  
     4. Click **Save** to save the changes for this panel.
 
@@ -80,7 +80,7 @@ Suppose you want to narrow the scope of monitoring {{site.data.keyword.codeengin
     1. Click the pencil icon to edit the panel. 
     2. From the Query tab, keep the `ibm_codeengine_application_actual_instances` metric and remove the other rows of metrics by using the action menu for those metrics.
     3. From the Query tab, locate the `ibm_codeengine_application_actual_instances` metric and modify the segmentation to include application revision information. Click `ibm_codeengine_application_name` and add `ibm_codeengine_revision_name`. Make sure that you clear the selection for `Apply to All Queries`.
-    4. From the Query tab, click **Add Query** to add a query for job runs. In the metric field, type `ibm_codeengine_` for a list of {{site.data.keyword.codeengineshort}} metrics. Select the `ibm_codeengine_jobruns` metric and specify a `Maximum` time aggregation and a `Maximum` group rollup. Specify the `ibm_codeengine_jobrun_condition` segmentation for this metric.
+    4. From the Query tab, click **Add Query** to add a query for job runs. In the metric field, type `ibm_codeengine_` for a list of {{site.data.keyword.codeengineshort}} metrics that apply to your project. Select the `ibm_codeengine_jobruns` metric and specify a `Maximum` time aggregation and a `Maximum` group rollup. Specify the `ibm_codeengine_jobrun_condition` segmentation for this metric.
     5. Check that you only set the `ibm_codeengine_application_actual_instances` and `ibm_codeengine_jobruns` metrics for this panel. 
     6. From the Panel tab, change the name of this panel to `Application and Job Run Instances`.   
     7. Click **Save** to save the changes for this panel
@@ -114,8 +114,3 @@ From the custom dashboard that you created in Scenario 1, suppose you want to us
     {: tip}
 
 After you complete scenario 2, your custom dashboard includes two panels: `Total number of Application instances and Job Runs` and `Application and Job Run Instances`. 
-
-
-
-
-

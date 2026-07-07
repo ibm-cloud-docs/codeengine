@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-15"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps, app instances
 
@@ -33,7 +33,7 @@ For more information about limits for apps, including memory and CPU, see [Limit
 With the CLI, you can use the [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to display information about limits and current usage. For example:
 
 ```txt
-ibmcloud ce project create --name myproject
+ibmcloud ce project get --name myproject
 ```
 {: pre}
 

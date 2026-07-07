@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-07-24"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables, registry secret, registry access secret
 
@@ -33,16 +33,16 @@ Create a job configuration that uses an image in a private registry with the {{s
 Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in a private registry, you must first add access to the registry so {{site.data.keyword.codeengineshort}} can pull the image when the job is run. 
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Let's go**.
-3. Select **Job**.
-4. Enter a name for the job; for example, `myjob`.
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
-6. Select **Container image** and click **Configure image**.
+2. Select **Start creating**.
+3. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
+4. Select **Job**.
+5. Enter a name for the job; for example, `myjob`.
+6. Select **Use an existing container image** and click **Configure image**.
 7. Enter `docker.io` for **Registry server**.
 8. For **Registry secret**, select **Create registry secret**. 
 9. From the Create registry secret page, choose your registry source. For example, **Docker Hub**.
 10. From the Create registry secret page, enter a username. For Docker Hub, it is your Docker ID.
-11. From the Create registry secret page, enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Create and manage access tokens](https://docs.docker.com/security/access-tokens/){: external}.
+11. From the Create registry secret page, enter the access token. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Create and manage access tokens](https://docs.docker.com/security/access-tokens/){: external}.
 12. Click **Create** to add the registry secret for {{site.data.keyword.codeengineshort}}.
 13. From the Configure image page, the registry secret that was added is listed. Select the registry secret for your image.
 14. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
@@ -113,7 +113,7 @@ The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITO
 
     - If you are starting with source code that resides in a Git repository, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and creating (or updating) the job with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create (or update) your job and run the job.  
 
-    - If you are starting with source code that resides on a local workstation, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and creating the job with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build)) with {{site.data.keyword.codeengineshort}} before you create (or update) your job and run the job.
+    - If you are starting with source code that resides on a local workstation, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and creating the job with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-plan-build) with {{site.data.keyword.codeengineshort}} before you create (or update) your job and run the job.
 
     For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the job. Then, after the image is matured, you can update the job to reference the specific image that you want. You can repeat this process as needed.
 

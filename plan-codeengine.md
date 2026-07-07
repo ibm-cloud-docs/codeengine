@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-02"
+  years: 2020, 2026
+lastupdated: "2026-07-01"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Planning for {{site.data.keyword.codeengineshort}}
 {: #plan-codeengine}
 
-{{site.data.keyword.codeenginefull}} supports three basic types of workloads: applications, jobs, and functions.
+{{site.data.keyword.codeenginefull}} supports these basic types of workloads: applications, jobs, functions, and fleets.
 
 An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming requests and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
 
@@ -35,7 +35,7 @@ A fleet, also called a *serverless fleet*, runs one or more instances of user co
 | Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution | High parallel execution and queuing |
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations | Based on number of tasks and concurrent instances |
 | Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out | Large, compute-intensive work loads |
-{: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, and functions" caption-side="bottom"}
+{: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, functions, and fleets" caption-side="bottom"}
 
 ## {{site.data.keyword.codeengineshort}} use cases
 {: #ce-use-cases}
@@ -49,7 +49,7 @@ Workloads with intermittent spikes
 :    Your website is busy on the weekends, but experiences less traffic during the week. Because this website experiences bursts of activity followed by periods of inactivity, {{site.data.keyword.codeengineshort}} is a good solution. With {{site.data.keyword.codeengineshort}}, the website application automatically scales up the application instances for the increase in traffic, and then back down again for the periods of inactivity (even down to zero).
 
 Batch workloads integrated with storage
-:    Your batch job processes employee salaries at the end of every month. Because this job runs monthly, it is idle most of the time, but consumes a high amount of CPU and memory when it does runs. The batch job needs to integrate with storage to store the results. By using {{site.data.keyword.codeengineshort}}, you can integrate the batch job with {{site.data.keyword.cos_full_notm}} and are charged only for the resources that the job uses when it is running. When the job is idle, it isn't consuming any resources and therefore is not incurring charges. However, the job might incur costs with the {{site.data.keyword.cos_full_notm}} instance.
+:    Your batch job processes employee salaries at the end of every month. Because this job runs monthly, it is idle most of the time, but consumes a high amount of CPU and memory when it does run. The batch job needs to integrate with storage to store the results. By using {{site.data.keyword.codeengineshort}}, you can integrate the batch job with {{site.data.keyword.cos_full_notm}} and are charged only for the resources that the job uses when it is running. When the job is idle, it isn't consuming any resources and therefore is not incurring charges. However, the job might incur costs with the {{site.data.keyword.cos_full_notm}} instance.
 
 Bring your workload
 :    Part of your job is to create images and deploy them. You are experienced with creating container images and with deploying them, but you want to simplify this process so that you can concentrate on other tasks. With {{site.data.keyword.codeengineshort}}, you can build images and deploy them directly from the same interface, thus simplifying daily tasks and freeing up time to develop more code.
@@ -60,7 +60,7 @@ Testing, proof-of-concepts, or "tire-kicking”
 ## When to use an app, job, or function
 {: #when-app-job}
 
-Applications and jobs are very similar, in the end, they both simply run code. However, there are some key aspects to consider when you decide to structure your code as an app or job,
+Applications and jobs are very similar, in the end, they both simply run code. However, there are some key aspects to consider when you decide to structure your code as an app or job.
 
 Does your code need to respond to an event?
 :    In the context of {{site.data.keyword.codeengineshort}}, any incoming HTTP request (even the request to load a web page) or a REST API call is considered an event. The concept of being event-driven is often the key factor when you choose between an app or a job because, by definition, apps are run because of an HTTP request while jobs are run as of result of an invocation. 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-08-19"
+  years: 2026
+lastupdated: "2026-07-01"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -68,7 +68,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
         Example output
 
         ```txt
-        Retrieving all resource groups under account <account_name> as email@ibm.com...
+        Retrieving all resource groups under account <account_id> as email@ibm.com...
         OK
         Name      ID                                 Default Group   State   
         default   a8a12accd63b437bbd6d58fb8b462ca7   true            ACTIVE

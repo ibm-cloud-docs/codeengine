@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-05-17"
+  years: 2022, 2026
+lastupdated: "2026-07-01"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -47,8 +47,8 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 
 1. From the {{site.data.keyword.cloud_notm}} navigation menu, select **Observability**.
 2. Select **Monitoring**.
-3. Click **Open dashboard** to open the dashboard for your monitoring instance.
-4. From the navigation menu, select **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Project Overview** or **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Functions Overview**. If you don't see the {{site.data.keyword.codeengineshort}} dashboard in the menu, you can start monitoring from your {{site.data.keyword.codeengineshort}} application or job by selecting **Launch Monitoring**.
+3. Click **Dashboard** in the **View** column of your monitoring instance to open the dashboard for your monitoring instance.
+4. From the navigation menu, select **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Project Overview** or **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Functions Overview**. If you don't see the {{site.data.keyword.codeengineshort}} dashboard in the menu, you can start monitoring from your {{site.data.keyword.codeengineshort}} application or job by selecting **Add Monitoring**.
 5. Select the `10M` timeline or greater. Because Platform Metrics data has a 1 minute granularity, the first timeline that shows metrics is the `10M` timeline.
 
 You can also start the {{site.data.keyword.mon_short}} dashboard at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
@@ -507,7 +507,3 @@ The following attributes are available for segmenting one or more attributes as 
 | `Function pod name` | `ibm_codeengine_function_podname` | The name of the system pod that invoked the function.  |
 | `Function type` | `ibm_codeengine_function_type` | The type for how the function was invoked (`sync` or `async`).  |
 {: caption="Table 27: Segmentation options" caption-side="bottom"}
-
-
-
-
