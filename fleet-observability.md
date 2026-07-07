@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-07-07"
 
 keywords: fleets, fleet logging, fleet monitoring, fleet observability, observability, logging, monitoring, Cloud Logs, Cloud Monitoring
 
@@ -132,9 +132,9 @@ Create a virtual private endpoint gateway that connects to the monitoring instan
 
 1. Navigate to the [VPE gateways page](https://cloud.ibm.com/infrastructure/network/endpointGateways){: external} in the console.
 2. Click **Create**.
-3. Select the location and region that your Cloud Logs instance exists in.
+3. Select the location and region that your Cloud Monitoring instance exists in.
 4. Select the VPC that your fleets run in.
-5. Connect the service to your Cloud Logs instance.
+5. Connect the service to your Cloud Monitoring instance.
     1. In the **Request connection to a service** section, select the option for **IBM Cloud Service**.
     2. Under **Cloud service offerings**, select **Cloud Monitoring**.
     3. Under **Cloud service regions**, select the region that your Cloud Monitoring instance exists in.
