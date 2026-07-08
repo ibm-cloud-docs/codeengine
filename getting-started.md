@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-01"
+lastupdated: "2026-07-08"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -206,9 +206,6 @@ Example output
 {: screen}
 
 You deployed your first function to {{site.data.keyword.codeengineshort}} and tested it out. Go to the [Running a function from local source](/docs/codeengine?topic=codeengine-fun-tutorial) or [Working with functions](/docs/codeengine?topic=codeengine-fun-work) to try out more options for functions.
-
-You can [migrate your IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate).
-{: tip}
 
 ## Running your first fleet
 {: #first-fleet}

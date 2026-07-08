@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-07-08"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -30,7 +30,7 @@ Need to deploy a container image? See [Working with apps](/docs/codeengine?topic
 
 The following runtimes are supported as managed runtimes.
 
-- Node.js 20, Node.js 22, Node.js 24
+- Node.js 22, Node.js 24
 - Python 3.11, Python 3.13
 
 ## Supported CPU and memory combinations for functions
@@ -51,7 +51,6 @@ The support lifecycle of managed runtimes for {{site.data.keyword.codeengineshor
 
 | Runtime | Deprecation | End of life |
 | -------------- | -------------- | -------------- |
-| Node.js 20  | 1 November 2025 | 30 April 2026 |
 | Node.js 22 | 20 October 2026 | 30 April 2027 |
 | Node.js 24 | 20 October 2027 | 30 April 2028 |
 | Python 3.11 | 31 October 2025 | 31 October 2026 |
