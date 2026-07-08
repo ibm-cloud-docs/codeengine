@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-09-04"
+  years: 2020, 2026
+lastupdated: "2026-07-08"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -18,7 +18,7 @@ subcollection: codeengine
 The Periodic timer (cron) event producer generates an event at regular intervals. This interval can be scheduled by minute, hour, day, or month or a combination of several different time intervals. You can subscribe {{site.data.keyword.codeengineshort}} apps, functions, and jobs to receive cron events.
 {: shortdesc}
 
-The Periodic timer event subscription uses standard crontab syntax to specify interval details, in the format `* * * * *`, where the fields are minute, hour, day of the month, month of the year, and day of the week. For example, to schedule an event for midnight, specify `0 0 * * *`. To schedule an event for every Friday at midnight, specify `0 0 * * 5`. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
+The Periodic timer event subscription uses standard crontab syntax to specify interval details, in the format `* * * * *`, where the fields are minute, hour, day of the month, month of the year, and day of the week. For example, to schedule an event for midnight, specify `0 0 * * *`. To schedule an event for every Friday at midnight, specify `0 0 * * 5`.
 
 When you subscribe to a Periodic timer event producer, you must provide a destination (app, function, or job) and a destination type for the subscription. If you do not provide a schedule, then the default of `* * * * *` (every minute) is used.
 

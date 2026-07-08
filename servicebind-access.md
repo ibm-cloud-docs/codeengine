@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-07-08"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project, integrating service with function in code engine
 
@@ -23,7 +23,7 @@ Interested in configuring your project such that all users of the project can cr
 {: note}
 
 
-Before you can bind your app, job, or function to a specific {{site.data.keyword.cloud_notm}} service instance, determine whether you want to [create and manage your own service ID](/docs/account?topic=account-serviceids), or if you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you. Based on your choice, assign the proper access policies. {{site.data.keyword.codeengineshort}} uses one service ID per project to work with service bindings.
+Before you can bind your app, job, or function to a specific {{site.data.keyword.cloud_notm}} service instance, determine whether you want to [create and manage your own service ID](/docs/iam?topic=iam-serviceids), or if you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you. Based on your choice, assign the proper access policies. {{site.data.keyword.codeengineshort}} uses one service ID per project to work with service bindings.
 
 * If you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you, then configure [default service binding access policies](#bind-auto-servid). Ensure that proper access policies are assigned to the {{site.data.keyword.cloud_notm}} account that is used with your {{site.data.keyword.codeengineshort}} project.
     * If your {{site.data.keyword.codeengineshort}} project is in the *same* resource group as the service instance that you want to bind to, then you need to configure [default service binding access policies](#bind-auto-servid).
@@ -59,7 +59,7 @@ The following steps describe one way to setup the required access permissions so
 
 2. Create the service instances that you want to bind to in the same resource group. For this example, create an {{site.data.keyword.cloudant}} service instance in the `CodeEngine_servicebindings_resource group` resource group.
 
-3. [Create an IAM access group](/docs/account?topic=account-groups&interface=ui) for users who create {{site.data.keyword.codeengineshort}} service bindings.
+3. [Create an IAM access group](/docs/iam?topic=iam-groups&interface=ui#create_ag) for users who create {{site.data.keyword.codeengineshort}} service bindings.
     1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview){: external}.
     2. Select **Manage** > **Access(IAM)** > **Access groups**.
     3. Create a group; for example, `CodeEngine_servicebindings_accessgroup`.
@@ -159,7 +159,7 @@ The following steps describe one way to setup a custom service ID with the requi
 
 2. Create the service instances that you want to bind to in the same resource group. For this example, create an {{site.data.keyword.cloudant}} service instance in the `CodeEngine_servicebindings_resource group` resource group.
 
-3. [Create an IAM access group](/docs/account?topic=account-groups&interface=ui) for users who create {{site.data.keyword.codeengineshort}} service bindings.
+3. [Create an IAM access group](/docs/iam?topic=iam-groups&interface=ui#create_ag) for users who create {{site.data.keyword.codeengineshort}} service bindings.
     1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview){: external}.
     2. Select **Manage** > **Access(IAM)** > **Access groups**.
     3. Create a group; for example, `CodeEngine_servicebindings_accessgroup`.

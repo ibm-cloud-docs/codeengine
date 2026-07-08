@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-09"
+  years: 2020, 2026
+lastupdated: "2026-07-08"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -137,7 +137,7 @@ To retrieve your Kubernetes configuration with REST API,
 #### Authenticate with {{site.data.keyword.iamshort}}
 {: #api-iam}
 
-[Create your {{site.data.keyword.cloud_notm}} IAM access token](/docs/account?topic=account-manapikey){: external} by making a POST request to `https://iam.cloud.ibm.com/identity/token`.
+[Create your {{site.data.keyword.cloud_notm}} IAM access token](/docs/iam?topic=iam-manapikey) by making a POST request to `https://iam.cloud.ibm.com/identity/token`.
 
 #### Determine the GUID of your {{site.data.keyword.codeengineshort}} project
 {: #api-guid}

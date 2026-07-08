@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-07-08"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -49,7 +49,7 @@ When you assign the Notifications Manager role to your project, you can then cre
 5. Select **Resources based on selected attributes** and **Service instance**. Then, select your {{site.data.keyword.cos_full_notm}} instance.
 6. Assign the **Notifications Manager** role and click **Authorize**.
 
-You can also assign the Notifications Manager role to your project by using the [**`ibmcloud iam authorization-policy-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
+You can also assign the Notifications Manager role to your project by using the [**`ibmcloud iam authorization-policy-create`**](/docs/iam?topic=iam-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 {: note}
 
 ## Subscribing to {{site.data.keyword.cos_full_notm}} events for an application

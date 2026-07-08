@@ -1,8 +1,8 @@
 ---
 
 copyright:
-years: 2025, 2026
-lastupdated: "2026-05-19"
+  years: 2025, 2026
+lastupdated: "2026-07-08"
 
 keywords: code engine, persistent data store, pds, object storage, mount bucket, s3fs, mount cos, apps, jobs
 
@@ -238,6 +238,7 @@ The mount is implemented using [`s3fs`](https://github.com/s3fs-fuse/s3fs-fuse){
   - There is no coordination between multiple clients (for example, multiple app instances) mounting the same bucket. Concurrent writes to the same file from different instances can lead to data loss or corruption.
 - **Event Subscriptions:**
   - If you have configured an event subscription for your {{site.data.keyword.cos_short}} bucket, be aware that file create operations performed through the mount may generate multiple update events. This can result in your Code Engine app or job being triggered more than once for a single file operation, which may affect downstream processing or event-driven workflows.
+
 Due to these limitations, this feature is not suitable for all workloads. It is best suited for workloads that primarily read large files, such as in deep learning or data analytics, where good throughput can be achieved. It is not recommended for workloads that require low latency, frequent small writes, or transactional file operations.
 
 ## Next steps

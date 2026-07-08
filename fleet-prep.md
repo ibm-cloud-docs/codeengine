@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-07-08"
 
 keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
@@ -19,6 +19,7 @@ Before you can use {{site.data.keyword.codeengineshort}} fleets:
 
 * You must define network placement configuration by creating a subnet pool. It is required to determine within which VPC subnets your fleet workers get deployed.
 * You must create a persistent data store.
+
 You have to complete these steps only once for each project that you want to run fleets in.
 {: shortdesc}
 

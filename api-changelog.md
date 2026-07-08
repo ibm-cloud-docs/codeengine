@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-02-27"
+lastupdated: "2026-07-08"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # API change log
 {: #api-changelog}
 
-Find a summary of the latest changes, improvements, and updates for the {{site.data.keyword.codeenginefull}} API plug-in. Changes to existing API versions are designed to be compatible with existing client applications. 
+Find a summary of the latest changes, improvements, and updates for the {{site.data.keyword.codeenginefull}} API plug-in. Changes to existing API versions are designed to be compatible with existing client applications.
 {: shortdesc}
 
 ## API versioning
@@ -61,7 +61,7 @@ Added support for subnet pools in the API.
 Added support for type `private_path_service_gateway` for allowed outbound destinations in the API.
 :   - See [Create an allowed outbound destination API](/apidocs/codeengine/v2#create-allowed-outbound-destination){: external}.
 :   - See [Get an allowed outbound destination API](/apidocs/codeengine/v2#get-allowed-outbound-destination){: external}.
-:   - See [List allowed outbound destinations API](/apidocs/codeengine/v2#list-allowed-outbound-destination){: external}.
+:   - See [List allowed outbound destinations API](/apidocs/codeengine/v2#list-allowed-outbound-destinations){: external}.
 :   - See [Update an allowed outbound destination API](/apidocs/codeengine/v2#update-allowed-outbound-destination){: external}.
 
 ## 17 September 2025
@@ -114,7 +114,7 @@ Added jobrun `indices_details` property to the existing jobrun `status_details` 
 {: #21-november-2024}
 
 Added support for allowed outbound destinations in the API.
-:   - See [List allowed outbound destinations API](https://cloud.ibm.com/apidocs/codeengine/v2#list-allowed-outbound-destination){: external}.
+:   - See [List allowed outbound destinations API](https://cloud.ibm.com/apidocs/codeengine/v2#list-allowed-outbound-destinations){: external}.
 :   - See [Create an allowed outbound destination API](https://cloud.ibm.com/apidocs/codeengine/v2#create-allowed-outbound-destination){: external}.
 :   - See [Get an allowed outbound destination API](https://cloud.ibm.com/apidocs/codeengine/v2#get-allowed-outbound-destination){: external}.
 :   - See [Delete an allowed outbound destination API](https://cloud.ibm.com/apidocs/codeengine/v2#delete-allowed-outbound-destination){: external}.
@@ -150,7 +150,7 @@ Added support for the `scale_array_size_variable_override` property for job runs
 ## 03 November 2023
 {: #03-nov-2023}
 
-Added support for domain mappings in the API. 
+Added support for domain mappings in the API.
 :   - See [List domain mappings API](https://cloud.ibm.com/apidocs/codeengine/v2#list-domain-mappings){: external}.
 :   - See [Create a domain mapping API](https://cloud.ibm.com/apidocs/codeengine/v2#create-domain-mapping){: external}.
 :   - See [Get a domain mapping API](https://cloud.ibm.com/apidocs/codeengine/v2#get-domain-mapping){: external}.
@@ -194,7 +194,7 @@ Added support to provide private and public egress IP addresses for a project.
 :   - See [{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses).
 
 
-Improved documentation for create and update of secrets to include the `One of` fields for specific secret formats as part of the `data` field. 
+Improved documentation for create and update of secrets to include the `One of` fields for specific secret formats as part of the `data` field.
 :   - See [Create a secret API](https://cloud.ibm.com/apidocs/codeengine/v2#create-secret){: external}.
 :   - See [Update secret API](https://cloud.ibm.com/apidocs/codeengine/v2#replace-secret){: external}.
 
@@ -202,7 +202,7 @@ Improved documentation for create and update of secrets to include the `One of` 
 ## 9 December 2022
 {: #9-dec-2022}
 
-{{site.data.keyword.codeenginefull}} API Version 2.0.0  
+{{site.data.keyword.codeenginefull}} API Version 2.0.0
 
 API Version 2.0.0 released
 :   This version of the API is enhanced to support more {{site.data.keyword.codeengineshort}} resources, and more regions.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-07-08"
 
 keywords: fleets observability, viewing logs for fleets, viewing, viewing logs, monitoring for fleets, monitoring data
 
@@ -35,7 +35,7 @@ Follow the steps to view logs for fleets.
 You can change the display view for logs by clicking **Columns** and choosing the column headers you want to view.
 {: tip}
 
-5. To filter through the logs, click **Add filter** and select the fields to filter for. For a full list of fields and their descriptions, see [Logging fields]().
+5. To filter through the logs, click **Add filter** and select the fields to filter for. For a full list of fields and their descriptions, see [Logging fields](#log-fields).
 
 You can save this logging view and filter settings for other workloads.
 {: tip}

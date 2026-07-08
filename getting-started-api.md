@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-06-11"
+  years: 2026
+lastupdated: "2026-07-08"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -35,7 +35,7 @@ Before you begin, [download and install the `jq` tool](https://jqlang.org/){: ex
     {: pre}
 
     * To discover the {{site.data.keyword.cloud_notm}} region that you're logged in to, run the `ibmcloud region` command.
-    * For more information about {{site.data.keyword.cloud_notm}} API keys, see [Managing user API keys](/docs/account?topic=account-userapikey).
+    * For more information about {{site.data.keyword.cloud_notm}} API keys, see [Managing user API keys](/docs/iam?topic=iam-userapikey).
     * For more information about {{site.data.keyword.codeengineshort}} projects, see [Managing projects](/docs/codeengine?topic=codeengine-manage-project).
 
 

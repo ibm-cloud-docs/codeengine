@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-10-16"
+  years: 2023, 2026
+lastupdated: "2026-07-08"
 
 keywords: benefits, terminology, developers, capabilities, {{site.data.keyword.codeengineshort}} 
 
@@ -95,7 +95,7 @@ Try the following solutions to resolve your problem.
     ErrImagePull : failed to pull and unpack image "<image name>": failed to resolve reference "<image name>": failed to authorize: failed to fetch oauth token: unexpected status from GET request to...
     ```
     
-    Check if you have enabled `Restrict IP address access` for your account (see [Allowing specific IP addresses](/docs/account?topic=account-ips)). If enabled, only the allowed IP addresses can authenticate to {{site.data.keyword.cloud}}, for your account. This will prevent {{site.data.keyword.codeengineshort}} from authenticating to your container registry and thus will be unable to pull your image. You will need to add the `public` and `private` IP addresses of your {{site.data.keyword.codeengineshort}} project. See [{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses) on how to identify these IP addresses.
+    Check if you have enabled `Restrict IP address access` for your account (see [Allowing specific IP addresses](/docs/iam?topic=iam-ips)). If enabled, only the allowed IP addresses can authenticate to {{site.data.keyword.cloud}}, for your account. This will prevent {{site.data.keyword.codeengineshort}} from authenticating to your container registry and thus will be unable to pull your image. You will need to add the `public` and `private` IP addresses of your {{site.data.keyword.codeengineshort}} project. See [{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses) on how to identify these IP addresses.
 
 ## Next steps
 {: #image-cannot-pull-next} 

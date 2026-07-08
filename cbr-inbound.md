@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-07-08"
 
 keywords: connectivity, inbound connections, inbound connectivity, private, public, context-based restrictions, cbr, network restrictions
 
@@ -32,7 +32,7 @@ Context-based restrictions apply only to applications and functions because thes
 When you secure {{site.data.keyword.codeengineshort}} resources with context-based restrictions, in addition to restricting the inbound traffic that connects to your applications or functions with context-based rules, you can [restrict the contexts (network paths) from which your {{site.data.keyword.codeengineshort}} resources](/docs/codeengine?topic=codeengine-cbr) can be managed, such as deploying or updating applications and secrets.
 {: tip}
 
-Context-based restrictions for {{site.data.keyword.codeengineshort}} can be scoped to a single project, an entire resource group, or a location (region). For more information about {{site.data.keyword.cloud_notm}} context-based restrictions, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
+Context-based restrictions for {{site.data.keyword.codeengineshort}} can be scoped to a single project, an entire resource group, or a location (region). For more information about {{site.data.keyword.cloud_notm}} context-based restrictions, see [Layered security with context-based restrictions](/docs/iam?topic=iam-context-restrictions-whatis).
 
 When a context-based restriction rule covers a resource group or a location (region), the restrictions apply to existing projects. If you create a new project in the same location or resource group, the restrictions are automatically applied to the new project. It can take a few minutes for the new project to be associated with the restrictions. To observe the CBR rules are applied, check the project status connectivity section in the UI, CLI, or API.
 {: Important}
@@ -40,7 +40,7 @@ When a context-based restriction rule covers a resource group or a location (reg
 ## Creating a context-based restriction for your {{site.data.keyword.codeengineshort}} resources
 {: #create-cbr}
 
-You can create context-based restrictions for your {{site.data.keyword.codeengineshort}} resources by using the {{site.data.keyword.cloud_notm}} console, CLI, API, SDKs, or Terraform. For more information about creating context-based restrictions, see [Creating context-based restrictions](/docs/account?topic=account-context-restrictions-create). The following sections provide specific guidance for creating restrictions for {{site.data.keyword.codeengineshort}} applications and functions.
+You can create context-based restrictions for your {{site.data.keyword.codeengineshort}} resources by using the {{site.data.keyword.cloud_notm}} console, CLI, API, SDKs, or Terraform. For more information about creating context-based restrictions, see [Creating context-based restrictions](/docs/iam?topic=iam-context-restrictions-create). The following sections provide specific guidance for creating restrictions for {{site.data.keyword.codeengineshort}} applications and functions.
 
 IPv6 restrictions are not supported for {{site.data.keyword.codeengineshort}}.
 {: note}
@@ -49,7 +49,7 @@ IPv6 restrictions are not supported for {{site.data.keyword.codeengineshort}}.
 {: #add-cbr-ui}
 {: ui}
 
-To create a context-based restriction, see [Creating context-based restrictions](/docs/account?topic=account-context-restrictions-create). The following steps are specific to creating one for {{site.data.keyword.codeengineshort}} resources.
+To create a context-based restriction, see [Creating context-based restrictions](/docs/iam?topic=iam-context-restrictions-create). The following steps are specific to creating one for {{site.data.keyword.codeengineshort}} resources.
 
 1. Go to the Context-based restrictions [Rules page](https://cloud.ibm.com/context-based-restrictions/rules).
 
