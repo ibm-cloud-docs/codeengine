@@ -3,7 +3,7 @@
 copyright:
   years: 2026
 
-lastupdated: "2026-07-13"
+lastupdated: "2026-07-15"
 
 
 keywords: change log, version history, vsi image, serverless fleets

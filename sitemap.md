@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-13"
+lastupdated: "2026-07-15"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2372,11 +2372,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * New! [{{site.data.keyword.codeenginefull_notm}} experimental release](https://cloud.ibm.com/codeengine/overview){: external}
 
-
-## Tutorials library for Code Engine
-{: #sitemap_tutorials-library-for-code-engine}
-
-[Tutorials library for Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
+[Tutorials library for Code Engine](/docs?topic=docs?tab=tutorials&tags=codeengine&page=1&pageSize=20)
 
 
 ## App and job tutorials
@@ -2467,11 +2463,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
-[Serverless web application and API with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp){: external}
+[Serverless web application and API with Code Engine](/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp)
 
-[Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: external}
+[Text analysis with Code Engine](/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine)
 
-[Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}
+[Serverless web app and eventing for data retrieval and analytics](/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics)
 
 
 ## Subscription tutorials
