@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-07-15"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3148,36 +3148,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Node.js wrapper](/docs/codeengine?topic=codeengine-fun-test-local#fun-test-nodejs)
 
-[Migrating IBM Cloud Functions to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate)
-
-* [Comparing Code Engine to Cloud Functions](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare)
-
-* [Key capabilities](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-key)
-
-* [What {{site.data.keyword.codeengineshort}} entity is best for my workload?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-compare-app-job)
-
-* [Migrating IBM Cloud Functions Actions to {{site.data.keyword.codeengineshort}} Functions FAQ](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faqs)
-
-    * [How can I process a bulk-load of computations?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq1)
-
-    * [I used Cloud Function to include dynamic elements for my web application. Can I move to {{site.data.keyword.codeengineshort}} Functions?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq2)
-
-    * [Can I trigger my function code?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq3)
-
-    * [Can my function be accessed through a public URL?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq4)
-
-    * [How can I secure my functions?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq5)
-
-    * [Can I include dynamic elements?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq6)
-
-    * [Can I use sequences to chain my functions together?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq7)
-
-    * [Can I bind my function to service credentials?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq9)
-
-    * [Where can I find information about my in progress and finished {{site.data.keyword.codeengineshort}} Function runs?](/docs/codeengine?topic=codeengine-fun-migrate#fun-migrate-faq10)
-
-    * [Does {{site.data.keyword.codeengineshort}} provide an OpenAPI specification for the deployed function?](/docs/codeengine?topic=codeengine-fun-migrate#openapi-spec-fun-migrate)
-
 
 ## Running fleets
 {: #sitemap_running_fleets}
@@ -3282,6 +3252,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Worker Image Changelog v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-v1_0)
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
+
+    * [Worker image `v1.0.285`, released 13 July 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_285)
 
     * [Worker image `v1.0.278`, released 06 July 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_278)
 

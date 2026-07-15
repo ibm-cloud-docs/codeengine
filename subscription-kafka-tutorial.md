@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-09"
+  years: 2020, 2026
+lastupdated: "2026-07-08"
 
 keywords: tutorial code engine, subscription tutorial for code engine, eventing and code engine, subscriptions, subscribing, tutorial for code engine, eventing tutorial for code engine, subscription, kafka, kafka event, event producers, kafka event producer
 
@@ -49,7 +49,7 @@ All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-yo
 You can set up your Kafka message producer to send messages to {{site.data.keyword.codeengineshort}} Kafka event subscriptions. Use your {{site.data.keyword.codeengineshort}} Kafka event subscription to trigger applications or jobs when a Kafka message is received.
 {: shortdesc}
 
-To get started, [create an {{site.data.keyword.messagehub}} service instance](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_prereqs) for your event streaming service. While you can use the console or the CLI, the following steps describe how to set up the {{site.data.keyword.messagehub}} event producer with the CLI.
+To get started, [create an {{site.data.keyword.messagehub}} service instance](/docs/EventStreams?topic=EventStreams-quick_setup_guide) for your event streaming service. While you can use the console or the CLI, the following steps describe how to set up the {{site.data.keyword.messagehub}} event producer with the CLI.
 
 
 1. Create a service instance for {{site.data.keyword.messagehub}}. The name of the {{site.data.keyword.messagehub}} CLI service is `messagehub`. For this example, create an {{site.data.keyword.messagehub}} service instance that is named `myeventstream`.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-09"
+  years: 2026
+lastupdated: "2026-07-13"
 
 keywords: code engine security, security, security features for code engine, code engine security features, code engine iam
 
@@ -24,9 +24,9 @@ The [{{site.data.keyword.codeenginefull}} architecture](/docs/codeengine?topic=c
 
 You can use the following security features to enhance your security.
 
-| Security feature | Description | 
+| Security feature | Description |
 |-----------|------------------|
-| Authorize access with IAM | Grant access to other users for {{site.data.keyword.codeengineshort}} by using {{site.data.keyword.iamshort}} (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, {{site.data.keyword.codeengineshort}}, and all the resources in your account. Setting up proper user roles and permissions is key to limit who can access your resources. See [Managing user access](/docs/codeengine?topic=codeengine-iam). | 
+| Authorize access with IAM | Grant access to other users for {{site.data.keyword.codeengineshort}} by using {{site.data.keyword.iamshort}} (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, {{site.data.keyword.codeengineshort}}, and all the resources in your account. Setting up proper user roles and permissions is key to limit who can access your resources. See [Managing user access](/docs/codeengine?topic=codeengine-iam). |
 | Disable external endpoints | Deploy your application with a disabled external endpoint that is not exposed to external traffic by using the `--visibility=private` or `visibility=project` option. See [Options for visibility for a Code Engine application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility). |
 | Store images in private image registries | Set up a private image registry, such as the one provided by {{site.data.keyword.registrylong_notm}}, to control access to the registry and the images that can be deployed in {{site.data.keyword.codeengineshort}}. Scan your images automatically with the [{{site.data.keyword.registrylong_notm}} Vulnerability Advisor](/docs/Registry?topic=Registry-va_index). You can also add access to your own custom private registry. See [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). |
 | Build code from a private repository | Store your source code in a private repository and then build to {{site.data.keyword.registrylong_notm}}. See [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). |
@@ -40,7 +40,7 @@ You can use the following security features to enhance your security.
 
 The {{site.data.keyword.codeengineshort}} API and application endpoints support transport layer security (TLS) 1.2 (or higher) and the following cipher suites.
 
-### TLS cipher suites 
+### TLS cipher suites
 {: #secure-cipher-suites}
 
 - `ECDHE-ECDSA-AES128-GCM-SHA256`
@@ -50,12 +50,12 @@ The {{site.data.keyword.codeengineshort}} API and application endpoints support 
 - `ECDHE-ECDSA-CHACHA20-POLY1305`
 - `ECDHE-RSA-CHACHA20-POLY1305`
 
-## DDoS protection 
+## DDoS protection
 {: #secure-ddos}
 
 {{site.data.keyword.codeengineshort}} provides immediate DDoS protection for your application. {{site.data.keyword.codeengineshort}}'s DDoS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you.
 
-DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks. 
+DDoS protection covers System Interconnection (OSI) Layer 3 and Layer 4 (TCP/IP) protocol attacks, but not Layer 7 (HTTP) attacks.
 
 To address Layer 7 attacks, you can take the following steps so that your traffic runs through a secure route using your custom domain and is no longer available to the public internet through the {{site.data.keyword.codeengineshort}} provided domain.
 
@@ -66,6 +66,6 @@ To address Layer 7 attacks, you can take the following steps so that your traffi
 5. [Configure a global load balancer](/docs/cis?topic=cis-configure-glb) in {{site.data.keyword.cis_short_notm}}.
 6. [Enable the HTTP proxy mode for the load balancer](/docs/cis?topic=cis-proxy-modes) in {{site.data.keyword.cis_short_notm}}. This activates DDoS protection on Layer 7 and other {{site.data.keyword.cis_short_notm}} security features.
 7. In {{site.data.keyword.codeengineshort}}, turn off the public system provided domain mappings of your application. Go to your application, from the **Domain mappings** tab for your app, select **No external system domain mapping**.
-8. Click **Create** to save the application revision. 
+8. Click **Create** to save the application revision.
 
-For more information about DDoS in {{site.data.keyword.cis_short_notm}}, see [Dealing with Distributed Denial of Service attacks in {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts). For more ways to address Layer 7 attacks, see [Mitigating Layer 7 attacks in {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis#cis-mitigate-layer7-attacks). 
+For more information about DDoS in {{site.data.keyword.cis_short_notm}}, see [Dealing with Distributed Denial of Service attacks in {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-ddos-attack-concepts). For more ways to address Layer 7 attacks, see [Mitigating Layer 7 attacks in {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-about-ddos#cis-mitigate-layer7-attacks).

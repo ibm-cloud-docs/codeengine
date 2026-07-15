@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-07-08"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project, integrating service with function in code engine
 
@@ -242,7 +242,7 @@ ibmcloud ce function create --name myfun --runtime nodejs --build-source https:/
     ```
     {: screen}
 
-2. Bind your service instance to your {{site.data.keyword.codeengineshort}} application, job, or function and generate a new service credential with a specific service role. For more information about IAM service roles, see [Service access roles](/docs/account?topic=account-userroles#service_access_roles). In the following example, the  **`function bind`** command binds the `my-object-storage` service instance to the function called `my-function` by using the Writer service role. A new service credential with the Writer role is generated for this binding action. By specifying the `--prefix` option, a prefix is added to the environment variables that are created by the service bindings.
+2. Bind your service instance to your {{site.data.keyword.codeengineshort}} application, job, or function and generate a new service credential with a specific service role. For more information about IAM service roles, see [Service access roles](/docs/iam?topic=iam-userroles#service_access_roles). In the following example, the  **`function bind`** command binds the `my-object-storage` service instance to the function called `my-function` by using the Writer service role. A new service credential with the Writer role is generated for this binding action. By specifying the `--prefix` option, a prefix is added to the environment variables that are created by the service bindings.
 
     ```txt
     ibmcloud ce function bind --name my-function --service-instance my-object-storage --role Writer --prefix MYPREFIX

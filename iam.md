@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-09"
+  years: 2026
+lastupdated: "2026-07-08"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine, user access, access, platform roles, service roles
 
@@ -26,13 +26,13 @@ Access to {{site.data.keyword.codeenginefull}} service instances for users in yo
 
 {{site.data.keyword.codeengineshort}} uses both the Platform and Service management roles. You can set policies about who can create a project at the platform level, and then use the service roles to manage interaction with the project itself. 
 
-Want to learn more about IAM key concepts? Check out [What is IBM Cloud Identity and Access Management?](/docs/account?topic=account-iamoverview).
+Want to learn more about IAM key concepts? Check out [Getting started with IBM Cloud IAM](/docs/iam?topic=iam-iamoverview).
 {: tip}
 
 ## How do I know which access policies are set for me?
 {: #iam-accesspolicy}
 
-You can see which access policies are set for you in the [{{site.data.keyword.iamlong}} (IAM)](https://cloud.ibm.com/iam/overview){: external} console. Be sure to check [access policies](/docs/account?topic=account-assign-access-resources){: external} that apply for your user, and any access policies that are assigned to any [access groups](/docs/account?topic=account-groups){: external} that include your user. 
+You can see which access policies are set for you in the [{{site.data.keyword.iamlong}} (IAM)](https://cloud.ibm.com/iam/overview) console. Be sure to check [access policies](/docs/iam?topic=iam-assign-access-resources) that apply to your user, and any access policies that are assigned to any [access groups](/docs/iam?topic=iam-groups) that include your user.
 
 To view IAM information about your user access,
 
@@ -54,10 +54,10 @@ To manage access or assign new access for users by using access groups, you must
 
 Choose any of the following actions to manage access groups in the {{site.data.keyword.cloud_notm}}:
 
-* [Creating an access group](/docs/account?topic=account-groups&interface=ui#create_ag).
-* [Assigning access to a group](/docs/account?topic=account-groups&interface=ui#access_ag).
+* [Creating an access group](/docs/iam?topic=iam-groups&interface=ui#create_ag).
+* [Assigning access to a group](/docs/iam?topic=iam-groups&interface=ui#access_ag).
 
-For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=account-ibmcloud_commands_iam).
+For more information about IAM commands, see the [IAM CLI reference docs](/docs/iam?topic=iam-ibmcloud_commands_iam).
 
 ## Managing access by assigning policies directly to users
 {: #users}
@@ -66,11 +66,11 @@ To manage access or assign new access for users by using IAM policies, you must 
 
 Choose any of the following actions to manage IAM policies in the {{site.data.keyword.cloud_notm}}:
 
-* To grant permissions to a user, see [Assigning access](/docs/account?topic=account-assign-access-resources#assign-new-access).
-* To revoke permissions, see [Removing access](/docs/account?topic=account-assign-access-resources&interface=ui#removing-access-console).
-* To review a user's permissions, see [Reviewing your assigned access](/docs/account?topic=account-assign-access-resources&interface=ui#review-your-access-console).
+* To grant permissions to a user, see [Assigning access to resources](/docs/iam?topic=iam-assign-access-resources#assign-new-access).
+* To revoke permissions, see [Removing access](/docs/iam?topic=iam-assign-access-resources&interface=ui#removing-access-console).
+* To review a user's permissions, see [Reviewing assigned access](/docs/iam?topic=iam-assign-access-resources&interface=ui#review-your-access-console).
 
-For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=account-ibmcloud_commands_iam).
+For more information about IAM commands, see the [IAM CLI reference docs](/docs/iam?topic=iam-ibmcloud_commands_iam).
 
 ## {{site.data.keyword.cloud_notm}} platform roles
 {: #platform}

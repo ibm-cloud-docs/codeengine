@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-07-08"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image, container as non-root
 
@@ -76,9 +76,9 @@ Look at some the following best practices to reduce the size of your build.
 ### Combine several commands in a single `RUN` statement to reduce image size
 {: #combine-commands}
 
-In this example, you must install software in the container image, for example, Node.js. Use the base images for Node.js to build a Node.js application. 
+In this example, you must install software in the container image, for example, Node.js. Use the base images for Node.js to build a Node.js application.
 
-To manually install Node.js, you can use the following Dockerfile example, 
+To manually install Node.js, you can use the following Dockerfile example,
 
 ```Dockerfile
 FROM ubuntu
@@ -161,13 +161,13 @@ The related commands are combined into a single `RUN` statement and the **`apt a
 ### Use a tiny base image
 {: #small-base-image}
 
-The previous examples use Ubuntu as a base image. While this image contains many useful utilities, the more utilities that are in a base image, then the larger its size is. Additionally, by including more utilities, you increase the chance that you might encounter a security vulnerability, requiring you to rebuild your image. To avoid both of these issues, use a smaller base image. For example, 
+The previous examples use Ubuntu as a base image. While this image contains many useful utilities, the more utilities that are in a base image, then the larger its size is. Additionally, by including more utilities, you increase the chance that you might encounter a security vulnerability, requiring you to rebuild your image. To avoid both of these issues, use a smaller base image. For example,
 
 - [Alpine](https://hub.docker.com/_/alpine) is an official Docker image with small size. For programming environments like Java or Node.js, you often find tags that are based on Alpine.
 
 - [Distroless images from Google Container Tools](https://github.com/GoogleContainerTools/distroless) contain no operating system tools at all but the necessary runtime environment for different languages like Java and Node.js.
 
-Compare these base images by building a container image that runs a Node.js program in a program.js file. For Ubuntu, the Dockerfile looks similar the following example, 
+Compare these base images by building a container image that runs a Node.js program in a program.js file. For Ubuntu, the Dockerfile looks similar the following example,
 
 ```Dockerfile
 FROM ubuntu
@@ -218,7 +218,7 @@ While the Ubuntu-based image is 147 MB, the image that is based on Alpine is 90 
 ### Do not include sources and build tools to reduce image size
 {: #dont-include-source}
 
-In the previous Node.js based examples, a single source file is added to the container image. This example can use a single source file because no compilation was necessary. However, if a compilation is necessary, then use the necessary tools for the build only, but do not include them in the resulting image. For example, specify a Java application that uses Maven as example. A poorly coded Dockerfile looks similar to the following example, 
+In the previous Node.js based examples, a single source file is added to the container image. This example can use a single source file because no compilation was necessary. However, if a compilation is necessary, then use the necessary tools for the build only, but do not include them in the resulting image. For example, specify a Java application that uses Maven as example. A poorly coded Dockerfile looks similar to the following example,
 
 ```Dockerfile
 FROM maven:3-jdk-11-openj9
@@ -284,7 +284,7 @@ To improve the startup of your application, investigate the implementation of yo
 - Parallelization of independent initialization work, for example, to establish a connection to a database and to read the configuration file to communicate with a mail server from environment variables.
 - Delaying of initialization work that is not needed for application startup and instead perform them on first need basis.
 
-In addition, you can also avoid a common pitfall when you implement a web application that uses a framework such as Angular, React, or Vue. Each of these frameworks is based on Node.js with NPM and includes a command-line interface that can make it easy to set up a project. For example, a React application that is created with the [**`create-react-app`**](https://github.com/facebook/create-react-app) command sets up a `package.json` file that includes some predefined scripts. One of these scripts is `start`, which brings up a web server with your web application. Your Dockerfile can look similar to the following example,
+In addition, you can also avoid a common pitfall when you implement a web application that uses a framework such as Angular, React, or Vue. Each of these frameworks is based on Node.js with NPM and includes a command-line interface that can make it easy to set up a project. For example, a React application that is created with the [**`create-react-app`**](https://github.com/react/create-react-app){: external} command sets up a `package.json` file that includes some predefined scripts. One of these scripts is `start`, which brings up a web server with your web application. Your Dockerfile can look similar to the following example,
 
 ```Dockerfile
 FROM nodejs:16-alpine

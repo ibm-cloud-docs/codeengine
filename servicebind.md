@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-03-11"
+  years: 2020, 2026
+lastupdated: "2026-07-08"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, integrating services with function in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -57,7 +57,7 @@ I already have service credentials for an {{site.data.keyword.cloud_notm}} servi
 :    Yes, you can bind a service instance to {{site.data.keyword.codeengineshort}} workloads by using existing service credentials. From the console, you can use existing credentials that are already used in a service binding. To use existing service credentials from the CLI, specify the `--service-credential` option in the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind), [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind), or the [**`ibmcloud ce function bind`**](/docs/codeengine?topic=codeengine-cli#cli-function-bind) command and provide the name of your service credentials.
 
 What access is required to create service bindings?
-:    Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service bindings to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a service ID. For more information, see [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
+:    Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access policies](/docs/iam?topic=iam-userroles), which authorizes {{site.data.keyword.codeengineshort}} service bindings to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a service ID. For more information, see [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
 
 
 Is there a way to configure service binding operations for all users in a project?

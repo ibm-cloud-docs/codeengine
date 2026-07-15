@@ -1,15 +1,15 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-15"
+  years: 2026
+lastupdated: "2026-07-08"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, cron, app, event, cron event, ping event
 
 subcollection: codeengine
 
 content-type: tutorial
-completion-time: 10m 
+completion-time: 10m
 
 ---
 
@@ -43,21 +43,19 @@ The cron event producer generates events at regular intervals. This interval can
 
 Cron uses a standard crontab to specify interval details, in the format `* * * * *`, which stands for minute, hour, day of month, month, and day of week. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`.
 
-For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
-
 You can set your cron interval by using the `--schedule` option with the **`subscription cron`** command, as shown in Step 3. If you do not specify the `--schedule` option, then by default, the cron event is sent every minute of every day.
 
 ## Create your app (or job)
 {: #create-app}
 {: step}
 
-While events can be used to trigger apps or jobs, this tutorial uses an app. 
+While events can be used to trigger apps or jobs, this tutorial uses an app.
 {: shortdesc}
 
 Create your application called `cron-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `icr.io/codeengine/cron`. This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload. For more information about the code that is used for this example, see [`cron`](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
 
 ```txt
-ibmcloud ce app create --name cron-app --image icr.io/codeengine/cron 
+ibmcloud ce app create --name cron-app --image icr.io/codeengine/cron
 ```
 {: pre}
 
@@ -89,23 +87,23 @@ In this output, you can see that the subscription name, destination, schedule, a
 Getting cron event subscription 'cron-sub'...
 OK
 
-Name:          cron-sub  
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
-Project Name:  myproject  
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
-Age:           2m18s  
-Created:       2021-03-14T13:21:13-05:00   
+Name:          cron-sub
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           2m18s
+Created:       2021-03-14T13:21:13-05:00
 
-Destination Type:  app  
-Destination:       cron-app  
-Schedule:          * * * * *  
-Time Zone:         UTC  
-Data:              {"mydata":"hello world"}  
-Ready:             true  
+Destination Type:  app
+Destination:       cron-app
+Schedule:          * * * * *
+Time Zone:         UTC
+Data:              {"mydata":"hello world"}
+Ready:             true
 
-Events:    
-    Type     Reason                 Age                Source                 Messages   
-    Normal   FinalizerUpdate        65s                pingsource-controller  Updated "cron-sub" finalizers 
+Events:
+    Type     Reason                 Age                Source                 Messages
+    Normal   FinalizerUpdate        65s                pingsource-controller  Updated "cron-sub" finalizers
 
 ```
 {: screen}
@@ -117,7 +115,7 @@ Events:
 After you successfully subscribed your app to your cron event, look at the logs to see whether it works.
 {: shortdesc}
 
-Get the logs for the app with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command. 
+Get the logs for the app with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command.
 
 ```txt
 ibmcloud ce app logs --name cron-app
@@ -129,32 +127,32 @@ Example output
 In the following output, you can see that the date and time that the event was received as well as the HTTP Headers and the HTTP Body JSON that was passed in when the subscription was created.
 
 ```txt
-2021-01-21 20:15:00 - Received:  
-Header: Accept-Encoding=[gzip]  
-Header: Ce-Id=[7de01e8e-84dc-4409-ad56-90d6e391397c]  
-Header: Ce-Source=[/apis/v1/namespaces/50d38123af5/pingsources/cron-sub]  
-Header: Ce-Specversion=[1.0]  
-Header: Ce-Time=[2021-01-21T20:15:00.392503458Z]  
-Header: Ce-Type=[dev.knative.sources.ping]  
-Header: Content-Length=[24]  
-Header: Content-Type=[application/json]  
-Header: Forwarded=[for=172.30.118.174;proto=http, for=172.30.95.204]  
-Header: K-Proxy-Request=[activator]  
-Header: Traceparent=[00-1bf4b6b1d67f278a4b827e4e00f0cf7c-cbce9df0faedd812-00]  
-Header: User-Agent=[Go-http-client/1.1]  
-Header: X-B3-Sampled=[0]  
-Header: X-B3-Spanid=[fb208eaa6af15ede]  
-Header: X-B3-Traceid=[6db074fdaf6a6411fb208eaa6af15ede]  
-Header: X-Envoy-Attempt-Count=[1]  
-Header: X-Envoy-Decorator-Operation=[cron-app-snva7-1.50d38123af5.svc.cluster.local:80/*]  
-Header: X-Envoy-Internal=[true]  
-Header: X-Envoy-Peer-Metadata=[ChoKCkNMVVNURVJfSUQSDBoKS3ViZXJuZXRlcwo5CgxJTlNUQU5DRV9JUFMSKRonMTcyLjMwLjk1LjIwNCxmZTgwOjplODBiOjFkZmY6ZmVmMjo1ZjkxCpQCCgZMQUJFTFMSiQIqhgIKHQoDYXBwEhYaFGlzdGlvLWluZ3Jlc3NnYXRld2F5ChMKBWNoYXJ0EgoaCGdhdGV3YXlzChQKCGhlcml0YWdlEggaBlRpbGxlcgoZCgVpc3RpbxIQGg5pbmdyZXNzZ2F0ZXdheQofChFwb2QtdGVtcGxhdGUtaGFzaBIKGghkNzY1NjljOQoSCgdyZWxlYXNlEgcaBWlzdGlvCjkKH3NlcnZpY2UuaXN0aW8uaW8vY2Fub25pY2FsLW5hbWUSFhoUaXN0aW8taW5ncmVzc2dhdGV3YXkKLwojc2VydmljZS5pc3Rpby5pby9jYW5vbmljYWwtcmV2aXNpb24SCBoGbGF0ZXN0ChoKB01FU0hfSUQSDxoNY2x1c3Rlci5sb2NhbAotCgROQU1FEiUaI2lzdGlvLWluZ3Jlc3NnYXRld2F5LWQ3NjU2OWM5LWw5cHZoChsKCU5BTUVTUEFDRRIOGgxpc3Rpby1zeXN0ZW0KXQoFT1dORVISVBpSa3ViZXJuZXRlczovL2FwaXMvYXBwcy92MS9uYW1lc3BhY2VzL2lzdGlvLXN5c3RlbS9kZXBsb3ltZW50cy9pc3Rpby1pbmdyZXNzZ2F0ZXdheQo5Cg9TRVJWSUNFX0FDQ09VTlQSJhokaXN0aW8taW5ncmVzc2dhdGV3YXktc2VydmljZS1hY2NvdW50CicKDVdPUktMT0FEX05BTUUSFhoUaXN0aW8taW5ncmVzc2dhdGV3YXk=]  
-Header: X-Envoy-Peer-Metadata-Id=[router~172.30.95.204~istio-ingressgateway-d76569c9-l9pvh.istio-system~istio-system.svc.cluster.local]  
-Header: X-Forwarded-For=[172.30.118.174, 172.30.95.204, 172.30.163.42]  
-Header: X-Forwarded-Proto=[http]  
-Header: X-Request-Id=[ce502e5e-dd89-401e-a4cd-b72a6822f689]  
+2021-01-21 20:15:00 - Received:
+Header: Accept-Encoding=[gzip]
+Header: Ce-Id=[7de01e8e-84dc-4409-ad56-90d6e391397c]
+Header: Ce-Source=[/apis/v1/namespaces/50d38123af5/pingsources/cron-sub]
+Header: Ce-Specversion=[1.0]
+Header: Ce-Time=[2021-01-21T20:15:00.392503458Z]
+Header: Ce-Type=[dev.knative.sources.ping]
+Header: Content-Length=[24]
+Header: Content-Type=[application/json]
+Header: Forwarded=[for=172.30.118.174;proto=http, for=172.30.95.204]
+Header: K-Proxy-Request=[activator]
+Header: Traceparent=[00-1bf4b6b1d67f278a4b827e4e00f0cf7c-cbce9df0faedd812-00]
+Header: User-Agent=[Go-http-client/1.1]
+Header: X-B3-Sampled=[0]
+Header: X-B3-Spanid=[fb208eaa6af15ede]
+Header: X-B3-Traceid=[6db074fdaf6a6411fb208eaa6af15ede]
+Header: X-Envoy-Attempt-Count=[1]
+Header: X-Envoy-Decorator-Operation=[cron-app-snva7-1.50d38123af5.svc.cluster.local:80/*]
+Header: X-Envoy-Internal=[true]
+Header: X-Envoy-Peer-Metadata=[ChoKCkNMVVNURVJfSUQSDBoKS3ViZXJuZXRlcwo5CgxJTlNUQU5DRV9JUFMSKRonMTcyLjMwLjk1LjIwNCxmZTgwOjplODBiOjFkZmY6ZmVmMjo1ZjkxCpQCCgZMQUJFTFMSiQIqhgIKHQoDYXBwEhYaFGlzdGlvLWluZ3Jlc3NnYXRld2F5ChMKBWNoYXJ0EgoaCGdhdGV3YXlzChQKCGhlcml0YWdlEggaBlRpbGxlcgoZCgVpc3RpbxIQGg5pbmdyZXNzZ2F0ZXdheQofChFwb2QtdGVtcGxhdGUtaGFzaBIKGghkNzY1NjljOQoSCgdyZWxlYXNlEgcaBWlzdGlvCjkKH3NlcnZpY2UuaXN0aW8uaW8vY2Fub25pY2FsLW5hbWUSFhoUaXN0aW8taW5ncmVzc2dhdGV3YXkKLwojc2VydmljZS5pc3Rpby5pby9jYW5vbmljYWwtcmV2aXNpb24SCBoGbGF0ZXN0ChoKB01FU0hfSUQSDxoNY2x1c3Rlci5sb2NhbAotCgROQU1FEiUaI2lzdGlvLWluZ3Jlc3NnYXRld2F5LWQ3NjU2OWM5LWw5cHZoChsKCU5BTUVTUEFDRRIOGgxpc3Rpby1zeXN0ZW0KXQoFT1dORVISVBpSa3ViZXJuZXRlczovL2FwaXMvYXBwcy92MS9uYW1lc3BhY2VzL2lzdGlvLXN5c3RlbS9kZXBsb3ltZW50cy9pc3Rpby1pbmdyZXNzZ2F0ZXdheQo5Cg9TRVJWSUNFX0FDQ09VTlQSJhokaXN0aW8taW5ncmVzc2dhdGV3YXktc2VydmljZS1hY2NvdW50CicKDVdPUktMT0FEX05BTUUSFhoUaXN0aW8taW5ncmVzc2dhdGV3YXk=]
+Header: X-Envoy-Peer-Metadata-Id=[router~172.30.95.204~istio-ingressgateway-d76569c9-l9pvh.istio-system~istio-system.svc.cluster.local]
+Header: X-Forwarded-For=[172.30.118.174, 172.30.95.204, 172.30.163.42]
+Header: X-Forwarded-Proto=[http]
+Header: X-Request-Id=[ce502e5e-dd89-401e-a4cd-b72a6822f689]
 
-Body: {"mydata":"hello world"}  
+Body: {"mydata":"hello world"}
 ```
 {: screen}
 
@@ -186,21 +184,21 @@ In this output, you can see that the schedule and data are updated.
 Getting cron event subscription 'cron-sub'...
 OK
 
-Name:          cron-sub  
+Name:          cron-sub
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-Project Name:  myproject  
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
-Age:           5m7s  
-Created:       2021-03-14T13:21:13-05:00   
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           5m7s
+Created:       2021-03-14T13:21:13-05:00
 
-Destination:  App:cron-app  
-Schedule:     0 0 * * *  
-Data:         {"mydata":"hello world again"}  
+Destination:  App:cron-app
+Schedule:     0 0 * * *
+Data:         {"mydata":"hello world again"}
 Ready:        true
 
-Events:    
-    Type     Reason                 Age                Source                 Messages   
-    Normal   FinalizerUpdate        65s                pingsource-controller  Updated "cron-sub" finalizers 
+Events:
+    Type     Reason                 Age                Source                 Messages
+    Normal   FinalizerUpdate        65s                pingsource-controller  Updated "cron-sub" finalizers
 
 ```
 {: screen}

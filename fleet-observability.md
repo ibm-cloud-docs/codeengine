@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-08"
 
 keywords: fleets, fleet logging, fleet monitoring, fleet observability, observability, logging, monitoring, Cloud Logs, Cloud Monitoring
 
@@ -37,8 +37,8 @@ You must have a Cloud Logs service instance that targets the region of the Code 
 {: #log-perm}
 
 Make sure you have a service ID and an API key that assign access to the Cloud Logs instance and set the required permissions.
-1. [Create a service ID](/docs/account?topic=account-serviceids&interface=ui#create_serviceid). Then assign the service ID [an access policy](/docs/account?topic=account-assign-access-resources&interface=ui#access-resources-console) that targets the Cloud Logs instance in your account. Assign this access policy the **Sender** service access level. 
-2. [Create an API key for the service ID](/docs/account?topic=account-serviceidapikeys&interface=ui#create_service_key). Save the API key in a secure location so you can reference it later. 
+1. [Create a service ID](/docs/iam?topic=iam-serviceids&interface=ui#create_serviceid). Then assign the service ID [an access policy](/docs/iam?topic=iam-assign-access-resources&interface=ui#access-resources-console) that targets the Cloud Logs instance in your account. Assign this access policy the **Sender** service access level. 
+2. [Create an API key for the service ID](/docs/iam?topic=iam-serviceidapikeys&interface=ui#create_service_key). Save the API key in a secure location so you can reference it later. 
 
 ### 3. Get the private Ingress endpoint for the Cloud Logs instance
 {: #log-ingress-endpoint}

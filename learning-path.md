@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-07-08"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -210,6 +210,5 @@ Finally, analyze performance metrics by collecting information with [{{site.data
 
 If you are moving from a different service to Code Engine, there are several topics that can help you.
 
-- [Migrating IBM Cloud Functions to Code Engine](/docs/codeengine?topic=codeengine-fun-migrate).
 - [Getting started with your migration from Heroku to Code Engine](/docs/codeengine?topic=codeengine-heroku-migrate).
 - [Getting started with your migration from Cloud Foundry to Code Engine](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).

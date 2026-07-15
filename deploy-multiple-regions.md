@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-01"
+lastupdated: "2026-07-08"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -31,7 +31,7 @@ You can deploy your {{site.data.keyword.codeenginefull}} application across mult
 
 - You must have a custom domain name for your application, such as `example.com`. This domain name is used by your {{site.data.keyword.codeengineshort}} application.
 - Set up an instance of [{{site.data.keyword.cis_short}}](https://cloud.ibm.com/catalog/services/internet-services){: external}.
-- [Add your domain name to {{site.data.keyword.cis_short}}](/docs/cis?topic=cis-getting-started#add-configure-your-domain). When you register your domain name with {{site.data.keyword.cis_short}}, you are delegating control of your domain name to {{site.data.keyword.cis_short}}. Note that this step can take a while to complete. 
+- [Add your domain name to {{site.data.keyword.cis_short}}](/docs/cis?topic=cis-getting-started#process-overview-new). When you register your domain name with {{site.data.keyword.cis_short}}, you are delegating control of your domain name to {{site.data.keyword.cis_short}}. Note that this step can take a while to complete.
 
 
 ## Create projects in different regions
@@ -55,7 +55,7 @@ For more information, see [Managing projects](/docs/codeengine?topic=codeengine-
 {: #deploy-app-regions}
 {: step}
 
-Now that your projects are created in multiple regions, deploy your application in each project. 
+Now that your projects are created in multiple regions, deploy your application in each project.
 
 For example, deploy the `codeengine/helloworld` app.
 
@@ -77,7 +77,7 @@ For more information about deploying your application, see [Deploying applicatio
 {: #custom-domain-cert}
 {: step}
 
-In an enterprise environment, work with your corporate domain administrator to obtain the necessary certificates. However, if the custom domain is within your control and you want quickly create a certificate that is not self-certified, then you can optionally use the [Let's Encrypt](https://letsencrypt.org/){: external} service and [Certbot](https://certbot.eff.org/){: external} to obtain a certificate. 
+In an enterprise environment, work with your corporate domain administrator to obtain the necessary certificates. However, if the custom domain is within your control and you want quickly create a certificate that is not self-certified, then you can optionally use the [Let's Encrypt](https://letsencrypt.org/){: external} service and [Certbot](https://certbot.eff.org/){: external} to obtain a certificate.
 
 1. Install [Certbot](https://certbot.eff.org/){: external}. Certbot is a client for the [Automatic Certificate Management Environment (ACME)](https://letsencrypt.org/2019/03/11/acme-protocol-ietf-standard){: external} protocol for automating interactions between a CA and a server. The Let's Encrypt service uses this client to verify domain ownership and issue certificates. From the [Certbot Instructions page](https://certbot.eff.org/instructions){: external}, select `Other` as the software and select the operating system for your workstation to obtain the applicable information to install the Certbot command line.
 2. Run the following command to create your certificate. This example command creates a certificate for the `example.com` and `www.example.com` custom domains. Be sure to update the command for your own custom domain.
@@ -125,20 +125,20 @@ After your apps are deployed, configure a custom domain mapping for them.
 9. Note the `CNAME` target value. You need this value to set up routing for your domain in CIS.
 10. Verify that the app name is `global-app`.
 11. Click **Create**.
-12. Repeat these steps to create a custom domain mapping for each application that you created. 
+12. Repeat these steps to create a custom domain mapping for each application that you created.
 
 ## Configure a health check
 {: #config-health-check}
 {: step}
 
-When you created your applications, you set the **Minimum number of instances** to 1. Because there is always an instance of your app running in each region, you can set up a health check from your CIS instance to monitor the availability of pools. By setting up a health check, traffic is always routed to a running instance, making your app highly available. 
+When you created your applications, you set the **Minimum number of instances** to 1. Because there is always an instance of your app running in each region, you can set up a health check from your CIS instance to monitor the availability of pools. By setting up a health check, traffic is always routed to a running instance, making your app highly available.
 
 1. From your CIS instance, navigate to **Reliability > Global load balancers > Health checks**.
 2. Click **Create**.
 3. Name your health check the same as your application name: `global-app`.
 4. Set the **Monitor type** to `HTTPS` and the **Port** to `443`.
 5. Accept the defaults for the rest of the options. Note that if you are using an app other than `codeengine/helloworld` app, adjust any options that your app requires.
-6. Click **Create**. 
+6. Click **Create**.
 
 For more information, see [Setting up health checks](/docs/cis?topic=cis-glb-features-healthchecks).
 
@@ -161,7 +161,7 @@ After your custom domain mappings are in a `Ready` state, configure the {{site.d
 
 3. Select **Load balancers** and click **Create**.
 
-    1. Name your load balancer. Note that this name appears in your custom domain URL. For example, if your custom domain is `global-app.example.com` and you name your load balancer `global-app`, your URL is `global-app.example.com`. 
+    1. Name your load balancer. Note that this name appears in your custom domain URL. For example, if your custom domain is `global-app.example.com` and you name your load balancer `global-app`, your URL is `global-app.example.com`.
     2. Set **Traffic steering** to `Geo`.
     3. Add your **Geo** routes. You can choose to create a route for all CIS regions or only some regions.
         - If you create a route for all CIS regions, then in each route that you create, add all the origin pools that you created earlier. Sort them so that a region that contains your running app and is closest to the region route that you are configuring. For example, if you created apps in `au-syd`, `eu-de`, and `br-sao`, then for `Oceana`, put `au-syd` first. For Eastern and Western Europe, put `de-eu` first. And for North and South America, put `br-sao` first.
@@ -185,4 +185,4 @@ Now your applications are highly available.
 2. Delete your DNS records from CIS. For more information, see [Deleting DNS records](/docs/cis?topic=cis-set-up-your-dns-for-cis#deleting-dns-records).
 3. Delete each project that you created. When you delete a project, all the components contained in that project are also deleted. For more information, see [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
 
-Note that your custom domain is not deleted, but is no longer associated with the application that you created. 
+Note that your custom domain is not deleted, but is no longer associated with the application that you created.

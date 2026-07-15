@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-06-26"
+  years: 2020, 2026
+lastupdated: "2026-07-08"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -153,7 +153,7 @@ Only account administrators can assign the Notifications Manager role.
     {: pre}
 
 
-2. Assign the Notification Manager role by using the [**`ibmcloud iam authorization-policy-create`**](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
+2. Assign the Notification Manager role by using the [**`ibmcloud iam authorization-policy-create`**](/docs/iam?topic=iam-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 
     For example, to assign the Notifications Manager role to a project named `myproject` for an {{site.data.keyword.cos_short}} instance named `mycosinstance`,
 

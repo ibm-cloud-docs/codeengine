@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-04-04"
+  years: 2026
+lastupdated: "2026-07-08"
 
 keywords: service access, trusted profiles, enabling trusted profiles
 
@@ -18,7 +18,7 @@ subcollection: codeengine
 You can configure your {{site.data.keyword.codeengineshort}} components (applications, jobs, or functions) to use IAM trusted profiles to authorize {{site.data.keyword.codeengineshort}} components and access {{site.data.keyword.cloud}} services without managing separate credentials. Trusted profiles do not require storing and managing secret credentials. No maintenance or credential rotation are needed.
 {: shortdesc}
 
-Before you enable an application, job, or function to access {{site.data.keyword.cloud_notm}} services to use a trusted profile, you require an {{site.data.keyword.iamlong}} (IAM) trusted profile. Create a trusted profile in IAM that trusts your {{site.data.keyword.codeengineshort}} component as a compute resource and grant access to the target service. See [IAM documentation](/docs/account?topic=account-create-trusted-profile&interface=ui) to create your trusted profile.
+Before you enable an application, job, or function to access {{site.data.keyword.cloud_notm}} services to use a trusted profile, you require an {{site.data.keyword.iamlong}} (IAM) trusted profile. Create a trusted profile in IAM that trusts your {{site.data.keyword.codeengineshort}} component as a compute resource and grant access to the target service. See [Trusted profiles for federated users and workloads](/docs/iam?topic=iam-create-trusted-profile&interface=ui) to create your trusted profile.
 
 The {{site.data.keyword.codeengineshort}} application, job, or function then needs access to a compute resource token so that it can identify itself and authenticate as an {{site.data.keyword.codeengineshort}} component for IAM. This token authenticates the services to which the {{site.data.keyword.codeengineshort}} component is allowed to communicate. Trusted profiles control the specific services with which the {{site.data.keyword.codeengineshort}} component can communicate.
 
