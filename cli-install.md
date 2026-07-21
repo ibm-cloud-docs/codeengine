@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-01"
+lastupdated: "2026-07-20"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -12,28 +12,28 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Setting up the CLI 
+# Setting up the CLI
 {: #install-cli}
 
-Install, update, and delete the required CLIs and set up your environment to use {{site.data.keyword.codeenginefull}}. 
+Install, update, and delete the required CLIs and set up your environment to use {{site.data.keyword.codeenginefull}}.
 {: shortdesc}
 
 
 ## Supported environments for {{site.data.keyword.codeengineshort}} CLI
 {: #cli-env}
 
-The {{site.data.keyword.codeengineshort}} CLI supports the following environments: 
+The {{site.data.keyword.codeengineshort}} CLI supports the following environments:
 
 - Linux 64 bit
 - Linux 64 bit ARM
 - Linux 32 bit
 - Mac OS X 64 bit
-- Mac OS X M1/ARM 
+- Mac OS X M1/ARM
 - Windows 64 bit
 - Windows 32 bit
 
 
-## Installing the {{site.data.keyword.cloud_notm}} CLI 
+## Installing the {{site.data.keyword.cloud_notm}} CLI
 {: #cli-setup}
 
 Install the latest version of the {{site.data.keyword.cloud_notm}} CLI.
@@ -43,16 +43,15 @@ Before you begin
 
 You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.
 
-1. Download and install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). 
+1. Download and install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 
-    This installation includes the following files: 
-    
-    * IBM Cloud Functions plug-in
+    This installation includes the following files:
+
     * IBM Cloud Object Storage plug-in
     * IBM Cloud Container Registry plug-in
     * IBM Cloud Kubernetes Service plug-in
 
-    For more information, see [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). 
+    For more information, see [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 
 2. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -87,7 +86,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
     ```txt
     Retrieving all resource groups under account <account_id> as email@ibm.com...
     OK
-    Name      ID                                 Default Group   State   
+    Name      ID                                 Default Group   State
     default   a8a12accd63b437bbd6d58fb8b462ca7   true            ACTIVE
     test      a8a12abbbd63b437cca6d58fb8b462ca7  false           ACTIVE
     ```
@@ -102,7 +101,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
 
     Example output
 
-    ```txt 
+    ```txt
     Targeted resource group default
     ```
     {: screen}

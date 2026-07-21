@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-01"
+lastupdated: "2026-07-20"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -11,34 +11,34 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing projects 
+# Managing projects
 {: #manage-project}
 
 Learn how to create and work with projects.
-{: shortdesc} 
+{: shortdesc}
 
 ## What is a project?
 {: #project-def}
 
-A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to its entities. 
+A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, functions, jobs, fleets, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to their entities.
 
-A project provides the following items. 
+A project provides the following capabilities:
 
-- Provides a unique namespace for entity names.
-- Manages access to project resources (inbound access).
-- Manages access to backing services, registries, and repositories (outbound access).
-- Has an automatically generated certificate for Transport Layer Service (TLS).
+- A unique namespace for entity names.
+- Management of inbound access to project resources.
+- Management of outbound access to backing services, registries, and repositories.
+- An automatically generated certificate for Transport Layer Service (TLS).
 
 For more information about managing access control to projects with IAM, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
-Projects incur no costs, but instead serve as folders for your apps, jobs, and functions. 
+Projects do not incur charges. A project is the top-level container for all other {{site.data.keyword.codeengineshort}} resources like apps, functions, jobs, fleets, and builds.
 
 ### How can I see what projects I can access?
 {: #project-access}
 
 You can see a list of your projects in the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
-You can also run the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command. 
+You can also run the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command.
 
 ```txt
 ibmcloud ce project list
@@ -58,14 +58,13 @@ myproject        01234567-abcd-abcd-abcd-abcdabcd1111  active  true            u
 {: screen}
 
 
-### How can I see details about a project? 
+### How can I see details about a project?
 {: #project-details}
 
 From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 
-When you are working with a component in {{site.data.keyword.codeengineshort}} from the console such as apps, jobs, or functions, or their related entities such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more! 
+When you are working with a component in {{site.data.keyword.codeengineshort}} from the console such as apps, functions, jobs, fleets, or builds, or their related entities such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more!
 {: note}
- 
 
 
 You can also run the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to display details of a project. Replace `PROJECT_NAME` with the name of your project. If your project is selected as the current context, the output of this command includes details about limits and quota usage of {{site.data.keyword.codeengineshort}} project resources. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
@@ -82,8 +81,8 @@ Getting project 'myproject'...
 OK
 
 Name:                                      myproject
-ID:                                        01234567-abcd-abcd-abcd-abcdabcd1111  
-CRN:                                       crn:v1:bluemix:public:codeengine:au-syd:a/1a2b3c4d5e6f7g1a2b3c4d5e6f7g1234:01234567-abcd-abcd-abcd-abcdabcd1111::  
+ID:                                        01234567-abcd-abcd-abcd-abcdabcd1111
+CRN:                                       crn:v1:bluemix:public:codeengine:au-syd:a/1a2b3c4d5e6f7g1a2b3c4d5e6f7g1234:01234567-abcd-abcd-abcd-abcdabcd1111::
 Status:                                    active
 Enabled:                                   true
 Application Private Visibility Supported:  true
@@ -95,23 +94,23 @@ Age:                                       52d
 Created:                                   Mon, 30 Jun 2025 18:16:12 +0200
 Updated:                                   Mon, 30 Jun 2025 18:16:58 +0200
 
-Connectivity:    
-  Outbound - Source IP addresses:                             
-    Public internet  
-    159.23.99.151  
-    130.198.13.241  
-    135.90.137.31  
-    
-    IBM Cloud private network  
-    10.223.236.11  
-    10.223.242.142  
-    10.12.3.244  
+Connectivity:
+  Outbound - Source IP addresses:
+    Public internet
+    159.23.99.151
+    130.198.13.241
+    135.90.137.31
 
-  Inbound - Context-based restrictions for the data plane:    
-    Enforcement status:         none  
-    Public internet:            allowed  
-    IBM Cloud private network:  allowed  
-    Last applied:               Wed, 20 May 2026 15:52:02 +0200  
+    IBM Cloud private network
+    10.223.236.11
+    10.223.242.142
+    10.12.3.244
+
+  Inbound - Context-based restrictions for the data plane:
+    Enforcement status:         none
+    Public internet:            allowed
+    IBM Cloud private network:  allowed
+    Last applied:               Wed, 20 May 2026 15:52:02 +0200
 
 Quotas:
     Category                                  Used       Limit
@@ -140,12 +139,12 @@ Quotas:
 {: screen}
 
 
-### How can I set policies so others can work with my project? 
+### How can I set policies so others can work with my project?
 {: #project-policies}
 
-See information about [managing user access](/docs/codeengine?topic=codeengine-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project. 
+See information about [managing user access](/docs/codeengine?topic=codeengine-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project.
 
-### Are there project limits to consider? 
+### Are there project limits to consider?
 {: #project-limits}
 
 The maximum number of projects that you can create per region is 20. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
@@ -154,13 +153,13 @@ The maximum number of projects that you can create per region is 20. For more in
 {: #create-a-project}
 
 You can create a project through the console or with the CLI.
-{: shortdesc} 
+{: shortdesc}
 
 ### Creating a project from the console
 {: #create-project-console}
 
 1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, click **Create**. Alternatively, you can create your project when you create your {{site.data.keyword.codeengineshort}} app, job, function, or fleet with the {{site.data.keyword.codeengineshort}} console fast path. From the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}, select **Start creating**, and click **Create serverless project** from the Start creating page.
-2. Choose a location to deploy the project. 
+2. Choose a location to deploy the project.
 3. Enter a name for the project. The name must be unique for all your projects within the specified location.
 4. Choose the resource group where you want to create the project.
 5. Click **Create**.
@@ -172,12 +171,12 @@ To view the service instance for the project resource, go to your [{{site.data.k
 
 When you create a project, it is automatically selected as the current context. To create a project that is not automatically selected, use the `--no-select` option.
 
-1. Install the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli). Target the resource group that you want to use for the project. 
+1. Install the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli). Target the resource group that you want to use for the project.
 
-2. Create a project with the [**`project create`**](/docs/codeengine?topic=codeengine-cli#cli-project-create) command. Use a project name that is unique to your region. 
+2. Create a project with the [**`project create`**](/docs/codeengine?topic=codeengine-cli#cli-project-create) command. Use a project name that is unique to your region.
 
     ```txt
-    ibmcloud ce project create --name PROJECT_NAME 
+    ibmcloud ce project create --name PROJECT_NAME
     ```
     {: pre}
 
@@ -232,7 +231,7 @@ When you create a project, it is automatically selected as the current context. 
     ```
     {: screen}
 
-    You can also list all projects and this output displays which project is your selected project. In the following example, `myproject` is the project that is selected as the current context.  
+    You can also list all projects and this output displays which project is your selected project. In the following example, `myproject` is the project that is selected as the current context.
 
     ```txt
     ibmcloud ce project list
@@ -255,18 +254,17 @@ When you create a project, it is automatically selected as the current context. 
 {: #target-a-project}
 
 After you create a project, you can work with the project by using the {{site.data.keyword.codeengineshort}} console or CLI.
-{: shortdesc} 
+{: shortdesc}
 
 ### Working with a project from the console
 {: #target-project-console}
 
 To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external} and click the name of the project from the list.
 
-To work with {{site.data.keyword.codeengineshort}} components, you must work with the components in the context of a project. From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads), [jobs](/docs/codeengine?topic=codeengine-job-plan), or [functions](/docs/codeengine?topic=codeengine-fun-work). To determine the project from which you are currently working, see the breadcrumb of your {{site.data.keyword.codeengineshort}} component.
+To work with {{site.data.keyword.codeengineshort}} components, you must work with the components in the context of a project. From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads), [functions](/docs/codeengine?topic=codeengine-fun-work), [jobs](/docs/codeengine?topic=codeengine-job-plan), [fleets](/docs/codeengine?topic=codeengine-fleet-prep), or [builds](/docs/codeengine?topic=codeengine-plan-build). To determine the project from which you are currently working, see the breadcrumb of your {{site.data.keyword.codeengineshort}} component.
 
-When you are working with a component in {{site.data.keyword.codeengineshort}} from the console such as apps, jobs, or functions, or their related entities such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more! 
+When you are working with a component in {{site.data.keyword.codeengineshort}} from the console such as apps, functions, jobs, fleets, or builds, or their related entities such as access, bindings, or subscriptions, you can view details about the associated project. From the page of the particular {{site.data.keyword.codeengineshort}} entity, click **Details** to learn more about the associated project. Use this page to view details of the associated project, which includes information such as the region, CRN (Cloud Resource Name), GUID (globally unique identifier), network addresses (public and private), and more!
 {: note}
- 
 
 
 ### Working with a project with the CLI
@@ -286,15 +284,15 @@ Selecting project 'myproject'...
 ```
 {: screen}
 
-From within the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads), [jobs](/docs/codeengine?topic=codeengine-job-plan), or [functions](/docs/codeengine?topic=codeengine-fun-work). 
+From within the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads), [functions](/docs/codeengine?topic=codeengine-fun-work), [jobs](/docs/codeengine?topic=codeengine-job-plan), [fleets](/docs/codeengine?topic=codeengine-fleet-prep), or [builds](/docs/codeengine?topic=codeengine-plan-build).
 
 ### Determining which project is selected as the current context
 {: #current-project-cli}
 
-You can find details about the project that is selected as the current context by using the [**`project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command. 
+You can find details about the project that is selected as the current context by using the [**`project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command.
 
 ## Delete a project
-{: #delete-project} 
+{: #delete-project}
 
 When you no longer need a project, you can delete it. Deleting a project deletes all the components that it contains. You can use the console or the CLI.
 {: shortdesc}
@@ -302,15 +300,15 @@ When you no longer need a project, you can delete it. Deleting a project deletes
 When you delete a project from the console or with the CLI, it is soft deleted and can be restored. You must restore your project within 7 days or it is permanently deleted. For more information about restoring projects, see [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project). To permanently delete a project, see [Permanently deleting projects](/docs/codeengine?topic=codeengine-manage-project#perm-delete-project).
 
 When you delete a project, any projects that are not permanently deleted count toward the maximum of 20 total projects per region that are allowed.
-{: tip} 
+{: tip}
 
 Project names within a region must be unique. When you soft delete a project (or delete the project with reclamation), you cannot reuse the project name until the project is permanently deleted. 
-{: important} 
+{: important}
 
 ### Deleting a project from the console
 {: #delete-project-console}
 
-To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click the delete icon. If you open a specific project, you can also delete the project from the Actions menu. 
+To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click the delete icon. If you open a specific project, you can also delete the project from the Actions menu.
 
 When you delete a project from the console, the project is soft deleted and can be restored within 7 days before it is permanently deleted. Project reclamations represent deleted projects that can still be restored. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, the number of project reclamations is displayed. Click `restorable projects` to open the **Project reclamations** page and display a list of projects that can be restored or permanently deleted.
 
@@ -363,7 +361,7 @@ After you soft delete a project, you can restore it or permanently delete it fro
 
 1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, view the list of projects in your region. The number of project reclamations is displayed.
 2. Click the link for `project reclamations`.
-3. From the **Project reclamations** page, you can view the number of remaining days that you can restore your project. 
+3. From the **Project reclamations** page, you can view the number of remaining days that you can restore your project.
     * To restore your project, click the restore icon.
     * To permanently delete your project, click the delete icon.
 
@@ -374,10 +372,10 @@ If you take no action on a project that is listed on the **Project reclamations*
 
 Projects that are soft deleted can be managed with the **`reclamation`** commands. [**`reclamation`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation) commands.
 
-1. Discover projects that are soft deleted by using the [**`reclamation list`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-list) command. 
+1. Discover projects that are soft deleted by using the [**`reclamation list`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-list) command.
 
     ```txt
-    ibmcloud ce reclamation list 
+    ibmcloud ce reclamation list
     ```
     {: pre}
 
@@ -390,12 +388,12 @@ Projects that are soft deleted can be managed with the **`reclamation`** command
     myproject     def218c5-abcd-abcd-abcd-97854c288d76  48e3d7a2-abcd-abcd-abcd-99db7152b8fe  soft deleted  us-south  default         40h   6d23h
     myproject2    01f0bc66-abcd-abcd-abcd-3ef7e99f6f69  af2cd017-abcd-abcd-abcd-d32e2bb79136  soft deleted  jp-osa    default         8m58s 2d11h
     ```
-    {: screen} 
+    {: screen}
 
-2. Use the [**`reclamation restore`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-restore) command to restore a soft deleted project to an active state. The following example restores the `myproject2` project and its components. Make sure that you are targeting the correct region of the project that you want to restore. 
+2. Use the [**`reclamation restore`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-restore) command to restore a soft deleted project to an active state. The following example restores the `myproject2` project and its components. Make sure that you are targeting the correct region of the project that you want to restore.
 
     ```txt
-    ibmcloud ce reclamation restore --name myproject 
+    ibmcloud ce reclamation restore --name myproject
     ```
     {: pre}
 
@@ -415,7 +413,7 @@ Alternatively, you can use the [**`project restore`**](/docs/codeengine?topic=co
 ### Permanently deleting projects from the console
 {: #perm-delete-project-ui}
 
-After you soft delete a project (or delete the project with reclamation), you can restore it or permanently delete it from the console. When a project is permanently deleted, it cannot be restored. 
+After you soft delete a project (or delete the project with reclamation), you can restore it or permanently delete it from the console. When a project is permanently deleted, it cannot be restored.
 
 1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, view the list of projects in your region. The number of project reclamations is displayed.
 2. Click the link for `project reclamations`.
@@ -426,7 +424,7 @@ If you take no action on deleted projects that are listed on the **Project recla
 ### Permanently deleting projects with the CLI
 {: #perm-delete-project-cli}
 
-If your project is soft deleted, you can use the [**`reclamation delete`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-delete) command to permanently delete the project. By using the `--force` option with this command, the delete is forced without confirmation.  
+If your project is soft deleted, you can use the [**`reclamation delete`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-delete) command to permanently delete the project. By using the `--force` option with this command, the delete is forced without confirmation.
 
 ```txt
 ibmcloud ce reclamation delete -n myproject --f
@@ -439,12 +437,12 @@ Example output
 Hard deleting project 'myproject'...
 OK
 ```
-{: screen} 
+{: screen}
 
-If your project is not soft deleted, then to permanently delete a project so that it cannot be restored, use the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command to specify to immediately and permanently delete the project. For example, to permanently delete the `myproject3` project,  
+If your project is not soft deleted, then to permanently delete a project so that it cannot be restored, use the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command to specify to immediately and permanently delete the project. For example, to permanently delete the `myproject3` project,
 
 ```txt
-ibmcloud ce project delete --name myproject3 --hard 
+ibmcloud ce project delete --name myproject3 --hard
 ```
 {: pre}
 

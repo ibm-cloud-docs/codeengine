@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-09-29"
+  years: 2023, 2026
+lastupdated: "2026-07-17"
 
 keywords: code engine, functions, stateless code snippet, code snippet, stateless
 
@@ -68,7 +68,7 @@ For more information, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runti
 ### Running functions
 {: #cefun-runfun}
 
-Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides you a streamlined way to run your code as an app.
+Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides you a streamlined way to run your code as a function.
 
 You can create and invoke your function in {{site.data.keyword.codeengineshort}} in the following ways:
 

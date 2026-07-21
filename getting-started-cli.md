@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-01"
+lastupdated: "2026-07-17"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -132,14 +132,14 @@ Now that your {{site.data.keyword.codeengineshort}} CLI environment is set up, y
 
 Before you can work with {{site.data.keyword.codeengineshort}} resources, you must work within the context of a project. 
 
-A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to its entities. 
+A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, functions, jobs, fleets, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to their entities.
 
-A project provides the following items. 
+A project provides the following capabilities:
 
-- Provides a unique namespace for entity names.
-- Manages access to project resources (inbound access).
-- Manages access to backing services, registries, and repositories (outbound access).
-- Has an automatically generated certificate for Transport Layer Service (TLS).
+- A unique namespace for entity names.
+- Management of inbound access to project resources.
+- Management of outbound access to backing services, registries, and repositories.
+- An automatically generated certificate for Transport Layer Service (TLS).
 
 For more information about {{site.data.keyword.codeengineshort}} projects, see [Managing projects](/docs/codeengine?topic=codeengine-manage-project). 
 

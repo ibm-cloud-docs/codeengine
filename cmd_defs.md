@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-22"
+lastupdated: "2026-07-17"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2727,7 +2727,7 @@ my-subnet-pool                1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e  1        eu-
 ## Domainmapping commands  
 {: #cli-domainmapping}  
 
-Domain mappings provide the URL route to your {{site.data.keyword.codeengineshort}} applications within a project. With {{site.data.keyword.codeengineshort}}, these mappings are automatically created, by default, whenever you deploy an application. However, you can map your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application with {{site.data.keyword.codeengineshort}}. Use `domainmapping` commands to create, display details, update, and delete domain mappings. 
+Domain mappings provide the URL route to your {{site.data.keyword.codeengineshort}} applications and functions within a project. With {{site.data.keyword.codeengineshort}}, these mappings are automatically created, by default, whenever you deploy an application or create a function. However, you can map your own custom domain to a {{site.data.keyword.codeengineshort}} application or function to route requests from your custom URL to your application or function with {{site.data.keyword.codeengineshort}}. Use `domainmapping` commands to create, display details, update, and delete domain mappings. 
 {: shortdesc}
 
 When you set a custom domain mapping in {{site.data.keyword.codeengineshort}}, you define a 1-to-1 mapping between your fully qualified domain name (FQDN) and a {{site.data.keyword.codeengineshort}} application in your project. To configure and work with  custom domain mappings in the CLI, use the `domainmapping` commands.
@@ -5999,14 +5999,14 @@ my-pds-3                   my-test-bucket-3    my-hmac-secret-3  us-south       
 Use `project` commands to create, list, delete, and select a project as the current context.
 {: shortdesc}
 
-A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to its entities. 
+A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, functions, jobs, fleets, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to their entities.
 
-A project provides the following items. 
+A project provides the following capabilities:
 
-- Provides a unique namespace for entity names.
-- Manages access to project resources (inbound access).
-- Manages access to backing services, registries, and repositories (outbound access).
-- Has an automatically generated certificate for Transport Layer Service (TLS).
+- A unique namespace for entity names.
+- Management of inbound access to project resources.
+- Management of outbound access to backing services, registries, and repositories.
+- An automatically generated certificate for Transport Layer Service (TLS).
 
 For more information about working with projects, see [Managing projects](/docs/codeengine?topic=codeengine-manage-project).
 

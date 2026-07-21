@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-13"
+lastupdated: "2026-07-17"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -34,14 +34,14 @@ With {{site.data.keyword.codeengineshort}}, you can deploy applications, run job
 {: faq}
 {: support}
 
-A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to its entities. 
+A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, functions, jobs, fleets, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to their entities.
 
-A project provides the following items. 
+A project provides the following capabilities:
 
-- Provides a unique namespace for entity names.
-- Manages access to project resources (inbound access).
-- Manages access to backing services, registries, and repositories (outbound access).
-- Has an automatically generated certificate for Transport Layer Service (TLS).
+- A unique namespace for entity names.
+- Management of inbound access to project resources.
+- Management of outbound access to backing services, registries, and repositories.
+- An automatically generated certificate for Transport Layer Service (TLS).
 
 For more information about projects, see [Manage projects](/docs/codeengine?topic=codeengine-manage-project).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-01"
+lastupdated: "2026-07-15"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, function logs for code engine, logs
 
@@ -205,6 +205,18 @@ try {
 
 ### Structured logs
 {: #writing-logs-format-structured}
+
+#### Special handling of reserved fields
+{: #writing-logs-format-structured-reserved}
+
+The following log fields have reserved, platform-specific purposes and require special handling when parsing or formatting log lines.
+
+| Field name | Purpose |
+| ---------- | ----------- |
+| `level` | Sets the log severity level (for example: `info`, `warn`, `error`). |
+| `message` | Contains the raw, unformatted log message body. |
+| `timestamp` | Overrides the automatically generated system timestamp. Warning: Manually setting this field is not recommended and should be avoided unless backfilling logs. |
+| `logSourceCRN` | Extracted if provided as a top-level key in a structured JSON log. The platform will discard the provided value and overwrite it with the {{site.data.keyword.codeengineshort}} project CRN. |
 
 #### Examples
 {: #writing-logs-format-structured-examples}
