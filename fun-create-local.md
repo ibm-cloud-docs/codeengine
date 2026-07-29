@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-07-01"
+  years: 2023, 2026
+lastupdated: "2026-07-28"
 
 keywords: functions in code engine, function workloads, function local source, create function local source, create function
 
@@ -144,7 +144,7 @@ module.exports.main = main;
     Build Information:
       Build Run Name:     myfun-local-run-230123-111011111
       Build Type:         local
-      Build Strategy:     codebundle-nodejs-20
+      Build Strategy:     codebundle-nodejs-22
       Timeout:            600
       Source:             main.js
 
@@ -154,7 +154,7 @@ module.exports.main = main;
       Run 'ibmcloud ce buildrun get -n myfun-local-run-230123-111011111' for details.
 
     Function Code:
-      Runtime:        nodejs-20 (managed)
+      Runtime:        nodejs-22 (managed)
       Bundle Secret:  ce-auto-icr-us-south
       Code Bundle:    cr://icr.io/ce--abcde-glxo4kabcde/function-myfun-local:230123-1650-yrj86
       Main:           main()

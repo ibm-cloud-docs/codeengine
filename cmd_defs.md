@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-17"
+lastupdated: "2026-07-28"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -4078,7 +4078,7 @@ Resources:
 Build Information:    
   Build Run Name:     myfunction-run-111111-12345678 
   Build Type:         local  
-  Build Strategy:     codebundle-nodejs-20  
+  Build Strategy:     codebundle-nodejs-22
   Timeout:            600  
   Source:             main.js  
                       
@@ -4088,7 +4088,7 @@ Build Information:
   Run 'ibmcloud ce buildrun get -n myfunction-run-111111-12345678' for details.  
 
 Function Code:    
-  Runtime:        nodejs-20 (managed)  
+  Runtime:        nodejs-22 (managed)
   Bundle Secret:  ce-auto-icr-private-us-south  
   Code Bundle:    cr://icr.io/ce--1a1a1-11c22def3rhz/function-myfunction:12345678-1111-dexla 
   Main:           main()
@@ -4178,7 +4178,6 @@ ibmcloud ce fn runtimes
 ```txt
 Name         ID           Family  Default
 Python 3.11  python-3.11  python  true
-Node.js 20   nodejs-20    nodejs  false
 Node.js 22   nodejs-22    nodejs  true
 Node.js 24   nodejs-24    nodejs  false
 Python 3.13  python-3.13  python  false
@@ -4358,7 +4357,7 @@ ibmcloud ce function update --name FUNCTION_NAME [--build-clear] [--build-commit
 {: #function-update-example}
 
 ```txt
-ibmcloud ce fn update --name myfunction --runtime nodejs-20 --build-source main.js
+ibmcloud ce fn update --name myfunction --runtime nodejs-22 --build-source main.js
 ```
 {: pre}
 
