@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-28"
+lastupdated: "2026-07-30"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -59,10 +59,14 @@ Not sure what to choose? See [Planning for {{site.data.keyword.codeengineshort}}
 | Startup latency | Medium | Scheduled start | Low  | Low |
 | Termination | Run-continuously | Run-to-completion | Run-to-completion | Run-to-completion |
 | Invocation | On request or permanently running | Scheduled | On request, instant | Scheduled |
-| Programming Model | Container-based build and execution | Container-based build and execution | Language-specific source code files and dependency metadata | Container-based build and execution |
+| Programming model | Container-based build and execution | Container-based build and execution | Language-specific source code files and dependency metadata | Container-based build and execution |
 | Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution | High parallel execution and queuing |
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations | Based on number of tasks and concurrent instances |
-| Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out | Large, compute-intensive work loads |
+| Isolation | Multi-tenant | Multi-tenant | Multi-tenant | Single-tenant |
+| GPU support | No | No | No | Yes |
+| Control over machine configuration | No control | No control | No control | Full control |
+| VPC connectivity | Through Private Path | Through Private Path | Through Private Path | Native (through subnet pool) |
+| Optimized for | Long running, highly complex workload and on-demand scale-out | Scheduled or planned workloads with high resource demands | Startup time and rapid scale-out | Large-scale, compute-intensive workloads |
 {: caption="Comparing {{site.data.keyword.codeengineshort}} applications, jobs, functions, and fleets" caption-side="bottom"}
 
 For more information, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
