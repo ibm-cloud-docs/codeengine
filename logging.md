@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-08-06"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, function logs for code engine, logs
 
@@ -217,6 +217,7 @@ The following log fields have reserved, platform-specific purposes and require s
 | `message` | Contains the raw, unformatted log message body. |
 | `timestamp` | Overrides the automatically generated system timestamp. Warning: Manually setting this field is not recommended and should be avoided unless backfilling logs. |
 | `logSourceCRN` | Extracted if provided as a top-level key in a structured JSON log. The platform will discard the provided value and overwrite it with the {{site.data.keyword.codeengineshort}} project CRN. |
+{: caption="{{site.data.keyword.logs_full_notm}} reserved logging fields." caption-side="bottom"}
 
 #### Examples
 {: #writing-logs-format-structured-examples}
