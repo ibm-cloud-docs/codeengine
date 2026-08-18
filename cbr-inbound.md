@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-08-18"
 
 keywords: connectivity, inbound connections, inbound connectivity, private, public, context-based restrictions, cbr, network restrictions
 
@@ -35,7 +35,7 @@ When you secure {{site.data.keyword.codeengineshort}} resources with context-bas
 Context-based restrictions for {{site.data.keyword.codeengineshort}} can be scoped to a single project, an entire resource group, or a location (region). For more information about {{site.data.keyword.cloud_notm}} context-based restrictions, see [Layered security with context-based restrictions](/docs/iam?topic=iam-context-restrictions-whatis).
 
 When a context-based restriction rule covers a resource group or a location (region), the restrictions apply to existing projects. If you create a new project in the same location or resource group, the restrictions are automatically applied to the new project. It can take a few minutes for the new project to be associated with the restrictions. To observe the CBR rules are applied, check the project status connectivity section in the UI, CLI, or API.
-{: Important}
+{: important}
 
 ## Creating a context-based restriction for your {{site.data.keyword.codeengineshort}} resources
 {: #create-cbr}
@@ -93,11 +93,16 @@ To create a context-based restriction, see [Creating context-based restrictions]
 
       Use this use-case to completely isolate your applications and functions at the network level by blocking both private and public endpoints. This is useful for batch processing workloads that only make outbound connections, internal microservices that communicate exclusively through message queues or events, or workloads undergoing maintenance.
 
-      1. Set **Endpoints** to on.
-      2. Leave **Private** deselected (block traffic).
-      3. Leave **Public** deselected (block traffic).
-      4. Leave **Network zones** empty. An empty public context with no network zones blocks all public access.
-      5. Click **Add** to create a new context.
+      1. Leave **Endpoints** set to off (do not add any endpoint context).
+      2. Click **Continue** without adding a context.
+
+      The console displays the following warning before you confirm:
+
+      > *No context added. Your rule will be applied without a context, resulting in a fully restrictive rule that blocks all access. This is beneficial when you want to protect your resources and you are unsure about the access to allow. Do you want to continue?*
+      >
+      > *Note: This rule needs to be deleted, disabled, or updated with at least one context to allow access to your resources.*
+
+      Confirm to save the rule. A rule with no contexts denies all inbound access to the project.
 
 8. Click **Continue** to provide rule details.
 
@@ -113,6 +118,12 @@ To create a context-based restriction, see [Creating context-based restrictions]
 
 You can use the IBM Cloud CLI to create context-based restrictions for your {{site.data.keyword.codeengineshort}} resources. Before you begin, make sure you have the [IBM Cloud CLI installed](/docs/cli?topic=cli-install-ibmcloud-cli) and the context-based restrictions plug-in installed by running `ibmcloud plugin install cbr`.
 
+Context-based restriction rules can cover a single project, an entire resource group, a location (region), or the whole account. The `--service-instance` flag shown in the examples scopes the rule to a specific project. To scope to a resource group instead, use `--resource-group-id <resource-group-id>`. To scope to a location (region), use `--resource-attributes "region=<region>"`. To apply the rule account-wide, omit all three flags.
+{: note}
+
+The following examples scope the rule to a single project named `my-project`. To find your project ID, run `ibmcloud ce project get --name my-project --output json | grep guid`. To scope to a resource group instead, replace `--service-instance my-project-id` with `--resource-group-id <resource-group-id>`. To scope to a location (region), replace it with `--resource-attributes "region=<region>"`. To apply the rule account-wide, omit the flag entirely.
+{: tip}
+
 - **Use-case A: Block public inbound entirely**
 
   Use this use-case to make your applications and functions accessible only through their private endpoint, eliminating public internet access at the network level.
@@ -122,6 +133,7 @@ You can use the IBM Cloud CLI to create context-based restrictions for your {{si
   ```txt
   ibmcloud cbr rule-create --description "Block public inbound entirely" \
   --service-name codeengine \
+  --service-instance my-project-id \
   --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane \
   --context-attributes endpointType=private
   ```
@@ -129,16 +141,16 @@ You can use the IBM Cloud CLI to create context-based restrictions for your {{si
 
 - **Use-case B: Block public and restrict private by IP**
 
-  Use this use-case to achieve maximum control by blocking all public internet access and restricting private endpoint access to specific IP addresses or network zones. To find available zone IDs, run ibmcloud cbr zones.
+  Use this use-case to achieve maximum control by blocking all public internet access and restricting private endpoint access to specific IP addresses or network zones. To find available zone IDs, run `ibmcloud cbr zones`.
 
   Create a rule that restricts private access to specific zones and blocks public access:
 
   ```txt
   ibmcloud cbr rule-create --description "Block public and restrict private by IP" \
   --service-name codeengine \
+  --service-instance my-project-id \
   --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane \
-  --context-attributes endpointType=private \
-  --zone-id <zone-id>
+  --context-attributes endpointType=private,networkZoneId=<zone-id>
   ```
   {: pre}
 
@@ -146,17 +158,16 @@ You can use the IBM Cloud CLI to create context-based restrictions for your {{si
 
   Use this use-case to completely isolate your applications and functions at the network level by blocking both private and public endpoints. This is useful for batch processing workloads that only make outbound connections, internal microservices that communicate exclusively through message queues or events, or workloads undergoing maintenance.
 
-  To block all inbound traffic, create a rule with no contexts (an empty rule blocks all access):
+  To block all inbound traffic, create a rule with an empty context list using the `--empty-context-list` flag. A rule with no contexts denies all inbound access to the project.
 
   ```txt
   ibmcloud cbr rule-create --description "Isolate workloads entirely" \
   --service-name codeengine \
-  --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane
+  --service-instance my-project-id \
+  --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane \
+  --empty-context-list
   ```
   {: pre}
-
-Context-based restriction rules cover the entire account, project, resource group, or location (region). Use `--resource-attributes` to specify the level at which the rule applies, e.g. `--resource-attributes "projectId=<your-project-id>"` to apply at project level.
-{: note}
 
 ## Testing your context-based restriction rule for inbound connectivity
 {: #test-cbr}
