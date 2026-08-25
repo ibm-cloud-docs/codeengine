@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-08-18"
 
 keywords: code engine, context-based restrictions, access, protect resources, cbr
 
@@ -29,4 +29,7 @@ Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events generate
 
 To get started protecting your {{site.data.keyword.codeengineshort}} resources with context-based restrictions, see [Creating context-based restrictions](/docs/iam?topic=iam-context-restrictions-create).
 
-Context-based restrictions for {{site.data.keyword.codeengineshort}} can be scoped to a location (region), project, or resource group. You can also limit which of your services can be accessed from {{site.data.keyword.codeengineshort}}.
+Context-based restrictions for {{site.data.keyword.codeengineshort}} can be scoped to a single project, an entire resource group, or a location (region). You can also limit which of your services can be accessed from {{site.data.keyword.codeengineshort}}.
+
+When a context-based restriction rule covers a resource group or a location (region), the restrictions apply to existing projects. If you create a new project in the same location or resource group, the restrictions are automatically applied to the new project. It might take some time for the new project to be associated with the restrictions.
+{: important}
