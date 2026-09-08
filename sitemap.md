@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-31"
+lastupdated: "2026-09-08"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -129,13 +129,21 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How can I get started with functions?](/docs/codeengine?topic=codeengine-cefunctions#cefun-getstart)
 
-[Fleets workloads](/docs/codeengine?topic=codeengine-cefleets#cefleets)
+[Fleet workloads](/docs/codeengine?topic=codeengine-cefleets#cefleets)
 
 * [What are fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-workloads)
 
 * [How do fleets work?](/docs/codeengine?topic=codeengine-cefleets#fleet-how)
 
 * [How are fleets different from jobs?](/docs/codeengine?topic=codeengine-cefleets#fleet-v-job)
+
+* [What are {{site.data.keyword.codeengineshort}} fleet workloads?](/docs/codeengine?topic=codeengine-cefleets#fleet-workload-types)
+
+    * [One-shot batch workload in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-cefleets#fleet-one-shot-workload)
+
+    * [Scheduled batch workload in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-cefleets#fleet-scheduled-workload)
+
+    * [Continuous, latency-sensitive workload in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-cefleets#fleet-continuous-workload)
 
 * [What are the key features of working with {{site.data.keyword.codeengineshort}} fleets?](/docs/codeengine?topic=codeengine-cefleets#fleet-features)
 
@@ -161,6 +169,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [September 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september26)
+
+    * [03 September 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep0326)
+
+        * Code Engine fleets created from now on support adding tasks after creation.
+
+        * CLI version 1.63.1 released
 
 * [July 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-july26)
 
@@ -3177,15 +3193,43 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Before you begin](/docs/codeengine?topic=codeengine-fleet-run#fleet-run-before)
 
-* [Running a fleet by using the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-run-cli)
-
 * [Running a fleet by using the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-run-ui)
 
 * [Task specification](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-task-spec)
 
-* [Deleting a fleet by using the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-delete-cli)
+    * [Specifying tasks in the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-task-spec-ui)
 
-* [Deleting a fleet by using the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-delete-ui)
+    * [Specifying tasks in the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-task-spec-cli)
+
+* [Creating a fleet without initial tasks by using the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-without-task-console)
+
+* [Adding tasks to a fleet by using the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-add-task-console)
+
+* [Creating a fleet without initial tasks by using the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-without-task-cli)
+
+* [Adding tasks to an existing fleet by using the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-add-task-cli)
+
+* [Creating a fleet with initial tasks by using the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-with-initial-task-cli)
+
+[Configuring fleet scaling](/docs/codeengine?topic=codeengine-fleet-scalingconfig#fleet-scalingconfig)
+
+* [Scaling parameters in the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-fleet-scalingconfig&interface=cli#fleet-scaling-params-cli)
+
+* [Scaling parameters in the {{site.data.keyword.codeengineshort}} console](/docs/codeengine?topic=codeengine-fleet-scalingconfig&interface=ui#fleet-scaling-params-ui)
+
+* [Workload patterns and relevant parameters](/docs/codeengine?topic=codeengine-fleet-scalingconfig&interface=ui#fleet-scaling-patterns)
+
+    * [One-shot batch workload in the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-fleet-scalingconfig&interface=cli#fleet-scaling-one-shot-cli)
+
+    * [One-shot batch workload in the {{site.data.keyword.codeengineshort}} console](/docs/codeengine?topic=codeengine-fleet-scalingconfig&interface=ui#fleet-scaling-one-shot-ui)
+
+    * [Scheduled batch workload in the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-fleet-scalingconfig&interface=cli#fleet-scaling-scheduled-cli)
+
+    * [Scheduled batch workload in the {{site.data.keyword.codeengineshort}} console](/docs/codeengine?topic=codeengine-fleet-scalingconfig&interface=ui#fleet-scaling-scheduled-ui)
+
+    * [Continuous, latency-sensitive workload in the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-fleet-scalingconfig&interface=cli#fleet-scaling-continuous-cli)
+
+    * [Continuous, latency-sensitive workload in the {{site.data.keyword.codeengineshort}} console](/docs/codeengine?topic=codeengine-fleet-scalingconfig&interface=ui#fleet-scaling-continuous-ui)
 
 [Setting up observability for fleets](/docs/codeengine?topic=codeengine-fleet-observability#fleet-observability)
 
@@ -3219,45 +3263,47 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [6. View your fleets data in the monitoring dashboard](/docs/codeengine?topic=codeengine-fleet-observability#monitor-view)
 
-[Canceling or deleting fleets and workers](/docs/codeengine?topic=codeengine-fleets-cancel#fleets-cancel)
+[Canceling or deleting {{site.data.keyword.codeengineshort}} fleets and workers](/docs/codeengine?topic=codeengine-fleets-cancel#fleets-cancel)
 
 * [Canceling a fleet](/docs/codeengine?topic=codeengine-fleets-cancel#fleets-cancel-type)
 
-    * [Canceling a fleet in the CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=cli#fleets-cancel-cli)
+    * [Canceling a fleet in the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=cli#fleets-cancel-cli)
 
-    * [Canceling a fleet in the UI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleets-cancel-ui)
+    * [Canceling a fleet in the {{site.data.keyword.codeengineshort}} console](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleets-cancel-ui)
 
 * [Deleting a fleet](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete)
 
-    * [Deleting a fleet in the CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=cli#fleet-delete-cli)
+    * [Deleting a fleet in the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=cli#fleet-delete-cli)
 
-    * [Deleting a fleet in the UI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-ui)
+    * [Deleting a fleet in the {{site.data.keyword.codeengineshort}} console](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-ui)
 
 * [Deleting fleet workers](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker)
 
-    * [Deleting a worker in the CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=cli#fleet-delete-worker-cli)
+    * [Deleting a worker in the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=cli#fleet-delete-worker-cli)
 
-    * [Deleting a worker in the UI](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker-ui)
+    * [Deleting a worker in the {{site.data.keyword.codeengineshort}} console](/docs/codeengine?topic=codeengine-fleets-cancel&interface=ui#fleet-delete-worker-ui)
 
-[Understanding the status of your fleet](/docs/codeengine?topic=codeengine-fleet-status#fleet-status)
+[Understanding the status of your {{site.data.keyword.codeengineshort}} fleet](/docs/codeengine?topic=codeengine-fleet-status#fleet-status)
 
 * [Fleet status](/docs/codeengine?topic=codeengine-fleet-status#status-fleets)
 
-    * [Active fleet statuses](/docs/codeengine?topic=codeengine-fleet-status#status-active)
+    * [Checking fleet status in the {{site.data.keyword.codeengineshort}} console](/docs/codeengine?topic=codeengine-fleet-status&interface=ui#fleet-status-check-ui)
 
-    * [Final fleet statuses](/docs/codeengine?topic=codeengine-fleet-status#status-final)
+    * [Checking fleet status in the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-fleet-status&interface=cli#fleet-status-check-cli)
 
-    * [Checking fleet status](/docs/codeengine?topic=codeengine-fleet-status#fleet-status-check)
+* [Task status](/docs/codeengine?topic=codeengine-fleet-status&interface=cli#status-tasks)
 
-* [Task status](/docs/codeengine?topic=codeengine-fleet-status#status-tasks)
+    * [Checking the status of tasks in the {{site.data.keyword.codeengineshort}} console](/docs/codeengine?topic=codeengine-fleet-status&interface=ui#status-task-check-ui)
 
-    * [Checking the status of tasks](/docs/codeengine?topic=codeengine-fleet-status#status-task-check)
+    * [Checking the status of tasks in the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-fleet-status&interface=cli#status-task-check-cli)
 
-* [Worker node status](/docs/codeengine?topic=codeengine-fleet-status#status-workers)
+* [Worker node status](/docs/codeengine?topic=codeengine-fleet-status&interface=cli#status-workers)
 
 [Worker Image Changelog v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-v1_0)
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
+
+    * [Worker image `v1.0.340`, released 07 September 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_340)
 
     * [Worker image `v1.0.333`, released 31 August 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_333)
 
@@ -4526,6 +4572,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce fleet task`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task)
 
+    * [`ibmcloud ce fleet task create`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-create)
+
     * [`ibmcloud ce fleet task get`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-get)
 
     * [`ibmcloud ce fleet task list`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-list)
@@ -4746,6 +4794,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [03 September 2026](/docs/codeengine?topic=codeengine-api-changelog#03-september-2026)
 
 * [27 February 2026](/docs/codeengine?topic=codeengine-api-changelog#27-february-2026)
 

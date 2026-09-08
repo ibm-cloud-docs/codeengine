@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-09-08"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,22 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month.
 {: shortdesc}
+
+## September 2026
+{: #codeengine-september26}
+
+### 03 September 2026
+{: #codeengine-sep0326}
+{: release-note}
+
+Code Engine fleets created from now on support adding tasks after creation.
+:   - See [Fleet workloads](/docs/codeengine?topic=codeengine-cefleets)
+    - See [Running a fleet](/docs/codeengine?topic=codeengine-fleet-run)
+    - See [Configuring fleet scaling](/docs/codeengine?topic=codeengine-fleet-scalingconfig)
+    - See [Understanding the status of your fleet](/docs/codeengine?topic=codeengine-fleet-status)
+
+CLI version 1.63.1 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ## July 2026
 {: #codeengine-july26}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-09-08"
 
 keywords: code engine, getting started, getting started with ibm cloud code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code, functions in code engine
 
@@ -54,11 +54,11 @@ Not sure what to choose? See [Planning for {{site.data.keyword.codeengineshort}}
 {: #ce-comp}
 
 | Characteristic | Application | Job | Function | Fleet |
-| --------- | --------- | --------- | --------- | ------ |
-| Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) | Long-running (minutes to weeks) |
-| Startup latency | Medium | Scheduled start | Low  | Low |
-| Termination | Run-continuously | Run-to-completion | Run-to-completion | Run-to-completion |
-| Invocation | On request or permanently running | Scheduled | On request, instant | Scheduled |
+| --------- | --------- | --------- | --------- | ----- |
+| Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) | Long-running (seconds to weeks) |
+| Startup latency | Medium | Scheduled start | Low | Medium |
+| Termination | Run-continuously | Run-to-completion | Run-to-completion | Run-continuously and run-to-completion |
+| Invocation | On request or permanently running | Scheduled | On request, instant | On task submission or permanently running |
 | Programming model | Container-based build and execution | Container-based build and execution | Language-specific source code files and dependency metadata | Container-based build and execution |
 | Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution | High parallel execution and queuing |
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations | Based on number of tasks and concurrent instances |

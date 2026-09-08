@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-09-08"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2220,7 +2220,8 @@ ibmcloud ce connectivity outbound create --name OUTBOUND_DESTINATION_NAME (--cid
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options
+{: #cmd-options-connectivity-outbound-create}
 
 `--n`, `--cidr-name`, `--name`
 :   Required. Name of the allowed outbound destination. This value is *required*. 
@@ -2291,7 +2292,8 @@ ibmcloud ce connectivity outbound delete --name OUTBOUND_DESTINATION_NAME [--for
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options
+{: #cmd-options-connectivity-outbound-delete}
 
 `--n`, `--cidr-name`, `--name`
 :   Required. Name of the allowed outbound destination. This value is *required*. 
@@ -2335,7 +2337,8 @@ ibmcloud ce connectivity outbound get --name OUTBOUND_DESTINATION_NAME [--output
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options
+{: #cmd-options-connectivity-outbound-get}
 
 `--n`, `--cidr-name`, `--name`
 :   Required. Name of the allowed outbound destination. This value is *required*. 
@@ -2416,7 +2419,8 @@ ibmcloud ce connectivity outbound list [--format FORMAT] [--output OUTPUT] [--qu
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options
+{: #cmd-options-connectivity-outbound-list}
 
 `--format`
 :   Limit the display of allowed outbound destinations to specified format. Provide one or more formats in a comma-delimited list. Valid values are [`cidr`, `cidr_block`, `pps`, `private_path_gateway_service`]. This value is *optional*. The default value is `cidr_block,private_path_service_gateway`.
@@ -2466,7 +2470,8 @@ ibmcloud ce connectivity outbound update --name OUTBOUND_DESTINATION_NAME (--cid
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options
+{: #cmd-options-connectivity-outbound-update}
 
 `--n`, `--cidr-name`, `--name`
 :   Required. Name of the allowed outbound destination. This value is *required*. 
@@ -2539,7 +2544,8 @@ ibmcloud ce connectivity subnetpool create [--name NAME] [--quiet] [--security-g
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options
+{: #cmd-options-connectivity-subnetpool-create}
 
 `--name`, `-n`
 :   Required. Name of the subnet pool. Use a name that is unique within the project. This value is *required*. 
@@ -2587,7 +2593,8 @@ ibmcloud ce connectivity subnetpool delete (--name SUBNET_POOL_NAME || --id SUBN
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options
+{: #cmd-options-connectivity-subnetpool-delete}
 
 `--force`, `-f`
 :   Force deletion without confirmation. This value is *optional*. The default value is `false`.
@@ -2634,7 +2641,8 @@ ibmcloud ce connectivity subnetpool get (--id SUBNET_POOL_ID || --name SUBNET_PO
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options
+{: #cmd-options-connectivity-subnetpool-get}
 
 `--id`
 :   ID of the subnet pool. This value is *optional*. 
@@ -2689,7 +2697,8 @@ ibmcloud ce connectivity subnetpool list [--output OUTPUT] [--quiet] [--sort-by 
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options
+{: #cmd-options-connectivity-subnetpool-list}
 
 `--output`, `-o`
 :   Output format. Valid values are 'json', 'yaml', 'jsonpath=JSONPATH_EXPRESSION', and 'jsonpath-as-json=JSONPATH_EXPRESSION'. This value is *optional*. 
@@ -3111,7 +3120,7 @@ Tasks status:
 Launch a serverless fleet.  
   
 ```txt
-ibmcloud ce fleet create --image IMAGE_REF --tasks-state-store TASKS_STATE_STORE (--subnetpool-name SUBNETPOOL_NAME | --subnetpool-id SUBNETPOOL_ID) (--tasks TASKS | --tasks-from-local-file TASKS_FROM_LOCAL_FILE | --tasks-from-cos-object TASKS_FROM_COS_OBJECT | --tasks-from-cos-bucket TASKS_FROM_COS_BUCKET) [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--gpu GPU] [--max-scale MAX_SCALE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mount-data-store MOUNT_DATA_STORE] [--name NAME] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--task-indexes TASK_INDEXES] [--worker-profile WORKER_PROFILE]
+ibmcloud ce fleet create --image IMAGE_REF --tasks-state-store TASKS_STATE_STORE (--subnetpool-name SUBNETPOOL_NAME | --subnetpool-id SUBNETPOOL_ID) [(--task-indexes TASK_INDEXES | --tasks TASKS | --tasks-from-local-file TASKS_FROM_LOCAL_FILE | --tasks-from-cos-object TASKS_FROM_COS_OBJECT | --tasks-from-cos-bucket TASKS_FROM_COS_BUCKET)] [--argument ARGUMENT] [--batch-name BATCH_NAME] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--gpu GPU] [--max-execution-time MAX_EXECUTION_TIME] [--memory MEMORY] [--mount-data-store MOUNT_DATA_STORE] [--name NAME] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--scale-down-delay SCALE_DOWN_DELAY] [--scale-max SCALE_MAX] [--scale-min SCALE_MIN] [--scale-spare SCALE_SPARE] [--worker-profile WORKER_PROFILE]
 ```
 {: pre}
 
@@ -3126,6 +3135,9 @@ ibmcloud ce fleet create --image IMAGE_REF --tasks-state-store TASKS_STATE_STORE
 
 `--argument`, `--arg`, `-a`
 :   Set command arguments needed by the command to execute in the task. This option can be specified multiple times. This value is *optional*. 
+
+`--batch-name`, `--batch`
+:   If providing a tasks specification, group those tasks by a batch name. This value is *optional*. The default value is `default`.
 
 `--command`, `--cmd`, `-c`
 :   Set a command to execute in the task. This option can be specified multiple times. This value is *optional*. 
@@ -3145,10 +3157,7 @@ ibmcloud ce fleet create --image IMAGE_REF --tasks-state-store TASKS_STATE_STORE
 `--gpu`, `--gp`
 :   The number of GPUs to allocate to the resource. The format is GPU_FAMILY:NUMBER_OF_GPUS. The NUMBER_OF_GPUS will have default as 1 and it can be fraction. For example, `h100:0.5` This value is *optional*. 
 
-`--max-scale`, `--maxscale`, `--max`
-:   Maximum number of task instances to run in parallel. This value is *optional*. The default value is `1`.
-
-`--maxexecutiontime`, `--met`
+`--max-execution-time`, `--met`, `--maxexecutiontime`
 :   The maximum execution time in seconds for a task to run. This value is *optional*. The default value is `0`.
 
 `--memory`, `-m`
@@ -3169,6 +3178,18 @@ ibmcloud ce fleet create --image IMAGE_REF --tasks-state-store TASKS_STATE_STORE
 `--retrylimit`, `-r`
 :   The number of times to rerun a task before marking it as failed. This value is *optional*. The default value is `3`.
 
+`--scale-down-delay`, `--sdd`
+:   The amount of time in seconds that must pass at reduced concurrency before a container slot is scaled down. This value is *optional*.
+
+`--scale-max`, `--max`, `--maxscale`, `--max-scale`
+:   Maximum number of container slots to run tasks in parallel. This value is *optional*. The default value is `10`.
+
+`--scale-min`, `--min`, `--minscale`, `--min-scale`
+:   Minimum number of container slots to keep ready, even if no task is pending or running. This value is *optional*. The default value is `0`.
+
+`--scale-spare`, `--spare`
+:   Number of spare container slots to keep ready to process new pending tasks while existing tasks are running. This value is *optional*. The default value is `0`.
+
 `--subnetpool-id`, `--spi`
 :   The ID of the subnet pool to use for the fleet network placement. This value is *optional*. 
 
@@ -3179,7 +3200,7 @@ ibmcloud ce fleet create --image IMAGE_REF --tasks-state-store TASKS_STATE_STORE
 :   Specify task indexes that are to be processed, for example `0,3,6,9`, `1-5,7-8,10`. Specify no more than 1000 index entries. This option cannot be specified if `--tasks` is specified. This value is *optional*. 
 
 `--tasks`, `--ts`
-:   Specify the number of tasks that are to be processed by the fleet. If no task specification option is provided, this option is used with a default value of `1`.
+:   Specify the number of tasks that are to be processed by the fleet. This value is *optional*.
 
 `--tasks-from-cos-bucket`, `--ts-bucket`
 :   Specify a location of files inside a COS bucket. For each file, tasks are to be processed by the fleet. This value is *optional*. 
@@ -3199,7 +3220,7 @@ ibmcloud ce fleet create --image IMAGE_REF --tasks-state-store TASKS_STATE_STORE
 {: #fleet-create-example}
 
 ```txt
-ibmcloud ce fleet create --image icr.io/codeengine/helloworld --subnetpool-name my-pool --tasks-state-store mytaskstore --tasks 1
+ibmcloud ce fleet create --image icr.io/codeengine/helloworld --subnetpool-name my-pool --tasks-state-store mytaskstore
 ```
 {: pre}
 
@@ -3210,7 +3231,7 @@ ibmcloud ce fleet create --image icr.io/codeengine/helloworld --subnetpool-name 
 Successfully created fleet with name 'fleet-0123456789' and ID '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' 
 Run 'ibmcloud ce fleet get --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to check the fleet status.
 Run 'ibmcloud ce fleet worker list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of provisioned workers.
-Run 'ibmcloud ce fleet task list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of tasks.
+
 OK
 ```
 {: screen}  
@@ -3327,14 +3348,22 @@ Tasks specification:
   Indexes:           0-1000  
 
 Resources and scaling:    
-  CPU per instance:         1  
-  Memory per instance:      2G  
-  Max number of instances:  12  
-  Max retries per task:     3  
+  Container instance resources:    
+    CPU per instance:     1  
+    Memory per instance:  2G  
+
+  Scaling settings:                
+    Maximum container slots:  12  
+    Minimum container slots:  0  
+    Spare container slots:    0  
+    Scale-down delay:         0s  
+
+  Resiliency settings:             
+    Maximum retries per task:  3  
 
 Network placement:        
   Subnet pools:    
-    Name:                my-pool-
+    Name:                my-pool
     Number of subnets:   1  
                          
     Subnet CRN:          crn:v1:bluemix:public:is:eu-de-1:a/abcdefabcdefabcdefabcd1234567890::subnet:1a1a-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f   
@@ -3410,6 +3439,69 @@ ibmcloud ce fleet task COMMAND [--quiet]
 
  
   
+### `ibmcloud ce fleet task create`  
+{: #cli-fleet-task-create}  
+
+Add tasks to a serverless fleet.  
+  
+```txt
+ibmcloud ce fleet task create --fleet-id FLEET_ID (--task-indexes TASK_INDEXES | --tasks TASKS | --tasks-from-local-file TASKS_FROM_LOCAL_FILE | --tasks-from-cos-object TASKS_FROM_COS_OBJECT | --tasks-from-cos-bucket TASKS_FROM_COS_BUCKET) [--batch-name BATCH_NAME] [--output OUTPUT] [--quiet]
+```
+{: pre}
+
+#### Command Options  
+{: #cmd-options-fleet-task-create} 
+
+`--fleet-id`, `--fid`
+:   Required. The UUID of the fleet the task belongs to. This value is *required*. 
+
+`--batch-name`, `--batch`
+:   If providing a tasks specification, group those tasks by a batch name. This value is *optional*. The default value is `default`.
+
+`--output`, `-o`
+:   Output format. Valid values are 'json', 'yaml', 'jsonpath=JSONPATH_EXPRESSION', and 'jsonpath-as-json=JSONPATH_EXPRESSION'. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--task-indexes`, `--ti`
+:   Specify task indexes that are to be processed, for example '0,3,6,9', '1-5,7-8,10'. Specify no more than 1000 index entries. This option cannot be specified if '--tasks' is specified. This value is *optional*. 
+
+`--tasks`, `--ts`
+:   Specify the number of tasks that are to be processed by the fleet. This value is *optional*.
+
+`--tasks-from-cos-bucket`, `--ts-bucket`
+:   Specify a location of files inside a COS bucket. For each file, tasks are to be processed by the fleet. This value is *optional*. 
+
+`--tasks-from-cos-object`, `--ts-cos`
+:   Specify a JSONL file location that resides in a COS bucket. The file defines tasks that are to be processed by the fleet. This value is *optional*. 
+
+`--tasks-from-local-file`, `--ts-file`
+:   Specify a local JSONL file location. The file defines tasks that are to be processed by the fleet. This value is *optional*. 
+
+  
+  
+#### Example
+{: #fleet-task-create-example}
+
+```txt
+ibmcloud ce fleet task create --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e --tasks 1
+```
+{: pre}
+
+#### Example output
+{: #fleet-task-create-example-output}
+
+```txt
+Successfully added tasks to fleet with name 'fleet-0123456789' and ID '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' 
+Run 'ibmcloud ce fleet get --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to check the fleet status.
+Run 'ibmcloud ce fleet worker list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of provisioned workers.
+Run 'ibmcloud ce fleet task list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of tasks.
+
+OK
+```
+{: screen}  
+  
 ### `ibmcloud ce fleet task get`  
 {: #cli-fleet-task-get}  
 
@@ -3420,7 +3512,8 @@ ibmcloud ce fleet task get --task-id TASK_ID --fleet-id FLEET_ID [--output OUTPU
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+{: #cmd-options-fleet-task-get} 
 
 `--fleet-id`, `--fid`
 :   Required. The UUID of the fleet the task belongs to. This value is *required*. 
@@ -3437,7 +3530,7 @@ ibmcloud ce fleet task get --task-id TASK_ID --fleet-id FLEET_ID [--output OUTPU
   
   
 #### Example
-{: #fleet-task-get-cancel-example}
+{: #fleet-task-get-example}
 
 ```txt
 ibmcloud ce fleet task get --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e --task-id 2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f
@@ -3460,7 +3553,7 @@ Project name:  myproj
 Project ID:    3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g7g  
 
 State information:    
-  Status:       successful  
+  Status:       succeeded  
   Retries:      0  
   Worker name:  fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-1 
 ```
@@ -3476,7 +3569,8 @@ ibmcloud ce fleet task list --fleet-id FLEET_ID [--output OUTPUT] [--pagination-
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+{: #cmd-options-fleet-task-list} 
 
 `--fleet-id`, `--fid`
 :   Required. The UUID of the fleet the tasks belong to. This value is *required*. 
@@ -3502,7 +3596,7 @@ ibmcloud ce fleet task list --fleet-id FLEET_ID [--output OUTPUT] [--pagination-
   
   
 #### Example
-{: #fleet-task-list-cancel-example}
+{: #fleet-task-list-example}
 
 ```txt
 ibmcloud ce fleet task list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e
@@ -3516,12 +3610,13 @@ ibmcloud ce fleet task list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e
 Listing serverless fleet tasks...
 OK
 
-Task index  ID                                    Status   Result code  Worker name  
-0           5b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  successful  0            fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-0 
-1           4b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  running                  fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-1 
-2           3b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  pending
-3           2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  running                  fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-1 
-4           1b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  successful  0            fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-0 
+Task index  ID                                    Batch name  Status     Result code  Started               Duration  Worker name  
+0           5b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  default     succeeded  exit_0       2026-08-06T19:48:13Z  26s       fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-0 
+1           4b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  default     running                 2026-08-06T19:52:14Z            fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-1 
+2           3b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  test2       pending
+3           2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  test2       running                 2026-08-06T19:57:14Z            fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-1 
+4           1b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  test2       failed     exit_0       2026-08-06T19:58:14Z  0s        fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-0 
+foobar      0b0b0b0b-3c3c-4d4d-5e5e-6f6f6f6f6f6f  test3       succeeded  exit_0       2026-08-06T19:59:14Z  1m        fleet-1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e-2 
 ```
 {: screen}  
   
@@ -3553,7 +3648,8 @@ ibmcloud ce fleet worker delete --name WORKER_NAME --fleet-id FLEET_ID [--force]
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+{: #cmd-options-fleet-worker-delete} 
 
 `--fleet-id`, `--fid`
 :   Required. The ID of the fleet the worker belongs to. This value is *required*. 
@@ -3608,7 +3704,8 @@ ibmcloud ce fleet worker get --name WORKER_NAME --fleet-id FLEET_ID [--output OU
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+{: #cmd-options-fleet-worker-get} 
 
 `--fleet-id`, `--fid`
 :   Required. The ID of the fleet the worker belongs to. This value is *required*. 
@@ -3670,7 +3767,8 @@ ibmcloud ce fleet worker list --fleet-id FLEET_ID [--output OUTPUT] [--quiet] [-
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+{: #cmd-options-fleet-worker-list} 
 
 `--fleet-id`, `--fid`, `--id`
 :   Required. The ID of the fleet the worker belongs to. This value is *required*. 
@@ -3717,7 +3815,8 @@ ibmcloud ce fleet worker profiles [--output OUTPUT] [--profile-family PROFILE_FA
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+{: #cmd-options-fleet-worker-profiles} 
 
 `--output`, `-o`
 :   Output format. Valid values are 'json', 'yaml', 'jsonpath=JSONPATH_EXPRESSION', and 'jsonpath-as-json=JSONPATH_EXPRESSION'. This value is *optional*. 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-09-07"
 
 keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
@@ -12,23 +12,23 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Canceling or deleting fleets and workers
+# Canceling or deleting {{site.data.keyword.codeengineshort}} fleets and workers
 {: #fleets-cancel}
 
-Review this information carefully before you cancel or delete a fleet. 
+Review this information carefully before you cancel or delete a fleet.
 
 ## Canceling a fleet
 {: #fleets-cancel-type}
 
-When you cancel a fleet, you can choose to implement a `soft stop` to cancel only pending tasks and allow any running tasks to complete, or you can implement a `hard stop` to immediately cancel all tasks.  
+When you cancel a fleet, you can choose to implement a `soft stop` to cancel only pending tasks and allow any running tasks to complete, or you can implement a `hard stop` to immediately cancel all tasks.
 
 Soft stop
 :   All pending tasks are changed to the `canceled` status. However, any instances or tasks that are already running will continue to run until they are completed. Worker nodes begin to de-provision as instances and tasks finish running. This is the default behavior for canceling a fleet.
 
 Hard stop
-:   All instances are deleted immediately, and any tasks that are already running or in a `pending` status are changed to the `canceled` status. No new instances are started and instances and worker nodes are deprovisioned immediately. 
+:   All instances are deleted immediately, and any tasks that are already running or in a `pending` status are changed to the `canceled` status. No new instances are started and instances and worker nodes are deprovisioned immediately.
 
-### Canceling a fleet in the CLI
+### Canceling a fleet in the {{site.data.keyword.codeengineshort}} CLI
 {: #fleets-cancel-cli}
 {: cli}
 
@@ -43,46 +43,49 @@ ibmcloud ce fleet cancel --fleet-id FLEET_ID [--hard] [--force]
 :   The ID of the fleet.
 
 `--hard`
-:   Implement a hard stop cancellation to immediately delete all instances. Any tasks that are already running or in a `pending` status are changed to the `canceled` status. No new instances are started and instances and worker nodes are deprovisioned immediately. 
+:   Implement a hard stop cancellation to immediately delete all instances. Any tasks that are already running or in a `pending` status are changed to the `canceled` status. No new instances are started and instances and worker nodes are deprovisioned immediately.
 
 `--force`
-:   Force the cancellation without a confirmation prompt. 
+:   Force the cancellation without a confirmation prompt.
 
 
-### Canceling a fleet in the UI
+### Canceling a fleet in the {{site.data.keyword.codeengineshort}} console
 {: #fleets-cancel-ui}
 {: ui}
 
 Follow the steps to cancel a fleet in the UI.
 
-1. Navigate to the [{{site.data.keyword.codeengineshort}} project page](https://cloud.ibm.com/containers/serverless/projects){external}. Select the relevant project, then select the fleet you want to cancel. 
+1. Navigate to the [{{site.data.keyword.codeengineshort}} project page](https://cloud.ibm.com/containers/serverless/projects){: external}. Select the relevant project, then select the fleet you want to cancel.
 2. Click **Actions**.
-3. Click **Cancel**. 
-4. Follow the prompt to cancel the fleet. If you want to implement a hard stop to cancel all tasks immediately and delete all instances and workers, select the option to do so. 
+3. Click **Cancel**.
+4. Follow the prompt to cancel the fleet. If you want to implement a hard stop to cancel all tasks immediately and delete all instances and workers, select the option to do so.
 5. Click **Confirm cancellation**.
 
 
 ## Deleting a fleet
 {: #fleet-delete}
 
-When you delete a fleet, all the fleet's tasks, instances, and workers are deleted immediately. 
+When you delete a fleet, all the fleet's tasks, instances, and workers are deleted immediately.
 
-### Deleting a fleet in the CLI
+A fleet is not deleted automatically. Since there is a quota limit of 1000 fleets per project (see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)), delete the fleet when you do not need it anymore.
+
+### Deleting a fleet in the {{site.data.keyword.codeengineshort}} CLI
 {: #fleet-delete-cli}
 {: cli}
 
-To delete a fleet in the CLI, run the following command. When prompted, specify `y` to confirm that you want to delete the fleet. 
+To delete a fleet in the CLI, run the following command. When prompted, specify `y` to confirm that you want to delete the fleet.
+
 
 ```txt
-ibmcloud ce fleet delete --fleet_id FLEET_ID [--force] [--ignore-not-found] [--wait] [--wait-timout]
+ibmcloud ce fleet delete --fleet-id FLEET_ID [--force] [--ignore-not-found] [--wait] [--wait-timout]
 ```
 {: pre}
 
-`--fleet_id`
+`--fleet-id`
 :   The ID of the fleet.
 
 `--force`
-:   Force the cancellation without a confirmation prompt. 
+:   Force the cancellation without a confirmation prompt.
 
 `--ignore-not-found`
 :   Do not fail if the specified fleet is not found.
@@ -93,16 +96,17 @@ ibmcloud ce fleet delete --fleet_id FLEET_ID [--force] [--ignore-not-found] [--w
 `--wait-timeout`
 :   The number of seconds to wait for the fleet to be deleted.
 
-### Deleting a fleet in the UI
+For a complete list of all available command options, see the [CLI docs](/docs/codeengine?topic=codeengine-cli#cli-fleet-delete).
+
+### Deleting a fleet in the {{site.data.keyword.codeengineshort}} console
 {: #fleet-delete-ui}
 {: ui}
 
 Follow the steps to delete a fleet in the UI.
 
-1. Navigate to the [{{site.data.keyword.codeengineshort}} project page](https://cloud.ibm.com/containers/serverless/projects){external}. Select the relevant project, then select the fleet you want to delete. 
-2. Click **Actions**.
-3. Click **Delete**. 
-4. Follow the prompt to delete the fleet.
+1. Navigate to the [{{site.data.keyword.codeengineshort}} project page](https://cloud.ibm.com/containers/serverless/projects){: external}. Select the relevant project, then select the fleet you want to delete.
+2. Go to the row with the fleet that you want to remove, click the three dots row actions icon, and select **Delete** option. Alternatively, select the rows with the fleets that you want to remove and click the delete (trash can) icon.
+3. Follow the prompt to delete the fleets.
 
 ## Deleting fleet workers
 {: #fleet-delete-worker}
@@ -115,9 +119,9 @@ Soft stop
 Hard stop
 :   All instances on the worker are deleted immediately, and any tasks that are already running or in a `pending` status are changed to the `canceled` status. The worker is deprovisioned immediately and a new worker node is provisioned in its place.
 
-You can delete individual or groups of workers in a fleet. The remaining workers continue to run as normal. 
+You can delete individual or groups of workers in a fleet. The remaining workers continue to run as normal.
 
-### Deleting a worker in the CLI
+### Deleting a worker in the {{site.data.keyword.codeengineshort}} CLI
 {: #fleet-delete-worker-cli}
 {: cli}
 
@@ -138,21 +142,21 @@ ibmcloud ce fleet worker delete --fleet-id FLEET_ID --worker-name WORKER_NAME_1 
 :   Implement a hard stop deletion to immediately delete all instances on the worker node. Any tasks that are already running or in a `pending` status are changed to the `canceled` status. The worker node is immediately deprovisioned and a new worker is provisioned in its place.
 
 `--force`
-:   Force the deletion without a confirmation prompt. 
+:   Force the deletion without a confirmation prompt.
 
 `--ignore-not-found`
-:   Specify to avoid error if the ID of a non-existing fleet is provided. 
+:   Specify to avoid error if the ID of a non-existing fleet is provided.
 
-`--wait` 
+`--wait`
 :   Specify to wait for confirmation that the worker no longer exists.
 
-### Deleting a worker in the UI
+### Deleting a worker in the {{site.data.keyword.codeengineshort}} console
 {: #fleet-delete-worker-ui}
 {: ui}
 
 Follow the steps to delete a fleet worker in the UI.
 
-1. Navigate to the [{{site.data.keyword.codeengineshort}} project page](https://cloud.ibm.com/containers/serverless/projects){external}. Select the relevant project. Then select the relevant fleet.
+1. Navigate to the [{{site.data.keyword.codeengineshort}} project page](https://cloud.ibm.com/containers/serverless/projects){: external}. Select the relevant project. Then select the relevant fleet.
 2. From the fleet page, select the **Workers** tab.
 3. In the workers list, select each worker that you want to delete.
 4. Click **Delete**.

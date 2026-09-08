@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-09-08"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ------ | ---------- | --------------------- |
+| 1.63.1 | 2026-09-03 | - Updated the **`fleet create`** command to not require a tasks specification. \n - Added the **`fleet task create`** command to add tasks to a serverless fleet. You can create a fleet first, and later add tasks repeatedly. See [{{site.data.keyword.codeengineshort}} CLI reference (`fleet task create` command)](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-create). \n  - Added the `--scale-min`, `--scale-spare`, and `--scale-down-delay` options to the **`fleet create`** command. Use these options to tune the scaling behavior of a fleet. See [{{site.data.keyword.codeengineshort}} CLI reference (`fleet create` command)](/docs/codeengine?topic=codeengine-cli#cli-fleet-create). \n - Fixed various bugs. |
 | 1.62.7 | 2026-07-20 | - Fixed various bugs. \n - Updated translations for the CLI. |
 | 1.62.6 | 2026-06-23 | - Fixed various bugs. |
 | 1.62.5 | 2026-05-28 | - Updated the output of the **`project get`** command to display inbound connectivity status information. \n - Fixed various bugs. |

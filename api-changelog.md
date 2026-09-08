@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-09-08"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -37,6 +37,12 @@ The following table shows the service behavior changes for each version date. Sw
 |`2022-12-09`| Version 2.0.0 |                                                                                                                                                                                           |
 |`2021-03-31`| Version 1.0.0 |                                                                                                                                                                                           |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"}
+
+## 03 September 2026
+{: #03-september-2026}
+
+Added support to `add_tasks` for fleets in the API.
+:   - See [Add tasks to a fleet API](/apidocs/codeengine/v2#add-tasks-fleet){: external}.
 
 ## 27 February 2026
 {: #27-february-2026}

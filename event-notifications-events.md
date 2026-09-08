@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-01-27"
+lastupdated: "2026-09-03"
 
 keywords: code engine, event notifications
 
@@ -141,7 +141,7 @@ Complete the following steps to set up the trigger.
 
 1. Create an authorization policy.
     ```sh
-    ibmcloud iam authorization-policy-create event-notifications codeengine Writer,Viewer \ 
+    ibmcloud iam authorization-policy-create event-notifications codeengine Writer,Viewer \
     --source-service-instance-id $EVENT_NOTIFICATIONS_INSTANCE_ID \
     --target-service-instance-name "${PROJECT_NAME}"
     ```
@@ -176,7 +176,7 @@ Complete the following steps to set up the trigger.
     --description "$TOPIC_DESCRIPTION" \
     --service-instance-id "$EVENT_NOTIFICATIONS_CRN" \
     --topic-type timer \
-    --topic-timer "$TOPIC_CRON" # Example: "0 */6 * * *" 
+    --topic-timer "$TOPIC_CRON" # Example: "0 */6 * * *"
     ```
     {: pre}
 

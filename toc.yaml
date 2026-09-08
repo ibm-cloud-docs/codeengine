@@ -114,6 +114,7 @@ toc:
           topics:
           - fleet-prep.md
           - fleet-run.md
+          - fleet-scalingconfig.md
           - fleet-observability.md
           - fleet-cancel.md
           - fleet-status.md

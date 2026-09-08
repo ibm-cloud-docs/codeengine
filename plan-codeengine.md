@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-09-08"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
@@ -26,11 +26,11 @@ A function is a stateless code snippet that performs tasks as it is invoked by H
 A fleet, also called a *serverless fleet*, runs one or more instances of user code to complete a set of specified tasks. Fleets can process large, compute-intensive workloads, allow control over machine profiles, and can run on GPU resources. Fleets are single tenant, implement dynamic task queuing, and provide full control over the machine profile configuration. Additionally, fleets can connect to Virtual Private Clouds (VPCs) to securely access user data and services.
 
 | Characteristic | Application | Job | Function | Fleet |
-| --------- | --------- | --------- | --------- | ------ |
-| Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) | Long-running (minutes to weeks) |
-| Startup latency | Medium | Scheduled start | Low  | Low |
-| Termination | Run-continuously | Run-to-completion | Run-to-completion | Run-to-completion |
-| Invocation | On request or permanently running | Scheduled | On request, instant | Scheduled |
+| --------- | --------- | --------- | --------- | ----- |
+| Execution time (duration) | Long-running (10 minutes per request) | Long-running (up to 24 hours) | Short-running (2 minutes or less) | Long-running (seconds to weeks) |
+| Startup latency | Medium | Scheduled start | Low | Medium |
+| Termination | Run-continuously | Run-to-completion | Run-to-completion | Run-continuously and run-to-completion |
+| Invocation | On request or permanently running | Scheduled | On request, instant | On task submission or permanently running |
 | Programming model | Container-based build and execution | Container-based build and execution | Language-specific source code files and dependency metadata | Container-based build and execution |
 | Parallelism | Parallel execution, flexible | Low to medium parallel execution | High parallel execution | High parallel execution and queuing |
 | Scale-out | Based on number of requests | Based on job workload definition | Based on events or direct invocations | Based on number of tasks and concurrent instances |
