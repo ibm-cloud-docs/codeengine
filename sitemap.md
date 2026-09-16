@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-14"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3299,9 +3299,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Worker node status](/docs/codeengine?topic=codeengine-fleet-status&interface=cli#status-workers)
 
+    * [Checking the worker node status of a fleet in the {{site.data.keyword.codeengineshort}} console](/docs/codeengine?topic=codeengine-fleet-status&interface=ui#status-workers-ui)
+
+    * [Checking the worker node status of a fleet in the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-fleet-status&interface=cli#status-workers-cli)
+
 [Worker Image Changelog v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-v1_0)
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
+
+    * [Worker image `v1.0.350`, released 14 September 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_350)
 
     * [Worker image `v1.0.340`, released 07 September 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_340)
 

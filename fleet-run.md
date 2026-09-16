@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-15"
 
 keywords: fleets, fleets in code engine, large volumes in code engine, deploy fleets in code engine, running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume, add task
 
@@ -56,7 +56,7 @@ You can create a fleet with or without initial tasks, and add tasks at any time.
 
 To create a fleet without initial tasks, see [Creating a fleet without initial tasks by using the console](#fleet-without-task-console). To add tasks after creation, see [Adding tasks to a fleet by using the console](#fleet-add-task-console).
 
-You can specify tasks in the following ways:
+You can specify tasks in one of the following ways:
 
 - **Number of tasks**: Select **Number of tasks** and specify any positive integer.
 - **Task indexes**: To specify a range of tasks, you can specify a task index that includes a comma-separated list of ranges and positive integers, such as `2-5,7-8,10`. Select **Task indexes** and enter the ranges.
@@ -78,7 +78,7 @@ You can specify tasks in the following ways:
 
 To create a fleet without initial tasks, see [Creating a fleet without initial tasks by using the CLI](#fleet-without-task-cli). To add tasks after creation, see [Adding tasks to an existing fleet by using the CLI](#fleet-add-task-cli). To create a fleet with initial tasks, see [Creating a fleet with initial tasks by using the CLI](#fleet-with-initial-task-cli).
 
-You can specify tasks in the following ways:
+You can specify tasks in one of the following ways.
 
 - **Number of tasks**: Specify any positive integer. Use the `--tasks` option to specify the number of tasks you want to run. To create a fleet without tasks, omit the `--tasks` option.
 - **Task indexes**: To specify a range of tasks, you can specify a task index that includes a comma-separated list of ranges and positive integers, such as `2-5,7-8,10`. Use the `--task-indexes` option.
@@ -107,18 +107,19 @@ To create a fleet without initial tasks, follow the steps in [Running a fleet by
 {: #fleet-add-task-console}
 {: ui}
 
-You can add tasks to a fleet at any time — whether the fleet is in `pending`, `running` or `standby` status — by using the **Add tasks** button.
+You can add tasks to a fleet at any time — whether the fleet is in **Pending**, **Running**, or **Standby** status — by using the **Add tasks** button.
 
 Asynchronously, {{site.data.keyword.codeengineshort}} creates the task records and, if needed, provisions additional workers.
 
-Follow these steps to add tasks to an existing fleet in the Code Engine console.
+Follow these steps to add tasks to an existing fleet in the {{site.data.keyword.codeengineshort}} console.
 
 1. Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 2. Click the name of your project to open the Overview page.
 3. Click **Fleets** to open a list of your fleets. Click the name of your fleet to open the details page.
 4. Click **Add tasks**.
 5. Specify a set of tasks to add to the fleet. See also [Task specification](#fleet-task-spec).
-6. Click **Add**.
+6. Optionally, add a meaningful **Batch name**.
+7. Click **Add**.
 
 ## Creating a fleet without initial tasks by using the CLI
 {: #fleet-without-task-cli}
@@ -146,7 +147,7 @@ You must specify either `--subnetpool-name` or `--subnetpool-id`.
 `--tasks-state-store`
 :   Specify the persistent data store that stores the state of the tasks of the fleet. This value is **required**.
 
-Example output.
+Example output:
 
 ```txt
 Successfully created fleet with name 'my-fleet' and ID '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e'
@@ -163,23 +164,21 @@ OK
 
 Use the following example command to add tasks to an existing fleet. This command allows additional options. For a complete list of all available command options, see the [CLI reference](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-create).
 
-Alternatively, you can use the `fleet task add` command.
+Alternatively, you can use the `ibmcloud ce fleet task create` command.
+
+#### Example
+{: #fleet-task-add-example}
 
 ```sh
-ibmcloud ce fleet task create --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e --tasks 6
+ibmcloud ce fleet task add --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e --tasks 1 --batch-name transactions-2026-09-04
 ```
 {: pre}
 
-`--fleet-id`
-:   The UUID of the fleet the task belongs to. This value is **required**.
-
-`--tasks`
-:   Specify the number of tasks that are to be processed by the fleet. This value is **required**.
-
-Example output.
+#### Example output
+{: #fleet-task-add-example-output}
 
 ```txt
-Successfully added tasks to fleet with name 'my-fleet' and ID '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e'
+Successfully added tasks to fleet with name 'fleet-0123456789' and ID '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e'
 Run 'ibmcloud ce fleet get --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to check the fleet status.
 Run 'ibmcloud ce fleet worker list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of provisioned workers.
 Run 'ibmcloud ce fleet task list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of tasks.
@@ -187,6 +186,17 @@ Run 'ibmcloud ce fleet task list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e
 OK
 ```
 {: screen}
+
+`--fleet-id`
+:   The UUID of the fleet the task belongs to. This value is **required**.
+
+`--tasks`
+:   Specify the number of tasks that are to be processed by the fleet. This value is **required**.
+
+`--batch-name`
+:   The batch name used for all tasks added in the current call. It can be used to identify and group related tasks. Batch names need not be unique. So, the original batch name can be used when retrying failed tasks. For example, batch names can contain dates or customer names.
+:   This value is **optional**. If it is not specified the batch name `default` is used.
+
 
 ## Creating a fleet with initial tasks by using the CLI
 {: #fleet-with-initial-task-cli}
@@ -219,7 +229,7 @@ You must specify either `--subnetpool-name` or `--subnetpool-id`.
 `--tasks`
 :   The number of tasks to run.
 
-Example output.
+Example output:
 
 ```txt
 Successfully created fleet with name 'my-fleet' and ID '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e'

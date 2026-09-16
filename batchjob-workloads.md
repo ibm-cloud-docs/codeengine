@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-09-29"
+  years: 2020, 2026
+lastupdated: "2026-09-15"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, batch jobs, batch job workloads, job run, environment variables
 
@@ -35,8 +35,6 @@ Typical batch job workloads include:
 - Analyzing files, such as voice analysis or image recognition
 - Compressing or decompressing files
 - Archiving information
-
-When you create a job, you can specify workload configuration information that is used each time that the job is run.
 
 ### What is the lifecycle of a batch job?
 {: #batchjob-lifecycle}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-15"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -3484,8 +3484,8 @@ ibmcloud ce fleet task create --fleet-id FLEET_ID (--task-indexes TASK_INDEXES |
 #### Example
 {: #fleet-task-create-example}
 
-```txt
-ibmcloud ce fleet task create --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e --tasks 1
+```sh
+ibmcloud ce fleet task create --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e --tasks 1 --batch-name transactions-2026-09-04
 ```
 {: pre}
 
@@ -3493,7 +3493,7 @@ ibmcloud ce fleet task create --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e --
 {: #fleet-task-create-example-output}
 
 ```txt
-Successfully added tasks to fleet with name 'fleet-0123456789' and ID '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' 
+Successfully added tasks to fleet with name 'fleet-0123456789' and ID '1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e'
 Run 'ibmcloud ce fleet get --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to check the fleet status.
 Run 'ibmcloud ce fleet worker list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of provisioned workers.
 Run 'ibmcloud ce fleet task list --fleet-id 1a1a1a1a-2b2b-3c3c-4d4d-5e5e5e5e5e5e' to retrieve a list of tasks.
