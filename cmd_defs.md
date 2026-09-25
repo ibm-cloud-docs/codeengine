@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-09-25"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -48,6 +48,8 @@ For more information about working with apps, see [Deploying applications](/docs
 You can use either `application` or `app` in your `application` commands. To see CLI help for the `application` commands, run `ibmcloud ce app -h`.
 
 To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengine?topic=codeengine-cli#cli-revision) commands.  
+  
+Aliases: `ibmcloud ce app`  
   
 ### `ibmcloud ce application bind`  
 {: #cli-application-bind}  
@@ -246,10 +248,10 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 :   The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use `--port` to specify the port. This value is *optional*. 
 
 `--probe-live`, `--pl`
-:   Configure the liveness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-live type=tcp --probe-live port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
+:   Configure the liveness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-live type=tcp --probe-live port=8080. For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
 
 `--probe-ready`, `--pr`
-:   Configure the readiness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-ready type=tcp --probe-ready port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
+:   Configure the readiness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-ready type=tcp --probe-ready port=8080. For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -928,13 +930,13 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use `--port` to specify the port. This value is *optional*. 
 
 `--probe-live`, `--pl`
-:   Configure the liveness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-live type=tcp --probe-live port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
+:   Configure the liveness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-live type=tcp --probe-live port=8080. For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
 
 `--probe-live-clear`, `--plr`
 :   Remove the liveness probe. This option is allowed only if your app currently has a liveness probe. This value is *optional*. The default value is `false`.
 
 `--probe-ready`, `--pr`
-:   Configure the readiness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-ready type=tcp --probe-ready port=8080. For more information about working with probes, For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
+:   Configure the readiness probe for this application in NAME=VALUE format. Valid options for NAME are: `type`, `port`, `path`, `interval`, `initial-delay`, `timeout`, `failure-threshold`. This option can be specified multiple times. The `type` property is required and valid values are `tcp` and `http`. For example, --probe-ready type=tcp --probe-ready port=8080. For more information about working with probes, see [Configuring probes for your app](/docs/codeengine?topic=codeengine-app-probes). This value is *optional*. 
 
 `--probe-ready-reset`, `--prr`
 :   Resets the readiness probe to the default configuration. This value is *optional*. The default value is `false`.
@@ -1075,6 +1077,8 @@ For more information about working with builds, see [Building a container image]
 
 You can use either `build` or `bd` in your `build` commands. To see CLI help for the `build` commands, run `ibmcloud ce build -h`.
   
+  
+Aliases: `ibmcloud ce bd`, `ibmcloud ce b`  
   
 ### `ibmcloud ce build create`  
 {: #cli-build-create}  
@@ -1412,6 +1416,8 @@ For more information about working with builds and build runs, see [Building a c
 
 You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
   
+  
+Aliases: `ibmcloud ce br`  
   
 ### `ibmcloud ce buildrun cancel`  
 {: #cli-buildrun-cancel}  
@@ -1883,6 +1889,8 @@ For more information about working with configmaps, see [Working with configmaps
 You can use either `configmap` or `cm` in your `configmap` commands. To see CLI help for the `configmap` commands, run `ibmcloud ce configmap -h`.
   
   
+Aliases: `ibmcloud ce cm`  
+  
 ### `ibmcloud ce configmap create`  
 {: #cli-configmap-create}  
 
@@ -2190,6 +2198,8 @@ The {{site.data.keyword.codeenginefull}} connectivity feature supports to config
 You must be within the context of a [project](#cli-project) before you use `connectivity` commands.
 
 You can use either `connectivity` or `conn` in your `connectivity` commands. To see CLI help for the `connectivity` commands, run `ibmcloud ce connectivity -h`.  
+  
+Aliases: `ibmcloud ce conn`  
   
 ### `ibmcloud ce connectivity outbound`  
 {: #cli-connectivity-outbound}  
@@ -2749,6 +2759,8 @@ You can use either `domainmapping` or `dm` in your `domainmapping` commands. To 
 
   
   
+Aliases: `ibmcloud ce dm`  
+  
 ### `ibmcloud ce domainmapping create`  
 {: #cli-domainmapping-create}  
 
@@ -3007,6 +3019,8 @@ You must be within the context of a [project](#cli-project) before you use `expe
 
 You can use either `experimental` or `exp` in your `experimental` commands. To see CLI help for the `experimental` commands, run `ibmcloud ce exp -h`.  
   
+Aliases: `ibmcloud ce exp`  
+  
 ### `ibmcloud ce experimental`  
 {: #cli-experimentalcmd}  
 
@@ -3119,6 +3133,8 @@ Tasks status:
 
 Launch a serverless fleet.  
   
+Aliases: `ibmcloud ce fleet run`  
+  
 ```txt
 ibmcloud ce fleet create --image IMAGE_REF --tasks-state-store TASKS_STATE_STORE (--subnetpool-name SUBNETPOOL_NAME | --subnetpool-id SUBNETPOOL_ID) [(--task-indexes TASK_INDEXES | --tasks TASKS | --tasks-from-local-file TASKS_FROM_LOCAL_FILE | --tasks-from-cos-object TASKS_FROM_COS_OBJECT | --tasks-from-cos-bucket TASKS_FROM_COS_BUCKET)] [--argument ARGUMENT] [--batch-name BATCH_NAME] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--gpu GPU] [--max-execution-time MAX_EXECUTION_TIME] [--memory MEMORY] [--mount-data-store MOUNT_DATA_STORE] [--name NAME] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--scale-down-delay SCALE_DOWN_DELAY] [--scale-max SCALE_MAX] [--scale-min SCALE_MIN] [--scale-spare SCALE_SPARE] [--worker-profile WORKER_PROFILE]
 ```
@@ -3179,7 +3195,7 @@ ibmcloud ce fleet create --image IMAGE_REF --tasks-state-store TASKS_STATE_STORE
 :   The number of times to rerun a task before marking it as failed. This value is *optional*. The default value is `3`.
 
 `--scale-down-delay`, `--sdd`
-:   The amount of time in seconds that must pass at reduced concurrency before a container slot is scaled down. This value is *optional*.
+:   The amount of time in seconds that must pass at reduced concurrency before a container slot is scaled down. This value is *optional*. The default value is `0`.
 
 `--scale-max`, `--max`, `--maxscale`, `--max-scale`
 :   Maximum number of container slots to run tasks in parallel. This value is *optional*. The default value is `10`.
@@ -3443,6 +3459,8 @@ ibmcloud ce fleet task COMMAND [--quiet]
 {: #cli-fleet-task-create}  
 
 Add tasks to a serverless fleet.  
+  
+Aliases: `ibmcloud ce fleet task add`  
   
 ```txt
 ibmcloud ce fleet task create --fleet-id FLEET_ID (--task-indexes TASK_INDEXES | --tasks TASKS | --tasks-from-local-file TASKS_FROM_LOCAL_FILE | --tasks-from-cos-object TASKS_FROM_COS_OBJECT | --tasks-from-cos-bucket TASKS_FROM_COS_BUCKET) [--batch-name BATCH_NAME] [--output OUTPUT] [--quiet]
@@ -3868,6 +3886,8 @@ A function is a stateless code snippet that performs tasks as it is invoked by H
 You must be within the context of a [project](#cli-project) before you use `function` commands.
 
 For more information about working with Functions, see [Working with Functions](/docs/codeengine?topic=codeengine-fun-work).  
+  
+Aliases: `ibmcloud ce fn`  
   
 ### `ibmcloud ce function bind`  
 {: #cli-function-bind}  
@@ -4490,6 +4510,8 @@ When you run `ibmcloud ce fn get -n 'myfunction'` to check the function status, 
 
 The {{site.data.keyword.codeengineshort}} help command provides information about available commands per command group.
 {: shortdesc}  
+  
+Aliases: `ibmcloud ce h`  
   
 ### `ibmcloud ce help`  
 {: #cli-helpcmd}  
@@ -5188,6 +5210,8 @@ For more information about working with jobs and job runs, see [Running jobs](/d
 
 To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
   
+  
+Aliases: `ibmcloud ce jr`  
   
 ### `ibmcloud ce jobrun delete`  
 {: #cli-jobrun-delete}  
@@ -5898,6 +5922,8 @@ OK
 
 Manage persistent data stores.  
   
+Aliases: `ibmcloud ce pds`  
+  
 ### `ibmcloud ce persistentdatastore create`  
 {: #cli-persistentdatastore-create}  
 
@@ -6110,6 +6136,8 @@ For more information about working with projects, see [Managing projects](/docs/
 
 You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
   
+  
+Aliases: `ibmcloud ce proj`  
   
 ### `ibmcloud ce project create`  
 {: #cli-project-create}  
@@ -6489,6 +6517,8 @@ OK
 
 Select a project as the current context. The project must be in `active` status before it can be selected.  
   
+Aliases: `ibmcloud ce project target`  
+  
 ```txt
 ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--endpoint ENDPOINT] [--kubecfg] [--quiet]
 ```
@@ -6627,6 +6657,8 @@ OK
 {: #cli-reclamation}  
 
 Manage {{site.data.keyword.codeengineshort}} project reclamations. Projects that are soft-deleted can be restored within 7 days by using the `reclamation restore` command.  
+  
+Aliases: `ibmcloud ce recl`  
   
 ### `ibmcloud ce reclamation delete`  
 {: #cli-reclamation-delete}  
@@ -7420,6 +7452,8 @@ For more information about working with revisions for apps, see [Deploying appli
 
 You can use either `revision` or `rev` in your `revision` commands. To see CLI help for the `revision` commands, run `ibmcloud ce revision -h`.
   
+  
+Aliases: `ibmcloud ce rev`  
   
 ### `ibmcloud ce revision delete`  
 {: #cli-revision-delete}  
@@ -8596,6 +8630,8 @@ For more information about working with the {{site.data.keyword.cos_full_notm}} 
 
 You can use either `subscription` or `sub` in your `subscription cron` commands. To see CLI help for the `subscription cron` command, run `ibmcloud ce sub cron -h`.  
   
+Aliases: `ibmcloud ce subscription ping`, `ibmcloud ce subscription timer`  
+  
 ### `ibmcloud ce subscription cron create`  
 {: #cli-subscription-cron-create}  
 
@@ -9276,6 +9312,8 @@ OK
 {: #cli-version}  
 
 Display the version of the `code-engine` command-line interface.  
+  
+Aliases: `ibmcloud ce v`  
   
 ### `ibmcloud ce version`  
 {: #cli-versioncmd}  

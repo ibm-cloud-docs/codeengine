@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-22"
 
 keywords: fleets in code engine, running fleets with code engine, creating fleets with code engine, images for fleets in code engine, fleets, serverless fleets, fleet workloads, fleet run, fleet create, environment variables, fleet workloads
 
@@ -47,7 +47,7 @@ Unlike [batch jobs](/docs/codeengine?topic=codeengine-cebatchjobs), which are pr
 
 Fleets in {{site.data.keyword.codeengineshort}} are designed to run large numbers of tasks to completion in parallel on dedicated workers. You can run a fleet as a one-time batch that processes a fixed set of tasks, or keep a fleet around for a longer time and feed it with tasks on demand.
 
-Which approach fits best to your needs depends on how tasks are produced, on your requirements for latency, and on the stability of your fleet configuration.
+Which approach best fits to your needs depends on how tasks are produced, on your requirements for latency, and on the stability of your fleet configuration.
 
 These are common types of fleet workloads:
 
@@ -58,9 +58,9 @@ These are common types of fleet workloads:
 ### One-shot batch workload in {{site.data.keyword.codeengineshort}}
 {: #fleet-one-shot-workload}
 
-This workload is comprised of a finite number of tasks.
+This workload consists of a finite number of tasks.
 
-Supply all tasks when creating the fleet. Workers and instances are created immediately, and tasks are started when they are ready. When the last task completes the fleet enters the standby state; it can then be canceled. You control how many tasks run in parallel and how many workers are deployed by defining the fleet's maximum scaling parameter (**Max container slots**, --scale-max). Use this approach when your batch of tasks needs a dedicated fleet configuration, for example a specific set of environment variables.
+Supply all tasks when you create the fleet. Workers and instances are created immediately, and tasks are started when they are ready. When the last task completes, the fleet enters the standby state; it can then be canceled. You control how many tasks run in parallel and how many workers are deployed by defining the fleet's maximum scaling parameter (**Maximum container slots**, --scale-max). Use this approach when your batch of tasks needs a dedicated fleet configuration, for example a specific set of environment variables.
 
 **Example:** An image-processing job that renders 10,000 frames. You create the fleet with all task indexes, and it runs to completion.
 
@@ -69,16 +69,16 @@ Supply all tasks when creating the fleet. Workers and instances are created imme
 
 This workload consists of tasks that are scheduled on a regular basis. All tasks can be processed using the same fleet configuration.
 
-You keep one fleet around indefinitely and add a new batch of tasks on a schedule. You control how many tasks run in parallel and how many workers are deployed by defining the fleet's maximum scaling parameter (**Max container slots**, --scale-max). For example, every morning a job collects the work that queued up in the last 24 hours and submits it in one call. Between batches, the fleet sits idle, with no pending tasks. The gap between batches is predictable and long enough so that keeping workers available is not worthwhile.
+You keep one fleet around indefinitely and add a new batch of tasks on a schedule. You control how many tasks run in parallel and how many workers are deployed by defining the fleet's maximum scaling parameter (**Maximum container slots**, --scale-max). For example, every morning a job collects the work that queued up in the last 24 hours and submits it in one call. Between batches, the fleet sits idle, with no pending tasks. The gap between batches is predictable and long enough so that keeping workers available is not worthwhile.
 
 **Example:** A payment processor receives transaction files from external partners throughout the day. Each file is deposited into Cloud Object Storage under a path such as `input/2026-08-30/`. Every morning, a [scheduled](/docs/codeengine?topic=codeengine-event-notifications-events) {{site.data.keyword.codeengineshort}} [job](/docs/codeengine?topic=codeengine-cebatchjobs) adds tasks to the fleet to process the previous day's files. Workers boot, process every object under that path, and then scale to zero until the next morning.
 
 ### Continuous, latency-sensitive workload in {{site.data.keyword.codeengineshort}}
 {: #fleet-continuous-workload}
 
-This workload consists of tasks that arrive unpredictably throughout the day — triggered by user actions, sensor readings, or other real-time events. All tasks can be processed using the same fleet configuration. Waiting for a new worker to boot each time a task arrives would add unacceptable latency. Instead, use options **Min container slots** or `--scale-min`, **Spare container slots** or `--scale-spare`, and **Scale down delay** or `--scale-down-delay` to keep a pool of warm workers ready at all times so that task processing can start immediately.
+This workload consists of tasks that arrive unpredictably throughout the day — triggered by user actions, sensor readings, or other real-time events. All tasks can be processed using the same fleet configuration. Waiting for a new worker to boot each time a task arrives would add unacceptable latency. Instead, use options **Minimum container slots** or `--scale-min`, **Spare container slots** or `--scale-spare`, and **Scale-down delay** or `--scale-down-delay` to keep a pool of warm workers ready at all times so that task processing can start immediately.
 
-**Example:** A fraud-detection fleet that evaluates transactions as they arrive. New tasks must start processing within seconds. Therefore, when idle, the fleet keeps workers running for at least 10 concurrent task slots (**Min container slots**: 10, `--scale-min 10`). At any point in time, 5 slots are kept free (**Spare container slots**: 5, `--scale-spare 5`), so an incoming burst of up to 5 tasks starts immediately. When tasks arrive faster than spare capacity allows, new workers are provisioned until 5 free slots are available or the maximum number of 100 instances is reached (**Max container slots**: 100, `--scale-max 100`). When activity drops, workers remain available for 10 minutes before scaling down (**Scale down delay**: 10, `--scale-down-delay 600`).
+**Example:** A fraud-detection fleet that evaluates transactions as they arrive. New tasks must start processing within seconds. Therefore, when idle, the fleet keeps workers running for at least 10 concurrent task slots (**Minimum container slots**: 10, `--scale-min 10`). At any point in time, 5 slots are kept free (**Spare container slots**: 5, `--scale-spare 5`), so an incoming burst of up to 5 tasks starts immediately. When tasks arrive faster than spare capacity allows, new workers are provisioned until 5 free slots are available or the maximum number of 100 instances is reached (**Maximum container slots**: 100, `--scale-max 100`). When activity drops, workers remain available for 10 minutes before scaling down (**Scale-down delay**: 10, `--scale-down-delay 600`).
 
 ## What are the key features of working with {{site.data.keyword.codeengineshort}} fleets?
 {: #fleet-features}
@@ -113,7 +113,7 @@ When deploying a fleet, you can specify the number of tasks to complete and the 
 ### Task storage in COS
 {: #fleet-cos}
 
-You can use a COS bucket to provide the tasks for your fleet by specifying a persistent data store and bucket subpath when you create the fleet. Each object in the COS bucket represents a single task.
+You can use a COS bucket to provide the tasks for your fleet by specifying a persistent data store and subpath when you create the fleet. Each object in the COS bucket represents a single task.
 
 ### Isolation
 {: #fleet-isolation}

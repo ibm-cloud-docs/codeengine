@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-09-22"
 
 keywords: fleets, fleets in code engine, large volumes in code engine, deploy fleets in code engine, running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume, add task
 
@@ -36,7 +36,7 @@ Follow these steps to run a fleet in the {{site.data.keyword.codeengineshort}} c
 5. Specify a name for the fleet. Make sure the name is unique across all fleets within the project.
 6. Specify a container image for your fleet, for example, `icr.io/codeengine/helloworld`. If you have your own source code that you want to turn into a container image, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build). For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}.
 7. Follow the prompts to configure your fleet. For details on the significance of scaling parameters, see [Configuring fleet scaling](/docs/codeengine?topic=codeengine-fleet-scalingconfig#fleet-scaling-params-ui).
-8. In the Tasks section, configure the task specification method for the fleet. For more information, see [Task specification](#fleet-task-spec).
+8. In the Tasks section, specify whether to add initial tasks for the fleet or not. For more information, see [Task specification](#fleet-task-spec).
 9. In the Resources and scaling section, configure your instance resources and specify how your instances scale up or down.
 10. In the Network placement section, click **Select subnet pools**.
     1. Create a new subnet pool to specify the network placement of the workers of this fleet. See [Working with subnet pool connectivity in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-connectivity-subnetpool) for more information.
@@ -59,7 +59,7 @@ To create a fleet without initial tasks, see [Creating a fleet without initial t
 You can specify tasks in one of the following ways:
 
 - **Number of tasks**: Select **Number of tasks** and specify any positive integer.
-- **Task indexes**: To specify a range of tasks, you can specify a task index that includes a comma-separated list of ranges and positive integers, such as `2-5,7-8,10`. Select **Task indexes** and enter the ranges.
+- **Task indexes**: To specify a range of tasks, you can specify a set of task indexes that includes a comma-separated list of ranges and positive integers, such as `2-5,7-8,10`. Select **Task indexes** and enter the ranges.
 - **Tasks from file**: To have different tasks run with different commands or arguments, you can create a task specification file that overrides the image definition. The optional `idx` field can be used to specify a custom task index. This file must be formatted as JSONL. Select **Tasks from file**. Either upload a local file or specify a path to a file in {{site.data.keyword.cos_full_notm}}. See the following example of lines that can be added to a task specification file.
     ```json
     { "cmds": ["my", "multipart", "command"], "args": ["arg1", "arg2"] }
@@ -69,8 +69,9 @@ You can specify tasks in one of the following ways:
     ```
     {: codeblock}
 
-- **Tasks from {{site.data.keyword.cos_full_notm}}**: Specify tasks based on the objects in a persistent data store ({{site.data.keyword.cos_short}} bucket). Each object generates one task. Select **Tasks from Cloud Object Storage** and create or select a persistent data store. Optionally, specify a bucket subpath.
+- **Tasks from {{site.data.keyword.cos_full_notm}}**: Specify tasks based on the objects in a persistent data store ({{site.data.keyword.cos_short}} bucket). Each object generates one task. Select **Tasks from Cloud Object Storage** and create or select a persistent data store. Optionally, specify a subpath.
 
+**Batch name (optional)**: Add a batch name for all tasks added with this action. A batch name identifies and groups related tasks. Batch names do not need to be unique, so you can reuse the original batch name when you retry failed tasks. For example, batch names can contain dates or customer names.
 
 ### Specifying tasks in the CLI
 {: #fleet-task-spec-cli}
@@ -91,17 +92,17 @@ You can specify tasks in one of the following ways.
     ```
     {: codeblock}
 
-- **Tasks from {{site.data.keyword.cos_full_notm}}**: Specify tasks based on the objects in a persistent data store ({{site.data.keyword.cos_short}} bucket). Each object generates one task. Use the `--tasks-from-cos-bucket` option to specify a {{site.data.keyword.cos_short}} bucket and an optional bucket subpath.
+- **Tasks from {{site.data.keyword.cos_full_notm}}**: Specify tasks based on the objects in a persistent data store ({{site.data.keyword.cos_short}} bucket). Each object generates one task. Use the `--tasks-from-cos-bucket` option to specify a {{site.data.keyword.cos_short}} bucket and an optional subpath.
 
 ## Creating a fleet without initial tasks by using the console
 {: #fleet-without-task-console}
 {: ui}
 
-You can create a fleet without providing any tasks. If **Min container slots** or **Spare container slots** is non-zero, workers are provisioned immediately. Otherwise, no workers are created until the first tasks are added.
+You can create a fleet without providing any tasks. If **Minimum container slots** or **Spare container slots** is non-zero, workers are provisioned immediately. Otherwise, no workers are created until the first tasks are added.
 
-This is useful when the fleet is a shared, long-lived resource that receives tasks from multiple sources or on a schedule.
+Use this approach when the fleet is a shared, long-lived resource that receives tasks from multiple sources or on a schedule.
 
-To create a fleet without initial tasks, follow the steps in [Running a fleet by using the console](#fleet-run-ui). In step 8, set **Specify an initial set of tasks** to **No**.
+To create a fleet without initial tasks, follow the steps in [Running a fleet by using the console](#fleet-run-ui). In step 8, set **Specify initial tasks** to **No**.
 
 ## Adding tasks to a fleet by using the console
 {: #fleet-add-task-console}
@@ -194,9 +195,8 @@ OK
 :   Specify the number of tasks that are to be processed by the fleet. This value is **required**.
 
 `--batch-name`
-:   The batch name used for all tasks added in the current call. It can be used to identify and group related tasks. Batch names need not be unique. So, the original batch name can be used when retrying failed tasks. For example, batch names can contain dates or customer names.
-:   This value is **optional**. If it is not specified the batch name `default` is used.
-
+:   The batch name used for all tasks added in the current call. It can be used to identify and group related tasks. Batch names do not need to be unique, so you can reuse the original batch name when you retry failed tasks. For example, batch names can contain dates or customer names.
+:   This value is **optional**. If it is not specified, the batch name `default` is used.
 
 ## Creating a fleet with initial tasks by using the CLI
 {: #fleet-with-initial-task-cli}
@@ -204,7 +204,7 @@ OK
 
 Use the following example command to run a fleet with initial tasks. This command allows additional options. For a complete list of all available command options, see the [CLI reference](/docs/codeengine?topic=codeengine-cli#cli-fleet-create).
 
-When all available tasks are processed, the fleet enters the **Standby** state. Workers that are no longer needed for providing **Min container slots** are scaled down until new tasks are added.
+When all available tasks are processed, the fleet enters the **Standby** state. Workers that are no longer needed for providing **Minimum container slots** are scaled down until new tasks are added.
 
 ```sh
 ibmcloud ce fleet run --name my-fleet --image icr.io/codeengine/helloworld --subnetpool-name my-pool --tasks-state-store mytaskstore --tasks 1

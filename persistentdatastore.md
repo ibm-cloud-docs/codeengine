@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-09-22"
 
 keywords: code engine, persistent data store, pds, object storage, mount bucket, s3fs, mount cos, apps, jobs
 
@@ -15,7 +15,8 @@ subcollection: codeengine
 # Working with persistent data stores
 {: #persistent-data-store}
 
-You can mount an {{site.data.keyword.cos_full_notm}}(COS) bucket to your {{site.data.keyword.codeenginefull}} application or job by using a **persistent data store**. This feature allows your workloads to access the contents of a COS bucket through the local file system by using standard file operations.
+You can mount an {{site.data.keyword.cos_full_notm}} (COS) bucket to your {{site.data.keyword.codeenginefull}} application or job by using a **persistent data store**. This feature allows your workloads to access the contents of a COS bucket through the local file system by using standard file operations.
+{: shortdesc}
 
 A persistent data store in {{site.data.keyword.codeengineshort}} is a reference to an existing data store that {{site.data.keyword.codeengineshort}} does not manage. Currently, {{site.data.keyword.cos_full_notm}} is the only supported data store type. By creating a reference to your COS bucket, you can mount it directly into your application or job container's file system.
 
@@ -51,11 +52,13 @@ Now, create the persistent data store resource in {{site.data.keyword.codeengine
 3. From the Persistent data stores page, click **Create**.
 4. From the Create a persistent data store page, complete the following steps:
     1. Provide a name; for example, `mysecret-hmac`.
-    2. Specify if to **Select existing** COS bucket specification or if you want to **Add manually**.
-    3. **Select a COS instance** or specify its name manually.
-    4. **Select a bucket** or specify its name manually.
-    5. Select the HMAC **Access secret** needed to authenticate to the COS instance.
-    6. Click **Create** to create the persistent data store.
+    2. Click **Configure** to specify the Cloud object storage bucket that provides the backing storage.
+    3. Specify if to select an **Existing instance** or if you want to create a **New instance**.
+    4. Depending on your choice, **Select a COS instance** or specify its name manually.
+    5. Select an **Existing Bucket** or a **Bucket CRN**. You can also create a **New Bucket**.
+    6. Agree to the Terms and Conditions, and then click **Apply**.
+    7. For the HMAC secret, select an existing one or choose **Code Engine generated secret**.
+    8. Click **Add** to create the persistent data store.
 
 ## Step 3: Mount the data store into a workload by using the console
 {: #pds-mount-workload-ui}
@@ -111,7 +114,7 @@ Before you can work with persistent data stores, ensure that the following prere
 - You must have an [{{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-provision).
 - You must create a service credential for your {{site.data.keyword.cos_short}} instance with [**HMAC credentials**](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main) enabled. The HMAC credential requires at least the **Writer** service access role to read from and write to the bucket. If you only need read access, choose the **Content Reader** service access role instead.
 - You must install the IBM Cloud Object Storage plugin by running the following command:
-  ```txt
+  ```sh
   ibmcloud plugin install cloud-object-storage
   ```
   {: pre}
@@ -170,7 +173,7 @@ ibmcloud ce application create --name myapp --image icr.io/codeengine/helloworld
 {: #pds-mount-job-cli}
 {: cli}
 
-Similarly, this command creates a job named `myjob` and mounts the same data store to the `/mnt/bucket` directory.
+The following command creates a job named `myjob` and mounts the `my-cos-bucket-pds` data store to the `/mnt/bucket` directory.
 
 ```bash
 ibmcloud ce job create --name myjob --image icr.io/codeengine/helloworld --mount-data-store /mnt/bucket=my-cos-bucket-pds
@@ -190,19 +193,20 @@ ibmcloud ce application create --name myapp --image icr.io/codeengine/helloworld
 ```
 {: pre}
 
-Or for a job:
+The following command mounts the same subpath for a job:
 
 ```bash
 ibmcloud ce job create --name myjob --image icr.io/codeengine/helloworld --mount-data-store /mnt/bucket=my-cos-bucket-pds:path/in/bucket
 ```
 {: pre}
 
-> **Note:** The `path/in/bucket` must be a valid prefix in your COS bucket. Only the contents under that path will be accessible from the mounted directory.
+The `path/in/bucket` must be a valid prefix in your COS bucket. Only the contents under that path will be accessible from the mounted directory.
+{: note}
 
 ## Step 4: Accessing files in the mounted data store
 {: #pds-access-files}
 
-Once your application or job is running, the code can interact with the mounted COS bucket as if it were a local directory. All standard file system operations are supported.
+After your application or job is running, the code can interact with the mounted COS bucket as if it were a local directory. All standard file system operations are supported.
 
 For example, inside your container, you can list files, read content, and write new files:
 
@@ -232,11 +236,11 @@ The mount is implemented using [`s3fs`](https://github.com/s3fs-fuse/s3fs-fuse){
 - **Consistency:**
   - {{site.data.keyword.cos_full_notm}} provides strong read-after-write consistency for new objects, but eventual consistency for object overwrites and deletes. This means that after an update or deletion, read operations might temporarily return stale data.
   - Changes made to the bucket from outside the mount (for example, directly via the COS API or another client) are not immediately detected and might not be visible for some time.
-- **File System Semantics:**
+- **File system semantics:**
   - Standard POSIX file system features are not fully supported. Specifically, there are **no atomic renames** of files or directories and **no hard links**.
 - **Concurrency:**
   - There is no coordination between multiple clients (for example, multiple app instances) mounting the same bucket. Concurrent writes to the same file from different instances can lead to data loss or corruption.
-- **Event Subscriptions:**
+- **Event subscriptions:**
   - If you have configured an event subscription for your {{site.data.keyword.cos_short}} bucket, be aware that file create operations performed through the mount may generate multiple update events. This can result in your Code Engine app or job being triggered more than once for a single file operation, which may affect downstream processing or event-driven workflows.
 
 Due to these limitations, this feature is not suitable for all workloads. It is best suited for workloads that primarily read large files, such as in deep learning or data analytics, where good throughput can be achieved. It is not recommended for workloads that require low latency, frequent small writes, or transactional file operations.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-14"
+lastupdated: "2026-09-25"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -171,6 +171,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [September 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september26)
+
+    * [24 September 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2426)
+
+        * CLI version 1.63.2 released
 
     * [03 September 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep0326)
 
@@ -3306,6 +3310,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Worker Image Changelog v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-v1_0)
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
+
+    * [Worker image `v1.0.354`, released 21 September 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_354)
 
     * [Worker image `v1.0.350`, released 14 September 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_350)
 
