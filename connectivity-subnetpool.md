@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-10-05"
 
 keywords: connectivity, subnet pool, fleet
 
@@ -47,7 +47,7 @@ You can manage subnet pools by using the console or the CLI.
     - **To create a new VPC**: Click **Create** to create a new VPC. After the VPC is created, the newly created subnets for this VPC are automatically added to the subnet pool with the custom security group that was created along with the VPC applied. You can either proceed to step 5 to confirm the subnet pool creation, or update the automatically applied selection (for example, remove a subnet and add it with a different security group).
     - **To use an existing VPC**:
         1. Select the VPC.
-        2. Select the VPC subnet you want to specify for network placement
+        2. Select the VPC subnet you want to specify for network placement.
         3. Optional: Select one or more VPC security group to attach to the subnet. If you do not specify any security group, the default security group of the VPC is used.
         4. Click **Add to subnet pool** to add the subnet CRN and optionally its security group CRN to the subnet pool. Repeat this step if the subnet pool should allow network placement to multiple subnets.
 5. Confirm your configuration by clicking **Create**.
@@ -71,7 +71,7 @@ You can manage subnet pools by using the console or the CLI.
 You can delete previously defined subnet pools if you no longer use them.
 
 To run a fleet, you need at least one subnet pool configured within a project.
-{: remember}
+{: important}
 
 1. Go to the Connectivity page:
     1. Select your project from the [Projects page in the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}.
@@ -89,15 +89,15 @@ To run a fleet, you need at least one subnet pool configured within a project.
 
 Before you can work with subnet pools using CLI commands, you must:
 
-1. Log in into [{{site.data.keyword.cloud_notm}} and target a region, account and resource group. Then select your {{site.data.keyword.codeengineshort}} project. See [Getting started with the Code Engine CLI](/docs/codeengine?topic=codeengine-cecli-getstart).
-    ```txt
+1. Log in to {{site.data.keyword.cloud_notm}} and target a region, account and resource group. Then select your {{site.data.keyword.codeengineshort}} project. See [Getting started with the Code Engine CLI](/docs/codeengine?topic=codeengine-cecli-getstart).
+    ```sh
     ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
     ibmcloud ce project select -n PROJECT_NAME
     ```
     {: pre}
 
 2. Install the VPC infrastructure plugin by running the following command:
-   ```txt
+   ```sh
    ibmcloud plugin install vpc-infrastructure
    ```
    {: pre}
@@ -160,14 +160,14 @@ Follow these guidelines:
 
 1. Select your {{site.data.keyword.codeengineshort}} project. For example:
 
-    ```txt
+    ```sh
     ibmcloud ce project select --name myproject
     ```
     {: pre}
 
-2. Create a subnet pool by specifying the `--name`, `--subnet-crn`, and optionally `--security-group-crn` options. The `--subnet-crn` and `--security-group-crn` options can be specified multiple times. To correlate `--security-group-crn` values with their `--subnet-crn` value, use an arbitrary identifier as key. Refer to this example, which uses keys `S1` and `IDx`:
+2. Create a subnet pool by specifying the `--name`, `--subnet-crn`, and optionally `--security-group-crn` options. The `--subnet-crn` and `--security-group-crn` options can be specified multiple times. To correlate `--security-group-crn` values with their `--subnet-crn` value, use an arbitrary identifier as key. See the following example, which uses keys `S1` and `IDx`:
 
-    ```txt
+    ```sh
     ibmcloud ce connectivity subnetpool create --name my-other-pool \
         --subnet-crn S1=crn:v1:bluemix:public:is:eu-de-3:a/abcdefabcdefabcdefabcd1234567890::subnet:1a1a-2b2b2b2b-3c3c-4d4d-5e5e-6f6f6f6f6f21 \
         --security-group-crn S1=crn:v1:bluemix:public:is:eu-de:a/abcdefabcdefabcdefabcd1234567890::security-group:2b2b-3c3c3c3c-4d4d-5e5e-6f6f-7g7g7g7g7g7g \
@@ -183,14 +183,14 @@ Follow these guidelines:
 
 To show a specific subnet pool, specify the name or ID. For example:
 
-```txt
+```sh
 ibmcloud ce connectivity subnetpool get --name my-other-pool
 ```
 {: pre}
 
 To show all subnet pools, run:
 
-```txt
+```sh
 ibmcloud ce connectivity subnetpool list
 ```
 {: pre}
@@ -202,18 +202,18 @@ ibmcloud ce connectivity subnetpool list
 You can delete previously defined subnet pools if you no longer use them.
 
 To run a fleet, you need at least one subnet pool configured within a project.
-{: remember}
+{: important}
 
 To delete a subnet pool with confirmation, specify the name or ID. For example:
 
-```txt
+```sh
 ibmcloud ce connectivity subnetpool delete --name my-other-pool
 ```
 {: pre}
 
 To delete a subnet pool forcefully (that is, without confirmation), run:
 
-```txt
+```sh
 ibmcloud ce connectivity subnetpool delete --name my-other-pool --force
 ```
 {: pre}
