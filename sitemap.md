@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-05"
+lastupdated: "2026-10-06"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2819,6 +2819,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Updating an app to reference an image that is built from source code from the console](/docs/codeengine?topic=codeengine-update-app#update-app-source-console)
 
     * [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
+
+[Copying an {{site.data.keyword.codeengineshort}} application to create a new application](/docs/codeengine?topic=codeengine-appdeploy-copycreate#appdeploy-copycreate)
+
+* [What is copied when you use copy create?](/docs/codeengine?topic=codeengine-appdeploy-copycreate#copycreate-what-is-copied)
+
+* [Copying an app from the console](/docs/codeengine?topic=codeengine-appdeploy-copycreate#copycreate-console)
+
+* [Updating a copied app](/docs/codeengine?topic=codeengine-appdeploy-copycreate#copycreate-update)
 
 [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale#app-scale)
 

@@ -79,6 +79,7 @@ toc:
           - appdeploy-localsource.md
           - appdeploy-access.md
           - appdeploy-update.md
+          - appdeploy-copycreate.md
           - app-scale.md
           - app-domainmapping.md
           - app-probes.md
