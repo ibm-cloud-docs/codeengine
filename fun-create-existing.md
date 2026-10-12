@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-10-12"
 
 keywords: functions in code engine, functions, serverless, create functions in code engine, function workloads in code engine, registry secret, registry access, registry access secret
 
@@ -47,16 +47,13 @@ Create a function that uses an existing code bundle by using the {{site.data.key
 4. Select **Function**.
 5. Enter a name for the function; for example, `myfunction`. Use a name for your function that is unique within the project.
 6. Select a **Runtime image** for your function code. For more information, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
-7. Select to **Use an existing code bundle**.
+7. Select **Reference an existing code bundle**.
 8. Specify the location of your code bundle in the format `registry/namespace/repository:tag`.
-9. If your code bundle is in your account or in a public registry, you do not need to specify a registry secret. If the code bundle is in a private registry, you must add the registry secret. For additional help, click **Help me specify the code bundle**. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
+9. If your code bundle is in your account or in a public registry, you do not need to specify a registry secret. If the code bundle is in a private registry, you must add the registry secret. For additional help, click **Specify code bundle**. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
 10. Specify your resource information, including [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo) and [Scale down delay](/docs/codeengine?topic=codeengine-fun-work#functions-scale).
 11. Optionally, specify a [custom domain](/docs/codeengine?topic=codeengine-fun-domainmapping) or [environment variables](/docs/codeengine?topic=codeengine-envvar).
 12. Click **Create**.
 13. After the function status changes to **Ready**, you can test the function. Click **Test function** and then click **Send request**. To open the function in a web page, click **Function URL**.
-
-
-
 
 ## Deploying a function with an existing code bundle with the CLI
 {: #fun-cr-cli}
