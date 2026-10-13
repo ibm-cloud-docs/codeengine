@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-22"
+lastupdated: "2026-10-13"
 
-keywords: fleets, fleets in code engine, large volumes in code engine, deploy fleets in code engine, running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume, add task
+keywords: fleets, fleets in code engine, large volumes in code engine, deploy fleets in code engine, running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume, add task, copy, duplicate, clone, copy create fleet in code engine
 
 subcollection: codeengine
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Running a fleet
 {: #fleet-run}
 
-Follow these steps to run a {{site.data.keyword.codeengineshort}} fleet with the CLI or with the console.
+Follow these steps to run a {{site.data.keyword.codeengineshort}} fleet with the CLI or the console.
 {: shortdesc}
 
 ## Before you begin
@@ -103,6 +103,26 @@ You can create a fleet without providing any tasks. If **Minimum container slots
 Use this approach when the fleet is a shared, long-lived resource that receives tasks from multiple sources or on a schedule.
 
 To create a fleet without initial tasks, follow the steps in [Running a fleet by using the console](#fleet-run-ui). In step 8, set **Specify initial tasks** to **No**.
+
+## Copying a fleet to create a new fleet
+{: #fleet-copycreate-console}
+{: ui}
+
+You can create a new fleet by copying the configuration of an existing fleet with the {{site.data.keyword.codeengineshort}} console. The *create copy* feature duplicates all configuration settings of the source fleet — including the container image reference, resource allocation, environment variables, and scaling settings — into a new fleet that you can then customize independently. Tasks are not copied.
+
+The new fleet behaves as an independent workload. The source fleet is not affected by any changes to the new fleet, and vice versa.
+
+Before you begin, make sure that an existing fleet is already created in your project.
+
+1. Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
+2. Click the name of your project to open the Overview page.
+3. Click **Fleets** to open a list of your fleets.
+4. Open the **Create copy** option in one of the following ways:
+    * Click the name of the fleet that you want to copy to open its fleet page. Then click the **Actions** menu in the upper right corner of the page and select **Create copy**.
+    * In the fleets list, click the row actions icon (⋮) of the fleet that you want to copy and select **Create copy**.
+5. On the Create fleet page, the configuration of the source fleet is pre-populated. Enter a unique name for the new fleet. Use a name that is unique within the project.
+6. Review and optionally modify any configuration settings for the new fleet, such as the container image, resource allocation, environment variables, or scaling settings.
+7. Click **Create** to create the new fleet.
 
 ## Adding tasks to a fleet by using the console
 {: #fleet-add-task-console}

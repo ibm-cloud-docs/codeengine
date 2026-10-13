@@ -3225,6 +3225,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a fleet without initial tasks by using the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-without-task-console)
 
+* [Copying a fleet to create a new fleet](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-copycreate-console)
+
 * [Adding tasks to a fleet by using the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-add-task-console)
 
 * [Creating a fleet without initial tasks by using the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-without-task-cli)
