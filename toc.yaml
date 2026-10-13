@@ -93,6 +93,7 @@ toc:
           - job-create-private.md
           - job-create-source.md
           - job-create-localsource.md
+          - job-copycreate.md
           - job-run.md
           - job-access.md
           - job-update.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-12"
+lastupdated: "2026-10-13"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2966,6 +2966,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code#job-local-source-code)
 
 * [Next steps](/docs/codeengine?topic=codeengine-job-local-source-code#nextsteps-job-localdeploysource)
+
+[Copying a {{site.data.keyword.codeengineshort}} job to create a new job](/docs/codeengine?topic=codeengine-job-copycreate#job-copycreate)
+
+* [What is copied when you use copy create?](/docs/codeengine?topic=codeengine-job-copycreate#job-copycreate-what-is-copied)
+
+* [Copying a job from the console](/docs/codeengine?topic=codeengine-job-copycreate#job-copycreate-console)
+
+* [Running a copied job](/docs/codeengine?topic=codeengine-job-copycreate#job-copycreate-run)
+
+* [Updating a copied job](/docs/codeengine?topic=codeengine-job-copycreate#job-copycreate-update)
 
 [Running a job](/docs/codeengine?topic=codeengine-run-job#run-job)
 
