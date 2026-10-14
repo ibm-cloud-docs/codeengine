@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-01"
+lastupdated: "2026-10-14"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -34,11 +34,15 @@ To set up {{site.data.keyword.mon_short}},
 4. After the instance is ready, enable platform metrics by clicking **Configure platform metrics**.
 5. Select a region and then a {{site.data.keyword.mon_short}} instance from that region. If you have deployments in more than one region, you must provision {{site.data.keyword.mon_short}} and enable platform metrics for each region.
 
+
+
 You can also start monitoring from your {{site.data.keyword.codeengineshort}} dashboard by selecting **Launch Monitoring**.
 {: tip}
 
 You can adapt the dashboards by creating a copy of a dashboard template and by editing it.
 {: tip}
+
+
 
 ## Accessing your {{site.data.keyword.mon_full_notm}} metrics
 {: #access-monitor}
@@ -46,9 +50,12 @@ You can adapt the dashboards by creating a copy of a dashboard template and by e
 To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in {{site.data.keyword.mon_short}}:
 
 1. From the {{site.data.keyword.cloud_notm}} navigation menu, select **Observability**.
-2. Select **Monitoring**.
+2. Select **Monitoring**. Then select **Instances**.
 3. Click **Dashboard** in the **View** column of your monitoring instance to open the dashboard for your monitoring instance.
+
 4. From the navigation menu, select **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Project Overview** or **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Functions Overview**. If you don't see the {{site.data.keyword.codeengineshort}} dashboard in the menu, you can start monitoring from your {{site.data.keyword.codeengineshort}} application or job by selecting **Add Monitoring**.
+
+
 5. Select the `10M` timeline or greater. Because Platform Metrics data has a 1 minute granularity, the first timeline that shows metrics is the `10M` timeline.
 
 You can also start the {{site.data.keyword.mon_short}} dashboard at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
@@ -85,9 +92,10 @@ When you use the {{site.data.keyword.mon_full_notm}} service to monitor {{site.d
 | [`ibm_codeengine_functions_init_time_sum`](#ibm_codeengine_functions_init_time_sum) |
 | [`ibm_codeengine_functions_status_success`](#ibm_codeengine_functions_status_success) |
 | [`ibm_codeengine_functions_status_error_application`](#ibm_codeengine_functions_status_error_application) |
-| [`ibm_codeengine_functions_status_error_developer`](#ibm_codeengine_functions_status_error_developer) |
+| [`ibm_codeengine_functions_status_error_developer`](#ibm_codeengine_functions_status_error_developer)|
 | [`ibm_codeengine_jobruns`](#ibm_codeengine_jobruns) |
-{: caption="Table 1: Metrics available for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
+{: caption="Metrics available for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
+
 
 ### `ibm_codeengine_application_actual_instances`
 {: #ibm_codeengine_application_actual_instances}
@@ -442,7 +450,7 @@ Number of invoked functions that fail during {{site.data.keyword.codeengineshort
 ### `ibm_codeengine_functions_status_error_developer`
 {: #ibm_codeengine_functions_status_error_developer}
 
-Number of invoked functions that fail with an error in your code. 
+Number of invoked functions that fail with an error in your code.
 
 | Metadata | Description |
 |----------|-------------|
@@ -451,6 +459,8 @@ Number of invoked functions that fail with an error in your code.
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name, function type` |
 {: caption="Table 24: Number of invoked functions that fail with an error in your code" caption-side="top"}
+
+
 
 
 ### `ibm_codeengine_jobruns`

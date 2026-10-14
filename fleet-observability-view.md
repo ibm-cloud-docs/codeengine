@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-10-14"
 
 keywords: fleets observability, viewing logs for fleets, viewing, viewing logs, monitoring for fleets, monitoring data
 
@@ -71,9 +71,11 @@ You can save this logging view and filter settings for other workloads.
 
 Follow the steps to view your fleet monitoring data.
 
+
+
 1. Navigate to the [Monitoring instances page](https://cloud.ibm.com/observability/monitoring){: external} in the console.
 2. Find the monitoring instance for the Code Engine project that your fleet runs in and click **Dashboard**.
-3. In the monitoring dashboard, click **Dashboards** > **Host Infrastructure** > **Host Resource Usage** to view the monitoring data.
+3. In the monitoring dashboard, click **Dashboards** > **Host Infrastructure** > **Host Resource Usage** to view the monitoring data. 
 4. Optional. Customize the monitoring dashboard to tailor it to your fleets data.
     1. Click **Copy to My Dashboards**.
     2. Add a name for the custom dashboard.

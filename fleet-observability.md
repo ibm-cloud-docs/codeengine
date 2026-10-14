@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-10-14"
 
 keywords: fleets, fleet logging, fleet monitoring, fleet observability, observability, logging, monitoring, Cloud Logs, Cloud Monitoring
 
@@ -168,7 +168,9 @@ For each zone in the VPE, add a reserved IP address to one subnet.
 | --- | ----- |
 | `monitoring_ingestion_region` | The region that the Cloud Monitoring instance exists in. Example: `au-syd`.  |
 | `monitoring_ingestion_key` | The monitoring agent key. This value was found in a [previous step](#monitor-key). |
-{: caption="Logging key-value pairs for the fleets default secret." caption-side="bottom"}
+{: caption="Monitoring key-value pairs for the fleets default secret." caption-side="bottom"}
+
+
 
 ### 6. View your fleets data in the monitoring dashboard
 {: #monitor-view}

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-10-14"
 
-keywords: project, projects in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine, binding in code engine, service binding in code engine, project settings, project integrations, configuring project-wide settings, service binding operations, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, operator secret, ibmcloud-operator-secret, service bind, access, bind, bound, registries, container registry, image registry, apikey, API key, images, registry access, registry secret, service id, registry secret, registry access
+keywords: project, projects in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, code engine, binding in code engine, service binding in code engine, project settings, project integrations, configuring project-wide settings, service binding operations, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, operator secret, ibmcloud-operator-secret, service bind, registries, container registry, image registry, API key, service id, registry secret, registry access
 
 subcollection: codeengine
 
@@ -21,6 +21,7 @@ By using the Project settings pages in the console, you can review and configure
 ## What are project-wide integrations and why use them?
 {: #projectintegration-why}
 
+
 Use the Integrations page in the console when you want to configure the project-wide settings in such a way that all users of the project can perform certain actions. With sufficient permissions, you can configure service binding operations or configure access to images in {{site.data.keyword.registrylong_notm}} from a single page. If you don't have sufficient permissions to perform these actions, you can use these pages to help you understand the required permissions.
 {: shortdesc}
 
@@ -29,6 +30,8 @@ When you set project-wide settings with the Integrations page, {{site.data.keywo
 * If you want to configure settings for service binding operations, see [Configuring service binding operations](#projectintegration-sb).
 
 * If you want to configure settings to control {{site.data.keyword.codeengineshort}} managed registry access to {{site.data.keyword.registrylong_notm}}, see [Configuring project-wide access to {{site.data.keyword.registryshort_notm}}](#projectintegration-cr).
+
+
 
 
 ## Configuring project-wide service binding operations
