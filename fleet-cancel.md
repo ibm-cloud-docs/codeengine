@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-07"
+lastupdated: "2026-10-05"
 
-keywords: fleets, fleets in code engine, fleets in code engine, large volumes in code engine, deploy fleets in code engine,  running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
+keywords: fleets, fleets in code engine, large volumes in code engine, deploy fleets in code engine, running fleets in code engine, deploying fleets in code engine, fleet, instance, task, large volume
 
 subcollection: codeengine
 
@@ -16,6 +16,7 @@ subcollection: codeengine
 {: #fleets-cancel}
 
 Review this information carefully before you cancel or delete a fleet.
+{: shortdesc}
 
 ## Canceling a fleet
 {: #fleets-cancel-type}
@@ -34,7 +35,7 @@ Hard stop
 
 To cancel a fleet in the CLI, run the following command. When prompted, specify `y` to confirm that you want to cancel the fleet.
 
-```txt
+```sh
 ibmcloud ce fleet cancel --fleet-id FLEET_ID [--hard] [--force]
 ```
 {: pre}
@@ -48,12 +49,11 @@ ibmcloud ce fleet cancel --fleet-id FLEET_ID [--hard] [--force]
 `--force`
 :   Force the cancellation without a confirmation prompt.
 
-
 ### Canceling a fleet in the {{site.data.keyword.codeengineshort}} console
 {: #fleets-cancel-ui}
 {: ui}
 
-Follow the steps to cancel a fleet in the UI.
+Follow the steps to cancel a fleet in the {{site.data.keyword.codeengineshort}} console.
 
 1. Navigate to the [{{site.data.keyword.codeengineshort}} project page](https://cloud.ibm.com/containers/serverless/projects){: external}. Select the relevant project, then select the fleet you want to cancel.
 2. Click **Actions**.
@@ -75,9 +75,8 @@ A fleet is not deleted automatically. Since there is a quota limit of 1000 fleet
 
 To delete a fleet in the CLI, run the following command. When prompted, specify `y` to confirm that you want to delete the fleet.
 
-
-```txt
-ibmcloud ce fleet delete --fleet-id FLEET_ID [--force] [--ignore-not-found] [--wait] [--wait-timout]
+```sh
+ibmcloud ce fleet delete --fleet-id FLEET_ID [--force] [--ignore-not-found] [--wait] [--wait-timeout]
 ```
 {: pre}
 
@@ -85,7 +84,7 @@ ibmcloud ce fleet delete --fleet-id FLEET_ID [--force] [--ignore-not-found] [--w
 :   The ID of the fleet.
 
 `--force`
-:   Force the cancellation without a confirmation prompt.
+:   Force the deletion without a confirmation prompt.
 
 `--ignore-not-found`
 :   Do not fail if the specified fleet is not found.
@@ -102,7 +101,7 @@ For a complete list of all available command options, see the [CLI docs](/docs/c
 {: #fleet-delete-ui}
 {: ui}
 
-Follow the steps to delete a fleet in the UI.
+Follow the steps to delete a fleet in the {{site.data.keyword.codeengineshort}} console.
 
 1. Navigate to the [{{site.data.keyword.codeengineshort}} project page](https://cloud.ibm.com/containers/serverless/projects){: external}. Select the relevant project, then select the fleet you want to delete.
 2. Go to the row with the fleet that you want to remove, click the three dots row actions icon, and select **Delete** option. Alternatively, select the rows with the fleets that you want to remove and click the delete (trash can) icon.
@@ -127,7 +126,7 @@ You can delete individual or groups of workers in a fleet. The remaining workers
 
 To delete a worker in a fleet, run the following command. You can specify more than one worker. When prompted, specify `y` to confirm that you want to delete the worker.
 
-```txt
+```sh
 ibmcloud ce fleet worker delete --fleet-id FLEET_ID --worker-name WORKER_NAME_1 --worker-name WORKER_NAME_2 [--hard] [--force] [--ignore-not-found] [--wait]
 ```
 {: pre}
@@ -154,7 +153,7 @@ ibmcloud ce fleet worker delete --fleet-id FLEET_ID --worker-name WORKER_NAME_1 
 {: #fleet-delete-worker-ui}
 {: ui}
 
-Follow the steps to delete a fleet worker in the UI.
+Follow the steps to delete a fleet worker in the {{site.data.keyword.codeengineshort}} console.
 
 1. Navigate to the [{{site.data.keyword.codeengineshort}} project page](https://cloud.ibm.com/containers/serverless/projects){: external}. Select the relevant project. Then select the relevant fleet.
 2. From the fleet page, select the **Workers** tab.

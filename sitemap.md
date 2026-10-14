@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-25"
+lastupdated: "2026-10-13"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2820,6 +2820,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
 
+[Copying an {{site.data.keyword.codeengineshort}} application to create a new application](/docs/codeengine?topic=codeengine-appdeploy-copycreate#appdeploy-copycreate)
+
+* [What is copied when you use copy create?](/docs/codeengine?topic=codeengine-appdeploy-copycreate#copycreate-what-is-copied)
+
+* [Copying an app from the console](/docs/codeengine?topic=codeengine-appdeploy-copycreate#copycreate-console)
+
+* [Updating a copied app](/docs/codeengine?topic=codeengine-appdeploy-copycreate#copycreate-update)
+
 [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale#app-scale)
 
 * [How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
@@ -2958,6 +2966,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code#job-local-source-code)
 
 * [Next steps](/docs/codeengine?topic=codeengine-job-local-source-code#nextsteps-job-localdeploysource)
+
+[Copying a {{site.data.keyword.codeengineshort}} job to create a new job](/docs/codeengine?topic=codeengine-job-copycreate#job-copycreate)
+
+* [What is copied when you use copy create?](/docs/codeengine?topic=codeengine-job-copycreate#job-copycreate-what-is-copied)
+
+* [Copying a job from the console](/docs/codeengine?topic=codeengine-job-copycreate#job-copycreate-console)
+
+* [Running a copied job](/docs/codeengine?topic=codeengine-job-copycreate#job-copycreate-run)
+
+* [Updating a copied job](/docs/codeengine?topic=codeengine-job-copycreate#job-copycreate-update)
 
 [Running a job](/docs/codeengine?topic=codeengine-run-job#run-job)
 
@@ -3207,6 +3225,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a fleet without initial tasks by using the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-without-task-console)
 
+* [Copying a fleet to create a new fleet](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-copycreate-console)
+
 * [Adding tasks to a fleet by using the console](/docs/codeengine?topic=codeengine-fleet-run&interface=ui#fleet-add-task-console)
 
 * [Creating a fleet without initial tasks by using the CLI](/docs/codeengine?topic=codeengine-fleet-run&interface=cli#fleet-without-task-cli)
@@ -3310,6 +3330,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Worker Image Changelog v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-v1_0)
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
+
+    * [Worker image `v1.0.372`, released 12 October 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_372)
+
+    * [Worker image `v1.0.366`, released 05 October 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_366)
 
     * [Worker image `v1.0.354`, released 21 September 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_354)
 

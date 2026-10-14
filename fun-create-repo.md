@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-01"
+lastupdated: "2026-10-12"
 
 keywords: functions in code engine, function workloads, function source code, function git repository
 
@@ -21,7 +21,7 @@ You can create your function directly from source code that is located in a Git 
 
 A code bundle is a collection of files that represents your function code. This code bundle is injected into the runtime container. Your code bundle is created by {{site.data.keyword.codeengineshort}} and is stored in container registry or inline with the function. A code bundle is not a Open Container Initiative (OCI) standard container image.
 
-In this scenario, {{site.data.keyword.codeengineshort}} builds a code bundle from your Git repository source, automatically uploads the code bundle to your container registry, and then creates your function to reference this built code bundle. You need to provide only a name for the function, the URL to the Git repository, and the runtime for the function. In this case, {{site.data.keyword.codeengineshort}} manages the namespace for you. However, if you want to use a different container registry, then you must specify the code bundle and a registry secret for that container registry. 
+In this scenario, {{site.data.keyword.codeengineshort}} builds a code bundle from your Git repository source, automatically uploads the code bundle to your container registry, and then creates your function to reference this built code bundle. You need to provide only a name for the function, the URL to the Git repository, and the runtime for the function. In this case, {{site.data.keyword.codeengineshort}} manages the namespace for you. However, if you want to use a different container registry, then you must specify the code bundle and a registry secret for that container registry.
 
 For information about required permissions for accessing image registries, see [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
 
@@ -31,7 +31,7 @@ For information about required permissions for accessing image registries, see [
 
 
 Create a function with source code from the console.
-{: shortdesc} 
+{: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating**.
@@ -39,12 +39,12 @@ Create a function with source code from the console.
 4. Select **Function**.
 5. Enter a name for the function; for example, `myfunction`. Use a name for your function that is unique within the project.
 6. Select a **Runtime image** for your function code. For more information, see [Runtimes](/docs/codeengine?topic=codeengine-fun-runtime).
-7. Select to **Build code bundle from source code**. When you select this option, your function is created from source code and stored in container registry.
-8. Select a source repository, for example `https://github.com/IBM/CodeEngine`. If you choose to use the sample source, you do not need require credentials so you can select `None` for the **Code repo access**. You can optionally provide a branch name. If you do not provide a branch name and you leave the field empty, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository. Click **Next**.  
-9. Select a strategy for your build and resources for your build. For more information about build options, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build). Click **Next**.
+7. Select to **Build from source in code repository**. When you select this option, your function is created from source code and stored in container registry.
+8. Select a source repository, for example `https://github.com/IBM/CodeEngine`. If you choose to use the sample source, you do not need credentials so you can select `None` for the **SSH secret**. You can optionally provide a branch name. If you do not provide a branch name and you leave the field empty, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository.
+9. Select a strategy for your build and resources for your build. For more information about build options, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build).
 10. Select a container registry location, such as `IBM Registry Dallas` to specify where to store the image of your build output. If your registry is private, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
 11. Provide registry information about where to store the image of your build output. Select an existing **Registry secret** or create a new one. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `{{site.data.keyword.codeengineshort}} managed secret` and let {{site.data.keyword.codeengineshort}} create and manage the secret for you.
-12. Select a namespace, name, and a tag for your image. If you are building your image to an {{site.data.keyword.registrylong_notm}} instance that is in your account, you can select an existing namespace or let {{site.data.keyword.codeengineshort}} create and manage the namespace for you. For additional help, click **Help me specify the code bundle**. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
+12. Select a namespace, name, and a tag for your image. If you are building your image to an {{site.data.keyword.registrylong_notm}} instance that is in your account, you can select an existing namespace or let {{site.data.keyword.codeengineshort}} create and manage the namespace for you. For additional help, click **Specify code bundle**. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
 13. Specify your resource information, including [CPU and memory combinations](/docs/codeengine?topic=codeengine-fun-runtime#fun-supported-combo) and [Scale down delay](/docs/codeengine?topic=codeengine-fun-work#functions-scale). 
 14. Optionally, specify a [custom domain](/docs/codeengine?topic=codeengine-fun-domainmapping) or [environment variables](/docs/codeengine?topic=codeengine-envvar). You can add these options later.
 15. Click **Create**.
@@ -60,7 +60,7 @@ You can invoke your function by clicking **Test function** and then **Send reque
 Use the **`function create`** command to both build a code bundle from your Git repository source, and create your function to reference this built code bundle. For a complete listing of options, see the [**`ibmcloud ce function create`**](/docs/codeengine?topic=codeengine-cli#cli-function-create) command.
 
 
-Before you begin
+**Before you begin**
 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
@@ -93,7 +93,7 @@ https://myfun.11a66hbi3rhz.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
 
-Notice the output of the **`function create`** command provides information on the progression of the build run before the function is created. 
+The output of the **`function create`** command provides information on the progression of the build run before the function is created. 
 {: tip}
 
 In this example, the built code bundle is uploaded to the `ce--abcde-4svg40kna19` namespace in {{site.data.keyword.registryshort}}. 
@@ -174,7 +174,7 @@ When your function is created from repository source code or from [local source]
 ## Including dependencies for your function
 {: #fun-package-repo}
 
-You can create functions in many different programming languages. When your function code grows complex, you can add code modules as dependencies for your function. Each language has its own modules to use with your function code. For example, Node.js dependencies are usually existing `npm` modules, whereas Python uses Python packages. These dependencies must be declared and created in a file with your source code
+You can create functions in many different programming languages. When your function code grows complex, you can add code modules as dependencies for your function. Each language has its own modules to use with your function code. For example, Node.js dependencies are usually existing `npm` modules, whereas Python uses Python packages. These dependencies must be declared and created in a file with your source code.
 
 ### Including modules for a Node.js function
 {: #function-nodejs-dep-repo}
@@ -222,7 +222,7 @@ Create a function that includes a dependency for a specific Node.js module by cr
     {: codeblock}
 
 
-3. Create your files as a function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option. The following example pulls the files from the `https://github.com/IBM/CodeEngine` public repository.
+3. Create your files as a function in {{site.data.keyword.codeengineshort}}. Both of the previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option. The following example pulls the files from the `https://github.com/IBM/CodeEngine` public repository.
   
     ```sh
     ibmcloud ce fn create -n nodelorem -runtime nodejs --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-codebundle-nodejs/
@@ -239,7 +239,7 @@ For more information about the `fn create` command and its options, see [Create 
 
 Create a function that includes a dependency for a specific Python module by creating a `requirements.txt` file. In this case, both the source code and requirements file are located in the same folder.
 
-1. Create your function by saving your code into a `__main__.py` file 
+1. Create your function by saving your code into a `__main__.py` file.
 
     ```py
     # use third-party 'lorem-ipsum' package to generate random words
@@ -271,7 +271,7 @@ Create a function that includes a dependency for a specific Python module by cre
     {: codeblock}
 
 
-2. Create a `requirements.txt` containing your required dependencies for your function
+2. Create a `requirements.txt` containing your required dependencies for your function.
 
     ```sh
     lorem-text
@@ -279,7 +279,7 @@ Create a function that includes a dependency for a specific Python module by cre
     {: codeblock}
   
 
-3. Create your files as a function in {{site.data.keyword.codeengineshort}}. Both of previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option. The following example pulls the files from the `https://github.com/IBM/CodeEngine` public repository.
+3. Create your files as a function in {{site.data.keyword.codeengineshort}}. Both of the previous files must be accessible in the repository. If they are in a private repository, create [private code repository access](/docs/codeengine?topic=codeengine-code-repositories) and then provide that value with the `--build-git-repo-secret` option. If your files are located in a directory other than main, provide the path to the directory with the `--build-context-dir` option. The following example pulls the files from the `https://github.com/IBM/CodeEngine` public repository.
   
     ```sh
     ibmcloud ce fn create -n pylorem -runtime python --build-source https://github.com/IBM/CodeEngine --build-context-dir /helloworld-samples/function-codebundle-python/
