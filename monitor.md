@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-10-14"
+lastupdated: "2026-10-15"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -112,7 +112,7 @@ The number of running instances of an app are automatically scaled up or down ba
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 2: Number of pods that are currently allocated" caption-side="bottom"}
+{: caption="Number of pods that are currently allocated" caption-side="bottom"}
 
 ### `ibm_codeengine_application_requested_instances`
 {: #ibm_codeengine_application_requested_instances}
@@ -130,7 +130,7 @@ The number of running instances of an app are automatically scaled up or down ba
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 3: Number of pods that the autoscaler requested" caption-side="bottom"}
+{: caption="Number of pods that the autoscaler requested" caption-side="bottom"}
 
 ### `ibm_codeengine_application_not_ready_instances`
 {: #ibm_codeengine_application_not_ready_instances}
@@ -147,7 +147,7 @@ Application instances that are in *not ready* state cannot serve requests. This 
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 4: Number of pods that are not ready currently" caption-side="bottom"}
+{: caption="Number of pods that are not ready currently" caption-side="bottom"}
 
 ### `ibm_codeengine_application_pending_instances`
 {: #ibm_codeengine_application_pending_instances}
@@ -164,7 +164,7 @@ You might observe pending applications when you observe automatic application sc
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 5: Number of pods that are pending currently" caption-side="bottom"}
+{: caption="Number of pods that are pending currently" caption-side="bottom"}
 
 ### `ibm_codeengine_application_desired_instances`
 {: #ibm_codeengine_application_desired_instances}
@@ -181,7 +181,7 @@ The number of running instances of an app are automatically scaled up or down ba
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 6: Number of pods that the autoscaler wants to allocate" caption-side="bottom"}
+{: caption="Number of pods that the autoscaler wants to allocate" caption-side="bottom"}
 
 ### `ibm_codeengine_application_terminating_instances`
 {: #ibm_codeengine_application_terminating_instances}
@@ -198,7 +198,7 @@ The number of running instances of an app are automatically scaled up or down ba
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 7: Number of pods that are terminating currently" caption-side="bottom"}
+{: caption="Number of pods that are terminating currently" caption-side="bottom"}
 
 ### `ibm_codeengine_application_requests_total`
 {: #ibm_codeengine_application_requests_total}
@@ -213,7 +213,7 @@ Use this metric to monitor the number of HTTPS requests that are received by you
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name, http status code` |
-{: caption="Table 8: Total number of HTTPS requests to the application" caption-side="bottom"}
+{: caption="Total number of HTTPS requests to the application" caption-side="bottom"}
 
 ### `ibm_codeengine_application_revision_count`
 {: #ibm_codeengine_application_revision_count}
@@ -230,7 +230,7 @@ An application contains one or more revisions. Each update of an application con
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name` |
-{: caption="Table 9: Number of revisions per application" caption-side="bottom"}
+{: caption="Number of revisions per application" caption-side="bottom"}
 
 ### `ibm_codeengine_application_service_count`
 {: #ibm_codeengine_application_service_count}
@@ -247,7 +247,7 @@ Use this metric to observe how many applications are in your project.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name` |
-{: caption="Table 10: Number of applications per project" caption-side="bottom"}
+{: caption="Number of applications per project" caption-side="bottom"}
 
 ### `ibm_codeengine_application_route_count`
 {: #ibm_codeengine_application_route_count}
@@ -262,7 +262,7 @@ Number of routes per application.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name` |
-{: caption="Table 11: Number of routes per application" caption-side="bottom"}
+{: caption="Number of routes per application" caption-side="bottom"}
 
 ### `ibm_codeengine_application_target_concurrency_per_pod`
 {: #ibm_codeengine_application_target_concurrency_per_pod}
@@ -279,7 +279,7 @@ Target concurrency for application scaling is configurable. See [Configuring app
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 12: The number of concurrent requests that you want for each pod" caption-side="bottom"}
+{: caption="The number of concurrent requests that you want for each pod" caption-side="bottom"}
 
 ### `ibm_codeengine_application_panic_request_concurrency`
 {: #ibm_codeengine_application_panic_request_concurrency}
@@ -296,7 +296,7 @@ While *stable* mode is used for general operations, *panic* mode has a much shor
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 13: Average of requests count over the panic window" caption-side="bottom"}
+{: caption="Average of requests count over the panic window" caption-side="bottom"}
 
 
 ### `ibm_codeengine_application_stable_request_concurrency`
@@ -314,7 +314,7 @@ While *stable* mode is used for general operations, *panic* mode has a much shor
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 14: Average of requests count over the stable window" caption-side="bottom"}
+{: caption="Average of requests count over the stable window" caption-side="bottom"}
 
 ### `ibm_codeengine_application_panic_mode`
 {: #ibm_codeengine_application_panic_mode}
@@ -331,7 +331,7 @@ While *stable* mode is used for general operations, *panic* mode has a much shor
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 15: Specifies if panic mode is enabled" caption-side="bottom"}
+{: caption="Specifies if panic mode is enabled" caption-side="bottom"}
 
 
 ### `ibm_codeengine_functions_activations`
@@ -345,7 +345,7 @@ Number of invoked functions.
 | `Metric Type` | `counter` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name, function type` |
-{: caption="Table 16: Number of invoked functions" caption-side="top"}
+{: caption="Number of invoked functions" caption-side="top"}
 
 ### `ibm_codeengine_functions_exceeded_limit`
 {: #ibm_codeengine_functions_exceeded_limit}
@@ -358,7 +358,7 @@ Number of functions that are invoked after the limit for your project is exceede
 | `Metric Type` | `counter` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name, function type` |
-{: caption="Table 17: Number of invoked functions after exceeding project limit" caption-side="top"}
+{: caption="Number of invoked functions after exceeding project limit" caption-side="top"}
 
 ### `ibm_codeengine_functions_execution_time_count`
 {: #ibm_codeengine_functions_execution_time_count}
@@ -373,7 +373,7 @@ The `ibm_codeengine_functions_execution_time_count` and `ibm_codeengine_function
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name` |
-{: caption="Table 18: Number of invoked functions that complete execution" caption-side="top"}
+{: caption="Number of invoked functions that complete execution" caption-side="top"}
 
 ### `ibm_codeengine_functions_execution_time_sum`
 {: #ibm_codeengine_functions_execution_time_sum}
@@ -388,7 +388,7 @@ The `ibm_codeengine_functions_execution_time_count` and `ibm_codeengine_function
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name` |
-{: caption="Table 19: Sum of all execution time for invoked functions" caption-side="top"}
+{: caption="Sum of all execution time for invoked functions" caption-side="top"}
 
 ### `ibm_codeengine_functions_init_time_count`
 {: #ibm_codeengine_functions_init_time_count}
@@ -403,7 +403,7 @@ The `ibm_codeengine_functions_init_time_count` and `ibm_codeengine_functions_ini
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name` |
-{: caption="Table 20: Number of functions that complete initialization" caption-side="top"}
+{: caption="Number of functions that complete initialization" caption-side="top"}
 
 ### `ibm_codeengine_functions_init_time_sum`
 {: #ibm_codeengine_functions_init_time_sum}
@@ -418,7 +418,7 @@ The `ibm_codeengine_functions_init_time_count` and `ibm_codeengine_functions_ini
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name` |
-{: caption="Table 21: Sum of all initialization time for invoked functions" caption-side="top"}
+{: caption="Sum of all initialization time for invoked functions" caption-side="top"}
 
 
 ### `ibm_codeengine_functions_status_success`
@@ -432,7 +432,7 @@ Number of functions that are successfully invoked. A function is invoked success
 | `Metric Type` | `counter` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name, function type` |
-{: caption="Table 22: Number of functions successfully invoked" caption-side="top"}
+{: caption="Number of functions successfully invoked" caption-side="top"}
 
 ### `ibm_codeengine_functions_status_error_application`
 {: #ibm_codeengine_functions_status_error_application}
@@ -445,7 +445,7 @@ Number of invoked functions that fail during {{site.data.keyword.codeengineshort
 | `Metric Type` | `counter` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name, function type` |
-{: caption="Table 23: Number of invoked functions that fail within {{site.data.keyword.codeengineshort}}" caption-side="top"}
+{: caption="Number of invoked functions that fail within {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
 ### `ibm_codeengine_functions_status_error_developer`
 {: #ibm_codeengine_functions_status_error_developer}
@@ -458,7 +458,7 @@ Number of invoked functions that fail with an error in your code.
 | `Metric Type` | `counter` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, function name, function pod name, function type` |
-{: caption="Table 24: Number of invoked functions that fail with an error in your code" caption-side="top"}
+{: caption="Number of invoked functions that fail with an error in your code" caption-side="top"}
 
 
 
@@ -476,7 +476,7 @@ Use this metric to monitor how many job runs are in your project. {{site.data.ke
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, job Name, jobrun condition` |
-{: caption="Table 25: Total number of job runs" caption-side="bottom"}
+{: caption="Total number of job runs" caption-side="bottom"}
 
 ## Attributes for segmentation
 {: #attributes}
@@ -495,7 +495,7 @@ The following attributes are available for segmenting all the metrics previously
 | `Resource group` | `ibm_resource_group_name` | The resource group where the service instance was created. |
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID associated with this metric. |
 | `Service name` | `ibm_service_name` | Name of the service that is generating this metric. |
-{: caption="Table 26: Global attributes" caption-side="bottom"}
+{: caption="Global attributes" caption-side="bottom"}
 
 ### More attributes
 {: #additional-attributes}
@@ -516,4 +516,4 @@ The following attributes are available for segmenting one or more attributes as 
 | `Function name` | `ibm_codeengine_function_name` | Name of the invoked function.  |
 | `Function pod name` | `ibm_codeengine_function_podname` | The name of the system pod that invoked the function.  |
 | `Function type` | `ibm_codeengine_function_type` | The type for how the function was invoked (`sync` or `async`).  |
-{: caption="Table 27: Segmentation options" caption-side="bottom"}
+{: caption="Segmentation options" caption-side="bottom"}

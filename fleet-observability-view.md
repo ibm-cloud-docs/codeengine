@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-10-14"
+lastupdated: "2026-10-15"
 
 keywords: fleets observability, viewing logs for fleets, viewing, viewing logs, monitoring for fleets, monitoring data
 
@@ -80,6 +80,6 @@ Follow the steps to view your fleet monitoring data.
     1. Click **Copy to My Dashboards**.
     2. Add a name for the custom dashboard.
     3. Click the pencil icon to customize the settings,
-    4. In the **Select a label** drop down, filters for `agent_tag_project_region`, `agent_tag_project_name` and `agent_tag_fleet`.
+    4. In the **Host Resource Usage** dashboard **Select a label** drop down, filters for `agent_tag_project_region`, `agent_tag_project_name` and `agent_tag_fleet`.
     5. Click **Save**.
     6. You can now filter your data by region, project name, and fleet name.
