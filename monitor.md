@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-10-15"
+lastupdated: "2026-10-20"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -97,8 +97,11 @@ When you use the {{site.data.keyword.mon_full_notm}} service to monitor {{site.d
 {: caption="Metrics available for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
 
 
+
 ### `ibm_codeengine_application_actual_instances`
 {: #ibm_codeengine_application_actual_instances}
+
+
 
 Number of pods that are currently allocated.
 
@@ -116,6 +119,8 @@ The number of running instances of an app are automatically scaled up or down ba
 
 ### `ibm_codeengine_application_requested_instances`
 {: #ibm_codeengine_application_requested_instances}
+
+
 
 Number of pods that the autoscaler requested from Kubernetes.
 
@@ -135,6 +140,8 @@ The number of running instances of an app are automatically scaled up or down ba
 ### `ibm_codeengine_application_not_ready_instances`
 {: #ibm_codeengine_application_not_ready_instances}
 
+
+
 Number of pods that are not ready currently.
 
 Use this metric to observe if there are issues with your running application.
@@ -151,6 +158,8 @@ Application instances that are in *not ready* state cannot serve requests. This 
 
 ### `ibm_codeengine_application_pending_instances`
 {: #ibm_codeengine_application_pending_instances}
+
+
 
 Number of pods that are pending currently.
 
@@ -169,6 +178,8 @@ You might observe pending applications when you observe automatic application sc
 ### `ibm_codeengine_application_desired_instances`
 {: #ibm_codeengine_application_desired_instances}
 
+
+
 Number of pods that the autoscaler wants to allocate.
 
 Use this metric to observe the behavior of automatic application scaling. Monitor this value to determine if you need to adjust the configurable values for your application.
@@ -185,6 +196,8 @@ The number of running instances of an app are automatically scaled up or down ba
 
 ### `ibm_codeengine_application_terminating_instances`
 {: #ibm_codeengine_application_terminating_instances}
+
+
 
 Number of pods that are terminating currently.
 
@@ -203,6 +216,8 @@ The number of running instances of an app are automatically scaled up or down ba
 ### `ibm_codeengine_application_requests_total`
 {: #ibm_codeengine_application_requests_total}
 
+
+
 Total number of HTTPS requests to the application.
 
 Use this metric to monitor the number of HTTPS requests that are received by your application.
@@ -217,6 +232,8 @@ Use this metric to monitor the number of HTTPS requests that are received by you
 
 ### `ibm_codeengine_application_revision_count`
 {: #ibm_codeengine_application_revision_count}
+
+
 
 Number of revisions per application.
 
@@ -235,6 +252,8 @@ An application contains one or more revisions. Each update of an application con
 ### `ibm_codeengine_application_service_count`
 {: #ibm_codeengine_application_service_count}
 
+
+
 Number of applications per project.
 
 Use this metric to observe how many applications are in your project.
@@ -252,6 +271,8 @@ Use this metric to observe how many applications are in your project.
 ### `ibm_codeengine_application_route_count`
 {: #ibm_codeengine_application_route_count}
 
+
+
 Number of routes per application.
 
 {{site.data.keyword.codeengineshort}} supports only 1 route per application.
@@ -266,6 +287,8 @@ Number of routes per application.
 
 ### `ibm_codeengine_application_target_concurrency_per_pod`
 {: #ibm_codeengine_application_target_concurrency_per_pod}
+
+
 
 The number of concurrent requests that you want for each pod.
 
@@ -283,6 +306,8 @@ Target concurrency for application scaling is configurable. See [Configuring app
 
 ### `ibm_codeengine_application_panic_request_concurrency`
 {: #ibm_codeengine_application_panic_request_concurrency}
+
+
 
 Average of requests count over the panic window.
 
@@ -302,6 +327,8 @@ While *stable* mode is used for general operations, *panic* mode has a much shor
 ### `ibm_codeengine_application_stable_request_concurrency`
 {: #ibm_codeengine_application_stable_request_concurrency}
 
+
+
 Average of requests count over the stable window.
 
 Use this metric to observe the behavior of automatic application scaling. Monitor this value to observe if the application traffic arrives in bursts or if the traffic is steady.
@@ -318,6 +345,8 @@ While *stable* mode is used for general operations, *panic* mode has a much shor
 
 ### `ibm_codeengine_application_panic_mode`
 {: #ibm_codeengine_application_panic_mode}
+
+
 
 Specifies whether panic mode is enabled.
 
@@ -337,6 +366,8 @@ While *stable* mode is used for general operations, *panic* mode has a much shor
 ### `ibm_codeengine_functions_activations`
 {: #ibm_codeengine_functions_activations}
 
+
+
 Number of invoked functions.
 
 | Metadata | Description |
@@ -350,6 +381,8 @@ Number of invoked functions.
 ### `ibm_codeengine_functions_exceeded_limit`
 {: #ibm_codeengine_functions_exceeded_limit}
 
+
+
 Number of functions that are invoked after the limit for your project is exceeded. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
 | Metadata | Description |
@@ -362,6 +395,8 @@ Number of functions that are invoked after the limit for your project is exceede
 
 ### `ibm_codeengine_functions_execution_time_count`
 {: #ibm_codeengine_functions_execution_time_count}
+
+
 
 Number of invoked functions that run to completion.
 
@@ -378,6 +413,8 @@ The `ibm_codeengine_functions_execution_time_count` and `ibm_codeengine_function
 ### `ibm_codeengine_functions_execution_time_sum`
 {: #ibm_codeengine_functions_execution_time_sum}
 
+
+
 Sum of all execution time for invoked functions that run to completion.
 
 The `ibm_codeengine_functions_execution_time_count` and `ibm_codeengine_functions_execution_time_sum` metrics are used to determine the average execution time per invoked function.
@@ -393,6 +430,8 @@ The `ibm_codeengine_functions_execution_time_count` and `ibm_codeengine_function
 ### `ibm_codeengine_functions_init_time_count`
 {: #ibm_codeengine_functions_init_time_count}
 
+
+
 Number of functions that complete initialization such that the code is loaded in {{site.data.keyword.codeengineshort}} and ready for execution.
 
 The `ibm_codeengine_functions_init_time_count` and `ibm_codeengine_functions_init_time_sum` metrics are used to determine the average initialization time for invoked functions.
@@ -407,6 +446,8 @@ The `ibm_codeengine_functions_init_time_count` and `ibm_codeengine_functions_ini
 
 ### `ibm_codeengine_functions_init_time_sum`
 {: #ibm_codeengine_functions_init_time_sum}
+
+
 
 Sum of all initialization time for invoked functions.
 
@@ -424,6 +465,8 @@ The `ibm_codeengine_functions_init_time_count` and `ibm_codeengine_functions_ini
 ### `ibm_codeengine_functions_status_success`
 {: #ibm_codeengine_functions_status_success}
 
+
+
 Number of functions that are successfully invoked. A function is invoked successfully in {{site.data.keyword.codeengineshort}} after the function completes initialization, runs to completion, and your function code responds with a successful HTTP response status code.
 
 | Metadata | Description |
@@ -437,6 +480,8 @@ Number of functions that are successfully invoked. A function is invoked success
 ### `ibm_codeengine_functions_status_error_application`
 {: #ibm_codeengine_functions_status_error_application}
 
+
+
 Number of invoked functions that fail during {{site.data.keyword.codeengineshort}} processing.
 
 | Metadata | Description |
@@ -449,6 +494,8 @@ Number of invoked functions that fail during {{site.data.keyword.codeengineshort
 
 ### `ibm_codeengine_functions_status_error_developer`
 {: #ibm_codeengine_functions_status_error_developer}
+
+
 
 Number of invoked functions that fail with an error in your code.
 
@@ -465,6 +512,8 @@ Number of invoked functions that fail with an error in your code.
 
 ### `ibm_codeengine_jobruns`
 {: #ibm_codeengine_jobruns}
+
+
 
 Total number of job runs.
 
@@ -516,4 +565,5 @@ The following attributes are available for segmenting one or more attributes as 
 | `Function name` | `ibm_codeengine_function_name` | Name of the invoked function.  |
 | `Function pod name` | `ibm_codeengine_function_podname` | The name of the system pod that invoked the function.  |
 | `Function type` | `ibm_codeengine_function_type` | The type for how the function was invoked (`sync` or `async`).  |
+
 {: caption="Segmentation options" caption-side="bottom"}
