@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-19"
+lastupdated: "2026-10-20"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3878,6 +3878,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Obtaining the CNAME record for a custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cname)
 
     * [Adding a DNS record in CIS to direct traffic to your {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-domain-mappings#adding-DNS-in-CIS)
+
+* [Working with private custom domains](/docs/codeengine?topic=codeengine-domain-mappings#private-custom-domains)
+
+    * [Supported private domain suffixes](/docs/codeengine?topic=codeengine-domain-mappings#private-domain-suffixes)
+
+    * [Certificate and TLS validation rules](/docs/codeengine?topic=codeengine-domain-mappings#private-domain-tls-rules)
 
 
 ## Working with persistent data stores

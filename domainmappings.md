@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-09-04"
+  years: 2022, 2026
+lastupdated: "2026-10-20"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, functions in code engine, function workloads in code engine, Function, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -38,12 +38,9 @@ In {{site.data.keyword.codeengineshort}}, you can [view](#view-domain-mapping), 
 
 Before you implement custom domain mappings in {{site.data.keyword.codeengineshort}}, be aware of the following considerations:
 
-* Use only custom domain mappings for domains that are protected with a SSL/TLS certificate, which a public, trusted certificate authority (CA) signs.
-* You can define custom domain mappings that point to public domain names.
-* If your domain name can be resolved only by a nonpublic domain name system (DNS), provide a certificate that lists the domain name and is signed by a public, trusted CA.
-* Provide the *entire* certificate chain, starting with the certificate that corresponds to the custom domain, followed by all intermediate certificates up to the root certificate.
-* You cannot use self-signed certificates.
-* You cannot use certificates that are signed by an untrusted or a nonpublic enterprise CA.
+* For public custom domains, use only domains that are protected with an SSL/TLS certificate signed by a public, trusted certificate authority (CA). Self-signed certificates and certificates signed by untrusted CAs are not permitted for public custom domains.
+* For private custom domains (such as `.internal` or `.corp`), relaxed certificate validation applies and self-signed certificates are allowed. For more information, see [Working with private custom domains](#private-custom-domains).
+* When using CA-signed certificates, provide the *entire* certificate chain, starting with the certificate that corresponds to the custom domain, followed by all intermediate certificates up to the root certificate.
 * Your certificate must have an expiry date that is set.
 
 ## Obtaining a custom domain and its TLS certificate and private key
@@ -56,7 +53,7 @@ Before you configure custom domain mappings in {{site.data.keyword.codeenginesho
     * You can create a certificate that is not self-certified, by using the [Let's Encrypt](https://letsencrypt.org/){: external} service and [Certbot](https://certbot.eff.org/){: external}. If the custom domain is within your control and you want to quickly create a certificate, you can use Certbot and the Let's Encrypt services to obtain a certificate.
     * You can obtain a signed certificate from a trusted authority. This type of digital certificate is used to establish communication privacy between a server and a client. These certificates contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate.
 
-        You can obtain your certificate and key from your CA. Obtain a signed SSL/TLS *certificate* for your custom domain. For security reasons, {{site.data.keyword.codeengineshort}} supports only custom domain mappings that are configured with a TLS/SSL certificate that is signed by a public, trusted CA.
+        You can obtain your certificate and key from your CA. Obtain a signed SSL/TLS *certificate* for your custom domain. For security reasons, {{site.data.keyword.codeengineshort}} supports only public custom domain mappings that are configured with a TLS/SSL certificate that is signed by a public, trusted CA. For private custom domains, such as `.internal` or `.corp`, relaxed certificate validation applies and self-signed certificates are allowed. For more information, see [Working with private custom domains](#private-custom-domains).
 
         You can also obtain your certificate and key from [{{site.data.keyword.cis_short}}](#prepare-custom-domain-cert-CIS) by ordering an origin certificate if your custom domain management has been delegated to CIS. Following this approach, you then apply the [End-to-End flexible TLS mode](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-flexible).
 
@@ -357,3 +354,30 @@ If you have a CIS instance to manage your custom domain, update the DNS records 
     {: note}
 
 You are now familiar with working with custom domain mappings, and you have obtained a custom domain with its TLS certificate and private key. You are ready to configure a custom domain mapping in {{site.data.keyword.codeengineshort}} for your [application](/docs/codeengine?topic=codeengine-app-domainmapping) or [function](/docs/codeengine?topic=codeengine-fun-domainmapping).
+
+## Working with private custom domains
+{: #private-custom-domains}
+
+If you want to route private traffic within an internal network or VPC to your {{site.data.keyword.codeengineshort}} applications or functions, you can configure a private custom domain mapping. Private custom domains use domain names that are resolved through your private DNS rather than the public internet.
+{: shortdesc}
+
+### Supported private domain suffixes
+{: #private-domain-suffixes}
+
+{{site.data.keyword.codeengineshort}} identifies private custom domains by their domain name suffix. The following suffixes are recognized as private custom domains:
+
+* `.intranet`
+* `.internal`
+* `.private`
+* `.corp`
+* `.home`
+* `.lan`
+
+### Certificate and TLS validation rules
+{: #private-domain-tls-rules}
+
+Because private custom domains are intended for internal routing and are not accessible from the public internet, different TLS secret validation rules apply:
+
+* **Self-signed certificates are allowed**: You can use self-signed certificates or certificates issued by a private, internal enterprise Certificate Authority (CA). {{site.data.keyword.codeengineshort}} does not enforce verification against the public trusted root CA pool for private custom domains.
+* **Certificate requirements**: The TLS certificate must still be a valid X.509 certificate, must not be expired, must match the provided private key, and must match the configured domain name in its Subject Alternative Names (SAN) or Common Name (CN).
+* **Wildcard domain restrictions**: Broad wildcard domains directly on private suffixes (such as `*.internal` or `*.corp`) are not supported. A wildcard private custom domain must include a specific subdomain label preceding the private suffix, such as `*.myapp.internal` or `*.api.corp`.
