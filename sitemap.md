@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-20"
+lastupdated: "2026-10-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -169,6 +169,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [October 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october26)
+
+    * [15 October 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1526)
+
+        * Added support for configuring the monitoring settings of a project
+
+        * CLI version 1.64.0 released
 
 * [September 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september26)
 
@@ -4823,6 +4831,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce secret list`](/docs/codeengine?topic=codeengine-cli#cli-secret-list)
 
     * [`ibmcloud ce secret update`](/docs/codeengine?topic=codeengine-cli#cli-secret-update)
+
+* [Settings commands](/docs/codeengine?topic=codeengine-cli#cli-settings)
+
+    * [`ibmcloud ce settings monitoring`](/docs/codeengine?topic=codeengine-cli#cli-settings-monitoring)
+
+    * [`ibmcloud ce settings monitoring get`](/docs/codeengine?topic=codeengine-cli#cli-settings-monitoring-get)
+
+    * [`ibmcloud ce settings monitoring update`](/docs/codeengine?topic=codeengine-cli#cli-settings-monitoring-update)
 
 * [Subscription cos commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos)
 
