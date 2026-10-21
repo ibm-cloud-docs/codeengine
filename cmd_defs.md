@@ -8321,7 +8321,34 @@ ibmcloud ce settings monitoring get [--all] [--output OUTPUT]
 
   
   
-{[cli-settings-monitoring-get-example.md]}
+#### Example
+{: #settings-monitoring-get-example}
+
+```sh
+ibmcloud ce settings monitoring get
+```
+{: pre}
+
+#### Example output
+{: #settings-monitoring-get-example-output}
+
+```txt
+Getting project monitoring settings...
+OK
+
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+
+Enable metrics:  custom
+
+Standard metrics:
+  Functions:     off
+  Applications:  on
+  Jobs:          on
+  Compute:       off
+    GPU:         off
+```
+{: screen}
   
 ### `ibmcloud ce settings monitoring update`
 {: #cli-settings-monitoring-update}
@@ -8358,7 +8385,42 @@ ibmcloud ce settings monitoring update [--standard-metrics VALUE] [--metrics-app
 
   
   
-{[cli-settings-monitoring-update-example.md]}
+#### Example
+{: #settings-monitoring-update-example}
+
+This example sets the standard metrics selection to `all`.
+
+```sh
+ibmcloud ce settings monitoring update --standard-metrics all
+```
+{: pre}
+
+
+#### Example output
+{: #settings-monitoring-update-example-output}
+
+```txt
+Updating project monitoring settings...
+OK
+
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+
+Enable metrics:  all
+
+All standard metrics are enabled for this project.
+
+Standard metrics:
+  Functions
+  Applications
+  Jobs
+  Compute
+  GPU
+```
+{: screen}
+
+
+
   
 ## Subscription cos commands
 {: #cli-subscription-cos}
