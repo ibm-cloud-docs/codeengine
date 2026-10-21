@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-10-20"
 
 keywords: fleets observability, viewing logs for fleets, viewing, viewing logs, monitoring for fleets, monitoring data
 
@@ -71,13 +71,19 @@ You can save this logging view and filter settings for other workloads.
 
 Follow the steps to view your fleet monitoring data.
 
+Before you begin, ensure you [set up monitoring for fleets](/docs/codeengine?topic=codeengine-fleet-observability#monitor-setup) and [enabled monitoring in your project settings](/docs/codeengine?topic=codeengine-fleet-observability#monitor-project-settings).
+{: note}
+
 1. Navigate to the [Monitoring instances page](https://cloud.ibm.com/observability/monitoring){: external} in the console.
 2. Find the monitoring instance for the Code Engine project that your fleet runs in and click **Dashboard**.
 3. In the monitoring dashboard, click **Dashboards** > **Host Infrastructure** > **Host Resource Usage** to view the monitoring data.
+  To view GPU metrics for GPU-enabled fleet workers on the fleet dashboard, select:
+    * To view GPU metrics for GPU-enabled fleet workers, select **Dashboards** > **IBM** > **{{site.data.keyword.codeengineshort}} - Fleet GPU Monitoring**.
+
 4. Optional. Customize the monitoring dashboard to tailor it to your fleets data.
     1. Click **Copy to My Dashboards**.
     2. Add a name for the custom dashboard.
     3. Click the pencil icon to customize the settings,
-    4. In the **Select a label** drop down, filters for `agent_tag_project_region`, `agent_tag_project_name` and `agent_tag_fleet`.
+    4. In the **Select a label** drop-down, select a label to filter the dashboard data. The **Host Resource Usage** dashboard supports the labels `agent_tag_project_region`, `agent_tag_project_name`, and `agent_tag_fleet`. For GPU workloads, use the labels `project_name`, `region`, `fleet_name`, `worker_name`, or `model_name`.
     5. Click **Save**.
     6. You can now filter your data by region, project name, and fleet name.

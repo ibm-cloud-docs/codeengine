@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-25"
+lastupdated: "2026-10-21"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -8284,8 +8284,146 @@ OK
 
   
   
-## Subscription cos commands  
-{: #cli-subscription-cos}  
+## Settings commands
+{: #cli-settings}
+
+Manage project settings.
+  
+Aliases: `ibmcloud ce project-settings`, `ibmcloud ce ps`
+  
+### `ibmcloud ce settings monitoring`
+{: #cli-settings-monitoring}
+
+Manage project monitoring settings.
+  
+```txt
+ibmcloud ce settings monitoring COMMAND
+```
+{: pre}
+
+### `ibmcloud ce settings monitoring get`
+{: #cli-settings-monitoring-get}
+
+Display the monitoring settings for the project.
+  
+```txt
+ibmcloud ce settings monitoring get [--all] [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**
+
+`--all`, `-a`
+:   Show all monitoring settings, including individual metrics switches, even when `enable` is set to `all` or `none`. This value is *optional*. The default value is `false`.
+
+`--output`, `-o`
+:   Output format. Valid values are `json``, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*.
+
+  
+  
+#### Example
+{: #settings-monitoring-get-example}
+
+```sh
+ibmcloud ce settings monitoring get
+```
+{: pre}
+
+#### Example output
+{: #settings-monitoring-get-example-output}
+
+```txt
+Getting project monitoring settings...
+OK
+
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+
+Enable metrics:  custom
+
+Standard metrics:
+  Functions:     off
+  Applications:  on
+  Jobs:          on
+  Compute:       off
+    GPU:         off
+```
+{: screen}
+  
+### `ibmcloud ce settings monitoring update`
+{: #cli-settings-monitoring-update}
+
+Update the monitoring settings for the project.
+  
+```txt
+ibmcloud ce settings monitoring update [--standard-metrics VALUE] [--metrics-applications VALUE] [--metrics-compute VALUE] [--metrics-functions VALUE] [--metrics-gpu VALUE] [--metrics-jobs VALUE] [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**
+
+`--metrics-applications`, `--metrics-apps`, `--ma`
+:   Enable or disable application metrics. Valid values are `on` or `off`. This value is *optional*.
+
+`--metrics-compute`, `--mc`
+:   Enable or disable compute metrics. As compute metrics are a prerequisite for emitting GPU metrics, this setting can only be `off` if `metrics-gpu` is `off`. Valid values are `on` or `off`. This value is *optional*.
+
+`--metrics-functions`, `--mf`
+:   Enable or disable function metrics. Valid values are `on` or `off`. This value is *optional*.
+
+`--metrics-gpu`, `--mg`
+:   Enable or disable GPU metrics. As compute metrics are a prerequisite for emitting GPU metrics, this setting can only be `on` if `metrics-compute` is `on`. Valid values are `on` or `off`. This value is *optional*.
+
+`--metrics-jobs`, `--mj`
+:   Enable or disable job metrics. Valid values are `on` or `off`. This value is *optional*.
+
+`--output`, `-o`
+:   Output format. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. This value is *optional*.
+
+`--standard-metrics`, `--sm`
+:   Set overall metrics collection. Valid values are `all`, `none`, or `custom`. This value is *optional*.
+
+  
+  
+#### Example
+{: #settings-monitoring-update-example}
+
+This example sets the standard metrics selection to `all`.
+
+```sh
+ibmcloud ce settings monitoring update --standard-metrics all
+```
+{: pre}
+
+
+#### Example output
+{: #settings-monitoring-update-example-output}
+
+```txt
+Updating project monitoring settings...
+OK
+
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+
+Enable metrics:  all
+
+All standard metrics are enabled for this project.
+
+Standard metrics:
+  Functions
+  Applications
+  Jobs
+  Compute
+  GPU
+```
+{: screen}
+
+
+
+  
+## Subscription cos commands
+{: #cli-subscription-cos}
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
 {: shortdesc}

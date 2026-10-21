@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-25"
+lastupdated: "2026-10-21"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,20 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month.
 {: shortdesc}
+
+## October 2026
+{: #codeengine-october26}
+
+### 15 October 2026
+{: #codeengine-oct1526}
+{: release-note}
+
+Added support for configuring the monitoring settings of a project
+:   You can now review and modify the standard metrics settings for each project in the console (**Project settings** > **Observability**) and by using the **`ibmcloud ce settings monitoring`** commands in the CLI. {{site.data.keyword.codeengineshort}} will use these settings in a later phase to determine which metrics are emitted for your project. Until then, the settings have no effect on the metrics that are emitted. Review and adjust your settings now so that they are correct when {{site.data.keyword.codeengineshort}} starts to use them.
+:   See [Configuring project settings for observability](/docs/codeengine?topic=codeengine-monitor#project-settings-observability).
+
+CLI version 1.64.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ## September 2026
 {: #codeengine-september26}

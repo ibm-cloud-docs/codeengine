@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-10-20"
 
-keywords: project, projects in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine, binding in code engine, service binding in code engine, project settings, project integrations, configuring project-wide settings, service binding operations, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, operator secret, ibmcloud-operator-secret, service bind, access, bind, bound, registries, container registry, image registry, apikey, API key, images, registry access, registry secret, service id, registry secret, registry access
+keywords: project, projects in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, code engine, binding in code engine, service binding in code engine, project settings, project integrations, configuring project-wide settings, service binding operations, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, operator secret, ibmcloud-operator-secret, service bind, registries, container registry, image registry, API key, service id, registry secret, registry access, observability, project observability settings, monitoring settings
 
 subcollection: codeengine
 
@@ -15,20 +15,22 @@ subcollection: codeengine
 # Configuring project-wide settings
 {: #project-integrations}
 
-By using the Project settings pages in the console, you can review and configure settings that apply to a specific project. Learn how to work with project-wide integrations.
+By using the Project settings pages in the console, you can review and configure settings that apply to a specific project. Learn how to work with project-wide integrations and [observability](#project-settings-observability).
 {: shortdesc}
 
 ## What are project-wide integrations and why use them?
 {: #projectintegration-why}
 
-Use the Integrations page in the console when you want to configure the project-wide settings in such a way that all users of the project can perform certain actions. With sufficient permissions, you can configure service binding operations or configure access to images in {{site.data.keyword.registrylong_notm}} from a single page. If you don't have sufficient permissions to perform these actions, you can use these pages to help you understand the required permissions.
+Use the **Integrations** and **Observability** pages in the console when you want to configure the project-wide settings in such a way that all users of the project can perform certain actions. With sufficient permissions, you can configure service binding operations, configure access to images in {{site.data.keyword.registrylong_notm}}, or control the flow of metrics from a single page. If you don't have sufficient permissions to perform these actions, you can use these pages to help you understand the required permissions.
 {: shortdesc}
 
-When you set project-wide settings with the Integrations page, {{site.data.keyword.codeengineshort}} automatically sets up the necessary credentials so that {{site.data.keyword.codeengineshort}} can perform service binding operations or access {{site.data.keyword.registryshort_notm}} for you, instead of using a personal user ID. You can view details about what {{site.data.keyword.codeengineshort}} does for you when you configure service binding operations or configure access to {{site.data.keyword.registryshort_notm}}. These details include information about the service ID and its access policies, the API key, and secret.
+When you set project-wide settings with the **Integrations** page, {{site.data.keyword.codeengineshort}} automatically sets up the necessary credentials so that {{site.data.keyword.codeengineshort}} can perform service binding operations or access {{site.data.keyword.registryshort_notm}} for you, instead of using a personal user ID. You can view details about what {{site.data.keyword.codeengineshort}} does for you when you configure service binding operations or configure access to {{site.data.keyword.registryshort_notm}}. These details include information about the service ID and its access policies, the API key, and secret.
 
 * If you want to configure settings for service binding operations, see [Configuring service binding operations](#projectintegration-sb).
 
 * If you want to configure settings to control {{site.data.keyword.codeengineshort}} managed registry access to {{site.data.keyword.registrylong_notm}}, see [Configuring project-wide access to {{site.data.keyword.registryshort_notm}}](#projectintegration-cr).
+
+* If you want to configure settings to control the flow of metrics for your project, see [Configuring project settings for observability](#project-settings-observability).
 
 
 ## Configuring project-wide service binding operations
@@ -225,3 +227,9 @@ When you remove a {{site.data.keyword.codeengineshort}} managed registry secret 
 2. From the row of the location (region) that you want to remove the registry access, click the **Actions** icon ![Actions](../icons/action-menu-icon.svg "Actions") > **Remove configuration**. You are asked to confirm that you want to delete the registry access.
 
 When you receive a message that registry access is removed, the status for registry access for a particular {{site.data.keyword.registryshort_notm}} location is **Not configured**.
+
+## Configuring project settings for observability
+{: #project-settings-observability}
+
+Use the **Observability** page in Project settings to control the flow of metrics. By enabling or disabling specific metrics at the project level, you can manage which performance metrics are collected and forwarded to your monitoring service instance. For more details on the console or CLI commands to enable monitoring, see [Configuring project settings for observability](/docs/codeengine?topic=codeengine-monitor#project-settings-observability).
+{: shortdesc}

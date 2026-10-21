@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-08"
+lastupdated: "2026-10-20"
 
-keywords: fleets, fleet logging, fleet monitoring, fleet observability, observability, logging, monitoring, Cloud Logs, Cloud Monitoring
+keywords: fleets, fleet logging, fleet monitoring, fleet observability, observability, logging, monitoring, Cloud Logs, Cloud Monitoring, fleets in code engine, virtual private endpoint, VPE gateway, fleets default secret, monitoring agent key, private Ingress endpoint
 
 subcollection: codeengine
 
@@ -168,9 +168,18 @@ For each zone in the VPE, add a reserved IP address to one subnet.
 | --- | ----- |
 | `monitoring_ingestion_region` | The region that the Cloud Monitoring instance exists in. Example: `au-syd`.  |
 | `monitoring_ingestion_key` | The monitoring agent key. This value was found in a [previous step](#monitor-key). |
-{: caption="Logging key-value pairs for the fleets default secret." caption-side="bottom"}
+{: caption="Monitoring key-value pairs for the fleets default secret." caption-side="bottom"}
 
-### 6. View your fleets data in the monitoring dashboard
+### 6. Enable monitoring in your project settings
+{: #monitor-project-settings}
+
+Enable monitoring in your project settings to allow the collection and forwarding of metrics.
+
+To enable monitoring to collect container-level CPU and memory resource metrics or GPU metrics for your fleet, set Monitoring Selection either to `All` or `Custom`. If you use `Custom`, enable both Compute metrics (for container CPU and memory metrics) and GPU metrics. Note that GPU metrics can only be set to `On` when Compute metrics are also set to `On`.
+
+For more details on metric types and segmentations, see [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor#project-settings-observability).
+
+### 7. View your fleets data in the monitoring dashboard
 {: #monitor-view}
 
 Now that monitoring is set up for fleets in your Code Engine project, you can view your fleet monitoring data. See [Viewing logs and monitoring data for fleets](/docs/codeengine?topic=codeengine-fleet-observability-view#monitor-view) for steps.

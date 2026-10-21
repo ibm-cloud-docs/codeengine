@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-07-18"
+  years: 2022, 2026
+lastupdated: "2026-10-20"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -57,7 +57,7 @@ Before you begin
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Domain mappings**.
 3. From the Domain mappings page, click **Create** to create your mapping.
-4. From the Create a domain mapping page, specify the TLS secret to use with this domain mapping. {{site.data.keyword.codeengineshort}} validates whether the certificate is signed by a trusted CA, and whether the certificate matches the provided custom domain name and private key.
+4. From the Create a domain mapping page, specify the TLS secret to use with this domain mapping. For public custom domains, {{site.data.keyword.codeengineshort}} validates whether the certificate is signed by a trusted CA. For all custom domains, {{site.data.keyword.codeengineshort}} validates whether the certificate matches the provided custom domain name and private key. For private custom domains, self-signed certificates are allowed. For more information, see [Working with private custom domains](/docs/codeengine?topic=codeengine-domain-mappings#private-custom-domains).
 
     To create a new TLS secret,
       1. Click **Create**.

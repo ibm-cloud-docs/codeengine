@@ -3,7 +3,7 @@
 copyright:
   years: 2026
 
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-19"
 
 
 keywords: change log, version history, vsi image, serverless fleets
@@ -29,6 +29,20 @@ For more information about Nvidia CUDA drivers including lifecycle and compatibi
 ## Version v1.0
 {: #fleets-worker-changelog-contents-v1_0}
 
+
+
+### Worker image `v1.0.378`, released 19 October 2026
+{: #fleets-worker-boms-v1_0_378}
+
+The following table shows the components included in the {{site.data.keyword.codeengineshort}} fleet worker image v1.0.378.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+| UBUNTU_24_04 | Kernel: 6.8.0-1067 <br/> podman: 4.9.3 <br/> s3fs: 1.93 | Resolves the following CVEs: <br/> [CVE-2026-102267](https://nvd.nist.gov/vuln/detail/cve-2026-102267){: external}, [CVE-2026-102268](https://nvd.nist.gov/vuln/detail/cve-2026-102268){: external}, [CVE-2026-102271](https://nvd.nist.gov/vuln/detail/cve-2026-102271){: external}, [CVE-2026-102272](https://nvd.nist.gov/vuln/detail/cve-2026-102272){: external}, [CVE-2026-102273](https://nvd.nist.gov/vuln/detail/cve-2026-102273){: external}, [CVE-2026-106552](https://nvd.nist.gov/vuln/detail/cve-2026-106552){: external}, [CVE-2026-106553](https://nvd.nist.gov/vuln/detail/cve-2026-106553){: external}, [CVE-2026-106555](https://nvd.nist.gov/vuln/detail/cve-2026-106555){: external}, [CVE-2026-106582](https://nvd.nist.gov/vuln/detail/cve-2026-106582){: external}, [CVE-2026-106583](https://nvd.nist.gov/vuln/detail/cve-2026-106583){: external}, [CVE-2026-106584](https://nvd.nist.gov/vuln/detail/cve-2026-106584){: external}, [CVE-2026-106585](https://nvd.nist.gov/vuln/detail/cve-2026-106585){: external}, [CVE-2026-106586](https://nvd.nist.gov/vuln/detail/cve-2026-106586){: external}, [CVE-2026-106587](https://nvd.nist.gov/vuln/detail/cve-2026-106587){: external}, [CVE-2026-19033](https://nvd.nist.gov/vuln/detail/cve-2026-19033){: external}, [CVE-2026-19662](https://nvd.nist.gov/vuln/detail/cve-2026-19662){: external}, [CVE-2026-19666](https://nvd.nist.gov/vuln/detail/cve-2026-19666){: external}, [CVE-2026-19667](https://nvd.nist.gov/vuln/detail/cve-2026-19667){: external}, [CVE-2026-19941](https://nvd.nist.gov/vuln/detail/cve-2026-19941){: external}, [CVE-2026-75029](https://nvd.nist.gov/vuln/detail/cve-2026-75029){: external}, [CVE-2026-76781](https://nvd.nist.gov/vuln/detail/cve-2026-76781){: external}, [CVE-2026-77119](https://nvd.nist.gov/vuln/detail/cve-2026-77119){: external}, [CVE-2026-78301](https://nvd.nist.gov/vuln/detail/cve-2026-78301){: external}, [CVE-2026-80274](https://nvd.nist.gov/vuln/detail/cve-2026-80274){: external}, [CVE-2026-81563](https://nvd.nist.gov/vuln/detail/cve-2026-81563){: external}, [CVE-2026-81736](https://nvd.nist.gov/vuln/detail/cve-2026-81736){: external}, [CVE-2026-86138](https://nvd.nist.gov/vuln/detail/cve-2026-86138){: external}, [CVE-2026-86142](https://nvd.nist.gov/vuln/detail/cve-2026-86142){: external}, [CVE-2026-86143](https://nvd.nist.gov/vuln/detail/cve-2026-86143){: external}, [CVE-2026-86144](https://nvd.nist.gov/vuln/detail/cve-2026-86144){: external}, [CVE-2026-86409](https://nvd.nist.gov/vuln/detail/cve-2026-86409){: external}, [CVE-2026-86414](https://nvd.nist.gov/vuln/detail/cve-2026-86414){: external}, [CVE-2026-87862](https://nvd.nist.gov/vuln/detail/cve-2026-87862){: external}, [CVE-2026-87863](https://nvd.nist.gov/vuln/detail/cve-2026-87863){: external}, [CVE-2026-87864](https://nvd.nist.gov/vuln/detail/cve-2026-87864){: external}, [CVE-2026-92388](https://nvd.nist.gov/vuln/detail/cve-2026-92388){: external}, [CVE-2026-92389](https://nvd.nist.gov/vuln/detail/cve-2026-92389){: external}, [CVE-2026-92391](https://nvd.nist.gov/vuln/detail/cve-2026-92391){: external}, [CVE-2026-94266](https://nvd.nist.gov/vuln/detail/cve-2026-94266){: external}, [CVE-2026-97688](https://nvd.nist.gov/vuln/detail/cve-2026-97688){: external}, [CVE-2026-97689](https://nvd.nist.gov/vuln/detail/cve-2026-97689){: external} |
+| Nvidia CUDA | Driver: 580.178.04 <br/> Toolkit: 12.6.3 <br/> NVIDIA Fabric Manager: 580.178.04 | |
+{: caption="Worker image v1.0.378" caption-side="bottom"}
+{: #fleets-worker-boms-v1_0_378-component-table}
 
 
 ### Worker image `v1.0.372`, released 12 October 2026

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -169,6 +169,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [October 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october26)
+
+    * [15 October 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1526)
+
+        * Added support for configuring the monitoring settings of a project
+
+        * CLI version 1.64.0 released
 
 * [September 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-september26)
 
@@ -2713,6 +2721,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Removing {{site.data.keyword.codeengineshort}} managed access to {{site.data.keyword.registryshort_notm}}](/docs/codeengine?topic=codeengine-project-integrations#projectintegration-cr-remove)
 
+* [Configuring project settings for observability](/docs/codeengine?topic=codeengine-project-integrations#project-settings-observability)
+
 
 ## Deploying applications
 {: #sitemap_deploying_applications}
@@ -3285,7 +3295,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [5. Add monitoring values to the fleets default secret](/docs/codeengine?topic=codeengine-fleet-observability#monitor-secret)
 
-    * [6. View your fleets data in the monitoring dashboard](/docs/codeengine?topic=codeengine-fleet-observability#monitor-view)
+    * [6. Enable monitoring in your project settings](/docs/codeengine?topic=codeengine-fleet-observability#monitor-project-settings)
+
+    * [7. View your fleets data in the monitoring dashboard](/docs/codeengine?topic=codeengine-fleet-observability#monitor-view)
 
 [Canceling or deleting {{site.data.keyword.codeengineshort}} fleets and workers](/docs/codeengine?topic=codeengine-fleets-cancel#fleets-cancel)
 
@@ -3330,6 +3342,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Worker Image Changelog v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-v1_0)
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
+
+    * [Worker image `v1.0.378`, released 19 October 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_378)
 
     * [Worker image `v1.0.372`, released 12 October 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_372)
 
@@ -3877,6 +3891,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Adding a DNS record in CIS to direct traffic to your {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-domain-mappings#adding-DNS-in-CIS)
 
+* [Working with private custom domains](/docs/codeengine?topic=codeengine-domain-mappings#private-custom-domains)
+
+    * [Supported private domain suffixes](/docs/codeengine?topic=codeengine-domain-mappings#private-domain-suffixes)
+
+    * [Certificate and TLS validation rules](/docs/codeengine?topic=codeengine-domain-mappings#private-domain-tls-rules)
+
 
 ## Working with persistent data stores
 {: #sitemap_working_with_persistent_data_stores}
@@ -4268,9 +4288,25 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Set up your {{site.data.keyword.mon_full_notm}} service instance](/docs/codeengine?topic=codeengine-monitor#setup-monitor)
 
-* [Accessing your {{site.data.keyword.mon_full_notm}} metrics](/docs/codeengine?topic=codeengine-monitor#access-monitor)
+* [Configuring Project Settings for Observability](/docs/codeengine?topic=codeengine-monitor#project-settings-observability)
 
-* [Metrics available for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor#metrics-by-plan)
+    * [Metric Selection](/docs/codeengine?topic=codeengine-monitor#project-settings-observability-metric-selection)
+
+    * [Configuring Monitoring Settings from the Console](/docs/codeengine?topic=codeengine-monitor#project-settings-observability-ui)
+
+    * [Configuring Monitoring Settings with the CLI](/docs/codeengine?topic=codeengine-monitor#project-settings-observability-cli)
+
+    * [Configure Application Metrics](/docs/codeengine?topic=codeengine-monitor#project-monitoring-applications)
+
+    * [Configure Function Metrics](/docs/codeengine?topic=codeengine-monitor#project-monitoring-functions)
+
+    * [Configure Job Metrics](/docs/codeengine?topic=codeengine-monitor#project-monitoring-jobs)
+
+    * [Configure Compute Metrics](/docs/codeengine?topic=codeengine-monitor#project-monitoring-compute)
+
+    * [Configure GPU Metrics for fleets](/docs/codeengine?topic=codeengine-monitor#project-monitoring-gpu)
+
+* [Accessing your {{site.data.keyword.mon_full_notm}} metrics](/docs/codeengine?topic=codeengine-monitor#access-monitor)
 
     * [`ibm_codeengine_application_actual_instances`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_actual_instances)
 
@@ -4317,6 +4353,34 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibm_codeengine_functions_status_error_application`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_status_error_application)
 
     * [`ibm_codeengine_functions_status_error_developer`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_functions_status_error_developer)
+
+    * [`ibm_codeengine_instance_cpu_usage_millicores`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_instance_cpu_usage_millicores)
+
+    * [`ibm_codeengine_instance_cpu_limit_millicores`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_instance_cpu_limit_millicores)
+
+    * [`ibm_codeengine_instance_memory_usage_bytes`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_instance_memory_usage_bytes)
+
+    * [`ibm_codeengine_instance_memory_limit_bytes`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_instance_memory_limit_bytes)
+
+    * [`ibm_codeengine_xpu_utilization_ratio`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_xpu_utilization_ratio)
+
+    * [`ibm_codeengine_xpu_memory_used_bytes`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_xpu_memory_used_bytes)
+
+    * [`ibm_codeengine_xpu_memory_free_bytes`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_xpu_memory_free_bytes)
+
+    * [`ibm_codeengine_xpu_temperature_celsius`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_xpu_temperature_celsius)
+
+    * [`ibm_codeengine_xpu_power_usage_watts`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_xpu_power_usage_watts)
+
+    * [`ibm_codeengine_xpu_clock_mhz`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_xpu_clock_mhz)
+
+    * [`ibm_codeengine_xpu_pcie_rx_bytes_total`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_xpu_pcie_rx_bytes_total)
+
+    * [`ibm_codeengine_xpu_pcie_tx_bytes_total`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_xpu_pcie_tx_bytes_total)
+
+    * [`ibm_codeengine_xpu_encoder_utilization_ratio`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_xpu_encoder_utilization_ratio)
+
+    * [`ibm_codeengine_xpu_decoder_utilization_ratio`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_xpu_decoder_utilization_ratio)
 
     * [`ibm_codeengine_jobruns`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns)
 
@@ -4767,6 +4831,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce secret list`](/docs/codeengine?topic=codeengine-cli#cli-secret-list)
 
     * [`ibmcloud ce secret update`](/docs/codeengine?topic=codeengine-cli#cli-secret-update)
+
+* [Settings commands](/docs/codeengine?topic=codeengine-cli#cli-settings)
+
+    * [`ibmcloud ce settings monitoring`](/docs/codeengine?topic=codeengine-cli#cli-settings-monitoring)
+
+    * [`ibmcloud ce settings monitoring get`](/docs/codeengine?topic=codeengine-cli#cli-settings-monitoring-get)
+
+    * [`ibmcloud ce settings monitoring update`](/docs/codeengine?topic=codeengine-cli#cli-settings-monitoring-update)
 
 * [Subscription cos commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos)
 
