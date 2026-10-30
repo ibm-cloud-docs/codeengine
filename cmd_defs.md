@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-30"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2419,6 +2419,45 @@ VPE gateway:
 ```
 {: screen}  
   
+### `ibmcloud ce connectivity outbound help`  
+{: #cli-connectivity-outbound-help}  
+
+Show help.  
+  
+Aliases: `ibmcloud ce connectivity outbound h`  
+  
+```txt
+ibmcloud ce connectivity outbound help COMMAND
+```
+{: pre}
+
+#### Example
+{: #connectivity-outbound-help-example}
+
+```txt
+ibmcloud ce connectivity outbound help
+```
+{: pre}
+
+#### Example output
+{: #connectivity-outbound-help-example-output}
+
+```txt
+NAME:
+  connectivity outbound - Manage outbound connectivity commands
+
+USAGE:
+  outbound COMMAND
+
+COMMANDS:
+  create  Create an allowed outbound destination.
+  delete  Delete an allowed outbound destination.
+  list    List all allowed outbound destinations.
+  get     Display the details of an allowed outbound destination.
+  update  Update an allowed outbound destination.
+```
+{: screen}  
+  
 ### `ibmcloud ce connectivity outbound list`  
 {: #cli-connectivity-outbound-list}  
 
@@ -2561,13 +2600,13 @@ ibmcloud ce connectivity subnetpool create [--name NAME] [--quiet] [--security-g
 :   Required. Name of the subnet pool. Use a name that is unique within the project. This value is *required*. 
 
 `--subnet-crn`, `--crn`
-:   Provide a valid subnet crn for the pool. Must be in S1=crn:v1:example format This value is *required*. 
+:   Required. Provide a valid VPC subnet CRN for the pool. Must be in ID=CRN format (for example, 's1=crn:v1:...'). To find VPC subnet CRNs, run 'ibmcloud is subnets'. For details, see https://cloud.ibm.com/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-gather. This value is *required*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--security-group-crn`, `--sg-crn`
-:   Provide a valid security group crn for the pool. This value is *optional*. 
+:   Provide a valid VPC security group CRN for the pool. Must be in ID=CRN format (for example, 's1=crn:v1:...'). To find security group CRNs, run 'ibmcloud is sgs'. For details, see https://cloud.ibm.com/docs/codeengine?topic=codeengine-fleet-prep#fleet-prep-gather-sg. This value is *optional*. 
 
   
   
@@ -2697,6 +2736,44 @@ Network placement:
 ```
 {: screen}  
   
+### `ibmcloud ce connectivity subnetpool help`  
+{: #cli-connectivity-subnetpool-help}  
+
+Show help.  
+  
+Aliases: `ibmcloud ce connectivity subnetpool h`  
+  
+```txt
+ibmcloud ce connectivity subnetpool help COMMAND
+```
+{: pre}
+
+#### Example
+{: #connectivity-subnetpool-help-example}
+
+```txt
+ibmcloud ce connectivity subnetpool help
+```
+{: pre}
+
+#### Example output
+{: #connectivity-subnetpool-help-example-output}
+
+```txt
+NAME:
+  connectivity subnetpool - Manage connectivity subnetpool commands
+
+USAGE:
+  subnetpool COMMAND
+
+COMMANDS:
+  create  Create a subnet pool.
+  get     Display details of a subnet pool.
+  list    List all subnet pools in a project.
+  delete  Delete a subnet pool.
+```
+{: screen}  
+  
 ### `ibmcloud ce connectivity subnetpool list`  
 {: #cli-connectivity-subnetpool-list}  
 
@@ -2784,7 +2861,7 @@ ibmcloud ce domainmapping create --domain-name DOMAIN_NAME [--target-type TARGET
 :   The type of the target. Valid values are `application` or `function`. This value is *required*. 
 
 `--tls-secret`, `--secret`, `--tls`
-:   Specify a TLS secret that contains the certificate including all its intermediate certificates and the corresponding private key for the domain mapping. The certificate must be signed by a trusted, public certificate authority (CA). Self-signed certificates are not supported. This value is *required*. 
+:   Specify a TLS secret that contains the certificate including all its intermediate certificates and the corresponding private key for the domain mapping. For public custom domains, the certificate must be signed by a trusted, public certificate authority (CA), and self-signed certificates are not supported. For private custom domains, such as `.internal` or `.corp`, self-signed certificates and certificates from a private enterprise CA are allowed. This value is *required*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -2983,7 +3060,7 @@ ibmcloud ce domainmapping update --domain-name DOMAIN_NAME --target TARGET_NAME 
 :   The type of the target. Valid values are `application` or `function`. This value is *optional*. 
 
 `--tls-secret`, `--secret`, `--tls`
-:   Specify a TLS secret that contains the certificate including all its intermediate certificates and the corresponding private key for the domain mapping. The certificate must be signed by a trusted, public certificate authority (CA). Self-signed certificates are not supported. This value is *optional*. 
+:   Specify a TLS secret that contains the certificate including all its intermediate certificates and the corresponding private key for the domain mapping. For public custom domains, the certificate must be signed by a trusted, public certificate authority (CA), and self-signed certificates are not supported. For private custom domains, such as `.internal` or `.corp`, self-signed certificates and certificates from a private enterprise CA are allowed. This value is *optional*. 
 
  
   
@@ -3577,6 +3654,47 @@ State information:
 ```
 {: screen}  
   
+### `ibmcloud ce fleet task help`  
+{: #cli-fleet-task-help}  
+
+Show help.  
+  
+Aliases: `ibmcloud ce fleet task h`  
+  
+```txt
+ibmcloud ce fleet task help COMMAND
+```
+{: pre}
+
+#### Example
+{: #fleet-task-help-example}
+
+```txt
+ibmcloud ce fleet task help
+```
+{: pre}
+
+#### Example output
+{: #fleet-task-help-example-output}
+
+```txt
+NAME:
+  fleet task - Manage serverless fleet tasks.
+
+USAGE:
+  task COMMAND
+
+COMMANDS:
+  create, add  Add tasks to a serverless fleet.
+  list         List all tasks of a serverless fleet.
+  get          Display details of a serverless fleet task.
+
+OPTIONS:
+  --quiet  Specify this option to reduce the output of the command. (default: false)  
+           Aliases: -q  
+```
+{: screen}  
+  
 ### `ibmcloud ce fleet task list`  
 {: #cli-fleet-task-list}  
 
@@ -3772,6 +3890,48 @@ Profile information:
   Profile:       cx2-2x4  
   vCPUs:         2  
   Memory (GiB):  4  
+```
+{: screen}  
+  
+### `ibmcloud ce fleet worker help`  
+{: #cli-fleet-worker-help}  
+
+Show help.  
+  
+Aliases: `ibmcloud ce fleet worker h`  
+  
+```txt
+ibmcloud ce fleet worker help COMMAND
+```
+{: pre}
+
+#### Example
+{: #fleet-worker-help-example}
+
+```txt
+ibmcloud ce fleet worker help
+```
+{: pre}
+
+#### Example output
+{: #fleet-worker-help-example-output}
+
+```txt
+NAME:
+  fleet worker - Manage serverless fleet workers.
+
+USAGE:
+  worker COMMAND
+
+COMMANDS:
+  delete    Delete a serverless fleet worker.
+  list      List all workers of a serverless fleet.
+  get       Display details of a serverless fleet worker.
+  profiles  List worker profiles supported for serverless fleets.
+
+OPTIONS:
+  --quiet  Specify this option to reduce the output of the command. (default: false)  
+           Aliases: -q  
 ```
 {: screen}  
   
@@ -8349,6 +8509,42 @@ Standard metrics:
     GPU:         off
 ```
 {: screen}
+  
+### `ibmcloud ce settings monitoring help`  
+{: #cli-settings-monitoring-help}  
+
+Show help.  
+  
+Aliases: `ibmcloud ce settings monitoring h`  
+  
+```txt
+ibmcloud ce settings monitoring help COMMAND
+```
+{: pre}
+
+#### Example
+{: #settings-monitoring-help-example}
+
+```txt
+ibmcloud ce settings monitoring help
+```
+{: pre}
+
+#### Example output
+{: #settings-monitoring-help-example-output}
+
+```txt
+NAME:
+  settings monitoring - Manage project monitoring settings.
+
+USAGE:
+  monitoring COMMAND
+
+COMMANDS:
+  get     Display the monitoring settings for the project.
+  update  Update the monitoring settings for the project.
+```
+{: screen}  
   
 ### `ibmcloud ce settings monitoring update`
 {: #cli-settings-monitoring-update}

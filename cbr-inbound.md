@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-18"
+lastupdated: "2026-10-26"
 
 keywords: connectivity, inbound connections, inbound connectivity, private, public, context-based restrictions, cbr, network restrictions
 
@@ -20,7 +20,7 @@ You can use {{site.data.keyword.cloud}} context-based restrictions (CBR) to cont
 
 Context-based restrictions for {{site.data.keyword.codeengineshort}} applications and functions support the following use-cases:
 
-- **Block public inbound entirely**: Restrict your applications and functions to be accessible only through their private endpoint via CBR. This approach eliminates the need to configure [application endpoint visibility](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility) settings, as public access is blocked at the network level. Your workloads remain accessible from private networks (such as VPCs), and from other {{site.data.keyword.codeengineshort}} components within the same project.
+- **Block public inbound entirely**: Restrict your applications and functions to be accessible only through their private endpoint via CBR. This approach eliminates the need to configure [application endpoint visibility](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility) settings, as public access is blocked at the network level. Your workloads remain accessible from private networks (such as VPCs), and from other {{site.data.keyword.codeengineshort}} components within the same project. You can also reach your workloads through [private custom domains](/docs/codeengine?topic=codeengine-domain-mappings#private-custom-domains), such as `myapp.internal`. For more information, see [Using private custom domains with context-based restrictions](#cbr-private-custom-domains).
 
 - **Block public and restrict private by IP**: Achieve maximum control over inbound traffic by blocking all public internet access and restricting private endpoint access to specific IP addresses or network zones. This combines the capability of IP-based restrictions for private endpoints with the ability to block public endpoints entirely at the network level.
 
@@ -180,3 +180,16 @@ After you create the context-based restriction rule, you can test it using your 
 
 If you selected a network zone that points to a VPC (virtual private cloud), you must also create a VPE (virtual private endpoint) gateway to allow the VPC to access private workloads. After you create the gateway, you might experience a temporary delay due to PDNS resolution. You can see `RBAC Access Denied` error messages initially, but you will be granted access after a bit of time.
 {: tip}
+
+## Using private custom domains with context-based restrictions
+{: #cbr-private-custom-domains}
+
+If you block public inbound traffic, clients typically use a VPC to reach their applications and functions through the private network path. In this setup, you can also use [private custom domains](/docs/codeengine?topic=codeengine-domain-mappings#private-custom-domains), such as `myapp.internal`, that are configured as {{site.data.keyword.codeengineshort}} domain mappings. Private custom domains are resolved through your private DNS, so you can address your workloads with your own domain names instead of the default {{site.data.keyword.codeengineshort}} private endpoint names.
+
+Consider the following points when you combine context-based restrictions with private custom domains:
+
+- **Public access is blocked for domain mappings, too**: When a context-based restriction rule blocks public inbound traffic, requests to the domain mapping through the public endpoint are denied with an `RBAC Access Denied` error message. The same private endpoint and network zone rules that apply to your applications and functions also apply to requests that use a domain mapping.
+- **Self-signed certificates are allowed**: For private custom domains, you can use self-signed certificates or certificates that are issued by a private, internal CA for the TLS secret of the domain mapping. For more information, see [Certificate and TLS validation rules](/docs/codeengine?topic=codeengine-domain-mappings#private-domain-tls-rules).
+- **Private DNS is required**: Configure your private DNS so that the private custom domain resolves from within your VPC to the IP address of the virtual private endpoint (VPE) gateway that provides access to your {{site.data.keyword.codeengineshort}} project.
+
+For more information about creating a domain mapping for a private custom domain, see [Working with private custom domains](/docs/codeengine?topic=codeengine-domain-mappings#private-custom-domains).

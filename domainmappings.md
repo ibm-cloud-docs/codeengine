@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-10-20"
+lastupdated: "2026-10-26"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, functions in code engine, function workloads in code engine, Function, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -360,6 +360,9 @@ You are now familiar with working with custom domain mappings, and you have obta
 
 If you want to route private traffic within an internal network or VPC to your {{site.data.keyword.codeengineshort}} applications or functions, you can configure a private custom domain mapping. Private custom domains use domain names that are resolved through your private DNS rather than the public internet.
 {: shortdesc}
+
+Private custom domains can be used together with context-based restrictions that block public inbound traffic. For more information, see [Using private custom domains with context-based restrictions](/docs/codeengine?topic=codeengine-cbr-inbound#cbr-private-custom-domains).
+{: tip}
 
 ### Supported private domain suffixes
 {: #private-domain-suffixes}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-30"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -171,6 +171,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
 * [October 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-october26)
+
+    * [28 October 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct2826)
+
+        * CLI version 1.64.2 released
+
+    * [27 October 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct2726)
+
+        * CLI version 1.64.1 released
 
     * [15 October 2026](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1526)
 
@@ -3343,6 +3351,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
 
+    * [Worker image `v1.0.384`, released 26 October 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_384)
+
     * [Worker image `v1.0.378`, released 19 October 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_378)
 
     * [Worker image `v1.0.372`, released 12 October 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_372)
@@ -4541,6 +4551,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Testing your context-based restriction rule for inbound connectivity](/docs/codeengine?topic=codeengine-cbr-inbound&interface=cli#test-cbr)
 
+* [Using private custom domains with context-based restrictions](/docs/codeengine?topic=codeengine-cbr-inbound&interface=cli#cbr-private-custom-domains)
+
 [{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses#network-addresses)
 
 
@@ -4628,6 +4640,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce connectivity outbound get`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound-get)
 
+    * [`ibmcloud ce connectivity outbound help`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound-help)
+
     * [`ibmcloud ce connectivity outbound list`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound-list)
 
     * [`ibmcloud ce connectivity outbound update`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-outbound-update)
@@ -4639,6 +4653,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce connectivity subnetpool delete`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-subnetpool-delete)
 
     * [`ibmcloud ce connectivity subnetpool get`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-subnetpool-get)
+
+    * [`ibmcloud ce connectivity subnetpool help`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-subnetpool-help)
 
     * [`ibmcloud ce connectivity subnetpool list`](/docs/codeengine?topic=codeengine-cli#cli-connectivity-subnetpool-list)
 
@@ -4676,6 +4692,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce fleet task get`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-get)
 
+    * [`ibmcloud ce fleet task help`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-help)
+
     * [`ibmcloud ce fleet task list`](/docs/codeengine?topic=codeengine-cli#cli-fleet-task-list)
 
     * [`ibmcloud ce fleet worker`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker)
@@ -4683,6 +4701,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce fleet worker delete`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-delete)
 
     * [`ibmcloud ce fleet worker get`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-get)
+
+    * [`ibmcloud ce fleet worker help`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-help)
 
     * [`ibmcloud ce fleet worker list`](/docs/codeengine?topic=codeengine-cli#cli-fleet-worker-list)
 
@@ -4838,6 +4858,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce settings monitoring get`](/docs/codeengine?topic=codeengine-cli#cli-settings-monitoring-get)
 
+    * [`ibmcloud ce settings monitoring help`](/docs/codeengine?topic=codeengine-cli#cli-settings-monitoring-help)
+
     * [`ibmcloud ce settings monitoring update`](/docs/codeengine?topic=codeengine-cli#cli-settings-monitoring-update)
 
 * [Subscription cos commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos)
@@ -4955,6 +4977,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Automatically injected environment variables for functions](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-fun)
 
 * [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
+
+* [Automatically injected environment variables for fleets](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-fleets)
 
 
 ## Defining commands and arguments for your workloads

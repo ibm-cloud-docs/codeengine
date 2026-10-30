@@ -3,7 +3,7 @@
 copyright:
   years: 2026
 
-lastupdated: "2026-10-19"
+lastupdated: "2026-10-27"
 
 
 keywords: change log, version history, vsi image, serverless fleets
@@ -29,6 +29,20 @@ For more information about Nvidia CUDA drivers including lifecycle and compatibi
 ## Version v1.0
 {: #fleets-worker-changelog-contents-v1_0}
 
+
+
+### Worker image `v1.0.384`, released 26 October 2026
+{: #fleets-worker-boms-v1_0_384}
+
+The following table shows the components included in the {{site.data.keyword.codeengineshort}} fleet worker image v1.0.384.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+| UBUNTU_24_04 | Kernel: 6.8.0-1067 <br/> podman: 4.9.3 <br/> s3fs: 1.93 | Resolves the following CVEs: <br/> [CVE-2026-101917](https://nvd.nist.gov/vuln/detail/cve-2026-101917){: external}, [CVE-2026-101918](https://nvd.nist.gov/vuln/detail/cve-2026-101918){: external}, [CVE-2026-102274](https://nvd.nist.gov/vuln/detail/cve-2026-102274){: external}, [CVE-2026-102275](https://nvd.nist.gov/vuln/detail/cve-2026-102275){: external} |
+| Nvidia CUDA | Driver: 580.196.07 <br/> Toolkit: 12.6.3 <br/> NVIDIA Fabric Manager: 580.196.07 | |
+{: caption="Worker image v1.0.384" caption-side="bottom"}
+{: #fleets-worker-boms-v1_0_384-component-table}
 
 
 ### Worker image `v1.0.378`, released 19 October 2026
