@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-10-20"
+lastupdated: "2026-11-02"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode, functions, platform metrics, IBM Cloud Monitoring, project settings, standard metrics, Compute Metrics, GPU Metrics, fleet monitoring
 
@@ -91,7 +91,7 @@ Before you can customize workload metrics, you must first connect an {{site.data
 Use CLI commands to view and update project-wide monitoring settings.
 {: shortdesc}
 
-1. To retrieve the current monitoring settings for your project, run the **`ibmcloud ce settings monitoring get`** command.
+1. To retrieve the current monitoring settings for your project, run the **`ibmcloud ce settings monitoring get`** command. For a complete list of all available command options, see the [CLI reference](/docs/codeengine?topic=codeengine-cli#cli-settings-monitoring-get).
 
     ```sh
     ibmcloud ce settings monitoring get
@@ -112,7 +112,7 @@ Use CLI commands to view and update project-wide monitoring settings.
     ```
     {: screen}
 
-2. To change the monitoring settings for your project, run the **`ibmcloud ce settings monitoring update`** command with one of the following options.
+2. To change the monitoring settings for your project, run the **`ibmcloud ce settings monitoring update`** command with one of the following options. For a complete list of all available command options, see the [CLI reference](/docs/codeengine?topic=codeengine-cli#cli-settings-monitoring-update).
 
     - To set metric selection to `all`, run the command with the `--standard-metrics all` option.
 
