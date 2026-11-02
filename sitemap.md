@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-30"
+lastupdated: "2026-11-02"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3350,6 +3350,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Worker Image Changelog v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-v1_0)
 
 * [Version v1.0](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-changelog-contents-v1_0)
+
+    * [Worker image `v1.0.388`, released 02 November 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_388)
 
     * [Worker image `v1.0.384`, released 26 October 2026](/docs/codeengine?topic=codeengine-fleets-worker-changelog-v1_0#fleets-worker-boms-v1_0_384)
 
