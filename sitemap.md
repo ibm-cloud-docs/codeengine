@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-03"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3140,7 +3140,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Creating function workloads with inline code](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inlinecode)
 
-* [Creating a function with inline with the console](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inline-console)
+* [Creating a function with inline code from the console](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inline-console)
 
 * [Creating a function with inline code with the CLI](/docs/codeengine?topic=codeengine-fun-create-inlinecode#fun-create-inline-cli)
 
