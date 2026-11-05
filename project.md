@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-11-05"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -158,7 +158,7 @@ You can create a project through the console or with the CLI.
 ### Creating a project from the console
 {: #create-project-console}
 
-1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, click **Create**. Alternatively, you can create your project when you create your {{site.data.keyword.codeengineshort}} app, job, function, or fleet with the {{site.data.keyword.codeengineshort}} console fast path. From the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}, select **Start creating**, and click **Create serverless project** from the Start creating page.
+1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, click **Create**. Alternatively, you can create your project when you create your {{site.data.keyword.codeengineshort}} app, job, function, or fleet with the {{site.data.keyword.codeengineshort}} console fast path. From the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}, select **Start creating**, and click **Create a serverless project** from the Start creating page.
 2. Choose a location to deploy the project.
 3. Enter a name for the project. The name must be unique for all your projects within the specified location.
 4. Choose the resource group where you want to create the project.
