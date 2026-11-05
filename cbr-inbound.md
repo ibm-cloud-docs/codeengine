@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-11-02"
 
 keywords: connectivity, inbound connections, inbound connectivity, private, public, context-based restrictions, cbr, network restrictions
 
@@ -15,8 +15,10 @@ subcollection: codeengine
 # Restricting inbound traffic to applications and functions using context-based restrictions
 {: #cbr-inbound}
 
-You can use {{site.data.keyword.cloud}} context-based restrictions (CBR) to control inbound network traffic to your {{site.data.keyword.codeenginefull}} applications and functions. With CBR, you can restrict access through private endpoints, public endpoints, or both, providing flexible network-level security for your workloads. Instead of assigning access based on identity, context-based restrictions verify that an access request comes from an allowed context that you configure. You can limit inbound traffic to your applications and functions within your {{site.data.keyword.codeengineshort}} projects to [safeguard your projects from unwanted inbound traffic](/docs/iam?topic=iam-context-restrictions-create). These context-based restrictions apply at either account, project, resource group, or location (region) level and apply for all applications and functions within the scope of the restriction.
+You can use {{site.data.keyword.cloud}} context-based restrictions (CBR) to control inbound network traffic to your {{site.data.keyword.codeenginefull}} applications and functions. For public endpoints, you can allow or block traffic. For private endpoints, you can also limit traffic to specific IP addresses or network zones.
 {: shortdesc}
+
+Instead of assigning access based on identity, context-based restrictions verify that an access request comes from an allowed context that you configure. You can limit inbound traffic to your applications and functions within your {{site.data.keyword.codeengineshort}} projects to [safeguard your projects from unwanted inbound traffic](/docs/iam?topic=iam-context-restrictions-create). These context-based restrictions apply at either account, project, resource group, or location (region) level and apply for all applications and functions within the scope of the restriction.
 
 Context-based restrictions for {{site.data.keyword.codeengineshort}} applications and functions support the following use-cases:
 
@@ -29,7 +31,7 @@ Context-based restrictions for {{site.data.keyword.codeengineshort}} application
 Context-based restrictions apply only to applications and functions because these workloads expose network endpoints. Context-based restrictions do not apply to jobs and fleets since they are not exposing any network endpoints.
 {: note}
 
-When you secure {{site.data.keyword.codeengineshort}} resources with context-based restrictions, in addition to restricting the inbound traffic that connects to your applications or functions with context-based rules, you can [restrict the contexts (network paths) from which your {{site.data.keyword.codeengineshort}} resources](/docs/codeengine?topic=codeengine-cbr) can be managed, such as deploying or updating applications and secrets.
+When you secure {{site.data.keyword.codeengineshort}} resources with context-based restrictions, in addition to restricting the inbound traffic that connects to your applications or functions with context-based rules, you can [restrict the contexts (network paths) from which your {{site.data.keyword.codeengineshort}} resources](/docs/codeengine?topic=codeengine-cbr) can be managed, such as deploying or updating applications and secrets. This management path is called the control plane.
 {: tip}
 
 Context-based restrictions for {{site.data.keyword.codeengineshort}} can be scoped to a single project, an entire resource group, or a location (region). For more information about {{site.data.keyword.cloud_notm}} context-based restrictions, see [Layered security with context-based restrictions](/docs/iam?topic=iam-context-restrictions-whatis).
@@ -59,7 +61,7 @@ To create a context-based restriction, see [Creating context-based restrictions]
 
 4. Restrict access to protect your {{site.data.keyword.codeengineshort}} application or function workloads by selecting the **Data plane** option for **Service APIs**.
 
-    You define workload restrictions at the data plane level, so select at least the data plane service. You can also select other service or platform APIs.
+    For {{site.data.keyword.codeengineshort}}, the data plane is the inbound network path to your applications and functions. You define workload restrictions at the data plane level, so select at least the data plane service. You can also select other service or platform APIs.
 
     Click **Next** to scope the restriction for your resources.
 
